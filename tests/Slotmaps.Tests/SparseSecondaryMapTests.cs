@@ -26,17 +26,16 @@ public class SparseSecondaryMapTests
             Assert.False(result);
         }
 
-        // TODO: Update ContainsKey to not throw exception but return false
-        //[Fact]
-        //public void InvalidKeyWithVersionLessThan1_ReturnsFalse()
-        //{
-        //    var map = new SparseSecondaryMap<int>();
-        //    var invalidKey = new SlotKey(1, 0);
+        [Fact]
+        public void InvalidKeyWithVersionLessThan1_ReturnsFalse()
+        {
+            var map = new SparseSecondaryMap<int>();
+            var invalidKey = new SlotKey(1, 0);
 
-        //    var result = map.ContainsKey(invalidKey);
+            var result = map.ContainsKey(invalidKey);
 
-        //    Assert.False(result);
-        //}
+            Assert.False(result);
+        }
 
         [Fact]
         public void InvalidKeyWithVersionGreaterOrEqualTo1_ReturnsFalse()
@@ -763,11 +762,11 @@ public class SparseSecondaryMapTests
             var key1 = new SlotKey(1, 2);
             var key2 = new SlotKey(1, 1);
 
-            map.TryInsert(key1, "Value1", out var previousValue);
+            map.TryInsert(key1, "Value1", out var _);
 
-            bool result = map.TryInsert(key2, "Value2", out var previousValue2);
+            bool result = map.TryInsert(key2, "Value2", out var previousValue);
             Assert.False(result);
-            Assert.Equal(default, previousValue2);
+            Assert.Equal(default, previousValue);
         }
 
         [Fact]

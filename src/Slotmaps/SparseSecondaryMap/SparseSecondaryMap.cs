@@ -9,7 +9,7 @@ namespace FlashyDJ.Slotmaps;
 [DebuggerDisplay("Count = {Count}")]
 public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>>
 {
-    private Dictionary<int, Slot<TValue>> _slots;
+    private readonly Dictionary<int, Slot<TValue>> _slots;
     private SlotKeyCollection? _keys;
     private SlotValueCollection? _values;
 
@@ -27,7 +27,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         Insert(item.Key, item.Value);
 
     bool ICollection<KeyValuePair<SlotKey, TValue>>.Contains(KeyValuePair<SlotKey, TValue> item) =>
-        ContainsKey(item.Key) && ContainsValue(item.Value);
+        ContainsKey(item.Key) && (EqualityComparer<TValue>.Default.Equals(Get(item.Key), item.Value));
 
     void ICollection<KeyValuePair<SlotKey, TValue>>.CopyTo(KeyValuePair<SlotKey, TValue>[] array, int index)
     {
@@ -36,25 +36,19 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         ArgumentOutOfRangeException.ThrowIfGreaterThan(index, array.Length);
         ArgumentOutOfRangeException.ThrowIfLessThan(Count, array.Length - index);
 
-        for (int i = 0; i < Capacity; i++)
+        foreach (var key in _slots.Keys)
         {
-            var slot = _slots[i];
+            ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key, out var _);
 
             if (slot.Occupied)
-                array[index++] = new(new(i, slot.Version), slot.Value);
+                array[index++] = new(new(key, slot.Version), slot.Value);
         }
     }
 
-    bool ICollection<KeyValuePair<SlotKey, TValue>>.Remove(KeyValuePair<SlotKey, TValue> item)
-    {
-        if (ContainsKey(item.Key) && ContainsValue(item.Value))
-        {
-            Remove(item.Key);
-            return true;
-        }
-
-        return false;
-    }
+    bool ICollection<KeyValuePair<SlotKey, TValue>>.Remove(KeyValuePair<SlotKey, TValue> item) =>
+        ContainsKey(item.Key)
+        && (EqualityComparer<TValue>.Default.Equals(Get(item.Key), item.Value)
+        && TryRemove(item.Key, out var _));
 
     IEnumerator<KeyValuePair<SlotKey, TValue>> IEnumerable<KeyValuePair<SlotKey, TValue>>.GetEnumerator() =>
         new Enumerator(this);
@@ -87,20 +81,16 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
     public bool ContainsKey(SlotKey key)
     {
         if (key.IsInvalid && key.Version < 1)
-            throw new KeyNotFoundException("Invalid SlotKey");
+            return false;
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
 
         return exists && slot.Occupied && slot.Version == key.Version;
     }
 
-    public bool ContainsValue(TValue value)
-    {
-        if (value is null)
-            return false;
-
-        return _slots.Where(x => EqualityComparer<TValue>.Default.Equals(x.Value.Value, value)).Any();
-    }
+    public bool ContainsValue(TValue value) =>
+        value is not null
+        && _slots.Where(x => EqualityComparer<TValue>.Default.Equals(x.Value.Value, value)).Any();
 
     public void Clear()
     {
@@ -281,27 +271,23 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         return false;
     }
 
-    private Dictionary<int, Slot<TValue>>.Enumerator BackingEnumerator() =>
-        _slots.GetEnumerator();
-
     public struct Enumerator : IEnumerator<KeyValuePair<SlotKey, TValue>>, IEnumerator
     {
         private readonly SparseSecondaryMap<TValue> _sparseMap;
-        private IEnumerator<KeyValuePair<int, Slot<TValue>>> _dictEnumerator;
-        private KeyValuePair<SlotKey, TValue> _current;
+        private readonly IEnumerator<KeyValuePair<int, Slot<TValue>>> _dictEnumerator;
 
         internal Enumerator(SparseSecondaryMap<TValue> sparseMap)
         {
             _sparseMap = sparseMap;
-            _dictEnumerator = sparseMap.BackingEnumerator();
-            _current = default;
+            _dictEnumerator = _sparseMap._slots.GetEnumerator();
+            Current = default;
         }
 
-        public KeyValuePair<SlotKey, TValue> Current => _current;
+        public KeyValuePair<SlotKey, TValue> Current { get; private set; }
 
         object IEnumerator.Current => Current;
 
-        public void Dispose() { }
+        public readonly void Dispose() { }
 
         public bool MoveNext()
         {
@@ -310,9 +296,9 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
                 var kvp = _dictEnumerator.Current;
 
                 if (!kvp.Value.Occupied)
-                    break;
+                    continue;
 
-                _current = new(new(kvp.Key, kvp.Value.Version), kvp.Value.Value);
+                Current = new(new(kvp.Key, kvp.Value.Version), kvp.Value.Value);
                 return true;
             }
             return false;
@@ -320,7 +306,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
 
         public void Reset()
         {
-            _current = default;
+            Current = default;
         }
     }
 }
