@@ -1,6 +1,131 @@
 ﻿namespace Slotmaps.Tests;
 public class SparseSecondaryMapTests
 {
+    public class ContainsKey
+    {
+        [Fact]
+        public void ValidKeyExists_ReturnsTrue()
+        {
+            var map = new SparseSecondaryMap<int>();
+            var key = new SlotKey(1, 1);
+            map.Insert(key, 42);
+
+            var result = map.ContainsKey(key);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void ValidKeyDoesNotExist_ReturnsFalse()
+        {
+            var map = new SparseSecondaryMap<int>();
+            var key = new SlotKey(1, 1);
+
+            var result = map.ContainsKey(key);
+
+            Assert.False(result);
+        }
+
+        // TODO: Update ContainsKey to not throw exception but return false
+        //[Fact]
+        //public void InvalidKeyWithVersionLessThan1_ReturnsFalse()
+        //{
+        //    var map = new SparseSecondaryMap<int>();
+        //    var invalidKey = new SlotKey(1, 0);
+
+        //    var result = map.ContainsKey(invalidKey);
+
+        //    Assert.False(result);
+        //}
+
+        [Fact]
+        public void InvalidKeyWithVersionGreaterOrEqualTo1_ReturnsFalse()
+        {
+            var map = new SparseSecondaryMap<int>();
+            var invalidKey = new SlotKey(-1, 1);
+
+            var result = map.ContainsKey(invalidKey);
+
+            Assert.False(result);
+        }
+    }
+
+    public class ContainsValue
+    {
+        [Fact]
+        public void ValueExists_ReturnsTrue()
+        {
+            var map = new SparseSecondaryMap<int>();
+            var key1 = new SlotKey(1, 1);
+            var key2 = new SlotKey(2, 1);
+            var key3 = new SlotKey(3, 1);
+            map.Insert(key1, 42);
+            map.Insert(key2, 24);
+            map.Insert(key3, 36);
+
+            var result = map.ContainsValue(24);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void ValueDoesNotExist_ReturnsFalse()
+        {
+            var map = new SparseSecondaryMap<int>();
+            var key1 = new SlotKey(1, 1);
+            var key2 = new SlotKey(2, 1);
+            var key3 = new SlotKey(3, 1);
+            map.Insert(key1, 42);
+            map.Insert(key2, 24);
+            map.Insert(key3, 36);
+
+            var result = map.ContainsValue(100);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void NullValue_ReturnsFalse()
+        {
+            var map = new SparseSecondaryMap<string>();
+            var key1 = new SlotKey(1, 0);
+            map.Insert(key1, "value");
+
+            var result = map.ContainsValue(null!);
+
+            Assert.False(result);
+        }
+    }
+
+    public class Clear
+    {
+        [Fact]
+        public void WithItems_ClearsMapAndSetsCountToZero()
+        {
+            var map = new SparseSecondaryMap<int>();
+            var key1 = new SlotKey(1, 1);
+            var key2 = new SlotKey(2, 1);
+            map.Insert(key1, 42);
+            map.Insert(key2, 24);
+            var capacity = map.Capacity;
+
+            map.Clear();
+
+            Assert.Equal(capacity, map.Capacity);
+            Assert.Empty(map);
+        }
+
+        [Fact]
+        public void EmptyMap_DoesNothing()
+        {
+            var map = new SparseSecondaryMap<int>();
+
+            map.Clear();
+
+            Assert.Empty(map);
+        }
+    }
+
     public class Drain
     {
         [Fact]
@@ -131,6 +256,29 @@ public class SparseSecondaryMapTests
         }
 
     }
+
+    public class EnsureCapacity
+    {
+        [Fact]
+        public void PositiveValue_ReturnsCapacity()
+        {
+            var map = new SparseSecondaryMap<int>();
+            var capacity = 100;
+
+            int result = map.EnsureCapacity(capacity);
+
+            Assert.True(result >= capacity);
+        }
+
+        [Fact]
+        public void NegativeValue_ThrowsArgumentOutOfRangeException()
+        {
+            var map = new SparseSecondaryMap<int>();
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => map.EnsureCapacity(-10));
+        }
+    }
+
     public class Get
     {
         [Fact]
@@ -260,7 +408,8 @@ public class SparseSecondaryMapTests
             var map = new SparseSecondaryMap<int>();
             var invalidKey = new SlotKey(0, -1);
 
-            Assert.Throws<KeyNotFoundException>(() => map.Insert(invalidKey, 42));
+            var ex = Assert.Throws<KeyNotFoundException>(() => map.Insert(invalidKey, 42));
+            Assert.Equal("Invalid SlotKey", ex.Message);
         }
 
         [Fact]
@@ -287,7 +436,8 @@ public class SparseSecondaryMapTests
 
             map.Insert(key1, 42);
 
-            Assert.Throws<KeyNotFoundException>(() => map.Insert(key2, 24));
+            var ex = Assert.Throws<KeyNotFoundException>(() => map.Insert(key2, 24));
+            Assert.Equal("SlotKey is an older version", ex.Message);
         }
 
         [Fact]
