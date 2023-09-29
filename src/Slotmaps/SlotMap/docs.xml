@@ -153,7 +153,7 @@
       Determines whether the <c>SlotMap</c> contains a specific value.
     </summary>
     <param name="value">
-      The value to locate in the <c>SlotMap</c>. Can be <c>null</c>.
+      The value to locate in the <c>SlotMap</c>.
     </param>
     <remarks>
       The <c>ContainsValue</c> method searches the <c>SlotMap</c> for the presence of a specified value.
@@ -185,7 +185,7 @@
       Each key-value pair consists of a <see cref="SlotKey"/> and its associated value.
     </remarks>
     <returns>
-      An enumerable collection of key-value pairs representing the elements removed from the <c>SlotMap</c>.
+      An <see cref="IEnumerable{T}"/> of <see cref="KeyValuePair{SlotKey, TValue}"/> containing the entries retrieved from the secondary map.
     </returns>
   </Drain>
 
@@ -302,7 +302,7 @@
     <summary>
       Retains elements in the <c>SlotMap</c> based on a specified condition defined by a predicate function.
     </summary>
-    <param name="predicate">A delegate that defines the condition for retaining elements.</param>
+    <param name="predicate">A delegate that defines the condition for retaining elements. The delegate is called for each entry with its <see cref="SlotKey"/> and associated value as arguments.</param>
     <remarks>
       The <c>Retain</c> method iterates through all elements in the <c>SlotMap</c> and retains those elements for which the provided predicate function returns <see langword="true"/>.
       Elements that do not satisfy the condition defined by the predicate are removed from the <c>SlotMap</c>.
@@ -354,7 +354,7 @@
 
   <TryRemove>
     <summary>
-      Attempts to remove the value associated with the specified <paramref name="key"/> from the <c>SlotMap</c>.
+      Attempts to remove the value associated with the specified <see cref="SlotKey"/> from the <c>SlotMap</c>.
     </summary>
     <param name="key">
       The <c>SlotKey</c> to remove from the <c>SlotMap</c>.
@@ -366,7 +366,6 @@
       The <c>TryRemove</c> method attempts to remove the value associated with the specified <paramref name="key"/> from the <c>SlotMap</c>.
       If the <paramref name="key"/> is not found in the map, this method sets the <paramref name="value"/> parameter to the default value of <typeparamref name="TValue"/> and returns <see langword="false"/>.
       If the <paramref name="key"/> is found, it returns <see langword="true"/>, and the associated value is stored in the <paramref name="value"/> parameter.
-      In either case, the key-value pair is removed from the map.
     </remarks>
     <returns>
       <see langword="true"/> if the <paramref name="key"/> was found and the associated value was successfully removed;
