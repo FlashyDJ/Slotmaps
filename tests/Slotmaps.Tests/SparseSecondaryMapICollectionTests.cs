@@ -284,7 +284,7 @@ public class SparseSecondaryMapICollectionTests
     public class ForEachLoop
     {
         [Fact]
-        public void IEnumerable_ForeachLoop_EnumeratesAllKeyValuePairs()
+        public void EnumeratesAllKeyValuePairs()
         {
             var map = new SparseSecondaryMap<int>();
             var key1 = new SlotKey(1, 1);
@@ -308,7 +308,7 @@ public class SparseSecondaryMapICollectionTests
         }
 
         [Fact]
-        public void IEnumerable_ForeachLoop_EmptyMap_DoesNotEnterLoop()
+        public void EmptyMap_DoesNotEnterLoop()
         {
             var map = new SparseSecondaryMap<int>();
             bool enteredLoop = false;
@@ -322,7 +322,7 @@ public class SparseSecondaryMapICollectionTests
         }
 
         [Fact]
-        public void IEnumerable_ForeachLoop_AfterRemovingKey_EnumeratesRemainingKeyValuePairs()
+        public void AfterRemovingKey_EnumeratesRemainingKeyValuePairs()
         {
             var map = new SparseSecondaryMap<int>();
             var key1 = new SlotKey(1, 1);
