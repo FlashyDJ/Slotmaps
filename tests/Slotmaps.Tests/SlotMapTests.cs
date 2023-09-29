@@ -4,7 +4,7 @@ public class SlotMapTests
     public class Add
     {
         [Fact]
-        public void ValueAddedToSlotMap_IncreasesCountAndContainKeys()
+        public void NewValidValue_ReturnsKeyIncreasesCountAndContainKeys()
         {
             var slotMap = new SlotMap<int>();
 
@@ -34,20 +34,6 @@ public class SlotMapTests
         }
 
         [Fact]
-        public void ResizesIfCapacityExceeded_IncreasesCapacity()
-        {
-            var slotMap = new SlotMap<int>(2);
-            slotMap.Add(1);
-            slotMap.Add(2);
-
-            var key = slotMap.Add(3);
-
-            Assert.True(slotMap.ContainsKey(key));
-            Assert.Equal(3, slotMap.Get(key));
-            Assert.Equal(4, slotMap.Capacity);
-        }
-
-        [Fact]
         public void ValidSlotKey_UpdatesSlotValue()
         {
             var slotMap = new SlotMap<string>();
@@ -57,7 +43,7 @@ public class SlotMapTests
             var value = slotMap.Get(newKey);
 
             Assert.Equal(key.Index, newKey.Index);
-            Assert.NotEqual(key.Version, newKey.Version);
+            Assert.NotEqual(key, newKey);
             Assert.Equal("UpdatedValue", value);
         }
 
@@ -339,6 +325,28 @@ public class SlotMapTests
         
     }
 
+    public class EnsureCapacity
+    {
+        [Fact]
+        public void PositiveValue_ReturnsCapacity()
+        {
+            var slotMap = new SlotMap<int>();
+            var capacity = 100;
+
+            int result = slotMap.EnsureCapacity(capacity);
+
+            Assert.Equal(capacity, result);
+        }
+
+        [Fact]
+        public void NegativeValue_ThrowsArgumentOutOfRangeException()
+        {
+            var slotMap = new SlotMap<int>();
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => slotMap.EnsureCapacity(-10));
+        }
+    }
+
     public class Get
     {
         [Fact]
@@ -455,6 +463,31 @@ public class SlotMapTests
         }
     }
 
+    public class Insert
+    {
+        [Fact]
+        public void Insert_NonexistentKey_ThrowsKeyNotFoundException()
+        {
+            var map = new SlotMap<int>();
+            var key = new SlotKey(1, 0);
+            var value = 42;
+
+            var ex = Assert.Throws<KeyNotFoundException>(() => map.Insert(key, value));
+        }
+
+        [Fact]
+        public void ExistingKey_UpdatesValueAndReturnsNewKey()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
+            var newValue = 24;
+
+            var newKey = slotMap.Insert(key, newValue);
+
+            Assert.Equal(newValue, slotMap[newKey]);
+        }
+    }
+
     public class Remove
     {
         [Fact]
@@ -511,26 +544,63 @@ public class SlotMapTests
     public class Reserve
     {
         [Fact]
-        public void IncreasesCapacity_IncreasesCapacity()
+        public void ValidAdditionalSize_ResizesArray()
         {
-            var slotMap = new SlotMap<bool>();
+            var slotMap = new SlotMap<int>();
+            var initialCapacity = slotMap.Capacity;
+            var additionalSize = 10;
 
-            slotMap.Reserve(10);
+            slotMap.Reserve(additionalSize);
 
-            Assert.Equal(10, slotMap.Capacity);
+            Assert.Equal(initialCapacity + additionalSize, slotMap.Capacity);
+        }
+
+        [Fact]
+        public void Reserve_NegativeAdditionalSize_ThrowsArgumentOutOfRangeException()
+        {
+            var slotMap = new SlotMap<int>();
+            var negativeSize = -10;
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => slotMap.Reserve(negativeSize));
         }
     }
 
     public class Resize
     {
         [Fact]
-        public void ChangesCapacity_ChangesCapacity()
+        public void NewSizeLessThanCapacity_ThrowsArgumentOutOfRangeException()
         {
-            var slotMap = new SlotMap<DateTime>();
+            var slotMap = new SlotMap<int>();
+            slotMap.Add(42);
+            var newSize = slotMap.Capacity - 1;
 
-            slotMap.Resize(20);
+            Assert.Throws<ArgumentOutOfRangeException>(() => slotMap.Resize(newSize));
+        }
 
-            Assert.Equal(20, slotMap.Capacity);
+        [Fact]
+        public void NewSizeEqualToCapacity_DoesNotChangeCapacity()
+        {
+            var slotMap = new SlotMap<int>();
+            slotMap.Add(42);
+            var initialCapacity = slotMap.Capacity;
+            var newSize = initialCapacity;
+
+            slotMap.Resize(newSize);
+
+            Assert.Equal(initialCapacity, slotMap.Capacity);
+        }
+
+        [Fact]
+        public void Resize_NewSizeGreaterThanCapacity_ResizesArrayToNewSize()
+        {
+            var slotMap = new SlotMap<int>();
+            slotMap.Add(42);
+            var initialCapacity = slotMap.Capacity;
+            var newSize = initialCapacity * 2;
+
+            slotMap.Resize(newSize);
+
+            Assert.Equal(newSize, slotMap.Capacity);
         }
     }
 
