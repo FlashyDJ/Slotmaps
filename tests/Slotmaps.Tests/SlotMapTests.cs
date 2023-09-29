@@ -587,6 +587,194 @@ public class SlotMapTests
         }
     }
 
+    // TODO: Rename TryAdd to TryInsert
+    public class TryAdd
+    {
+        [Fact]
+        public void ValidKey_ReturnsTrueAndNewKey()
+        {
+            var slotMap = new SlotMap<string>();
+            var key = slotMap.Add("Value1");
+
+            bool result = slotMap.TryAdd(key, "Value2", out var newKey);
+
+            Assert.True(result);
+            Assert.Equal("Value2", slotMap[newKey]);
+        }
+
+        [Fact]
+        public void InvalidKey_ReturnsFalseAndNullKey()
+        {
+            var slotMap = new SlotMap<string>();
+            var invalidKey = new SlotKey(0, -1);
+
+            bool result = slotMap.TryAdd(invalidKey, "Value1", out var newKey);
+
+            Assert.False(result);
+            Assert.True(newKey.IsNull);
+        }
+
+        [Fact]
+        public void OlderVersionKey_ReturnsFalseAndNullKey()
+        {
+            var slotMap = new SlotMap<string>();
+            var key1 = slotMap.Add("Value1");
+            var key2 = key1 with { Version = 0 };
+
+            bool result = slotMap.TryAdd(key2, "Value2", out var newKey);
+
+            Assert.False(result);
+            Assert.True(newKey.IsNull);
+            Assert.Equal("Value1", slotMap[key1]);
+        }
+
+        [Fact]
+        public void NewerVersionKey_ReturnsFalseAndNullKey()
+        {
+            var slotMap = new SlotMap<string>();
+            var key1 = slotMap.Add("Value1");
+            var key2 = key1 with { Version = 2 };
+
+            bool result = slotMap.TryAdd(key2, "Value2", out var newKey);
+
+            Assert.False(result);
+            Assert.True(newKey.IsNull);
+            Assert.Equal("Value1", slotMap[key1]);
+        }
+    }
+
+    public class TryGet
+    {
+        [Fact]
+        public void ValidKey_ReturnsTrueAndValue()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
+
+            bool result = slotMap.TryGet(key, out var value);
+
+            Assert.True(result);
+            Assert.Equal(42, value);
+        }
+
+        [Fact]
+        public void InvalidKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var invalidKey = new SlotKey(0, -1);
+
+            bool result = slotMap.TryGet(invalidKey, out var value);
+
+            Assert.False(result);
+            Assert.Equal(default, value);
+        }
+
+        [Fact]
+        public void KeyNotFound_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = new SlotKey(1, 1);
+
+            bool result = slotMap.TryGet(key, out var value);
+
+            Assert.False(result);
+            Assert.Equal(default, value);
+        }
+
+        [Fact]
+        public void OlderVersionKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key1 = slotMap.Add(42);
+            var key2 = key1 with { Version = 0 };
+
+            bool result = slotMap.TryGet(key2, out var value);
+
+            Assert.False(result);
+            Assert.Equal(default, value);
+        }
+
+        [Fact]
+        public void NewerVersionKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key1 = slotMap.Add(42);
+            var key2 = key1 with { Version = 2 };
+
+            bool result = slotMap.TryGet(key2, out var value);
+
+            Assert.False(result);
+            Assert.Equal(default, value);
+        }
+    }
+
+    public class TryRemove
+    {
+        [Fact]
+        public void ValidKey_RemovesAndReturnsTrueAndPreviousValue()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
+
+            bool result = slotMap.TryRemove(key, out var previousValue);
+
+            Assert.True(result);
+            Assert.Equal(42, previousValue);
+            Assert.False(slotMap.TryGet(key, out _));
+        }
+
+        [Fact]
+        public void InvalidKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var invalidKey = new SlotKey(0, -1);
+
+            bool result = slotMap.TryRemove(invalidKey, out var previousValue);
+
+            Assert.False(result);
+            Assert.Equal(default, previousValue);
+        }
+
+        [Fact]
+        public void KeyNotFound_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = new SlotKey(1, 1);
+
+            bool result = slotMap.TryRemove(key, out var previousValue);
+
+            Assert.False(result);
+            Assert.Equal(default, previousValue);
+        }
+
+        [Fact]
+        public void OlderVersionKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key1 = slotMap.Add( 42);
+            var key2 = key1 with { Version = 0 };
+
+            bool result = slotMap.TryRemove(key2, out var previousValue);
+
+            Assert.False(result);
+            Assert.Equal(default, previousValue);
+        }
+
+        [Fact]
+        public void NewerVersionKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key1 = slotMap.Add(42);
+            var key2 = key1 with { Version = 2 };
+            
+
+            bool result = slotMap.TryRemove(key2, out var previousValue);
+
+            Assert.False(result);
+            Assert.Equal(default, previousValue);
+        }
+    }
+
     [Fact]
     public void RemoveAndAdd_WithMultipleKeys_ProperlyRemovesAndAddValuesAndKeys()
     {
