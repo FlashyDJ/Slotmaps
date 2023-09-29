@@ -89,10 +89,10 @@ public class SlotMapTests
     public class ContainsKey
     {
         [Fact]
-        public void ExistingKey_ReturnsTrue()
+        public void ValidKeyExists_ReturnsTrue()
         {
-            var slotMap = new SlotMap<string>();
-            var key = slotMap.Add("Hello");
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
 
             var result = slotMap.ContainsKey(key);
 
@@ -100,11 +100,12 @@ public class SlotMapTests
         }
 
         [Fact]
-        public void NonexistentKey_ReturnsFalse()
+        public void ValidKeyDoesNotExist_ReturnsFalse()
         {
             var slotMap = new SlotMap<string>();
+            var key = new SlotKey(1, 1);
 
-            var result = slotMap.ContainsKey(new SlotKey(0, 1));
+            var result = slotMap.ContainsKey(key);
 
             Assert.False(result);
         }
@@ -139,16 +140,17 @@ public class SlotMapTests
     public class Clear
     {
         [Fact]
-        public void RemovesAllItems_EmptysSlotMap()
+        public void WithItems_ClearsMapAndSetsCountToZero()
         {
-            var slotMap = new SlotMap<double>();
-            slotMap.Add(1.0);
-            slotMap.Add(2.0);
+            var slotMap = new SlotMap<int>();
+            slotMap.Add(42);
+            slotMap.Add(24);
+            var capacity = slotMap.Capacity;
 
             slotMap.Clear();
 
+            Assert.Equal(capacity, slotMap.Capacity);
             Assert.Empty(slotMap);
-            Assert.True(slotMap.IsEmpty);
         }
     }
     
@@ -268,7 +270,7 @@ public class SlotMapTests
     public class Get
     {
         [Fact]
-        public void ValueAddedToSlotMap_ReturnsCorrectValue()
+        public void ValidKey_ReturnsValue()
         {
             var slotMap = new SlotMap<int>();
             var key = slotMap.Add(42);
@@ -282,23 +284,24 @@ public class SlotMapTests
     public class Remove
     {
         [Fact]
-        public void RemovesItemAndReturnsItem_RemovesAndReturnsItem()
+        public void ValidKey_RemovesAndReturnsPreviousValue()
         {
-            var slotMap = new SlotMap<char>();
-            var key = slotMap.Add('A');
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
 
             var result = slotMap.Remove(key);
 
-            Assert.Equal('A', result);
+            Assert.Equal(42, result);
             Assert.False(slotMap.ContainsKey(key));
         }
 
         [Fact]
-        public void ThrowsExceptionForNonexistentKey_ThrowsKeyNotFoundException()
+        public void KeyNotFound_ThrowsKeyNotFoundException()
         {
-            var slotMap = new SlotMap<string>();
+            var slotMap = new SlotMap<int>();
+            var key = new SlotKey(1, 1);
 
-            Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(new SlotKey(0, 1)));
+            Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key));
         }
     }
 
@@ -331,46 +334,53 @@ public class SlotMapTests
     public class Retain
     {
         [Fact]
-        public void KeepsMatchingItems_RetainsMatchingItems()
+        public void PredicateRemovesSomeItems_ItemsThatSatisfyPredicateAreRetained()
         {
             var slotMap = new SlotMap<int>();
             var key1 = slotMap.Add(42);
-            var key2 = slotMap.Add(99);
-            var key3 = slotMap.Add(123);
+            var key2 = slotMap.Add(24);
+            var key3 = slotMap.Add(36);
+            var key4 = slotMap.Add(50);
+            var key5 = slotMap.Add(18);
 
-            slotMap.Retain((key, value) => value > 50);
+            slotMap.Retain((key, value) => value > 30);
 
-            Assert.True(slotMap.ContainsKey(key2));
-            Assert.True(slotMap.ContainsKey(key3));
-            Assert.False(slotMap.ContainsKey(key1));
+            Assert.Equal(3, slotMap.Count);
+            Assert.Equal(42, slotMap[key1]);
+            Assert.Equal(36, slotMap[key3]);
+            Assert.Equal(50, slotMap[key4]);
+            Assert.False(slotMap.ContainsKey(key2));
+            Assert.False(slotMap.ContainsKey(key5));
         }
 
         [Fact]
-        public void RemovesAllItems_RemovesAllItems()
+        public void PredicateRemovesAllItems_NoItemsRetained()
         {
             var slotMap = new SlotMap<int>();
             var key1 = slotMap.Add(42);
-            var key2 = slotMap.Add(99);
-            var key3 = slotMap.Add(123);
+            var key2 = slotMap.Add(24);
+            var key3 = slotMap.Add(36);
+            var key4 = slotMap.Add(50);
+            var key5 = slotMap.Add(18);
 
-            slotMap.Retain((key, value) => false);
+            slotMap.Retain((key, value) => value > 100);
 
             Assert.Empty(slotMap);
         }
 
         [Fact]
-        public void NoMatchingItems_RemovesNoItems()
+        public void PredicateKeepsAllItems_NoItemsRemoved()
         {
             var slotMap = new SlotMap<int>();
             var key1 = slotMap.Add(42);
-            var key2 = slotMap.Add(99);
-            var key3 = slotMap.Add(123);
+            var key2 = slotMap.Add(24);
+            var key3 = slotMap.Add(36);
+            var key4 = slotMap.Add(50);
+            var key5 = slotMap.Add(18);
 
-            slotMap.Retain((key, value) => value < 10);
+            slotMap.Retain((key, value) => value > 10);
 
-            Assert.False(slotMap.ContainsKey(key1));
-            Assert.False(slotMap.ContainsKey(key2));
-            Assert.False(slotMap.ContainsKey(key3));
+            Assert.Equal(5, map.Count);
         }
     }
 
