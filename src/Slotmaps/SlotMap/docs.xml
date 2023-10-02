@@ -68,22 +68,28 @@
 
   <Keys>
     <summary>
-      Gets a collection of keys in the <see cref="SlotMap{TValue}"/>.
+      Gets a collection containing the keys in the <see cref="SlotMap{TValue}"/>.
     </summary>
     <remarks>
-      The <c>Keys</c> property returns a collection of all the keys present in the <see cref="SlotMap{TValue}"/>.
+      Only the keys that correspond to occupied slots are included in this collection.
       You can use this collection to iterate through the keys associated with the values in the map.
     </remarks>
+    <returns>
+      A <see cref="SlotMap{TValue}.SlotKeyCollection"/> containing the keys in the <see cref="SlotMap{TValue}"/>.
+    </returns>
   </Keys>
 
   <Values>
     <summary>
-      Gets a collection of values in the <see cref="SlotMap{TValue}"/>.
+      Gets a collection containing the values in the <see cref="SlotMap{TValue}"/>.
     </summary>
     <remarks>
-      The <c>Values</c> property returns a collection of all the values stored in the <see cref="SlotMap{TValue}"/>.
+      Only the values that correspond to occupied slots are included in this collection.
       You can use this collection to iterate through the values associated with the keys in the map.
     </remarks>
+    <returns>
+      A <see cref="SlotMap{TValue}.SlotValueCollection"/> containing the values in the <see cref="SlotMap{TValue}"/>.
+    </returns>
   </Values>
 
   <Indexer>
@@ -393,20 +399,20 @@
       Represents a collection of <see cref="SlotKey"/> instances associated with a <see cref="SlotMap{TValue}"/>.
     </summary>
     <remarks>
-      The <c>SlotKeyCollection</c> class provides a collection of <see cref="SlotKey"/> instances that are associated with a <see cref="SlotMap{TValue}"/>.
+      The <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> class provides a collection of <see cref="SlotKey"/> instances that are associated with a <see cref="SlotMap{TValue}"/>.
       This collection allows you to enumerate and work with the keys present in the <see cref="SlotMap{TValue}"/>.
     </remarks>
   </SlotKeyCollection>
 
   <SKCCtor>
     <summary>
-      Initializes a new instance of the <c>SlotKeyCollection</c> class with a reference to the parent <see cref="SlotMap{TValue}"/>.
+      Initializes a new instance of the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> class with a reference to the parent <see cref="SlotMap{TValue}"/>.
     </summary>
     <param name="slotMap">
       The <see cref="SlotMap{TValue}"/> to which this collection is associated.
     </param>
     <remarks>
-      Use this constructor to create a new <c>SlotKeyCollection</c> that is associated with a specific <see cref="SlotMap{TValue}"/>.
+      Use this constructor to create a new <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> that is associated with a specific <see cref="SlotMap{TValue}"/>.
       The <paramref name="slotMap"/> parameter represents the parent <see cref="SlotMap{TValue}"/> to which this collection is linked.
     </remarks>
     <exception cref="ArgumentNullException">
@@ -416,7 +422,7 @@
 
   <SKCCount>
     <summary>
-      Gets the number of elements in the <c>SlotKeyCollection</c>.
+      Gets the number of elements in the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c>.
     </summary>
     <remarks>
       This count corresponds to the number of keys associated with the <see cref="SlotMap{TValue}"/> that this collection belongs to.
@@ -425,38 +431,38 @@
 
   <SKCContains>
     <summary>
-      Determines whether the <c>SlotKeyCollection</c> contains a specific <see cref="SlotKey"/>.
+      Determines whether the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> contains a specific <see cref="SlotKey"/>.
     </summary>
     <param name="key">
       The <see cref="SlotKey"/> to locate in the collection.
     </param>
     <remarks>
-      Use this method to check whether the <c>SlotKeyCollection</c> contains a specific <see cref="SlotKey"/> instance.
+      Use this method to check whether the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> contains a specific <see cref="SlotKey"/> instance.
     </remarks>
     <returns>
-      <see langword="true"/> if the <c>SlotKeyCollection</c> contains the specified <paramref name="key"/>; otherwise, <see langword="false"/>.
+      <see langword="true"/> if the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> contains the specified <paramref name="key"/>; otherwise, <see langword="false"/>.
     </returns>
   </SKCContains>
 
   <SKCCopyTo>
     <summary>
-      Copies the elements of the <c>SlotKeyCollection</c> to an array, starting at the specified index.
+      Copies the elements of the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> to an array, starting at the specified index.
     </summary>
     <param name="array">
-      The one-dimensional array that is the destination of the elements copied from the <c>SlotKeyCollection</c>. Must not be null.
+      The one-dimensional array that is the destination of the elements copied from the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c>. Must not be null.
     </param>
     <param name="index">
       The zero-based index in <paramref name="array"/> at which copying begins.
     </param>
     <remarks>
-      The <c>CopyTo</c> method copies the elements of the <c>SlotKeyCollection</c> to a one-dimensional array, starting at the specified index in the destination array.
+      The <c>CopyTo</c> method copies the elements of the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> to a one-dimensional array, starting at the specified index in the destination array.
       The destination array must have enough space to accommodate the elements to be copied.
     </remarks>
     <exception cref="ArgumentNullException">
       Thrown if <paramref name="array"/> is null.
     </exception>
     <exception cref="ArgumentOutOfRangeException">
-      Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>, or if there are not enough elements in the <c>SlotKeyCollection</c> to fill the destination array starting at the specified index.
+      Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>, or if there are not enough elements in the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> to fill the destination array starting at the specified index.
     </exception>
   </SKCCopyTo>
 
@@ -475,20 +481,20 @@
       Represents a collection of values associated with a <see cref="SlotMap{TValue}"/>.
     </summary>
     <remarks>
-      The <c>SlotValueCollection</c> class provides a collection of values that are associated with a <see cref="SlotMap{TValue}"/>.
+      The <see cref="SlotMap{TValue}.SlotValueCollection"/>/c> class provides a collection of values that are associated with a <see cref="SlotMap{TValue}"/>.
       This collection allows you to enumerate and work with the values present in the <see cref="SlotMap{TValue}"/>.
     </remarks>
   </SlotValueCollection>
 
   <SVCCtor>
     <summary>
-      Initializes a new instance of the <c>SlotValueCollection</c> class associated with a <see cref="SlotMap{TValue}"/>.
+      Initializes a new instance of the <see cref="SlotMap{TValue}.SlotValueCollection"/>/c> class associated with a <see cref="SlotMap{TValue}"/>.
     </summary>
     <param name="slotMap">
       The <see cref="SlotMap{TValue}"/> with which this collection is associated. Must not be null.
     </param>
     <remarks>
-      The constructor initializes a new instance of the <c>SlotValueCollection</c> class that is associated with a specific <see cref="SlotMap{TValue}"/>.
+      The constructor initializes a new instance of the <see cref="SlotMap{TValue}.SlotValueCollection"/>/c> class that is associated with a specific <see cref="SlotMap{TValue}"/>.
       The <paramref name="slotMap"/> parameter determines the <see cref="SlotMap{TValue}"/> with which this collection is associated.
     </remarks>
     <exception cref="ArgumentNullException">
@@ -498,7 +504,7 @@
 
   <SVCCount>
     <summary>
-      Gets the number of values in the <c>SlotValueCollection</c>.
+      Gets the number of values in the <see cref="SlotMap{TValue}.SlotValueCollection"/>/c>.
     </summary>
     <remarks>
       This count corresponds to the number of values associated with the <see cref="SlotMap{TValue}"/> that this collection belongs to.
@@ -507,42 +513,42 @@
 
   <SVCContains>
     <summary>
-      Determines whether the <c>SlotValueCollection</c> contains a specific value.
+      Determines whether the <see cref="SlotMap{TValue}.SlotValueCollection"/>/c> contains a specific value.
     </summary>
     <param name="value">The value to locate in the collection.</param>
     <remarks>
-      Use this method to check whether the <c>SlotKeyCollection</c> contains a specific value.
+      Use this method to check whether the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> contains a specific value.
     </remarks>
     <returns>
-      <see langword="true"/> if the <c>SlotValueCollection</c> contains the specified value; otherwise, <see langword="false"/>.
+      <see langword="true"/> if the <see cref="SlotMap{TValue}.SlotValueCollection"/>/c> contains the specified value; otherwise, <see langword="false"/>.
     </returns>
   </SVCContains>
 
   <SVCCopyTo>
     <summary>
-      Copies the elements of the <c>SlotValueCollection</c> to an array, starting at the specified index.
+      Copies the elements of the <see cref="SlotMap{TValue}.SlotValueCollection"/>/c> to an array, starting at the specified index.
     </summary>
     <param name="array">
-      The one-dimensional array that is the destination of the elements copied from the <c>SlotValueCollection</c>. Must not be null.
+      The one-dimensional array that is the destination of the elements copied from the <see cref="SlotMap{TValue}.SlotValueCollection"/>/c>. Must not be null.
     </param>
     <param name="index">
       The zero-based index in <paramref name="array"/> at which copying begins.
     </param>
     <remarks>
-      The <c>CopyTo</c> method copies the elements of the <c>SlotValueCollection</c> to a one-dimensional array, starting at the specified index in the destination array.
+      The <c>CopyTo</c> method copies the elements of the <see cref="SlotMap{TValue}.SlotValueCollection"/>/c> to a one-dimensional array, starting at the specified index in the destination array.
       The destination array must have enough space to accommodate the elements to be copied.
     </remarks>
     <exception cref="ArgumentNullException">
       Thrown if <paramref name="array"/> is null.
     </exception>
     <exception cref="ArgumentOutOfRangeException">
-      Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>, or if there are not enough elements in the <c>SlotValueCollection</c> to fill the destination array starting at the specified index.
+      Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>, or if there are not enough elements in the <see cref="SlotMap{TValue}.SlotValueCollection"/>/c> to fill the destination array starting at the specified index.
     </exception>
   </SVCCopyTo>
 
   <SVCEnumerator>
     <summary>
-      Represents an enumerator for the values in the <c>SlotValueCollection</c>.
+      Represents an enumerator for the values in the <see cref="SlotMap{TValue}.SlotValueCollection"/>/c>.
     </summary>
     <remarks>
       The <c>Enumerator</c> struct allows you to enumerate the values stored in the <see cref="SlotValueCollection"/>.
