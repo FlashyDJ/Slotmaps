@@ -4,13 +4,13 @@ using System.Diagnostics;
 namespace FlashyDJ.Slotmaps;
 public partial class SlotMap<TValue>
 {
-    /// <include file='docs.xml' path='docs/SlotValueCollection' />
+    /// <include file='docs.xml' path='docs/SlotValueCollection/*'/>
     [DebuggerDisplay("Count = {Count}")]
     public sealed class SlotValueCollection : ICollection<TValue>, IReadOnlyCollection<TValue>
     {
         private readonly SlotMap<TValue> _slotMap;
 
-        /// <include file='docs.xml' path='docs/SVCCtor' />
+        /// <include file='docs.xml' path='docs/SVCCtor/*'/>
         public SlotValueCollection(SlotMap<TValue> slotMap)
         {
             ArgumentNullException.ThrowIfNull(slotMap);
@@ -24,13 +24,13 @@ public partial class SlotMap<TValue>
         IEnumerator<TValue> IEnumerable<TValue>.GetEnumerator() => new Enumerator(_slotMap);
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_slotMap);
 
-        /// <include file='docs.xml' path='docs/SVCCount' />
+        /// <include file='docs.xml' path='docs/SVCCount/*'/>
         public int Count => _slotMap.Count;
 
-        /// <include file='docs.xml' path='docs/SVCContains' />
+        /// <include file='docs.xml' path='docs/SVCContains/*'/>
         public bool Contains(TValue value) => _slotMap.ContainsValue(value!);
 
-        /// <include file='docs.xml' path='docs/SVCCopyTo' />
+        /// <include file='docs.xml' path='docs/SVCCopyTo/*'/>
         public void CopyTo(TValue[] array, int index)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -47,7 +47,7 @@ public partial class SlotMap<TValue>
             }
         }
 
-        /// <include file='docs.xml' path='docs/SVCEnumerator' />
+        /// <include file='docs.xml' path='docs/SVCEnumerator/*'/>
         public struct Enumerator : IEnumerator<TValue>, IEnumerator
         {
             private readonly SlotMap<TValue> _slotMap;

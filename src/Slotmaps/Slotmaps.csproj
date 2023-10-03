@@ -7,9 +7,11 @@
     <Nullable>enable</Nullable>
     <RootNamespace>FlashyDJ.Slotmaps</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <Title>FlashyDJ.Slotmaps</Title>
     <Authors>FlashyDJ</Authors>
-    <Company />
     <RepositoryUrl>github.com/FlashyDJ/Slotmaps</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>

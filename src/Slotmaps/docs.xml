@@ -6,8 +6,7 @@
     </summary>
     <remarks>
       The <c>SlotKey</c> struct is used in various map structures, including <see cref="SlotMap{TValue}"/>, <see cref="SecondaryMap{TValue}"/>, <see cref="SparseSecondaryMap{TValue}"/>
-      <!-- {Uncomment when it get's implemented.}, <see cref="DenseSlotMap"/>, and <see cref="HopSlotMap"/>,-->
-      to uniquely identify elements. It combines an index and a version number to provide a unique identifier for elements within these map types.
+      <!-- {Uncomment when it get's implemented.}, <see cref="DenseSlotMap"/>, and <see cref="HopSlotMap"/>,-->to uniquely identify elements. It combines an index and a version number to provide a unique identifier for elements within these map types.
       Slot keys are used to access and manage elements in these maps.
     </remarks>
     <param name="Index">The index of the slot.</param>

@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 namespace FlashyDJ.Slotmaps;
-/// <include file='docs.xml' path='docs/SecondaryMap' />
+/// <include file='docs.xml' path='docs/SecondaryMap/*'/>
 [Serializable]
 [DebuggerDisplay("Count = {Count}")]
 public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>>
@@ -16,10 +16,10 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
     private SlotKeyCollection? _keys;
     private SlotValueCollection? _values;
 
-    /// <include file='docs.xml' path='docs/Ctor1' />
+    /// <include file='docs.xml' path='docs/Ctor1/*'/>
     public SecondaryMap() => _slots = s_emptyArray;
 
-    /// <include file='docs.xml' path='docs/Ctor2' />
+    /// <include file='docs.xml' path='docs/Ctor2/*'/>
     public SecondaryMap(int capacity)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
@@ -70,22 +70,22 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
 
     IEnumerator IEnumerable.GetEnumerator() => new Enumerator(this);
 
-    /// <include file='docs.xml' path='docs/Capacity' />
+    /// <include file='docs.xml' path='docs/Capacity/*'/>
     public int Capacity => _slots.Length;
 
-    /// <include file='docs.xml' path='docs/Count' />
+    /// <include file='docs.xml' path='docs/Count/*'/>
     public int Count { get; private set; }
 
-    /// <include file='docs.xml' path='docs/IsEmpty' />
+    /// <include file='docs.xml' path='docs/IsEmpty/*'/>
     public bool IsEmpty => Count == 0;
 
-    /// <include file='docs.xml' path='docs/Keys' />
+    /// <include file='docs.xml' path='docs/Keys/*'/>
     public SlotKeyCollection Keys => _keys ??= new SlotKeyCollection(this);
 
-    /// <include file='docs.xml' path='docs/Values' />
+    /// <include file='docs.xml' path='docs/Values/*'/>
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
-    /// <include file='docs.xml' path='docs/Indexer' />
+    /// <include file='docs.xml' path='docs/Indexer/*'/>
     public TValue this[SlotKey key]
     {
         get
@@ -98,7 +98,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         set => Insert(key, value);
     }
 
-    /// <include file='docs.xml' path='docs/ContainsKey' />
+    /// <include file='docs.xml' path='docs/ContainsKey/*'/>
     public bool ContainsKey(SlotKey key)
     {
         if (key.IsInvalid)
@@ -107,7 +107,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         return _slots.Length > key.Index && _slots[key.Index].Version == key.Version;
     }
 
-    /// <include file='docs.xml' path='docs/ContainsValues' />
+    /// <include file='docs.xml' path='docs/ContainsValues/*'/>
     public bool ContainsValue(TValue value)
     {
         if (value is null)
@@ -123,7 +123,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         return false;
     }
 
-    /// <include file='docs.xml' path='docs/Clear' />
+    /// <include file='docs.xml' path='docs/Clear/*'/>
     public void Clear()
     {
         if (Count > 0)
@@ -133,7 +133,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         }
     }
 
-    /// <include file='docs.xml' path='docs/Drain' />
+    /// <include file='docs.xml' path='docs/Drain/*'/>
     public IEnumerable<KeyValuePair<SlotKey, TValue>> Drain()
     {
         for (int i = 0; i < Capacity; i++)
@@ -150,7 +150,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         }
     }
 
-    /// <include file='docs.xml' path='docs/EnsureCapacity' />
+    /// <include file='docs.xml' path='docs/EnsureCapacity/*'/>
     public int EnsureCapacity(int capacity)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
@@ -163,7 +163,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         return capacity;
     }
 
-    /// <include file='docs.xml' path='docs/Get' />
+    /// <include file='docs.xml' path='docs/Get/*'/>
     public TValue Get(SlotKey key)
     {
         if (!ContainsKey(key))
@@ -172,7 +172,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         return _slots[key.Index].Value!;
     }
 
-    /// <include file='docs.xml' path='docs/Insert' />
+    /// <include file='docs.xml' path='docs/Insert/*'/>
     public TValue Insert(SlotKey key, TValue value)
     {
         ArgumentNullException.ThrowIfNull(value);
@@ -207,7 +207,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         return returnValue;
     }
 
-    /// <include file='docs.xml' path='docs/Remove' />
+    /// <include file='docs.xml' path='docs/Remove/*'/>
     public TValue Remove(SlotKey key)
     {
         if (key.IsInvalid)
@@ -229,14 +229,14 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         throw new KeyNotFoundException("Invalid SlotKey");
     }
 
-    /// <include file='docs.xml' path='docs/Reserve' />
+    /// <include file='docs.xml' path='docs/Reserve/*'/>
     public void Reserve(int additionalSize)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(additionalSize);
         Array.Resize(ref _slots, Capacity + additionalSize);
     }
 
-    /// <include file='docs.xml' path='docs/Resize' />
+    /// <include file='docs.xml' path='docs/Resize/*'/>
     public void Resize(int newSize)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(newSize, Capacity);
@@ -247,7 +247,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         Array.Resize(ref _slots, newSize);
     }
 
-    /// <include file='docs.xml' path='docs/Retain' />
+    /// <include file='docs.xml' path='docs/Retain/*'/>
     public void Retain(Func<SlotKey, TValue, bool> predicate)
     {
         for (int i = 0; i < _slots.Length; i++)
@@ -265,7 +265,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         }
     }
 
-    /// <include file='docs.xml' path='docs/TryGet' />
+    /// <include file='docs.xml' path='docs/TryGet/*'/>
     public bool TryGet(SlotKey key, [MaybeNullWhen(false)] out TValue value)
     {
         if (!ContainsKey(key))
@@ -278,7 +278,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         return true;
     }
 
-    /// <include file='docs.xml' path='docs/TryInsert' />
+    /// <include file='docs.xml' path='docs/TryInsert/*'/>
     public bool TryInsert(SlotKey key, TValue value, out TValue? oldValue)
     {
         ArgumentNullException.ThrowIfNull(value);
@@ -314,7 +314,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         return true;
     }
 
-    /// <include file='docs.xml' path='docs/TryRemove' />
+    /// <include file='docs.xml' path='docs/TryRemove/*'/>
     public bool TryRemove(SlotKey key, [MaybeNullWhen(false)] out TValue value)
     {
         value = default;
@@ -338,7 +338,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         return false;
     }
 
-    /// <include file='docs.xml' path='docs/Enumerator' />
+    /// <include file='docs.xml' path='docs/Enumerator/*'/>
     public struct Enumerator : IEnumerator<KeyValuePair<SlotKey, TValue>>, IEnumerator
     {
         private readonly SecondaryMap<TValue> _secondaryMap;
@@ -352,15 +352,15 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
             _current = default;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public KeyValuePair<SlotKey, TValue> Current => _current;
 
         object IEnumerator.Current => Current;
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public void Dispose() { }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool MoveNext()
         {
             while (_index < _secondaryMap.Capacity)
@@ -379,7 +379,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
             return false;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public void Reset()
         {
             _index = -1;
