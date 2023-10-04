@@ -34,7 +34,7 @@ Alternatively, you can download the source code from this repository and build i
 To use the collections, you need to import the ``FlashyDJ.Slotmaps`` namespace in your code:
 
 ```csharp
-using CSharpSlotMaps;
+using FlashyDJ.Slotmaps;
 ```
 
 ### SlotMap (Primary Map)
