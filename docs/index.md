@@ -1,10 +1,11 @@
 # Slotmaps Documentation
 
 Welcome to the documentation for the Slotmaps library, a C# implementation for efficient data storage and retrieval using slot-based data structures.
+
 This library includes features like `SlotMap`, `SecondaryMap`, and `SparseSecondaryMap`. This documentation will guide you through using this library effectively.
 
-This C# library is inspired by the Rust library [slotmap](https://github.com/orlp/slotmap/), created by [orlp](https://github.com/orlp).
-It adapts the core concepts of the Rust implementation.
+This C# library is inspired by the Rust crate [slotmap](https://github.com/orlp/slotmap/), created by [orlp](https://github.com/orlp).
+This adapts the ideas and core concepts of the Rust implementation.
 
 ## Table of Contents
 
@@ -14,22 +15,15 @@ It adapts the core concepts of the Rust implementation.
     - [Secondary Maps](#secondary-maps)
 3. [Contributing](#contributing)
 4. [License](#license)
-5. [Feedback and Support](#feedback-and-support)
 
 ## Installation
  
-To use the Slotmaps library in your C# project, you can install it via NuGet or PackageReference.
+To use the Slotmaps library in your C# project, you can install it via NuGet.
 
 **NuGet Installation:**
 
 ```bash
 dotnet add package FlashyDJ.Slotmaps
-```
-
-**Package Reference:**
-
-```xml
-<PackageReference Include="FlashyDJ.Slotmaps" Version="0.5.0"/>
 ```
 
 ## Getting Started
@@ -43,25 +37,29 @@ using FlashyDJ.Slotmaps;
 // Create a SlotMap
 SlotMap<string> slotMap = new SlotMap<string>();
 
-// Add items
+// Add some values and get their keys.
 SlotKey key1 = slotMap.Add("Item 1");
 SlotKey key2 = slotMap.Add("Item 2");
+SlotKey key3 = slotMap.Add("Item 3");
 
-// Replacing items
-SlotKey newKey2 = slotMap.Insert(key1, "Updated Item 2");
+// Replacing value from slot
+SlotKey newKey2 = slotMap.Insert(key2, "Updated Item 2");
 
-// Access items
-string value1 = slotMap[key1];
-string value2 = slotMap[newKey2]; // Old keys can't be used
+// Access the value using the keys
+Console.WriteLine(slotMap[key1]);      // Prints "Item 1"
+Console.WriteLine(slotMap[newKey2]);   // Prints "Updated Item 2"
+Console.WriteLine(slotMap[key3]);      // Prints "Item 3"
+Console.WriteLine(slotMap[key2]);      // Throws KeyNotFoundException
 
-// Remove items
-slotMap.Remove(item1);
+// Remove a value using its key
+slotMap.Remove(key1);
 
-// Check if an item exists
-bool exists = slotMap.Contains(item1);
+// The removed key is no longer valid.
+Console.WriteLine(slotMap.ContainsKey(key1)); // Prints "False"
 ```
 
 ### Secondary Maps
+
 In addition to the core `SlotMap`, this library provides secondary maps like `SecondaryMap` and `SparseSecondaryMap` for more advanced data organization.
 Here's an example of using a `SecondaryMap`, and iteration of items while maintaining stable references to those items.
 
@@ -72,23 +70,21 @@ using FlashyDJ.Slotmaps;
 SlotMap<string> slotMap = a SlotMap<string>();
 SecondaryMap<int> secondaryMap = new SecondaryMap<int>();
 
-// Add items to the SlotMap
+// Add values to the SlotMap
 SlotKey key1 = slotMap.Add("Item 1");
 SlotKey key2 = slotMap.Add("Item 2");
 
-// Add the keys from the primary map to the SecondaryMap
-secondaryMap.Add(key1, 42);
-secondaryMap.Add(key2, 56);
+// Insert some values using the keys from the primary map (SlotMap).
+secondaryMap.Insert(key1, 42);
+secondaryMap.Insert(key2, 56);
 
-// Retrieve items using secondary keys
-string value = secondaryMap.Get(key1);
+// Retrieve items using the keys from the primary map (SlotMap).
+Console.WriteLine(secondaryMap[key1]); // Prints "42"
+Console.WriteLine(secondaryMap[key2]); // Print "56"
 ```
 
 ## Contributing
-Contribuitions are welcome and greatly appreciated. If you have any bug fixes, improvements, or new features to suggest, please open an issue or submit a pull request.
+This library is open for contributions from anyone who is interested. If you have any ideas, suggestions or bug reports, please open an issue or a pull request on this repository.
 
 ## License
-This library is open-source and released under the MIT License. More information can be found in the LICENSE.TXT at the root of the repository.
-
-## Feedback and Support
-If you have any questions, feedback, or need support, please don't hesitate to open an issue or discussion.
+This library is licensed under the MIT license. See the [LICENSE](https://github.com/FlashyDJ/Slotmaps/blob/main/LICENSE.TXT) file for more details.
