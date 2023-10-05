@@ -34,8 +34,6 @@ This library offers the following features:
 - Two types of secondary collections to associate additional data with collection keys: ``SecondaryMap`` and ``SparseSecondaryMap``.
 - Comprehensive unit tests to ensure correctness.
 
-
-
 ## Getting Started
 
 To use this library, you need to have a C# project that targets **.NET 8** or higher.
@@ -52,7 +50,7 @@ Alternatively, you can download the source code from this repository and build i
 To use the collections, you need to import the ``FlashyDJ.Slotmaps`` namespace in your code:
 
 ```csharp
-using CSharpSlotMaps;
+using FlashyDJ.Slotmaps;
 ```
 
 ### SlotMap (Primary Map)
