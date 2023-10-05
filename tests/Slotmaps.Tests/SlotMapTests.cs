@@ -4,7 +4,7 @@ public class SlotMapTests
     public class Add
     {
         [Fact]
-        public void ValueAddedToSlotMap_IncreasesCountAndContainKeys()
+        public void NewValidValue_ReturnsKeyIncreasesCountAndContainKeys()
         {
             var slotMap = new SlotMap<int>();
 
@@ -34,20 +34,6 @@ public class SlotMapTests
         }
 
         [Fact]
-        public void ResizesIfCapacityExceeded_IncreasesCapacity()
-        {
-            var slotMap = new SlotMap<int>(2);
-            slotMap.Add(1);
-            slotMap.Add(2);
-
-            var key = slotMap.Add(3);
-
-            Assert.True(slotMap.ContainsKey(key));
-            Assert.Equal(3, slotMap.Get(key));
-            Assert.Equal(4, slotMap.Capacity);
-        }
-
-        [Fact]
         public void ValidSlotKey_UpdatesSlotValue()
         {
             var slotMap = new SlotMap<string>();
@@ -57,7 +43,7 @@ public class SlotMapTests
             var value = slotMap.Get(newKey);
 
             Assert.Equal(key.Index, newKey.Index);
-            Assert.NotEqual(key.Version, newKey.Version);
+            Assert.NotEqual(key, newKey);
             Assert.Equal("UpdatedValue", value);
         }
 
@@ -89,10 +75,10 @@ public class SlotMapTests
     public class ContainsKey
     {
         [Fact]
-        public void ExistingKey_ReturnsTrue()
+        public void ValidKeyExists_ReturnsTrue()
         {
-            var slotMap = new SlotMap<string>();
-            var key = slotMap.Add("Hello");
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
 
             var result = slotMap.ContainsKey(key);
 
@@ -100,11 +86,34 @@ public class SlotMapTests
         }
 
         [Fact]
-        public void NonexistentKey_ReturnsFalse()
+        public void ValidKeyDoesNotExist_ReturnsFalse()
         {
             var slotMap = new SlotMap<string>();
+            var key = new SlotKey(1, 1);
 
-            var result = slotMap.ContainsKey(new SlotKey(0, 1));
+            var result = slotMap.ContainsKey(key);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void InvalidKeyWithVersionLessThan1_ReturnsFalse()
+        {
+            var slotMap = new SlotMap<int>();
+            var invalidKey = new SlotKey(1, 0);
+
+            var result = slotMap.ContainsKey(invalidKey);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void InvalidKeyWithVersionGreaterOrEqualTo1_ReturnsFalse()
+        {
+            var slotMap = new SlotMap<int>();
+            var invalidKey = new SlotKey(-1, 1);
+
+            var result = slotMap.ContainsKey(invalidKey);
 
             Assert.False(result);
         }
@@ -135,20 +144,71 @@ public class SlotMapTests
         }
 
     }
-    
+
+    public class ContainsValue
+    {
+        [Fact]
+        public void ValueExists_ReturnsTrue()
+        {
+            var slotMap = new SlotMap<int>();
+            slotMap.Add(42);
+            slotMap.Add(24);
+            slotMap.Add(36);
+
+            var result = slotMap.ContainsValue(24);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void ValueDoesNotExist_ReturnsFalse()
+        {
+            var slotMap = new SlotMap<int>();
+            slotMap.Add(42);
+            slotMap.Add(24);
+            slotMap.Add(36);
+
+            var result = slotMap.ContainsValue(100);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void NullValue_ReturnsFalse()
+        {
+            var slotMap = new SlotMap<string>();
+            slotMap.Add("value");
+
+            var result = slotMap.ContainsValue(null!);
+
+            Assert.False(result);
+        }
+    }
+
     public class Clear
     {
         [Fact]
-        public void RemovesAllItems_EmptysSlotMap()
+        public void WithItems_ClearsMapAndSetsCountToZero()
         {
-            var slotMap = new SlotMap<double>();
-            slotMap.Add(1.0);
-            slotMap.Add(2.0);
+            var slotMap = new SlotMap<int>();
+            slotMap.Add(42);
+            slotMap.Add(24);
+            var capacity = slotMap.Capacity;
+
+            slotMap.Clear();
+
+            Assert.Equal(capacity, slotMap.Capacity);
+            Assert.Empty(slotMap);
+        }
+
+        [Fact]
+        public void EmptyMap_DoesNothing()
+        {
+            var slotMap = new SlotMap<int>();
 
             slotMap.Clear();
 
             Assert.Empty(slotMap);
-            Assert.True(slotMap.IsEmpty);
         }
     }
     
@@ -265,10 +325,32 @@ public class SlotMapTests
         
     }
 
+    public class EnsureCapacity
+    {
+        [Fact]
+        public void PositiveValue_ReturnsCapacity()
+        {
+            var slotMap = new SlotMap<int>();
+            var capacity = 100;
+
+            int result = slotMap.EnsureCapacity(capacity);
+
+            Assert.Equal(capacity, result);
+        }
+
+        [Fact]
+        public void NegativeValue_ThrowsArgumentOutOfRangeException()
+        {
+            var slotMap = new SlotMap<int>();
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => slotMap.EnsureCapacity(-10));
+        }
+    }
+
     public class Get
     {
         [Fact]
-        public void ValueAddedToSlotMap_ReturnsCorrectValue()
+        public void ValidKey_ReturnsValue()
         {
             var slotMap = new SlotMap<int>();
             var key = slotMap.Add(42);
@@ -277,100 +359,489 @@ public class SlotMapTests
 
             Assert.Equal(42, value);
         }
+
+        [Fact]
+        public void InvalidKey_ThrowsKeyNotFoundException()
+        {
+            var slotMap = new SlotMap<int>();
+            var invalidKey = new SlotKey(0, -1);
+
+            Assert.Throws<KeyNotFoundException>(() => slotMap.Get(invalidKey));
+        }
+
+        [Fact]
+        public void KeyNotFound_ThrowsKeyNotFoundException()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = new SlotKey(1, 0);
+
+            Assert.Throws<KeyNotFoundException>(() => slotMap.Get(key));
+        }
+
+        [Fact]
+        public void OlderVersionKey_ThrowsKeyNotFoundException()
+        {
+            var slotMap = new SlotMap<int>();
+            var key1 = slotMap.Add(42);
+            var key2 = new SlotKey(0, 0);
+
+            Assert.Throws<KeyNotFoundException>(() => slotMap.Get(key2));
+        }
+
+        [Fact]
+        public void NewerVersionKey_ThrowsKeyNotFoundException()
+        {
+            var slotMap = new SlotMap<int>();
+            var key1 = slotMap.Add(42);
+            var key2 = new SlotKey(1, 2);
+
+            Assert.Throws<KeyNotFoundException>(() => slotMap.Get(key2));
+        }
+    }
+
+    public class Indexer
+    {
+        [Fact]
+        public void Get_ValidKey_ReturnsValue()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
+
+            var result = slotMap[key];
+
+            Assert.Equal(42, result);
+        }
+
+        [Fact]
+        public void Get_InvalidKey_ThrowsKeyNotFoundException()
+        {
+            var slotMap = new SlotMap<string>();
+            var key = new SlotKey(0, -1);
+
+            Assert.Throws<KeyNotFoundException>(() => slotMap[key]);
+        }
+
+        [Fact]
+        public void Get_KeyNotFound_ThrowsKeyNotFoundException()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = new SlotKey(1, 0);
+
+            Assert.Throws<KeyNotFoundException>(() => slotMap[key]);
+        }
+
+        [Fact]
+        public void Get_OlderVersionKey_ThrowsKeyNotFoundException()
+        {
+            var map = new SparseSecondaryMap<int>();
+            var key1 = new SlotKey(1, 2);
+            var key2 = new SlotKey(1, 1);
+            map.Insert(key1, 42);
+
+            Assert.Throws<KeyNotFoundException>(() => map[key2]);
+        }
+
+        [Fact]
+        public void Set_InvalidSlotKey_ThrowsArgumentException()
+        {
+            var slotMap = new SlotMap<string>();
+            var key = new SlotKey(0, 1);
+
+            Assert.Throws<KeyNotFoundException>(() => slotMap[key] = "Value");
+        }
+
+        [Fact]
+        public void SetAndGet_UpdateValue_ReturnsUpdatedValue()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
+
+            slotMap[key] = 24;
+            var value = slotMap[key with { Version = 3 }];
+
+            Assert.Equal(24, value);
+        }
+    }
+
+    public class Insert
+    {
+        [Fact]
+        public void Insert_NonexistentKey_ThrowsKeyNotFoundException()
+        {
+            var map = new SlotMap<int>();
+            var key = new SlotKey(1, 0);
+            var value = 42;
+
+            var ex = Assert.Throws<KeyNotFoundException>(() => map.Insert(key, value));
+        }
+
+        [Fact]
+        public void ExistingKey_UpdatesValueAndReturnsNewKey()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
+            var newValue = 24;
+
+            var newKey = slotMap.Insert(key, newValue);
+
+            Assert.Equal(newValue, slotMap[newKey]);
+        }
     }
 
     public class Remove
     {
         [Fact]
-        public void RemovesItemAndReturnsItem_RemovesAndReturnsItem()
+        public void ValidKey_RemovesAndReturnsPreviousValue()
         {
-            var slotMap = new SlotMap<char>();
-            var key = slotMap.Add('A');
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
 
             var result = slotMap.Remove(key);
 
-            Assert.Equal('A', result);
+            Assert.Equal(42, result);
             Assert.False(slotMap.ContainsKey(key));
         }
 
         [Fact]
-        public void ThrowsExceptionForNonexistentKey_ThrowsKeyNotFoundException()
+        public void InvalidKey_ThrowsKeyNotFoundException()
         {
-            var slotMap = new SlotMap<string>();
+            var slotMap = new SlotMap<int>();
+            var invalidKey = new SlotKey(0, -1);
 
-            Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(new SlotKey(0, 1)));
+            Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(invalidKey));
+        }
+
+        [Fact]
+        public void KeyNotFound_ThrowsKeyNotFoundException()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = new SlotKey(1, 1);
+
+            Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key));
+        }
+
+        [Fact]
+        public void OlderVersionKey_ThrowsKeyNotFoundException()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
+            var key2 = key with { Version = 0 };
+
+            Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
+        }
+
+        [Fact]
+        public void NewerVersionKey_ThrowsKeyNotFoundException()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
+            var key2 = key with { Version = 2 };
+
+            Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
         }
     }
 
     public class Reserve
     {
         [Fact]
-        public void IncreasesCapacity_IncreasesCapacity()
+        public void ValidAdditionalSize_ResizesArray()
         {
-            var slotMap = new SlotMap<bool>();
+            var slotMap = new SlotMap<int>();
+            var initialCapacity = slotMap.Capacity;
+            var additionalSize = 10;
 
-            slotMap.Reserve(10);
+            slotMap.Reserve(additionalSize);
 
-            Assert.Equal(10, slotMap.Capacity);
+            Assert.Equal(initialCapacity + additionalSize, slotMap.Capacity);
+        }
+
+        [Fact]
+        public void Reserve_NegativeAdditionalSize_ThrowsArgumentOutOfRangeException()
+        {
+            var slotMap = new SlotMap<int>();
+            var negativeSize = -10;
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => slotMap.Reserve(negativeSize));
         }
     }
 
     public class Resize
     {
         [Fact]
-        public void ChangesCapacity_ChangesCapacity()
+        public void NewSizeLessThanCapacity_ThrowsArgumentOutOfRangeException()
         {
-            var slotMap = new SlotMap<DateTime>();
+            var slotMap = new SlotMap<int>();
+            slotMap.Add(42);
+            var newSize = slotMap.Capacity - 1;
 
-            slotMap.Resize(20);
+            Assert.Throws<ArgumentOutOfRangeException>(() => slotMap.Resize(newSize));
+        }
 
-            Assert.Equal(20, slotMap.Capacity);
+        [Fact]
+        public void NewSizeEqualToCapacity_DoesNotChangeCapacity()
+        {
+            var slotMap = new SlotMap<int>();
+            slotMap.Add(42);
+            var initialCapacity = slotMap.Capacity;
+            var newSize = initialCapacity;
+
+            slotMap.Resize(newSize);
+
+            Assert.Equal(initialCapacity, slotMap.Capacity);
+        }
+
+        [Fact]
+        public void Resize_NewSizeGreaterThanCapacity_ResizesArrayToNewSize()
+        {
+            var slotMap = new SlotMap<int>();
+            slotMap.Add(42);
+            var initialCapacity = slotMap.Capacity;
+            var newSize = initialCapacity * 2;
+
+            slotMap.Resize(newSize);
+
+            Assert.Equal(newSize, slotMap.Capacity);
         }
     }
 
     public class Retain
     {
         [Fact]
-        public void KeepsMatchingItems_RetainsMatchingItems()
+        public void PredicateRemovesSomeItems_ItemsThatSatisfyPredicateAreRetained()
         {
             var slotMap = new SlotMap<int>();
             var key1 = slotMap.Add(42);
-            var key2 = slotMap.Add(99);
-            var key3 = slotMap.Add(123);
+            var key2 = slotMap.Add(24);
+            var key3 = slotMap.Add(36);
+            var key4 = slotMap.Add(50);
+            var key5 = slotMap.Add(18);
 
-            slotMap.Retain((key, value) => value > 50);
+            slotMap.Retain((key, value) => value > 30);
 
-            Assert.True(slotMap.ContainsKey(key2));
-            Assert.True(slotMap.ContainsKey(key3));
-            Assert.False(slotMap.ContainsKey(key1));
+            Assert.Equal(3, slotMap.Count);
+            Assert.Equal(42, slotMap[key1]);
+            Assert.Equal(36, slotMap[key3]);
+            Assert.Equal(50, slotMap[key4]);
+            Assert.False(slotMap.ContainsKey(key2));
+            Assert.False(slotMap.ContainsKey(key5));
         }
 
         [Fact]
-        public void RemovesAllItems_RemovesAllItems()
+        public void PredicateRemovesAllItems_NoItemsRetained()
         {
             var slotMap = new SlotMap<int>();
             var key1 = slotMap.Add(42);
-            var key2 = slotMap.Add(99);
-            var key3 = slotMap.Add(123);
+            var key2 = slotMap.Add(24);
+            var key3 = slotMap.Add(36);
+            var key4 = slotMap.Add(50);
+            var key5 = slotMap.Add(18);
 
-            slotMap.Retain((key, value) => false);
+            slotMap.Retain((key, value) => value > 100);
 
             Assert.Empty(slotMap);
         }
 
         [Fact]
-        public void NoMatchingItems_RemovesNoItems()
+        public void PredicateKeepsAllItems_NoItemsRemoved()
         {
             var slotMap = new SlotMap<int>();
             var key1 = slotMap.Add(42);
-            var key2 = slotMap.Add(99);
-            var key3 = slotMap.Add(123);
+            var key2 = slotMap.Add(24);
+            var key3 = slotMap.Add(36);
+            var key4 = slotMap.Add(50);
+            var key5 = slotMap.Add(18);
 
-            slotMap.Retain((key, value) => value < 10);
+            slotMap.Retain((key, value) => value > 10);
 
-            Assert.False(slotMap.ContainsKey(key1));
-            Assert.False(slotMap.ContainsKey(key2));
-            Assert.False(slotMap.ContainsKey(key3));
+            Assert.Equal(5, slotMap.Count);
+        }
+    }
+
+    // TODO: Rename TryAdd to TryInsert
+    public class TryAdd
+    {
+        [Fact]
+        public void ValidKey_ReturnsTrueAndNewKey()
+        {
+            var slotMap = new SlotMap<string>();
+            var key = slotMap.Add("Value1");
+
+            bool result = slotMap.TryAdd(key, "Value2", out var newKey);
+
+            Assert.True(result);
+            Assert.Equal("Value2", slotMap[newKey]);
+        }
+
+        [Fact]
+        public void InvalidKey_ReturnsFalseAndNullKey()
+        {
+            var slotMap = new SlotMap<string>();
+            var invalidKey = new SlotKey(0, -1);
+
+            bool result = slotMap.TryAdd(invalidKey, "Value1", out var newKey);
+
+            Assert.False(result);
+            Assert.True(newKey.IsNull);
+        }
+
+        [Fact]
+        public void OlderVersionKey_ReturnsFalseAndNullKey()
+        {
+            var slotMap = new SlotMap<string>();
+            var key1 = slotMap.Add("Value1");
+            var key2 = key1 with { Version = 0 };
+
+            bool result = slotMap.TryAdd(key2, "Value2", out var newKey);
+
+            Assert.False(result);
+            Assert.True(newKey.IsNull);
+            Assert.Equal("Value1", slotMap[key1]);
+        }
+
+        [Fact]
+        public void NewerVersionKey_ReturnsFalseAndNullKey()
+        {
+            var slotMap = new SlotMap<string>();
+            var key1 = slotMap.Add("Value1");
+            var key2 = key1 with { Version = 2 };
+
+            bool result = slotMap.TryAdd(key2, "Value2", out var newKey);
+
+            Assert.False(result);
+            Assert.True(newKey.IsNull);
+            Assert.Equal("Value1", slotMap[key1]);
+        }
+    }
+
+    public class TryGet
+    {
+        [Fact]
+        public void ValidKey_ReturnsTrueAndValue()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
+
+            bool result = slotMap.TryGet(key, out var value);
+
+            Assert.True(result);
+            Assert.Equal(42, value);
+        }
+
+        [Fact]
+        public void InvalidKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var invalidKey = new SlotKey(0, -1);
+
+            bool result = slotMap.TryGet(invalidKey, out var value);
+
+            Assert.False(result);
+            Assert.Equal(default, value);
+        }
+
+        [Fact]
+        public void KeyNotFound_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = new SlotKey(1, 1);
+
+            bool result = slotMap.TryGet(key, out var value);
+
+            Assert.False(result);
+            Assert.Equal(default, value);
+        }
+
+        [Fact]
+        public void OlderVersionKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key1 = slotMap.Add(42);
+            var key2 = key1 with { Version = 0 };
+
+            bool result = slotMap.TryGet(key2, out var value);
+
+            Assert.False(result);
+            Assert.Equal(default, value);
+        }
+
+        [Fact]
+        public void NewerVersionKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key1 = slotMap.Add(42);
+            var key2 = key1 with { Version = 2 };
+
+            bool result = slotMap.TryGet(key2, out var value);
+
+            Assert.False(result);
+            Assert.Equal(default, value);
+        }
+    }
+
+    public class TryRemove
+    {
+        [Fact]
+        public void ValidKey_RemovesAndReturnsTrueAndPreviousValue()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = slotMap.Add(42);
+
+            bool result = slotMap.TryRemove(key, out var previousValue);
+
+            Assert.True(result);
+            Assert.Equal(42, previousValue);
+            Assert.False(slotMap.TryGet(key, out _));
+        }
+
+        [Fact]
+        public void InvalidKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var invalidKey = new SlotKey(0, -1);
+
+            bool result = slotMap.TryRemove(invalidKey, out var previousValue);
+
+            Assert.False(result);
+            Assert.Equal(default, previousValue);
+        }
+
+        [Fact]
+        public void KeyNotFound_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key = new SlotKey(1, 1);
+
+            bool result = slotMap.TryRemove(key, out var previousValue);
+
+            Assert.False(result);
+            Assert.Equal(default, previousValue);
+        }
+
+        [Fact]
+        public void OlderVersionKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key1 = slotMap.Add( 42);
+            var key2 = key1 with { Version = 0 };
+
+            bool result = slotMap.TryRemove(key2, out var previousValue);
+
+            Assert.False(result);
+            Assert.Equal(default, previousValue);
+        }
+
+        [Fact]
+        public void NewerVersionKey_ReturnsFalseAndDefault()
+        {
+            var slotMap = new SlotMap<int>();
+            var key1 = slotMap.Add(42);
+            var key2 = key1 with { Version = 2 };
+            
+
+            bool result = slotMap.TryRemove(key2, out var previousValue);
+
+            Assert.False(result);
+            Assert.Equal(default, previousValue);
         }
     }
 
@@ -445,49 +916,5 @@ public class SlotMapTests
         Assert.Equal("Value10", slotMap.Get(key10));
 
         Assert.Equal(10, slotMap.Capacity);
-    }
-
-
-
-    // Indexer tests
-    [Fact]
-    public void AddAndGet_ItemAddedAndRetrievedSuccessfully()
-    {
-        var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("TestValue");
-
-        var value = slotMap[key];
-
-        Assert.Equal("TestValue", value);
-    }
-
-    [Fact]
-    public void SetAndGet_ModifiedValueRetrievedSuccessfully()
-    {
-        var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("OriginalValue");
-
-        slotMap[key] = "ModifiedValue";
-        var value = slotMap[key with { Version = 3 }];
-
-        Assert.Equal("ModifiedValue", value);
-    }
-
-    [Fact]
-    public void Get_InvalidSlotKey_ThrowsArgumentException()
-    {
-        var slotMap = new SlotMap<string>();
-        var key = new SlotKey(0, 1);
-
-        Assert.Throws<KeyNotFoundException>(() => slotMap[key]);
-    }
-
-    [Fact]
-    public void Set_InvalidSlotKey_ThrowsArgumentException()
-    {
-        var slotMap = new SlotMap<string>();
-        var key = new SlotKey(0, 1);
-
-        Assert.Throws<KeyNotFoundException>(() => slotMap[key] = "Value");
     }
 }

@@ -1,0 +1,73 @@
+name: .NET
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - src/**
+    - tests/**
+    - .github/workflows/dotnet.yml
+  pull_request:
+    paths:
+    - src/**
+    - tests/**
+    - .github/workflows/dotnet.yml
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OUTPUT: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.x
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build FlashyDJ.Slotmaps
+        run: dotnet build src/Slotmaps/Slotmaps.csproj -c ${{matrix.configuration}} --no-restore
+
+  run-tests:
+    needs: [build]
+    runs-on: ubuntu-latest
+
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OUTPUT: false
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.x
+
+      - name: XUnit Test for Slotmaps.Tests
+        uses: zyborg/dotnet-tests-report@v1
+        with:
+          project_path: ./tests/Slotmaps.Tests
+          msbuild_configuration: Release
+          report_name: Slotmaps.Tests
+          report_title: Slotmaps Test
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          gist_name: slotmaps_tests.md
+          gist_badge_label: 'Tests: %Counters_passed%/%Counters_total%'
+          gist_token: ${{ secrets.GIST_TOKEN }}
+          set_check_status_from_test_outcome: true
