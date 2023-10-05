@@ -1,4 +1,4 @@
-name: Docs
+name: Documentation
 
 on:
   push:
@@ -16,6 +16,10 @@ on:
     - .github/workflows/docs.yml
   workflow_dispatch:
 
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: false
+
 jobs:
   generate-docs:
     runs-on: ubuntu-latest
@@ -23,6 +27,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+
     - name: Setup .NET 8
       uses: actions/setup-dotnet@v3
       with:
@@ -35,10 +40,10 @@ jobs:
       run: docfx docs/docfx.json
       continue-on-error: false
 
-    - name: Publish
+    - name: Publish DocFX Site
       if: github.event_name == 'push'
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ github.token }}
         branch: gh-pages
         folder: docs/_site
