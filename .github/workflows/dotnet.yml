@@ -32,11 +32,24 @@ jobs:
   run-tests:
     needs: [build]
     runs-on: ubuntu-latest
+
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OUTPUT: false
+    
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.x
+
       - name: XUnit Test for Slotmaps.Tests
         uses: zyborg/dotnet-tests-report@v1
         with:
-          project_path: tests/Slotmaps.Tests
+          project_path: ./tests/Slotmaps.Tests
           msbuild_configuration: Release
           report_name: Slotmaps.Tests
           report_title: Slotmaps Test
