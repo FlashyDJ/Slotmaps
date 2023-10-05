@@ -5,6 +5,6 @@
   - name: SlotMap
     items:
     - name: Basic SlotMap Usage  
-    - href: basicslotmapusage.md
+      href: basicslotmapusage.md
     - name: SlotMap vs Other Collections
-    - href: slotmapvsother.md
+      href: slotmapvsother.md
