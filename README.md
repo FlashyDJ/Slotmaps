@@ -43,6 +43,8 @@ You can install the library from **NuGet** using the following command:
 dotnet add package FlashyDJ.Slotmaps
 ```
 
+> The Nuget Package hasn't been uploaded yet.
+
 Alternatively, you can download the source code from this repository and build it yourself.
 
 ## Basic Usage
@@ -109,7 +111,7 @@ More types of collections will be added in the future.
 
 ## Documentation
 
-For more details and examples, please refer to the [documentation](https://FlashyDJ.github.io/Slotmaps/Docs).
+For more details and examples, please refer to the [documentation](https://FlashyDJ.github.io/Slotmaps/).
 
 ## Contributing
 This library is open for contributions from anyone who is interested. If you have any ideas, suggestions or bug reports, please open an issue or a pull request on this repository.
