@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FlashyDJ.Slotmaps;
+/// <include file='docs.xml' path='docs/SparseSecondaryMap/*'/>
 [Serializable]
 [DebuggerDisplay("Count = {Count}")]
 public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>>
@@ -13,8 +14,10 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
     private SlotKeyCollection? _keys;
     private SlotValueCollection? _values;
 
+    /// <include file='docs.xml' path='docs/Ctor1/*'/>
     public SparseSecondaryMap() => _slots = new(0);
 
+    /// <include file='docs.xml' path='docs/Ctor2/*'/>
     public SparseSecondaryMap(int capacity)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
@@ -55,12 +58,22 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
 
     IEnumerator IEnumerable.GetEnumerator() => new Enumerator(this);
 
+    /// <include file='docs.xml' path='docs/Capacity/*'/>
     public int Capacity => _slots.EnsureCapacity(0);
+
+    /// <include file='docs.xml' path='docs/Count/*'/>
     public int Count { get; private set; }
+
+    /// <include file='docs.xml' path='docs/IsEmpty/*'/>
     public bool IsEmpty => Count == 0;
+
+    /// <include file='docs.xml' path='docs/Keys/*'/>
     public SlotKeyCollection Keys => _keys ??= new SlotKeyCollection(this);
+
+    /// <include file='docs.xml' path='docs/Values/*'/>
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
+    /// <include file='docs.xml' path='docs/Indexer/*'/>
     public TValue this[SlotKey key]
     {
         get
@@ -78,6 +91,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         set => Insert(key, value);
     }
 
+    /// <include file='docs.xml' path='docs/ContainsKey/*'/>
     public bool ContainsKey(SlotKey key)
     {
         if (key.IsInvalid && key.Version < 1)
@@ -88,10 +102,12 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         return exists && slot.Occupied && slot.Version == key.Version;
     }
 
+    /// <include file='docs.xml' path='docs/ContainsValue/*'/>
     public bool ContainsValue(TValue value) =>
         value is not null
         && _slots.Where(x => EqualityComparer<TValue>.Default.Equals(x.Value.Value, value)).Any();
 
+    /// <include file='docs.xml' path='docs/Clear/*'/>
     public void Clear()
     {
         if (Count > 0)
@@ -101,6 +117,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         }
     }
 
+    /// <include file='docs.xml' path='docs/Drain/*'/>
     public IEnumerable<KeyValuePair<SlotKey, TValue>> Drain()
     {
         foreach (var slot in _slots)
@@ -117,8 +134,10 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         }
     }
 
+    /// <include file='docs.xml' path='docs/EnsureCapacity/*'/>
     public int EnsureCapacity(int capacity) => _slots.EnsureCapacity(capacity);
 
+    /// <include file='docs.xml' path='docs/Get/*'/>
     public TValue Get(SlotKey key)
     {
         if (key.IsInvalid && key.Version < 1)
@@ -132,6 +151,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         return slot.Value;
     }
 
+    /// <include file='docs.xml' path='docs/Insert/*'/>
     public TValue Insert(SlotKey key, TValue value)
     {
         ArgumentNullException.ThrowIfNull(value);
@@ -162,6 +182,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         return value;
     }
 
+    /// <include file='docs.xml' path='docs/Remove/*'/>
     public TValue Remove(SlotKey key)
     {
         if (key.IsInvalid && key.Version < 1)
@@ -183,6 +204,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         throw new KeyNotFoundException("Invalid SlotKey");
     }
 
+    /// <include file='docs.xml' path='docs/Retain/*'/>
     public void Retain(Func<SlotKey, TValue, bool> predicate)
     {
         foreach(var key in _slots.Keys)
@@ -200,6 +222,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         }
     }
 
+    /// <include file='docs.xml' path='docs/TryGet/*'/>
     public bool TryGet(SlotKey key, [MaybeNullWhen(false)] out TValue value)
     {
         value = default;
@@ -216,6 +239,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         return true;
     }
 
+    /// <include file='docs.xml' path='docs/TryInsert/*'/>
     public bool TryInsert(SlotKey key, TValue value, [MaybeNullWhen(false)] out TValue previousValue)
     {
         ArgumentNullException.ThrowIfNull(value);
@@ -248,6 +272,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         return true;
     }
 
+    /// <include file='docs.xml' path='docs/TryRemove/*'/>
     public bool TryRemove(SlotKey key, [MaybeNullWhen(false)] out TValue value)
     {
         value = default;
@@ -271,6 +296,10 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         return false;
     }
 
+    private Dictionary<int, Slot<TValue>>.Enumerator BackingEnumerator() =>
+        _slots.GetEnumerator();
+
+    /// <include file='docs.xml' path='docs/Enumerator/*'/>
     public struct Enumerator : IEnumerator<KeyValuePair<SlotKey, TValue>>, IEnumerator
     {
         private readonly SparseSecondaryMap<TValue> _sparseMap;
@@ -283,12 +312,15 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
             Current = default;
         }
 
+        /// <inheritdoc/>
         public KeyValuePair<SlotKey, TValue> Current { get; private set; }
 
         object IEnumerator.Current => Current;
 
+        /// <inheritdoc/>
         public readonly void Dispose() { }
 
+        /// <inheritdoc/>
         public bool MoveNext()
         {
             while (_dictEnumerator.MoveNext())
@@ -304,6 +336,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
             return false;
         }
 
+        /// <inheritdoc/>
         public void Reset()
         {
             Current = default;

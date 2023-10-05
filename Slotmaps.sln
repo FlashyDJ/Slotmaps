@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F93C155-303F-47AF-AC5F-8E57D190C309}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slotmaps", "src\Slotmaps\Slotmaps.csproj", "{7B0BE223-CCEA-464D-92DC-2EFB49147946}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slotmaps", "src\Slotmaps\Slotmaps.csproj", "{7B0BE223-CCEA-464D-92DC-2EFB49147946}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{23C73749-6DDE-409F-976B-1B23A606FA51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slotmaps.Tests", "tests\Slotmaps.Tests\Slotmaps.Tests.csproj", "{AD3ABD90-7D9D-45F0-AF53-2A9581809F92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slotmaps.Tests", "tests\Slotmaps.Tests\Slotmaps.Tests.csproj", "{AD3ABD90-7D9D-45F0-AF53-2A9581809F92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,5 +32,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7B0BE223-CCEA-464D-92DC-2EFB49147946} = {4F93C155-303F-47AF-AC5F-8E57D190C309}
 		{AD3ABD90-7D9D-45F0-AF53-2A9581809F92} = {23C73749-6DDE-409F-976B-1B23A606FA51}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00A98E9E-DCE1-48B0-B91B-E69F3E1E220D}
 	EndGlobalSection
 EndGlobal
