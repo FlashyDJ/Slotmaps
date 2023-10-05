@@ -117,4 +117,4 @@ For more details and examples, please refer to the [documentation](https://Flash
 This library is open for contributions from anyone who is interested. If you have any ideas, suggestions or bug reports, please open an issue or a pull request on this repository.
 
 ## License
-This library is licensed under the MIT license. See the [LICENSE](https://github.com/FlashyDJ/Slotmaps/blob/main/LICENSE.TXT) file for more details.
+This library is licensed under the MIT license. See the [LICENSE](https://github.com/FlashyDJ/Slotmaps/blob/main/LICENSE.txt) file for more details.
