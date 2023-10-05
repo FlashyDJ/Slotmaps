@@ -1,0 +1,842 @@
+{
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.Add.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.Add.html",
+    "title": "Method Add | Slotmaps Documentation",
+    "keywords": "Method Add Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Add(TValue) SlotKey Add(TValue value) Parameters value TValue Returns SlotKey"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.Capacity.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.Capacity.html",
+    "title": "Property Capacity | Slotmaps Documentation",
+    "keywords": "Property Capacity Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Capacity int Capacity { get; } Property Value int"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.ContainsKey.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.ContainsKey.html",
+    "title": "Method ContainsKey | Slotmaps Documentation",
+    "keywords": "Method ContainsKey Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll ContainsKey(SlotKey) bool ContainsKey(SlotKey key) Parameters key SlotKey Returns bool"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.Get.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.Get.html",
+    "title": "Method Get | Slotmaps Documentation",
+    "keywords": "Method Get Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Get(SlotKey) TValue Get(SlotKey key) Parameters key SlotKey Returns TValue"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.Insert.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.Insert.html",
+    "title": "Method Insert | Slotmaps Documentation",
+    "keywords": "Method Insert Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Insert(SlotKey, TValue) SlotKey Insert(SlotKey key, TValue value) Parameters key SlotKey value TValue Returns SlotKey"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.IsEmpty.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.IsEmpty.html",
+    "title": "Property IsEmpty | Slotmaps Documentation",
+    "keywords": "Property IsEmpty Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll IsEmpty bool IsEmpty { get; } Property Value bool"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.Item.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.Item.html",
+    "title": "Property this | Slotmaps Documentation",
+    "keywords": "Property this Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll this[SlotKey] TValue this[SlotKey key] { get; set; } Parameters key SlotKey Property Value TValue"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.Keys.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.Keys.html",
+    "title": "Property Keys | Slotmaps Documentation",
+    "keywords": "Property Keys Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Keys ICollection<SlotKey> Keys { get; } Property Value ICollection<SlotKey>"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.Remove.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.Remove.html",
+    "title": "Method Remove | Slotmaps Documentation",
+    "keywords": "Method Remove Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Remove(SlotKey) TValue Remove(SlotKey key) Parameters key SlotKey Returns TValue"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.TryAdd.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.TryAdd.html",
+    "title": "Method TryAdd | Slotmaps Documentation",
+    "keywords": "Method TryAdd Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryAdd(SlotKey, TValue, out SlotKey) bool TryAdd(SlotKey key, TValue value, out SlotKey updatedKey) Parameters key SlotKey value TValue updatedKey SlotKey Returns bool"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.TryGet.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.TryGet.html",
+    "title": "Method TryGet | Slotmaps Documentation",
+    "keywords": "Method TryGet Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryGet(SlotKey, out TValue) bool TryGet(SlotKey key, out TValue value) Parameters key SlotKey value TValue Returns bool"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.TryRemove.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.TryRemove.html",
+    "title": "Method TryRemove | Slotmaps Documentation",
+    "keywords": "Method TryRemove Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryRemove(SlotKey, out TValue) bool TryRemove(SlotKey key, out TValue value) Parameters key SlotKey value TValue Returns bool"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.Values.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.Values.html",
+    "title": "Property Values | Slotmaps Documentation",
+    "keywords": "Property Values Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Values ICollection<TValue> Values { get; } Property Value ICollection<TValue>"
+  },
+  "api/FlashyDJ.Slotmaps.ISlotMap-1.html": {
+    "href": "api/FlashyDJ.Slotmaps.ISlotMap-1.html",
+    "title": "Interface ISlotMap<TValue> | Slotmaps Documentation",
+    "keywords": "Interface ISlotMap<TValue> Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll public interface ISlotMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>>, IEnumerable<KeyValuePair<SlotKey, TValue>>, IEnumerable Type Parameters TValue Inherited Members ICollection<KeyValuePair<SlotKey, TValue>>.Add(KeyValuePair<SlotKey, TValue>) ICollection<KeyValuePair<SlotKey, TValue>>.Clear() ICollection<KeyValuePair<SlotKey, TValue>>.Contains(KeyValuePair<SlotKey, TValue>) ICollection<KeyValuePair<SlotKey, TValue>>.CopyTo(KeyValuePair<SlotKey, TValue>[], int) ICollection<KeyValuePair<SlotKey, TValue>>.Remove(KeyValuePair<SlotKey, TValue>) ICollection<KeyValuePair<SlotKey, TValue>>.Count ICollection<KeyValuePair<SlotKey, TValue>>.IsReadOnly IEnumerable<KeyValuePair<SlotKey, TValue>>.GetEnumerator() IEnumerable.GetEnumerator() Properties Capacity IsEmpty this[SlotKey] Keys Values Methods Add(TValue) ContainsKey(SlotKey) Get(SlotKey) Insert(SlotKey, TValue) Remove(SlotKey) TryAdd(SlotKey, TValue, out SlotKey) TryGet(SlotKey, out TValue) TryRemove(SlotKey, out TValue)"
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.-ctor.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.-ctor.html",
+    "title": "Constructor SecondaryMap | Slotmaps Documentation",
+    "keywords": "Constructor SecondaryMap Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll SecondaryMap() Initializes a new instance of the SecondaryMap<TValue> class with an empty collection. public SecondaryMap() Remarks Use this constructor to create a new SecondaryMap<TValue> with no elements initially. The SecondaryMap<TValue> will be empty, and its internal storage will be an empty array. SecondaryMap(int) Initializes a new instance of the SecondaryMap<TValue> class with the specified capacity. public SecondaryMap(int capacity) Parameters capacity int The initial capacity of the SecondaryMap<TValue>. Must be a non-negative integer. Remarks Use this constructor to create a new SecondaryMap<TValue> with a specific initial capacity. The capacity parameter determines the maximum number of elements the SecondaryMap<TValue> can hold before resizing its internal storage. Exceptions ArgumentOutOfRangeException Thrown if capacity is negative."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Capacity.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Capacity.html",
+    "title": "Property Capacity | Slotmaps Documentation",
+    "keywords": "Property Capacity Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Capacity Gets the capacity of the SecondaryMap<TValue>. public int Capacity { get; } Property Value int Remarks The capacity represents the maximum number of elements that the SecondaryMap<TValue> can hold before it needs to resize its internal storage."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Clear.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Clear.html",
+    "title": "Method Clear | Slotmaps Documentation",
+    "keywords": "Method Clear Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Clear() Removes all elements from the secondary map. public void Clear() Remarks The Clear method removes all elements from the secondary map, resetting it to an empty state. It also resets the internal counters and clears the values stored in the SecondaryMap<TValue>.Slot<TValue>, but it does not deallocate memory. Use this method to clear the secondary map when you want to reuse it without resizing its internal storage."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.ContainsKey.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.ContainsKey.html",
+    "title": "Method ContainsKey | Slotmaps Documentation",
+    "keywords": "Method ContainsKey Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll ContainsKey(SlotKey) Determines whether the secondary map contains an entry with the specified SlotKey. public bool ContainsKey(SlotKey key) Parameters key SlotKey The SlotKey to locate in the secondary map. Returns bool true if the secondary map contains an entry with the specified SlotKey that matches both the index and version; otherwise, false. Remarks The ContainsKey method checks whether the secondary map contains an entry with the specified SlotKey. To be considered a match, the entry must have the same index and version as the provided SlotKey. See Also IsInvalid"
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.ContainsValue.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.ContainsValue.html",
+    "title": "Method ContainsValue | Slotmaps Documentation",
+    "keywords": "Method ContainsValue Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll ContainsValue(TValue) public bool ContainsValue(TValue value) Parameters value TValue Returns bool"
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Count.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Count.html",
+    "title": "Property Count | Slotmaps Documentation",
+    "keywords": "Property Count Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Count Gets the number of elements currently stored in the SecondaryMap<TValue>. public int Count { get; } Property Value int"
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Drain.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Drain.html",
+    "title": "Method Drain | Slotmaps Documentation",
+    "keywords": "Method Drain Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Drain() Removes and returns elements from the secondary map one at a time as an enumerable collection of key-value pairs. public IEnumerable<KeyValuePair<SlotKey, TValue>> Drain() Returns IEnumerable<KeyValuePair<SlotKey, TValue>> An IEnumerable<T> of KeyValuePair<TKey, TValue> containing the entries retrieved from the secondary map. Remarks The Drain method iterates through the elements in the secondary map, removes each element one at a time, and yields them as key-value pairs. Each key-value pair consists of a SlotKey and its associated value."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.EnsureCapacity.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.EnsureCapacity.html",
+    "title": "Method EnsureCapacity | Slotmaps Documentation",
+    "keywords": "Method EnsureCapacity Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll EnsureCapacity(int) Ensures that the secondary map can hold at least the specified capacity without resizing. public int EnsureCapacity(int capacity) Parameters capacity int The desired capacity. Must be a non-negative integer. Returns int The capacity of the secondary map after ensuring it can accommodate the specified capacity. If the current capacity is already greater than or equal to the specified capacity, the current capacity is returned. Remarks Use this method to ensure that the secondary map can hold at least the specified capacity without resizing its internal storage. If the current capacity is less than the specified capacity, the method will resize the internal storage to meet or exceed the desired capacity. Exceptions ArgumentOutOfRangeException Thrown if capacity is negative."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Current.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Current.html",
+    "title": "Property Current | Slotmaps Documentation",
+    "keywords": "Property Current Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Current Gets the element in the collection at the current position of the enumerator. public KeyValuePair<SlotKey, TValue> Current { get; } Property Value KeyValuePair<SlotKey, TValue> The element in the collection at the current position of the enumerator."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Dispose.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Dispose.html",
+    "title": "Method Dispose | Slotmaps Documentation",
+    "keywords": "Method Dispose Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. public void Dispose()"
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.MoveNext.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.MoveNext.html",
+    "title": "Method MoveNext | Slotmaps Documentation",
+    "keywords": "Method MoveNext Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll MoveNext() Advances the enumerator to the next element of the collection. public bool MoveNext() Returns bool true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Reset.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Reset.html",
+    "title": "Method Reset | Slotmaps Documentation",
+    "keywords": "Method Reset Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reset() Sets the enumerator to its initial position, which is before the first element in the collection. public void Reset() Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.html",
+    "title": "Struct SecondaryMap<TValue>.Enumerator | Slotmaps Documentation",
+    "keywords": "Struct SecondaryMap<TValue>.Enumerator Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents an enumerator for the SecondaryMap<TValue> collection. public struct SecondaryMap<TValue>.Enumerator : IEnumerator<KeyValuePair<SlotKey, TValue>>, IDisposable, IEnumerator Implements IEnumerator<KeyValuePair<SlotKey, TValue>> IDisposable IEnumerator Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Remarks The Enumerator struct provides an enumerator for iterating through the elements of the SecondaryMap<TValue> collection. It allows sequential access to the key-value pairs within the map. You can use this enumerator to iterate through the elements in the SecondaryMap<TValue> using a foreach loop. Properties Current Gets the element in the collection at the current position of the enumerator. Methods Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. MoveNext() Advances the enumerator to the next element of the collection. Reset() Sets the enumerator to its initial position, which is before the first element in the collection."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Get.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Get.html",
+    "title": "Method Get | Slotmaps Documentation",
+    "keywords": "Method Get Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Get(SlotKey) Gets the value associated with the specified SlotKey. public TValue Get(SlotKey key) Parameters key SlotKey The SlotKey to look up in the secondary map. Returns TValue The value associated with the key. Remarks Use this method to retrieve the value associated with a specific key in the secondary map. If the key is not found in the map, a KeyNotFoundException is thrown. Exceptions KeyNotFoundException Thrown if the specified key is not found in the map."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Insert.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Insert.html",
+    "title": "Method Insert | Slotmaps Documentation",
+    "keywords": "Method Insert Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Insert(SlotKey, TValue) Inserts or updates an entry with the specified SlotKey and value in the secondary map. public TValue Insert(SlotKey key, TValue value) Parameters key SlotKey The SlotKey under which to insert or update the value. value TValue The value to insert or update in the secondary map. Must not be null. Returns TValue The value associated with the specified SlotKey before the insertion or update. If the key did not previously exist in the secondary map, the default value for the type of the TValue parameter is returned. Remarks The Insert method inserts or updates an entry with the specified SlotKey and value in the secondary map. If an entry with the same index and version as the provided SlotKey exists, its value is updated, and the previous value is returned. If no such entry exists, a new entry is created with the provided SlotKey and value. Exceptions ArgumentNullException Thrown if value is null. KeyNotFoundException Thrown if the provided SlotKey is invalid, or if the version of the key is less than the version of the existing entry with the same index."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.IsEmpty.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.IsEmpty.html",
+    "title": "Property IsEmpty | Slotmaps Documentation",
+    "keywords": "Property IsEmpty Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll IsEmpty Gets a value indicating whether the SecondaryMap<TValue> is empty. public bool IsEmpty { get; } Property Value bool Remarks The IsEmpty property returns true if the SecondaryMap<TValue> contains no elements, and false otherwise."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Item.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Item.html",
+    "title": "Property this | Slotmaps Documentation",
+    "keywords": "Property this Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll this[SlotKey] Gets or sets the value associated with the specified SlotKey. public TValue this[SlotKey key] { get; set; } Parameters key SlotKey The SlotKey for which to get or set the associated value. Property Value TValue The value associated with the specified key. Remarks Use this indexer to access the value associated with a specific SlotKey in the SecondaryMap<TValue>. If the key is not found in the map during the get operation, a KeyNotFoundException is thrown. To set the value associated with a key, assign a new value to this indexer. Exceptions KeyNotFoundException Thrown if the key is not found in the SecondaryMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Keys.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Keys.html",
+    "title": "Property Keys | Slotmaps Documentation",
+    "keywords": "Property Keys Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Keys Gets a collection containing the keys in the SecondaryMap<TValue>. public SecondaryMap<TValue>.SlotKeyCollection Keys { get; } Property Value SecondaryMap<TValue>.SlotKeyCollection A SecondaryMap<TValue>.SlotKeyCollection containing the keys in the SecondaryMap<TValue>. Remarks Only the keys that correspond to occupied slots are included in this collection. You can use this collection to iterate through the keys associated with the values in the map."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Remove.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Remove.html",
+    "title": "Method Remove | Slotmaps Documentation",
+    "keywords": "Method Remove Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Remove(SlotKey) Removes the entry with the specified SlotKey from the secondary map. public TValue Remove(SlotKey key) Parameters key SlotKey The SlotKey of the entry to remove. Returns TValue The value associated with the removed entry. Remarks The Remove method attempts to remove the entry with the specified SlotKey from the secondary map. If the entry is found and has the same version as the provided key, the value associated with the entry is returned, and the entry is removed from the secondary map. Exceptions KeyNotFoundException Thrown if the provided SlotKey is invalid or does not exist in the secondary map."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Reserve.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Reserve.html",
+    "title": "Method Reserve | Slotmaps Documentation",
+    "keywords": "Method Reserve Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reserve(int) Reserves additional capacity for the secondary map to accommodate the specified number of entries. public void Reserve(int additionalSize) Parameters additionalSize int The number of additional entries the secondary map should be able to accommodate. Must be a positive integer. Remarks The Reserve method increases the capacity of the secondary map to accommodate the specified number of additional entries. It is useful when you expect to add a significant number of entries to the secondary map and want to minimize potential resizing operations. Exceptions ArgumentOutOfRangeException Thrown if additionalSize is zero or negative."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Resize.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Resize.html",
+    "title": "Method Resize | Slotmaps Documentation",
+    "keywords": "Method Resize Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Resize(int) Resizes the secondary map to the specified new size. public void Resize(int newSize) Parameters newSize int The new size to which the secondary map should be resized. Must be greater than or equal to the current capacity. Remarks The Resize method resizes the secondary map to the specified newSize. The new size must be greater than or equal to the current capacity of the secondary map. If the newSize is equal to the current capacity, no changes are made to the secondary map. Exceptions ArgumentOutOfRangeException Thrown if newSize is less than the current capacity."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Retain.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Retain.html",
+    "title": "Method Retain | Slotmaps Documentation",
+    "keywords": "Method Retain Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Retain(Func<SlotKey, TValue, bool>) Retains entries in the secondary map that satisfy the specified predicate. public void Retain(Func<SlotKey, TValue, bool> predicate) Parameters predicate Func<SlotKey, TValue, bool> A function that defines the criteria for retaining entries. The function is called for each entry with its SlotKey and associated TValue. Return true to retain the entry, or false to remove it. Remarks The Retain method iterates through all entries in the secondary map and applies the specified predicate. Entries for which the predicate returns false are removed from the secondary map."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.-ctor.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.-ctor.html",
+    "title": "Constructor SlotKeyCollection | Slotmaps Documentation",
+    "keywords": "Constructor SlotKeyCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll SlotKeyCollection(SecondaryMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotKeyCollection class with a reference to the parent SecondaryMap<TValue>. public SlotKeyCollection(SecondaryMap<TValue> secondaryMap) Parameters secondaryMap SecondaryMap<TValue> The SecondaryMap<TValue> to which this collection is associated. Remarks Use this constructor to create a new SlotMap<TValue>.SlotKeyCollection that is associated with a specific SecondaryMap<TValue>. The secondaryMap parameter represents the parent SecondaryMap<TValue> to which this collection is linked. Exceptions ArgumentNullException Thrown if secondaryMap is null."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Contains.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Contains.html",
+    "title": "Method Contains | Slotmaps Documentation",
+    "keywords": "Method Contains Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Contains(SlotKey) Determines whether the SlotMap<TValue>.SlotKeyCollection contains a specific SlotKey. public bool Contains(SlotKey key) Parameters key SlotKey The SlotKey to locate in the collection. Returns bool true if the SlotMap<TValue>.SlotKeyCollection contains the specified key; otherwise, false. Remarks Use this method to check whether the SlotMap<TValue>.SlotKeyCollection contains a specific SlotKey instance."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.CopyTo.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.CopyTo.html",
+    "title": "Method CopyTo | Slotmaps Documentation",
+    "keywords": "Method CopyTo Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll CopyTo(SlotKey[], int) Copies the elements of the SlotMap<TValue>.SlotKeyCollection to an array, starting at the specified index. public void CopyTo(SlotKey[] array, int index) Parameters array SlotKey[] The one-dimensional array that is the destination of the elements copied from the SlotMap<TValue>.SlotKeyCollection. Must not be null. index int The zero-based index in array at which copying begins. Remarks The CopyTo method copies the elements of the SlotMap<TValue>.SlotKeyCollection to a one-dimensional array, starting at the specified index in the destination array. The destination array must have enough space to accommodate the elements to be copied. Exceptions ArgumentNullException Thrown if array is null. ArgumentOutOfRangeException Thrown if index is negative, greater than or equal to the length of array, or if there are not enough elements in the SlotMap<TValue>.SlotKeyCollection to fill the destination array starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Count.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Count.html",
+    "title": "Property Count | Slotmaps Documentation",
+    "keywords": "Property Count Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Count Gets the number of elements in the SlotMap<TValue>.SlotKeyCollection. public int Count { get; } Property Value int Remarks This count corresponds to the number of keys associated with the SecondaryMap<TValue> that this collection belongs to."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Current.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Current.html",
+    "title": "Property Current | Slotmaps Documentation",
+    "keywords": "Property Current Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Current Gets the element in the collection at the current position of the enumerator. public SlotKey Current { get; } Property Value SlotKey The element in the collection at the current position of the enumerator."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Dispose.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Dispose.html",
+    "title": "Method Dispose | Slotmaps Documentation",
+    "keywords": "Method Dispose Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. public readonly void Dispose()"
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.MoveNext.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.MoveNext.html",
+    "title": "Method MoveNext | Slotmaps Documentation",
+    "keywords": "Method MoveNext Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll MoveNext() Advances the enumerator to the next element of the collection. public bool MoveNext() Returns bool true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Reset.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Reset.html",
+    "title": "Method Reset | Slotmaps Documentation",
+    "keywords": "Method Reset Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reset() Sets the enumerator to its initial position, which is before the first element in the collection. public void Reset() Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.html",
+    "title": "Struct SecondaryMap<TValue>.SlotKeyCollection.Enumerator | Slotmaps Documentation",
+    "keywords": "Struct SecondaryMap<TValue>.SlotKeyCollection.Enumerator Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents an enumerator for the SecondaryMap<TValue>.SlotKeyCollection. public struct SecondaryMap<TValue>.SlotKeyCollection.Enumerator : IEnumerator<SlotKey>, IDisposable, IEnumerator Implements IEnumerator<SlotKey> IDisposable IEnumerator Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Remarks The Enumerator struct allows you to enumerate the SlotKey instances in the SecondaryMap<TValue>.SlotKeyCollection. Use this enumerator to iterate over the keys in the collection. Properties Current Gets the element in the collection at the current position of the enumerator. Methods Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. MoveNext() Advances the enumerator to the next element of the collection. Reset() Sets the enumerator to its initial position, which is before the first element in the collection."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.html",
+    "title": "Class SecondaryMap<TValue>.SlotKeyCollection | Slotmaps Documentation",
+    "keywords": "Class SecondaryMap<TValue>.SlotKeyCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents a collection of SlotKey instances associated with a SecondaryMap<TValue>. public sealed class SecondaryMap<TValue>.SlotKeyCollection : ICollection<SlotKey>, IReadOnlyCollection<SlotKey>, IEnumerable<SlotKey>, IEnumerable Inheritance object SecondaryMap<TValue>.SlotKeyCollection Implements ICollection<SlotKey> IReadOnlyCollection<SlotKey> IEnumerable<SlotKey> IEnumerable Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Remarks The SlotMap<TValue>.SlotKeyCollection class provides a collection of SlotKey instances that are associated with a SecondaryMap<TValue>. This collection allows you to enumerate and work with the keys present in the SecondaryMap<TValue>. Constructors SlotKeyCollection(SecondaryMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotKeyCollection class with a reference to the parent SecondaryMap<TValue>. Properties Count Gets the number of elements in the SlotMap<TValue>.SlotKeyCollection. Methods Contains(SlotKey) Determines whether the SlotMap<TValue>.SlotKeyCollection contains a specific SlotKey. CopyTo(SlotKey[], int) Copies the elements of the SlotMap<TValue>.SlotKeyCollection to an array, starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.-ctor.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.-ctor.html",
+    "title": "Constructor SlotValueCollection | Slotmaps Documentation",
+    "keywords": "Constructor SlotValueCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll SlotValueCollection(SecondaryMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotValueCollection class associated with a SecondaryMap<TValue>. public SlotValueCollection(SecondaryMap<TValue> secondaryMap) Parameters secondaryMap SecondaryMap<TValue> The SecondaryMap<TValue> with which this collection is associated. Must not be null. Remarks The constructor initializes a new instance of the SlotMap<TValue>.SlotValueCollection class that is associated with a specific SecondaryMap<TValue>. The secondaryMap parameter determines the SecondaryMap<TValue> with which this collection is associated. Exceptions ArgumentNullException Thrown if secondaryMap is null."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Contains.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Contains.html",
+    "title": "Method Contains | Slotmaps Documentation",
+    "keywords": "Method Contains Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Contains(TValue) Determines whether the SlotMap<TValue>.SlotValueCollection contains a specific value. public bool Contains(TValue value) Parameters value TValue The value to locate in the collection. Returns bool true if the SlotMap<TValue>.SlotValueCollection contains the specified value; otherwise, false. Remarks Use this method to check whether the SlotMap<TValue>.SlotKeyCollection contains a specific value."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.CopyTo.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.CopyTo.html",
+    "title": "Method CopyTo | Slotmaps Documentation",
+    "keywords": "Method CopyTo Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll CopyTo(TValue[], int) Copies the elements of the SlotMap<TValue>.SlotValueCollection to an array, starting at the specified index. public void CopyTo(TValue[] array, int index) Parameters array TValue[] The one-dimensional array that is the destination of the elements copied from the SlotMap<TValue>.SlotValueCollection. Must not be null. index int The zero-based index in array at which copying begins. Remarks The CopyTo method copies the elements of the SlotMap<TValue>.SlotValueCollection to a one-dimensional array, starting at the specified index in the destination array. The destination array must have enough space to accommodate the elements to be copied. Exceptions ArgumentNullException Thrown if array is null. ArgumentOutOfRangeException Thrown if index is negative, greater than or equal to the length of array, or if there are not enough elements in the SlotMap<TValue>.SlotValueCollection to fill the destination array starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Count.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Count.html",
+    "title": "Property Count | Slotmaps Documentation",
+    "keywords": "Property Count Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Count Gets the number of values in the SlotMap<TValue>.SlotValueCollection. public int Count { get; } Property Value int Remarks This count corresponds to the number of values associated with the SecondaryMap<TValue> that this collection belongs to."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Current.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Current.html",
+    "title": "Property Current | Slotmaps Documentation",
+    "keywords": "Property Current Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Current Gets the element in the collection at the current position of the enumerator. public TValue Current { get; } Property Value TValue The element in the collection at the current position of the enumerator."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Dispose.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Dispose.html",
+    "title": "Method Dispose | Slotmaps Documentation",
+    "keywords": "Method Dispose Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. public void Dispose()"
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.MoveNext.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.MoveNext.html",
+    "title": "Method MoveNext | Slotmaps Documentation",
+    "keywords": "Method MoveNext Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll MoveNext() Advances the enumerator to the next element of the collection. public bool MoveNext() Returns bool true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Reset.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Reset.html",
+    "title": "Method Reset | Slotmaps Documentation",
+    "keywords": "Method Reset Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reset() Sets the enumerator to its initial position, which is before the first element in the collection. public void Reset() Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.html",
+    "title": "Struct SecondaryMap<TValue>.SlotValueCollection.Enumerator | Slotmaps Documentation",
+    "keywords": "Struct SecondaryMap<TValue>.SlotValueCollection.Enumerator Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents an enumerator for the values in the SlotMap<TValue>.SlotValueCollection. public struct SecondaryMap<TValue>.SlotValueCollection.Enumerator : IEnumerator<TValue>, IDisposable, IEnumerator Implements IEnumerator<TValue> IDisposable IEnumerator Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Remarks The Enumerator struct allows you to enumerate the values stored in the SecondaryMap<TValue>.SlotValueCollection. Use this enumerator to iterate over the values in the collection. Properties Current Gets the element in the collection at the current position of the enumerator. Methods Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. MoveNext() Advances the enumerator to the next element of the collection. Reset() Sets the enumerator to its initial position, which is before the first element in the collection."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.html",
+    "title": "Class SecondaryMap<TValue>.SlotValueCollection | Slotmaps Documentation",
+    "keywords": "Class SecondaryMap<TValue>.SlotValueCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents a collection of values associated with a SecondaryMap<TValue>. public sealed class SecondaryMap<TValue>.SlotValueCollection : ICollection<TValue>, IReadOnlyCollection<TValue>, IEnumerable<TValue>, IEnumerable Inheritance object SecondaryMap<TValue>.SlotValueCollection Implements ICollection<TValue> IReadOnlyCollection<TValue> IEnumerable<TValue> IEnumerable Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Remarks The SlotMap<TValue>.SlotValueCollection class provides a collection of values that are associated with a SecondaryMap<TValue>. This collection allows you to enumerate and work with the values present in the SecondaryMap<TValue>. Constructors SlotValueCollection(SecondaryMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotValueCollection class associated with a SecondaryMap<TValue>. Properties Count Gets the number of values in the SlotMap<TValue>.SlotValueCollection. Methods Contains(TValue) Determines whether the SlotMap<TValue>.SlotValueCollection contains a specific value. CopyTo(TValue[], int) Copies the elements of the SlotMap<TValue>.SlotValueCollection to an array, starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.TryGet.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.TryGet.html",
+    "title": "Method TryGet | Slotmaps Documentation",
+    "keywords": "Method TryGet Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryGet(SlotKey, out TValue) Tries to retrieve the value associated with the specified SlotKey from the secondary map. public bool TryGet(SlotKey key, out TValue value) Parameters key SlotKey The SlotKey whose associated value is to be retrieved. value TValue When this method returns, contains the value associated with the specified SlotKey, if the key is found; otherwise, the default value for the type of the TValue parameter. This parameter is passed uninitialized; any value originally supplied in value will be overwritten. Returns bool true if the secondary map contains an entry with the specified SlotKey and the value was successfully retrieved; otherwise, false. Remarks The TryGet method attempts to retrieve the value associated with the specified SlotKey from the secondary map. If the key is found, the associated value is returned in the value parameter, and the method returns true. If the key is not found, the value parameter is set to the default value for TValue, and the method returns false."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.TryInsert.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.TryInsert.html",
+    "title": "Method TryInsert | Slotmaps Documentation",
+    "keywords": "Method TryInsert Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryInsert(SlotKey, TValue, out TValue?) Tries to insert a value associated with the specified SlotKey into the secondary map. public bool TryInsert(SlotKey key, TValue value, out TValue? oldValue) Parameters key SlotKey The SlotKey with which to associate the value. value TValue The value to insert into the secondary map. Must not be null. oldValue TValue When this method returns, contains the previous value associated with the specified SlotKey, if an entry with the same key was found; otherwise, the default value for the type of the TValue parameter. This parameter is passed uninitialized; any value originally supplied in oldValue will be overwritten. Returns bool true if the value was successfully inserted or replaced in the secondary map; false if the insertion failed due to an invalid key or version mismatch. Remarks The TryInsert method attempts to insert a value associated with the specified SlotKey into the secondary map. If an entry with the same key and version exists, the method replaces the existing value and returns true, and the previous value is returned in the oldValue parameter. If no entry with the same key and version exists, a new entry is created, and the method returns true. If the key is invalid or if the version of the existing entry is greater than the provided key's version, the method returns false, and no changes are made to the secondary map. Exceptions ArgumentNullException Thrown if value is null."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.TryRemove.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.TryRemove.html",
+    "title": "Method TryRemove | Slotmaps Documentation",
+    "keywords": "Method TryRemove Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryRemove(SlotKey, out TValue) Tries to remove the entry with the specified SlotKey from the secondary map. public bool TryRemove(SlotKey key, out TValue value) Parameters key SlotKey The SlotKey of the entry to remove. value TValue When this method returns, contains the value associated with the specified SlotKey, if the key is found and the entry is removed successfully; otherwise, the default value for the type of the TValue parameter. This parameter is passed uninitialized; any value originally supplied in value will be overwritten. Returns bool true if an entry with the specified SlotKey was found and removed successfully; otherwise, false. Remarks The TryRemove method attempts to remove the entry with the specified SlotKey from the secondary map. If the entry is found and has the same version as the provided key, the value associated with the entry is returned in the value parameter, the entry is removed from the secondary map, and the method returns true. If the entry is not found, the value parameter is set to the default value for TValue, and the method returns false. If the key is invalid, the method also returns false."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.Values.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Values.html",
+    "title": "Property Values | Slotmaps Documentation",
+    "keywords": "Property Values Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Values Gets a collection containing the values in the SecondaryMap<TValue>. public SecondaryMap<TValue>.SlotValueCollection Values { get; } Property Value SecondaryMap<TValue>.SlotValueCollection A SecondaryMap<TValue>.SlotValueCollection containing the values in the SecondaryMap<TValue>. Remarks Only the values that correspond to occupied slots are included in this collection. You can use this collection to iterate through the values associated with the keys in the map."
+  },
+  "api/FlashyDJ.Slotmaps.SecondaryMap-1.html": {
+    "href": "api/FlashyDJ.Slotmaps.SecondaryMap-1.html",
+    "title": "Class SecondaryMap<TValue> | Slotmaps Documentation",
+    "keywords": "Class SecondaryMap<TValue> Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents a secondary map that associates keys of type SlotKey with values of type TValue. [Serializable] public class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>>, IEnumerable<KeyValuePair<SlotKey, TValue>>, IEnumerable Type Parameters TValue The type of values stored in the secondary map. Inheritance object SecondaryMap<TValue> Implements ICollection<KeyValuePair<SlotKey, TValue>> IEnumerable<KeyValuePair<SlotKey, TValue>> IEnumerable Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Remarks The SecondaryMap<TValue> class is designed to act as a secondary map to a primary slot map. It allows you to efficiently store additional information for each element in the primary slot map. Constructors SecondaryMap() Initializes a new instance of the SecondaryMap<TValue> class with an empty collection. SecondaryMap(int) Initializes a new instance of the SecondaryMap<TValue> class with the specified capacity. Properties Capacity Gets the capacity of the SecondaryMap<TValue>. Count Gets the number of elements currently stored in the SecondaryMap<TValue>. IsEmpty Gets a value indicating whether the SecondaryMap<TValue> is empty. this[SlotKey] Gets or sets the value associated with the specified SlotKey. Keys Gets a collection containing the keys in the SecondaryMap<TValue>. Values Gets a collection containing the values in the SecondaryMap<TValue>. Methods Clear() Removes all elements from the secondary map. ContainsKey(SlotKey) Determines whether the secondary map contains an entry with the specified SlotKey. ContainsValue(TValue) Drain() Removes and returns elements from the secondary map one at a time as an enumerable collection of key-value pairs. EnsureCapacity(int) Ensures that the secondary map can hold at least the specified capacity without resizing. Get(SlotKey) Gets the value associated with the specified SlotKey. Insert(SlotKey, TValue) Inserts or updates an entry with the specified SlotKey and value in the secondary map. Remove(SlotKey) Removes the entry with the specified SlotKey from the secondary map. Reserve(int) Reserves additional capacity for the secondary map to accommodate the specified number of entries. Resize(int) Resizes the secondary map to the specified new size. Retain(Func<SlotKey, TValue, bool>) Retains entries in the secondary map that satisfy the specified predicate. TryGet(SlotKey, out TValue) Tries to retrieve the value associated with the specified SlotKey from the secondary map. TryInsert(SlotKey, TValue, out TValue?) Tries to insert a value associated with the specified SlotKey into the secondary map. TryRemove(SlotKey, out TValue) Tries to remove the entry with the specified SlotKey from the secondary map."
+  },
+  "api/FlashyDJ.Slotmaps.SlotKey.-ctor.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotKey.-ctor.html",
+    "title": "Constructor SlotKey | Slotmaps Documentation",
+    "keywords": "Constructor SlotKey Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll SlotKey(int, int) Represents a key used in various map structures to uniquely identify elements. public SlotKey(int Index, int Version) Parameters Index int The index of the slot. Version int The version of the slot. Remarks The SlotKey struct is used in various map structures, including SlotMap<TValue>, SecondaryMap<TValue>, SparseSecondaryMap<TValue> to uniquely identify elements. It combines an index and a version number to provide a unique identifier for elements within these map types. Slot keys are used to access and manage elements in these maps."
+  },
+  "api/FlashyDJ.Slotmaps.SlotKey.Index.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotKey.Index.html",
+    "title": "Property Index | Slotmaps Documentation",
+    "keywords": "Property Index Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Index public int Index { get; init; } Property Value int"
+  },
+  "api/FlashyDJ.Slotmaps.SlotKey.IsInvalid.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotKey.IsInvalid.html",
+    "title": "Property IsInvalid | Slotmaps Documentation",
+    "keywords": "Property IsInvalid Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll IsInvalid Gets a value indicating whether this slot key is invalid. public bool IsInvalid { get; } Property Value bool Remarks The IsInvalid property returns true if this slot key is considered invalid, which occurs when the index, version, or both are less than zero, or if it is null. Otherwise, it returns false."
+  },
+  "api/FlashyDJ.Slotmaps.SlotKey.IsNull.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotKey.IsNull.html",
+    "title": "Property IsNull | Slotmaps Documentation",
+    "keywords": "Property IsNull Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll IsNull Gets a value indicating whether this slot key is null or not. public bool IsNull { get; } Property Value bool Remarks The IsNull property returns true if this slot key represents a null value, and false otherwise."
+  },
+  "api/FlashyDJ.Slotmaps.SlotKey.Null.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotKey.Null.html",
+    "title": "Property Null | Slotmaps Documentation",
+    "keywords": "Property Null Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Null Gets a special null slot key. public static SlotKey Null { get; } Property Value SlotKey Remarks The Null slot key represents a special null value that can be used to indicate the absence of a valid key."
+  },
+  "api/FlashyDJ.Slotmaps.SlotKey.ToString.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotKey.ToString.html",
+    "title": "Method ToString | Slotmaps Documentation",
+    "keywords": "Method ToString Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll ToString() Returns a string representation of the SlotKey. public override string ToString() Returns string Returns a string representation of this slot key in the format of \"IndexvVersion\". Remarks This method returns a string in the format \"IndexvVersion\" to represent the SlotKey, where \"Index\" is the index value and \"Version\" is the version value."
+  },
+  "api/FlashyDJ.Slotmaps.SlotKey.Version.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotKey.Version.html",
+    "title": "Property Version | Slotmaps Documentation",
+    "keywords": "Property Version Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Version public int Version { get; init; } Property Value int"
+  },
+  "api/FlashyDJ.Slotmaps.SlotKey.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotKey.html",
+    "title": "Struct SlotKey | Slotmaps Documentation",
+    "keywords": "Struct SlotKey Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents a key used in various map structures to uniquely identify elements. public readonly record struct SlotKey : IEquatable<SlotKey> Implements IEquatable<SlotKey> Inherited Members ValueType.Equals(object) ValueType.GetHashCode() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Remarks The SlotKey struct is used in various map structures, including SlotMap<TValue>, SecondaryMap<TValue>, SparseSecondaryMap<TValue> to uniquely identify elements. It combines an index and a version number to provide a unique identifier for elements within these map types. Slot keys are used to access and manage elements in these maps. Constructors SlotKey(int, int) Represents a key used in various map structures to uniquely identify elements. Properties Index IsInvalid Gets a value indicating whether this slot key is invalid. IsNull Gets a value indicating whether this slot key is null or not. Null Gets a special null slot key. Version Methods ToString() Returns a string representation of the SlotKey. Operators implicit operator ulong(SlotKey) Converts a SlotKey instance to a ulong value by shifting its version to the upper 32 bits and using its index as the lower 32 bits. implicit operator SlotKey(ulong) Converts a ulong value to a SlotKey instance by using the lower 32 bits as the index and the upper 32 bits as the version. If the version is zero, it is set to one, to ensure that the resulting SlotKey instance is valid."
+  },
+  "api/FlashyDJ.Slotmaps.SlotKey.op_Implicit.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotKey.op_Implicit.html",
+    "title": "Operator implicit operator | Slotmaps Documentation",
+    "keywords": "Operator implicit operator Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll implicit operator ulong(SlotKey) Converts a SlotKey instance to a ulong value by shifting its version to the upper 32 bits and using its index as the lower 32 bits. public static implicit operator ulong(SlotKey slotKey) Parameters slotKey SlotKey The SlotKey instance to convert. Returns ulong A ulong value that represents the index and version of the SlotKey instance. Remarks You can use this conversion operator to convert a SlotKey instance to a ulong value without losing any information. This can be useful for storing or transmitting SlotKey instances as ulong values. implicit operator SlotKey(ulong) Converts a ulong value to a SlotKey instance by using the lower 32 bits as the index and the upper 32 bits as the version. If the version is zero, it is set to one, to ensure that the resulting SlotKey instance is valid. public static implicit operator SlotKey(ulong value) Parameters value ulong The ulong value to convert. Returns SlotKey A SlotKey instance that has the same index and version as the ulong value. Remarks You can use this conversion operator to convert a ulong value back to a SlotKey instance, assuming that the ulong value was obtained from a previous conversion of a SlotKey instance. This can be useful for retrieving or reconstructing SlotKey instances from ulong values."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.-ctor.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.-ctor.html",
+    "title": "Constructor SlotMap | Slotmaps Documentation",
+    "keywords": "Constructor SlotMap Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll SlotMap() Initializes a new instance of the SlotMap<TValue> class with an empty collection. public SlotMap() Remarks Use this constructor to create a new SlotMap<TValue> with no elements initially. The SlotMap<TValue> will be empty, and its internal storage will be an empty array. SlotMap(int) Initializes a new instance of the SlotMap<TValue> class with the specified capacity. public SlotMap(int capacity) Parameters capacity int The initial capacity of the SlotMap<TValue>. Must be a non-negative integer. Remarks Use this constructor to create a new SlotMap<TValue> with a specific initial capacity. The capacity parameter determines the maximum number of elements the SlotMap<TValue> can hold before resizing its internal storage. Exceptions ArgumentOutOfRangeException Thrown if capacity is negative."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Add.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Add.html",
+    "title": "Method Add | Slotmaps Documentation",
+    "keywords": "Method Add Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Add(TValue) Adds a value to the SlotMap<TValue> and returns the associated SlotKey. public SlotKey Add(TValue value) Parameters value TValue The value to be added to the SlotMap<TValue>. Must not be null. Returns SlotKey The SlotKey associated with the added value. Remarks The Add method adds the specified value to the SlotMap<TValue>. It assigns the value to an available slot if one is available; otherwise, it expands the internal storage to accommodate the new value. The value parameter must not be null; otherwise, an ArgumentNullException is thrown. Exceptions ArgumentNullException Thrown if value is null."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Capacity.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Capacity.html",
+    "title": "Property Capacity | Slotmaps Documentation",
+    "keywords": "Property Capacity Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Capacity Gets the capacity of the SlotMap<TValue>. public int Capacity { get; } Property Value int Remarks The capacity represents the maximum number of elements that the SlotMap<TValue> can hold before it needs to resize its internal storage."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Clear.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Clear.html",
+    "title": "Method Clear | Slotmaps Documentation",
+    "keywords": "Method Clear Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Clear() Removes all elements from the SlotMap<TValue>. public void Clear() Remarks The Clear method removes all elements from the SlotMap<TValue>, resetting it to an empty state. It also resets the internal counters and clears the values stored in the SlotMap<TValue>.Slot<TValue>, but it does not deallocate memory. Use this method to clear the SlotMap<TValue> when you want to reuse it without resizing its internal storage."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.ContainsKey.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.ContainsKey.html",
+    "title": "Method ContainsKey | Slotmaps Documentation",
+    "keywords": "Method ContainsKey Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll ContainsKey(SlotKey) Determines whether the SlotMap<TValue> contains the specified SlotKey. public bool ContainsKey(SlotKey key) Parameters key SlotKey The SlotKey to check for existence in the SlotMap<TValue>. Returns bool true if the SlotMap<TValue> contains the specified key and the associated slot has the same version; otherwise, false. Remarks Use this method to check if a specific key exists in the SlotMap<TValue>. A key is considered to exist if its Index is within the valid range of slots (0 to the capacity of the map) and the corresponding slot has the same version as the provided key."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.ContainsValue.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.ContainsValue.html",
+    "title": "Method ContainsValue | Slotmaps Documentation",
+    "keywords": "Method ContainsValue Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll ContainsValue(TValue) Determines whether the SlotMap<TValue> contains a specific value. public bool ContainsValue(TValue value) Parameters value TValue The value to locate in the SlotMap<TValue>. Returns bool true if the SlotMap<TValue> contains an element with the specified value; otherwise, false. Remarks The ContainsValue method searches the SlotMap<TValue> for the presence of a specified value. If the value is found and is not null, the method returns true. If the value is null or not found in the SlotMap<TValue>, the method returns false."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Count.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Count.html",
+    "title": "Property Count | Slotmaps Documentation",
+    "keywords": "Property Count Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Count Gets the number of elements currently stored in the SlotMap<TValue>. public int Count { get; } Property Value int"
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Drain.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Drain.html",
+    "title": "Method Drain | Slotmaps Documentation",
+    "keywords": "Method Drain Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Drain() Removes and returns elements from the SlotMap<TValue> one at a time as an enumerable collection of key-value pairs. public IEnumerable<KeyValuePair<SlotKey, TValue>> Drain() Returns IEnumerable<KeyValuePair<SlotKey, TValue>> An IEnumerable<T> of KeyValuePair<TKey, TValue> containing the entries retrieved from the secondary map. Remarks The Drain method iterates through the elements in the SlotMap<TValue>, removes each element one at a time, and yields them as key-value pairs. Each key-value pair consists of a SlotKey and its associated value."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.EnsureCapacity.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.EnsureCapacity.html",
+    "title": "Method EnsureCapacity | Slotmaps Documentation",
+    "keywords": "Method EnsureCapacity Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll EnsureCapacity(int) Ensures that the SlotMap<TValue> can hold at least the specified capacity without resizing. public int EnsureCapacity(int capacity) Parameters capacity int The desired capacity. Must be a non-negative integer. Returns int The capacity of the SlotMap<TValue> after ensuring it can accommodate the specified capacity. If the current capacity is already greater than or equal to the specified capacity, the current capacity is returned. Remarks Use this method to ensure that the SlotMap<TValue> can hold at least the specified capacity without resizing its internal storage. If the current capacity is less than the specified capacity, the method will resize the internal storage to meet or exceed the desired capacity. Exceptions ArgumentOutOfRangeException Thrown if capacity is negative."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Current.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Current.html",
+    "title": "Property Current | Slotmaps Documentation",
+    "keywords": "Property Current Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Current Gets the element in the collection at the current position of the enumerator. public KeyValuePair<SlotKey, TValue> Current { get; } Property Value KeyValuePair<SlotKey, TValue> The element in the collection at the current position of the enumerator."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Dispose.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Dispose.html",
+    "title": "Method Dispose | Slotmaps Documentation",
+    "keywords": "Method Dispose Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. public void Dispose()"
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.MoveNext.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.MoveNext.html",
+    "title": "Method MoveNext | Slotmaps Documentation",
+    "keywords": "Method MoveNext Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll MoveNext() Advances the enumerator to the next element of the collection. public bool MoveNext() Returns bool true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Reset.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Reset.html",
+    "title": "Method Reset | Slotmaps Documentation",
+    "keywords": "Method Reset Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reset() Sets the enumerator to its initial position, which is before the first element in the collection. public void Reset() Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.html",
+    "title": "Struct SlotMap<TValue>.Enumerator | Slotmaps Documentation",
+    "keywords": "Struct SlotMap<TValue>.Enumerator Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents an enumerator for the SlotMap<TValue> collection. public struct SlotMap<TValue>.Enumerator : IEnumerator<KeyValuePair<SlotKey, TValue>>, IDisposable, IEnumerator Implements IEnumerator<KeyValuePair<SlotKey, TValue>> IDisposable IEnumerator Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Remarks The Enumerator struct provides an enumerator for iterating through the elements of the SlotMap<TValue> collection. It allows sequential access to the key-value pairs within the map. You can use this enumerator to iterate through the elements in the SlotMap<TValue> using a foreach loop. Properties Current Gets the element in the collection at the current position of the enumerator. Methods Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. MoveNext() Advances the enumerator to the next element of the collection. Reset() Sets the enumerator to its initial position, which is before the first element in the collection."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Get.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Get.html",
+    "title": "Method Get | Slotmaps Documentation",
+    "keywords": "Method Get Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Get(SlotKey) Gets the value associated with the specified SlotKey. public TValue Get(SlotKey key) Parameters key SlotKey The SlotKey to look up in the SlotMap<TValue>. Returns TValue The value associated with the key. Remarks Use this method to retrieve the value associated with a specific key in the SlotMap<TValue>. If the key is not found in the map, a KeyNotFoundException is thrown. Exceptions KeyNotFoundException Thrown if the specified key is not found in the map."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Insert.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Insert.html",
+    "title": "Method Insert | Slotmaps Documentation",
+    "keywords": "Method Insert Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Insert(SlotKey, TValue) Inserts a value into the SlotMap<TValue> associated with the specified key. public SlotKey Insert(SlotKey key, TValue value) Parameters key SlotKey The key at which to insert the value. value TValue The value to insert into the SlotMap<TValue>. Returns SlotKey The updated key with an incremented version number. Remarks Use the Insert method to associate a new value with an existing key in the SlotMap<TValue>. If the key does not exist in the map, a KeyNotFoundException is thrown. If the key exists, the associated value is updated, and the key's version number is incremented. If the key is not associated with a value, its version number is incremented, and the Count property is increased by one. Exceptions ArgumentNullException Thrown if value is null. KeyNotFoundException Thrown if the specified key does not exist in the SlotMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.IsEmpty.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.IsEmpty.html",
+    "title": "Property IsEmpty | Slotmaps Documentation",
+    "keywords": "Property IsEmpty Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll IsEmpty Gets a value indicating whether the SlotMap<TValue> is empty. public bool IsEmpty { get; } Property Value bool Remarks The IsEmpty property returns true if the SlotMap<TValue> contains no elements, and false otherwise."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Item.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Item.html",
+    "title": "Property this | Slotmaps Documentation",
+    "keywords": "Property this Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll this[SlotKey] Gets or sets the value associated with the specified SlotKey. public TValue this[SlotKey key] { get; set; } Parameters key SlotKey The SlotKey for which to get or set the associated value. Property Value TValue The value associated with the specified key. Remarks Use this indexer to access the value associated with a specific SlotKey in the SlotMap<TValue>. If the key is not found in the map during the get operation, a KeyNotFoundException is thrown. To set the value associated with a key, assign a new value to this indexer. Exceptions KeyNotFoundException Thrown if the key is not found in the SlotMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Keys.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Keys.html",
+    "title": "Property Keys | Slotmaps Documentation",
+    "keywords": "Property Keys Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Keys Gets a collection containing the keys in the SlotMap<TValue>. public SlotMap<TValue>.SlotKeyCollection Keys { get; } Property Value SlotMap<TValue>.SlotKeyCollection A SlotMap<TValue>.SlotKeyCollection containing the keys in the SlotMap<TValue>. Remarks Only the keys that correspond to occupied slots are included in this collection. You can use this collection to iterate through the keys associated with the values in the map."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Remove.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Remove.html",
+    "title": "Method Remove | Slotmaps Documentation",
+    "keywords": "Method Remove Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Remove(SlotKey) Removes the value associated with the specified key from the SlotMap<TValue>. public TValue Remove(SlotKey key) Parameters key SlotKey The SlotKey associated with the value to be removed. Returns TValue The removed value. Remarks Use this method to remove the value associated with the given key from the SlotMap<TValue>. If the specified key is not found in the map, a KeyNotFoundException is thrown. After removal, the slot corresponding to the key is marked as free for future use. Exceptions KeyNotFoundException Thrown if the key is not found in the map."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Reserve.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Reserve.html",
+    "title": "Method Reserve | Slotmaps Documentation",
+    "keywords": "Method Reserve Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reserve(int) Increases the capacity of the SlotMap<TValue> by a specified amount. public void Reserve(int additionalSize) Parameters additionalSize int The additional capacity to reserve. Must be a positive integer. Remarks Use this method to increase the capacity of the SlotMap<TValue> by the specified additionalSize. It ensures that the SlotMap<TValue> can hold at least the current count of elements plus the additional capacity without resizing frequently. Exceptions ArgumentOutOfRangeException Thrown if additionalSize is non-positive."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Resize.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Resize.html",
+    "title": "Method Resize | Slotmaps Documentation",
+    "keywords": "Method Resize Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Resize(int) Resizes the internal storage of the SlotMap<TValue> to the specified new size. public void Resize(int newSize) Parameters newSize int The new size to which the internal storage should be resized. Must be greater than or equal to the current capacity. Remarks Use this method to adjust the size of the internal storage of the SlotMap<TValue> if needed. The newSize parameter should be greater than or equal to the current capacity of the SlotMap<TValue>. If the newSize is equal to the current capacity, no resizing occurs, and the method returns immediately. Exceptions ArgumentOutOfRangeException Thrown if newSize is less than the current capacity."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Retain.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Retain.html",
+    "title": "Method Retain | Slotmaps Documentation",
+    "keywords": "Method Retain Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Retain(Func<SlotKey, TValue, bool>) Retains elements in the SlotMap<TValue> based on a specified condition defined by a predicate function. public void Retain(Func<SlotKey, TValue, bool> predicate) Parameters predicate Func<SlotKey, TValue, bool> A delegate that defines the condition for retaining elements. The delegate is called for each entry with its SlotKey and associated value as arguments. Remarks The Retain method iterates through all elements in the SlotMap<TValue> and retains those elements for which the provided predicate function returns true. Elements that do not satisfy the condition defined by the predicate are removed from the SlotMap<TValue>. See Also Remove(SlotKey)"
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.-ctor.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.-ctor.html",
+    "title": "Constructor SlotKeyCollection | Slotmaps Documentation",
+    "keywords": "Constructor SlotKeyCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll SlotKeyCollection(SlotMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotKeyCollection/c> class with a reference to the parent SlotMap<TValue>. public SlotKeyCollection(SlotMap<TValue> slotMap) Parameters slotMap SlotMap<TValue> The SlotMap<TValue> to which this collection is associated. Remarks Use this constructor to create a new SlotMap<TValue>.SlotKeyCollection/c> that is associated with a specific SlotMap<TValue>. The slotMap parameter represents the parent SlotMap<TValue> to which this collection is linked. Exceptions ArgumentNullException Thrown if slotMap is null."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Contains.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Contains.html",
+    "title": "Method Contains | Slotmaps Documentation",
+    "keywords": "Method Contains Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Contains(SlotKey) Determines whether the SlotMap<TValue>.SlotKeyCollection/c> contains a specific SlotKey. public bool Contains(SlotKey key) Parameters key SlotKey The SlotKey to locate in the collection. Returns bool true if the SlotMap<TValue>.SlotKeyCollection/c> contains the specified key; otherwise, false. Remarks Use this method to check whether the SlotMap<TValue>.SlotKeyCollection/c> contains a specific SlotKey instance."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.CopyTo.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.CopyTo.html",
+    "title": "Method CopyTo | Slotmaps Documentation",
+    "keywords": "Method CopyTo Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll CopyTo(SlotKey[], int) Copies the elements of the SlotMap<TValue>.SlotKeyCollection/c> to an array, starting at the specified index. public void CopyTo(SlotKey[] array, int index) Parameters array SlotKey[] The one-dimensional array that is the destination of the elements copied from the SlotMap<TValue>.SlotKeyCollection/c>. Must not be null. index int The zero-based index in array at which copying begins. Remarks The CopyTo method copies the elements of the SlotMap<TValue>.SlotKeyCollection/c> to a one-dimensional array, starting at the specified index in the destination array. The destination array must have enough space to accommodate the elements to be copied. Exceptions ArgumentNullException Thrown if array is null. ArgumentOutOfRangeException Thrown if index is negative, greater than or equal to the length of array, or if there are not enough elements in the SlotMap<TValue>.SlotKeyCollection/c> to fill the destination array starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Count.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Count.html",
+    "title": "Property Count | Slotmaps Documentation",
+    "keywords": "Property Count Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Count Gets the number of elements in the SlotMap<TValue>.SlotKeyCollection/c>. public int Count { get; } Property Value int Remarks This count corresponds to the number of keys associated with the SlotMap<TValue> that this collection belongs to."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Current.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Current.html",
+    "title": "Property Current | Slotmaps Documentation",
+    "keywords": "Property Current Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Current Gets the element in the collection at the current position of the enumerator. public SlotKey Current { get; } Property Value SlotKey The element in the collection at the current position of the enumerator."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Dispose.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Dispose.html",
+    "title": "Method Dispose | Slotmaps Documentation",
+    "keywords": "Method Dispose Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. public readonly void Dispose()"
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.MoveNext.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.MoveNext.html",
+    "title": "Method MoveNext | Slotmaps Documentation",
+    "keywords": "Method MoveNext Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll MoveNext() Advances the enumerator to the next element of the collection. public bool MoveNext() Returns bool true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Reset.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Reset.html",
+    "title": "Method Reset | Slotmaps Documentation",
+    "keywords": "Method Reset Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reset() Sets the enumerator to its initial position, which is before the first element in the collection. public void Reset() Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.html",
+    "title": "Struct SlotMap<TValue>.SlotKeyCollection.Enumerator | Slotmaps Documentation",
+    "keywords": "Struct SlotMap<TValue>.SlotKeyCollection.Enumerator Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents an enumerator for the SlotMap<TValue>.SlotKeyCollection. public struct SlotMap<TValue>.SlotKeyCollection.Enumerator : IEnumerator<SlotKey>, IDisposable, IEnumerator Implements IEnumerator<SlotKey> IDisposable IEnumerator Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Remarks The Enumerator struct allows you to enumerate the SlotKey instances in the SlotMap<TValue>.SlotKeyCollection. Use this enumerator to iterate over the keys in the collection. Properties Current Gets the element in the collection at the current position of the enumerator. Methods Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. MoveNext() Advances the enumerator to the next element of the collection. Reset() Sets the enumerator to its initial position, which is before the first element in the collection."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.html",
+    "title": "Class SlotMap<TValue>.SlotKeyCollection | Slotmaps Documentation",
+    "keywords": "Class SlotMap<TValue>.SlotKeyCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents a collection of SlotKey instances associated with a SlotMap<TValue>. public sealed class SlotMap<TValue>.SlotKeyCollection : ICollection<SlotKey>, IReadOnlyCollection<SlotKey>, IEnumerable<SlotKey>, IEnumerable Inheritance object SlotMap<TValue>.SlotKeyCollection Implements ICollection<SlotKey> IReadOnlyCollection<SlotKey> IEnumerable<SlotKey> IEnumerable Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Remarks The SlotMap<TValue>.SlotKeyCollection/c> class provides a collection of SlotKey instances that are associated with a SlotMap<TValue>. This collection allows you to enumerate and work with the keys present in the SlotMap<TValue>. Constructors SlotKeyCollection(SlotMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotKeyCollection/c> class with a reference to the parent SlotMap<TValue>. Properties Count Gets the number of elements in the SlotMap<TValue>.SlotKeyCollection/c>. Methods Contains(SlotKey) Determines whether the SlotMap<TValue>.SlotKeyCollection/c> contains a specific SlotKey. CopyTo(SlotKey[], int) Copies the elements of the SlotMap<TValue>.SlotKeyCollection/c> to an array, starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.-ctor.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.-ctor.html",
+    "title": "Constructor SlotValueCollection | Slotmaps Documentation",
+    "keywords": "Constructor SlotValueCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll SlotValueCollection(SlotMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotValueCollection/c> class associated with a SlotMap<TValue>. public SlotValueCollection(SlotMap<TValue> slotMap) Parameters slotMap SlotMap<TValue> The SlotMap<TValue> with which this collection is associated. Must not be null. Remarks The constructor initializes a new instance of the SlotMap<TValue>.SlotValueCollection/c> class that is associated with a specific SlotMap<TValue>. The slotMap parameter determines the SlotMap<TValue> with which this collection is associated. Exceptions ArgumentNullException Thrown if slotMap is null."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Contains.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Contains.html",
+    "title": "Method Contains | Slotmaps Documentation",
+    "keywords": "Method Contains Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Contains(TValue) Determines whether the SlotMap<TValue>.SlotValueCollection/c> contains a specific value. public bool Contains(TValue value) Parameters value TValue The value to locate in the collection. Returns bool true if the SlotMap<TValue>.SlotValueCollection/c> contains the specified value; otherwise, false. Remarks Use this method to check whether the SlotMap<TValue>.SlotKeyCollection/c> contains a specific value."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.CopyTo.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.CopyTo.html",
+    "title": "Method CopyTo | Slotmaps Documentation",
+    "keywords": "Method CopyTo Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll CopyTo(TValue[], int) Copies the elements of the SlotMap<TValue>.SlotValueCollection/c> to an array, starting at the specified index. public void CopyTo(TValue[] array, int index) Parameters array TValue[] The one-dimensional array that is the destination of the elements copied from the SlotMap<TValue>.SlotValueCollection/c>. Must not be null. index int The zero-based index in array at which copying begins. Remarks The CopyTo method copies the elements of the SlotMap<TValue>.SlotValueCollection/c> to a one-dimensional array, starting at the specified index in the destination array. The destination array must have enough space to accommodate the elements to be copied. Exceptions ArgumentNullException Thrown if array is null. ArgumentOutOfRangeException Thrown if index is negative, greater than or equal to the length of array, or if there are not enough elements in the SlotMap<TValue>.SlotValueCollection/c> to fill the destination array starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Count.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Count.html",
+    "title": "Property Count | Slotmaps Documentation",
+    "keywords": "Property Count Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Count Gets the number of values in the SlotMap<TValue>.SlotValueCollection/c>. public int Count { get; } Property Value int Remarks This count corresponds to the number of values associated with the SlotMap<TValue> that this collection belongs to."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Current.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Current.html",
+    "title": "Property Current | Slotmaps Documentation",
+    "keywords": "Property Current Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Current Gets the element in the collection at the current position of the enumerator. public TValue Current { get; } Property Value TValue The element in the collection at the current position of the enumerator."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Dispose.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Dispose.html",
+    "title": "Method Dispose | Slotmaps Documentation",
+    "keywords": "Method Dispose Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. public void Dispose()"
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.MoveNext.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.MoveNext.html",
+    "title": "Method MoveNext | Slotmaps Documentation",
+    "keywords": "Method MoveNext Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll MoveNext() Advances the enumerator to the next element of the collection. public bool MoveNext() Returns bool true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Reset.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Reset.html",
+    "title": "Method Reset | Slotmaps Documentation",
+    "keywords": "Method Reset Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reset() Sets the enumerator to its initial position, which is before the first element in the collection. public void Reset() Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.html",
+    "title": "Struct SlotMap<TValue>.SlotValueCollection.Enumerator | Slotmaps Documentation",
+    "keywords": "Struct SlotMap<TValue>.SlotValueCollection.Enumerator Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents an enumerator for the values in the SlotMap<TValue>.SlotValueCollection/c>. public struct SlotMap<TValue>.SlotValueCollection.Enumerator : IEnumerator<TValue>, IDisposable, IEnumerator Implements IEnumerator<TValue> IDisposable IEnumerator Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Remarks The Enumerator struct allows you to enumerate the values stored in the SlotMap<TValue>.SlotValueCollection. Use this enumerator to iterate over the values in the collection. Properties Current Gets the element in the collection at the current position of the enumerator. Methods Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. MoveNext() Advances the enumerator to the next element of the collection. Reset() Sets the enumerator to its initial position, which is before the first element in the collection."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.html",
+    "title": "Class SlotMap<TValue>.SlotValueCollection | Slotmaps Documentation",
+    "keywords": "Class SlotMap<TValue>.SlotValueCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents a collection of values associated with a SlotMap<TValue>. public sealed class SlotMap<TValue>.SlotValueCollection : ICollection<TValue>, IReadOnlyCollection<TValue>, IEnumerable<TValue>, IEnumerable Inheritance object SlotMap<TValue>.SlotValueCollection Implements ICollection<TValue> IReadOnlyCollection<TValue> IEnumerable<TValue> IEnumerable Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Remarks The SlotMap<TValue>.SlotValueCollection/c> class provides a collection of values that are associated with a SlotMap<TValue>. This collection allows you to enumerate and work with the values present in the SlotMap<TValue>. Constructors SlotValueCollection(SlotMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotValueCollection/c> class associated with a SlotMap<TValue>. Properties Count Gets the number of values in the SlotMap<TValue>.SlotValueCollection/c>. Methods Contains(TValue) Determines whether the SlotMap<TValue>.SlotValueCollection/c> contains a specific value. CopyTo(TValue[], int) Copies the elements of the SlotMap<TValue>.SlotValueCollection/c> to an array, starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.TryAdd.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.TryAdd.html",
+    "title": "Method TryAdd | Slotmaps Documentation",
+    "keywords": "Method TryAdd Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryAdd(SlotKey, TValue, out SlotKey) Tries to add or update an element in the SlotMap<TValue> with the specified key and value. public bool TryAdd(SlotKey key, TValue value, out SlotKey newKey) Parameters key SlotKey The key to associate with the value. value TValue The value to add or update in the SlotMap<TValue>. newKey SlotKey When the method succeeds, this parameter receives the new or updated key associated with the value. Returns bool true if the element was added or updated successfully; otherwise, false. Remarks Use this method to add a new element to the SlotMap<TValue> with the specified key and value. If the element with the same key already exists, it updates the value associated with that key. Exceptions ArgumentNullException Thrown if value is null."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.TryGet.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.TryGet.html",
+    "title": "Method TryGet | Slotmaps Documentation",
+    "keywords": "Method TryGet Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryGet(SlotKey, out TValue) Tries to retrieve the value associated with the specified key from the SlotMap<TValue>. public bool TryGet(SlotKey key, out TValue value) Parameters key SlotKey The key whose associated value is to be retrieved. value TValue When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for TValue. Returns bool true if the key is found in the SlotMap<TValue>; otherwise, false. Remarks Use this method to check if the key exists in the SlotMap<TValue>. If the key is found, the associated value is stored in the value parameter, and the method returns true to indicate success. If the key is not found, the value parameter is set to the default value for TValue, and the method returns false to indicate that the key does not exist in the SlotMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.TryRemove.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.TryRemove.html",
+    "title": "Method TryRemove | Slotmaps Documentation",
+    "keywords": "Method TryRemove Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryRemove(SlotKey, out TValue) Attempts to remove the value associated with the specified SlotKey from the SlotMap<TValue>. public bool TryRemove(SlotKey key, out TValue value) Parameters key SlotKey The SlotKey to remove from the SlotMap<TValue>. value TValue When this method returns, contains the value associated with the specified key, if found; otherwise, the default value for TValue. Returns bool true if the key was found and the associated value was successfully removed; otherwise, false. Remarks The TryRemove method attempts to remove the value associated with the specified key from the SlotMap<TValue>. If the key is not found in the map, this method sets the value parameter to the default value of TValue and returns false. If the key is found, it returns true, and the associated value is stored in the value parameter."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.Values.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.Values.html",
+    "title": "Property Values | Slotmaps Documentation",
+    "keywords": "Property Values Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Values Gets a collection containing the values in the SlotMap<TValue>. public SlotMap<TValue>.SlotValueCollection Values { get; } Property Value SlotMap<TValue>.SlotValueCollection A SlotMap<TValue>.SlotValueCollection containing the values in the SlotMap<TValue>. Remarks Only the values that correspond to occupied slots are included in this collection. You can use this collection to iterate through the values associated with the keys in the map."
+  },
+  "api/FlashyDJ.Slotmaps.SlotMap-1.html": {
+    "href": "api/FlashyDJ.Slotmaps.SlotMap-1.html",
+    "title": "Class SlotMap<TValue> | Slotmaps Documentation",
+    "keywords": "Class SlotMap<TValue> Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents a collection that maps SlotKey to values of type TValue. [Serializable] public class SlotMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>>, IEnumerable<KeyValuePair<SlotKey, TValue>>, IEnumerable Type Parameters TValue The type of values stored in the map. Inheritance object SlotMap<TValue> Implements ICollection<KeyValuePair<SlotKey, TValue>> IEnumerable<KeyValuePair<SlotKey, TValue>> IEnumerable Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Remarks The SlotMap<TValue> class provides a collection that associates keys of type SlotKey with values of type TValue. It is designed to efficiently manage and access values by their associated keys while allowing for easy addition and removal of entries. This collection can grow dynamically as elements are added and it manages its internal memory allocation to optimize performance. Constructors SlotMap() Initializes a new instance of the SlotMap<TValue> class with an empty collection. SlotMap(int) Initializes a new instance of the SlotMap<TValue> class with the specified capacity. Properties Capacity Gets the capacity of the SlotMap<TValue>. Count Gets the number of elements currently stored in the SlotMap<TValue>. IsEmpty Gets a value indicating whether the SlotMap<TValue> is empty. this[SlotKey] Gets or sets the value associated with the specified SlotKey. Keys Gets a collection containing the keys in the SlotMap<TValue>. Values Gets a collection containing the values in the SlotMap<TValue>. Methods Add(TValue) Adds a value to the SlotMap<TValue> and returns the associated SlotKey. Clear() Removes all elements from the SlotMap<TValue>. ContainsKey(SlotKey) Determines whether the SlotMap<TValue> contains the specified SlotKey. ContainsValue(TValue) Determines whether the SlotMap<TValue> contains a specific value. Drain() Removes and returns elements from the SlotMap<TValue> one at a time as an enumerable collection of key-value pairs. EnsureCapacity(int) Ensures that the SlotMap<TValue> can hold at least the specified capacity without resizing. Get(SlotKey) Gets the value associated with the specified SlotKey. Insert(SlotKey, TValue) Inserts a value into the SlotMap<TValue> associated with the specified key. Remove(SlotKey) Removes the value associated with the specified key from the SlotMap<TValue>. Reserve(int) Increases the capacity of the SlotMap<TValue> by a specified amount. Resize(int) Resizes the internal storage of the SlotMap<TValue> to the specified new size. Retain(Func<SlotKey, TValue, bool>) Retains elements in the SlotMap<TValue> based on a specified condition defined by a predicate function. TryAdd(SlotKey, TValue, out SlotKey) Tries to add or update an element in the SlotMap<TValue> with the specified key and value. TryGet(SlotKey, out TValue) Tries to retrieve the value associated with the specified key from the SlotMap<TValue>. TryRemove(SlotKey, out TValue) Attempts to remove the value associated with the specified SlotKey from the SlotMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.-ctor.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.-ctor.html",
+    "title": "Constructor SparseSecondaryMap | Slotmaps Documentation",
+    "keywords": "Constructor SparseSecondaryMap Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll SparseSecondaryMap() Initializes a new instance of the SparseSecondaryMap<TValue> class with an empty collection. public SparseSecondaryMap() Remarks Use this constructor to create a new SparseSecondaryMap<TValue> with no elements initially. The SparseSecondaryMap<TValue> will be empty, and its internal storage will be an empty dictionary. SparseSecondaryMap(int) Initializes a new instance of the SparseSecondaryMap<TValue> class with the specified capacity. public SparseSecondaryMap(int capacity) Parameters capacity int The initial capacity of the SparseSecondaryMap<TValue>. Must be a non-negative integer. Remarks Use this constructor to create a new SparseSecondaryMap<TValue> with a specific initial capacity. The capacity parameter determines the initial number of entries that can be stored efficiently in the SparseSecondaryMap<TValue>. Exceptions ArgumentOutOfRangeException Thrown if capacity is negative."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Capacity.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Capacity.html",
+    "title": "Property Capacity | Slotmaps Documentation",
+    "keywords": "Property Capacity Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Capacity Gets the capacity of the SparseSecondaryMap<TValue>. public int Capacity { get; } Property Value int Remarks The capacity represents the maximum number of elements that the SparseSecondaryMap<TValue> can hold before it needs to resize its internal storage."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Clear.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Clear.html",
+    "title": "Method Clear | Slotmaps Documentation",
+    "keywords": "Method Clear Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Clear() Removes all elements from the SparseSecondaryMap<TValue>. public void Clear() Remarks The Clear method removes all elements from the SparseSecondaryMap<TValue>, resetting it to an empty state. It also resets the internal counters and clears the values stored in the SparseSecondaryMap<TValue>.Slot<TValue>, but it does not deallocate memory. Use this method to clear the SparseSecondaryMap<TValue> when you want to reuse it without resizing its internal storage."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.ContainsKey.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.ContainsKey.html",
+    "title": "Method ContainsKey | Slotmaps Documentation",
+    "keywords": "Method ContainsKey Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll ContainsKey(SlotKey) Determines whether the secondary map contains the specified SlotKey. public bool ContainsKey(SlotKey key) Parameters key SlotKey The SlotKey to locate in the SparseSecondaryMap<TValue>. Returns bool true if the SparseSecondaryMap<TValue> contains an entry with the specified SlotKey that matches both the index and version; otherwise, false. Remarks The ContainsKey method checks whether the SparseSecondaryMap<TValue> contains an entry with the specified SlotKey. To be considered a match, the entry must have the same index and version as the provided SlotKey. Exceptions KeyNotFoundException Thrown if the provided SlotKey is invalid or has a version less than 1."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.ContainsValue.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.ContainsValue.html",
+    "title": "Method ContainsValue | Slotmaps Documentation",
+    "keywords": "Method ContainsValue Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll ContainsValue(TValue) Determines whether the SparseSecondaryMap<TValue> contains an entry with the specified value. public bool ContainsValue(TValue value) Parameters value TValue The value to locate in the SparseSecondaryMap<TValue>. Returns bool true if the SparseSecondaryMap<TValue> contains an entry with the specified value; otherwise, false. Remarks The ContainsValue method checks whether the SparseSecondaryMap<TValue> contains an entry with the specified value. It uses the default equality comparer for the TValue type to compare values."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Count.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Count.html",
+    "title": "Property Count | Slotmaps Documentation",
+    "keywords": "Property Count Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Count Gets the number of elements currently stored in the SparseSecondaryMap<TValue>. public int Count { get; } Property Value int"
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Drain.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Drain.html",
+    "title": "Method Drain | Slotmaps Documentation",
+    "keywords": "Method Drain Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Drain() Removes and returns elements from the SparseSecondaryMap<TValue> one at a time as an enumerable collection of key-value pairs. public IEnumerable<KeyValuePair<SlotKey, TValue>> Drain() Returns IEnumerable<KeyValuePair<SlotKey, TValue>> An IEnumerable<T> of KeyValuePair<TKey, TValue> containing the entries retrieved from the SparseSecondaryMap<TValue>. Remarks The Drain method iterates through the elements in the SparseSecondaryMap<TValue>, removes each element one at a time, and yields them as key-value pairs. Each key-value pair consists of a SlotKey and its associated value."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.EnsureCapacity.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.EnsureCapacity.html",
+    "title": "Method EnsureCapacity | Slotmaps Documentation",
+    "keywords": "Method EnsureCapacity Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll EnsureCapacity(int) Ensures that the SparseSecondaryMap<TValue> can hold at least the specified capacity without resizing. public int EnsureCapacity(int capacity) Parameters capacity int The desired capacity of the SparseSecondaryMap<TValue>. Must be a non-negative integer. Returns int The capacity of the SparseSecondaryMap<TValue> after ensuring it can accommodate the specified capacity. If the current capacity is already greater than or equal to the specified capacity, the current capacity is returned. Remarks Use this method to ensure that the SparseSecondaryMap<TValue> can hold at least the specified capacity without resizing its internal storage. If the current capacity is less than the specified capacity, the method will resize the internal storage to meet or exceed the desired capacity. Exceptions ArgumentOutOfRangeException Thrown if capacity is negative."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Current.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Current.html",
+    "title": "Property Current | Slotmaps Documentation",
+    "keywords": "Property Current Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Current Gets the element in the collection at the current position of the enumerator. public KeyValuePair<SlotKey, TValue> Current { get; } Property Value KeyValuePair<SlotKey, TValue> The element in the collection at the current position of the enumerator."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Dispose.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Dispose.html",
+    "title": "Method Dispose | Slotmaps Documentation",
+    "keywords": "Method Dispose Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. public void Dispose()"
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.MoveNext.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.MoveNext.html",
+    "title": "Method MoveNext | Slotmaps Documentation",
+    "keywords": "Method MoveNext Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll MoveNext() Advances the enumerator to the next element of the collection. public bool MoveNext() Returns bool true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Reset.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Reset.html",
+    "title": "Method Reset | Slotmaps Documentation",
+    "keywords": "Method Reset Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reset() Sets the enumerator to its initial position, which is before the first element in the collection. public void Reset() Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.html",
+    "title": "Struct SparseSecondaryMap<TValue>.Enumerator | Slotmaps Documentation",
+    "keywords": "Struct SparseSecondaryMap<TValue>.Enumerator Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents an enumerator for the SparseSecondaryMap<TValue> collection. public struct SparseSecondaryMap<TValue>.Enumerator : IEnumerator<KeyValuePair<SlotKey, TValue>>, IDisposable, IEnumerator Implements IEnumerator<KeyValuePair<SlotKey, TValue>> IDisposable IEnumerator Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Remarks The Enumerator struct provides an enumerator for iterating through the elements of the SparseSecondaryMap<TValue> collection. It allows sequential access to the key-value pairs within the map. You can use this enumerator to iterate through the elements in the SparseSecondaryMap<TValue> using a foreach loop. Properties Current Gets the element in the collection at the current position of the enumerator. Methods Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. MoveNext() Advances the enumerator to the next element of the collection. Reset() Sets the enumerator to its initial position, which is before the first element in the collection."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Get.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Get.html",
+    "title": "Method Get | Slotmaps Documentation",
+    "keywords": "Method Get Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Get(SlotKey) Gets the value associated with the specified SlotKey. public TValue Get(SlotKey key) Parameters key SlotKey The SlotKey to look up in the SparseSecondaryMap<TValue>. Returns TValue The value associated with the specified SlotKey. Remarks Use this method to retrieve the value associated with a specific key in the SparseSecondaryMap<TValue>. If the key is not found in the map, a KeyNotFoundException is thrown. Exceptions KeyNotFoundException Thrown if the provided SlotKey is invalid, has a version less than 1, or does not exist in the SparseSecondaryMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Insert.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Insert.html",
+    "title": "Method Insert | Slotmaps Documentation",
+    "keywords": "Method Insert Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Insert(SlotKey, TValue) Inserts a value into the SparseSecondaryMap<TValue> associated with the specified SlotKey. public TValue Insert(SlotKey key, TValue value) Parameters key SlotKey The SlotKey with which to associate the value. value TValue The value to insert into the SparseSecondaryMap<TValue>. Returns TValue The previous value associated with the specified SlotKey if it existed; otherwise, the provided value. Remarks Use the Insert method to associate a value with a specified SlotKey in the SparseSecondaryMap<TValue>. If an entry with the same SlotKey exists, the method updates the existing entry with the provided value, but only if the provided key version is greater than or equal to the version of the existing entry. If no entry with the specified SlotKey exists, a new entry is added. Exceptions ArgumentNullException Thrown if value is null. KeyNotFoundException Thrown if the provided SlotKey is invalid or has a version less than 1, or if the provided SlotKey is an older version than an existing entry."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.IsEmpty.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.IsEmpty.html",
+    "title": "Property IsEmpty | Slotmaps Documentation",
+    "keywords": "Property IsEmpty Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll IsEmpty Gets a value indicating whether the SparseSecondaryMap<TValue> is empty. public bool IsEmpty { get; } Property Value bool Remarks The IsEmpty property returns true if the SparseSecondaryMap<TValue> contains no elements, and false otherwise."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Item.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Item.html",
+    "title": "Property this | Slotmaps Documentation",
+    "keywords": "Property this Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll this[SlotKey] Gets or sets the value associated with the specified SlotKey. public TValue this[SlotKey key] { get; set; } Parameters key SlotKey The SlotKey whose associated value is to be retrieved or set. Property Value TValue The value associated with the specified key. Remarks Use this indexer to access the value associated with a specific SlotKey in the SparseSecondaryMap<TValue>. If the key is not found in the map during the get operation, a KeyNotFoundException is thrown. To set the value associated with a key, assign a new value to this indexer. Exceptions KeyNotFoundException Thrown if the specified key is invalid, not found, or its version does not match."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Keys.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Keys.html",
+    "title": "Property Keys | Slotmaps Documentation",
+    "keywords": "Property Keys Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Keys Gets a collection containing the keys in the SparseSecondaryMap<TValue>. public SparseSecondaryMap<TValue>.SlotKeyCollection Keys { get; } Property Value SparseSecondaryMap<TValue>.SlotKeyCollection A SparseSecondaryMap<TValue>.SlotKeyCollection containing the keys in the SparseSecondaryMap<TValue>. Remarks Only the keys that correspond to occupied slots are included in this collection. You can use this collection to iterate through the keys associated with the values in the map."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Remove.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Remove.html",
+    "title": "Method Remove | Slotmaps Documentation",
+    "keywords": "Method Remove Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Remove(SlotKey) Removes the value with the specified SlotKey from the SparseSecondaryMap<TValue>. public TValue Remove(SlotKey key) Parameters key SlotKey The SlotKey of the entry to remove. Returns TValue The value associated with the removed SlotKey if the entry is found and removed successfully. Remarks Use the Remove method to remove the value with the specified SlotKey from the SparseSecondaryMap<TValue>. To be considered a match, the entry must have the same index and version as the provided SlotKey. If the entry is found and removed, its associated value is returned. Exceptions KeyNotFoundException Thrown if the provided SlotKey is invalid, has a version less than 1, or does not exist in the SparseSecondaryMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Retain.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Retain.html",
+    "title": "Method Retain | Slotmaps Documentation",
+    "keywords": "Method Retain Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Retain(Func<SlotKey, TValue, bool>) Retains entries in the SparseSecondaryMap<TValue> based on a specified condition defined by a predicate function. public void Retain(Func<SlotKey, TValue, bool> predicate) Parameters predicate Func<SlotKey, TValue, bool> A delegate that defines the condition for retaining elements. The delegate is called for each entry with its SlotKey and associated value as arguments. Remarks The Retain method iterates through the entries in the SparseSecondaryMap<TValue> and retains only those entries for which the specified predicate returns true. Entries that do not satisfy the predicate are removed from the SparseSecondaryMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.-ctor.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.-ctor.html",
+    "title": "Constructor SlotKeyCollection | Slotmaps Documentation",
+    "keywords": "Constructor SlotKeyCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll SlotKeyCollection(SparseSecondaryMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotKeyCollection/c> class with a reference to the parent SparseSecondaryMap<TValue>. public SlotKeyCollection(SparseSecondaryMap<TValue> sparseSecondaryMap) Parameters sparseSecondaryMap SparseSecondaryMap<TValue> The SparseSecondaryMap<TValue> to which this collection is associated. Remarks Use this constructor to create a new SlotMap<TValue>.SlotKeyCollection/c> that is associated with a specific SparseSecondaryMap<TValue>. The sparseSecondaryMap parameter represents the parent SparseSecondaryMap<TValue> to which this collection is linked. Exceptions ArgumentNullException Thrown if sparseSecondaryMap is null."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Contains.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Contains.html",
+    "title": "Method Contains | Slotmaps Documentation",
+    "keywords": "Method Contains Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Contains(SlotKey) Determines whether the SlotMap<TValue>.SlotKeyCollection/c> contains a specific SlotKey. public bool Contains(SlotKey key) Parameters key SlotKey The SlotKey to locate in the collection. Returns bool true if the SlotMap<TValue>.SlotKeyCollection/c> contains the specified key; otherwise, false. Remarks Use this method to check whether the SlotMap<TValue>.SlotKeyCollection/c> contains a specific SlotKey instance."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.CopyTo.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.CopyTo.html",
+    "title": "Method CopyTo | Slotmaps Documentation",
+    "keywords": "Method CopyTo Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll CopyTo(SlotKey[], int) Copies the elements of the SlotMap<TValue>.SlotKeyCollection/c> to an array, starting at the specified index. public void CopyTo(SlotKey[] array, int index) Parameters array SlotKey[] The one-dimensional array that is the destination of the elements copied from the SlotMap<TValue>.SlotKeyCollection/c>. Must not be null. index int The zero-based index in array at which copying begins. Remarks The CopyTo method copies the elements of the SlotMap<TValue>.SlotKeyCollection/c> to a one-dimensional array, starting at the specified index in the destination array. The destination array must have enough space to accommodate the elements to be copied. Exceptions ArgumentNullException Thrown if array is null. ArgumentOutOfRangeException Thrown if index is negative, greater than or equal to the length of array, or if there are not enough elements in the SlotMap<TValue>.SlotKeyCollection/c> to fill the destination array starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Count.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Count.html",
+    "title": "Property Count | Slotmaps Documentation",
+    "keywords": "Property Count Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Count Gets the number of elements in the SlotMap<TValue>.SlotKeyCollection/c>. public int Count { get; } Property Value int Remarks This count corresponds to the number of keys associated with the SparseSecondaryMap<TValue> that this collection belongs to."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Current.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Current.html",
+    "title": "Property Current | Slotmaps Documentation",
+    "keywords": "Property Current Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Current Gets the element in the collection at the current position of the enumerator. public SlotKey Current { get; } Property Value SlotKey The element in the collection at the current position of the enumerator."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Dispose.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Dispose.html",
+    "title": "Method Dispose | Slotmaps Documentation",
+    "keywords": "Method Dispose Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. public readonly void Dispose()"
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.MoveNext.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.MoveNext.html",
+    "title": "Method MoveNext | Slotmaps Documentation",
+    "keywords": "Method MoveNext Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll MoveNext() Advances the enumerator to the next element of the collection. public bool MoveNext() Returns bool true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Reset.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Reset.html",
+    "title": "Method Reset | Slotmaps Documentation",
+    "keywords": "Method Reset Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reset() Sets the enumerator to its initial position, which is before the first element in the collection. public void Reset() Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.html",
+    "title": "Struct SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator | Slotmaps Documentation",
+    "keywords": "Struct SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents an enumerator for the SparseSecondaryMap<TValue>.SlotKeyCollection. public struct SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator : IEnumerator<SlotKey>, IDisposable, IEnumerator Implements IEnumerator<SlotKey> IDisposable IEnumerator Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Remarks The Enumerator struct allows you to enumerate the SlotKey instances in the SparseSecondaryMap<TValue>.SlotKeyCollection. Use this enumerator to iterate over the keys in the collection. Properties Current Gets the element in the collection at the current position of the enumerator. Methods Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. MoveNext() Advances the enumerator to the next element of the collection. Reset() Sets the enumerator to its initial position, which is before the first element in the collection."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.html",
+    "title": "Class SparseSecondaryMap<TValue>.SlotKeyCollection | Slotmaps Documentation",
+    "keywords": "Class SparseSecondaryMap<TValue>.SlotKeyCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents a collection of SlotKey instances associated with a SparseSecondaryMap<TValue>. public sealed class SparseSecondaryMap<TValue>.SlotKeyCollection : ICollection<SlotKey>, IReadOnlyCollection<SlotKey>, IEnumerable<SlotKey>, IEnumerable Inheritance object SparseSecondaryMap<TValue>.SlotKeyCollection Implements ICollection<SlotKey> IReadOnlyCollection<SlotKey> IEnumerable<SlotKey> IEnumerable Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Remarks The SlotMap<TValue>.SlotKeyCollection/c> class provides a collection of SlotKey instances that are associated with a SparseSecondaryMap<TValue>. This collection allows you to enumerate and work with the keys present in the SparseSecondaryMap<TValue>. Constructors SlotKeyCollection(SparseSecondaryMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotKeyCollection/c> class with a reference to the parent SparseSecondaryMap<TValue>. Properties Count Gets the number of elements in the SlotMap<TValue>.SlotKeyCollection/c>. Methods Contains(SlotKey) Determines whether the SlotMap<TValue>.SlotKeyCollection/c> contains a specific SlotKey. CopyTo(SlotKey[], int) Copies the elements of the SlotMap<TValue>.SlotKeyCollection/c> to an array, starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.-ctor.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.-ctor.html",
+    "title": "Constructor SlotValueCollection | Slotmaps Documentation",
+    "keywords": "Constructor SlotValueCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll SlotValueCollection(SparseSecondaryMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotValueCollection/c> class associated with a SparseSecondaryMap<TValue>. public SlotValueCollection(SparseSecondaryMap<TValue> sparseSecondaryMap) Parameters sparseSecondaryMap SparseSecondaryMap<TValue> The SparseSecondaryMap<TValue> with which this collection is associated. Must not be null. Remarks The constructor initializes a new instance of the SlotMap<TValue>.SlotValueCollection/c> class that is associated with a specific SparseSecondaryMap<TValue>. The sparseSecondaryMap parameter determines the SparseSecondaryMap<TValue> with which this collection is associated. Exceptions ArgumentNullException Thrown if sparseSecondaryMap is null."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Contains.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Contains.html",
+    "title": "Method Contains | Slotmaps Documentation",
+    "keywords": "Method Contains Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Contains(TValue) Determines whether the SlotMap<TValue>.SlotValueCollection/c> contains a specific value. public bool Contains(TValue value) Parameters value TValue The value to locate in the collection. Returns bool true if the SlotMap<TValue>.SlotValueCollection/c> contains the specified value; otherwise, false. Remarks Use this method to check whether the SlotMap<TValue>.SlotKeyCollection/c> contains a specific value."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.CopyTo.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.CopyTo.html",
+    "title": "Method CopyTo | Slotmaps Documentation",
+    "keywords": "Method CopyTo Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll CopyTo(TValue[], int) Copies the elements of the SlotMap<TValue>.SlotValueCollection/c> to an array, starting at the specified index. public void CopyTo(TValue[] array, int index) Parameters array TValue[] The one-dimensional array that is the destination of the elements copied from the SlotMap<TValue>.SlotValueCollection/c>. Must not be null. index int The zero-based index in array at which copying begins. Remarks The CopyTo method copies the elements of the SlotMap<TValue>.SlotValueCollection/c> to a one-dimensional array, starting at the specified index in the destination array. The destination array must have enough space to accommodate the elements to be copied. Exceptions ArgumentNullException Thrown if array is null. ArgumentOutOfRangeException Thrown if index is negative, greater than or equal to the length of array, or if there are not enough elements in the SlotMap<TValue>.SlotValueCollection/c> to fill the destination array starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Count.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Count.html",
+    "title": "Property Count | Slotmaps Documentation",
+    "keywords": "Property Count Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Count Gets the number of values in the SlotMap<TValue>.SlotValueCollection/c>. public int Count { get; } Property Value int Remarks This count corresponds to the number of values associated with the SparseSecondaryMap<TValue> that this collection belongs to."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Current.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Current.html",
+    "title": "Property Current | Slotmaps Documentation",
+    "keywords": "Property Current Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Current Gets the element in the collection at the current position of the enumerator. public TValue Current { get; } Property Value TValue The element in the collection at the current position of the enumerator."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Dispose.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Dispose.html",
+    "title": "Method Dispose | Slotmaps Documentation",
+    "keywords": "Method Dispose Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. public void Dispose()"
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.MoveNext.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.MoveNext.html",
+    "title": "Method MoveNext | Slotmaps Documentation",
+    "keywords": "Method MoveNext Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll MoveNext() Advances the enumerator to the next element of the collection. public bool MoveNext() Returns bool true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Reset.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Reset.html",
+    "title": "Method Reset | Slotmaps Documentation",
+    "keywords": "Method Reset Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Reset() Sets the enumerator to its initial position, which is before the first element in the collection. public void Reset() Exceptions InvalidOperationException The collection was modified after the enumerator was created."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.html",
+    "title": "Struct SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator | Slotmaps Documentation",
+    "keywords": "Struct SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents an enumerator for the values in the SlotMap<TValue>.SlotValueCollection/c>. public struct SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator : IEnumerator<TValue>, IDisposable, IEnumerator Implements IEnumerator<TValue> IDisposable IEnumerator Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Remarks The Enumerator struct allows you to enumerate the values stored in the SparseSecondaryMap<TValue>.SlotValueCollection. Use this enumerator to iterate over the values in the collection. Properties Current Gets the element in the collection at the current position of the enumerator. Methods Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. MoveNext() Advances the enumerator to the next element of the collection. Reset() Sets the enumerator to its initial position, which is before the first element in the collection."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.html",
+    "title": "Class SparseSecondaryMap<TValue>.SlotValueCollection | Slotmaps Documentation",
+    "keywords": "Class SparseSecondaryMap<TValue>.SlotValueCollection Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents a collection of values associated with a SparseSecondaryMap<TValue>. public sealed class SparseSecondaryMap<TValue>.SlotValueCollection : ICollection<TValue>, IReadOnlyCollection<TValue>, IEnumerable<TValue>, IEnumerable Inheritance object SparseSecondaryMap<TValue>.SlotValueCollection Implements ICollection<TValue> IReadOnlyCollection<TValue> IEnumerable<TValue> IEnumerable Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Remarks The SlotMap<TValue>.SlotValueCollection/c> class provides a collection of values that are associated with a SparseSecondaryMap<TValue>. This collection allows you to enumerate and work with the values present in the SparseSecondaryMap<TValue>. Constructors SlotValueCollection(SparseSecondaryMap<TValue>) Initializes a new instance of the SlotMap<TValue>.SlotValueCollection/c> class associated with a SparseSecondaryMap<TValue>. Properties Count Gets the number of values in the SlotMap<TValue>.SlotValueCollection/c>. Methods Contains(TValue) Determines whether the SlotMap<TValue>.SlotValueCollection/c> contains a specific value. CopyTo(TValue[], int) Copies the elements of the SlotMap<TValue>.SlotValueCollection/c> to an array, starting at the specified index."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryGet.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryGet.html",
+    "title": "Method TryGet | Slotmaps Documentation",
+    "keywords": "Method TryGet Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryGet(SlotKey, out TValue) Tries to get the value associated with the specified SlotKey from the SparseSecondaryMap<TValue>. public bool TryGet(SlotKey key, out TValue value) Parameters key SlotKey The SlotKey to locate in the SparseSecondaryMap<TValue>. value TValue When this method returns, contains the value associated with the specified SlotKey, if found; otherwise, the default value for TValue. Returns bool true if the key is found in the SparseSecondaryMap<TValue>; otherwise, false. Remarks Use this method to check if the key exists in the SparseSecondaryMap<TValue>. If the key is found, the associated value is stored in the value parameter, and the method returns true to indicate success. If the key is not found, the value parameter is set to the default value for TValue, and the method returns false to indicate that the key does not exist in the SparseSecondaryMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryInsert.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryInsert.html",
+    "title": "Method TryInsert | Slotmaps Documentation",
+    "keywords": "Method TryInsert Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryInsert(SlotKey, TValue, out TValue) Tries to insert a value associated with the specified SlotKey into the SparseSecondaryMap<TValue>. public bool TryInsert(SlotKey key, TValue value, out TValue previousValue) Parameters key SlotKey The SlotKey to associate with the value. value TValue The value to insert into the SparseSecondaryMap<TValue>. Must not be null. previousValue TValue When this method returns, contains the previous value associated with the specified SlotKey, if it exists; otherwise, the default value for TValue. Returns bool true if the value was successfully inserted or updated; otherwise, false. Remarks The TryInsert method attempts to insert a value associated with the specified SlotKey into the SparseSecondaryMap<TValue>. If the key is already present in the map and has a version greater than or equal to the provided key's version, the value is updated, and the previous value is returned in the previousValue parameter. If the key is not present or has a lower version, a new entry is created. Exceptions ArgumentNullException Thrown if value is null."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryRemove.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryRemove.html",
+    "title": "Method TryRemove | Slotmaps Documentation",
+    "keywords": "Method TryRemove Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll TryRemove(SlotKey, out TValue) Attempts to remove the entry with the specified SlotKey from the SparseSecondaryMap<TValue>. public bool TryRemove(SlotKey key, out TValue value) Parameters key SlotKey The SlotKey of the entry to remove. value TValue When this method returns, contains the value associated with the specified key, if found; otherwise, the default value for TValue. Returns bool true if an entry with the specified SlotKey was found and removed successfully; otherwise, false. Remarks The TryRemove method attempts to remove the entry with the specified SlotKey from the SparseSecondaryMap<TValue>. If the entry is found and has the same version as the provided key, the value associated with the entry is returned in the value parameter, and the entry is removed from the SparseSecondaryMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Values.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Values.html",
+    "title": "Property Values | Slotmaps Documentation",
+    "keywords": "Property Values Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Values Gets a collection containing the values in the SparseSecondaryMap<TValue>. public SparseSecondaryMap<TValue>.SlotValueCollection Values { get; } Property Value SparseSecondaryMap<TValue>.SlotValueCollection A SparseSecondaryMap<TValue>.SlotValueCollection containing the values in the SparseSecondaryMap<TValue>. Remarks Only the values that correspond to occupied slots are included in this collection. You can use this collection to iterate through the values associated with the keys in the map."
+  },
+  "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.html": {
+    "href": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.html",
+    "title": "Class SparseSecondaryMap<TValue> | Slotmaps Documentation",
+    "keywords": "Class SparseSecondaryMap<TValue> Namespace FlashyDJ.Slotmaps Assembly Slotmaps.dll Represents a secondary map that associates keys of type SlotKey with values of type TValue. [Serializable] public class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>>, IEnumerable<KeyValuePair<SlotKey, TValue>>, IEnumerable Type Parameters TValue The type of values stored in the secondary map. Inheritance object SparseSecondaryMap<TValue> Implements ICollection<KeyValuePair<SlotKey, TValue>> IEnumerable<KeyValuePair<SlotKey, TValue>> IEnumerable Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Remarks The SparseSecondaryMap<TValue> class is designed to act as a secondary map to a primary slot map.. It allows you to associate additional data with specific SlotKey values from the primary map. This SparseSecondaryMap<TValue> uses a Dictionary<TKey, TValue> to efficiently manage and access values by their associated SlotKey keys. Constructors SparseSecondaryMap() Initializes a new instance of the SparseSecondaryMap<TValue> class with an empty collection. SparseSecondaryMap(int) Initializes a new instance of the SparseSecondaryMap<TValue> class with the specified capacity. Properties Capacity Gets the capacity of the SparseSecondaryMap<TValue>. Count Gets the number of elements currently stored in the SparseSecondaryMap<TValue>. IsEmpty Gets a value indicating whether the SparseSecondaryMap<TValue> is empty. this[SlotKey] Gets or sets the value associated with the specified SlotKey. Keys Gets a collection containing the keys in the SparseSecondaryMap<TValue>. Values Gets a collection containing the values in the SparseSecondaryMap<TValue>. Methods Clear() Removes all elements from the SparseSecondaryMap<TValue>. ContainsKey(SlotKey) Determines whether the secondary map contains the specified SlotKey. ContainsValue(TValue) Determines whether the SparseSecondaryMap<TValue> contains an entry with the specified value. Drain() Removes and returns elements from the SparseSecondaryMap<TValue> one at a time as an enumerable collection of key-value pairs. EnsureCapacity(int) Ensures that the SparseSecondaryMap<TValue> can hold at least the specified capacity without resizing. Get(SlotKey) Gets the value associated with the specified SlotKey. Insert(SlotKey, TValue) Inserts a value into the SparseSecondaryMap<TValue> associated with the specified SlotKey. Remove(SlotKey) Removes the value with the specified SlotKey from the SparseSecondaryMap<TValue>. Retain(Func<SlotKey, TValue, bool>) Retains entries in the SparseSecondaryMap<TValue> based on a specified condition defined by a predicate function. TryGet(SlotKey, out TValue) Tries to get the value associated with the specified SlotKey from the SparseSecondaryMap<TValue>. TryInsert(SlotKey, TValue, out TValue) Tries to insert a value associated with the specified SlotKey into the SparseSecondaryMap<TValue>. TryRemove(SlotKey, out TValue) Attempts to remove the entry with the specified SlotKey from the SparseSecondaryMap<TValue>."
+  },
+  "api/FlashyDJ.Slotmaps.html": {
+    "href": "api/FlashyDJ.Slotmaps.html",
+    "title": "Namespace FlashyDJ.Slotmaps | Slotmaps Documentation",
+    "keywords": "Namespace FlashyDJ.Slotmaps Classes SecondaryMap<TValue> Represents a secondary map that associates keys of type SlotKey with values of type TValue. SecondaryMap<TValue>.SlotKeyCollection Represents a collection of SlotKey instances associated with a SecondaryMap<TValue>. SecondaryMap<TValue>.SlotValueCollection Represents a collection of values associated with a SecondaryMap<TValue>. SlotMap<TValue> Represents a collection that maps SlotKey to values of type TValue. SlotMap<TValue>.SlotKeyCollection Represents a collection of SlotKey instances associated with a SlotMap<TValue>. SlotMap<TValue>.SlotValueCollection Represents a collection of values associated with a SlotMap<TValue>. SparseSecondaryMap<TValue> Represents a secondary map that associates keys of type SlotKey with values of type TValue. SparseSecondaryMap<TValue>.SlotKeyCollection Represents a collection of SlotKey instances associated with a SparseSecondaryMap<TValue>. SparseSecondaryMap<TValue>.SlotValueCollection Represents a collection of values associated with a SparseSecondaryMap<TValue>. Structs SecondaryMap<TValue>.Enumerator Represents an enumerator for the SecondaryMap<TValue> collection. SecondaryMap<TValue>.SlotKeyCollection.Enumerator Represents an enumerator for the SecondaryMap<TValue>.SlotKeyCollection. SecondaryMap<TValue>.SlotValueCollection.Enumerator Represents an enumerator for the values in the SlotMap<TValue>.SlotValueCollection. SlotKey Represents a key used in various map structures to uniquely identify elements. SlotMap<TValue>.Enumerator Represents an enumerator for the SlotMap<TValue> collection. SlotMap<TValue>.SlotKeyCollection.Enumerator Represents an enumerator for the SlotMap<TValue>.SlotKeyCollection. SlotMap<TValue>.SlotValueCollection.Enumerator Represents an enumerator for the values in the SlotMap<TValue>.SlotValueCollection/c>. SparseSecondaryMap<TValue>.Enumerator Represents an enumerator for the SparseSecondaryMap<TValue> collection. SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator Represents an enumerator for the SparseSecondaryMap<TValue>.SlotKeyCollection. SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator Represents an enumerator for the values in the SlotMap<TValue>.SlotValueCollection/c>. Interfaces ISlotMap<TValue>"
+  },
+  "docs/basicslotmapusage.html": {
+    "href": "docs/basicslotmapusage.html",
+    "title": "Basic SlotMap Usage Guide | Slotmaps Documentation",
+    "keywords": "Basic SlotMap Usage Guide The SlotMap is a versatile data structure that allows you to manage and manipulate items with stable, unique identifiers called \"slots.\" It offers efficient item insertion, retrieval, and removal. This basic guide will walk you through the key features and usage of the SlotMap class. Creating a SlotMap You can create a SlotMap with the empty capacity or specify a custom capacity. Here's how: // Create a SlotMap with empty capacity var slotMap = new SlotMap<TValue>(); // Create a SlotMap with a custom capacity var customCapacity = 10; var slotMapWithCapacity = new SlotMap<TValue>(customCapacity); Inserting Items To insert items into the SlotMap, you can use the Add method. It returns a SlotKey that uniquely identifies the item: SlotKey slotKey = slotMap.Add(item); Accessing Items You can access items using their corresponding SlotKey: var retrievedItem = slotMap[slotKey]; Updating Items You can update an item associated with a SlotKey using the Insert method: slotMap.Insert(slotKey, updatedItem); Removing Items To remove an item from the SlotMap, use the Remove method: slotMap.Remove(slotKey); Tip For safer removals, consider using the TryRemove method: if (slotMap.TryRemove(slotKey, out var removedItem)) { // Successfully removed, removedItem contains the removed item } else { // Handle the failure (e.g., key is invalid or item not found) } Checking for Existence You can check if a SlotKey is valid (i.e., corresponds to an existing item) using the ContainsKey method: if (slotMap.ContainsKey(slotKey)) { // SlotKey is valid } Tip When checking for existence and accessing items, it's a good practice to use the TryGet method: if (slotMap.TryGet(slotKey, out var foundItem)) { // SlotKey is valid, and foundItem contains the item } else { // Handle the failure (e.g., key is invalid or item not found) } Iterating Through Items You can iterate through all items in the SlotMap using a foreach loop: foreach (var kvp in slotMap) { var slotKey = kvp.Key; var item = kvp.Value; // Process item } Additional Methods The SlotMap class provides various other methods for advanced usage: Drain: Retrieve and remove all items from the SlotMap. EnsureCapacity: Ensure that the SlotMap has a minimum capacity. Clear: Remove all items from the SlotMap. Reserve: Increase the capacity of the SlotMap. Resize: Change the size of the SlotMap. Retain: Retain items that satisfy a given predicate. Example Usage Here's an example demonstrating the usage of the SlotMap: var slotMap = new SlotMap<string>(); // Insert items var slot1 = slotMap.Add(\"Item 1\"); var slot2 = slotMap.Add(\"Item 2\"); // Access items var item1 = slotMap[slot1]; // \"Item 1\" var item2 = slotMap[slot2]; // \"Item 2\" // Update an item slotMap.Insert(slot1, \"Updated Item 1\"); // Remove an item slotMap.Remove(slot2); // Check for existence if (slotMap.ContainsKey(slot1)) { // SlotKey is valid } // Iterate through items foreach (var kvp in slotMap) { var slotKey = kvp.Key; var item = kvp.Value; // Process item }"
+  },
+  "docs/intro.html": {
+    "href": "docs/intro.html",
+    "title": "Introduction | Slotmaps Documentation",
+    "keywords": "Introduction This library provides an implementation of slot-based data structures that allows you to store values in collections that assign them unique keys. You can use these keys to access, modify or remove the values later. The collections are very efficient, as they can perform these operations in constant time with low overhead. These are especially useful for scenarios where you need to keep track of objects that do not have a clear owner, such as game entities or graph nodes. This C# library is inspired by the Rust crate slotmap, created by orlp. This adapts the ideas and core concepts of the Rust implementation. Features This library offers the following features: Efficient storage and retrieval of objects with constant-time complexity. Stable and unique identifiers for objects, even after removals. Generic type parameters to store any kind of values in the collections and secondary collections. Two types of secondary collections to associate additional data with collection keys: SecondaryMap and SparseSecondaryMap. Comprehensive unit tests to ensure correctness. API Reference For detailed information about SlotMap's methods, properties, and classes, consult the \"API Reference\" section. It's your go-to resource for in-depth technical information. Contributing This library is open for contributions from anyone who is interested. If you have any ideas, suggestions or bug reports, please open an issue or a pull request on this repository. License This library is licensed under the MIT license. See the LICENSE file for more details."
+  },
+  "docs/slotmapvsother.html": {
+    "href": "docs/slotmapvsother.html",
+    "title": "SlotMap vs. Other Collections in C# Base Class Library | Slotmaps Documentation",
+    "keywords": "SlotMap vs. Other Collections in C# Base Class Library When working with data in C#, you have access to various collection types in the standard library, each designed for specific use cases. The SlotMap is a specialized data structure that offers unique advantages compared to other common collections like lists, dictionaries, and arrays. In this documentation, we'll explore the differences between SlotMap and these traditional collections and discuss when to use each. Table of Contents SlotMap Use Cases Other Collections List vs SlotMap List SlotMap When to use Dictionary vs SlotMap Dictionary SlotMap When to use Versioning of Slots SlotMap The SlotMap is a data structure that associates items with stable, unique identifiers called \"slots.\" It combines features of arrays and dictionaries, providing efficient item insertion, retrieval, and removal. Here are some key characteristics of the SlotMap: Stability: SlotKey (identifiers) remain valid even after item removals, making them suitable for long-term references. Efficiency: SlotMap operations often have O(1) complexity, making it highly performant for certain use cases. Sparse Data: SlotMap works well with sparse data where items are frequently added and removed. Custom Data Structures: It's versatile and can be used to implement custom data structures efficiently. Use Cases: Managing game entities and components in game development. Storing references to objects in scenarios where objects can be added, removed, or moved frequently. Other Collections Choosing the right data structure is crucial for efficient programming. Here, we'll compare SlotMap to common collections available in the C# Base Class Library (BCL) to help you make informed decisions. List vs SlotMap List Use Case: Use Lists when you need a dynamic collection with fast sequential access. They're great for storing and iterating over objects. Item Access: Items are accessed by index, which provides constant-time access. Insertion/Removal: Adding/removing elements from the middle can be inefficient due to shifting elements. SlotMap Use Case: SlotMap are ideal when you need stable, unique identifiers SlotKey for items. Perfect for entity/component systems or object pools. Item Access: Items are accessed via SlotKey, offering constant-time access. SlotKey remain stable when items are added/removed. Insertion/Removal: SlotMap efficiently handle insertion/removal of items with stable SlotKey, even when items are frequently added/removed. When to Use Choose SlotMap when you need stable identifiers and efficient item management, especially in dynamic scenarios. Dictionary vs SlotMap Dictionary Use Case: Dictionaries are for key-value associations when you need fast lookups based on a unique key. Item Access: Items are accessed by key, offering constant-time access (on average). Insertion/Removal: Efficiently manage insertion/removal of key-value pairs. SlotMap Use Case: SlotMap are versatile for scenarios requiring stable, unique identifiers SlotKey for items, with or without associated values. Item Access: Items are accessed via SlotKeys, providing constant-time access. SlotKey stay stable as items are added/removed. Insertion/Removal: Efficiently handle insertion/removal of items with stable SlotKey, making them suitable for dynamic scenarios. When to Use Opt for SlotMap when you need both stable identifiers and efficient item management. Versioning of Slots One unique feature of SlotMap is versioning of slots, enhancing data integrity and security: When an item is added/updated, the slot's version increments. Old SlotKey with outdated versions can't access updated data, preventing accidental access to stale information. Advantages: SlotMap provide data safety by ensuring outdated identifiers can't access updated data, enhancing data integrity and security. In summary, SlotMap offer stability and efficiency. Use them when you need stable identifiers and dynamic item management, particularly in scenarios requiring data integrity and security."
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "Slotmaps Documentation | Slotmaps Documentation",
+    "keywords": "Slotmaps Documentation Welcome to the documentation for the Slotmaps library, a C# implementation for efficient data storage and retrieval using slot-based data structures. This library includes features like SlotMap, SecondaryMap, and SparseSecondaryMap. This documentation will guide you through using this library effectively. This C# library is inspired by the Rust crate slotmap, created by orlp. This adapts the ideas and core concepts of the Rust implementation. Table of Contents Installation Getting Started Basic Usage Secondary Maps Contributing License Installation To use the Slotmaps library in your C# project, you can install it via NuGet. NuGet Installation: dotnet add package FlashyDJ.Slotmaps Getting Started Basic Usage Here's a simple example of creating and using a SlotMap: using FlashyDJ.Slotmaps; // Create a SlotMap SlotMap<string> slotMap = new SlotMap<string>(); // Add some values and get their keys. SlotKey key1 = slotMap.Add(\"Item 1\"); SlotKey key2 = slotMap.Add(\"Item 2\"); SlotKey key3 = slotMap.Add(\"Item 3\"); // Replacing value from slot SlotKey newKey2 = slotMap.Insert(key2, \"Updated Item 2\"); // Access the value using the keys Console.WriteLine(slotMap[key1]); // Prints \"Item 1\" Console.WriteLine(slotMap[newKey2]); // Prints \"Updated Item 2\" Console.WriteLine(slotMap[key3]); // Prints \"Item 3\" Console.WriteLine(slotMap[key2]); // Throws KeyNotFoundException // Remove a value using its key slotMap.Remove(key1); // The removed key is no longer valid. Console.WriteLine(slotMap.ContainsKey(key1)); // Prints \"False\" Secondary Maps In addition to the core SlotMap, this library provides secondary maps like SecondaryMap and SparseSecondaryMap for more advanced data organization. Here's an example of using a SecondaryMap, and iteration of items while maintaining stable references to those items. using FlashyDJ.Slotmaps; // Create a SlotMap and a SecondaryMap SlotMap<string> slotMap = a SlotMap<string>(); SecondaryMap<int> secondaryMap = new SecondaryMap<int>(); // Add values to the SlotMap SlotKey key1 = slotMap.Add(\"Item 1\"); SlotKey key2 = slotMap.Add(\"Item 2\"); // Insert some values using the keys from the primary map (SlotMap). secondaryMap.Insert(key1, 42); secondaryMap.Insert(key2, 56); // Retrieve items using the keys from the primary map (SlotMap). Console.WriteLine(secondaryMap[key1]); // Prints \"42\" Console.WriteLine(secondaryMap[key2]); // Print \"56\" Contributing This library is open for contributions from anyone who is interested. If you have any ideas, suggestions or bug reports, please open an issue or a pull request on this repository. License This library is licensed under the MIT license. See the LICENSE file for more details."
+  }
+}

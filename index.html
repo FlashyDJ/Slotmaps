@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Slotmaps Documentation | Slotmaps Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Slotmaps Documentation | Slotmaps Documentation ">
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/FlashyDJ/Slotmaps/blob/main/docs/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module">
+    import options from './public/main.js'
+    import { init } from './public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="Slotmaps">
+            Slotmaps
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="slotmaps-documentation">Slotmaps Documentation</h1>
+
+<p>Welcome to the documentation for the Slotmaps library, a C# implementation for efficient data storage and retrieval using slot-based data structures.</p>
+<p>This library includes features like <code>SlotMap</code>, <code>SecondaryMap</code>, and <code>SparseSecondaryMap</code>. This documentation will guide you through using this library effectively.</p>
+<p>This C# library is inspired by the Rust crate <a href="https://github.com/orlp/slotmap/">slotmap</a>, created by <a href="https://github.com/orlp">orlp</a>.
+This adapts the ideas and core concepts of the Rust implementation.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#getting-started">Getting Started</a>
+<ul>
+<li><a href="#basic-usage">Basic Usage</a></li>
+<li><a href="#secondary-maps">Secondary Maps</a></li>
+</ul>
+</li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+</ol>
+<h2 id="installation">Installation</h2>
+<p>To use the Slotmaps library in your C# project, you can install it via NuGet.</p>
+<p><strong>NuGet Installation:</strong></p>
+<pre><code class="lang-bash">dotnet add package FlashyDJ.Slotmaps
+</code></pre>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="basic-usage">Basic Usage</h3>
+<p>Here's a simple example of creating and using a <code>SlotMap</code>:</p>
+<pre><code class="lang-csharp">using FlashyDJ.Slotmaps;
+
+// Create a SlotMap
+SlotMap&lt;string&gt; slotMap = new SlotMap&lt;string&gt;();
+
+// Add some values and get their keys.
+SlotKey key1 = slotMap.Add(&quot;Item 1&quot;);
+SlotKey key2 = slotMap.Add(&quot;Item 2&quot;);
+SlotKey key3 = slotMap.Add(&quot;Item 3&quot;);
+
+// Replacing value from slot
+SlotKey newKey2 = slotMap.Insert(key2, &quot;Updated Item 2&quot;);
+
+// Access the value using the keys
+Console.WriteLine(slotMap[key1]);      // Prints &quot;Item 1&quot;
+Console.WriteLine(slotMap[newKey2]);   // Prints &quot;Updated Item 2&quot;
+Console.WriteLine(slotMap[key3]);      // Prints &quot;Item 3&quot;
+Console.WriteLine(slotMap[key2]);      // Throws KeyNotFoundException
+
+// Remove a value using its key
+slotMap.Remove(key1);
+
+// The removed key is no longer valid.
+Console.WriteLine(slotMap.ContainsKey(key1)); // Prints &quot;False&quot;
+</code></pre>
+<h3 id="secondary-maps">Secondary Maps</h3>
+<p>In addition to the core <code>SlotMap</code>, this library provides secondary maps like <code>SecondaryMap</code> and <code>SparseSecondaryMap</code> for more advanced data organization.
+Here's an example of using a <code>SecondaryMap</code>, and iteration of items while maintaining stable references to those items.</p>
+<pre><code class="lang-csharp">using FlashyDJ.Slotmaps;
+
+// Create a SlotMap and a SecondaryMap
+SlotMap&lt;string&gt; slotMap = a SlotMap&lt;string&gt;();
+SecondaryMap&lt;int&gt; secondaryMap = new SecondaryMap&lt;int&gt;();
+
+// Add values to the SlotMap
+SlotKey key1 = slotMap.Add(&quot;Item 1&quot;);
+SlotKey key2 = slotMap.Add(&quot;Item 2&quot;);
+
+// Insert some values using the keys from the primary map (SlotMap).
+secondaryMap.Insert(key1, 42);
+secondaryMap.Insert(key2, 56);
+
+// Retrieve items using the keys from the primary map (SlotMap).
+Console.WriteLine(secondaryMap[key1]); // Prints &quot;42&quot;
+Console.WriteLine(secondaryMap[key2]); // Print &quot;56&quot;
+</code></pre>
+<h2 id="contributing">Contributing</h2>
+<p>This library is open for contributions from anyone who is interested. If you have any ideas, suggestions or bug reports, please open an issue or a pull request on this repository.</p>
+<h2 id="license">License</h2>
+<p>This library is licensed under the MIT license. See the <a href="https://github.com/FlashyDJ/Slotmaps/blob/main/LICENSE.TXT">LICENSE</a> file for more details.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/FlashyDJ/Slotmaps/blob/main/docs/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright 2023 <a href="https://github.com/FlashyDJ">FlashyDJ</a>. Made with <a href="https://dotnet.github.io/docfx">docfx</a>.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

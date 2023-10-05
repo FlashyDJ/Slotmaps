@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>SlotMap vs. Other Collections in C# Base Class Library | Slotmaps Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="SlotMap vs. Other Collections in C# Base Class Library | Slotmaps Documentation ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/FlashyDJ/Slotmaps/blob/main/docs/docs/slotmapvsother.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Slotmaps">
+            Slotmaps
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="slotmap-vs-other-collections-in-c-base-class-library">SlotMap vs. Other Collections in C# Base Class Library</h1>
+
+<p>When working with data in C#, you have access to various collection types in the standard library, each designed for specific use cases.</p>
+<p>The <code>SlotMap</code> is a specialized data structure that offers unique advantages compared to other common collections like lists, dictionaries, and arrays.
+In this documentation, we'll explore the differences between <code>SlotMap</code> and these traditional collections and discuss when to use each.</p>
+<p>Table of Contents</p>
+<ol>
+<li><a href="#slotmap">SlotMap</a>
+<ul>
+<li><a href="#use-cases">Use Cases</a></li>
+</ul>
+</li>
+<li><a href="#other-collections">Other Collections</a>
+<ul>
+<li><a href="#list-vs-slotmap">List vs SlotMap</a>
+<ul>
+<li><a href="#list">List</a></li>
+<li><a href="#slotmap-1">SlotMap</a></li>
+<li><a href="#when-to-use">When to use</a></li>
+</ul>
+</li>
+<li><a href="#dictionary-vs-slotmap">Dictionary vs SlotMap</a>
+<ul>
+<li><a href="#dictionary">Dictionary</a></li>
+<li><a href="#slotmap-2">SlotMap</a></li>
+<li><a href="#when-to-use-1">When to use</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#versioning-of-slots">Versioning of Slots</a></li>
+</ol>
+<h2 id="slotmap">SlotMap</h2>
+<p>The <code>SlotMap</code> is a data structure that associates items with stable, unique identifiers called &quot;slots.&quot; It combines features of arrays and dictionaries, providing efficient item insertion, retrieval, and removal. Here are some key characteristics of the SlotMap:</p>
+<ul>
+<li><strong>Stability</strong>: <code>SlotKey</code> (identifiers) remain valid even after item removals, making them suitable for long-term references.</li>
+<li><strong>Efficiency</strong>: <code>SlotMap</code> operations often have O(1) complexity, making it highly performant for certain use cases.</li>
+<li><strong>Sparse Data</strong>: <code>SlotMap</code> works well with sparse data where items are frequently added and removed.</li>
+<li><strong>Custom Data Structures</strong>: It's versatile and can be used to implement custom data structures efficiently.</li>
+</ul>
+<h3 id="use-cases">Use Cases:</h3>
+<p>Managing game entities and components in game development.
+Storing references to objects in scenarios where objects can be added, removed, or moved frequently.</p>
+<h2 id="other-collections">Other Collections</h2>
+<p>Choosing the right data structure is crucial for efficient programming. Here, we'll compare <code>SlotMap</code> to common collections available in the C# Base Class Library (BCL) to help you make informed decisions.</p>
+<h2 id="list-vs-slotmap">List vs SlotMap</h2>
+<h3 id="list">List</h3>
+<ul>
+<li><strong>Use Case</strong>: Use Lists when you need a dynamic collection with fast sequential access.
+They're great for storing and iterating over objects.</li>
+<li><strong>Item Access</strong>: Items are accessed by index, which provides constant-time access.</li>
+<li><strong>Insertion/Removal</strong>: Adding/removing elements from the middle can be inefficient due to shifting elements.</li>
+</ul>
+<h3 id="slotmap-1">SlotMap</h3>
+<ul>
+<li><strong>Use Case</strong>: <code>SlotMap</code> are ideal when you need stable, unique identifiers <code>SlotKey</code> for items.
+Perfect for entity/component systems or object pools.</li>
+<li><strong>Item Access</strong>: Items are accessed via <code>SlotKey</code>, offering constant-time access.
+<code>SlotKey</code> remain stable when items are added/removed.</li>
+<li><strong>Insertion/Removal</strong>: <code>SlotMap</code> efficiently handle insertion/removal of items with stable <code>SlotKey</code>, even when items are frequently added/removed.</li>
+</ul>
+<h4 id="when-to-use">When to Use</h4>
+<p>Choose <code>SlotMap</code> when you need stable identifiers and efficient item management, especially in dynamic scenarios.</p>
+<h2 id="dictionary-vs-slotmap">Dictionary vs SlotMap</h2>
+<h3 id="dictionary">Dictionary</h3>
+<ul>
+<li><strong>Use Case</strong>: Dictionaries are for key-value associations when you need fast lookups based on a unique key.</li>
+<li><strong>Item Access</strong>: Items are accessed by key, offering constant-time access (on average).</li>
+<li><strong>Insertion/Removal</strong>: Efficiently manage insertion/removal of key-value pairs.</li>
+</ul>
+<h3 id="slotmap-2">SlotMap</h3>
+<ul>
+<li><strong>Use Case</strong>: <code>SlotMap</code> are versatile for scenarios requiring stable, unique identifiers <code>SlotKey</code> for items, with or without associated values.</li>
+<li><strong>Item Access</strong>: Items are accessed via SlotKeys, providing constant-time access.
+<code>SlotKey</code> stay stable as items are added/removed.</li>
+<li><strong>Insertion/Removal</strong>: Efficiently handle insertion/removal of items with stable <code>SlotKey</code>, making them suitable for dynamic scenarios.</li>
+</ul>
+<h4 id="when-to-use-1">When to Use</h4>
+<p>Opt for <code>SlotMap</code> when you need both stable identifiers and efficient item management.</p>
+<h2 id="versioning-of-slots">Versioning of Slots</h2>
+<p>One unique feature of <code>SlotMap</code> is versioning of slots, enhancing data integrity and security:</p>
+<ul>
+<li><p>When an item is added/updated, the slot's version increments.</p>
+</li>
+<li><p>Old <code>SlotKey</code> with outdated versions can't access updated data, preventing accidental access to stale information.</p>
+</li>
+</ul>
+<p><strong>Advantages</strong>: <code>SlotMap</code> provide data safety by ensuring outdated identifiers can't access updated data, enhancing data integrity and security.</p>
+<p>In summary, <code>SlotMap</code> offer stability and efficiency. Use them when you need stable identifiers and dynamic item management, particularly in scenarios requiring data integrity and security.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/FlashyDJ/Slotmaps/blob/main/docs/docs/slotmapvsother.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright 2023 <a href="https://github.com/FlashyDJ">FlashyDJ</a>. Made with <a href="https://dotnet.github.io/docfx">docfx</a>.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

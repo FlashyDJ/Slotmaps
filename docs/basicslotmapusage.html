@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Basic SlotMap Usage Guide | Slotmaps Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Basic SlotMap Usage Guide | Slotmaps Documentation ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/FlashyDJ/Slotmaps/blob/main/docs/docs/basicslotmapusage.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Slotmaps">
+            Slotmaps
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="basic-slotmap-usage-guide">Basic SlotMap Usage Guide</h1>
+
+<p>The <code>SlotMap</code> is a versatile data structure that allows you to manage and manipulate items with stable, unique identifiers called &quot;slots.&quot;
+It offers efficient item insertion, retrieval, and removal. This basic guide will walk you through the key features and usage of the <code>SlotMap</code> class.</p>
+<h2 id="creating-a-slotmap">Creating a SlotMap</h2>
+<p>You can create a <code>SlotMap</code> with the empty capacity or specify a custom capacity. Here's how:</p>
+<pre><code class="lang-csharp">// Create a SlotMap with empty capacity
+var slotMap = new SlotMap&lt;TValue&gt;();
+
+// Create a SlotMap with a custom capacity
+var customCapacity = 10;
+var slotMapWithCapacity = new SlotMap&lt;TValue&gt;(customCapacity);
+</code></pre>
+<h2 id="inserting-items">Inserting Items</h2>
+<p>To insert items into the <code>SlotMap</code>, you can use the <code>Add</code> method. It returns a <code>SlotKey</code> that uniquely identifies the item:</p>
+<pre><code class="lang-csharp">SlotKey slotKey = slotMap.Add(item);
+</code></pre>
+<h2 id="accessing-items">Accessing Items</h2>
+<p>You can access items using their corresponding <code>SlotKey</code>:</p>
+<pre><code class="lang-csharp">var retrievedItem = slotMap[slotKey];
+</code></pre>
+<h2 id="updating-items">Updating Items</h2>
+<p>You can update an item associated with a <code>SlotKey</code> using the <code>Insert</code> method:</p>
+<pre><code class="lang-csharp">slotMap.Insert(slotKey, updatedItem);
+</code></pre>
+<h2 id="removing-items">Removing Items</h2>
+<p>To remove an item from the <code>SlotMap</code>, use the <code>Remove</code> method:</p>
+<pre><code class="lang-csharp">slotMap.Remove(slotKey);
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For safer removals, consider using the <code>TryRemove</code> method:</p>
+<pre><code class="lang-csharp">if (slotMap.TryRemove(slotKey, out var removedItem))
+{
+    // Successfully removed, removedItem contains the removed item
+}
+else
+{
+    // Handle the failure (e.g., key is invalid or item not found)
+}
+</code></pre>
+</div>
+<h2 id="checking-for-existence">Checking for Existence</h2>
+<p>You can check if a <code>SlotKey</code> is valid (i.e., corresponds to an existing item) using the <code>ContainsKey</code> method:</p>
+<pre><code class="lang-csharp">if (slotMap.ContainsKey(slotKey))
+{
+    // SlotKey is valid
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When checking for existence and accessing items, it's a good practice to use the <code>TryGet</code> method:</p>
+<pre><code class="lang-csharp">if (slotMap.TryGet(slotKey, out var foundItem))
+{
+    // SlotKey is valid, and foundItem contains the item
+}
+else
+{
+    // Handle the failure (e.g., key is invalid or item not found)
+}
+</code></pre>
+</div>
+<h2 id="iterating-through-items">Iterating Through Items</h2>
+<p>You can iterate through all items in the <code>SlotMap</code> using a foreach loop:</p>
+<pre><code class="lang-csharp">foreach (var kvp in slotMap)
+{
+    var slotKey = kvp.Key;
+    var item = kvp.Value;
+
+    // Process item
+}
+</code></pre>
+<h2 id="additional-methods">Additional Methods</h2>
+<p>The <code>SlotMap</code> class provides various other methods for advanced usage:</p>
+<ul>
+<li><code>Drain</code>: Retrieve and remove all items from the SlotMap.</li>
+<li><code>EnsureCapacity</code>: Ensure that the SlotMap has a minimum capacity.</li>
+<li><code>Clear</code>: Remove all items from the SlotMap.</li>
+<li><code>Reserve</code>: Increase the capacity of the SlotMap.</li>
+<li><code>Resize</code>: Change the size of the SlotMap.</li>
+<li><code>Retain</code>: Retain items that satisfy a given predicate.</li>
+</ul>
+<h2 id="example-usage">Example Usage</h2>
+<p>Here's an example demonstrating the usage of the SlotMap:</p>
+<pre><code class="lang-csharp">var slotMap = new SlotMap&lt;string&gt;();
+
+// Insert items
+var slot1 = slotMap.Add(&quot;Item 1&quot;);
+var slot2 = slotMap.Add(&quot;Item 2&quot;);
+
+// Access items
+var item1 = slotMap[slot1]; // &quot;Item 1&quot;
+var item2 = slotMap[slot2]; // &quot;Item 2&quot;
+
+// Update an item
+slotMap.Insert(slot1, &quot;Updated Item 1&quot;);
+
+// Remove an item
+slotMap.Remove(slot2);
+
+// Check for existence
+if (slotMap.ContainsKey(slot1))
+{
+    // SlotKey is valid
+}
+
+// Iterate through items
+foreach (var kvp in slotMap)
+{
+    var slotKey = kvp.Key;
+    var item = kvp.Value;
+
+    // Process item
+}
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/FlashyDJ/Slotmaps/blob/main/docs/docs/basicslotmapusage.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright 2023 <a href="https://github.com/FlashyDJ">FlashyDJ</a>. Made with <a href="https://dotnet.github.io/docfx">docfx</a>.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

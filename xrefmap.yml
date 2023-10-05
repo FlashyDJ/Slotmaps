@@ -1,0 +1,2544 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: FlashyDJ.Slotmaps
+  name: FlashyDJ.Slotmaps
+  href: api/FlashyDJ.Slotmaps.html
+  commentId: N:FlashyDJ.Slotmaps
+  fullName: FlashyDJ.Slotmaps
+  nameWithType: FlashyDJ.Slotmaps
+- uid: FlashyDJ.Slotmaps.ISlotMap`1
+  name: ISlotMap<TValue>
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.html
+  commentId: T:FlashyDJ.Slotmaps.ISlotMap`1
+  name.vb: ISlotMap(Of TValue)
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue)
+  nameWithType: ISlotMap<TValue>
+  nameWithType.vb: ISlotMap(Of TValue)
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Add(`0)
+  name: Add(TValue)
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Add.html#FlashyDJ_Slotmaps_ISlotMap_1_Add__0_
+  commentId: M:FlashyDJ.Slotmaps.ISlotMap`1.Add(`0)
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Add(TValue)
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Add(TValue)
+  nameWithType: ISlotMap<TValue>.Add(TValue)
+  nameWithType.vb: ISlotMap(Of TValue).Add(TValue)
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Add*
+  name: Add
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Add.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.Add
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Add
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Add
+  nameWithType: ISlotMap<TValue>.Add
+  nameWithType.vb: ISlotMap(Of TValue).Add
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Capacity
+  name: Capacity
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Capacity.html#FlashyDJ_Slotmaps_ISlotMap_1_Capacity
+  commentId: P:FlashyDJ.Slotmaps.ISlotMap`1.Capacity
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Capacity
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Capacity
+  nameWithType: ISlotMap<TValue>.Capacity
+  nameWithType.vb: ISlotMap(Of TValue).Capacity
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Capacity*
+  name: Capacity
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Capacity.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.Capacity
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Capacity
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Capacity
+  nameWithType: ISlotMap<TValue>.Capacity
+  nameWithType.vb: ISlotMap(Of TValue).Capacity
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  name: ContainsKey(SlotKey)
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.ContainsKey.html#FlashyDJ_Slotmaps_ISlotMap_1_ContainsKey_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.ISlotMap`1.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: ISlotMap<TValue>.ContainsKey(SlotKey)
+  nameWithType.vb: ISlotMap(Of TValue).ContainsKey(SlotKey)
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.ContainsKey*
+  name: ContainsKey
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.ContainsKey.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.ContainsKey
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.ContainsKey
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).ContainsKey
+  nameWithType: ISlotMap<TValue>.ContainsKey
+  nameWithType.vb: ISlotMap(Of TValue).ContainsKey
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Get(FlashyDJ.Slotmaps.SlotKey)
+  name: Get(SlotKey)
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Get.html#FlashyDJ_Slotmaps_ISlotMap_1_Get_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.ISlotMap`1.Get(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Get(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Get(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: ISlotMap<TValue>.Get(SlotKey)
+  nameWithType.vb: ISlotMap(Of TValue).Get(SlotKey)
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Get*
+  name: Get
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Get.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.Get
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Get
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Get
+  nameWithType: ISlotMap<TValue>.Get
+  nameWithType.vb: ISlotMap(Of TValue).Get
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Insert(FlashyDJ.Slotmaps.SlotKey,`0)
+  name: Insert(SlotKey, TValue)
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Insert.html#FlashyDJ_Slotmaps_ISlotMap_1_Insert_FlashyDJ_Slotmaps_SlotKey__0_
+  commentId: M:FlashyDJ.Slotmaps.ISlotMap`1.Insert(FlashyDJ.Slotmaps.SlotKey,`0)
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Insert(FlashyDJ.Slotmaps.SlotKey, TValue)
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Insert(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: ISlotMap<TValue>.Insert(SlotKey, TValue)
+  nameWithType.vb: ISlotMap(Of TValue).Insert(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Insert*
+  name: Insert
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Insert.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.Insert
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Insert
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Insert
+  nameWithType: ISlotMap<TValue>.Insert
+  nameWithType.vb: ISlotMap(Of TValue).Insert
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.IsEmpty
+  name: IsEmpty
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.IsEmpty.html#FlashyDJ_Slotmaps_ISlotMap_1_IsEmpty
+  commentId: P:FlashyDJ.Slotmaps.ISlotMap`1.IsEmpty
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.IsEmpty
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).IsEmpty
+  nameWithType: ISlotMap<TValue>.IsEmpty
+  nameWithType.vb: ISlotMap(Of TValue).IsEmpty
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.IsEmpty*
+  name: IsEmpty
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.IsEmpty.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.IsEmpty
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.IsEmpty
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).IsEmpty
+  nameWithType: ISlotMap<TValue>.IsEmpty
+  nameWithType.vb: ISlotMap(Of TValue).IsEmpty
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Item(FlashyDJ.Slotmaps.SlotKey)
+  name: this[SlotKey]
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Item.html#FlashyDJ_Slotmaps_ISlotMap_1_Item_FlashyDJ_Slotmaps_SlotKey_
+  commentId: P:FlashyDJ.Slotmaps.ISlotMap`1.Item(FlashyDJ.Slotmaps.SlotKey)
+  name.vb: this[](SlotKey)
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.this[FlashyDJ.Slotmaps.SlotKey]
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).this[](FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: ISlotMap<TValue>.this[SlotKey]
+  nameWithType.vb: ISlotMap(Of TValue).this[](SlotKey)
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Item*
+  name: this
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Item.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.Item
+  name.vb: this[]
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.this
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).this[]
+  nameWithType: ISlotMap<TValue>.this
+  nameWithType.vb: ISlotMap(Of TValue).this[]
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Keys
+  name: Keys
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Keys.html#FlashyDJ_Slotmaps_ISlotMap_1_Keys
+  commentId: P:FlashyDJ.Slotmaps.ISlotMap`1.Keys
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Keys
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Keys
+  nameWithType: ISlotMap<TValue>.Keys
+  nameWithType.vb: ISlotMap(Of TValue).Keys
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Keys*
+  name: Keys
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Keys.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.Keys
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Keys
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Keys
+  nameWithType: ISlotMap<TValue>.Keys
+  nameWithType.vb: ISlotMap(Of TValue).Keys
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Remove(FlashyDJ.Slotmaps.SlotKey)
+  name: Remove(SlotKey)
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Remove.html#FlashyDJ_Slotmaps_ISlotMap_1_Remove_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.ISlotMap`1.Remove(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Remove(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Remove(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: ISlotMap<TValue>.Remove(SlotKey)
+  nameWithType.vb: ISlotMap(Of TValue).Remove(SlotKey)
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Remove*
+  name: Remove
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Remove.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.Remove
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Remove
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Remove
+  nameWithType: ISlotMap<TValue>.Remove
+  nameWithType.vb: ISlotMap(Of TValue).Remove
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.TryAdd(FlashyDJ.Slotmaps.SlotKey,`0,FlashyDJ.Slotmaps.SlotKey@)
+  name: TryAdd(SlotKey, TValue, out SlotKey)
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.TryAdd.html#FlashyDJ_Slotmaps_ISlotMap_1_TryAdd_FlashyDJ_Slotmaps_SlotKey__0_FlashyDJ_Slotmaps_SlotKey__
+  commentId: M:FlashyDJ.Slotmaps.ISlotMap`1.TryAdd(FlashyDJ.Slotmaps.SlotKey,`0,FlashyDJ.Slotmaps.SlotKey@)
+  name.vb: TryAdd(SlotKey, TValue, SlotKey)
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.TryAdd(FlashyDJ.Slotmaps.SlotKey, TValue, out FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).TryAdd(FlashyDJ.Slotmaps.SlotKey, TValue, FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: ISlotMap<TValue>.TryAdd(SlotKey, TValue, out SlotKey)
+  nameWithType.vb: ISlotMap(Of TValue).TryAdd(SlotKey, TValue, SlotKey)
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.TryAdd*
+  name: TryAdd
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.TryAdd.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.TryAdd
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.TryAdd
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).TryAdd
+  nameWithType: ISlotMap<TValue>.TryAdd
+  nameWithType.vb: ISlotMap(Of TValue).TryAdd
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.TryGet(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name: TryGet(SlotKey, out TValue)
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.TryGet.html#FlashyDJ_Slotmaps_ISlotMap_1_TryGet_FlashyDJ_Slotmaps_SlotKey__0__
+  commentId: M:FlashyDJ.Slotmaps.ISlotMap`1.TryGet(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name.vb: TryGet(SlotKey, TValue)
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.TryGet(FlashyDJ.Slotmaps.SlotKey, out TValue)
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).TryGet(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: ISlotMap<TValue>.TryGet(SlotKey, out TValue)
+  nameWithType.vb: ISlotMap(Of TValue).TryGet(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.TryGet*
+  name: TryGet
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.TryGet.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.TryGet
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.TryGet
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).TryGet
+  nameWithType: ISlotMap<TValue>.TryGet
+  nameWithType.vb: ISlotMap(Of TValue).TryGet
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.TryRemove(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name: TryRemove(SlotKey, out TValue)
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.TryRemove.html#FlashyDJ_Slotmaps_ISlotMap_1_TryRemove_FlashyDJ_Slotmaps_SlotKey__0__
+  commentId: M:FlashyDJ.Slotmaps.ISlotMap`1.TryRemove(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name.vb: TryRemove(SlotKey, TValue)
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.TryRemove(FlashyDJ.Slotmaps.SlotKey, out TValue)
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).TryRemove(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: ISlotMap<TValue>.TryRemove(SlotKey, out TValue)
+  nameWithType.vb: ISlotMap(Of TValue).TryRemove(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.TryRemove*
+  name: TryRemove
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.TryRemove.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.TryRemove
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.TryRemove
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).TryRemove
+  nameWithType: ISlotMap<TValue>.TryRemove
+  nameWithType.vb: ISlotMap(Of TValue).TryRemove
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Values
+  name: Values
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Values.html#FlashyDJ_Slotmaps_ISlotMap_1_Values
+  commentId: P:FlashyDJ.Slotmaps.ISlotMap`1.Values
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Values
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Values
+  nameWithType: ISlotMap<TValue>.Values
+  nameWithType.vb: ISlotMap(Of TValue).Values
+- uid: FlashyDJ.Slotmaps.ISlotMap`1.Values*
+  name: Values
+  href: api/FlashyDJ.Slotmaps.ISlotMap-1.Values.html
+  commentId: Overload:FlashyDJ.Slotmaps.ISlotMap`1.Values
+  fullName: FlashyDJ.Slotmaps.ISlotMap<TValue>.Values
+  fullName.vb: FlashyDJ.Slotmaps.ISlotMap(Of TValue).Values
+  nameWithType: ISlotMap<TValue>.Values
+  nameWithType.vb: ISlotMap(Of TValue).Values
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1
+  name: SecondaryMap<TValue>
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.html
+  commentId: T:FlashyDJ.Slotmaps.SecondaryMap`1
+  name.vb: SecondaryMap(Of TValue)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue)
+  nameWithType: SecondaryMap<TValue>
+  nameWithType.vb: SecondaryMap(Of TValue)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.#ctor
+  name: SecondaryMap()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.-ctor.html#FlashyDJ_Slotmaps_SecondaryMap_1__ctor
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.#ctor
+  name.vb: New()
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SecondaryMap()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).New()
+  nameWithType: SecondaryMap<TValue>.SecondaryMap()
+  nameWithType.vb: SecondaryMap(Of TValue).New()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.#ctor(System.Int32)
+  name: SecondaryMap(int)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.-ctor.html#FlashyDJ_Slotmaps_SecondaryMap_1__ctor_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.#ctor(System.Int32)
+  name.vb: New(Integer)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SecondaryMap(int)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).New(Integer)
+  nameWithType: SecondaryMap<TValue>.SecondaryMap(int)
+  nameWithType.vb: SecondaryMap(Of TValue).New(Integer)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.#ctor*
+  name: SecondaryMap
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.-ctor.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.#ctor
+  name.vb: New
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SecondaryMap
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).New
+  nameWithType: SecondaryMap<TValue>.SecondaryMap
+  nameWithType.vb: SecondaryMap(Of TValue).New
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Capacity
+  name: Capacity
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Capacity.html#FlashyDJ_Slotmaps_SecondaryMap_1_Capacity
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.Capacity
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Capacity
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Capacity
+  nameWithType: SecondaryMap<TValue>.Capacity
+  nameWithType.vb: SecondaryMap(Of TValue).Capacity
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Capacity*
+  name: Capacity
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Capacity.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Capacity
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Capacity
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Capacity
+  nameWithType: SecondaryMap<TValue>.Capacity
+  nameWithType.vb: SecondaryMap(Of TValue).Capacity
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Clear
+  name: Clear()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Clear.html#FlashyDJ_Slotmaps_SecondaryMap_1_Clear
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Clear
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Clear()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Clear()
+  nameWithType: SecondaryMap<TValue>.Clear()
+  nameWithType.vb: SecondaryMap(Of TValue).Clear()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Clear*
+  name: Clear
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Clear.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Clear
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Clear
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Clear
+  nameWithType: SecondaryMap<TValue>.Clear
+  nameWithType.vb: SecondaryMap(Of TValue).Clear
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  name: ContainsKey(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.ContainsKey.html#FlashyDJ_Slotmaps_SecondaryMap_1_ContainsKey_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SecondaryMap<TValue>.ContainsKey(SlotKey)
+  nameWithType.vb: SecondaryMap(Of TValue).ContainsKey(SlotKey)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.ContainsKey*
+  name: ContainsKey
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.ContainsKey.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.ContainsKey
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.ContainsKey
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).ContainsKey
+  nameWithType: SecondaryMap<TValue>.ContainsKey
+  nameWithType.vb: SecondaryMap(Of TValue).ContainsKey
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.ContainsValue(`0)
+  name: ContainsValue(TValue)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.ContainsValue.html#FlashyDJ_Slotmaps_SecondaryMap_1_ContainsValue__0_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.ContainsValue(`0)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.ContainsValue(TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).ContainsValue(TValue)
+  nameWithType: SecondaryMap<TValue>.ContainsValue(TValue)
+  nameWithType.vb: SecondaryMap(Of TValue).ContainsValue(TValue)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.ContainsValue*
+  name: ContainsValue
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.ContainsValue.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.ContainsValue
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.ContainsValue
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).ContainsValue
+  nameWithType: SecondaryMap<TValue>.ContainsValue
+  nameWithType.vb: SecondaryMap(Of TValue).ContainsValue
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Count
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Count.html#FlashyDJ_Slotmaps_SecondaryMap_1_Count
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.Count
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Count
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Count
+  nameWithType: SecondaryMap<TValue>.Count
+  nameWithType.vb: SecondaryMap(Of TValue).Count
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Count*
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Count.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Count
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Count
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Count
+  nameWithType: SecondaryMap<TValue>.Count
+  nameWithType.vb: SecondaryMap(Of TValue).Count
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Drain
+  name: Drain()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Drain.html#FlashyDJ_Slotmaps_SecondaryMap_1_Drain
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Drain
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Drain()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Drain()
+  nameWithType: SecondaryMap<TValue>.Drain()
+  nameWithType.vb: SecondaryMap(Of TValue).Drain()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Drain*
+  name: Drain
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Drain.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Drain
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Drain
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Drain
+  nameWithType: SecondaryMap<TValue>.Drain
+  nameWithType.vb: SecondaryMap(Of TValue).Drain
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.EnsureCapacity(System.Int32)
+  name: EnsureCapacity(int)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.EnsureCapacity.html#FlashyDJ_Slotmaps_SecondaryMap_1_EnsureCapacity_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.EnsureCapacity(System.Int32)
+  name.vb: EnsureCapacity(Integer)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.EnsureCapacity(int)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).EnsureCapacity(Integer)
+  nameWithType: SecondaryMap<TValue>.EnsureCapacity(int)
+  nameWithType.vb: SecondaryMap(Of TValue).EnsureCapacity(Integer)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.EnsureCapacity*
+  name: EnsureCapacity
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.EnsureCapacity.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.EnsureCapacity
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.EnsureCapacity
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).EnsureCapacity
+  nameWithType: SecondaryMap<TValue>.EnsureCapacity
+  nameWithType.vb: SecondaryMap(Of TValue).EnsureCapacity
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator
+  name: SecondaryMap<TValue>.Enumerator
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.html
+  commentId: T:FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator
+  name.vb: SecondaryMap(Of TValue).Enumerator
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Enumerator
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Enumerator
+  nameWithType: SecondaryMap<TValue>.Enumerator
+  nameWithType.vb: SecondaryMap(Of TValue).Enumerator
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Current
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Current.html#FlashyDJ_Slotmaps_SecondaryMap_1_Enumerator_Current
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Enumerator.Current
+  nameWithType: SecondaryMap<TValue>.Enumerator.Current
+  nameWithType.vb: SecondaryMap(Of TValue).Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Current*
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Current.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Enumerator.Current
+  nameWithType: SecondaryMap<TValue>.Enumerator.Current
+  nameWithType.vb: SecondaryMap(Of TValue).Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Dispose
+  name: Dispose()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Dispose.html#FlashyDJ_Slotmaps_SecondaryMap_1_Enumerator_Dispose
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Enumerator.Dispose()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Enumerator.Dispose()
+  nameWithType: SecondaryMap<TValue>.Enumerator.Dispose()
+  nameWithType.vb: SecondaryMap(Of TValue).Enumerator.Dispose()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Dispose*
+  name: Dispose
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Dispose.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Enumerator.Dispose
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Enumerator.Dispose
+  nameWithType: SecondaryMap<TValue>.Enumerator.Dispose
+  nameWithType.vb: SecondaryMap(Of TValue).Enumerator.Dispose
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.MoveNext
+  name: MoveNext()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.MoveNext.html#FlashyDJ_Slotmaps_SecondaryMap_1_Enumerator_MoveNext
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Enumerator.MoveNext()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Enumerator.MoveNext()
+  nameWithType: SecondaryMap<TValue>.Enumerator.MoveNext()
+  nameWithType.vb: SecondaryMap(Of TValue).Enumerator.MoveNext()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.MoveNext*
+  name: MoveNext
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.MoveNext.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Enumerator.MoveNext
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Enumerator.MoveNext
+  nameWithType: SecondaryMap<TValue>.Enumerator.MoveNext
+  nameWithType.vb: SecondaryMap(Of TValue).Enumerator.MoveNext
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Reset
+  name: Reset()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Reset.html#FlashyDJ_Slotmaps_SecondaryMap_1_Enumerator_Reset
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Enumerator.Reset()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Enumerator.Reset()
+  nameWithType: SecondaryMap<TValue>.Enumerator.Reset()
+  nameWithType.vb: SecondaryMap(Of TValue).Enumerator.Reset()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Reset*
+  name: Reset
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Reset.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Enumerator.Reset
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Enumerator.Reset
+  nameWithType: SecondaryMap<TValue>.Enumerator.Reset
+  nameWithType.vb: SecondaryMap(Of TValue).Enumerator.Reset
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Get(FlashyDJ.Slotmaps.SlotKey)
+  name: Get(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Get.html#FlashyDJ_Slotmaps_SecondaryMap_1_Get_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Get(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Get(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Get(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SecondaryMap<TValue>.Get(SlotKey)
+  nameWithType.vb: SecondaryMap(Of TValue).Get(SlotKey)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Get*
+  name: Get
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Get.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Get
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Get
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Get
+  nameWithType: SecondaryMap<TValue>.Get
+  nameWithType.vb: SecondaryMap(Of TValue).Get
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Insert(FlashyDJ.Slotmaps.SlotKey,`0)
+  name: Insert(SlotKey, TValue)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Insert.html#FlashyDJ_Slotmaps_SecondaryMap_1_Insert_FlashyDJ_Slotmaps_SlotKey__0_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Insert(FlashyDJ.Slotmaps.SlotKey,`0)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Insert(FlashyDJ.Slotmaps.SlotKey, TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Insert(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: SecondaryMap<TValue>.Insert(SlotKey, TValue)
+  nameWithType.vb: SecondaryMap(Of TValue).Insert(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Insert*
+  name: Insert
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Insert.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Insert
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Insert
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Insert
+  nameWithType: SecondaryMap<TValue>.Insert
+  nameWithType.vb: SecondaryMap(Of TValue).Insert
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.IsEmpty
+  name: IsEmpty
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.IsEmpty.html#FlashyDJ_Slotmaps_SecondaryMap_1_IsEmpty
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.IsEmpty
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.IsEmpty
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).IsEmpty
+  nameWithType: SecondaryMap<TValue>.IsEmpty
+  nameWithType.vb: SecondaryMap(Of TValue).IsEmpty
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.IsEmpty*
+  name: IsEmpty
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.IsEmpty.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.IsEmpty
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.IsEmpty
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).IsEmpty
+  nameWithType: SecondaryMap<TValue>.IsEmpty
+  nameWithType.vb: SecondaryMap(Of TValue).IsEmpty
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Item(FlashyDJ.Slotmaps.SlotKey)
+  name: this[SlotKey]
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Item.html#FlashyDJ_Slotmaps_SecondaryMap_1_Item_FlashyDJ_Slotmaps_SlotKey_
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.Item(FlashyDJ.Slotmaps.SlotKey)
+  name.vb: this[](SlotKey)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.this[FlashyDJ.Slotmaps.SlotKey]
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).this[](FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SecondaryMap<TValue>.this[SlotKey]
+  nameWithType.vb: SecondaryMap(Of TValue).this[](SlotKey)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Item*
+  name: this
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Item.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Item
+  name.vb: this[]
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.this
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).this[]
+  nameWithType: SecondaryMap<TValue>.this
+  nameWithType.vb: SecondaryMap(Of TValue).this[]
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Keys
+  name: Keys
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Keys.html#FlashyDJ_Slotmaps_SecondaryMap_1_Keys
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.Keys
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Keys
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Keys
+  nameWithType: SecondaryMap<TValue>.Keys
+  nameWithType.vb: SecondaryMap(Of TValue).Keys
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Keys*
+  name: Keys
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Keys.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Keys
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Keys
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Keys
+  nameWithType: SecondaryMap<TValue>.Keys
+  nameWithType.vb: SecondaryMap(Of TValue).Keys
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Remove(FlashyDJ.Slotmaps.SlotKey)
+  name: Remove(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Remove.html#FlashyDJ_Slotmaps_SecondaryMap_1_Remove_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Remove(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Remove(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Remove(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SecondaryMap<TValue>.Remove(SlotKey)
+  nameWithType.vb: SecondaryMap(Of TValue).Remove(SlotKey)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Remove*
+  name: Remove
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Remove.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Remove
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Remove
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Remove
+  nameWithType: SecondaryMap<TValue>.Remove
+  nameWithType.vb: SecondaryMap(Of TValue).Remove
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Reserve(System.Int32)
+  name: Reserve(int)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Reserve.html#FlashyDJ_Slotmaps_SecondaryMap_1_Reserve_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Reserve(System.Int32)
+  name.vb: Reserve(Integer)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Reserve(int)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Reserve(Integer)
+  nameWithType: SecondaryMap<TValue>.Reserve(int)
+  nameWithType.vb: SecondaryMap(Of TValue).Reserve(Integer)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Reserve*
+  name: Reserve
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Reserve.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Reserve
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Reserve
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Reserve
+  nameWithType: SecondaryMap<TValue>.Reserve
+  nameWithType.vb: SecondaryMap(Of TValue).Reserve
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Resize(System.Int32)
+  name: Resize(int)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Resize.html#FlashyDJ_Slotmaps_SecondaryMap_1_Resize_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Resize(System.Int32)
+  name.vb: Resize(Integer)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Resize(int)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Resize(Integer)
+  nameWithType: SecondaryMap<TValue>.Resize(int)
+  nameWithType.vb: SecondaryMap(Of TValue).Resize(Integer)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Resize*
+  name: Resize
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Resize.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Resize
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Resize
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Resize
+  nameWithType: SecondaryMap<TValue>.Resize
+  nameWithType.vb: SecondaryMap(Of TValue).Resize
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Retain(System.Func{FlashyDJ.Slotmaps.SlotKey,`0,System.Boolean})
+  name: Retain(Func<SlotKey, TValue, bool>)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Retain.html#FlashyDJ_Slotmaps_SecondaryMap_1_Retain_System_Func_FlashyDJ_Slotmaps_SlotKey__0_System_Boolean__
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.Retain(System.Func{FlashyDJ.Slotmaps.SlotKey,`0,System.Boolean})
+  name.vb: Retain(Func(Of SlotKey, TValue, Boolean))
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Retain(System.Func<FlashyDJ.Slotmaps.SlotKey, TValue, bool>)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Retain(System.Func(Of FlashyDJ.Slotmaps.SlotKey, TValue, Boolean))
+  nameWithType: SecondaryMap<TValue>.Retain(Func<SlotKey, TValue, bool>)
+  nameWithType.vb: SecondaryMap(Of TValue).Retain(Func(Of SlotKey, TValue, Boolean))
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Retain*
+  name: Retain
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Retain.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Retain
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Retain
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Retain
+  nameWithType: SecondaryMap<TValue>.Retain
+  nameWithType.vb: SecondaryMap(Of TValue).Retain
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection
+  name: SecondaryMap<TValue>.SlotKeyCollection
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.html
+  commentId: T:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection
+  name.vb: SecondaryMap(Of TValue).SlotKeyCollection
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.#ctor(FlashyDJ.Slotmaps.SecondaryMap{`0})
+  name: SlotKeyCollection(SecondaryMap<TValue>)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.-ctor.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotKeyCollection__ctor_FlashyDJ_Slotmaps_SecondaryMap__0__
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.#ctor(FlashyDJ.Slotmaps.SecondaryMap{`0})
+  name.vb: New(SecondaryMap(Of TValue))
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.SlotKeyCollection(FlashyDJ.Slotmaps.SecondaryMap<TValue>)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.New(FlashyDJ.Slotmaps.SecondaryMap(Of TValue))
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.SlotKeyCollection(SecondaryMap<TValue>)
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.New(SecondaryMap(Of TValue))
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.#ctor*
+  name: SlotKeyCollection
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.-ctor.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.#ctor
+  name.vb: New
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.SlotKeyCollection
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.New
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.SlotKeyCollection
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.New
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  name: Contains(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Contains.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotKeyCollection_Contains_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Contains(SlotKey)
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Contains(SlotKey)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Contains*
+  name: Contains
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Contains.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Contains
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Contains
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Contains
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Contains
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Contains
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey[],System.Int32)
+  name: CopyTo(SlotKey[], int)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.CopyTo.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotKeyCollection_CopyTo_FlashyDJ_Slotmaps_SlotKey___System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey[],System.Int32)
+  name.vb: CopyTo(SlotKey(), Integer)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey[], int)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey(), Integer)
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.CopyTo(SlotKey[], int)
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.CopyTo(SlotKey(), Integer)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.CopyTo*
+  name: CopyTo
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.CopyTo.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.CopyTo
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.CopyTo
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.CopyTo
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.CopyTo
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.CopyTo
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Count
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Count.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotKeyCollection_Count
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Count
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Count
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Count
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Count
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Count*
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Count.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Count
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Count
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Count
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Count
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator
+  name: SecondaryMap<TValue>.SlotKeyCollection.Enumerator
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.html
+  commentId: T:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator
+  name.vb: SecondaryMap(Of TValue).SlotKeyCollection.Enumerator
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Enumerator
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Enumerator
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Enumerator
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Enumerator
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Current
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Current.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotKeyCollection_Enumerator_Current
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Current
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Current
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Current*
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Current.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Current
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Current
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Dispose
+  name: Dispose()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Dispose.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotKeyCollection_Enumerator_Dispose
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Dispose()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Dispose()
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Dispose()
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Dispose()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Dispose*
+  name: Dispose
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Dispose.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Dispose
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Dispose
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Dispose
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Dispose
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.MoveNext
+  name: MoveNext()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.MoveNext.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotKeyCollection_Enumerator_MoveNext
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Enumerator.MoveNext()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext()
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Enumerator.MoveNext()
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.MoveNext*
+  name: MoveNext
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.MoveNext.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Enumerator.MoveNext
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Enumerator.MoveNext
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Reset
+  name: Reset()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Reset.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotKeyCollection_Enumerator_Reset
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Reset()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Reset()
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Reset()
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Reset()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Reset*
+  name: Reset
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Reset.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotKeyCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Reset
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Reset
+  nameWithType: SecondaryMap<TValue>.SlotKeyCollection.Enumerator.Reset
+  nameWithType.vb: SecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Reset
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection
+  name: SecondaryMap<TValue>.SlotValueCollection
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.html
+  commentId: T:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection
+  name.vb: SecondaryMap(Of TValue).SlotValueCollection
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.#ctor(FlashyDJ.Slotmaps.SecondaryMap{`0})
+  name: SlotValueCollection(SecondaryMap<TValue>)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.-ctor.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotValueCollection__ctor_FlashyDJ_Slotmaps_SecondaryMap__0__
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.#ctor(FlashyDJ.Slotmaps.SecondaryMap{`0})
+  name.vb: New(SecondaryMap(Of TValue))
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.SlotValueCollection(FlashyDJ.Slotmaps.SecondaryMap<TValue>)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.New(FlashyDJ.Slotmaps.SecondaryMap(Of TValue))
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.SlotValueCollection(SecondaryMap<TValue>)
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.New(SecondaryMap(Of TValue))
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.#ctor*
+  name: SlotValueCollection
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.-ctor.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.#ctor
+  name.vb: New
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.SlotValueCollection
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.New
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.SlotValueCollection
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.New
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Contains(`0)
+  name: Contains(TValue)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Contains.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotValueCollection_Contains__0_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Contains(`0)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Contains(TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Contains(TValue)
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Contains(TValue)
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Contains(TValue)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Contains*
+  name: Contains
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Contains.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Contains
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Contains
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Contains
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Contains
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Contains
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.CopyTo(`0[],System.Int32)
+  name: CopyTo(TValue[], int)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.CopyTo.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotValueCollection_CopyTo__0___System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.CopyTo(`0[],System.Int32)
+  name.vb: CopyTo(TValue(), Integer)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.CopyTo(TValue[], int)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.CopyTo(TValue(), Integer)
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.CopyTo(TValue[], int)
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.CopyTo(TValue(), Integer)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.CopyTo*
+  name: CopyTo
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.CopyTo.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.CopyTo
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.CopyTo
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.CopyTo
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.CopyTo
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.CopyTo
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Count
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Count.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotValueCollection_Count
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Count
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Count
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Count
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Count
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Count*
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Count.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Count
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Count
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Count
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Count
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator
+  name: SecondaryMap<TValue>.SlotValueCollection.Enumerator
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.html
+  commentId: T:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator
+  name.vb: SecondaryMap(Of TValue).SlotValueCollection.Enumerator
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Enumerator
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Enumerator
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Enumerator
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Enumerator
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Current
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Current.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotValueCollection_Enumerator_Current
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Current
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Enumerator.Current
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Current*
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Current.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Current
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Enumerator.Current
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Dispose
+  name: Dispose()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Dispose.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotValueCollection_Enumerator_Dispose
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Enumerator.Dispose()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Dispose()
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Enumerator.Dispose()
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Dispose()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Dispose*
+  name: Dispose
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Dispose.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Enumerator.Dispose
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Dispose
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Enumerator.Dispose
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Dispose
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.MoveNext
+  name: MoveNext()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.MoveNext.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotValueCollection_Enumerator_MoveNext
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Enumerator.MoveNext()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Enumerator.MoveNext()
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Enumerator.MoveNext()
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Enumerator.MoveNext()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.MoveNext*
+  name: MoveNext
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.MoveNext.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Enumerator.MoveNext
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Enumerator.MoveNext
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Enumerator.MoveNext
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Enumerator.MoveNext
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Reset
+  name: Reset()
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Reset.html#FlashyDJ_Slotmaps_SecondaryMap_1_SlotValueCollection_Enumerator_Reset
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Enumerator.Reset()
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Reset()
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Enumerator.Reset()
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Reset()
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Reset*
+  name: Reset
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Reset.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.SlotValueCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.SlotValueCollection.Enumerator.Reset
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Reset
+  nameWithType: SecondaryMap<TValue>.SlotValueCollection.Enumerator.Reset
+  nameWithType.vb: SecondaryMap(Of TValue).SlotValueCollection.Enumerator.Reset
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.TryGet(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name: TryGet(SlotKey, out TValue)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.TryGet.html#FlashyDJ_Slotmaps_SecondaryMap_1_TryGet_FlashyDJ_Slotmaps_SlotKey__0__
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.TryGet(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name.vb: TryGet(SlotKey, TValue)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.TryGet(FlashyDJ.Slotmaps.SlotKey, out TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).TryGet(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: SecondaryMap<TValue>.TryGet(SlotKey, out TValue)
+  nameWithType.vb: SecondaryMap(Of TValue).TryGet(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.TryGet*
+  name: TryGet
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.TryGet.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.TryGet
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.TryGet
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).TryGet
+  nameWithType: SecondaryMap<TValue>.TryGet
+  nameWithType.vb: SecondaryMap(Of TValue).TryGet
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.TryInsert(FlashyDJ.Slotmaps.SlotKey,`0,`0@)
+  name: TryInsert(SlotKey, TValue, out TValue?)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.TryInsert.html#FlashyDJ_Slotmaps_SecondaryMap_1_TryInsert_FlashyDJ_Slotmaps_SlotKey__0__0__
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.TryInsert(FlashyDJ.Slotmaps.SlotKey,`0,`0@)
+  name.vb: TryInsert(SlotKey, TValue, TValue)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.TryInsert(FlashyDJ.Slotmaps.SlotKey, TValue, out TValue?)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).TryInsert(FlashyDJ.Slotmaps.SlotKey, TValue, TValue)
+  nameWithType: SecondaryMap<TValue>.TryInsert(SlotKey, TValue, out TValue?)
+  nameWithType.vb: SecondaryMap(Of TValue).TryInsert(SlotKey, TValue, TValue)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.TryInsert*
+  name: TryInsert
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.TryInsert.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.TryInsert
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.TryInsert
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).TryInsert
+  nameWithType: SecondaryMap<TValue>.TryInsert
+  nameWithType.vb: SecondaryMap(Of TValue).TryInsert
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.TryRemove(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name: TryRemove(SlotKey, out TValue)
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.TryRemove.html#FlashyDJ_Slotmaps_SecondaryMap_1_TryRemove_FlashyDJ_Slotmaps_SlotKey__0__
+  commentId: M:FlashyDJ.Slotmaps.SecondaryMap`1.TryRemove(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name.vb: TryRemove(SlotKey, TValue)
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.TryRemove(FlashyDJ.Slotmaps.SlotKey, out TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).TryRemove(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: SecondaryMap<TValue>.TryRemove(SlotKey, out TValue)
+  nameWithType.vb: SecondaryMap(Of TValue).TryRemove(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.TryRemove*
+  name: TryRemove
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.TryRemove.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.TryRemove
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.TryRemove
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).TryRemove
+  nameWithType: SecondaryMap<TValue>.TryRemove
+  nameWithType.vb: SecondaryMap(Of TValue).TryRemove
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Values
+  name: Values
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Values.html#FlashyDJ_Slotmaps_SecondaryMap_1_Values
+  commentId: P:FlashyDJ.Slotmaps.SecondaryMap`1.Values
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Values
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Values
+  nameWithType: SecondaryMap<TValue>.Values
+  nameWithType.vb: SecondaryMap(Of TValue).Values
+- uid: FlashyDJ.Slotmaps.SecondaryMap`1.Values*
+  name: Values
+  href: api/FlashyDJ.Slotmaps.SecondaryMap-1.Values.html
+  commentId: Overload:FlashyDJ.Slotmaps.SecondaryMap`1.Values
+  fullName: FlashyDJ.Slotmaps.SecondaryMap<TValue>.Values
+  fullName.vb: FlashyDJ.Slotmaps.SecondaryMap(Of TValue).Values
+  nameWithType: SecondaryMap<TValue>.Values
+  nameWithType.vb: SecondaryMap(Of TValue).Values
+- uid: FlashyDJ.Slotmaps.SlotKey
+  name: SlotKey
+  href: api/FlashyDJ.Slotmaps.SlotKey.html
+  commentId: T:FlashyDJ.Slotmaps.SlotKey
+  fullName: FlashyDJ.Slotmaps.SlotKey
+  nameWithType: SlotKey
+- uid: FlashyDJ.Slotmaps.SlotKey.#ctor(System.Int32,System.Int32)
+  name: SlotKey(int, int)
+  href: api/FlashyDJ.Slotmaps.SlotKey.-ctor.html#FlashyDJ_Slotmaps_SlotKey__ctor_System_Int32_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SlotKey.#ctor(System.Int32,System.Int32)
+  name.vb: New(Integer, Integer)
+  fullName: FlashyDJ.Slotmaps.SlotKey.SlotKey(int, int)
+  fullName.vb: FlashyDJ.Slotmaps.SlotKey.New(Integer, Integer)
+  nameWithType: SlotKey.SlotKey(int, int)
+  nameWithType.vb: SlotKey.New(Integer, Integer)
+- uid: FlashyDJ.Slotmaps.SlotKey.#ctor*
+  name: SlotKey
+  href: api/FlashyDJ.Slotmaps.SlotKey.-ctor.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotKey.#ctor
+  name.vb: New
+  fullName: FlashyDJ.Slotmaps.SlotKey.SlotKey
+  fullName.vb: FlashyDJ.Slotmaps.SlotKey.New
+  nameWithType: SlotKey.SlotKey
+  nameWithType.vb: SlotKey.New
+- uid: FlashyDJ.Slotmaps.SlotKey.Index
+  name: Index
+  href: api/FlashyDJ.Slotmaps.SlotKey.Index.html#FlashyDJ_Slotmaps_SlotKey_Index
+  commentId: P:FlashyDJ.Slotmaps.SlotKey.Index
+  fullName: FlashyDJ.Slotmaps.SlotKey.Index
+  nameWithType: SlotKey.Index
+- uid: FlashyDJ.Slotmaps.SlotKey.Index*
+  name: Index
+  href: api/FlashyDJ.Slotmaps.SlotKey.Index.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotKey.Index
+  fullName: FlashyDJ.Slotmaps.SlotKey.Index
+  nameWithType: SlotKey.Index
+- uid: FlashyDJ.Slotmaps.SlotKey.IsInvalid
+  name: IsInvalid
+  href: api/FlashyDJ.Slotmaps.SlotKey.IsInvalid.html#FlashyDJ_Slotmaps_SlotKey_IsInvalid
+  commentId: P:FlashyDJ.Slotmaps.SlotKey.IsInvalid
+  fullName: FlashyDJ.Slotmaps.SlotKey.IsInvalid
+  nameWithType: SlotKey.IsInvalid
+- uid: FlashyDJ.Slotmaps.SlotKey.IsInvalid*
+  name: IsInvalid
+  href: api/FlashyDJ.Slotmaps.SlotKey.IsInvalid.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotKey.IsInvalid
+  fullName: FlashyDJ.Slotmaps.SlotKey.IsInvalid
+  nameWithType: SlotKey.IsInvalid
+- uid: FlashyDJ.Slotmaps.SlotKey.IsNull
+  name: IsNull
+  href: api/FlashyDJ.Slotmaps.SlotKey.IsNull.html#FlashyDJ_Slotmaps_SlotKey_IsNull
+  commentId: P:FlashyDJ.Slotmaps.SlotKey.IsNull
+  fullName: FlashyDJ.Slotmaps.SlotKey.IsNull
+  nameWithType: SlotKey.IsNull
+- uid: FlashyDJ.Slotmaps.SlotKey.IsNull*
+  name: IsNull
+  href: api/FlashyDJ.Slotmaps.SlotKey.IsNull.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotKey.IsNull
+  fullName: FlashyDJ.Slotmaps.SlotKey.IsNull
+  nameWithType: SlotKey.IsNull
+- uid: FlashyDJ.Slotmaps.SlotKey.Null
+  name: "Null"
+  href: api/FlashyDJ.Slotmaps.SlotKey.Null.html#FlashyDJ_Slotmaps_SlotKey_Null
+  commentId: P:FlashyDJ.Slotmaps.SlotKey.Null
+  fullName: FlashyDJ.Slotmaps.SlotKey.Null
+  nameWithType: SlotKey.Null
+- uid: FlashyDJ.Slotmaps.SlotKey.Null*
+  name: "Null"
+  href: api/FlashyDJ.Slotmaps.SlotKey.Null.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotKey.Null
+  fullName: FlashyDJ.Slotmaps.SlotKey.Null
+  nameWithType: SlotKey.Null
+- uid: FlashyDJ.Slotmaps.SlotKey.ToString
+  name: ToString()
+  href: api/FlashyDJ.Slotmaps.SlotKey.ToString.html#FlashyDJ_Slotmaps_SlotKey_ToString
+  commentId: M:FlashyDJ.Slotmaps.SlotKey.ToString
+  fullName: FlashyDJ.Slotmaps.SlotKey.ToString()
+  nameWithType: SlotKey.ToString()
+- uid: FlashyDJ.Slotmaps.SlotKey.ToString*
+  name: ToString
+  href: api/FlashyDJ.Slotmaps.SlotKey.ToString.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotKey.ToString
+  fullName: FlashyDJ.Slotmaps.SlotKey.ToString
+  nameWithType: SlotKey.ToString
+- uid: FlashyDJ.Slotmaps.SlotKey.Version
+  name: Version
+  href: api/FlashyDJ.Slotmaps.SlotKey.Version.html#FlashyDJ_Slotmaps_SlotKey_Version
+  commentId: P:FlashyDJ.Slotmaps.SlotKey.Version
+  fullName: FlashyDJ.Slotmaps.SlotKey.Version
+  nameWithType: SlotKey.Version
+- uid: FlashyDJ.Slotmaps.SlotKey.Version*
+  name: Version
+  href: api/FlashyDJ.Slotmaps.SlotKey.Version.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotKey.Version
+  fullName: FlashyDJ.Slotmaps.SlotKey.Version
+  nameWithType: SlotKey.Version
+- uid: FlashyDJ.Slotmaps.SlotKey.op_Implicit(FlashyDJ.Slotmaps.SlotKey)~System.UInt64
+  name: implicit operator ulong(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SlotKey.op_Implicit.html#FlashyDJ_Slotmaps_SlotKey_op_Implicit_FlashyDJ_Slotmaps_SlotKey__System_UInt64
+  commentId: M:FlashyDJ.Slotmaps.SlotKey.op_Implicit(FlashyDJ.Slotmaps.SlotKey)~System.UInt64
+  name.vb: CType(SlotKey)
+  fullName: FlashyDJ.Slotmaps.SlotKey.implicit operator ulong(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SlotKey.CType(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SlotKey.implicit operator ulong(SlotKey)
+  nameWithType.vb: SlotKey.CType(SlotKey)
+- uid: FlashyDJ.Slotmaps.SlotKey.op_Implicit(System.UInt64)~FlashyDJ.Slotmaps.SlotKey
+  name: implicit operator SlotKey(ulong)
+  href: api/FlashyDJ.Slotmaps.SlotKey.op_Implicit.html#FlashyDJ_Slotmaps_SlotKey_op_Implicit_System_UInt64__FlashyDJ_Slotmaps_SlotKey
+  commentId: M:FlashyDJ.Slotmaps.SlotKey.op_Implicit(System.UInt64)~FlashyDJ.Slotmaps.SlotKey
+  name.vb: CType(ULong)
+  fullName: FlashyDJ.Slotmaps.SlotKey.implicit operator FlashyDJ.Slotmaps.SlotKey(ulong)
+  fullName.vb: FlashyDJ.Slotmaps.SlotKey.CType(ULong)
+  nameWithType: SlotKey.implicit operator SlotKey(ulong)
+  nameWithType.vb: SlotKey.CType(ULong)
+- uid: FlashyDJ.Slotmaps.SlotKey.op_Implicit*
+  name: implicit operator
+  href: api/FlashyDJ.Slotmaps.SlotKey.op_Implicit.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotKey.op_Implicit
+  name.vb: CType
+  fullName: FlashyDJ.Slotmaps.SlotKey.implicit operator
+  fullName.vb: FlashyDJ.Slotmaps.SlotKey.CType
+  nameWithType: SlotKey.implicit operator
+  nameWithType.vb: SlotKey.CType
+- uid: FlashyDJ.Slotmaps.SlotMap`1
+  name: SlotMap<TValue>
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.html
+  commentId: T:FlashyDJ.Slotmaps.SlotMap`1
+  name.vb: SlotMap(Of TValue)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue)
+  nameWithType: SlotMap<TValue>
+  nameWithType.vb: SlotMap(Of TValue)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.#ctor
+  name: SlotMap()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.-ctor.html#FlashyDJ_Slotmaps_SlotMap_1__ctor
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.#ctor
+  name.vb: New()
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotMap()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).New()
+  nameWithType: SlotMap<TValue>.SlotMap()
+  nameWithType.vb: SlotMap(Of TValue).New()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.#ctor(System.Int32)
+  name: SlotMap(int)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.-ctor.html#FlashyDJ_Slotmaps_SlotMap_1__ctor_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.#ctor(System.Int32)
+  name.vb: New(Integer)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotMap(int)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).New(Integer)
+  nameWithType: SlotMap<TValue>.SlotMap(int)
+  nameWithType.vb: SlotMap(Of TValue).New(Integer)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.#ctor*
+  name: SlotMap
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.-ctor.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.#ctor
+  name.vb: New
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotMap
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).New
+  nameWithType: SlotMap<TValue>.SlotMap
+  nameWithType.vb: SlotMap(Of TValue).New
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Add(`0)
+  name: Add(TValue)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Add.html#FlashyDJ_Slotmaps_SlotMap_1_Add__0_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Add(`0)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Add(TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Add(TValue)
+  nameWithType: SlotMap<TValue>.Add(TValue)
+  nameWithType.vb: SlotMap(Of TValue).Add(TValue)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Add*
+  name: Add
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Add.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Add
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Add
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Add
+  nameWithType: SlotMap<TValue>.Add
+  nameWithType.vb: SlotMap(Of TValue).Add
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Capacity
+  name: Capacity
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Capacity.html#FlashyDJ_Slotmaps_SlotMap_1_Capacity
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.Capacity
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Capacity
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Capacity
+  nameWithType: SlotMap<TValue>.Capacity
+  nameWithType.vb: SlotMap(Of TValue).Capacity
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Capacity*
+  name: Capacity
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Capacity.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Capacity
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Capacity
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Capacity
+  nameWithType: SlotMap<TValue>.Capacity
+  nameWithType.vb: SlotMap(Of TValue).Capacity
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Clear
+  name: Clear()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Clear.html#FlashyDJ_Slotmaps_SlotMap_1_Clear
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Clear
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Clear()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Clear()
+  nameWithType: SlotMap<TValue>.Clear()
+  nameWithType.vb: SlotMap(Of TValue).Clear()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Clear*
+  name: Clear
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Clear.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Clear
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Clear
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Clear
+  nameWithType: SlotMap<TValue>.Clear
+  nameWithType.vb: SlotMap(Of TValue).Clear
+- uid: FlashyDJ.Slotmaps.SlotMap`1.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  name: ContainsKey(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.ContainsKey.html#FlashyDJ_Slotmaps_SlotMap_1_ContainsKey_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SlotMap<TValue>.ContainsKey(SlotKey)
+  nameWithType.vb: SlotMap(Of TValue).ContainsKey(SlotKey)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.ContainsKey*
+  name: ContainsKey
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.ContainsKey.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.ContainsKey
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.ContainsKey
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).ContainsKey
+  nameWithType: SlotMap<TValue>.ContainsKey
+  nameWithType.vb: SlotMap(Of TValue).ContainsKey
+- uid: FlashyDJ.Slotmaps.SlotMap`1.ContainsValue(`0)
+  name: ContainsValue(TValue)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.ContainsValue.html#FlashyDJ_Slotmaps_SlotMap_1_ContainsValue__0_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.ContainsValue(`0)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.ContainsValue(TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).ContainsValue(TValue)
+  nameWithType: SlotMap<TValue>.ContainsValue(TValue)
+  nameWithType.vb: SlotMap(Of TValue).ContainsValue(TValue)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.ContainsValue*
+  name: ContainsValue
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.ContainsValue.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.ContainsValue
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.ContainsValue
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).ContainsValue
+  nameWithType: SlotMap<TValue>.ContainsValue
+  nameWithType.vb: SlotMap(Of TValue).ContainsValue
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Count
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Count.html#FlashyDJ_Slotmaps_SlotMap_1_Count
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.Count
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Count
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Count
+  nameWithType: SlotMap<TValue>.Count
+  nameWithType.vb: SlotMap(Of TValue).Count
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Count*
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Count.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Count
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Count
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Count
+  nameWithType: SlotMap<TValue>.Count
+  nameWithType.vb: SlotMap(Of TValue).Count
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Drain
+  name: Drain()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Drain.html#FlashyDJ_Slotmaps_SlotMap_1_Drain
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Drain
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Drain()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Drain()
+  nameWithType: SlotMap<TValue>.Drain()
+  nameWithType.vb: SlotMap(Of TValue).Drain()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Drain*
+  name: Drain
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Drain.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Drain
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Drain
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Drain
+  nameWithType: SlotMap<TValue>.Drain
+  nameWithType.vb: SlotMap(Of TValue).Drain
+- uid: FlashyDJ.Slotmaps.SlotMap`1.EnsureCapacity(System.Int32)
+  name: EnsureCapacity(int)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.EnsureCapacity.html#FlashyDJ_Slotmaps_SlotMap_1_EnsureCapacity_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.EnsureCapacity(System.Int32)
+  name.vb: EnsureCapacity(Integer)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.EnsureCapacity(int)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).EnsureCapacity(Integer)
+  nameWithType: SlotMap<TValue>.EnsureCapacity(int)
+  nameWithType.vb: SlotMap(Of TValue).EnsureCapacity(Integer)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.EnsureCapacity*
+  name: EnsureCapacity
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.EnsureCapacity.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.EnsureCapacity
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.EnsureCapacity
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).EnsureCapacity
+  nameWithType: SlotMap<TValue>.EnsureCapacity
+  nameWithType.vb: SlotMap(Of TValue).EnsureCapacity
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Enumerator
+  name: SlotMap<TValue>.Enumerator
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.html
+  commentId: T:FlashyDJ.Slotmaps.SlotMap`1.Enumerator
+  name.vb: SlotMap(Of TValue).Enumerator
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Enumerator
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Enumerator
+  nameWithType: SlotMap<TValue>.Enumerator
+  nameWithType.vb: SlotMap(Of TValue).Enumerator
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Current
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Current.html#FlashyDJ_Slotmaps_SlotMap_1_Enumerator_Current
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Enumerator.Current
+  nameWithType: SlotMap<TValue>.Enumerator.Current
+  nameWithType.vb: SlotMap(Of TValue).Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Current*
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Current.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Enumerator.Current
+  nameWithType: SlotMap<TValue>.Enumerator.Current
+  nameWithType.vb: SlotMap(Of TValue).Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Dispose
+  name: Dispose()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Dispose.html#FlashyDJ_Slotmaps_SlotMap_1_Enumerator_Dispose
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Enumerator.Dispose()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Enumerator.Dispose()
+  nameWithType: SlotMap<TValue>.Enumerator.Dispose()
+  nameWithType.vb: SlotMap(Of TValue).Enumerator.Dispose()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Dispose*
+  name: Dispose
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Dispose.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Enumerator.Dispose
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Enumerator.Dispose
+  nameWithType: SlotMap<TValue>.Enumerator.Dispose
+  nameWithType.vb: SlotMap(Of TValue).Enumerator.Dispose
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Enumerator.MoveNext
+  name: MoveNext()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.MoveNext.html#FlashyDJ_Slotmaps_SlotMap_1_Enumerator_MoveNext
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Enumerator.MoveNext()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Enumerator.MoveNext()
+  nameWithType: SlotMap<TValue>.Enumerator.MoveNext()
+  nameWithType.vb: SlotMap(Of TValue).Enumerator.MoveNext()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Enumerator.MoveNext*
+  name: MoveNext
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.MoveNext.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Enumerator.MoveNext
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Enumerator.MoveNext
+  nameWithType: SlotMap<TValue>.Enumerator.MoveNext
+  nameWithType.vb: SlotMap(Of TValue).Enumerator.MoveNext
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Reset
+  name: Reset()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Reset.html#FlashyDJ_Slotmaps_SlotMap_1_Enumerator_Reset
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Enumerator.Reset()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Enumerator.Reset()
+  nameWithType: SlotMap<TValue>.Enumerator.Reset()
+  nameWithType.vb: SlotMap(Of TValue).Enumerator.Reset()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Reset*
+  name: Reset
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Reset.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Enumerator.Reset
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Enumerator.Reset
+  nameWithType: SlotMap<TValue>.Enumerator.Reset
+  nameWithType.vb: SlotMap(Of TValue).Enumerator.Reset
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Get(FlashyDJ.Slotmaps.SlotKey)
+  name: Get(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Get.html#FlashyDJ_Slotmaps_SlotMap_1_Get_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Get(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Get(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Get(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SlotMap<TValue>.Get(SlotKey)
+  nameWithType.vb: SlotMap(Of TValue).Get(SlotKey)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Get*
+  name: Get
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Get.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Get
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Get
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Get
+  nameWithType: SlotMap<TValue>.Get
+  nameWithType.vb: SlotMap(Of TValue).Get
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Insert(FlashyDJ.Slotmaps.SlotKey,`0)
+  name: Insert(SlotKey, TValue)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Insert.html#FlashyDJ_Slotmaps_SlotMap_1_Insert_FlashyDJ_Slotmaps_SlotKey__0_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Insert(FlashyDJ.Slotmaps.SlotKey,`0)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Insert(FlashyDJ.Slotmaps.SlotKey, TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Insert(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: SlotMap<TValue>.Insert(SlotKey, TValue)
+  nameWithType.vb: SlotMap(Of TValue).Insert(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Insert*
+  name: Insert
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Insert.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Insert
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Insert
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Insert
+  nameWithType: SlotMap<TValue>.Insert
+  nameWithType.vb: SlotMap(Of TValue).Insert
+- uid: FlashyDJ.Slotmaps.SlotMap`1.IsEmpty
+  name: IsEmpty
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.IsEmpty.html#FlashyDJ_Slotmaps_SlotMap_1_IsEmpty
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.IsEmpty
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.IsEmpty
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).IsEmpty
+  nameWithType: SlotMap<TValue>.IsEmpty
+  nameWithType.vb: SlotMap(Of TValue).IsEmpty
+- uid: FlashyDJ.Slotmaps.SlotMap`1.IsEmpty*
+  name: IsEmpty
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.IsEmpty.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.IsEmpty
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.IsEmpty
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).IsEmpty
+  nameWithType: SlotMap<TValue>.IsEmpty
+  nameWithType.vb: SlotMap(Of TValue).IsEmpty
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Item(FlashyDJ.Slotmaps.SlotKey)
+  name: this[SlotKey]
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Item.html#FlashyDJ_Slotmaps_SlotMap_1_Item_FlashyDJ_Slotmaps_SlotKey_
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.Item(FlashyDJ.Slotmaps.SlotKey)
+  name.vb: this[](SlotKey)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.this[FlashyDJ.Slotmaps.SlotKey]
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).this[](FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SlotMap<TValue>.this[SlotKey]
+  nameWithType.vb: SlotMap(Of TValue).this[](SlotKey)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Item*
+  name: this
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Item.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Item
+  name.vb: this[]
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.this
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).this[]
+  nameWithType: SlotMap<TValue>.this
+  nameWithType.vb: SlotMap(Of TValue).this[]
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Keys
+  name: Keys
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Keys.html#FlashyDJ_Slotmaps_SlotMap_1_Keys
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.Keys
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Keys
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Keys
+  nameWithType: SlotMap<TValue>.Keys
+  nameWithType.vb: SlotMap(Of TValue).Keys
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Keys*
+  name: Keys
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Keys.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Keys
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Keys
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Keys
+  nameWithType: SlotMap<TValue>.Keys
+  nameWithType.vb: SlotMap(Of TValue).Keys
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Remove(FlashyDJ.Slotmaps.SlotKey)
+  name: Remove(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Remove.html#FlashyDJ_Slotmaps_SlotMap_1_Remove_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Remove(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Remove(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Remove(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SlotMap<TValue>.Remove(SlotKey)
+  nameWithType.vb: SlotMap(Of TValue).Remove(SlotKey)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Remove*
+  name: Remove
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Remove.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Remove
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Remove
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Remove
+  nameWithType: SlotMap<TValue>.Remove
+  nameWithType.vb: SlotMap(Of TValue).Remove
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Reserve(System.Int32)
+  name: Reserve(int)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Reserve.html#FlashyDJ_Slotmaps_SlotMap_1_Reserve_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Reserve(System.Int32)
+  name.vb: Reserve(Integer)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Reserve(int)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Reserve(Integer)
+  nameWithType: SlotMap<TValue>.Reserve(int)
+  nameWithType.vb: SlotMap(Of TValue).Reserve(Integer)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Reserve*
+  name: Reserve
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Reserve.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Reserve
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Reserve
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Reserve
+  nameWithType: SlotMap<TValue>.Reserve
+  nameWithType.vb: SlotMap(Of TValue).Reserve
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Resize(System.Int32)
+  name: Resize(int)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Resize.html#FlashyDJ_Slotmaps_SlotMap_1_Resize_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Resize(System.Int32)
+  name.vb: Resize(Integer)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Resize(int)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Resize(Integer)
+  nameWithType: SlotMap<TValue>.Resize(int)
+  nameWithType.vb: SlotMap(Of TValue).Resize(Integer)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Resize*
+  name: Resize
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Resize.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Resize
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Resize
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Resize
+  nameWithType: SlotMap<TValue>.Resize
+  nameWithType.vb: SlotMap(Of TValue).Resize
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Retain(System.Func{FlashyDJ.Slotmaps.SlotKey,`0,System.Boolean})
+  name: Retain(Func<SlotKey, TValue, bool>)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Retain.html#FlashyDJ_Slotmaps_SlotMap_1_Retain_System_Func_FlashyDJ_Slotmaps_SlotKey__0_System_Boolean__
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.Retain(System.Func{FlashyDJ.Slotmaps.SlotKey,`0,System.Boolean})
+  name.vb: Retain(Func(Of SlotKey, TValue, Boolean))
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Retain(System.Func<FlashyDJ.Slotmaps.SlotKey, TValue, bool>)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Retain(System.Func(Of FlashyDJ.Slotmaps.SlotKey, TValue, Boolean))
+  nameWithType: SlotMap<TValue>.Retain(Func<SlotKey, TValue, bool>)
+  nameWithType.vb: SlotMap(Of TValue).Retain(Func(Of SlotKey, TValue, Boolean))
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Retain*
+  name: Retain
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Retain.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Retain
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Retain
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Retain
+  nameWithType: SlotMap<TValue>.Retain
+  nameWithType.vb: SlotMap(Of TValue).Retain
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection
+  name: SlotMap<TValue>.SlotKeyCollection
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.html
+  commentId: T:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection
+  name.vb: SlotMap(Of TValue).SlotKeyCollection
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection
+  nameWithType: SlotMap<TValue>.SlotKeyCollection
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.#ctor(FlashyDJ.Slotmaps.SlotMap{`0})
+  name: SlotKeyCollection(SlotMap<TValue>)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.-ctor.html#FlashyDJ_Slotmaps_SlotMap_1_SlotKeyCollection__ctor_FlashyDJ_Slotmaps_SlotMap__0__
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.#ctor(FlashyDJ.Slotmaps.SlotMap{`0})
+  name.vb: New(SlotMap(Of TValue))
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.SlotKeyCollection(FlashyDJ.Slotmaps.SlotMap<TValue>)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.New(FlashyDJ.Slotmaps.SlotMap(Of TValue))
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.SlotKeyCollection(SlotMap<TValue>)
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.New(SlotMap(Of TValue))
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.#ctor*
+  name: SlotKeyCollection
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.-ctor.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.#ctor
+  name.vb: New
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.SlotKeyCollection
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.New
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.SlotKeyCollection
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.New
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  name: Contains(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Contains.html#FlashyDJ_Slotmaps_SlotMap_1_SlotKeyCollection_Contains_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Contains(SlotKey)
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Contains(SlotKey)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Contains*
+  name: Contains
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Contains.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Contains
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Contains
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Contains
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Contains
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Contains
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey[],System.Int32)
+  name: CopyTo(SlotKey[], int)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.CopyTo.html#FlashyDJ_Slotmaps_SlotMap_1_SlotKeyCollection_CopyTo_FlashyDJ_Slotmaps_SlotKey___System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey[],System.Int32)
+  name.vb: CopyTo(SlotKey(), Integer)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey[], int)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey(), Integer)
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.CopyTo(SlotKey[], int)
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.CopyTo(SlotKey(), Integer)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.CopyTo*
+  name: CopyTo
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.CopyTo.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.CopyTo
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.CopyTo
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.CopyTo
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.CopyTo
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.CopyTo
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Count
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Count.html#FlashyDJ_Slotmaps_SlotMap_1_SlotKeyCollection_Count
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Count
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Count
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Count
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Count
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Count*
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Count.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Count
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Count
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Count
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Count
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator
+  name: SlotMap<TValue>.SlotKeyCollection.Enumerator
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.html
+  commentId: T:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator
+  name.vb: SlotMap(Of TValue).SlotKeyCollection.Enumerator
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Enumerator
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Enumerator
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Enumerator
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Enumerator
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Current
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Current.html#FlashyDJ_Slotmaps_SlotMap_1_SlotKeyCollection_Enumerator_Current
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Enumerator.Current
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Enumerator.Current
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Current*
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Current.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Enumerator.Current
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Enumerator.Current
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Dispose
+  name: Dispose()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Dispose.html#FlashyDJ_Slotmaps_SlotMap_1_SlotKeyCollection_Enumerator_Dispose
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Enumerator.Dispose()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Enumerator.Dispose()
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Enumerator.Dispose()
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Enumerator.Dispose()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Dispose*
+  name: Dispose
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Dispose.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Enumerator.Dispose
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Enumerator.Dispose
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Enumerator.Dispose
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Enumerator.Dispose
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.MoveNext
+  name: MoveNext()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.MoveNext.html#FlashyDJ_Slotmaps_SlotMap_1_SlotKeyCollection_Enumerator_MoveNext
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Enumerator.MoveNext()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext()
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Enumerator.MoveNext()
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.MoveNext*
+  name: MoveNext
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.MoveNext.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Enumerator.MoveNext
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Enumerator.MoveNext
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Reset
+  name: Reset()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Reset.html#FlashyDJ_Slotmaps_SlotMap_1_SlotKeyCollection_Enumerator_Reset
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Enumerator.Reset()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Enumerator.Reset()
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Enumerator.Reset()
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Enumerator.Reset()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Reset*
+  name: Reset
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Reset.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotKeyCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotKeyCollection.Enumerator.Reset
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotKeyCollection.Enumerator.Reset
+  nameWithType: SlotMap<TValue>.SlotKeyCollection.Enumerator.Reset
+  nameWithType.vb: SlotMap(Of TValue).SlotKeyCollection.Enumerator.Reset
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection
+  name: SlotMap<TValue>.SlotValueCollection
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.html
+  commentId: T:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection
+  name.vb: SlotMap(Of TValue).SlotValueCollection
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection
+  nameWithType: SlotMap<TValue>.SlotValueCollection
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.#ctor(FlashyDJ.Slotmaps.SlotMap{`0})
+  name: SlotValueCollection(SlotMap<TValue>)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.-ctor.html#FlashyDJ_Slotmaps_SlotMap_1_SlotValueCollection__ctor_FlashyDJ_Slotmaps_SlotMap__0__
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.#ctor(FlashyDJ.Slotmaps.SlotMap{`0})
+  name.vb: New(SlotMap(Of TValue))
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.SlotValueCollection(FlashyDJ.Slotmaps.SlotMap<TValue>)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.New(FlashyDJ.Slotmaps.SlotMap(Of TValue))
+  nameWithType: SlotMap<TValue>.SlotValueCollection.SlotValueCollection(SlotMap<TValue>)
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.New(SlotMap(Of TValue))
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.#ctor*
+  name: SlotValueCollection
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.-ctor.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.#ctor
+  name.vb: New
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.SlotValueCollection
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.New
+  nameWithType: SlotMap<TValue>.SlotValueCollection.SlotValueCollection
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.New
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Contains(`0)
+  name: Contains(TValue)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Contains.html#FlashyDJ_Slotmaps_SlotMap_1_SlotValueCollection_Contains__0_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Contains(`0)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Contains(TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Contains(TValue)
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Contains(TValue)
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Contains(TValue)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Contains*
+  name: Contains
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Contains.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Contains
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Contains
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Contains
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Contains
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Contains
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.CopyTo(`0[],System.Int32)
+  name: CopyTo(TValue[], int)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.CopyTo.html#FlashyDJ_Slotmaps_SlotMap_1_SlotValueCollection_CopyTo__0___System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.CopyTo(`0[],System.Int32)
+  name.vb: CopyTo(TValue(), Integer)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.CopyTo(TValue[], int)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.CopyTo(TValue(), Integer)
+  nameWithType: SlotMap<TValue>.SlotValueCollection.CopyTo(TValue[], int)
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.CopyTo(TValue(), Integer)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.CopyTo*
+  name: CopyTo
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.CopyTo.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.CopyTo
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.CopyTo
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.CopyTo
+  nameWithType: SlotMap<TValue>.SlotValueCollection.CopyTo
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.CopyTo
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Count
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Count.html#FlashyDJ_Slotmaps_SlotMap_1_SlotValueCollection_Count
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Count
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Count
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Count
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Count
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Count*
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Count.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Count
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Count
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Count
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Count
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator
+  name: SlotMap<TValue>.SlotValueCollection.Enumerator
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.html
+  commentId: T:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator
+  name.vb: SlotMap(Of TValue).SlotValueCollection.Enumerator
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Enumerator
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Enumerator
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Enumerator
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Enumerator
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Current
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Current.html#FlashyDJ_Slotmaps_SlotMap_1_SlotValueCollection_Enumerator_Current
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Enumerator.Current
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Enumerator.Current
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Current*
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Current.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Enumerator.Current
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Enumerator.Current
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Dispose
+  name: Dispose()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Dispose.html#FlashyDJ_Slotmaps_SlotMap_1_SlotValueCollection_Enumerator_Dispose
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Enumerator.Dispose()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Enumerator.Dispose()
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Enumerator.Dispose()
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Enumerator.Dispose()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Dispose*
+  name: Dispose
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Dispose.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Enumerator.Dispose
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Enumerator.Dispose
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Enumerator.Dispose
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Enumerator.Dispose
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.MoveNext
+  name: MoveNext()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.MoveNext.html#FlashyDJ_Slotmaps_SlotMap_1_SlotValueCollection_Enumerator_MoveNext
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Enumerator.MoveNext()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Enumerator.MoveNext()
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Enumerator.MoveNext()
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Enumerator.MoveNext()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.MoveNext*
+  name: MoveNext
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.MoveNext.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Enumerator.MoveNext
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Enumerator.MoveNext
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Enumerator.MoveNext
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Enumerator.MoveNext
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Reset
+  name: Reset()
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Reset.html#FlashyDJ_Slotmaps_SlotMap_1_SlotValueCollection_Enumerator_Reset
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Enumerator.Reset()
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Enumerator.Reset()
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Enumerator.Reset()
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Enumerator.Reset()
+- uid: FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Reset*
+  name: Reset
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Reset.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.SlotValueCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.SlotValueCollection.Enumerator.Reset
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).SlotValueCollection.Enumerator.Reset
+  nameWithType: SlotMap<TValue>.SlotValueCollection.Enumerator.Reset
+  nameWithType.vb: SlotMap(Of TValue).SlotValueCollection.Enumerator.Reset
+- uid: FlashyDJ.Slotmaps.SlotMap`1.TryAdd(FlashyDJ.Slotmaps.SlotKey,`0,FlashyDJ.Slotmaps.SlotKey@)
+  name: TryAdd(SlotKey, TValue, out SlotKey)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.TryAdd.html#FlashyDJ_Slotmaps_SlotMap_1_TryAdd_FlashyDJ_Slotmaps_SlotKey__0_FlashyDJ_Slotmaps_SlotKey__
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.TryAdd(FlashyDJ.Slotmaps.SlotKey,`0,FlashyDJ.Slotmaps.SlotKey@)
+  name.vb: TryAdd(SlotKey, TValue, SlotKey)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.TryAdd(FlashyDJ.Slotmaps.SlotKey, TValue, out FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).TryAdd(FlashyDJ.Slotmaps.SlotKey, TValue, FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SlotMap<TValue>.TryAdd(SlotKey, TValue, out SlotKey)
+  nameWithType.vb: SlotMap(Of TValue).TryAdd(SlotKey, TValue, SlotKey)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.TryAdd*
+  name: TryAdd
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.TryAdd.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.TryAdd
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.TryAdd
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).TryAdd
+  nameWithType: SlotMap<TValue>.TryAdd
+  nameWithType.vb: SlotMap(Of TValue).TryAdd
+- uid: FlashyDJ.Slotmaps.SlotMap`1.TryGet(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name: TryGet(SlotKey, out TValue)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.TryGet.html#FlashyDJ_Slotmaps_SlotMap_1_TryGet_FlashyDJ_Slotmaps_SlotKey__0__
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.TryGet(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name.vb: TryGet(SlotKey, TValue)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.TryGet(FlashyDJ.Slotmaps.SlotKey, out TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).TryGet(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: SlotMap<TValue>.TryGet(SlotKey, out TValue)
+  nameWithType.vb: SlotMap(Of TValue).TryGet(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.TryGet*
+  name: TryGet
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.TryGet.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.TryGet
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.TryGet
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).TryGet
+  nameWithType: SlotMap<TValue>.TryGet
+  nameWithType.vb: SlotMap(Of TValue).TryGet
+- uid: FlashyDJ.Slotmaps.SlotMap`1.TryRemove(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name: TryRemove(SlotKey, out TValue)
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.TryRemove.html#FlashyDJ_Slotmaps_SlotMap_1_TryRemove_FlashyDJ_Slotmaps_SlotKey__0__
+  commentId: M:FlashyDJ.Slotmaps.SlotMap`1.TryRemove(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name.vb: TryRemove(SlotKey, TValue)
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.TryRemove(FlashyDJ.Slotmaps.SlotKey, out TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).TryRemove(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: SlotMap<TValue>.TryRemove(SlotKey, out TValue)
+  nameWithType.vb: SlotMap(Of TValue).TryRemove(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.SlotMap`1.TryRemove*
+  name: TryRemove
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.TryRemove.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.TryRemove
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.TryRemove
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).TryRemove
+  nameWithType: SlotMap<TValue>.TryRemove
+  nameWithType.vb: SlotMap(Of TValue).TryRemove
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Values
+  name: Values
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Values.html#FlashyDJ_Slotmaps_SlotMap_1_Values
+  commentId: P:FlashyDJ.Slotmaps.SlotMap`1.Values
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Values
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Values
+  nameWithType: SlotMap<TValue>.Values
+  nameWithType.vb: SlotMap(Of TValue).Values
+- uid: FlashyDJ.Slotmaps.SlotMap`1.Values*
+  name: Values
+  href: api/FlashyDJ.Slotmaps.SlotMap-1.Values.html
+  commentId: Overload:FlashyDJ.Slotmaps.SlotMap`1.Values
+  fullName: FlashyDJ.Slotmaps.SlotMap<TValue>.Values
+  fullName.vb: FlashyDJ.Slotmaps.SlotMap(Of TValue).Values
+  nameWithType: SlotMap<TValue>.Values
+  nameWithType.vb: SlotMap(Of TValue).Values
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1
+  name: SparseSecondaryMap<TValue>
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.html
+  commentId: T:FlashyDJ.Slotmaps.SparseSecondaryMap`1
+  name.vb: SparseSecondaryMap(Of TValue)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue)
+  nameWithType: SparseSecondaryMap<TValue>
+  nameWithType.vb: SparseSecondaryMap(Of TValue)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.#ctor
+  name: SparseSecondaryMap()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.-ctor.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1__ctor
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.#ctor
+  name.vb: New()
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SparseSecondaryMap()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).New()
+  nameWithType: SparseSecondaryMap<TValue>.SparseSecondaryMap()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).New()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.#ctor(System.Int32)
+  name: SparseSecondaryMap(int)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.-ctor.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1__ctor_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.#ctor(System.Int32)
+  name.vb: New(Integer)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SparseSecondaryMap(int)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).New(Integer)
+  nameWithType: SparseSecondaryMap<TValue>.SparseSecondaryMap(int)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).New(Integer)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.#ctor*
+  name: SparseSecondaryMap
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.-ctor.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.#ctor
+  name.vb: New
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SparseSecondaryMap
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).New
+  nameWithType: SparseSecondaryMap<TValue>.SparseSecondaryMap
+  nameWithType.vb: SparseSecondaryMap(Of TValue).New
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Capacity
+  name: Capacity
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Capacity.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Capacity
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Capacity
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Capacity
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Capacity
+  nameWithType: SparseSecondaryMap<TValue>.Capacity
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Capacity
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Capacity*
+  name: Capacity
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Capacity.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Capacity
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Capacity
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Capacity
+  nameWithType: SparseSecondaryMap<TValue>.Capacity
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Capacity
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Clear
+  name: Clear()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Clear.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Clear
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Clear
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Clear()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Clear()
+  nameWithType: SparseSecondaryMap<TValue>.Clear()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Clear()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Clear*
+  name: Clear
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Clear.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Clear
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Clear
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Clear
+  nameWithType: SparseSecondaryMap<TValue>.Clear
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Clear
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  name: ContainsKey(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.ContainsKey.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_ContainsKey_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).ContainsKey(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SparseSecondaryMap<TValue>.ContainsKey(SlotKey)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).ContainsKey(SlotKey)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.ContainsKey*
+  name: ContainsKey
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.ContainsKey.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.ContainsKey
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.ContainsKey
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).ContainsKey
+  nameWithType: SparseSecondaryMap<TValue>.ContainsKey
+  nameWithType.vb: SparseSecondaryMap(Of TValue).ContainsKey
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.ContainsValue(`0)
+  name: ContainsValue(TValue)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.ContainsValue.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_ContainsValue__0_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.ContainsValue(`0)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.ContainsValue(TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).ContainsValue(TValue)
+  nameWithType: SparseSecondaryMap<TValue>.ContainsValue(TValue)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).ContainsValue(TValue)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.ContainsValue*
+  name: ContainsValue
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.ContainsValue.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.ContainsValue
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.ContainsValue
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).ContainsValue
+  nameWithType: SparseSecondaryMap<TValue>.ContainsValue
+  nameWithType.vb: SparseSecondaryMap(Of TValue).ContainsValue
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Count
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Count.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Count
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Count
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Count
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Count
+  nameWithType: SparseSecondaryMap<TValue>.Count
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Count
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Count*
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Count.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Count
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Count
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Count
+  nameWithType: SparseSecondaryMap<TValue>.Count
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Count
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Drain
+  name: Drain()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Drain.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Drain
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Drain
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Drain()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Drain()
+  nameWithType: SparseSecondaryMap<TValue>.Drain()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Drain()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Drain*
+  name: Drain
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Drain.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Drain
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Drain
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Drain
+  nameWithType: SparseSecondaryMap<TValue>.Drain
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Drain
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.EnsureCapacity(System.Int32)
+  name: EnsureCapacity(int)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.EnsureCapacity.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_EnsureCapacity_System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.EnsureCapacity(System.Int32)
+  name.vb: EnsureCapacity(Integer)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.EnsureCapacity(int)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).EnsureCapacity(Integer)
+  nameWithType: SparseSecondaryMap<TValue>.EnsureCapacity(int)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).EnsureCapacity(Integer)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.EnsureCapacity*
+  name: EnsureCapacity
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.EnsureCapacity.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.EnsureCapacity
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.EnsureCapacity
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).EnsureCapacity
+  nameWithType: SparseSecondaryMap<TValue>.EnsureCapacity
+  nameWithType.vb: SparseSecondaryMap(Of TValue).EnsureCapacity
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator
+  name: SparseSecondaryMap<TValue>.Enumerator
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.html
+  commentId: T:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator
+  name.vb: SparseSecondaryMap(Of TValue).Enumerator
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Enumerator
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Enumerator
+  nameWithType: SparseSecondaryMap<TValue>.Enumerator
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Enumerator
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Current
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Current.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Enumerator_Current
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Enumerator.Current
+  nameWithType: SparseSecondaryMap<TValue>.Enumerator.Current
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Current*
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Current.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Enumerator.Current
+  nameWithType: SparseSecondaryMap<TValue>.Enumerator.Current
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Dispose
+  name: Dispose()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Dispose.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Enumerator_Dispose
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Enumerator.Dispose()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Enumerator.Dispose()
+  nameWithType: SparseSecondaryMap<TValue>.Enumerator.Dispose()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Enumerator.Dispose()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Dispose*
+  name: Dispose
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Dispose.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Enumerator.Dispose
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Enumerator.Dispose
+  nameWithType: SparseSecondaryMap<TValue>.Enumerator.Dispose
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Enumerator.Dispose
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.MoveNext
+  name: MoveNext()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.MoveNext.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Enumerator_MoveNext
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Enumerator.MoveNext()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Enumerator.MoveNext()
+  nameWithType: SparseSecondaryMap<TValue>.Enumerator.MoveNext()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Enumerator.MoveNext()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.MoveNext*
+  name: MoveNext
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.MoveNext.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Enumerator.MoveNext
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Enumerator.MoveNext
+  nameWithType: SparseSecondaryMap<TValue>.Enumerator.MoveNext
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Enumerator.MoveNext
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Reset
+  name: Reset()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Reset.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Enumerator_Reset
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Enumerator.Reset()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Enumerator.Reset()
+  nameWithType: SparseSecondaryMap<TValue>.Enumerator.Reset()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Enumerator.Reset()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Reset*
+  name: Reset
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Reset.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Enumerator.Reset
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Enumerator.Reset
+  nameWithType: SparseSecondaryMap<TValue>.Enumerator.Reset
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Enumerator.Reset
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Get(FlashyDJ.Slotmaps.SlotKey)
+  name: Get(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Get.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Get_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Get(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Get(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Get(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SparseSecondaryMap<TValue>.Get(SlotKey)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Get(SlotKey)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Get*
+  name: Get
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Get.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Get
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Get
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Get
+  nameWithType: SparseSecondaryMap<TValue>.Get
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Get
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Insert(FlashyDJ.Slotmaps.SlotKey,`0)
+  name: Insert(SlotKey, TValue)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Insert.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Insert_FlashyDJ_Slotmaps_SlotKey__0_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Insert(FlashyDJ.Slotmaps.SlotKey,`0)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Insert(FlashyDJ.Slotmaps.SlotKey, TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Insert(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: SparseSecondaryMap<TValue>.Insert(SlotKey, TValue)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Insert(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Insert*
+  name: Insert
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Insert.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Insert
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Insert
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Insert
+  nameWithType: SparseSecondaryMap<TValue>.Insert
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Insert
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.IsEmpty
+  name: IsEmpty
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.IsEmpty.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_IsEmpty
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.IsEmpty
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.IsEmpty
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).IsEmpty
+  nameWithType: SparseSecondaryMap<TValue>.IsEmpty
+  nameWithType.vb: SparseSecondaryMap(Of TValue).IsEmpty
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.IsEmpty*
+  name: IsEmpty
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.IsEmpty.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.IsEmpty
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.IsEmpty
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).IsEmpty
+  nameWithType: SparseSecondaryMap<TValue>.IsEmpty
+  nameWithType.vb: SparseSecondaryMap(Of TValue).IsEmpty
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Item(FlashyDJ.Slotmaps.SlotKey)
+  name: this[SlotKey]
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Item.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Item_FlashyDJ_Slotmaps_SlotKey_
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Item(FlashyDJ.Slotmaps.SlotKey)
+  name.vb: this[](SlotKey)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.this[FlashyDJ.Slotmaps.SlotKey]
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).this[](FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SparseSecondaryMap<TValue>.this[SlotKey]
+  nameWithType.vb: SparseSecondaryMap(Of TValue).this[](SlotKey)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Item*
+  name: this
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Item.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Item
+  name.vb: this[]
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.this
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).this[]
+  nameWithType: SparseSecondaryMap<TValue>.this
+  nameWithType.vb: SparseSecondaryMap(Of TValue).this[]
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Keys
+  name: Keys
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Keys.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Keys
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Keys
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Keys
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Keys
+  nameWithType: SparseSecondaryMap<TValue>.Keys
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Keys
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Keys*
+  name: Keys
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Keys.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Keys
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Keys
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Keys
+  nameWithType: SparseSecondaryMap<TValue>.Keys
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Keys
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Remove(FlashyDJ.Slotmaps.SlotKey)
+  name: Remove(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Remove.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Remove_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Remove(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Remove(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Remove(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SparseSecondaryMap<TValue>.Remove(SlotKey)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Remove(SlotKey)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Remove*
+  name: Remove
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Remove.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Remove
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Remove
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Remove
+  nameWithType: SparseSecondaryMap<TValue>.Remove
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Remove
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Retain(System.Func{FlashyDJ.Slotmaps.SlotKey,`0,System.Boolean})
+  name: Retain(Func<SlotKey, TValue, bool>)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Retain.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Retain_System_Func_FlashyDJ_Slotmaps_SlotKey__0_System_Boolean__
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Retain(System.Func{FlashyDJ.Slotmaps.SlotKey,`0,System.Boolean})
+  name.vb: Retain(Func(Of SlotKey, TValue, Boolean))
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Retain(System.Func<FlashyDJ.Slotmaps.SlotKey, TValue, bool>)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Retain(System.Func(Of FlashyDJ.Slotmaps.SlotKey, TValue, Boolean))
+  nameWithType: SparseSecondaryMap<TValue>.Retain(Func<SlotKey, TValue, bool>)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Retain(Func(Of SlotKey, TValue, Boolean))
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Retain*
+  name: Retain
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Retain.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Retain
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Retain
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Retain
+  nameWithType: SparseSecondaryMap<TValue>.Retain
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Retain
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection
+  name: SparseSecondaryMap<TValue>.SlotKeyCollection
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.html
+  commentId: T:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection
+  name.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.#ctor(FlashyDJ.Slotmaps.SparseSecondaryMap{`0})
+  name: SlotKeyCollection(SparseSecondaryMap<TValue>)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.-ctor.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotKeyCollection__ctor_FlashyDJ_Slotmaps_SparseSecondaryMap__0__
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.#ctor(FlashyDJ.Slotmaps.SparseSecondaryMap{`0})
+  name.vb: New(SparseSecondaryMap(Of TValue))
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.SlotKeyCollection(FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.New(FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue))
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.SlotKeyCollection(SparseSecondaryMap<TValue>)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.New(SparseSecondaryMap(Of TValue))
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.#ctor*
+  name: SlotKeyCollection
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.-ctor.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.#ctor
+  name.vb: New
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.SlotKeyCollection
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.New
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.SlotKeyCollection
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.New
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  name: Contains(SlotKey)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Contains.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotKeyCollection_Contains_FlashyDJ_Slotmaps_SlotKey_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Contains(FlashyDJ.Slotmaps.SlotKey)
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Contains(SlotKey)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Contains(SlotKey)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Contains*
+  name: Contains
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Contains.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Contains
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Contains
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Contains
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Contains
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Contains
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey[],System.Int32)
+  name: CopyTo(SlotKey[], int)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.CopyTo.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotKeyCollection_CopyTo_FlashyDJ_Slotmaps_SlotKey___System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey[],System.Int32)
+  name.vb: CopyTo(SlotKey(), Integer)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey[], int)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.CopyTo(FlashyDJ.Slotmaps.SlotKey(), Integer)
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.CopyTo(SlotKey[], int)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.CopyTo(SlotKey(), Integer)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.CopyTo*
+  name: CopyTo
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.CopyTo.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.CopyTo
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.CopyTo
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.CopyTo
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.CopyTo
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.CopyTo
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Count
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Count.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotKeyCollection_Count
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Count
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Count
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Count
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Count
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Count*
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Count.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Count
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Count
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Count
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Count
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator
+  name: SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.html
+  commentId: T:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator
+  name.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Current
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Current.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotKeyCollection_Enumerator_Current
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Current
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Current
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Current*
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Current.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Current
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Current
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Dispose
+  name: Dispose()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Dispose.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotKeyCollection_Enumerator_Dispose
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Dispose()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Dispose()
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Dispose()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Dispose()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Dispose*
+  name: Dispose
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Dispose.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Dispose
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Dispose
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Dispose
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Dispose
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.MoveNext
+  name: MoveNext()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.MoveNext.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotKeyCollection_Enumerator_MoveNext
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.MoveNext()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext()
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.MoveNext()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.MoveNext*
+  name: MoveNext
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.MoveNext.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.MoveNext
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.MoveNext
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.MoveNext
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Reset
+  name: Reset()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Reset.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotKeyCollection_Enumerator_Reset
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Reset()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Reset()
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Reset()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Reset()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Reset*
+  name: Reset
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Reset.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotKeyCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Reset
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Reset
+  nameWithType: SparseSecondaryMap<TValue>.SlotKeyCollection.Enumerator.Reset
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotKeyCollection.Enumerator.Reset
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection
+  name: SparseSecondaryMap<TValue>.SlotValueCollection
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.html
+  commentId: T:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection
+  name.vb: SparseSecondaryMap(Of TValue).SlotValueCollection
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.#ctor(FlashyDJ.Slotmaps.SparseSecondaryMap{`0})
+  name: SlotValueCollection(SparseSecondaryMap<TValue>)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.-ctor.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotValueCollection__ctor_FlashyDJ_Slotmaps_SparseSecondaryMap__0__
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.#ctor(FlashyDJ.Slotmaps.SparseSecondaryMap{`0})
+  name.vb: New(SparseSecondaryMap(Of TValue))
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.SlotValueCollection(FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.New(FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue))
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.SlotValueCollection(SparseSecondaryMap<TValue>)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.New(SparseSecondaryMap(Of TValue))
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.#ctor*
+  name: SlotValueCollection
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.-ctor.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.#ctor
+  name.vb: New
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.SlotValueCollection
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.New
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.SlotValueCollection
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.New
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Contains(`0)
+  name: Contains(TValue)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Contains.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotValueCollection_Contains__0_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Contains(`0)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Contains(TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Contains(TValue)
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Contains(TValue)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Contains(TValue)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Contains*
+  name: Contains
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Contains.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Contains
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Contains
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Contains
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Contains
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Contains
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.CopyTo(`0[],System.Int32)
+  name: CopyTo(TValue[], int)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.CopyTo.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotValueCollection_CopyTo__0___System_Int32_
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.CopyTo(`0[],System.Int32)
+  name.vb: CopyTo(TValue(), Integer)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.CopyTo(TValue[], int)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.CopyTo(TValue(), Integer)
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.CopyTo(TValue[], int)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.CopyTo(TValue(), Integer)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.CopyTo*
+  name: CopyTo
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.CopyTo.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.CopyTo
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.CopyTo
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.CopyTo
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.CopyTo
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.CopyTo
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Count
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Count.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotValueCollection_Count
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Count
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Count
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Count
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Count
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Count*
+  name: Count
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Count.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Count
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Count
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Count
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Count
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Count
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator
+  name: SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.html
+  commentId: T:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator
+  name.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Current
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Current.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotValueCollection_Enumerator_Current
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Current
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Current
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Current*
+  name: Current
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Current.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Current
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Current
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Current
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Current
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Current
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Dispose
+  name: Dispose()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Dispose.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotValueCollection_Enumerator_Dispose
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Dispose()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Dispose()
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Dispose()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Dispose()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Dispose*
+  name: Dispose
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Dispose.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Dispose
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Dispose
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Dispose
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Dispose
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Dispose
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.MoveNext
+  name: MoveNext()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.MoveNext.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotValueCollection_Enumerator_MoveNext
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.MoveNext()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.MoveNext()
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.MoveNext()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.MoveNext()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.MoveNext*
+  name: MoveNext
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.MoveNext.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.MoveNext
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.MoveNext
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.MoveNext
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.MoveNext
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.MoveNext
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Reset
+  name: Reset()
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Reset.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_SlotValueCollection_Enumerator_Reset
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Reset()
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Reset()
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Reset()
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Reset()
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Reset*
+  name: Reset
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Reset.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.SlotValueCollection.Enumerator.Reset
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Reset
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Reset
+  nameWithType: SparseSecondaryMap<TValue>.SlotValueCollection.Enumerator.Reset
+  nameWithType.vb: SparseSecondaryMap(Of TValue).SlotValueCollection.Enumerator.Reset
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryGet(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name: TryGet(SlotKey, out TValue)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryGet.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_TryGet_FlashyDJ_Slotmaps_SlotKey__0__
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryGet(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name.vb: TryGet(SlotKey, TValue)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.TryGet(FlashyDJ.Slotmaps.SlotKey, out TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).TryGet(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: SparseSecondaryMap<TValue>.TryGet(SlotKey, out TValue)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).TryGet(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryGet*
+  name: TryGet
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryGet.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryGet
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.TryGet
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).TryGet
+  nameWithType: SparseSecondaryMap<TValue>.TryGet
+  nameWithType.vb: SparseSecondaryMap(Of TValue).TryGet
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryInsert(FlashyDJ.Slotmaps.SlotKey,`0,`0@)
+  name: TryInsert(SlotKey, TValue, out TValue)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryInsert.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_TryInsert_FlashyDJ_Slotmaps_SlotKey__0__0__
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryInsert(FlashyDJ.Slotmaps.SlotKey,`0,`0@)
+  name.vb: TryInsert(SlotKey, TValue, TValue)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.TryInsert(FlashyDJ.Slotmaps.SlotKey, TValue, out TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).TryInsert(FlashyDJ.Slotmaps.SlotKey, TValue, TValue)
+  nameWithType: SparseSecondaryMap<TValue>.TryInsert(SlotKey, TValue, out TValue)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).TryInsert(SlotKey, TValue, TValue)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryInsert*
+  name: TryInsert
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryInsert.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryInsert
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.TryInsert
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).TryInsert
+  nameWithType: SparseSecondaryMap<TValue>.TryInsert
+  nameWithType.vb: SparseSecondaryMap(Of TValue).TryInsert
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryRemove(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name: TryRemove(SlotKey, out TValue)
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryRemove.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_TryRemove_FlashyDJ_Slotmaps_SlotKey__0__
+  commentId: M:FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryRemove(FlashyDJ.Slotmaps.SlotKey,`0@)
+  name.vb: TryRemove(SlotKey, TValue)
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.TryRemove(FlashyDJ.Slotmaps.SlotKey, out TValue)
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).TryRemove(FlashyDJ.Slotmaps.SlotKey, TValue)
+  nameWithType: SparseSecondaryMap<TValue>.TryRemove(SlotKey, out TValue)
+  nameWithType.vb: SparseSecondaryMap(Of TValue).TryRemove(SlotKey, TValue)
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryRemove*
+  name: TryRemove
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryRemove.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.TryRemove
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.TryRemove
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).TryRemove
+  nameWithType: SparseSecondaryMap<TValue>.TryRemove
+  nameWithType.vb: SparseSecondaryMap(Of TValue).TryRemove
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Values
+  name: Values
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Values.html#FlashyDJ_Slotmaps_SparseSecondaryMap_1_Values
+  commentId: P:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Values
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Values
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Values
+  nameWithType: SparseSecondaryMap<TValue>.Values
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Values
+- uid: FlashyDJ.Slotmaps.SparseSecondaryMap`1.Values*
+  name: Values
+  href: api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Values.html
+  commentId: Overload:FlashyDJ.Slotmaps.SparseSecondaryMap`1.Values
+  fullName: FlashyDJ.Slotmaps.SparseSecondaryMap<TValue>.Values
+  fullName.vb: FlashyDJ.Slotmaps.SparseSecondaryMap(Of TValue).Values
+  nameWithType: SparseSecondaryMap<TValue>.Values
+  nameWithType.vb: SparseSecondaryMap(Of TValue).Values
