@@ -2,1009 +2,1009 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.Add.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.Capacity.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.ContainsKey.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.Get.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.Insert.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.IsEmpty.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.Item.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.Keys.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.Remove.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.TryAdd.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.TryGet.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.TryRemove.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.Values.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.ISlotMap-1.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.-ctor.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Capacity.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Clear.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.ContainsKey.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.ContainsValue.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Count.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Drain.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.EnsureCapacity.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Current.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Dispose.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.MoveNext.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.Reset.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Enumerator.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Get.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Insert.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.IsEmpty.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Item.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Keys.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Remove.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Reserve.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Resize.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Retain.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.-ctor.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Contains.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.CopyTo.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Count.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Current.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Dispose.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.MoveNext.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.Reset.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.Enumerator.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotKeyCollection.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.-ctor.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Contains.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.CopyTo.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Count.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Current.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Dispose.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.MoveNext.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.Reset.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.Enumerator.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.SlotValueCollection.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.TryGet.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.TryInsert.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.TryRemove.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.Values.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SecondaryMap-1.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotKey.-ctor.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotKey.Index.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotKey.IsInvalid.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotKey.IsNull.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotKey.Null.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotKey.ToString.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotKey.Version.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotKey.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotKey.op_Implicit.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.-ctor.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Add.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Capacity.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Clear.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.ContainsKey.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.ContainsValue.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Count.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Drain.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.EnsureCapacity.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Current.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Dispose.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.MoveNext.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.Reset.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Enumerator.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Get.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Insert.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.IsEmpty.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Item.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Keys.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Remove.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Reserve.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Resize.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Retain.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.-ctor.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Contains.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.CopyTo.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Count.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Current.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Dispose.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.MoveNext.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.Reset.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.Enumerator.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotKeyCollection.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.-ctor.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Contains.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.CopyTo.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Count.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Current.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Dispose.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.MoveNext.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.Reset.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.Enumerator.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.SlotValueCollection.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.TryAdd.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.TryGet.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.TryRemove.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.Values.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SlotMap-1.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.-ctor.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Capacity.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Clear.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.ContainsKey.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.ContainsValue.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Count.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Drain.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.EnsureCapacity.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Current.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Dispose.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.MoveNext.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.Reset.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Enumerator.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Get.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Insert.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.IsEmpty.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Item.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Keys.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Remove.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Retain.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.-ctor.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Contains.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.CopyTo.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Count.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Current.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Dispose.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.MoveNext.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.Reset.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.Enumerator.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotKeyCollection.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.-ctor.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Contains.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.CopyTo.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Count.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Current.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Dispose.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.MoveNext.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.Reset.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.Enumerator.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.SlotValueCollection.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryGet.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryInsert.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryRemove.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Values.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/api/FlashyDJ.Slotmaps.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/docs/basicslotmapusage.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/docs/intro.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/docs/slotmapvsother.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flashydj.github.io/Slotmaps/index.html</loc>
-    <lastmod>2023-10-05T05:29:17+00:00</lastmod>
+    <lastmod>2023-10-05T05:38:08+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

@@ -410,6 +410,16 @@
       "source_relative_path": "api/FlashyDJ.Slotmaps.SecondaryMap-1.yml",
       "output": {
         ".html": {
+          "relative_path": "api/FlashyDJ.Slotmaps.SecondaryMap-1.-ctor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FlashyDJ.Slotmaps.SecondaryMap-1.yml",
+      "output": {
+        ".html": {
           "relative_path": "api/FlashyDJ.Slotmaps.SecondaryMap-1.Capacity.html"
         }
       },
@@ -611,16 +621,6 @@
       "output": {
         ".html": {
           "relative_path": "api/FlashyDJ.Slotmaps.SecondaryMap-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/FlashyDJ.Slotmaps.SecondaryMap-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/FlashyDJ.Slotmaps.SecondaryMap-1.-ctor.html"
         }
       },
       "version": ""
@@ -1450,6 +1450,66 @@
       "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
       "output": {
         ".html": {
+          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Remove.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Retain.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryGet.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryInsert.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryRemove.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
+      "output": {
+        ".html": {
           "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.-ctor.html"
         }
       },
@@ -1581,66 +1641,6 @@
       "output": {
         ".html": {
           "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Insert.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Remove.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.Retain.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryGet.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryInsert.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.TryRemove.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/FlashyDJ.Slotmaps.SparseSecondaryMap-1.html"
         }
       },
       "version": ""
