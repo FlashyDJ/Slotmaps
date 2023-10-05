@@ -1,6 +1,19 @@
-# Slotmaps
+<h1 align="center"> Slotmaps </h1>
+<p align="center">
+    A C# implementation of the slotmaps data structure.
+</p>
 
-A C# implementation of the slotmaps data structure.
+<p align="center">
+    <a href="https://github.com/FlashyDJ/Slotmaps/actions/workflows/dotnet.yml">
+        <img src="https://github.com/FlashyDJ/Slotmaps/actions/workflows/dotnet.yml/badge.svg"/>
+    </a>
+    <a href="https://gist.github.com/FlashyDJ/384477e90d18d0d402a7ab54b5d1f121">
+        <img src="https://gist.github.com/FlashyDJ/384477e90d18d0d402a7ab54b5d1f121/raw/a0e1ddc25529b99f496be2bea14669f2a30f918a/slotmaps_tests.md_badge.svg"/>
+    </a>
+    <a href="https://github.com/FlashyDJ/Slotmaps/actions/workflows/docs.yml">
+        <img src="https://github.com/FlashyDJ/Slotmaps/actions/workflows/docs.yml/badge.svg?branch=main"/>
+    </a>
+</p>
 
 ## Table of Contents
 
