@@ -1,0 +1,66 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../src",
+          "files": "**.csproj",
+          "exclude": [ "**/bin/**", "**/obj/**", "**/[Tt]ests/**" ]
+        }
+      ],
+      "dest": "api",
+      "outputFormat": "mref",
+      "includePrivateMembers": false,
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "noRestore": false,
+      "namespaceLayout": "nested",
+      "memberLayout": "separatePages",
+      "EnumSortOrder": "declaringOrder",
+      "allowCompilationErrors": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": ["api/**.yml"]
+      },
+      {
+        "files": ["docs/**.md", "docs/**/toc.yml", "toc.yml", "*.md"]
+      }
+    ],
+    "resource": [
+      {
+        "files": [ "images/**" ]
+      }
+    ],
+    "markdownEngineName": "markdig",
+    "output": "_site",
+    "globalMetadata": {
+      "_appTitle": "Slotmaps Documentation",
+      "_appName": "Slotmaps",
+      "_appFooter": "<span>Copyright 2023 <a href=\"https://github.com/FlashyDJ\">FlashyDJ</a>. Made with <a href=\"https://dotnet.github.io/docfx\">docfx</a>.</span>",
+      "_enableSearch": true,
+      "_enableNewTab": true,
+      "_gitUrlPattern": "github",
+      "_gitContribute": {
+        "repo": "https://github.com/FlashyDJ/Slotmaps",
+        "branch": "main"
+      }
+    },
+    "sitemap": {
+      "baseUrl": "https://FlashyDJ.github.io/Slotmaps",
+      "priority": 0.5,
+      "changeFreq": "daily"
+    },
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "default",
+      "modern"
+    ],
+    "postProcessors": [],
+    "keepFileLink": false,
+    "disableGitFeatures": false
+  }
+}

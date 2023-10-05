@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docs>
+  <SecondaryMap>
+    <summary>
+      Represents a secondary map that associates keys of type <see cref="SlotKey"/> with values of type <typeparamref name="TValue"/>.
+    </summary>
+    <typeparam name="TValue">The type of values stored in the secondary map.</typeparam>
+    <remarks>
+      The <see cref="SecondaryMap{TValue}"/> class is designed to act as a secondary map to a primary slot map.
+      It allows you to efficiently store additional information for each element in the primary slot map.
+    </remarks>
+  </SecondaryMap>
+
+  <Ctor1>
+    <summary>
+      Initializes a new instance of the <see cref="SecondaryMap{TValue}"/> class with an empty collection.
+    </summary>
+    <remarks>
+      Use this constructor to create a new <see cref="SecondaryMap{TValue}"/> with no elements initially.
+      The <see cref="SecondaryMap{TValue}"/> will be empty, and its internal storage will be an empty array.
+    </remarks>
+  </Ctor1>
+
+  <Ctor2>
+    <summary>
+      Initializes a new instance of the <see cref="SecondaryMap{TValue}"/> class with the specified capacity.
+    </summary>
+    <param name="capacity">
+      The initial capacity of the <see cref="SecondaryMap{TValue}"/>. Must be a non-negative integer.
+    </param>
+    <remarks>
+      Use this constructor to create a new <see cref="SecondaryMap{TValue}"/> with a specific initial capacity.
+      The <paramref name="capacity"/> parameter determines the maximum number of elements the <see cref="SecondaryMap{TValue}"/> can hold before resizing its internal storage.
+    </remarks>
+    <exception cref="ArgumentOutOfRangeException">
+      Thrown if <paramref name="capacity"/> is negative.
+    </exception>
+  </Ctor2>
+
+  <Capacity>
+    <summary>
+      Gets the capacity of the <see cref="SecondaryMap{TValue}"/>.
+    </summary>
+    <remarks>
+      The capacity represents the maximum number of elements that the <see cref="SecondaryMap{TValue}"/> can hold before it needs to resize its internal storage.
+    </remarks>
+  </Capacity>
+
+  <Count>
+    <summary>
+      Gets the number of elements currently stored in the <see cref="SecondaryMap{TValue}"/>.
+    </summary>
+  </Count>
+
+  <IsEmpty>
+    <summary>
+      Gets a value indicating whether the <see cref="SecondaryMap{TValue}"/> is empty.
+    </summary>
+    <remarks>
+      The <c>IsEmpty</c> property returns <see langword="true"/> if the <see cref="SecondaryMap{TValue}"/> contains no elements, and <see langword="false"/> otherwise.
+    </remarks>
+  </IsEmpty>
+
+  <Keys>
+    <summary>
+      Gets a collection containing the keys in the <see cref="SecondaryMap{TValue}"/>.
+    </summary>
+    <remarks>
+      Only the keys that correspond to occupied slots are included in this collection.
+      You can use this collection to iterate through the keys associated with the values in the map.
+    </remarks>
+    <returns>
+      A <see cref="SecondaryMap{TValue}.SlotKeyCollection"/> containing the keys in the <see cref="SecondaryMap{TValue}"/>.
+    </returns>
+  </Keys>
+
+  <Values>
+    <summary>
+      Gets a collection containing the values in the <see cref="SecondaryMap{TValue}"/>.
+    </summary>
+    <remarks>
+      Only the values that correspond to occupied slots are included in this collection.
+      You can use this collection to iterate through the values associated with the keys in the map.
+    </remarks>
+    <returns>
+      A <see cref="SecondaryMap{TValue}.SlotValueCollection"/> containing the values in the <see cref="SecondaryMap{TValue}"/>.
+    </returns>
+  </Values>
+
+  <Indexer>
+    <summary>
+      Gets or sets the value associated with the specified <see cref="SlotKey"/>.
+    </summary>
+    <param name="key">
+      The <see cref="SlotKey"/> for which to get or set the associated value.
+    </param>
+    <value>
+      The value associated with the specified <paramref name="key"/>.
+    </value>
+    <exception cref="KeyNotFoundException">
+      Thrown if the <paramref name="key"/> is not found in the <see cref="SecondaryMap{TValue}"/>.
+    </exception>
+    <remarks>
+      Use this indexer to access the value associated with a specific <see cref="SlotKey"/> in the <see cref="SecondaryMap{TValue}"/>.
+      If the <paramref name="key"/> is not found in the map during the get operation, a <c>KeyNotFoundException</c> is thrown.
+      To set the value associated with a <paramref name="key"/>, assign a new value to this indexer.
+    </remarks>
+  </Indexer>
+
+  <ContainsKey>
+    <summary>
+      Determines whether the secondary map contains an entry with the specified <see cref="SlotKey"/>.
+    </summary>
+    <param name="key">
+      The <see cref="SlotKey"/> to locate in the secondary map.
+    </param>
+    <remarks>
+      The <c>ContainsKey</c> method checks whether the secondary map contains an entry with the specified <see cref="SlotKey"/>.
+      To be considered a match, the entry must have the same index and version as the provided <see cref="SlotKey"/>.
+    </remarks>
+    <returns>
+      <see langword="true"/> if the secondary map contains an entry with the specified <see cref="SlotKey"/> that matches both the index and version;
+      otherwise, <see langword="false"/>.
+    </returns>
+    <seealso cref="SlotKey.IsInvalid" />
+  </ContainsKey>
+
+  <ContainsValue>
+    <summary>
+      Determines whether the secondary map contains an entry with the specified value.
+    </summary>
+    <param name="value">The value to locate in the secondary map. The value can be null.</param>
+    <returns>
+      <see langword="true"/> if the secondary map contains an entry with the specified value; otherwise, <see langword="false"/>.
+    </returns>
+    <remarks>
+      The <c>ContainsValue</c> method checks whether the secondary map contains an entry with the specified <paramref name="value"/>.
+      It performs a linear search through the secondary map's entries to find a match based on the value.
+    </remarks>
+  </ContainsValue>
+
+  <Clear>
+    <summary>
+      Removes all elements from the secondary map.
+    </summary>
+    <remarks>
+      The <c>Clear</c> method removes all elements from the secondary map, resetting it to an empty state.
+      It also resets the internal counters and clears the values stored in the <see cref="Slot{T}"/>, but it does not deallocate memory.
+      Use this method to clear the secondary map when you want to reuse it without resizing its internal storage.
+    </remarks>
+  </Clear>
+
+  <Drain>
+    <summary>
+      Removes and returns elements from the secondary map one at a time as an enumerable collection of key-value pairs.
+    </summary>
+    <remarks>
+      The <c>Drain</c> method iterates through the elements in the secondary map, removes each element one at a time, and yields them as key-value pairs.
+      Each key-value pair consists of a <see cref="SlotKey"/> and its associated value.
+    </remarks>
+    <returns>
+      An <see cref="IEnumerable{T}"/> of <see cref="KeyValuePair{SlotKey, TValue}"/> containing the entries retrieved from the secondary map.
+    </returns>
+  </Drain>
+
+  <EnsureCapacity>
+    <summary>
+      Ensures that the secondary map can hold at least the specified capacity without resizing.
+    </summary>
+    <param name="capacity">The desired capacity. Must be a non-negative integer.</param>
+    <remarks>
+      Use this method to ensure that the secondary map can hold at least the specified <paramref name="capacity"/> without resizing its internal storage.
+      If the current capacity is less than the specified <paramref name="capacity"/>, the method will resize the internal storage to meet or exceed the desired capacity.
+    </remarks>
+    <exception cref="ArgumentOutOfRangeException">
+      Thrown if <paramref name="capacity"/> is negative.
+    </exception>
+    <returns>
+      The capacity of the secondary map after ensuring it can accommodate the specified capacity.
+      If the current capacity is already greater than or equal to the specified capacity, the current capacity is returned.
+    </returns>
+  </EnsureCapacity>
+
+  <Get>
+    <summary>
+      Gets the value associated with the specified <see cref="SlotKey"/>.
+    </summary>
+    <param name="key">
+      The <see cref="SlotKey"/> to look up in the secondary map.
+    </param>
+    <remarks>
+      Use this method to retrieve the value associated with a specific <paramref name="key"/> in the secondary map.
+      If the <paramref name="key"/> is not found in the map, a <see cref="KeyNotFoundException"/> is thrown.
+    </remarks>
+    <exception cref="KeyNotFoundException">
+      Thrown if the specified <paramref name="key"/> is not found in the map.
+    </exception>
+    <returns>
+      The value associated with the <paramref name="key"/>.
+    </returns>
+  </Get>
+
+  <Insert>
+    <summary>
+      Inserts or updates an entry with the specified <see cref="SlotKey"/> and value in the secondary map.
+    </summary>
+    <param name="key">
+      The <see cref="SlotKey"/> under which to insert or update the value.
+    </param>
+    <param name="value">The value to insert or update in the secondary map. Must not be null.</param>
+    <returns>
+      The value associated with the specified <see cref="SlotKey"/> before the insertion or update.
+      If the key did not previously exist in the secondary map, the default value for the type of the <typeparamref name="TValue"/> parameter is returned.
+    </returns>
+    <remarks>
+      The <c>Insert</c> method inserts or updates an entry with the specified <see cref="SlotKey"/> and value in the secondary map.
+      If an entry with the same index and version as the provided <see cref="SlotKey"/> exists, its value is updated, and the previous value is returned.
+      If no such entry exists, a new entry is created with the provided <see cref="SlotKey"/> and value.
+    </remarks>
+    <exception cref="ArgumentNullException">
+      Thrown if <paramref name="value"/> is null.
+    </exception>
+    <exception cref="KeyNotFoundException">
+      Thrown if the provided <see cref="SlotKey"/> is invalid, or if the version of the key is less than the version of the existing entry with the same index.
+    </exception>
+  </Insert>
+
+  <Remove>
+    <summary>
+      Removes the entry with the specified <see cref="SlotKey"/> from the secondary map.
+    </summary>
+    <param name="key">
+      The <see cref="SlotKey"/> of the entry to remove.
+    </param>
+    <returns>The value associated with the removed entry.</returns>
+    <remarks>
+      The <c>Remove</c> method attempts to remove the entry with the specified <see cref="SlotKey"/> from the secondary map.
+      If the entry is found and has the same version as the provided key, the value associated with the entry is returned, and the entry is removed from the secondary map.
+    </remarks>
+    <exception cref="KeyNotFoundException">
+      Thrown if the provided <see cref="SlotKey"/> is invalid or does not exist in the secondary map.
+    </exception>
+  </Remove>
+
+  <Reserve>
+    <summary>
+      Reserves additional capacity for the secondary map to accommodate the specified number of entries.
+    </summary>
+    <param name="additionalSize">The number of additional entries the secondary map should be able to accommodate. Must be a positive integer.</param>
+    <remarks>
+      The <c>Reserve</c> method increases the capacity of the secondary map to accommodate the specified number of additional entries.
+      It is useful when you expect to add a significant number of entries to the secondary map and want to minimize potential resizing operations.
+    </remarks>
+    <exception cref="ArgumentOutOfRangeException">
+      Thrown if <paramref name="additionalSize"/> is zero or negative.
+    </exception>
+  </Reserve>
+
+  <Resize>
+    <summary>
+      Resizes the secondary map to the specified new size.
+    </summary>
+    <param name="newSize">The new size to which the secondary map should be resized. Must be greater than or equal to the current capacity.</param>
+    <remarks>
+      The <c>Resize</c> method resizes the secondary map to the specified <paramref name="newSize"/>.
+      The new size must be greater than or equal to the current capacity of the secondary map.
+      If the <paramref name="newSize"/> is equal to the current capacity, no changes are made to the secondary map.
+    </remarks>
+    <exception cref="ArgumentOutOfRangeException">
+      Thrown if <paramref name="newSize"/> is less than the current capacity.
+    </exception>
+  </Resize>
+
+  <Retain>
+    <summary>
+      Retains entries in the secondary map that satisfy the specified predicate.
+    </summary>
+    <param name="predicate">
+      A function that defines the criteria for retaining entries.
+      The function is called for each entry with its <see cref="SlotKey"/> and associated <typeparamref name="TValue"/>.
+      Return <see langword="true"/> to retain the entry, or <see langword="false"/> to remove it.
+    </param>
+    <remarks>
+      The <c>Retain</c> method iterates through all entries in the secondary map and applies the specified <paramref name="predicate"/>.
+      Entries for which the predicate returns <see langword="false"/> are removed from the secondary map.
+    </remarks>
+  </Retain>
+
+  <TryGet>
+    <summary>
+      Tries to retrieve the value associated with the specified <see cref="SlotKey"/> from the secondary map.
+    </summary>
+    <param name="key">
+      The <see cref="SlotKey"/> whose associated value is to be retrieved.
+    </param>
+    <param name="value">
+      When this method returns, contains the value associated with the specified <see cref="SlotKey"/>, if the key is found;
+      otherwise, the default value for the type of the <typeparamref name="TValue"/> parameter.
+      This parameter is passed uninitialized; any value originally supplied in <paramref name="value"/> will be overwritten.
+    </param>
+    <returns>
+      <see langword="true"/> if the secondary map contains an entry with the specified <see cref="SlotKey"/> and the value was successfully retrieved;
+      otherwise, <see langword="false"/>.
+    </returns>
+    <remarks>
+      The <c>TryGet</c> method attempts to retrieve the value associated with the specified <see cref="SlotKey"/> from the secondary map.
+      If the key is found, the associated value is returned in the <paramref name="value"/> parameter, and the method returns <see langword="true"/>.
+      If the key is not found, the <paramref name="value"/> parameter is set to the default value for <typeparamref name="TValue"/>,
+      and the method returns <see langword="false"/>.
+    </remarks>
+  </TryGet>
+
+  <TryInsert>
+    <summary>
+      Tries to insert a value associated with the specified <see cref="SlotKey"/> into the secondary map.
+    </summary>
+    <param name="key">
+      The <see cref="SlotKey"/> with which to associate the value.
+    </param>
+    <param name="value">The value to insert into the secondary map. Must not be null.</param>
+    <param name="oldValue">
+      When this method returns, contains the previous value associated with the specified <see cref="SlotKey"/>,
+      if an entry with the same key was found; otherwise, the default value for the type of the <typeparamref name="TValue"/> parameter.
+      This parameter is passed uninitialized; any value originally supplied in <paramref name="oldValue"/> will be overwritten.
+    </param>
+    <returns>
+      <see langword="true"/> if the value was successfully inserted or replaced in the secondary map;
+      <see langword="false"/> if the insertion failed due to an invalid key or version mismatch.
+    </returns>
+    <remarks>
+      The <c>TryInsert</c> method attempts to insert a value associated with the specified <see cref="SlotKey"/> into the secondary map.
+      If an entry with the same key and version exists, the method replaces the existing value and returns <see langword="true"/>,
+      and the previous value is returned in the <paramref name="oldValue"/> parameter.
+      If no entry with the same key and version exists, a new entry is created, and the method returns <see langword="true"/>.
+      If the <paramref name="key"/> is invalid or if the version of the existing entry is greater than the provided key's version,
+      the method returns <see langword="false"/>, and no changes are made to the secondary map.
+    </remarks>
+    <exception cref="ArgumentNullException">
+      Thrown if <paramref name="value"/> is null.
+    </exception>
+  </TryInsert>
+
+  <TryRemove>
+    <summary>
+      Tries to remove the entry with the specified <see cref="SlotKey"/> from the secondary map.
+    </summary>
+    <param name="key">
+      The <see cref="SlotKey"/> of the entry to remove.
+    </param>
+    <param name="value">
+      When this method returns, contains the value associated with the specified <see cref="SlotKey"/>, if the key is found and the entry is removed successfully;
+      otherwise, the default value for the type of the <typeparamref name="TValue"/> parameter.
+      This parameter is passed uninitialized; any value originally supplied in <paramref name="value"/> will be overwritten.
+    </param>
+    <returns>
+      <see langword="true"/> if an entry with the specified <see cref="SlotKey"/> was found and removed successfully;
+      otherwise, <see langword="false"/>.
+    </returns>
+    <remarks>
+      The <c>TryRemove</c> method attempts to remove the entry with the specified <see cref="SlotKey"/> from the secondary map.
+      If the entry is found and has the same version as the provided key, the value associated with the entry is returned in the <paramref name="value"/> parameter,
+      the entry is removed from the secondary map, and the method returns <see langword="true"/>.
+      If the entry is not found, the <paramref name="value"/> parameter is set to the default value for <typeparamref name="TValue"/>,
+      and the method returns <see langword="false"/>.
+      If the <paramref name="key"/> is invalid, the method also returns <see langword="false"/>.
+    </remarks>
+  </TryRemove>
+
+  <Enumerator>
+    <summary>
+      Represents an enumerator for the <see cref="SecondaryMap{TValue}"/> collection.
+    </summary>
+    <remarks>
+      <para>
+        The <c>Enumerator</c> struct provides an enumerator for iterating through the elements of the <see cref="SecondaryMap{TValue}"/> collection.
+        It allows sequential access to the key-value pairs within the map.
+      </para>
+      <para>
+        You can use this enumerator to iterate through the elements in the <see cref="SecondaryMap{TValue}"/> using a <c>foreach</c> loop.
+      </para>
+    </remarks>
+  </Enumerator>
+
+  <SlotKeyCollection>
+    <summary>
+      Represents a collection of <see cref="SlotKey"/> instances associated with a <see cref="SecondaryMap{TValue}"/>.
+    </summary>
+    <remarks>
+      The <see cref="SlotMap{TValue}.SlotKeyCollection"/> class provides a collection of <c>SlotKey</c> instances that are associated with a <see cref="SecondaryMap{TValue}"/>.
+      This collection allows you to enumerate and work with the keys present in the <see cref="SecondaryMap{TValue}"/>.
+    </remarks>
+  </SlotKeyCollection>
+
+  <SKCCtor>
+    <summary>
+      Initializes a new instance of the <see cref="SlotMap{TValue}.SlotKeyCollection"/> class with a reference to the parent <see cref="SecondaryMap{TValue}"/>.
+    </summary>
+    <param name="secondaryMap">
+      The <see cref="SecondaryMap{TValue}"/> to which this collection is associated.
+    </param>
+    <remarks>
+      Use this constructor to create a new <see cref="SlotMap{TValue}.SlotKeyCollection"/> that is associated with a specific <see cref="SecondaryMap{TValue}"/>.
+      The <paramref name="secondaryMap"/> parameter represents the parent <see cref="SecondaryMap{TValue}"/> to which this collection is linked.
+    </remarks>
+    <exception cref="ArgumentNullException">
+      Thrown if <paramref name="secondaryMap"/> is null.
+    </exception>
+  </SKCCtor>
+
+  <SKCCount>
+    <summary>
+      Gets the number of elements in the <see cref="SlotMap{TValue}.SlotKeyCollection"/>.
+    </summary>
+    <remarks>
+      This count corresponds to the number of keys associated with the <see cref="SecondaryMap{TValue}"/> that this collection belongs to.
+    </remarks>
+  </SKCCount>
+
+  <SKCContains>
+    <summary>
+      Determines whether the <see cref="SlotMap{TValue}.SlotKeyCollection"/> contains a specific <see cref="SlotKey"/>.
+    </summary>
+    <param name="key">
+      The <see cref="SlotKey"/> to locate in the collection.
+    </param>
+    <remarks>
+      Use this method to check whether the <see cref="SlotMap{TValue}.SlotKeyCollection"/> contains a specific <c>SlotKey</c> instance.
+    </remarks>
+    <returns>
+      <see langword="true"/> if the <see cref="SlotMap{TValue}.SlotKeyCollection"/> contains the specified <paramref name="key"/>; otherwise, <see langword="false"/>.
+    </returns>
+  </SKCContains>
+
+  <SKCCopyTo>
+    <summary>
+      Copies the elements of the <see cref="SlotMap{TValue}.SlotKeyCollection"/> to an array, starting at the specified index.
+    </summary>
+    <param name="array">
+      The one-dimensional array that is the destination of the elements copied from the <see cref="SlotMap{TValue}.SlotKeyCollection"/>. Must not be null.
+    </param>
+    <param name="index">
+      The zero-based index in <paramref name="array"/> at which copying begins.
+    </param>
+    <remarks>
+      The <c>CopyTo</c> method copies the elements of the <see cref="SlotMap{TValue}.SlotKeyCollection"/> to a one-dimensional array, starting at the specified index in the destination array.
+      The destination array must have enough space to accommodate the elements to be copied.
+    </remarks>
+    <exception cref="ArgumentNullException">
+      Thrown if <paramref name="array"/> is null.
+    </exception>
+    <exception cref="ArgumentOutOfRangeException">
+      Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>, or if there are not enough elements in the <see cref="SlotMap{TValue}.SlotKeyCollection"/> to fill the destination array starting at the specified index.
+    </exception>
+  </SKCCopyTo>
+
+  <SKCEnumerator>
+    <summary>
+      Represents an enumerator for the <see cref="SlotKeyCollection"/>.
+    </summary>
+    <remarks>
+      The <c>Enumerator</c> struct allows you to enumerate the <c>SlotKey</c> instances in the <see cref="SlotKeyCollection"/>.
+      Use this enumerator to iterate over the keys in the collection.
+    </remarks>
+  </SKCEnumerator>
+
+  <SlotValueCollection>
+    <summary>
+      Represents a collection of values associated with a <see cref="SecondaryMap{TValue}"/>.
+    </summary>
+    <remarks>
+      The <see cref="SlotMap{TValue}.SlotValueCollection"/> class provides a collection of values that are associated with a <see cref="SecondaryMap{TValue}"/>.
+      This collection allows you to enumerate and work with the values present in the <see cref="SecondaryMap{TValue}"/>.
+    </remarks>
+  </SlotValueCollection>
+
+  <SVCCtor>
+    <summary>
+      Initializes a new instance of the <see cref="SlotMap{TValue}.SlotValueCollection"/> class associated with a <see cref="SecondaryMap{TValue}"/>.
+    </summary>
+    <param name="secondaryMap">
+      The <see cref="SecondaryMap{TValue}"/> with which this collection is associated. Must not be null.
+    </param>
+    <remarks>
+      The constructor initializes a new instance of the <see cref="SlotMap{TValue}.SlotValueCollection"/> class that is associated with a specific <see cref="SecondaryMap{TValue}"/>.
+      The <paramref name="secondaryMap"/> parameter determines the <see cref="SecondaryMap{TValue}"/> with which this collection is associated.
+    </remarks>
+    <exception cref="ArgumentNullException">
+      Thrown if <paramref name="secondaryMap"/> is null.
+    </exception>
+  </SVCCtor>
+
+  <SVCCount>
+    <summary>
+      Gets the number of values in the <see cref="SlotMap{TValue}.SlotValueCollection"/>.
+    </summary>
+    <remarks>
+      This count corresponds to the number of values associated with the <see cref="SecondaryMap{TValue}"/> that this collection belongs to.
+    </remarks>
+  </SVCCount>
+
+  <SVCContains>
+    <summary>
+      Determines whether the <see cref="SlotMap{TValue}.SlotValueCollection"/> contains a specific value.
+    </summary>
+    <param name="value">The value to locate in the collection.</param>
+    <remarks>
+      Use this method to check whether the <see cref="SlotMap{TValue}.SlotKeyCollection"/> contains a specific value.
+    </remarks>
+    <returns>
+      <see langword="true"/> if the <see cref="SlotMap{TValue}.SlotValueCollection"/> contains the specified value; otherwise, <see langword="false"/>.
+    </returns>
+  </SVCContains>
+
+  <SVCCopyTo>
+    <summary>
+      Copies the elements of the <see cref="SlotMap{TValue}.SlotValueCollection"/> to an array, starting at the specified index.
+    </summary>
+    <param name="array">
+      The one-dimensional array that is the destination of the elements copied from the <see cref="SlotMap{TValue}.SlotValueCollection"/>. Must not be null.
+    </param>
+    <param name="index">
+      The zero-based index in <paramref name="array"/> at which copying begins.
+    </param>
+    <remarks>
+      The <c>CopyTo</c> method copies the elements of the <see cref="SlotMap{TValue}.SlotValueCollection"/> to a one-dimensional array, starting at the specified index in the destination array.
+      The destination array must have enough space to accommodate the elements to be copied.
+    </remarks>
+    <exception cref="ArgumentNullException">
+      Thrown if <paramref name="array"/> is null.
+    </exception>
+    <exception cref="ArgumentOutOfRangeException">
+      Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>, or if there are not enough elements in the <see cref="SlotMap{TValue}.SlotValueCollection"/> to fill the destination array starting at the specified index.
+    </exception>
+  </SVCCopyTo>
+
+  <SVCEnumerator>
+    <summary>
+      Represents an enumerator for the values in the <see cref="SlotMap{TValue}.SlotValueCollection"/>.
+    </summary>
+    <remarks>
+      The <c>Enumerator</c> struct allows you to enumerate the values stored in the <see cref="SlotValueCollection"/>.
+      Use this enumerator to iterate over the values in the collection.
+    </remarks>
+  </SVCEnumerator>
+</docs>
