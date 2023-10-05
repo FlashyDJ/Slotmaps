@@ -1,5 +1,21 @@
 # Slotmaps
 
+A C# implementation of the slotmaps data structure.
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Getting Started](#getting-started)
+4. [Basic Usage](#basic-usage)
+    - [SlotMap](#slotmap)
+    - [Secondary Maps](#secondary-maps)
+5. [Documentation](#documentation)
+6. [Contributing](#contributing)
+7. [License](#license)
+
+## Introduction
+
 This library provides an implementation of slot-based data structures that allows you to store values in collections that assign them unique keys.
 You can use these keys to access, modify or remove the values later.
 
@@ -9,14 +25,16 @@ These are especially useful for scenarios where you need to keep track of object
 This C# library is inspired by the Rust crate [slotmap](https://github.com/orlp/slotmap/), created by [orlp](https://github.com/orlp).
 This adapts the ideas and core concepts of the Rust implementation.
 
-## Table of Contents
+## Features
+This library offers the following features:
 
-1. [Getting Started](#getting-started)
-2. [Basic Usage](#basic-usage)
-    - [SlotMap](#slotmap)
-    - [Secondary Maps](#secondary-maps)
-3. [Contributing](#contributing)
-4. [License](#license)
+- Efficient storage and retrieval of objects with constant-time complexity.
+- Stable and unique identifiers for objects, even after removals.
+- Generic type parameters to store any kind of values in the collections and secondary collections.
+- Two types of secondary collections to associate additional data with collection keys: ``SecondaryMap`` and ``SparseSecondaryMap``.
+- Comprehensive unit tests to ensure correctness.
+
+
 
 ## Getting Started
 
@@ -29,7 +47,7 @@ dotnet add package FlashyDJ.Slotmaps
 
 Alternatively, you can download the source code from this repository and build it yourself.
 
-## Usage
+## Basic Usage
 
 To use the collections, you need to import the ``FlashyDJ.Slotmaps`` namespace in your code:
 
@@ -91,15 +109,9 @@ Console.WriteLine(secondaryMap[key2]); // Print "56"
 There is only one type of collection available at the moment: ``SlotMap``. It provides fast and consistent performance, but may leave gaps when iterating over the values.
 More types of collections will be added in the future.
 
+## Documentation
+
 For more details and examples, please refer to the [documentation](https://FlashyDJ.github.io/Slotmaps/Docs).
-
-## Features
-This library offers the following features:
-
-- A single type of collection with persistent unique keys to access stored values: ``SlotMap``.
-- Two types of secondary collections to associate additional data with collection keys: ``SecondaryMap`` and ``SparseSecondaryMap``.
-- Generic type parameters to store any kind of values in the collections and secondary collections.
-- Comprehensive unit tests to ensure correctness.
 
 ## Contributing
 This library is open for contributions from anyone who is interested. If you have any ideas, suggestions or bug reports, please open an issue or a pull request on this repository.
