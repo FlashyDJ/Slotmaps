@@ -5,11 +5,13 @@ namespace FlashyDJ.Slotmaps;
 
 public partial class SparseSecondaryMap<TValue>
 {
+    /// <include file='docs.xml' path='docs/SlotKeyCollection/*'/>
     [DebuggerDisplay("Count = {Count}")]
     public sealed class SlotKeyCollection : ICollection<SlotKey>, IReadOnlyCollection<SlotKey>
     {
         private readonly SparseSecondaryMap<TValue> _sparseMap;
 
+        /// <include file='docs.xml' path='docs/SKCCtor/*'/>
         public SlotKeyCollection(SparseSecondaryMap<TValue> sparseSecondaryMap)
         {
             ArgumentNullException.ThrowIfNull(sparseSecondaryMap);
@@ -23,9 +25,13 @@ public partial class SparseSecondaryMap<TValue>
         IEnumerator<SlotKey> IEnumerable<SlotKey>.GetEnumerator() => new Enumerator(_sparseMap);
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_sparseMap);
 
+        /// <include file='docs.xml' path='docs/SKCCount/*'/>
         public int Count => _sparseMap.Count;
 
+        /// <include file='docs.xml' path='docs/SKCContains/*'/>
         public bool Contains(SlotKey key) => _sparseMap.ContainsKey(key);
+
+        /// <include file='docs.xml' path='docs/SKCCopyTo/*'/>
         public void CopyTo(SlotKey[] array, int index)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -42,6 +48,7 @@ public partial class SparseSecondaryMap<TValue>
             }
         }
 
+        /// <include file='docs.xml' path='docs/SKCEnumerator/*'/>
         public struct Enumerator : IEnumerator<SlotKey>, IEnumerator
         {
             private readonly SparseSecondaryMap<TValue> _sparseMap;
@@ -57,10 +64,13 @@ public partial class SparseSecondaryMap<TValue>
 
             object IEnumerator.Current => Current;
 
+            /// <inheritdoc/>
             public SlotKey Current => _current;
 
+            /// <inheritdoc/>
             public readonly void Dispose() { }
 
+            /// <inheritdoc/>
             public bool MoveNext()
             {
                 while (_index < _sparseMap.Capacity)
@@ -79,6 +89,7 @@ public partial class SparseSecondaryMap<TValue>
                 return false;
             }
 
+            /// <inheritdoc/>
             public void Reset()
             {
                 _index = -1;

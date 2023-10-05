@@ -4,11 +4,13 @@ using System.Diagnostics;
 namespace FlashyDJ.Slotmaps;
 public partial class SecondaryMap<TValue>
 {
+    /// <include file='docs.xml' path='docs/SlotValueCollection/*'/>
     [DebuggerDisplay("Count = {Count}")]
     public sealed class SlotValueCollection : ICollection<TValue>, IReadOnlyCollection<TValue>
     {
         private readonly SecondaryMap<TValue> _secondaryMap;
 
+        /// <include file='docs.xml' path='docs/SVCCtor/*'/>
         public SlotValueCollection(SecondaryMap<TValue> secondaryMap)
         {
             ArgumentNullException.ThrowIfNull(secondaryMap);
@@ -22,9 +24,13 @@ public partial class SecondaryMap<TValue>
         IEnumerator<TValue> IEnumerable<TValue>.GetEnumerator() => new Enumerator(_secondaryMap);
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_secondaryMap);
 
+        /// <include file='docs.xml' path='docs/SVCCount/*'/>
         public int Count => _secondaryMap.Count;
 
+        /// <include file='docs.xml' path='docs/SVCContains/*'/>
         public bool Contains(TValue value) => _secondaryMap.ContainsValue(value!);
+
+        /// <include file='docs.xml' path='docs/SVCCopyTo/*'/>
         public void CopyTo(TValue[] array, int index)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -41,6 +47,7 @@ public partial class SecondaryMap<TValue>
             }
         }
 
+        /// <include file='docs.xml' path='docs/SVCEnumerator/*'/>
         public struct Enumerator : IEnumerator<TValue>, IEnumerator
         {
             private readonly SecondaryMap<TValue> _secondaryMap;
@@ -56,10 +63,13 @@ public partial class SecondaryMap<TValue>
 
             object? IEnumerator.Current => Current;
 
+            /// <inheritdoc/>
             public TValue Current => _current;
 
+            /// <inheritdoc/>
             public void Dispose() { }
 
+            /// <inheritdoc/>
             public bool MoveNext()
             {
                 while (_index < _secondaryMap.Capacity)
@@ -78,6 +88,7 @@ public partial class SecondaryMap<TValue>
                 return false;
             }
 
+            /// <inheritdoc/>
             public void Reset()
             {
                 _index = -1;
