@@ -26,8 +26,8 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
 
-      - name: Build
-        run: dotnet build -c ${{matrix.configuration}} --no-restore
+      - name: Build FlashyDJ.Slotmaps
+        run: dotnet build src/Slotmaps/Slotmaps.csproj -c ${{matrix.configuration}} --no-restore
 
   run-tests:
     needs: [build]
@@ -42,6 +42,6 @@ jobs:
           report_title: Slotmaps Test
           github_token: ${{ secrets.GITHUB_TOKEN }}
           gist_name: slotmaps_tests.md
-          gist_badge_label: 'Tests: %Counters_passed%.%Counters_total%'
+          gist_badge_label: 'Tests: %Counters_passed%/%Counters_total%'
           gist_token: ${{ secrets.GIST_TOKEN }}
           set_check_status_from_test_outcome: true
