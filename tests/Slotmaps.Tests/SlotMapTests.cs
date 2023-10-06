@@ -657,7 +657,6 @@ public class SlotMapTests
         }
     }
 
-    // TODO: Rename TryAdd to TryInsert
     public class TryAdd
     {
         [Fact]
@@ -666,7 +665,7 @@ public class SlotMapTests
             var slotMap = new SlotMap<string>();
             var key = slotMap.Add("Value1");
 
-            bool result = slotMap.TryAdd(key, "Value2", out var newKey);
+            bool result = slotMap.TryInsert(key, "Value2", out var newKey);
 
             Assert.True(result);
             Assert.Equal("Value2", slotMap[newKey]);
@@ -678,7 +677,7 @@ public class SlotMapTests
             var slotMap = new SlotMap<string>();
             var invalidKey = new SlotKey(0, -1);
 
-            bool result = slotMap.TryAdd(invalidKey, "Value1", out var newKey);
+            bool result = slotMap.TryInsert(invalidKey, "Value1", out var newKey);
 
             Assert.False(result);
             Assert.True(newKey.IsNull);
@@ -691,7 +690,7 @@ public class SlotMapTests
             var key1 = slotMap.Add("Value1");
             var key2 = key1 with { Version = 0 };
 
-            bool result = slotMap.TryAdd(key2, "Value2", out var newKey);
+            bool result = slotMap.TryInsert(key2, "Value2", out var newKey);
 
             Assert.False(result);
             Assert.True(newKey.IsNull);
@@ -705,7 +704,7 @@ public class SlotMapTests
             var key1 = slotMap.Add("Value1");
             var key2 = key1 with { Version = 2 };
 
-            bool result = slotMap.TryAdd(key2, "Value2", out var newKey);
+            bool result = slotMap.TryInsert(key2, "Value2", out var newKey);
 
             Assert.False(result);
             Assert.True(newKey.IsNull);

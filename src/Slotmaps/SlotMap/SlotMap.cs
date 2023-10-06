@@ -299,8 +299,8 @@ public partial class SlotMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>
         }
     }
 
-    /// <include file='docs.xml' path="docs/TryAdd/*"/>
-    public bool TryAdd(SlotKey key, TValue value, out SlotKey newKey)
+    /// <include file='docs.xml' path="docs/TryInsert/*"/>
+    public bool TryInsert(SlotKey key, TValue value, out SlotKey newKey)
     {
         ArgumentNullException.ThrowIfNull(value);
 
