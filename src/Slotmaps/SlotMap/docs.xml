@@ -316,26 +316,26 @@
     <seealso cref="Remove"/>
   </Retain>
 
-  <TryAdd>
+  <TryInsert>
     <summary>
-      Tries to add or update an element in the <see cref="SlotMap{TValue}"/> with the specified key and value.
+      Tries to insert or update an element in the <see cref="SlotMap{TValue}"/> with the specified key and value.
     </summary>
     <param name="key">The key to associate with the value.</param>
     <param name="value">
-      The value to add or update in the <see cref="SlotMap{TValue}"/>.
+      The value to insert or update in the <see cref="SlotMap{TValue}"/>.
     </param>
     <param name="newKey">When the method succeeds, this parameter receives the new or updated key associated with the value.</param>
     <remarks>
-      Use this method to add a new element to the <see cref="SlotMap{TValue}"/> with the specified <paramref name="key"/> and <paramref name="value"/>.
+      Use this method to insert a new element to the <see cref="SlotMap{TValue}"/> with the specified <paramref name="key"/> and <paramref name="value"/>.
       If the element with the same key already exists, it updates the value associated with that key.
     </remarks>
     <exception cref="ArgumentNullException">
       Thrown if <paramref name="value"/> is <c>null</c>.
     </exception>
     <returns>
-      <see langword="true"/> if the element was added or updated successfully; otherwise, <see langword="false"/>.
+      <see langword="true"/> if the element was inserted or updated successfully; otherwise, <see langword="false"/>.
     </returns>
-  </TryAdd>
+  </TryInsert>
 
   <TryGet>
     <summary>
