@@ -62,7 +62,7 @@ jobs:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
 
-    if: github.event_name == push
+    if: github.event_name == 'push'
     needs: generate-docs
     runs-on: ubuntu-latest
     
