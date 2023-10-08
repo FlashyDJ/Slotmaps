@@ -1,0 +1,14 @@
+<Project>
+  <Import Project="..\build\Directory.Build.props" />
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Description>
+      A C# implementation of the slotmaps data structure.
+    </Description>
+  </PropertyGroup>
+
+</Project>
