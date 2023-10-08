@@ -1,0 +1,129 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Publish
+
+on:
+  create:
+    branches: [release/**]
+  push:
+    branches: [release/**]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  dotnet_version: 8.x
+  NuGetDirectory: ${{github.workspace}}/nuget
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: false
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+
+jobs:
+  create-nuget:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+  
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.x
+
+      - name: Install dependencies
+        run: dotnet restore
+  
+      - name: Pack FlashyDJ.Slotmaps
+        run: dotnet pack -c Release --output ${{env.NuGetDirectory}} --no-restore
+  
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: nuget
+          if-no-files-found: error
+          retention-days: 7
+          path: ${{env.NuGetDirectory}}/*.nupkg
+
+  validate-nuget:
+    needs: create-nuget
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Setup .NET 8
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{env.dotnet_version}}
+  
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: nuget
+        path: ${{env.NuGetDirectory}}
+  
+    - name: Instal NuGet Validator
+      run: dotnet tool update Meziantou.Framework.NuGetPackageValidation.Tool --global
+  
+    - name: Validate Package
+      run: meziantou.validate-nuget-package (Get-ChildItem "${{env.NuGetDirectory}}/*.nupkg")
+  
+  deploy:
+    if: ${{ startsWith(github.ref, 'refs/head/release') }}
+    needs: validate-nuget
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+  
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: nuget
+          path: ${{env.NuGetDirectory}}
+  
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-api-key: ${{secrets.NUGET_SLOTMAPS_TOKEN}}
+
+      - name: Get Version
+        id: get_version
+        run: |
+          $file_text = Get-Content "build/VERSION"
+          $isPrerelease = "false"
+          if ($file_text -match "alpha|beta|rc|preview") {
+            $variable = $true
+          }
+
+          echo "::set-output name=version::$file_text"
+          echo "::set-output name=isPrerelease::$isPrerelease"
+  
+      - name: Build Changelog
+        id: github_release
+        uses: mikepenz/release-changelog-builder-action@v1
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          artifacts: ${{env.NuGetDirectory}}
+          body: ${{steps.github_release.outputs.changelog}}
+          tag: "v${{steps.get_version.outputs.version}}"
+          token: ${{secrets.GITHUB_TOKEN}}
+          prerelease: "${{steps.get_version.outputs.isPrerelease}}"
+  
+      - name: Publish to NuGet
+        run: |
+          foreach ($file in (Get-ChildItem "${{env.NuGetDirectory}}/*.nupkg") -Recursive -Include *.nupkg)) {
+            nuget push $file --api-key "${{secrets.NUGET_SLOTMAPS_TOKEN}}" --source https://api.nuget.org/v3/index.json
+          }
+      
+      - name: Publish to Github Packages
+        run: |
+          foreach ($file in (Get-ChildItem "${{env.NuGetDirectory}}/*.nupkg") -Recursive -Include *.nupkg)) {
+            nuget push $file --api-key "${{secrets.GITHUB_TOKEN}}" --source https://nuget.pkg.github.com/flashydj/index.json
+          }
+          
