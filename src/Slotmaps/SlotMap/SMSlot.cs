@@ -1,9 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace FlashyDJ.Slotmaps;
+﻿namespace FlashyDJ.Slotmaps;
 public partial class SlotMap<TValue>
 {
-    internal struct Slot<TValue>(TValue value, int version)
+    internal struct Slot(TValue value, int version)
     {
         private TValue? _value = value;
 

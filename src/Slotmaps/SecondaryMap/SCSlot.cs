@@ -1,7 +1,7 @@
 ﻿namespace FlashyDJ.Slotmaps;
 public partial class SecondaryMap<TValue>
 {
-    internal struct Slot<TValue>(TValue value, int version)
+    internal struct Slot(TValue value, int version)
     {
         public static Slot<TValue> NewVacant() => new(default!, -1);
 
