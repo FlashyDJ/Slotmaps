@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-
-namespace FlashyDJ.Slotmaps;
+﻿namespace FlashyDJ.Slotmaps;
 /// <include file='docs.xml' path='docs/SecondaryMap/*'/>
 [Serializable]
 [DebuggerDisplay("Count = {Count}")]
