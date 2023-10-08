@@ -17,6 +17,10 @@ env:
   DOTNET_CLI_TELEMETRY_OPTOUT: false
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
 
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
   create-nuget:
       runs-on: ubuntu-latest
