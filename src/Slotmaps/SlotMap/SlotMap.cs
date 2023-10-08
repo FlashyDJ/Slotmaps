@@ -7,10 +7,10 @@ public partial class SlotMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>
     private const int DefaultCapacity = 4;
 
 #pragma warning disable CA1825 // avoid the extra generic instantiation for Array.Empty<T>()
-    private static readonly Slot<TValue>[] s_emptyArray = new Slot<TValue>[0];
+    private static readonly Slot[] s_emptyArray = new Slot[0];
 #pragma warning restore CA1825
 
-    private Slot<TValue>[] _slots;
+    private Slot[] _slots;
     private int _freeHead;
     private SlotKeyCollection? _keys;
     private SlotValueCollection? _values;
@@ -26,7 +26,7 @@ public partial class SlotMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>
         if (capacity == 0)
             _slots = s_emptyArray;
         else
-            _slots = new Slot<TValue>[capacity];
+            _slots = new Slot[capacity];
     }
 
     void ICollection<KeyValuePair<SlotKey, TValue>>.Add(KeyValuePair<SlotKey, TValue> item) =>

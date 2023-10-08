@@ -5,10 +5,10 @@
 public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>>
 {
 #pragma warning disable CA1825 // avoid the extra generic instantiation for Array.Empty<T>()
-    private static readonly Slot<TValue>[] s_emptyArray = new Slot<TValue>[0];
+    private static readonly Slot[] s_emptyArray = new Slot[0];
 #pragma warning restore CA1825
 
-    private Slot<TValue>[] _slots;
+    private Slot[] _slots;
     private SlotKeyCollection? _keys;
     private SlotValueCollection? _values;
 
@@ -23,7 +23,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         if (capacity == 0)
             _slots = s_emptyArray;
         else
-            _slots = new Slot<TValue>[capacity];
+            _slots = new Slot[capacity];
     }
 
     bool ICollection<KeyValuePair<SlotKey, TValue>>.IsReadOnly => false;
@@ -324,7 +324,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
             if (slot.Version == key.Version)
             {
                 value = slot.Value;
-                slot = Slot<TValue>.NewVacant();
+                slot = Slot.NewVacant();
                 Count--;
 
                 return true;

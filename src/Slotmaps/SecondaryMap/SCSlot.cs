@@ -3,7 +3,7 @@ public partial class SecondaryMap<TValue>
 {
     internal struct Slot(TValue value, int version)
     {
-        public static Slot<TValue> NewVacant() => new(default!, -1);
+        public static Slot NewVacant() => new(default!, -1);
 
         private TValue? _value = value;
 
