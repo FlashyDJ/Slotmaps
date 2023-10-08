@@ -60,11 +60,11 @@ jobs:
         name: nuget
         path: ${{env.NuGetDirectory}}
   
-    - name: Instal NuGet Validator
+    - name: Install NuGet Validator
       run: dotnet tool update Meziantou.Framework.NuGetPackageValidation.Tool --global
   
     - name: Validate Package
-      run: meziantou.validate-nuget-package (Get-ChildItem "${{env.NuGetDirectory}}/*.nupkg")
+      run: meziantou.validate-nuget-package Get-ChildItem "${{env.NuGetDirectory}}/*.nupkg"
   
   deploy:
     if: ${{ startsWith(github.ref, 'refs/head/release') }}
