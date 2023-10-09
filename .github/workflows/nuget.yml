@@ -68,7 +68,9 @@ jobs:
       run: dotnet tool update Meziantou.Framework.NuGetPackageValidation.Tool --global
   
     - name: Validate Package
-      run: meziantou.validate-nuget-package (Get-ChildItem "${{ env.NuGetDirectory }}/*.nupkg") --excluded-rules IconMustBeSet
+      run: >
+        meziantou.validate-nuget-package (Get-ChildItem "${{ env.NuGetDirectory }}/*.nupkg") 
+        --excluded-rules IconMustBeSet
   
   deploy:
     if: ${{ startsWith(github.ref, 'refs/head/release') }}
@@ -95,13 +97,13 @@ jobs:
         id: get_version
         run: |
           $file_text = Get-Content "build/VERSION"
-          $isPrerelease = "false"
+          $IS_PRERELEASE = "false"
           if ($file_text -match "alpha|beta|rc|preview") {
             $variable = $true
           }
 
-          echo "::set-output name=version::$file_text"
-          echo "::set-output name=isPrerelease::$isPrerelease"
+          echo "VERSION=$file_text" >> "$GITHUB_OUTPUT"
+          echo "IS_PRERELEASE=$IS_PRERELEASE" >> "$GITHUB_OUTPUT"
   
       - name: Build Changelog
         id: github_release
@@ -115,9 +117,9 @@ jobs:
           allowUpdates: true
           artifacts: ${{env.NuGetDirectory}}
           body: ${{steps.github_release.outputs.changelog}}
-          tag: "v${{steps.get_version.outputs.version}}"
+          tag: "v${{steps.get_version.outputs.VERSION}}"
           token: ${{secrets.GITHUB_TOKEN}}
-          prerelease: "${{steps.get_version.outputs.isPrerelease}}"
+          prerelease: "${{steps.get_version.outputs.IS_PRERELEASE}}"
   
       - name: Publish to NuGet
         run: |

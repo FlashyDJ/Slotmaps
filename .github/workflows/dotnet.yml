@@ -125,14 +125,15 @@ jobs:
             }
           }
 
-          echo "::set-output name=BADGE_COLOR::$BADGE_COLOR"
-          echo "::set-output name=PASS_TESTS::${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests_succ}}"
-          echo "::set-output name=TOTAL_TESTS::${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests}}"
+          echo "BADGE_COLOR=$BADGE_COLOR" >> "$GITHUB_OUTPUT"
+          echo "PASS_TESTS=${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests_succ}}" >> "$GITHUB_OUTPUT"
+          echo "TOTAL_TESTS=${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests}}"  >> "$GITHUB_OUTPUT"
 
       - name: Create Test Badge
-        if: >
-          github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main' ||
-          github.event_name != 'workflow_run' && github.ref == 'refs/heads/main'
+        # Commented for testing
+        # if: >
+        #   github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main' ||
+        #   github.event_name != 'workflow_run' && github.ref == 'refs/heads/main'
         uses: schneegans/dynamic-badges-action@v1.6.0
         with:
           auth: ${{secrets.GIST_TOKEN}}
