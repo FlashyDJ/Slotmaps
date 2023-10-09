@@ -46,8 +46,13 @@ jobs:
         run: dotnet build src/Slotmaps/Slotmaps.csproj -c ${{matrix.configuration}} --no-restore
 
   run-tests:
+    name: Run XUnit Tests
     needs: build
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
     
     steps:
       - name: Checkout
@@ -58,14 +63,76 @@ jobs:
         with:
           dotnet-version: ${{env.dotnet_version}}
 
-      - name: XUnit Test for Slotmaps.Tests
-        uses: zyborg/dotnet-tests-report@v1
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Test Slotmaps.Tests
+        run: dotnet test tests/Slotmaps.Tests/Slotmaps.Tests.csproj -c ${{matrix.configuration}} -l "trx;logfilename=Slotmaps.Tests(${{matrix.configuration}}).trx" --no-restore --results-directory _results
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
         with:
-          project_path: ./tests/Slotmaps.Tests
-          msbuild_configuration: Release
-          report_name: Slotmaps.Tests
-          report_title: Slotmaps Test
-          gist_name: slotmaps_tests.md
-          gist_badge_label: 'Tests: %Counters_passed%/%Counters_total%'
-          gist_token: ${{secrets.GIST_TOKEN}}
-          set_check_status_from_test_outcome: true
+          name: Test Results (${{matrix.configuration}})
+          retention-days: 2
+          path: _result
+
+  publish-results:
+    needs: run-tests
+    runs-on: ubuntu-latest
+
+    permissions:
+      checks: write
+      pull-requests: write
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    if: always()
+
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+
+      - name: Publish Test Results (${{matrix.configuration}})
+        id: test-results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          files: "artifacts/**/*(${{matrix.configuration}}).trx"
+
+      - name: Parse Test Results
+        id: parse_test
+        shell: pwsh
+        run: |
+          $conclusion = fromJSON(${{steps.test-results.outputs.json}}).conclusion
+          $BADGE_COLOR = 696969
+
+          switch ($conclusion) {
+            "success" {
+              $BADGE_COLOR = 31c653
+            }
+            "failure" {
+              $BADGE_COLOR = 800000
+            }
+          }
+
+          echo "::set-output name=BADGE_COLOR::$BADGE_COLOR"
+          echo "::set-output name=PASS_TESTS::${{fromJSON( steps.test-results.outputs.json ).formatted.stats.tests_succ}}"
+          echo "::set-output name=TOTAL_TESTS::${{fromJSON( steps.test-results.outputs.json ).formatted.stats.tests}}"
+
+      - name: Create Test Badge
+        if: >
+          github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main' ||
+          github.event_name != 'workflow_run' && github.ref == 'refs/heads/main'
+        uses: schneegans/dynamic-badges-action@v1.6.0
+        with:
+          auth: ${{secrets.GIST_TOKEN}}
+          gistID: 4f6ab220575cb9ef573ec7b05d0cc8b4
+          filename: test(${{matrix.configuration}}).json
+          label: 'Test (${{matrix.configuration}}): ${{steps.parse_test.outputs.PASS_TESTS}}/${{steps.parse_test.outputs.TOTAL_TESTS}}'
+          message: '${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.tests }} tests'
+          color: ${{steps.parse_test.outputs.BADGE_COLOR}}
+
