@@ -81,7 +81,7 @@ jobs:
         with:
           name: Test Results (${{matrix.configuration}})
           retention-days: 2
-          path: _result
+          path: ${{env.ResultsDirectory}} 
 
   publish-results:
     needs: run-tests
