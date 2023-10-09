@@ -113,7 +113,7 @@ jobs:
         id: parse_test
         shell: pwsh
         run: |
-          $conclusion = fromJSON(${{steps.test-results.outputs.json}}).conclusion
+          $conclusion = ${{fromJSON(steps.test-results.outputs.json).conclusion}}
           $BADGE_COLOR = 696969
 
           switch ($conclusion) {
@@ -126,8 +126,8 @@ jobs:
           }
 
           echo "::set-output name=BADGE_COLOR::$BADGE_COLOR"
-          echo "::set-output name=PASS_TESTS::${{fromJSON( steps.test-results.outputs.json ).formatted.stats.tests_succ}}"
-          echo "::set-output name=TOTAL_TESTS::${{fromJSON( steps.test-results.outputs.json ).formatted.stats.tests}}"
+          echo "::set-output name=PASS_TESTS::${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests_succ}}"
+          echo "::set-output name=TOTAL_TESTS::${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests}}"
 
       - name: Create Test Badge
         if: >
