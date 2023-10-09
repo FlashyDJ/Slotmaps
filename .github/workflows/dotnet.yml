@@ -114,14 +114,14 @@ jobs:
         shell: pwsh
         run: |
           $conclusion = "${{fromJSON(steps.test-results.outputs.json).conclusion}}"
-          $BADGE_COLOR = 696969
+          $BADGE_COLOR = "696969"
 
           switch ($conclusion) {
             "success" {
-              $BADGE_COLOR = 31c653
+              $BADGE_COLOR = "31c653"
             }
             "failure" {
-              $BADGE_COLOR = 800000
+              $BADGE_COLOR = "800000"
             }
           }
 
