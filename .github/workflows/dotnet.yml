@@ -113,7 +113,7 @@ jobs:
         id: parse_test
         shell: pwsh
         run: |
-          $conclusion = ${{fromJSON(steps.test-results.outputs.json).conclusion}}
+          $conclusion = "${{fromJSON(steps.test-results.outputs.json).conclusion}}"
           $BADGE_COLOR = 696969
 
           switch ($conclusion) {
