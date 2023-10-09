@@ -18,6 +18,7 @@ on:
 
 env:
   dotnet_version: 8.x
+  ResultsDirectory: ${{github.workspace}}/results
   DOTNET_NOLOGO: true
   DOTNET_CLI_TELEMETRY_OPTOUT: false
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
@@ -67,7 +68,12 @@ jobs:
         run: dotnet restore
 
       - name: Test Slotmaps.Tests
-        run: dotnet test tests/Slotmaps.Tests/Slotmaps.Tests.csproj -c ${{matrix.configuration}} -l "trx;logfilename=Slotmaps.Tests(${{matrix.configuration}}).trx" --no-restore --results-directory _results
+        run: >
+          dotnet test tests/Slotmaps.Tests/Slotmaps.Tests.csproj 
+          -c ${{matrix.configuration}} 
+          -l "trx;logfilename=Slotmaps.Tests(${{matrix.configuration}}).trx" 
+          --results-directory ${{env.ResultsDirectory}} 
+          --no-restore
 
       - name: Upload Test Results
         if: always()
@@ -95,13 +101,13 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v3
         with:
-          path: artifacts
+          path: ${{env.ResultsDirectory}}
 
       - name: Publish Test Results (${{matrix.configuration}})
         id: test-results
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
-          files: "artifacts/**/*(${{matrix.configuration}}).trx"
+          files: "${{env.ResultsDirectory}}/**/*(${{matrix.configuration}}).trx"
 
       - name: Parse Test Results
         id: parse_test
