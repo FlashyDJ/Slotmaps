@@ -72,7 +72,9 @@ jobs:
       - name: Set Test File Meta
         run: |
            if ${{github.event_name == 'pull_request'}}
+           then
              echo "META=(${{matrix.configuration}})-#${{steps.pr_number.outputs.pr}}(${{github.run_number}}).trx" >> $GITHUB_ENV
+           fi
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
@@ -113,6 +115,8 @@ jobs:
     env:
       TITLE: "Test Results (${{matrix.configuration}}) (${{github.run_number}})"
       META: "(${{matrix.configuration}})-(${{github.run_number}}).trx"
+      PASS_TESTS: "0"
+      TOTAL_TESTS: "0"
 
     if: always()
 
@@ -126,8 +130,10 @@ jobs:
         id: test_title
         run: |
            if ${{github.event_name == 'pull_request'}}
+           then
              echo "TITLE=Test Results (${{matrix.configuration}}) for PR #${{needs.run-tests.outputs.pr}} (${{github.run_number}})" >> $GITHUB_ENV
              echo "META=(${{matrix.configuration}})-#${{needs.run-tests.outputs.pr}}(${{github.run_number}}).trx" >> $GITHUB_ENV
+           fi
 
       - name: Publish Test Results (${{matrix.configuration}})
         id: test-results
