@@ -121,12 +121,14 @@ jobs:
           prerelease: "${{steps.get_version.outputs.IS_PRERELEASE}}"
   
       - name: Publish to NuGet
+        shell: pwsh
         run: |
           foreach ($file in (Get-ChildItem "${{env.NuGetDirectory}}/*.nupkg") -Recursive -Include *.nupkg)) {
             nuget push $file --api-key "${{secrets.NUGET_SLOTMAPS_TOKEN}}" --source https://api.nuget.org/v3/index.json
           }
       
       - name: Publish to Github Packages
+        shell: pwsh
         run: |
           foreach ($file in (Get-ChildItem "${{env.NuGetDirectory}}/*.nupkg") -Recursive -Include *.nupkg)) {
             nuget push $file --api-key "${{secrets.GITHUB_TOKEN}}" --source https://nuget.pkg.github.com/flashydj/index.json
