@@ -180,8 +180,8 @@ jobs:
 
       - name: Create Test Badge
         if: >
-          github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main' ||
-          github.event_name != 'workflow_run' && github.ref == 'refs/heads/main'
+          ${{github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main' ||
+          github.event_name != 'workflow_run' && github.ref == 'refs/heads/main'}}
         uses: schneegans/dynamic-badges-action@v1.6.0
         with:
           auth: ${{secrets.GIST_TOKEN}}
