@@ -50,14 +50,29 @@ jobs:
     name: Run XUnit Tests
     needs: build
     runs-on: ubuntu-latest
+    outputs:
+      pr: ${{steps.pr_number.outputs.pr}}
 
     strategy:
       matrix:
         configuration: [Debug, Release]
+
+    env:
+      META: "(${{matrix.configuration}})-(${{github.run_number}}).trx"
     
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Get PR Number
+        id: pr_number
+        if: ${{github.event_name == 'pull_request'}}
+        uses: kkak10//pr-number-action@v1.3
+
+      - name: Set Test File Meta
+        run: |
+           if ${{github.event_name == 'pull_request'}}
+             echo "META=(${{matrix.configuration}})-#${{steps.pr_number.outputs.pr}}(${{github.run_number}}).trx" >> $GITHUB_ENV
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
@@ -71,7 +86,7 @@ jobs:
         run: >
           dotnet test tests/Slotmaps.Tests/Slotmaps.Tests.csproj 
           -c ${{matrix.configuration}} 
-          -l "trx;logfilename=Slotmaps.Tests(${{matrix.configuration}}).trx" 
+          -l "trx;logfilename=Slotmaps.Tests${{env.META}}.trx" 
           --results-directory ${{env.ResultsDirectory}} 
           --no-restore
 
@@ -95,6 +110,10 @@ jobs:
       matrix:
         configuration: [Debug, Release]
 
+    env:
+      TITLE: "Test Results (${{matrix.configuration}}) (${{github.run_number}})"
+      META: "(${{matrix.configuration}})-(${{github.run_number}}).trx"
+
     if: always()
 
     steps:
@@ -103,31 +122,43 @@ jobs:
         with:
           path: ${{env.ResultsDirectory}}
 
+      - name: Set Test Title
+        id: test_title
+        run: |
+           if ${{github.event_name == 'pull_request'}}
+             echo "TITLE=Test Results (${{matrix.configuration}}) for PR #${{needs.run-tests.outputs.pr}} (${{github.run_number}})" >> $GITHUB_ENV
+             echo "META=(${{matrix.configuration}})-#${{needs.run-tests.outputs.pr}}(${{github.run_number}}).trx" >> $GITHUB_ENV
+
       - name: Publish Test Results (${{matrix.configuration}})
         id: test-results
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
-          files: "${{env.ResultsDirectory}}/**/*(${{matrix.configuration}}).trx"
+          check_name: "${{env.TITLE}}"
+          files: "${{env.ResultsDirectory}}/**/*(${{env.META}}).trx"
 
       - name: Parse Test Results
         id: parse_test
         shell: pwsh
         run: |
-          $conclusion = "${{fromJSON(steps.test-results.outputs.json).conclusion}}"
+          $CONCLUSION = (Get-Culture).TextInfo.ToTitleCase("${{fromJSON(steps.test-results.outputs.json).conclusion}}")
           $BADGE_COLOR = "696969"
+          $PASS_TEST = "${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests_succ}}"
+          $TOTAL_TESTS = ${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests}}
 
-          switch ($conclusion) {
-            "success" {
+          switch ($CONCLUSION) {
+            "Success" {
               $BADGE_COLOR = "31c653"
             }
-            "failure" {
+            "Failure" {
               $BADGE_COLOR = "800000"
             }
           }
 
-          echo "BADGE_COLOR=$BADGE_COLOR" >> "$GITHUB_OUTPUT"
-          echo "PASS_TESTS=${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests_succ}}" >> "$GITHUB_OUTPUT"
-          echo "TOTAL_TESTS=${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests}}"  >> "$GITHUB_OUTPUT"
+          echo "CONCLUSION=$CONCLUSION" >> $GITHUB_ENV
+          echo "BADGE_COLOR=$BADGE_COLOR" >> $GITHUB_ENV
+          echo "PASS_TESTS=$PASS_TEST" >> $GITHUB_ENV
+          echo "TOTAL_TESTS=$TOTAL_TESTS"  >> $GITHUB_ENV
+          echo "$CONCLUSION ($BADGE_COLOR) - $PASS_TEST / $TOTAL_TESTS"
 
       - name: Create Test Badge
         # Commented for testing
@@ -139,7 +170,7 @@ jobs:
           auth: ${{secrets.GIST_TOKEN}}
           gistID: 4f6ab220575cb9ef573ec7b05d0cc8b4
           filename: test(${{matrix.configuration}}).json
-          label: 'Test (${{matrix.configuration}}): ${{steps.parse_test.outputs.PASS_TESTS}}/${{steps.parse_test.outputs.TOTAL_TESTS}}'
-          message: '${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.tests }} tests'
-          color: ${{steps.parse_test.outputs.BADGE_COLOR}}
+          label: "Test (${{matrix.configuration}}): ${{env.PASS_TESTS}} / ${{env.TOTAL_TESTS}}"
+          message: "${{steps.parse_test.outputs.CONCLUSION}}"
+          color: "${{steps.parse_test.outputs.BADGE_COLOR}}"
 
