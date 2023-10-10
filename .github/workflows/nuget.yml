@@ -4,7 +4,6 @@ name: NuGet
 
 on:
   create:
-    branches: [release/**]
   push:
     branches: [release/**]
   pull_request:
