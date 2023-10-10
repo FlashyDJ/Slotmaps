@@ -191,4 +191,5 @@ jobs:
           label: "🧪 Test (${{matrix.configuration}}): ${{env.PASS_TESTS}} / ${{env.TOTAL_TESTS}}"
           message: "${{env.CONCLUSION}}"
           color: "${{env.BADGE_COLOR}}"
+          forceUpdate: true
 
