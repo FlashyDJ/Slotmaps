@@ -73,7 +73,7 @@ jobs:
         shell: pwsh
         run: |
           if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
-            echo "META=($($env:matrix_configuration))-#$($env:needs_run-tests_outputs_pr).trx" >> $env:GITHUB_ENV
+            echo "META=($($env:matrix_configuration))-#${{needs.run_tests.outputs.pr}}.trx" >> $env:GITHUB_ENV
           }
 
       - name: Setup .NET
@@ -133,8 +133,8 @@ jobs:
         shell: pwsh
         run: |
           if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
-            echo "TITLE=Test Results ($($env:matrix_configuration)) for PR #$($env:needs_run-tests_outputs_pr)" >> $env:GITHUB_ENV
-            echo "META=($($env:matrix_configuration))-#$($env:needs_run-tests_outputs_pr).trx" >> $env:GITHUB_ENV
+            echo "TITLE=Test Results ($($env:matrix_configuration)) for PR #${{needs.run_tests.outputs.pr}}" >> $env:GITHUB_ENV
+            echo "META=($($env:matrix_configuration))-#$${{needs.run_tests.outputs.pr}}.trx" >> $env:GITHUB_ENV
           }
 
       - name: Publish Test Results (${{matrix.configuration}})
