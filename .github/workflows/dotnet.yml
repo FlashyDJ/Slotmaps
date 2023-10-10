@@ -73,7 +73,7 @@ jobs:
         run: |
            if ${{github.event_name == 'pull_request'}}
            then
-             echo "META=(${{matrix.configuration}})-#${{steps.pr_number.outputs.pr}}" >> $GITHUB_ENV
+             echo "META=(${{matrix.configuration}})-#${{steps.pr_number.outputs.pr}}.trx" >> $GITHUB_ENV
            fi
 
       - name: Setup .NET
@@ -132,16 +132,16 @@ jobs:
            if ${{github.event_name == 'pull_request'}}
            then
              echo "TITLE=Test Results (${{matrix.configuration}}) for PR #${{needs.run-tests.outputs.pr}}" >> $GITHUB_ENV
-             echo "META=(${{matrix.configuration}})-#${{needs.run-tests.outputs.pr}}(${{github.run_number}}).trx" >> $GITHUB_ENV
+             echo "META=(${{matrix.configuration}})-#${{needs.run-tests.outputs.pr}}.trx" >> $GITHUB_ENV
            fi
 
       - name: Publish Test Results (${{matrix.configuration}})
         id: test-results
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
+          commit: ${{env.GITHUB_SHA}}
           check_name: "${{env.TITLE}}"
           files: "${{env.ResultsDirectory}}/**/*${{env.META}}"
-          ignore_runs: true
 
       - name: Parse Test Results
         id: parse_test
