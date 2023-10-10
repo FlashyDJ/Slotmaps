@@ -140,7 +140,7 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
           check_name: "${{env.TITLE}}"
-          files: "${{env.ResultsDirectory}}/**/*(${{env.META}}).trx"
+          files: "${{env.ResultsDirectory}}/**/*${{env.META}}"
 
       - name: Parse Test Results
         id: parse_test
