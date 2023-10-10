@@ -114,7 +114,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          artifacts: ${{env.NuGetDirectory}}/**
+          artifacts: ${{env.NuGetDirectory}}/*
           body: ${{steps.github_release.outputs.changelog}}
           tag: "v${{steps.get_version.outputs.VERSION}}"
           token: ${{secrets.GITHUB_TOKEN}}
@@ -125,7 +125,7 @@ jobs:
         run: |
           $files = Get-ChildItem ${{env.NuGetDirectory}} -Filter *.nupkg
           foreach ($file in $files) {
-            nuget push $file --api-key "${{secrets.NUGET_SLOTMAPS_TOKEN}}" --source https://api.nuget.org/v3/index.json
+            nuget push $file -k "${{secrets.NUGET_SLOTMAPS_TOKEN}}" --source https://api.nuget.org/v3/index.json
           }
       
       - name: Publish to Github Packages
@@ -133,6 +133,6 @@ jobs:
         run: |
           $files = Get-ChildItem ${{env.NuGetDirectory}} -Filter *.nupkg
           foreach ($file in $files) {
-            nuget push $file --api-key "${{secrets.GITHUB_TOKEN}}" --source https://nuget.pkg.github.com/flashydj/index.json
+            nuget push $file -k "${{secrets.GITHUB_TOKEN}}" --source https://nuget.pkg.github.com/flashydj/index.json
           }
           
