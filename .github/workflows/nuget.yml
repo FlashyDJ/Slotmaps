@@ -125,7 +125,7 @@ jobs:
         run: |
           $files = Get-ChildItem ${{env.NuGetDirectory}} -Filter *.nupkg
           foreach ($file in $files) {
-            nuget push $file -k "${{secrets.NUGET_SLOTMAPS_TOKEN}}" --source https://api.nuget.org/v3/index.json
+            nuget push $file ${{secrets.NUGET_SLOTMAPS_TOKEN}} -src https://api.nuget.org/v3/index.json
           }
       
       - name: Publish to Github Packages
@@ -133,6 +133,6 @@ jobs:
         run: |
           $files = Get-ChildItem ${{env.NuGetDirectory}} -Filter *.nupkg
           foreach ($file in $files) {
-            nuget push $file -k "${{secrets.GITHUB_TOKEN}}" --source https://nuget.pkg.github.com/flashydj/index.json
+            nuget push $file ${{secrets.GITHUB_TOKEN}} -src https://nuget.pkg.github.com/flashydj/index.json
           }
           
