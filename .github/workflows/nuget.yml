@@ -104,11 +104,11 @@ jobs:
           echo "VERSION=$VERSION" >> $env:GITHUB_OUTPUT
           echo "IS_PRERELEASE=$IS_PRERELEASE" >> $env:GITHUB_OUTPUT
   
-      - name: Build Changelog
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@v1
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - name: Build Changelog
+      #   id: github_release
+      #   uses: mikepenz/release-changelog-builder-action@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
   
       - name: Create Release
         uses: ncipollo/release-action@v1
