@@ -7,7 +7,7 @@
 
   <PropertyGroup>
     <Description>
-      A C# implementation of the slotmaps data structure.
+      A C# .NET library designed for slot-based data structures, enabling organized and quick item access using unique and persistent keys.
     </Description>
   </PropertyGroup>
 
