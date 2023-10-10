@@ -155,7 +155,7 @@ This C# library is inspired by the Rust crate [slotmap](https://github.com/orlp/
 
 |Branch|Debug|Release|
 |:----:|:---:|:-----:|
-**main**|![Main Debug Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FFlashyDJ%2F4f6ab220575cb9ef573ec7b05d0cc8b4%2Fraw%2Ftest(Debug).json&logo=github&logoColor=white&labelColor=2b3137) | ![Main Release Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FFlashyDJ%2F4f6ab220575cb9ef573ec7b05d0cc8b4%2Fraw%2Ftest(Release).json&logo=github&logoColor=white&labelColor=2b3137) |
+**main**|![Main Debug Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FFlashyDJ%2F8fbc591640efde578c18c558426ac23e%2Fraw%2Ftest(Debug).json&logo=github&logoColor=white&labelColor=2b3137) | ![Main Release Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FFlashyDJ%2F8fbc591640efde578c18c558426ac23e%2Fraw%2Ftest(Release).json&logo=github&logoColor=white&labelColor=2b3137) |
 
 ### NuGet Builds
 

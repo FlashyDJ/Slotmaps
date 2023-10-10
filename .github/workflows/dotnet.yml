@@ -186,7 +186,7 @@ jobs:
         uses: schneegans/dynamic-badges-action@v1.6.0
         with:
           auth: ${{secrets.GIST_TOKEN}}
-          gistID: 4f6ab220575cb9ef573ec7b05d0cc8b4
+          gistID: 8fbc591640efde578c18c558426ac23e
           filename: test(${{matrix.configuration}}).json
           label: "🧪 Test (${{matrix.configuration}}): ${{env.PASS_TESTS}} / ${{env.TOTAL_TESTS}}"
           message: "${{env.CONCLUSION}}"
