@@ -73,7 +73,7 @@ jobs:
         run: |
            if ${{github.event_name == 'pull_request'}}
            then
-             echo "META=(${{matrix.configuration}})-#${{steps.pr_number.outputs.pr}}(${{github.run_number}}).trx" >> $GITHUB_ENV
+             echo "META=(${{matrix.configuration}})-#${{steps.pr_number.outputs.pr}}" >> $GITHUB_ENV
            fi
 
       - name: Setup .NET
@@ -131,7 +131,7 @@ jobs:
         run: |
            if ${{github.event_name == 'pull_request'}}
            then
-             echo "TITLE=Test Results (${{matrix.configuration}}) for PR #${{needs.run-tests.outputs.pr}} (${{github.run_number}})" >> $GITHUB_ENV
+             echo "TITLE=Test Results (${{matrix.configuration}}) for PR #${{needs.run-tests.outputs.pr}}" >> $GITHUB_ENV
              echo "META=(${{matrix.configuration}})-#${{needs.run-tests.outputs.pr}}(${{github.run_number}}).trx" >> $GITHUB_ENV
            fi
 
@@ -141,6 +141,7 @@ jobs:
         with:
           check_name: "${{env.TITLE}}"
           files: "${{env.ResultsDirectory}}/**/*${{env.META}}"
+          ignore_runs: true
 
       - name: Parse Test Results
         id: parse_test
