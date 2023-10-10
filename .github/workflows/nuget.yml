@@ -72,7 +72,7 @@ jobs:
         echo ${{github.ref}}
   
   deploy:
-    if: ${{ startsWith(github.ref, 'refs/head/release') }}
+    if: ${{ startsWith(github.ref, 'refs/heads/release') }}
     needs: validate-nuget
 
     runs-on: ubuntu-latest
