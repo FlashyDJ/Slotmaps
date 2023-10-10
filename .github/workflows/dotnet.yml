@@ -135,8 +135,8 @@ jobs:
         shell: pwsh
         run: |
           if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
-            $TITLE = "Test Results (${{matrix.configuration}}) for PR #${{needs.run_tests.outputs.pr}}"
-            $META = "(${{matrix.configuration}})-#${{needs.run_tests.outputs.pr}}.trx"
+            $TITLE = "Test Results (${{matrix.configuration}}) for PR #${{needs.run-tests.outputs.pr}}"
+            $META = "(${{matrix.configuration}})-#${{needs.run-tests.outputs.pr}}.trx"
 
             echo "TITLE=$TITLE" >> $env:GITHUB_ENV
             echo "META=$META" >> $env:GITHUB_ENV
