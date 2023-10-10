@@ -70,11 +70,11 @@ jobs:
         uses: kkak10//pr-number-action@v1.3
 
       - name: Set Test File Meta
+        shell: pwsh
         run: |
-           if ${{github.event_name == 'pull_request'}}
-           then
-             echo "META=(${{matrix.configuration}})-#${{steps.pr_number.outputs.pr}}.trx" >> $GITHUB_ENV
-           fi
+          if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
+            echo "META=($($env:matrix_configuration))-#$($env:needs_run-tests_outputs_pr).trx" >> $env:GITHUB_ENV
+          }
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
@@ -130,12 +130,12 @@ jobs:
 
       - name: Set Test Title
         id: test_title
+        shell: pwsh
         run: |
-           if ${{github.event_name == 'pull_request'}}
-           then
-             echo "TITLE=Test Results (${{matrix.configuration}}) for PR #${{needs.run-tests.outputs.pr}}" >> $GITHUB_ENV
-             echo "META=(${{matrix.configuration}})-#${{needs.run-tests.outputs.pr}}.trx" >> $GITHUB_ENV
-           fi
+          if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
+            echo "TITLE=Test Results ($($env:matrix_configuration)) for PR #$($env:needs_run-tests_outputs_pr)" >> $env:GITHUB_ENV
+            echo "META=($($env:matrix_configuration))-#$($env:needs_run-tests_outputs_pr).trx" >> $env:GITHUB_ENV
+          }
 
       - name: Publish Test Results (${{matrix.configuration}})
         id: test-results
@@ -163,10 +163,11 @@ jobs:
             }
           }
 
-          echo "CONCLUSION='$CONCLUSION'" >> $GITHUB_ENV
-          echo "BADGE_COLOR='$BADGE_COLOR'" >> $GITHUB_ENV
-          echo "PASS_TESTS='$PASS_TESTS'" >> $GITHUB_ENV
-          echo "TOTAL_TESTS='$TOTAL_TESTS'"  >> $GITHUB_ENV
+          echo "CONCLUSION=$CONCLUSION" >> $env:GITHUB_ENV
+          echo "BADGE_COLOR=$BADGE_COLOR" >> $env:GITHUB_ENV
+          echo "PASS_TESTS=$PASS_TESTS" >> $env:GITHUB_ENV
+          echo "TOTAL_TESTS=$TOTAL_TESTS" >> $env:GITHUB_ENV
+
           echo "$CONCLUSION ($BADGE_COLOR) - $PASS_TESTS / $TOTAL_TESTS"
 
       - name: Create Test Badge
