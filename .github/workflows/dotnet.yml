@@ -73,7 +73,9 @@ jobs:
         shell: pwsh
         run: |
           if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
-            echo "META=($env:matrix_configuration)-#${{steps.pr_number.outputs.pr}}.trx" >> $env:GITHUB_ENV
+            $META = "(${{matrix.configuration}})-#${{steps.pr_number.outputs.pr}}.trx"
+            echo "META=$META" >> $env:GITHUB_ENV
+            echo $META
           }
 
       - name: Setup .NET
@@ -133,8 +135,13 @@ jobs:
         shell: pwsh
         run: |
           if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
-            echo "TITLE=Test Results ($env:matrix_configuration) for PR #${{needs.run_tests.outputs.pr}}" >> $env:GITHUB_ENV
-            echo "META=($env:matrix_configuration)-#${{needs.run_tests.outputs.pr}}.trx" >> $env:GITHUB_ENV
+            $TITLE = "Test Results (${{matrix.configuration}}) for PR #${{needs.run_tests.outputs.pr}}"
+            $META = "(${{matrix.configuration}})-#${{needs.run_tests.outputs.pr}}.trx"
+
+            echo "TITLE=$TITLE" >> $env:GITHUB_ENV
+            echo "META=$META" >> $env:GITHUB_ENV
+            echo $TITLE
+            echo $META
           }
 
       - name: Publish Test Results (${{matrix.configuration}})
@@ -167,7 +174,6 @@ jobs:
           echo "BADGE_COLOR=$BADGE_COLOR" >> $env:GITHUB_ENV
           echo "PASS_TESTS=$PASS_TESTS" >> $env:GITHUB_ENV
           echo "TOTAL_TESTS=$TOTAL_TESTS" >> $env:GITHUB_ENV
-
           echo "$CONCLUSION ($BADGE_COLOR) - $PASS_TESTS / $TOTAL_TESTS"
 
       - name: Create Test Badge
