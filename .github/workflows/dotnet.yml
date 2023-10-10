@@ -115,8 +115,6 @@ jobs:
     env:
       TITLE: "Test Results (${{matrix.configuration}}) (${{github.run_number}})"
       META: "(${{matrix.configuration}})-(${{github.run_number}}).trx"
-      PASS_TESTS: "0"
-      TOTAL_TESTS: "0"
 
     if: always()
 
@@ -161,10 +159,10 @@ jobs:
             }
           }
 
-          echo "CONCLUSION=$CONCLUSION" >> $GITHUB_ENV
-          echo "BADGE_COLOR=$BADGE_COLOR" >> $GITHUB_ENV
-          echo "PASS_TESTS=$PASS_TESTS" >> $GITHUB_ENV
-          echo "TOTAL_TESTS=$TOTAL_TESTS"  >> $GITHUB_ENV
+          echo "CONCLUSION=$CONCLUSION" >> $GITHUB_OUTPUTS
+          echo "BADGE_COLOR=$BADGE_COLOR" >> $GITHUB_OUTPUTS
+          echo "PASS_TESTS=$PASS_TESTS" >> $GITHUB_OUTPUTS
+          echo "TOTAL_TESTS=$TOTAL_TESTS"  >> $GITHUB_OUTPUTS
           echo "$CONCLUSION ($BADGE_COLOR) - $PASS_TESTS / $TOTAL_TESTS"
 
       - name: Create Test Badge
@@ -177,7 +175,7 @@ jobs:
           auth: ${{secrets.GIST_TOKEN}}
           gistID: 4f6ab220575cb9ef573ec7b05d0cc8b4
           filename: test(${{matrix.configuration}}).json
-          label: "Test (${{matrix.configuration}}): ${{env.PASS_TESTS}} / ${{env.TOTAL_TESTS}}"
-          message: "${env.CONCLUSION}}"
-          color: "${{env.BADGE_COLOR}}"
+          label: "Test (${{matrix.configuration}}): ${{steps.parse_test.outputs.PASS_TESTS}} / ${{steps.parse_test.outputs.TOTAL_TESTS}}"
+          message: "${steps.parse_test.outputs.CONCLUSION}}"
+          color: "${{steps.parse_test.outputs.BADGE_COLOR}}"
 
