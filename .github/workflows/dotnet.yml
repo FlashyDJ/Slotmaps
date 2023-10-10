@@ -118,7 +118,7 @@ jobs:
       TITLE: "Test Results (${{matrix.configuration}}) (${{github.run_number}})"
       META: "(${{matrix.configuration}})-(${{github.run_number}}).trx"
       CONCLUSION: "Neutral"
-      BADGE_COLOR: "696969"
+      BADGE_COLOR: "lightgray"
       PASS_TESTS: "0"
       TOTAL_TESTS: "0"
 
@@ -157,16 +157,18 @@ jobs:
         shell: pwsh
         run: |
           $CONCLUSION = (Get-Culture).TextInfo.ToTitleCase("${{fromJSON(steps.test-results.outputs.json).conclusion}}")
-          $BADGE_COLOR = "696969"
+          $BADGE_COLOR = "lightgray"
           $PASS_TESTS = "${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests_succ}}"
           $TOTAL_TESTS = ${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests}}
 
           switch ($CONCLUSION) {
             "Success" {
-              $BADGE_COLOR = "31c653"
+              $CONCLUSION = "passing"
+              $BADGE_COLOR = "brightgreen"
             }
             "Failure" {
-              $BADGE_COLOR = "800000"
+              $CONCLUSION = "failed"
+              $BADGE_COLOR = "red"
             }
           }
 
@@ -186,7 +188,7 @@ jobs:
           auth: ${{secrets.GIST_TOKEN}}
           gistID: 4f6ab220575cb9ef573ec7b05d0cc8b4
           filename: test(${{matrix.configuration}}).json
-          label: "Test (${{matrix.configuration}}): ${{env.PASS_TESTS}} / ${{env.TOTAL_TESTS}}"
+          label: "🧪 Test (${{matrix.configuration}}): ${{env.PASS_TESTS}} / ${{env.TOTAL_TESTS}}"
           message: "${{env.CONCLUSION}}"
           color: "${{env.BADGE_COLOR}}"
 
