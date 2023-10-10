@@ -1,19 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <LangVersion>preview</LangVersion>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <RootNamespace>FlashyDJ.Slotmaps</RootNamespace>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <Title>FlashyDJ.Slotmaps</Title>
-    <Authors>FlashyDJ</Authors>
-    <RepositoryUrl>github.com/FlashyDJ/Slotmaps</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
+    <AssemblyName>FlashyDJ.Slotmaps</AssemblyName>
   </PropertyGroup>
 
 </Project>

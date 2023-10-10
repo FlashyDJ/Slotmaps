@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FlashyDJ.Slotmaps;
@@ -10,7 +7,7 @@ namespace FlashyDJ.Slotmaps;
 [DebuggerDisplay("Count = {Count}")]
 public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>>
 {
-    private readonly Dictionary<int, Slot<TValue>> _slots;
+    private readonly Dictionary<int, Slot> _slots;
     private SlotKeyCollection? _keys;
     private SlotValueCollection? _values;
 
@@ -296,14 +293,14 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         return false;
     }
 
-    private Dictionary<int, Slot<TValue>>.Enumerator BackingEnumerator() =>
+    private Dictionary<int, Slot>.Enumerator BackingEnumerator() =>
         _slots.GetEnumerator();
 
     /// <include file='docs.xml' path='docs/Enumerator/*'/>
     public struct Enumerator : IEnumerator<KeyValuePair<SlotKey, TValue>>, IEnumerator
     {
         private readonly SparseSecondaryMap<TValue> _sparseMap;
-        private readonly IEnumerator<KeyValuePair<int, Slot<TValue>>> _dictEnumerator;
+        private readonly IEnumerator<KeyValuePair<int, Slot>> _dictEnumerator;
 
         internal Enumerator(SparseSecondaryMap<TValue> sparseMap)
         {

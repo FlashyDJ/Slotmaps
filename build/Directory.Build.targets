@@ -1,0 +1,16 @@
+<Project>
+
+  <Target Name="ReadVersionFromFile" BeforeTargets="BeforeBuild">
+    <ReadLinesFromFile File="$(MSBuildThisFileDirectory)\VERSION" >
+      <Output TaskParameter="Lines" PropertyName="SlotmapsVersion"/>
+    </ReadLinesFromFile>
+
+    <PropertyGroup>
+      <Version>$(SlotmapsVersion)</Version>
+      <PackageVersion>$(SlotmapsVersion)</PackageVersion>
+    </PropertyGroup>
+
+    <Message Importance="high" Text="Slotmaps Version: $(Version)"/>
+  </Target>
+
+</Project>

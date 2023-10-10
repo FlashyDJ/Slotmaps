@@ -4,7 +4,7 @@ namespace FlashyDJ.Slotmaps;
 public partial class SparseSecondaryMap<TValue>
 {
     [DebuggerDisplay("{ToString()}")]
-    internal struct Slot<TValue>(TValue value, int version)
+    internal struct Slot(TValue value, int version)
     {
         private TValue? _value = value;
 

@@ -177,7 +177,7 @@
     </summary>
     <remarks>
       The <c>Clear</c> method removes all elements from the <see cref="SlotMap{TValue}"/>, resetting it to an empty state.
-      It also resets the internal counters and clears the values stored in the <see cref="Slot{T}"/>, but it does not deallocate memory.
+      It also resets the internal counters and clears the values stored in the <see cref="Slot"/>, but it does not deallocate memory.
       Use this method to clear the <see cref="SlotMap{TValue}"/> when you want to reuse it without resizing its internal storage.
     </remarks>
   </Clear>

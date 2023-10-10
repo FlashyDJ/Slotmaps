@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Diagnostics;
-
-namespace FlashyDJ.Slotmaps;
+﻿namespace FlashyDJ.Slotmaps;
 public partial class SecondaryMap<TValue>
 {
     /// <include file='docs.xml' path='docs/SlotKeyCollection/*'/>

@@ -1,9 +1,10 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
 name: .NET
 
 on:
   push:
-    branches:
-    - main
+    branches: [main]
     paths:
     - src/**
     - tests/**
@@ -15,6 +16,13 @@ on:
     - .github/workflows/dotnet.yml
   workflow_dispatch:
 
+env:
+  dotnet_version: 8.x
+  ResultsDirectory: ${{github.workspace}}/results
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: false
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,18 +31,14 @@ jobs:
       matrix:
         configuration: [Debug, Release]
 
-    env:
-      DOTNET_NOLOGO: true
-      DOTNET_CLI_TELEMETRY_OUTPUT: false
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup .NET 8
+      - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.x
+          dotnet-version: ${{env.dotnet_version}}
 
       - name: Install dependencies
         run: dotnet restore
@@ -43,31 +47,148 @@ jobs:
         run: dotnet build src/Slotmaps/Slotmaps.csproj -c ${{matrix.configuration}} --no-restore
 
   run-tests:
-    needs: [build]
+    name: Run XUnit Tests
+    needs: build
     runs-on: ubuntu-latest
+    outputs:
+      pr: ${{steps.pr_number.outputs.pr}}
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
 
     env:
-      DOTNET_NOLOGO: true
-      DOTNET_CLI_TELEMETRY_OUTPUT: false
+      META: "(${{matrix.configuration}})-(${{github.run_number}}).trx"
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup .NET 8
+      - name: Get PR Number
+        id: pr_number
+        if: ${{github.event_name == 'pull_request'}}
+        uses: kkak10//pr-number-action@v1.3
+
+      - name: Set Test File Meta
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
+            $META = "(${{matrix.configuration}})-#${{steps.pr_number.outputs.pr}}.trx"
+            echo "META=$META" >> $env:GITHUB_ENV
+            echo $META
+          }
+
+      - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.x
+          dotnet-version: ${{env.dotnet_version}}
 
-      - name: XUnit Test for Slotmaps.Tests
-        uses: zyborg/dotnet-tests-report@v1
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Test Slotmaps.Tests
+        run: >
+          dotnet test tests/Slotmaps.Tests/Slotmaps.Tests.csproj 
+          -c ${{matrix.configuration}} 
+          -l "trx;logfilename=Slotmaps.Tests${{env.META}}" 
+          --results-directory ${{env.ResultsDirectory}} 
+          --no-restore
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
         with:
-          project_path: ./tests/Slotmaps.Tests
-          msbuild_configuration: Release
-          report_name: Slotmaps.Tests
-          report_title: Slotmaps Test
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          gist_name: slotmaps_tests.md
-          gist_badge_label: 'Tests: %Counters_passed%/%Counters_total%'
-          gist_token: ${{ secrets.GIST_TOKEN }}
-          set_check_status_from_test_outcome: true
+          name: Test Results (${{matrix.configuration}})
+          retention-days: 2
+          path: ${{env.ResultsDirectory}} 
+
+  publish-results:
+    needs: run-tests
+    runs-on: ubuntu-latest
+
+    permissions:
+      checks: write
+      pull-requests: write
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    env:
+      TITLE: "Test Results (${{matrix.configuration}}) (${{github.run_number}})"
+      META: "(${{matrix.configuration}})-(${{github.run_number}}).trx"
+      CONCLUSION: "Neutral"
+      BADGE_COLOR: "9f9f9f"
+      PASS_TESTS: "0"
+      TOTAL_TESTS: "0"
+
+    if: always()
+
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: ${{env.ResultsDirectory}}
+
+      - name: Set Test Title
+        id: test_title
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
+            $TITLE = "Test Results (${{matrix.configuration}}) for PR #${{needs.run-tests.outputs.pr}}"
+            $META = "(${{matrix.configuration}})-#${{needs.run-tests.outputs.pr}}.trx"
+
+            echo "TITLE=$TITLE" >> $env:GITHUB_ENV
+            echo "META=$META" >> $env:GITHUB_ENV
+            echo $TITLE
+            echo $META
+          }
+
+      - name: Publish Test Results (${{matrix.configuration}})
+        id: test-results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          commit: ${{env.GITHUB_SHA}}
+          check_name: "${{env.TITLE}}"
+          files: "${{env.ResultsDirectory}}/**/*${{env.META}}"
+
+      - name: Parse Test Results
+        id: parse_test
+        shell: pwsh
+        run: |
+          $CONCLUSION = (Get-Culture).TextInfo.ToTitleCase("${{fromJSON(steps.test-results.outputs.json).conclusion}}")
+          $BADGE_COLOR = "9f9f9f"
+          $PASS_TESTS = "${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests_succ}}"
+          $TOTAL_TESTS = ${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests}}
+
+          switch ($CONCLUSION) {
+            "Success" {
+              $CONCLUSION = "passing"
+              $BADGE_COLOR = "4c1"
+            }
+            "Failure" {
+              $CONCLUSION = "failed"
+              $BADGE_COLOR = "e05d44"
+            }
+          }
+
+          echo "CONCLUSION=$CONCLUSION" >> $env:GITHUB_ENV
+          echo "BADGE_COLOR=$BADGE_COLOR" >> $env:GITHUB_ENV
+          echo "PASS_TESTS=$PASS_TESTS" >> $env:GITHUB_ENV
+          echo "TOTAL_TESTS=$TOTAL_TESTS" >> $env:GITHUB_ENV
+          echo "$CONCLUSION ($BADGE_COLOR) - $PASS_TESTS / $TOTAL_TESTS"
+
+      - name: Create Test Badge
+        if: >
+          github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main' ||
+          github.event_name != 'workflow_run' && github.ref == 'refs/heads/main'
+        uses: schneegans/dynamic-badges-action@v1.6.0
+        with:
+          auth: ${{secrets.GIST_TOKEN}}
+          gistID: 8fbc591640efde578c18c558426ac23e
+          filename: test(${{matrix.configuration}}).json
+          label: "🧪 Test (${{matrix.configuration}}): ${{env.PASS_TESTS}} / ${{env.TOTAL_TESTS}}"
+          message: "${{env.CONCLUSION}}"
+          color: "${{env.BADGE_COLOR}}"
+          forceUpdate: true
+

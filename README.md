@@ -1,33 +1,44 @@
 <h1 align="center"> Slotmaps </h1>
-<p align="center">
-    A C# implementation of the slotmaps data structure.
-</p>
 
 <p align="center">
-    <a href="https://github.com/FlashyDJ/Slotmaps/actions/workflows/dotnet.yml">
-        <img src="https://github.com/FlashyDJ/Slotmaps/actions/workflows/dotnet.yml/badge.svg"/>
-    </a>
-    <a href="https://gist.github.com/FlashyDJ/384477e90d18d0d402a7ab54b5d1f121">
-        <img src="https://gist.github.com/FlashyDJ/384477e90d18d0d402a7ab54b5d1f121/raw/a0e1ddc25529b99f496be2bea14669f2a30f918a/slotmaps_tests.md_badge.svg"/>
-    </a>
-    <a href="https://github.com/FlashyDJ/Slotmaps/actions/workflows/docs.yml">
-        <img src="https://github.com/FlashyDJ/Slotmaps/actions/workflows/docs.yml/badge.svg?branch=main"/>
-    </a>
+    A <span style="font-weight:bold">C# .NET</span> library designed for slot-based data structures, enabling organized and quick item access using unique and persistent keys.
 </p>
 
-## Table of Contents
+<div align="center">
+    <p align="center">
+        <a href="https://dotnet.microsoft.com/en-us/languages/csharp">
+            <img src="https://img.shields.io/badge/%E2%A0%80CSharp%E2%A0%80-512BD4?style=for-the-badge&logo=c-sharp&logoColor=white&logoWidth=20" hspace="5" height="35"/>
+        </a>
+        <a href="https://dotnet.microsoft.com/">
+            <img src="https://img.shields.io/badge/%E2%A0%80dotnet%E2%A0%80-512BD4?style=for-the-badge&logo=dotnet&logoColor=white&logoWidth=20" hspace="5" height="35"/>
+        </a>
+        <a href="https://github.com/FlashyDJ/Slotmaps/blob/main/LICENSE">
+            <img src="https://img.shields.io/badge/MIT-License-a31f34?style=for-the-badge&labelColor=a31f34&color=545759" hspace="5" height="35"/>
+        </a>
+    </p>
+    <a href="https://www.nuget.org/packages/FlashyDJ.Slotmaps/#versions-body-tab">
+        <img src="https://img.shields.io/badge/NuGet-004880?style=for-the-badge&logo=nuget" hspace="5"/>
+    </a>
+    <a href="https://flashydj.github.io/Slotmaps/">
+        <img src="https://img.shields.io/website?up_message=Live&down_message=Down&url=https%3A%2F%2Fflashydj.github.io%2FSlotmaps%2F&style=for-the-badge&logo=github&label=Documentation" hspace="5"/>
+    </a>
+</div>
 
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Getting Started](#getting-started)
-4. [Basic Usage](#basic-usage)
+## Table of Contents 📑
+
+1. [Introduction](#introduction-✨)
+2. [Features](#features-🎯)
+3. [Getting Started](#getting-started-🚀)
+4. [Basic Usage](#basic-usage-⚡)
     - [SlotMap](#slotmap)
     - [Secondary Maps](#secondary-maps)
-5. [Documentation](#documentation)
-6. [Contributing](#contributing)
-7. [License](#license)
+5. [Documentation](#documentation-📖-documentation-site-status)
+6. [Contributing](#contributing-👋)
+7. [License](#license-📋-mit---license)
+8. [Special Thanks](#special-thanks-💖)
+9. [Status](#status-🛠️)
 
-## Introduction
+## Introduction ✨
 
 This library provides an implementation of slot-based data structures that allows you to store values in collections that assign them unique keys.
 You can use these keys to access, modify or remove the values later.
@@ -35,10 +46,7 @@ You can use these keys to access, modify or remove the values later.
 The collections are very efficient, as they can perform these operations in constant time with low overhead.
 These are especially useful for scenarios where you need to keep track of objects that do not have a clear owner, such as game entities or graph nodes.
 
-This C# library is inspired by the Rust crate [slotmap](https://github.com/orlp/slotmap/), created by [orlp](https://github.com/orlp).
-This adapts the ideas and core concepts of the Rust implementation.
-
-## Features
+## Features 🎯
 This library offers the following features:
 
 - Efficient storage and retrieval of objects with constant-time complexity.
@@ -47,7 +55,7 @@ This library offers the following features:
 - Two types of secondary collections to associate additional data with collection keys: ``SecondaryMap`` and ``SparseSecondaryMap``.
 - Comprehensive unit tests to ensure correctness.
 
-## Getting Started
+## Getting Started 🚀
 
 To use this library, you need to have a C# project that targets **.NET 8** or higher.
 You can install the library from **NuGet** using the following command:
@@ -56,11 +64,9 @@ You can install the library from **NuGet** using the following command:
 dotnet add package FlashyDJ.Slotmaps
 ```
 
-> The Nuget Package hasn't been uploaded yet.
-
 Alternatively, you can download the source code from this repository and build it yourself.
 
-## Basic Usage
+## Basic Usage ⚡
 
 To use the collections, you need to import the ``FlashyDJ.Slotmaps`` namespace in your code:
 
@@ -97,6 +103,8 @@ slotMap.Remove(key1);
 Console.WriteLine(slotMap.ContainsKey(key1)); // Prints "False"
 ```
 
+---
+
 ### Secondary Maps
 
 You can also create secondary collections that can map the keys returned by a collection to other values, to attach extra data to objects stored in collections:
@@ -119,15 +127,38 @@ Console.WriteLine(secondaryMap[key1]); // Prints "42"
 Console.WriteLine(secondaryMap[key2]); // Print "56"
 ```
 
-There is only one type of collection available at the moment: ``SlotMap``. It provides fast and consistent performance, but may leave gaps when iterating over the values.
-More types of collections will be added in the future.
+There is only one primary type of collection available at the moment: ``SlotMap``. More types of collections will be added in the future.
 
-## Documentation
+## Documentation 📖 ![Documentation Site](https://img.shields.io/website?up_message=View&down_message=Down&url=https%3A%2F%2Fflashydj.github.io%2FSlotmaps%2F&style=for-the-badge&logo=github&label=Documentation&color=blue)
 
-For more details and examples, please refer to the [documentation](https://FlashyDJ.github.io/Slotmaps/).
+For more details and examples, please refer to the [documentation](https://FlashyDJ.github.io/Slotmaps/). The API References can also be found there.
 
-## Contributing
+## Contributing 👋
 This library is open for contributions from anyone who is interested. If you have any ideas, suggestions or bug reports, please open an issue or a pull request on this repository.
 
-## License
-This library is licensed under the MIT license. See the [LICENSE](https://github.com/FlashyDJ/Slotmaps/blob/main/LICENSE.txt) file for more details.
+## License 📋 ![MIT - License](https://img.shields.io/github/license/FlashyDJ/Slotmaps?style=for-the-badge&color=blue) 
+
+This library is licensed under the MIT license. See the [LICENSE](https://github.com/FlashyDJ/Slotmaps/blob/main/LICENSE) file for more details.
+
+## Acknowledgement 💎
+
+This C# library is inspired by the Rust crate [slotmap](https://github.com/orlp/slotmap/), created by [orlp](https://github.com/orlp). This adapts the ideas and core concepts of the Rust implementation.
+
+## Status 🛠️
+
+### Builds
+|Branch|Debug|Release|
+|:----:|:---:|:-----:|
+**main**|![Main Debug Builds](https://img.shields.io/github/actions/workflow/status/FlashyDJ/Slotmaps/dotnet.yml?logo=github&label=%F0%9F%8F%97%EF%B8%8F%20Build%20(Debug)&labelColor=2b3137)|![Main Release Builds](https://img.shields.io/github/actions/workflow/status/FlashyDJ/Slotmaps/dotnet.yml?logo=github&label=%F0%9F%8F%97%EF%B8%8F%20Build%20(Release)&labelColor=2b3137)
+
+### Unit Tests
+
+|Branch|Debug|Release|
+|:----:|:---:|:-----:|
+**main**|![Main Debug Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FFlashyDJ%2F8fbc591640efde578c18c558426ac23e%2Fraw%2Ftest(Debug).json&logo=github&logoColor=white&labelColor=2b3137) | ![Main Release Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FFlashyDJ%2F8fbc591640efde578c18c558426ac23e%2Fraw%2Ftest(Release).json&logo=github&logoColor=white&labelColor=2b3137) |
+
+### NuGet Builds
+
+|Branch|Debug|Release|
+|:----:|:---:|:-----:|
+**main**|![Main NuGet Debug](https://img.shields.io/github/actions/workflow/status/FlashyDJ/Slotmaps/nuget.yml?logo=github&label=%F0%9F%93%A6%20Build%20(Debug)&labelColor=2b3137)|![Main NuGet Release](https://img.shields.io/github/actions/workflow/status/FlashyDJ/Slotmaps/nuget.yml?logo=github&label=%F0%9F%93%A6%20Build%20(Release)&labelColor=2b3137)|
