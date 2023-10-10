@@ -96,14 +96,14 @@ jobs:
       - name: Get Version
         id: get_version
         run: |
-          $file_text = Get-Content "build/VERSION"
+          $VERSION = Get-Content "build/VERSION"
           $IS_PRERELEASE = "false"
           if ($file_text -match "alpha|beta|rc|preview") {
-            $variable = $true
+            $IS_PRERELEASE = "true"
           }
 
-          echo "VERSION=$file_text" >> "$GITHUB_OUTPUT"
-          echo "IS_PRERELEASE=$IS_PRERELEASE" >> "$GITHUB_OUTPUT"
+          echo "VERSION=$VERSION" >> $env:GITHUB_OUTPUT
+          echo "IS_PRERELEASE=$IS_PRERELEASE" >> $env:GITHUB_OUTPUT
   
       - name: Build Changelog
         id: github_release
