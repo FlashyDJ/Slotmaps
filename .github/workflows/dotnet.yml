@@ -25,7 +25,6 @@ env:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
 
     strategy:
@@ -51,14 +50,33 @@ jobs:
     name: Run XUnit Tests
     needs: build
     runs-on: ubuntu-latest
+    outputs:
+      pr: ${{steps.pr_number.outputs.pr}}
 
     strategy:
       matrix:
         configuration: [Debug, Release]
+
+    env:
+      META: "(${{matrix.configuration}})-(${{github.run_number}}).trx"
     
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Get PR Number
+        id: pr_number
+        if: ${{github.event_name == 'pull_request'}}
+        uses: kkak10//pr-number-action@v1.3
+
+      - name: Set Test File Meta
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
+            $META = "(${{matrix.configuration}})-#${{steps.pr_number.outputs.pr}}.trx"
+            echo "META=$META" >> $env:GITHUB_ENV
+            echo $META
+          }
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
@@ -72,7 +90,7 @@ jobs:
         run: >
           dotnet test tests/Slotmaps.Tests/Slotmaps.Tests.csproj 
           -c ${{matrix.configuration}} 
-          -l "trx;logfilename=Slotmaps.Tests(${{matrix.configuration}}).trx" 
+          -l "trx;logfilename=Slotmaps.Tests${{env.META}}" 
           --results-directory ${{env.ResultsDirectory}} 
           --no-restore
 
@@ -85,7 +103,6 @@ jobs:
           path: ${{env.ResultsDirectory}} 
 
   publish-results:
-    name: Publish Test Results
     needs: run-tests
     runs-on: ubuntu-latest
 
@@ -98,6 +115,8 @@ jobs:
         configuration: [Debug, Release]
 
     env:
+      TITLE: "Test Results (${{matrix.configuration}}) (${{github.run_number}})"
+      META: "(${{matrix.configuration}})-(${{github.run_number}}).trx"
       CONCLUSION: "Neutral"
       BADGE_COLOR: "9f9f9f"
       PASS_TESTS: "0"
@@ -111,13 +130,27 @@ jobs:
         with:
           path: ${{env.ResultsDirectory}}
 
+      - name: Set Test Title
+        id: test_title
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
+            $TITLE = "Test Results (${{matrix.configuration}}) for PR #${{needs.run-tests.outputs.pr}}"
+            $META = "(${{matrix.configuration}})-#${{needs.run-tests.outputs.pr}}.trx"
+
+            echo "TITLE=$TITLE" >> $env:GITHUB_ENV
+            echo "META=$META" >> $env:GITHUB_ENV
+            echo $TITLE
+            echo $META
+          }
+
       - name: Publish Test Results (${{matrix.configuration}})
         id: test-results
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
-          check_name: "Test Results (${{matrix.configuration}})"
           commit: ${{env.GITHUB_SHA}}
-          files: "${{env.ResultsDirectory}}/**/*(${{matrix.configuration}}).trx"
+          check_name: "${{env.TITLE}}"
+          files: "${{env.ResultsDirectory}}/**/*${{env.META}}"
 
       - name: Parse Test Results
         id: parse_test
@@ -153,8 +186,9 @@ jobs:
         with:
           auth: ${{secrets.GIST_TOKEN}}
           gistID: 8fbc591640efde578c18c558426ac23e
-          filename: "test(${{matrix.configuration}}).json"
+          filename: test(${{matrix.configuration}}).json
           label: "🧪 Test (${{matrix.configuration}}): ${{env.PASS_TESTS}} / ${{env.TOTAL_TESTS}}"
           message: "${{env.CONCLUSION}}"
           color: "${{env.BADGE_COLOR}}"
+          forceUpdate: true
 
