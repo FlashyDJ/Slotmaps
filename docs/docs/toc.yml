@@ -1,10 +1,13 @@
+- name: Getting Started
 - name: Introduction
   href: intro.md
+- name: Basic Usage
+  href: ../index.md
+
 - name: Guides
+- name: SlotMap
   items:
-  - name: SlotMap
-    items:
-    - name: Basic SlotMap Usage  
-      href: basicslotmapusage.md
-    - name: SlotMap vs Other Collections
-      href: slotmapvsother.md
+  - name: Basic SlotMap Usage  
+    href: basicslotmapusage.md
+  - name: SlotMap vs Other Collections
+    href: slotmapvsother.md
