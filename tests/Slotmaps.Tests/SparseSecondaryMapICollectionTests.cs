@@ -21,7 +21,7 @@ public class SparseSecondaryMapICollectionTests
         public void InvalidKey_ThrowsKeyNotFoundException()
         {
             var sparseMap = new SparseSecondaryMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
             var kvp = new KeyValuePair<SlotKey, int>(invalidKey, 42);
 
             var ex = Assert.Throws<KeyNotFoundException>(() => (sparseMap as ISlotCollection).Add(kvp));
@@ -73,7 +73,7 @@ public class SparseSecondaryMapICollectionTests
         public void InvalidKey_ReturnsFalse()
         {
             var sparseMap = new SparseSecondaryMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
             var kvp = new KeyValuePair<SlotKey, int>(invalidKey, 42);
 
             var result = (sparseMap as ISlotCollection).Contains(kvp);
@@ -379,7 +379,7 @@ public class SparseSecondaryMapICollectionTests
         public void InvalidKey_ThrowsKeyNotFoundException()
         {
             var sparseMap = new SparseSecondaryMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
             var kvp = new KeyValuePair<SlotKey, int>(invalidKey, 42);
 
             var result = (sparseMap as ISlotCollection).Remove(kvp);

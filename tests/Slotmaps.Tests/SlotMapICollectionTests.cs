@@ -21,7 +21,7 @@ public class SlotMapICollectionTests
         public void InvalidKey_ThrowsKeyNotFoundException()
         {
             var slotMap = new SlotMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
             var kvp = new KeyValuePair<SlotKey, int>(invalidKey, 42);
 
             var ex = Assert.Throws<KeyNotFoundException>(() => (slotMap as ISlotCollection).Add(kvp));
@@ -87,7 +87,7 @@ public class SlotMapICollectionTests
         public void InvalidKey_ReturnsFalse()
         {
             var slotMap = new SlotMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
             var kvp = new KeyValuePair<SlotKey, int>(invalidKey, 42);
 
             var result = (slotMap as ISlotCollection).Contains(kvp);
@@ -350,7 +350,7 @@ public class SlotMapICollectionTests
         public void InvalidKey_ThrowsKeyNotFoundException()
         {
             var slotMap = new SlotMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
             var kvp = new KeyValuePair<SlotKey, int>(invalidKey, 42);
 
             var result = (slotMap as ISlotCollection).Remove(kvp);
