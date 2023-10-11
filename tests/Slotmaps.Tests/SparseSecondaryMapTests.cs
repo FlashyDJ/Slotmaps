@@ -296,7 +296,7 @@ public class SparseSecondaryMapTests
         public void InvalidKey_ThrowsKeyNotFoundException()
         {
             var sparseMap = new SparseSecondaryMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             Assert.Throws<KeyNotFoundException>(() => sparseMap.Get(invalidKey));
         }
@@ -351,7 +351,7 @@ public class SparseSecondaryMapTests
         public void Get_InvalidKey_ThrowsKeyNotFoundException()
         {
             var sparseMap = new SparseSecondaryMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             Assert.Throws<KeyNotFoundException>(() => sparseMap[invalidKey]);
         }
@@ -405,7 +405,7 @@ public class SparseSecondaryMapTests
         public void InvalidKey_ThrowsKeyNotFoundException()
         {
             var sparseMap = new SparseSecondaryMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             var ex = Assert.Throws<KeyNotFoundException>(() => sparseMap.Insert(invalidKey, 42));
             Assert.Equal("Invalid SlotKey", ex.Message);
@@ -487,7 +487,7 @@ public class SparseSecondaryMapTests
         public void InvalidKey_ThrowsKeyNotFoundException()
         {
             var sparseMap = new SparseSecondaryMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             Assert.Throws<KeyNotFoundException>(() => sparseMap.Remove(invalidKey));
         }
@@ -611,7 +611,7 @@ public class SparseSecondaryMapTests
         public void InvalidKey_ReturnsFalseAndDefault()
         {
             var sparseMap = new SparseSecondaryMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             bool result = sparseMap.TryGet(invalidKey, out var value);
 
@@ -680,7 +680,7 @@ public class SparseSecondaryMapTests
         public void InvalidKey_ReturnsFalseAndDefault()
         {
             var sparseMap = new SparseSecondaryMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             bool result = sparseMap.TryRemove(invalidKey, out var previousValue);
 
@@ -747,7 +747,7 @@ public class SparseSecondaryMapTests
         public void InvalidKey_ReturnsFalseAndDefaultPreviousValue()
         {
             var sparseMap = new SparseSecondaryMap<string>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             bool result = sparseMap.TryInsert(invalidKey, "Value1", out var previousValue);
 

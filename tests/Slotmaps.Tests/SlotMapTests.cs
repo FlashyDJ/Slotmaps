@@ -51,7 +51,7 @@ public class SlotMapTests
         public void InvalidSlotKey_ThrowsArgumentException()
         {
             var slotMap = new SlotMap<string>();
-            var key = SlotKey.Null;
+            var key = SlotKey.Null();
 
             Assert.Throws<KeyNotFoundException>(() => slotMap.Insert(key, "Value"));
         }
@@ -364,7 +364,7 @@ public class SlotMapTests
         public void InvalidKey_ThrowsKeyNotFoundException()
         {
             var slotMap = new SlotMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             Assert.Throws<KeyNotFoundException>(() => slotMap.Get(invalidKey));
         }
@@ -416,7 +416,7 @@ public class SlotMapTests
         public void Get_InvalidKey_ThrowsKeyNotFoundException()
         {
             var slotMap = new SlotMap<string>();
-            var key = new SlotKey(0, -1);
+            var key = new SlotKey(-1, 0);
 
             Assert.Throws<KeyNotFoundException>(() => slotMap[key]);
         }
@@ -506,7 +506,7 @@ public class SlotMapTests
         public void InvalidKey_ThrowsKeyNotFoundException()
         {
             var slotMap = new SlotMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(invalidKey));
         }
@@ -675,7 +675,7 @@ public class SlotMapTests
         public void InvalidKey_ReturnsFalseAndNullKey()
         {
             var slotMap = new SlotMap<string>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             bool result = slotMap.TryInsert(invalidKey, "Value1", out var newKey);
 
@@ -730,7 +730,7 @@ public class SlotMapTests
         public void InvalidKey_ReturnsFalseAndDefault()
         {
             var slotMap = new SlotMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             bool result = slotMap.TryGet(invalidKey, out var value);
 
@@ -796,7 +796,7 @@ public class SlotMapTests
         public void InvalidKey_ReturnsFalseAndDefault()
         {
             var slotMap = new SlotMap<int>();
-            var invalidKey = new SlotKey(0, -1);
+            var invalidKey = new SlotKey(-1, 0);
 
             bool result = slotMap.TryRemove(invalidKey, out var previousValue);
 
@@ -820,7 +820,7 @@ public class SlotMapTests
         public void OlderVersionKey_ReturnsFalseAndDefault()
         {
             var slotMap = new SlotMap<int>();
-            var key1 = slotMap.Add( 42);
+            var key1 = slotMap.Add(42);
             var key2 = key1 with { Version = 0 };
 
             bool result = slotMap.TryRemove(key2, out var previousValue);

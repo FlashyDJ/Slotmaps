@@ -75,7 +75,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
     {
         get
         {
-            if (key.IsInvalid && key.Version < 1)
+            if (key.IsNull && key.Version == 0)
                 throw new KeyNotFoundException("Invalid SlotKey");
 
             var exists = _slots.TryGetValue(key.Index, out var slot);
@@ -91,7 +91,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
     /// <include file='docs.xml' path='docs/ContainsKey/*'/>
     public bool ContainsKey(SlotKey key)
     {
-        if (key.IsInvalid && key.Version < 1)
+        if (key.IsNull && key.Version < 1)
             return false;
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
@@ -137,7 +137,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
     /// <include file='docs.xml' path='docs/Get/*'/>
     public TValue Get(SlotKey key)
     {
-        if (key.IsInvalid && key.Version < 1)
+        if (key.IsNull && key.Version == 0)
             throw new KeyNotFoundException("Invalid SlotKey");
 
         var exists = _slots.TryGetValue(key.Index, out var slot);
@@ -153,7 +153,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
     {
         ArgumentNullException.ThrowIfNull(value);
 
-        if (key.IsInvalid && key.Version < 1)
+        if (key.IsNull && key.Version == 0)
             throw new KeyNotFoundException("Invalid SlotKey");
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
@@ -182,7 +182,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
     /// <include file='docs.xml' path='docs/Remove/*'/>
     public TValue Remove(SlotKey key)
     {
-        if (key.IsInvalid && key.Version < 1)
+        if (key.IsNull && key.Version == 0)
             throw new KeyNotFoundException("Invalid SlotKey");
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key.Index);
@@ -224,7 +224,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
     {
         value = default;
 
-        if (key.IsInvalid && key.Version < 1)
+        if (key.IsNull && key.Version == 0)
             return false;
 
         var exists = _slots.TryGetValue(key.Index, out var slot);
@@ -242,7 +242,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
         ArgumentNullException.ThrowIfNull(value);
         previousValue = default;
 
-        if (key.IsInvalid && key.Version < 1)
+        if (key.IsNull && key.Version == 0)
             return false;
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
@@ -274,7 +274,7 @@ public partial class SparseSecondaryMap<TValue> : ICollection<KeyValuePair<SlotK
     {
         value = default;
 
-        if (key.IsInvalid && key.Version < 1)
+        if (key.IsNull && key.Version == 0)
             return false;
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key.Index);
