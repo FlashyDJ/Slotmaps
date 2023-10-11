@@ -25,6 +25,7 @@ env:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
 
     strategy:
@@ -103,6 +104,7 @@ jobs:
           path: ${{env.ResultsDirectory}} 
 
   publish-results:
+    name: Publish Results
     needs: run-tests
     runs-on: ubuntu-latest
 
@@ -149,7 +151,8 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
           commit: ${{env.GITHUB_SHA}}
-          check_name: "${{env.TITLE}}"
+          check_name: "Test Results (${{matrix.configuration}})"
+          comment_title: ${{env.TITLE}}
           files: "${{env.ResultsDirectory}}/**/*${{env.META}}"
 
       - name: Parse Test Results
@@ -182,7 +185,7 @@ jobs:
         if: >
           ${{github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main' ||
           github.event_name != 'workflow_run' && github.ref == 'refs/heads/main'}}
-        uses: schneegans/dynamic-badges-action@v1.6.0
+        uses: schneegans/dynamic-badges-action@master
         with:
           auth: ${{secrets.GIST_TOKEN}}
           gistID: 8fbc591640efde578c18c558426ac23e
@@ -190,5 +193,4 @@ jobs:
           label: "🧪 Test (${{matrix.configuration}}): ${{env.PASS_TESTS}} / ${{env.TOTAL_TESTS}}"
           message: "${{env.CONCLUSION}}"
           color: "${{env.BADGE_COLOR}}"
-          forceUpdate: true
 
