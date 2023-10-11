@@ -4,17 +4,17 @@ Welcome to the documentation for the Slotmaps library, a C# .NET library designe
 
 This library includes features like `SlotMap`, `SecondaryMap`, and `SparseSecondaryMap`. This documentation will guide you through using this library effectively.
 
-## Table of Contents
+## Table of Contents 📑
 
-1. [Installation](#installation)
-2. [Getting Started](#getting-started)
+1. [Installation](#installation-)
+2. [Getting Started](#getting-started-)
     - [Basic Usage](#basic-usage)
     - [Secondary Maps](#secondary-maps)
-3. [Contributing](#contributing)
-4. [License](#license-📋-mit---license)
-5. [Acknowledgement](#acknowledgement-💎)
+3. [Contributing](#contributing-)
+4. [License](#license--mit---license)
+5. [Acknowledgement](#acknowledgement-)
 
-## Installation
+## Installation ⚙️
  
 To use this library, you need to have a C# project that targets **.NET 8** or higher.
 You can install the library from **NuGet** using the following command:
@@ -23,7 +23,7 @@ You can install the library from **NuGet** using the following command:
 dotnet add package FlashyDJ.Slotmaps
 ```
 
-## Getting Started
+## Getting Started 🚀
 
 ### Basic Usage
 Here's a simple example of creating and using a `SlotMap`:
