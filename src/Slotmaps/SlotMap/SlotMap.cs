@@ -302,7 +302,7 @@ public partial class SlotMap<TValue> : ICollection<KeyValuePair<SlotKey, TValue>
 
         if (!ContainsKey(key))
         {
-            newKey = SlotKey.Null;
+            newKey = SlotKey.Null();
             return false;
         }
 

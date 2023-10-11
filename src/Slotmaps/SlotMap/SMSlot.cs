@@ -1,7 +1,7 @@
 ﻿namespace FlashyDJ.Slotmaps;
 public partial class SlotMap<TValue>
 {
-    internal struct Slot(TValue value, int version)
+    internal struct Slot(TValue value, uint version)
     {
         private TValue? _value = value;
 
@@ -14,7 +14,7 @@ public partial class SlotMap<TValue>
 
         public int NextFree { get; internal set; }
 
-        public int Version { get; internal set; } = version;
+        public uint Version { get; internal set; } = version;
 
         public bool Occupied => Version % 2 > 0;
 

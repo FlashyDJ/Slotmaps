@@ -97,7 +97,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
     /// <include file='docs.xml' path='docs/ContainsKey/*'/>
     public bool ContainsKey(SlotKey key)
     {
-        if (key.IsInvalid)
+        if (key.IsNull)
             return false;
 
         return _slots.Length > key.Index && _slots[key.Index].Version == key.Version;
@@ -173,7 +173,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
     {
         ArgumentNullException.ThrowIfNull(value);
 
-        if (key.IsInvalid)
+        if (key.IsNull)
             throw new KeyNotFoundException("Invalid SlotKey");
 
         if (Capacity <= key.Index)
@@ -206,7 +206,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
     /// <include file='docs.xml' path='docs/Remove/*'/>
     public TValue Remove(SlotKey key)
     {
-        if (key.IsInvalid)
+        if (key.IsNull)
             throw new KeyNotFoundException("Invalid SlotKey");
 
         if (Capacity > key.Index)
@@ -280,7 +280,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
         ArgumentNullException.ThrowIfNull(value);
         oldValue = default;
 
-        if (key.IsInvalid)
+        if (key.IsNull)
             return false;
 
         if (Capacity <= key.Index)
@@ -315,7 +315,7 @@ public partial class SecondaryMap<TValue> : ICollection<KeyValuePair<SlotKey, TV
     {
         value = default;
 
-        if (key.IsInvalid)
+        if (key.IsNull)
             return false;
 
         if (Capacity > key.Index)
