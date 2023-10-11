@@ -1,35 +1,14 @@
-<!-- When modifying this README, also update the NuGet README -->
+# Slotmaps
 
-<h1 align="center"> Slotmaps </h1>
+A C# .NET library designed for slot-based data structures, enabling organized and quick item access using unique and persistent keys.
 
-<p align="center">
-    A <span style="font-weight:bold">C# .NET</span> library designed for slot-based data structures, enabling organized and quick item access using unique and persistent keys.
-</p>
+| [![CSharp](https://img.shields.io/badge/%E2%A0%80CSharp%E2%A0%80-512BD4?style=for-the-badge&logo=c-sharp&logoColor=white&logoWidth=20)](https://dotnet.microsoft.com/en-us/languages/csharp) | [![dotnet](https://img.shields.io/badge/%E2%A0%80dotnet%E2%A0%80%E2%A0%80-512BD4?style=for-the-badge&logo=dotnet&logoColor=white&logoWidth=35")](https://dotnet.microsoft.com/) | [![MIT License](https://img.shields.io/badge/MIT-License-a31f34?style=for-the-badge&labelColor=a31f34&color=545759)](https://github.com/FlashyDJ/Slotmaps/blob/main/LICENSE)
+|:---:|:---:|:---:|
 
-<div align="center">
-    <p align="center">
-        <a href="https://dotnet.microsoft.com/en-us/languages/csharp">
-            <img src="https://img.shields.io/badge/%E2%A0%80CSharp%E2%A0%80-512BD4?style=for-the-badge&logo=c-sharp&logoColor=white&logoWidth=20" hspace="5" height="35"/>
-        </a>
-        <a href="https://dotnet.microsoft.com/">
-            <img src="https://img.shields.io/badge/%E2%A0%80dotnet%E2%A0%80-512BD4?style=for-the-badge&logo=dotnet&logoColor=white&logoWidth=20" hspace="5" height="35"/>
-        </a>
-        <a href="https://github.com/FlashyDJ/Slotmaps/blob/main/LICENSE">
-            <img src="https://img.shields.io/badge/MIT-License-a31f34?style=for-the-badge&labelColor=a31f34&color=545759" hspace="5" height="35"/>
-        </a>
-    </p>
-    <p align="center">
-        <a href="https://www.nuget.org/packages/FlashyDJ.Slotmaps">
-            <img src="https://img.shields.io/nuget/v/FlashyDJ.Slotmaps?style=for-the-badge&logo=nuget&logoColor=white&label=NuGet&labelColor=004880&color=004880" hspace="5" height="30"/>
-        </a>
-        <a href="https://github.com/FlashyDJ/Slotmaps/releases">
-            <img src="https://img.shields.io/github/v/release/FlashyDJ/Slotmaps?sort=date&style=for-the-badge&logo=github&label=Release" hspace="5" height="28"/>
-        </a>
-    </p>
-    <a href="https://flashydj.github.io/Slotmaps/">
-        <img src="https://img.shields.io/website?up_message=Live&down_message=Down&url=https%3A%2F%2Fflashydj.github.io%2FSlotmaps%2F&style=for-the-badge&logo=github&label=Documentation" hspace="5"/>
-    </a>
-</div>
+| [![NuGet](https://img.shields.io/nuget/v/FlashyDJ.Slotmaps?style=for-the-badge&logo=nuget&logoColor=white&label=NuGet&labelColor=004880&color=004880)](https://www.nuget.org/packages/FlashyDJ.Slotmaps/#versions-body-tab) | [![Github Release](https://img.shields.io/github/v/release/FlashyDJ/Slotmaps?sort=date&style=for-the-badge&logo=github&label=Release)](https://github.com/FlashyDJ/Slotmaps/releases)  |
+|:---:|:---:|
+
+[![Documentation](https://img.shields.io/website?up_message=Live&down_message=Down&url=https%3A%2F%2Fflashydj.github.io%2FSlotmaps%2F&style=for-the-badge&logo=github&label=Documentation)](https://flashydj.github.io/Slotmaps/)
 
 ## Table of Contents 📑
 
@@ -162,10 +141,10 @@ This C# library is inspired by the Rust crate [slotmap](https://github.com/orlp/
 
 |Branch|Debug|Release|
 |:----:|:---:|:-----:|
-**main**|![Main Debug Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FFlashyDJ%2F8fbc591640efde578c18c558426ac23e%2Fraw%2Ftest(Debug).json&logo=github&logoColor=white&labelColor=2b3137) | ![Main Release Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FFlashyDJ%2F8fbc591640efde578c18c558426ac23e%2Fraw%2Ftest(Release).json&logo=github&logoColor=white&labelColor=2b3137) |
+|**main**|![Main Debug Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FFlashyDJ%2F8fbc591640efde578c18c558426ac23e%2Fraw%2Ftest(Debug).json&logo=github&logoColor=white&labelColor=2b3137) | ![Main Release Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FFlashyDJ%2F8fbc591640efde578c18c558426ac23e%2Fraw%2Ftest(Release).json&logo=github&logoColor=white&labelColor=2b3137) |
 
 ### NuGet Builds
 
 |Branch|Debug|Release|
 |:----:|:---:|:-----:|
-**main**|![Main NuGet Debug](https://img.shields.io/github/actions/workflow/status/FlashyDJ/Slotmaps/nuget.yml?logo=github&label=%F0%9F%93%A6%20Build%20(Debug)&labelColor=2b3137)|![Main NuGet Release](https://img.shields.io/github/actions/workflow/status/FlashyDJ/Slotmaps/nuget.yml?logo=github&label=%F0%9F%93%A6%20Build%20(Release)&labelColor=2b3137)|
+|**main**|![Main NuGet Debug](https://img.shields.io/github/actions/workflow/status/FlashyDJ/Slotmaps/nuget.yml?logo=github&label=%F0%9F%93%A6%20Build%20(Debug)&labelColor=2b3137)|![Main NuGet Release](https://img.shields.io/github/actions/workflow/status/FlashyDJ/Slotmaps/nuget.yml?logo=github&label=%F0%9F%93%A6%20Build%20(Release)&labelColor=2b3137)|

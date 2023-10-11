@@ -37,9 +37,9 @@
     "markdownEngineName": "markdig",
     "output": "_site",
     "globalMetadata": {
-      "_appTitle": "Slotmaps Documentation",
+      "_appTitle": "Slotmaps",
       "_appName": "Slotmaps",
-      "_appFooter": "<span>Copyright 2023 <a href=\"https://github.com/FlashyDJ\">FlashyDJ</a>. Made with <a href=\"https://dotnet.github.io/docfx\">docfx</a>.</span>",
+      "_appFooter": "<span>Copyright 2023 <a href=\"https://github.com/FlashyDJ\">FlashyDJ</a>. Made with <a href=\"https://dotnet.github.io/docfx\">DocFX</a>.</span>",
       "_enableSearch": true,
       "_enableNewTab": true,
       "_gitUrlPattern": "github",
