@@ -5,7 +5,7 @@
 public readonly record struct SlotKey(int Index, uint Version) : ISlotKey<SlotKey>
 {
     /// <include file='docs.xml' path='docs/IsNull/*'/>
-    public bool IsNull => Index > 0;
+    public bool IsNull => Index < 0;
 
     public bool Occupied => Version % 2 > 0;
 
