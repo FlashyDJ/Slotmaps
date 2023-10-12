@@ -1,5 +1,5 @@
 ﻿namespace FlashyDJ.Slotmaps;
-public partial class SlotMap<TValue>
+public partial class SlotMap<TKey, TValue>
 {
     internal struct Slot(TValue value, uint version)
     {
