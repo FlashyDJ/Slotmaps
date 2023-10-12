@@ -9,21 +9,21 @@
 <div align="center">
     <p align="center">
         <a href="https://dotnet.microsoft.com/en-us/languages/csharp">
-            <img src="https://img.shields.io/badge/%E2%A0%80CSharp%E2%A0%80-512BD4?style=for-the-badge&logo=c-sharp&logoColor=white&logoWidth=20" hspace="5" height="35"/>
+            <img src="https://img.shields.io/badge/%E2%A0%80CSharp%E2%A0%80-512BD4?style=for-the-badge&logo=c-sharp&logoColor=white&logoWidth=20" hspace="5" height="28"/>
         </a>
         <a href="https://dotnet.microsoft.com/">
-            <img src="https://img.shields.io/badge/%E2%A0%80dotnet%E2%A0%80-512BD4?style=for-the-badge&logo=dotnet&logoColor=white&logoWidth=20" hspace="5" height="35"/>
+            <img src="https://img.shields.io/badge/%E2%A0%80dotnet%E2%A0%80-512BD4?style=for-the-badge&logo=dotnet&logoColor=white&logoWidth=20" hspace="5" height="28"/>
         </a>
         <a href="https://github.com/FlashyDJ/Slotmaps/blob/main/LICENSE">
-            <img src="https://img.shields.io/badge/MIT-License-a31f34?style=for-the-badge&labelColor=a31f34&color=545759" hspace="5" height="35"/>
+            <img src="https://img.shields.io/badge/MIT-License-a31f34?style=for-the-badge&labelColor=a31f34&color=545759" hspace="5" height="28"/>
         </a>
     </p>
     <p align="center">
         <a href="https://www.nuget.org/packages/FlashyDJ.Slotmaps">
-            <img src="https://img.shields.io/nuget/v/FlashyDJ.Slotmaps?style=for-the-badge&logo=nuget&logoColor=white&label=NuGet&labelColor=004880&color=004880" hspace="5" height="30"/>
+            <img src="https://img.shields.io/nuget/v/FlashyDJ.Slotmaps?style=for-the-badge&logo=nuget&logoColor=white&label=NuGet&labelColor=004880&color=004880" hspace="5" height="27.8"/>
         </a>
         <a href="https://github.com/FlashyDJ/Slotmaps/releases">
-            <img src="https://img.shields.io/github/v/release/FlashyDJ/Slotmaps?sort=date&style=for-the-badge&logo=github&label=Release" hspace="5" height="28"/>
+            <img src="https://img.shields.io/github/v/release/FlashyDJ/Slotmaps?sort=date&style=for-the-badge&logo=github&label=Release" hspace="5" height="26"/>
         </a>
     </p>
     <a href="https://flashydj.github.io/Slotmaps/">
