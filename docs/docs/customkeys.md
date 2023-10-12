@@ -47,21 +47,7 @@ To create custom slot keys, you can follow these guidelines:
 
 Here's an example implementation:
 
-```csharp
-public readonly struct CustomSlotKey : ISlotKey<CustomSlotKey>
-{
-    public int Index { get; }
-    public uint Version { get; }
-
-    public CustomSlotKey(int index, uint version)
-    {
-        Index = index;
-        Version = version;
-    }
-
-    public static CustomSlotKey New(int index, uint version) => new(index, version);
-}
-```
+[!code-csharp[CustomKey](../codesnippets/CustomKeys.cs#L29-L41)]
 
 > [!TIP]
 > For added simplicity, it's recommended to use `readonly record struct`.
@@ -72,12 +58,7 @@ public readonly struct CustomSlotKey : ISlotKey<CustomSlotKey>
 
 Here's an example of implementing a custom slot key as a `readonly record struct`:
 
-```csharp
-public readonly record struct PlayerKey(int Index, uint Version) : ISlotKey<PlayerKey>
-{
-    public static PlayerKey New(int index, uint version) => new(index, version);
-}
-```
+[!code-csharp[PlayerKey](../codesnippets/CustomKeys.cs#L43-L46)]
 
 In this example, PlayerKey is a `readonly record struct` that automatically provides the required [Index](xref:FlashyDJ.Slotmaps.ISlotKey`1.Index) and [Version](xref:FlashyDJ.Slotmaps.ISlotKey`1.Version) properties, simplifying the implementation.
 
@@ -89,47 +70,20 @@ With custom slot keys, you ensure that slot keys are only used with the intended
 
 For instance, attempting to use a `PlayerKey` with a `EnemySlotMap` can lead to compile-time errors, making your code more robust and less error-prone.
 
-```csharp
-var playerSlotMap = new SlotMap<PlayerKey, Player>();
-var enemySlotMap = new SlotMap<EnemyKey, Enemy>();
+[!code-csharp[Compile Time Error](../codesnippets/CustomKeys.cs#9-19)]
 
-var playerKey = playerSlotMap.Add(new Player("Bob"));
-var enemyKey = enemySlotMap.Add(new Enemy("Skelly"));
-
-// Compile-time error: Cannot use PlayerKey with EnemySlotMap
-var enemy = enemySlotMap[playerKey];
-
-// Compile-time error: Cannot use EnemyKey with PlayerSlotMap
-var player = playerSlotMap[enemyKey];
-```
-
-> [!CAUTION]
+> [!WARNING]
 > It's crucial to note that using keys, even of the same type, in different slot map instances is not recommended.
 > 
 > Such usage can lead to unpredictable behavior and should be avoided.
-> ```csharp
-> var playerSlotMap = new SlotMap<PlayerKey, Player>();
-> var anotherPlayerSlotMap = new SlotMap<PlayerKey, Player>();
-> 
-> // Avoid using slot keys interchangeably between different SlotMap instances.
-> // This can lead to unpredictable behavior.
-> var playerKey = playerSlotMap.Add(new Player());
-> var anotherPlayer = anotherPlayerSlotMap[playerKey]; // Not recommended
-> 
-> ```
+> [!code-csharp[Avoid Reusing SlotKeys](../codesnippets/CustomKeys.cs#L21-27)]
 
 ## Using Default SlotKey
 
 For cases where strong type safety is not a primary concern, you can use the default [SlotKey](xref:FlashyDJ.Slotmaps.SlotKey) included in this library.
 
-```csharp
-var defaultSlotMap = new SlotMap<SlotKey, int>();
-var key = defaultSlotMap.Add(42); // Returns SlotKey
-```
+[!code-csharp[Default SlotKey](../codesnippets/CustomKeys.cs#L3-L4)]
 
 Additionally, this library provides a shorthand for different map types, simplifying your interactions:
 
-```csharp
-var defaultSlotMap = new SlotMap<int>();
-var key = defaultSlotMap.Add(42); // Returns SlotKey
-```
+[!code-csharp[Default SlotKey Shorthand](../codesnippets/CustomKeys.cs#L6-L7)]
