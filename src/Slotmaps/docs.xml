@@ -1,16 +1,117 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <docs>
+  <ISlotKey>
+    <summary>
+      Defines an interface for slot keys that associate elements in a slot map with unique identifiers.
+    </summary>
+    <typeparam name="TSelf">The implementing type of the slot key.</typeparam>
+    <remarks>
+      The <c>ISlotKey</c> interface represents a slot key, which is a unique identifier for elements in a slot map.
+      It combines an index and a version number to provide a unique identifier for elements within these map types.
+      Slot keys are used to access and manage elements in these maps.
+    </remarks>
+    <seealso cref="SlotKey"/>
+    <seealso cref="SlotMap{TValue}"/>
+  </ISlotKey>
+
+  <Index>
+    <summary>
+      Gets the index associated with the slot key.
+    </summary>
+  </Index>
+
+  <Version>
+    <summary>
+      Gets the version associated with the slot key.
+    </summary>
+  </Version>
+
+  <IsNull>
+    <summary>
+      Gets a value indicating whether the slot key is considered null.
+    </summary>
+    <remarks>
+      A slot key is considered null if its index is less than zero.
+    </remarks>
+  </IsNull>
+
+  <Occupied>
+    <summary>
+      Gets a value indicating whether the slot key represents an occupied slot.
+    </summary>
+    <remarks>
+      A slot key is considered occupied if its version is odd (has a remainder of 1 when divided by 2).
+    </remarks>
+  </Occupied>
+
+  <New>
+    <summary>
+      Creates a new instance of the slot key with the specified index and version.
+    </summary>
+    <param name="index">The index to associate with the slot key.</param>
+    <param name="version">The version to associate with the slot key.</param>
+    <returns>A new instance of the slot key with the provided index and version.</returns>
+  </New>
+
+  <Null>
+    <summary>
+      Creates a null instance of the slot key.
+    </summary>
+    <remarks>
+      The null slot key is typically used to indicate the absence of a valid slot key.
+    </remarks>
+    <typeparam name="TSlotKey">The implementing type of the slot key.</typeparam>
+    <returns>A null instance of the slot key.</returns>
+  </Null>
+
+  <ToUlong>
+    <summary>
+      Converts a slot key to an unsigned 64-bit integer representation.
+    </summary>
+    <remarks>
+      You can use this conversion operator to convert a slot key instance to a <see langword="ulong"/> value without losing any information.
+      This can be useful for storing or transmitting slot key instances as <see langword="ulong"/> values.
+    </remarks>
+    <param name="slotKey">The slot key to convert.</param>
+    <returns>An unsigned 64-bit integer representation of the slot key.</returns>
+  </ToUlong>
+
+  <FromUlong>
+    <summary>
+      Converts an unsigned 64-bit integer representation to a slot key.
+    </summary>
+    <remarks>
+      You can use this conversion operator to convert a <see langword="ulong"/> value back to a slot key instance, assuming that the <see langword="ulong"/>
+      value was obtained from a previous conversion of a slot key instance. This can be useful for retrieving or reconstructing slot key
+      instances from <see langword="ulong"/> values.
+    </remarks>
+    <typeparam name="TSlotKey">The implementing type of the slot key.</typeparam>
+    <param name="value">The unsigned 64-bit integer representation to convert.</param>
+    <returns>A slot key created from the unsigned 64-bit integer representation.</returns>
+  </FromUlong>
+
+  <ToString>
+    <summary>
+      Returns a string representation of the slot key.
+    </summary>
+    <returns>
+      A string representing the slot key in the format <c>"IndexvVersion"</c>.
+    </returns>
+  </ToString>
+
   <SlotKey>
     <summary>
       Represents a key used in various map structures to uniquely identify elements.
     </summary>
     <remarks>
-      The <c>SlotKey</c> struct is used in various map structures, including <see cref="SlotMap{TValue}"/>, <see cref="SecondaryMap{TValue}"/>, <see cref="SparseSecondaryMap{TValue}"/>
-      <!-- {Uncomment when it get's implemented.}, <see cref="DenseSlotMap"/>, and <see cref="HopSlotMap"/>,-->to uniquely identify elements. It combines an index and a version number to provide a unique identifier for elements within these map types.
+      This is the default implementation of <see cref="ISlotKey"/>.
+      The <c>SlotKey</c> struct is used to uniquely identify elements in a slot map.
+      It combines an index and a version number to provide a unique identifier for elements within these map types.
       Slot keys are used to access and manage elements in these maps.
     </remarks>
     <param name="Index">The index of the slot.</param>
     <param name="Version">The version of the slot.</param>
+    <seealso cref="ISlotKey{T}"/>
   </SlotKey>
 
   <Null>
@@ -62,7 +163,9 @@
       Converts a <see langword="ulong"/> value to a <c>SlotKey</c> instance by using the lower 32 bits as the index and the upper 32 bits as the version.
       If the version is zero, it is set to one, to ensure that the resulting <c>SlotKey</c> instance is valid.
     </summary>
-    <param name="value">The <see langword="ulong"/> value to convert.</param>
+    <param name="value">
+      The <see langword="ulong"/> value to convert.
+    </param>
     <remarks>
       You can use this conversion operator to convert a <see langword="ulong"/> value back to a <c>SlotKey</c> instance, assuming that the <see langword="ulong"/>
       value was obtained from a previous conversion of a <c>SlotKey</c> instance. This can be useful for retrieving or reconstructing <c>SlotKey</c>
