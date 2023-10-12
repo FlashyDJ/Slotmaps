@@ -104,87 +104,25 @@
       Represents a key used in various map structures to uniquely identify elements.
     </summary>
     <remarks>
-      This is the default implementation of <see cref="ISlotKey"/>.
+      This is the default implementation of <see cref="ISlotKey{T}"/>.
       The <c>SlotKey</c> struct is used to uniquely identify elements in a slot map.
       It combines an index and a version number to provide a unique identifier for elements within these map types.
       Slot keys are used to access and manage elements in these maps.
     </remarks>
-    <param name="Index">The index of the slot.</param>
-    <param name="Version">The version of the slot.</param>
     <seealso cref="ISlotKey{T}"/>
   </SlotKey>
 
-  <Null>
+  <ImplicitToUlong>
     <summary>
-      Gets a special null slot key.
+      Implicitly converts a slot key to an unsigned 64-bit integer representation.
     </summary>
-    <remarks>
-      The <c>Null</c> slot key represents a special null value that can be used to indicate the absence of a valid key.
-    </remarks>
-  </Null>
+    <param name="slotKey">The slot key to convert.</param>
+  </ImplicitToUlong>
 
-  <IsNull>
+  <ImplicitFromUlong>
     <summary>
-      Gets a value indicating whether this slot key is null or not.
+      Implicitly converts an unsigned 64-bit integer representation to a slot key.
     </summary>
-    <remarks>
-      The <c>IsNull</c> property returns <see langword="true"/> if this slot key represents a null value, and <see langword="false"/> otherwise.
-    </remarks>
-  </IsNull>
-
-  <IsInvalid>
-    <summary>
-      Gets a value indicating whether this slot key is invalid.
-    </summary>
-    <remarks>
-      The <c>IsInvalid</c> property returns <see langword="true"/> if this slot key is considered invalid, which occurs when the index, version,
-      or both are less than zero, or if it is null. Otherwise, it returns <see langword="false"/>.
-    </remarks>
-  </IsInvalid>
-
-  <SlotKeyToUlong>
-    <summary>
-      Converts a <c>SlotKey</c> instance to a <see langword="ulong"/> value by shifting its version to the upper 32 bits and using its index as the lower 32 bits.
-    </summary>
-    <param name="slotKey">
-      The <c>SlotKey</c> instance to convert.
-    </param>
-    <remarks>
-      You can use this conversion operator to convert a <c>SlotKey</c> instance to a <see langword="ulong"/> value without losing any information.
-      This can be useful for storing or transmitting <c>SlotKey</c> instances as <see langword="ulong"/> values.
-    </remarks>
-    <returns>
-      A <see langword="ulong"/> value that represents the index and version of the <c>SlotKey</c> instance.
-    </returns>
-  </SlotKeyToUlong>
-
-  <UlongToSlotKey>
-    <summary>
-      Converts a <see langword="ulong"/> value to a <c>SlotKey</c> instance by using the lower 32 bits as the index and the upper 32 bits as the version.
-      If the version is zero, it is set to one, to ensure that the resulting <c>SlotKey</c> instance is valid.
-    </summary>
-    <param name="value">
-      The <see langword="ulong"/> value to convert.
-    </param>
-    <remarks>
-      You can use this conversion operator to convert a <see langword="ulong"/> value back to a <c>SlotKey</c> instance, assuming that the <see langword="ulong"/>
-      value was obtained from a previous conversion of a <c>SlotKey</c> instance. This can be useful for retrieving or reconstructing <c>SlotKey</c>
-      instances from <see langword="ulong"/> values.
-    </remarks>
-    <returns>
-      A <c>SlotKey</c> instance that has the same index and version as the <see langword="ulong"/> value.
-    </returns>
-  </UlongToSlotKey>
-
-  <ToString>
-    <summary>
-      Returns a string representation of the <c>SlotKey</c>.
-    </summary>
-    <remarks>
-      This method returns a string in the format "IndexvVersion" to represent the <c>SlotKey</c>, where "Index" is the index value and "Version" is the version value.
-    </remarks>
-    <returns>
-      Returns a string representation of this slot key in the format of "IndexvVersion".
-    </returns>
-  </ToString>
+    <param name="value">The unsigned 64-bit integer representation to convert.</param>
+  </ImplicitFromUlong>
 </docs>
