@@ -37,7 +37,7 @@ To create custom slot keys, you can follow these guidelines:
 
 - Implement the [Index](xref:FlashyDJ.Slotmaps.ISlotKey`1.Index) and [Version](xref:FlashyDJ.Slotmaps.ISlotKey`1.Version) properties.
 
-- Provide a static factory method named [New](/api/FlashyDJ.Slotmaps.ISlotKey-1.New.html) to create instances of the custom slot key.
+- Provide a static factory method named [New()](/api/FlashyDJ.Slotmaps.ISlotKey-1.New.html) to create instances of the custom slot key.
 
 > [!TIP]
 > To enhance the immutability and safety of your custom slot keys, consider marking them as `readonly`:
@@ -47,7 +47,7 @@ To create custom slot keys, you can follow these guidelines:
 
 Here's an example implementation:
 
-[!code-csharp[CustomKey](../codesnippets/CustomKeys.cs#L29-L41)]
+[!code-csharp[CustomKey](../codesnippets/CustomKeys.cs#L29-L35)]
 
 > [!TIP]
 > For added simplicity, it's recommended to use `readonly record struct`.
@@ -58,13 +58,15 @@ Here's an example implementation:
 
 Here's an example of implementing a custom slot key as a `readonly record struct`:
 
-[!code-csharp[PlayerKey](../codesnippets/CustomKeys.cs#L43-L46)]
+[!code-csharp[PlayerKey](../codesnippets/CustomKeys.cs#L37-L40)]
 
 In this example, PlayerKey is a `readonly record struct` that automatically provides the required [Index](xref:FlashyDJ.Slotmaps.ISlotKey`1.Index) and [Version](xref:FlashyDJ.Slotmaps.ISlotKey`1.Version) properties, simplifying the implementation.
 
 The static factory method [New()](/api/FlashyDJ.Slotmaps.ISlotKey-1.New.html) is also included for creating instances.
 
 ## Example: Creating Strongly Typed Custom Slot Keys
+
+[!code-csharp[KeyExamples](../codesnippets/CustomKeys.cs#L37-L45)]
 
 With custom slot keys, you ensure that slot keys are only used with the intended SlotMap.
 
