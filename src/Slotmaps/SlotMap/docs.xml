@@ -1,5 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <docs>
+  <SlotMapSlotKey>
+    <summary>
+      Represents a slot map data structure that associates keys of type <see cref="SlotKey"/>
+      with values of type <typeparamref name="TValue"/>.
+    </summary>
+    <typeparam name="TValue">The type of values stored in the slot map.</typeparam>
+    <remarks>
+      <para>
+        This class provides an implementation of <see cref="SlotMap{TKey, TValue}"/> that uses <see cref="SlotKey"/>
+        as the key type. If you don't need a custom key type, you can use this class for convenience.
+      </para>
+      <para>
+        If you require a custom key type, consider using the more generic <see cref="SlotMap{TKey, TValue}"/>
+        class where you can specify your own key type implementing <see cref="ISlotKey{TKey}"/>.
+      </para>
+    </remarks>
+    <seealso cref="SlotMap{TKey, TValue}"/>
+  </SlotMapSlotKey>
+
+  <SlotMapSlotKeyCtor1>
+    <summary>
+      Initializes a new instance of the <see cref="SlotMap{TValue}"/> class that is empty with no initial capacity.
+    </summary>
+  </SlotMapSlotKeyCtor1>
+
+  <SlotMapSlotKeyCtor2>
+    <summary>
+      Initializes a new instance of the <see cref="SlotMap{TValue}"/> class with
+      the specified capacity.
+    </summary>
+    <param name="capacity">The initial capacity of the slot map. Must be a non-negative integer.</param>
+    <exception cref="ArgumentOutOfRangeException">
+      Thrown if <paramref name="capacity"/> is negative.
+    </exception>
+  </SlotMapSlotKeyCtor2>
+
   <SlotMap>
     <summary>
       Represents a slot map data structure that associates keys of type <typeparamref name="TKey"/>
