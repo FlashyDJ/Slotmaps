@@ -1,18 +1,32 @@
 # Custom Keys in Slot maps
 
+In advance scenarios, you might be handling many different instances of slot maps.
+However, managing keys across these various slot maps can present challenges, such as:
+
+- **Interchangeability of Keys**: Using the same type of key in multiple slot maps can lead to unintended interchangeability,
+  where keys from one map are inadvertently used with another. This can result in unpredictable behavior and runtime errors.
+
+- **Type Safety**: Ensuring that keys are used only with the intended slot map becomes increasingly important as the complexity
+  of your system grows. Mixing up keys from different maps can lead to runtime errors and debugging challenges.
+
+To address these challenges and enforce strong type safety, the library introduces the concept of custom keys.
+
 Custom keys in slot maps allow you to enforce strong type safety, ensuring that slot keys from one slot map cannot be used with another.
 
 This guide explores the use of strongly typed custom keys in slot maps and provides examples of their practical applications.
 
 ## When to Use Strongly Typed Custom Keys
 
-Strongly typed custom keys in slot maps are useful when you need to:
+Custom keys provide a robust solution to the issues mentioned above and offer the following benefits:
 
-- **Enforce Type Safety**: Ensure that slot keys are used only with the intended slot map.
+- **Type Safety**: Custom keys enforce strong type safety by ensuring that each key type is unique to a specific slot map.
+  This reduces the risk of errors caused by mixing up keys.
 
-- **Avoid Interchangeability**: Prevent slot keys from different slot map instances from being mixed up.
+- **Clear Code**: Using custom keys enhances code clarity by providing strong type hints.
+  It becomes clear which key is expected for a particular slot map, making your code more readable and maintainable.
 
-- **Simplify Code**: Make your code more readable and less prone to errors by providing strong type hints.
+- **Compile-Time Errors**: With custom keys, you're more likely to catch errors at compile time rather than runtime.
+  This early error detection can save you debugging time and enhance code reliability.
 
 ## What is ISlotKey?
 
@@ -87,6 +101,7 @@ For regularly use or cases where strong type safety is not a primary concern, yo
 [!code-csharp[Default SlotKey](../codesnippets/CustomKeys.cs#L3-L4)]
 
 Additionally, this library provides a shorthand for creating different slot map types with the default [SlotKey](xref:FlashyDJ.Slotmaps.SlotKey) as the key type.
+
 For example you can create a [SlotMap](xref:FlashyDJ.Slotmaps.SlotMap`1) without explicitly specifying the key type, as shown in the example below:
 
 [!code-csharp[Default SlotKey Shorthand](../codesnippets/CustomKeys.cs#L6-L7)]
