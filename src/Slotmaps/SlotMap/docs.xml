@@ -66,16 +66,13 @@
         and allowing you to focus on value association and efficient data management.
       </para>
     </remarks>
+    <seealso cref="SlotMap{TValue}"/>
   </SlotMap>
 
   <Ctor1>
     <summary>
       Initializes a new instance of the <see cref="SlotMap{TKey, TValue}"/> class that is empty with no initial capacity.
     </summary>
-    <remarks>
-      Use this constructor to create a new <see cref="SlotMap{TValue}"/> with no elements initially.
-      The <see cref="SlotMap{TValue}"/> will be empty, and its internal storage will be an empty array.
-    </remarks>
   </Ctor1>
 
   <Ctor2>
@@ -120,9 +117,7 @@
       collection of keys associated with the values in the <see cref="SlotMap{TKey, TValue}"/>. Use this
       collection to enumerate, search, or perform operations on the keys within the slot map.
     </remarks>
-    <returns>
-      A <see cref="SlotMap{TValue}.SlotKeyCollection"/> containing the keys in the <see cref="SlotMap{TValue}"/>.
-    </returns>
+    <seealso cref="SlotKeyCollection"/>
   </Keys>
 
   <Values>
@@ -134,9 +129,7 @@
       collection of values stored in the <see cref="SlotMap{TKey, TValue}"/>. Use this collection to enumerate,
       search, or perform operations on the values within the slot map.
     </remarks>
-    <returns>
-      A <see cref="SlotMap{TValue}.SlotValueCollection"/> containing the values in the <see cref="SlotMap{TValue}"/>.
-    </returns>
+    <seealso cref="SlotValueCollection"/>
   </Values>
 
   <Indexer>
@@ -153,6 +146,21 @@
     <exception cref="KeyNotFoundException">
       Thrown if the specified <paramref name="key"/> is not found in the slot map.
     </exception>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
+
+        // Retrieve the value using the key
+        string value = slotMap[key];
+
+        // Set a new value for the same key
+        slotMap[key] = "Updated Value";
+      </code>
+    </example>
   </Indexer>
 
   <Add>
@@ -177,9 +185,15 @@
     <exception cref="ArgumentNullException">
       Thrown if <paramref name="value"/> is null.
     </exception>
-    <returns>
-      The <see cref="SlotKey"/> associated with the added value.
-    </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
+      </code>
+    </example>
   </Add>
 
   <ContainsKey>
@@ -195,6 +209,18 @@
     <returns>
       <see langword="true"/> if the slot map contains the specified key; otherwise, <see langword="false"/>.
     </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
+
+        // Check if the key exists in the slot map
+        bool containsKey = slotMap.ContainsKey(key);
+      </code>
+    </example>
   </ContainsKey>
 
   <ContainsValue>
@@ -216,6 +242,18 @@
     <returns>
       <see langword="true"/> if the slot map contains the specified value; otherwise, <see langword="false"/>.
     </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
+
+        // Check if the value exists in the slot map
+        bool containsValue = slotMap.ContainsValue("Hello, World!");
+      </code>
+    </example>
   </ContainsValue>
 
   <Clear>
@@ -227,6 +265,19 @@
       to an empty state. If the slot map contains any items, this method clears the internal slots array and
       resets the count and free head to zero, but it does not deallocate memory.
     </remarks>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add some values to the slot map.
+        SlotKey key1 = slotMap.Add("Value 1");
+        SlotKey key2 = slotMap.Add("Value 2");
+
+        // Clear the slot map.
+        slotMap.Clear();
+      </code>
+    </example>
   </Clear>
 
   <Drain>
@@ -241,6 +292,28 @@
     <returns>
       An enumerable sequence of key-value pairs drained from the slot map.
     </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add some values to the slot map.
+        SlotKey key1 = slotMap.Add("Value 1");
+        SlotKey key2 = slotMap.Add("Value 2");
+
+        // Drain the slot map, processing key-value pairs one by one.
+        foreach (var pair in slotMap.Drain())
+        {
+        // Process the pair
+        Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
+
+        // Optionally stop processing
+        if (conditionMet)
+        break;
+        }
+      </code>
+    </example>
+    <seealso cref="Clear"/>
   </Drain>
 
   <EnsureCapacity>
@@ -258,10 +331,15 @@
     <exception cref="ArgumentOutOfRangeException">
       Thrown if <paramref name="capacity"/> is negative.
     </exception>
-    <returns>
-      The capacity of the <see cref="SlotMap{TValue}"/> after ensuring it can accommodate the specified capacity.
-      If the current capacity is already greater than or equal to the specified capacity, the current capacity is returned.
-    </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Ensure a minimum capacity of 10.
+        int ensuredCapacity = slotMap.EnsureCapacity(10);
+      </code>
+    </example>
   </EnsureCapacity>
 
   <Get>
@@ -277,9 +355,19 @@
     <exception cref="KeyNotFoundException">
       Thrown if the specified <paramref name="key"/> is not found in the slot map.
     </exception>
-    <returns>
-      The value associated with the <paramref name="key"/>.
-    </returns>
+    <example>
+      <code>
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
+
+        // Retrieve the value using the key
+        string value = slotMap.Get(key);
+      </code>
+    </example>
+    <seealso cref="TryGet"/>
   </Get>
 
   <Insert>
@@ -301,9 +389,19 @@
     <exception cref="KeyNotFoundException">
       Thrown if the specified <paramref name="key"/> is not found in the slot map.
     </exception>
-    <returns>
-      The updated <paramref name="key"/> with an incremented version number.
-    </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+
+        // Update the value associated with the key
+        SlotKey updatedKey = slotMap.Insert(key, "Updated Value 1");
+      </code>
+    </example>
+    <seealso cref="TryInsert"/>
   </Insert>
 
   <Remove>
@@ -321,7 +419,19 @@
     <exception cref="KeyNotFoundException">
       Thrown if the specified <paramref name="key"/> is not found in the slot map.
     </exception>
-    <returns>The removed value.</returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+
+        // Remove the value associated with the key
+        string removedValue = slotMap.Remove(key);
+      </code>
+    </example>
+    <seealso cref="TryRemove"/>
   </Remove>
 
   <Reserve>
@@ -337,6 +447,16 @@
     <exception cref="ArgumentOutOfRangeException">
       Thrown if <paramref name="additionalSize"/> is negative or zero.
     </exception>
+    <example>
+      <code>
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Reserve additional capacity for 10 elements.
+        slotMap.Reserve(10);
+      </code>
+    </example>
+    <seealso cref="Capacity"/>
   </Reserve>
 
   <Resize>
@@ -353,6 +473,15 @@
     <exception cref="ArgumentOutOfRangeException">
       Thrown if <paramref name="newSize"/> is less than the current capacity.
     </exception>
+    <example>
+      <code>
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Resize the slot map to a new size.
+        slotMap.Resize(100);
+      </code>
+    </example>
   </Resize>
 
   <Retain>
@@ -387,9 +516,16 @@
     <exception cref="ArgumentNullException">
       Thrown if <paramref name="value"/> is <c>null</c>.
     </exception>
-    <returns>
-      <see langword="true"/> if the element was inserted or updated successfully; otherwise, <see langword="false"/>.
-    </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string="">();
+
+        // Try to insert or update a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+        bool success = slotMap.TryInsert(key, "Updated Value 1", out var newKey);
+      </code>
+    </example>
   </TryInsert>
 
   <TryGet>
@@ -439,6 +575,16 @@
     <returns>
       <see langword="true"/> if the value associated with the specified key was found and removed; otherwise, <see langword="false"/>.
     </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+        bool success = slotMap.TryRemove(key, out var removedValue);
+      </code>
+    </example>
   </TryRemove>
 
   <Enumerator>
