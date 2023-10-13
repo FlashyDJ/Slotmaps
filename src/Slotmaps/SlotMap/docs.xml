@@ -194,7 +194,7 @@
         SlotKey key = slotMap.Add("Hello, World!");
       </code>
     </example>
-    <seealso cref="TryAdd"/>
+    <seealso cref="TryInsert"/>
   </Add>
 
   <ContainsKey>
