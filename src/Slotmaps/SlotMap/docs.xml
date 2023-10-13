@@ -1,42 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <docs>
-  <SlotMap>
+  <SlotMapSlotKey>
     <summary>
-      Represents a collection that maps <see cref="SlotKey"/> to values of type <typeparamref name="TValue"/>.
+      Represents a slot map data structure that associates keys of type <see cref="SlotKey"/>
+      with values of type <typeparamref name="TValue"/>.
     </summary>
-    <typeparam name="TValue">The type of values stored in the map.</typeparam>
+    <typeparam name="TValue">The type of values stored in the slot map.</typeparam>
     <remarks>
       <para>
-        The <see cref="SlotMap{TValue}"/> class provides a collection that associates keys of type <see cref="SlotKey"/> with values of type <typeparamref name="TValue"/>.
-        It is designed to efficiently manage and access values by their associated keys while allowing for easy addition and removal of entries.
+        This class provides an implementation of <see cref="SlotMap{TKey, TValue}"/> that uses <see cref="SlotKey"/>
+        as the key type. If you don't need a custom key type, you can use this class for convenience.
       </para>
       <para>
-        This collection can grow dynamically as elements are added and it manages its internal memory allocation to optimize performance.
+        If you require a custom key type, consider using the more generic <see cref="SlotMap{TKey, TValue}"/>
+        class where you can specify your own key type implementing <see cref="ISlotKey{TKey}"/>.
       </para>
     </remarks>
+    <seealso cref="SlotMap{TKey, TValue}"/>
+  </SlotMapSlotKey>
+
+  <SlotMapSlotKeyCtor1>
+    <summary>
+      Initializes a new instance of the <see cref="SlotMap{TValue}"/> class that is empty with no initial capacity.
+    </summary>
+  </SlotMapSlotKeyCtor1>
+
+  <SlotMapSlotKeyCtor2>
+    <summary>
+      Initializes a new instance of the <see cref="SlotMap{TValue}"/> class with
+      the specified capacity.
+    </summary>
+    <param name="capacity">The initial capacity of the slot map. Must be a non-negative integer.</param>
+    <exception cref="ArgumentOutOfRangeException">
+      Thrown if <paramref name="capacity"/> is negative.
+    </exception>
+  </SlotMapSlotKeyCtor2>
+
+  <SlotMap>
+    <summary>
+      Represents a slot map data structure that associates keys of type <typeparamref name="TKey"/>
+      with values of type <typeparamref name="TValue"/>.
+    </summary>
+    <typeparam name="TKey">
+      The type of keys that implement <see cref="ISlotKey{TKey}"/>.
+    </typeparam>
+    <typeparam name="TValue">The type of values stored in the slot map.</typeparam>
+    <remarks>
+      <para>
+        The <see cref="SlotMap{TKey, TValue}"/> class is a versatile data structure designed for
+        efficient association of keys with values. It is particularly useful when you need to manage
+        a large number of items with a stable key-value relationship and when keys must adhere to the
+        <see cref="ISlotKey{TKey}"/> interface.
+      </para>
+      <para>
+        The slot map optimizes memory usage by storing values in an array of slots and associating each
+        value with a key. It also manages slot reuse and reallocation to ensure efficient storage.
+      </para>
+      <para>
+        To use this class effectively, ensure that your key type <typeparamref name="TKey"/> implements
+        the <see cref="ISlotKey{TKey}"/> interface, providing the necessary methods for slot-based management.
+      </para>
+      <para>
+        If you don't require a custom key type, you can use <see cref="SlotMap{TValue}"/>. This class
+        automatically sets the key type to <see cref="SlotKey"/>, simplifying slot-based key management
+        and allowing you to focus on value association and efficient data management.
+      </para>
+    </remarks>
+    <seealso cref="SlotMap{TValue}"/>
   </SlotMap>
 
   <Ctor1>
     <summary>
-      Initializes a new instance of the <see cref="SlotMap{TValue}"/> class with an empty collection.
+      Initializes a new instance of the <see cref="SlotMap{TKey, TValue}"/> class that is empty with no initial capacity.
     </summary>
-    <remarks>
-      Use this constructor to create a new <see cref="SlotMap{TValue}"/> with no elements initially.
-      The <see cref="SlotMap{TValue}"/> will be empty, and its internal storage will be an empty array.
-    </remarks>
   </Ctor1>
 
   <Ctor2>
     <summary>
-      Initializes a new instance of the <see cref="SlotMap{TValue}"/> class with the specified capacity.
+      Initializes a new instance of the <see cref="SlotMap{TKey, TValue}"/> class with
+      the specified capacity.
     </summary>
-    <param name="capacity">
-      The initial capacity of the <see cref="SlotMap{TValue}"/>. Must be a non-negative integer.
-    </param>
-    <remarks>
-      Use this constructor to create a new <see cref="SlotMap{TValue}"/> with a specific initial capacity.
-      The <paramref name="capacity"/> parameter determines the maximum number of elements the <see cref="SlotMap{TValue}"/> can hold before resizing its internal storage.
-    </remarks>
+    <param name="capacity">The initial capacity of the slot map. Must be a non-negative integer.</param>
     <exception cref="ArgumentOutOfRangeException">
       Thrown if <paramref name="capacity"/> is negative.
     </exception>
@@ -44,339 +88,519 @@
 
   <Capacity>
     <summary>
-      Gets the capacity of the <see cref="SlotMap{TValue}"/>.
+      Gets the capacity of the slot map.
     </summary>
     <remarks>
-      The capacity represents the maximum number of elements that the <see cref="SlotMap{TValue}"/> can hold before it needs to resize its internal storage.
+      The capacity represents the maximum number of elements that the slot map can hold before it needs to resize its internal storage.
     </remarks>
   </Capacity>
 
   <Count>
     <summary>
-      Gets the number of elements currently stored in the <see cref="SlotMap{TValue}"/>.
+      Gets the number of elements currently stored in the slot map.
     </summary>
   </Count>
 
   <IsEmpty>
-    <summary>
-      Gets a value indicating whether the <see cref="SlotMap{TValue}"/> is empty.
-    </summary>
+    <summary>Indicates whether the slot map is empty.</summary>
     <remarks>
-      The <c>IsEmpty</c> property returns <see langword="true"/> if the <see cref="SlotMap{TValue}"/> contains no elements, and <see langword="false"/> otherwise.
+      The <c>IsEmpty</c> property returns <see langword="true"/> if the slot map contains no elements, and <see langword="false"/> otherwise.
     </remarks>
   </IsEmpty>
 
   <Keys>
     <summary>
-      Gets a collection containing the keys in the <see cref="SlotMap{TValue}"/>.
+      Gets a collection of keys associated with the values in the slot map.
     </summary>
     <remarks>
-      Only the keys that correspond to occupied slots are included in this collection.
-      You can use this collection to iterate through the keys associated with the values in the map.
+      The <see cref="Keys"/> property returns a <see cref="SlotKeyCollection"/> that provides a read-only
+      collection of keys associated with the values in the <see cref="SlotMap{TKey, TValue}"/>. Use this
+      collection to enumerate, search, or perform operations on the keys within the slot map.
     </remarks>
-    <returns>
-      A <see cref="SlotMap{TValue}.SlotKeyCollection"/> containing the keys in the <see cref="SlotMap{TValue}"/>.
-    </returns>
+    <seealso cref="SlotKeyCollection"/>
   </Keys>
 
   <Values>
     <summary>
-      Gets a collection containing the values in the <see cref="SlotMap{TValue}"/>.
+      Gets a collection of values stored in the slot map.
     </summary>
     <remarks>
-      Only the values that correspond to occupied slots are included in this collection.
-      You can use this collection to iterate through the values associated with the keys in the map.
+      The <see cref="Values"/> property returns a <see cref="SlotValueCollection"/> that provides a read-only
+      collection of values stored in the <see cref="SlotMap{TKey, TValue}"/>. Use this collection to enumerate,
+      search, or perform operations on the values within the slot map.
     </remarks>
-    <returns>
-      A <see cref="SlotMap{TValue}.SlotValueCollection"/> containing the values in the <see cref="SlotMap{TValue}"/>.
-    </returns>
+    <seealso cref="SlotValueCollection"/>
   </Values>
 
   <Indexer>
     <summary>
-      Gets or sets the value associated with the specified <see cref="SlotKey"/>.
+      Gets or sets the value associated with the specified key.
     </summary>
-    <param name="key">
-      The <see cref="SlotKey"/> for which to get or set the associated value.
-    </param>
-    <value>
-      The value associated with the specified <paramref name="key"/>.
-    </value>
-    <exception cref="KeyNotFoundException">
-      Thrown if the <paramref name="key"/> is not found in the <see cref="SlotMap{TValue}"/>.
-    </exception>
+    <param name="key">The key to retrieve or set the value for.</param>
+    <value>The value associated with the specified key.</value>
     <remarks>
-      Use this indexer to access the value associated with a specific <see cref="SlotKey"/> in the <see cref="SlotMap{TValue}"/>.
-      If the <paramref name="key"/> is not found in the map during the get operation, a <c>KeyNotFoundException</c> is thrown.
-      To set the value associated with a <paramref name="key"/>, assign a new value to this indexer.
+      The <see cref="this[TKey]"/> property provides a convenient way to access and set values in the
+      slot map using their associated keys. To retrieve a value, provide the key as an indexer. To set a
+      value, use an assignment operation.
     </remarks>
+    <exception cref="KeyNotFoundException">
+      Thrown if the specified <paramref name="key"/> is not found in the slot map.
+    </exception>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
+
+        // Retrieve the value using the key
+        string value = slotMap[key];
+
+        // Set a new value for the same key
+        slotMap[key] = "Updated Value";
+      </code>
+    </example>
   </Indexer>
 
   <Add>
     <summary>
-      Adds a value to the <see cref="SlotMap{TValue}"/> and returns the associated <see cref="SlotKey"/>.
+      Adds a value to the slot map and returns a key associated with the added value. It assigns the value
+      to an available slot if one is available; otherwise, it expands the internal storage to accommodate the new value.
     </summary>
-    <param name="value">
-      The value to be added to the <see cref="SlotMap{TValue}"/>. Must not be null.
-    </param>
+    <param name="value">The value to be added to the slot map. Must not be null.</param>
     <remarks>
       <para>
-        The <c>Add</c> method adds the specified <paramref name="value"/> to the <see cref="SlotMap{TValue}"/>.
-        It assigns the value to an available slot if one is available; otherwise, it expands the internal storage to accommodate the new value.
+        The <c>Add</c> method adds a value to the slot map while ensuring that the key-value relationship
+        remains stable and consistent. It assigns a unique key to the added value, which is returned as
+        the result of the method.
       </para>
       <para>
-        The <paramref name="value"/> parameter must not be null; otherwise, an <see cref="ArgumentNullException"/> is thrown.
+        The slot map maintains an array of slots to store values. When adding a value, it checks for available
+        slots and assigns the value to an unoccupied slot if one is available. If no available slot exists,
+        the slot map may automatically resize to accommodate additional values.
       </para>
     </remarks>
+    <returns>The key associated with the added value.</returns>
     <exception cref="ArgumentNullException">
       Thrown if <paramref name="value"/> is null.
     </exception>
-    <returns>
-      The <see cref="SlotKey"/> associated with the added value.
-    </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
+      </code>
+    </example>
+    <seealso cref="TryInsert"/>
   </Add>
 
   <ContainsKey>
     <summary>
-      Determines whether the <see cref="SlotMap{TValue}"/> contains the specified <see cref="SlotKey"/>.
+      Determines whether the slot map contains a key that matches the specified <paramref name="key"/>.
     </summary>
-    <param name="key">
-      The <see cref="SlotKey"/> to check for existence in the <see cref="SlotMap{TValue}"/>.
-    </param>
+    <param name="key">The key to search for in the slot map.</param>
     <remarks>
-      Use this method to check if a specific <paramref name="key"/> exists in the <see cref="SlotMap{TValue}"/>.
-      A <paramref name="key"/> is considered to exist if its <see cref="SlotKey.Index"/> is within the valid range of slots
-      (0 to the capacity of the map) and the corresponding slot has the same version as the provided <paramref name="key"/>.
+      The <see cref="ContainsKey"/> method checks whether the slot map contains a key that matches
+      the provided <paramref name="key"/>. It verifies both the existence of the key and its associated
+      version in the slot map to ensure consistency.
     </remarks>
     <returns>
-      <see langword="true"/> if the <see cref="SlotMap{TValue}"/> contains the specified <paramref name="key"/> and the associated slot has the same version;
-      otherwise, <see langword="false"/>.
+      <see langword="true"/> if the slot map contains the specified key; otherwise, <see langword="false"/>.
     </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
+
+        // Check if the key exists in the slot map
+        bool containsKey = slotMap.ContainsKey(key);
+      </code>
+    </example>
+    <seealso cref="TryGet"/>
   </ContainsKey>
 
   <ContainsValue>
     <summary>
-      Determines whether the <see cref="SlotMap{TValue}"/> contains a specific value.
+      Determines whether the slot map contains a value that matches the specified <paramref name="value"/>.
     </summary>
-    <param name="value">
-      The value to locate in the <see cref="SlotMap{TValue}"/>.
-    </param>
+    <param name="value">The value to search for in the slot map.</param>
     <remarks>
-      The <c>ContainsValue</c> method searches the <see cref="SlotMap{TValue}"/> for the presence of a specified value.
-      If the value is found and is not <see langword="null"/>, the method returns <see langword="true"/>.
-      If the value is <see langword="null"/> or not found in the <see cref="SlotMap{TValue}"/>, the method returns <see langword="false"/>.
+      <para>
+        The <see cref="ContainsValue"/> method checks whether the slot map contains a value that matches
+        the provided <paramref name="value"/>. It iterates through the slots, searching for an occupied
+        slot with a value that equals the specified value using the default equality comparer.
+      </para>
+      <para>
+        If <paramref name="value"/> is <see langword="null"/>, the method returns <see langword="false"/>
+        since it cannot match a <see langword="null"/> value.
+      </para>
     </remarks>
     <returns>
-      <see langword="true"/> if the <see cref="SlotMap{TValue}"/> contains an element with the specified value; otherwise, <see langword="false"/>.
+      <see langword="true"/> if the slot map contains the specified value; otherwise, <see langword="false"/>.
     </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
+
+        // Check if the value exists in the slot map
+        bool containsValue = slotMap.ContainsValue("Hello, World!");
+      </code>
+    </example>
+    <seealso cref="TryGet"/>
   </ContainsValue>
 
   <Clear>
     <summary>
-      Removes all elements from the <see cref="SlotMap{TValue}"/>.
+      Removes all values from the slot map, resetting it to an empty state.
     </summary>
     <remarks>
-      The <c>Clear</c> method removes all elements from the <see cref="SlotMap{TValue}"/>, resetting it to an empty state.
-      It also resets the internal counters and clears the values stored in the <see cref="Slot"/>, but it does not deallocate memory.
-      Use this method to clear the <see cref="SlotMap{TValue}"/> when you want to reuse it without resizing its internal storage.
+      The <see cref="Clear"/> method removes all keys and values from the slot map, effectively resetting it
+      to an empty state. If the slot map contains any items, this method clears the internal slots array and
+      resets the count and free head to zero, but it does not deallocate memory.
     </remarks>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add some values to the slot map.
+        SlotKey key1 = slotMap.Add("Value 1");
+        SlotKey key2 = slotMap.Add("Value 2");
+
+        // Clear the slot map.
+        slotMap.Clear();
+      </code>
+    </example>
   </Clear>
 
   <Drain>
     <summary>
-      Removes and returns elements from the <see cref="SlotMap{TValue}"/> one at a time as an enumerable collection of key-value pairs.
+      Empties the slot map by returning key-value pairs one by one while leaving the remaining items in the map.
     </summary>
     <remarks>
-      The <c>Drain</c> method iterates through the elements in the <see cref="SlotMap{TValue}"/>, removes each element one at a time, and yields them as key-value pairs.
-      Each key-value pair consists of a <see cref="SlotKey"/> and its associated value.
+      The <see cref="Drain"/> method returns an enumerable sequence of key-value pairs stored in the slot map
+      one by one, allowing you to process or stop processing at any point while the remaining items remain
+      in the slot map.
     </remarks>
     <returns>
-      An <see cref="IEnumerable{T}"/> of <see cref="KeyValuePair{SlotKey, TValue}"/> containing the entries retrieved from the secondary map.
+      An enumerable sequence of key-value pairs drained from the slot map.
     </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add some values to the slot map.
+        SlotKey key1 = slotMap.Add("Value 1");
+        SlotKey key2 = slotMap.Add("Value 2");
+
+        // Drain the slot map, processing key-value pairs one by one.
+        foreach (var pair in slotMap.Drain())
+        {
+        // Process the pair
+        Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
+
+        // Optionally stop processing
+        if (conditionMet)
+        break;
+        }
+      </code>
+    </example>
+    <seealso cref="Clear"/>
+    <seealso cref="Retain"/>
   </Drain>
 
   <EnsureCapacity>
     <summary>
-      Ensures that the <see cref="SlotMap{TValue}"/> can hold at least the specified capacity without resizing.
+      Ensures that the slot map can hold at least the specified capacity without resizing.
     </summary>
     <param name="capacity">The desired capacity. Must be a non-negative integer.</param>
     <remarks>
-      Use this method to ensure that the <see cref="SlotMap{TValue}"/> can hold at least the specified <paramref name="capacity"/> without resizing its internal storage.
-      If the current capacity is less than the specified <paramref name="capacity"/>, the method will resize the internal storage to meet or exceed the desired capacity.
+      The <see cref="EnsureCapacity"/> method ensures that the slot map can hold at least the specified
+      <paramref name="capacity"/> without resizing its internal storage. If the current capacity is less
+      than the specified <paramref name="capacity"/>, the method will resize the internal storage to meet
+      or exceed the desired capacity.
     </remarks>
+    <returns>The actual capacity of the slot map after ensuring it meets the specified capacity.</returns>
     <exception cref="ArgumentOutOfRangeException">
       Thrown if <paramref name="capacity"/> is negative.
     </exception>
-    <returns>
-      The capacity of the <see cref="SlotMap{TValue}"/> after ensuring it can accommodate the specified capacity.
-      If the current capacity is already greater than or equal to the specified capacity, the current capacity is returned.
-    </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Ensure a minimum capacity of 10.
+        int ensuredCapacity = slotMap.EnsureCapacity(10);
+      </code>
+    </example>
+    <seealso cref="Capacity"/>
+    <seealso cref="Reserve"/>
+    <seealso cref="Resize"/>
   </EnsureCapacity>
 
   <Get>
     <summary>
-      Gets the value associated with the specified <see cref="SlotKey"/>.
+      Gets the value associated with the specified key in the slot map.
     </summary>
-    <param name="key">
-      The <see cref="SlotKey"/> to look up in the <see cref="SlotMap{TValue}"/>.
-    </param>
+    <param name="key">The key to retrieve the value for.</param>
     <remarks>
-      Use this method to retrieve the value associated with a specific <paramref name="key"/> in the <see cref="SlotMap{TValue}"/>.
-      If the <paramref name="key"/> is not found in the map, a <see cref="KeyNotFoundException"/> is thrown.
+      The <see cref="Get"/> method retrieves the value associated with the specified key in the slot map.
+      If the key is not found in the slot map, it throws a <see cref="KeyNotFoundException"/>.
     </remarks>
+    <returns>The value associated with the specified key.</returns>
     <exception cref="KeyNotFoundException">
-      Thrown if the specified <paramref name="key"/> is not found in the map.
+      Thrown if the specified <paramref name="key"/> is not found in the slot map.
     </exception>
-    <returns>
-      The value associated with the <paramref name="key"/>.
-    </returns>
+    <example>
+      <code>
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
+
+        // Retrieve the value using the key
+        string value = slotMap.Get(key);
+      </code>
+    </example>
+    <seealso cref="TryGet"/>
   </Get>
 
   <Insert>
     <summary>
-      Inserts a value into the <see cref="SlotMap{TValue}"/> associated with the specified <paramref name="key"/>.
+      Inserts or updates a value associated with the specified key in the slot map.
     </summary>
-    <param name="key">The key at which to insert the value.</param>
-    <param name="value">
-      The value to insert into the <see cref="SlotMap{TValue}"/>.
-    </param>
+    <param name="key">The key to insert or update the value for.</param>
+    <param name="value">The value to insert or update.</param>
     <remarks>
-      Use the <c>Insert</c> method to associate a new value with an existing <paramref name="key"/> in the <see cref="SlotMap{TValue}"/>.
-      If the <paramref name="key"/> does not exist in the map, a <see cref="KeyNotFoundException"/> is thrown.
-      If the <paramref name="key"/> exists, the associated value is updated, and the key's version number is incremented.
-      If the <paramref name="key"/> is not associated with a value, its version number is incremented, and the <c>Count</c> property is increased by one.
+      The <see cref="Insert"/> method inserts or updates a value associated with the specified <paramref name="key"/>
+      in the slot map. It verifies the existence of the key, updates the value, and increments the version of the slot.
     </remarks>
+    <returns>
+      The updated key after the insertion or update with an incremented version number.
+    </returns>
     <exception cref="ArgumentNullException">
       Thrown if <paramref name="value"/> is <c>null</c>.
     </exception>
     <exception cref="KeyNotFoundException">
-      Thrown if the specified <paramref name="key"/> does not exist in the <see cref="SlotMap{TValue}"/>.
+      Thrown if the specified <paramref name="key"/> is not found in the slot map.
     </exception>
-    <returns>
-      The updated <paramref name="key"/> with an incremented version number.
-    </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+
+        // Update the value associated with the key
+        SlotKey updatedKey = slotMap.Insert(key, "Updated Value 1");
+      </code>
+    </example>
+    <seealso cref="TryInsert"/>
   </Insert>
 
   <Remove>
     <summary>
-      Removes the value associated with the specified <paramref name="key"/> from the <see cref="SlotMap{TValue}"/>.
+      Removes the value associated with the specified key from the slot map.
     </summary>
-    <param name="key">
-      The <see cref="SlotKey"/> associated with the value to be removed.
-    </param>
+    <param name="key">The key to remove from the slot map.</param>
     <remarks>
-      Use this method to remove the value associated with the given <paramref name="key"/> from the <see cref="SlotMap{TValue}"/>.
-      If the specified <paramref name="key"/> is not found in the map, a <see cref="KeyNotFoundException"/> is thrown.
-      After removal, the slot corresponding to the <paramref name="key"/> is marked as free for future use.
+      The <see cref="Remove"/> method removes the value associated with the specified <paramref name="key"/>
+      from the slot map. It verifies the existence of the key, clears the value, updates the slot's next free
+      index, increments the version of the slot, and updates the count. After removal, the slot corresponding
+      to the <paramref name="key"/> is marked as free for future use.
     </remarks>
-    <exception cref="KeyNotFoundException">
-      Thrown if the <paramref name="key"/> is not found in the map.
-    </exception>
     <returns>The removed value.</returns>
+    <exception cref="KeyNotFoundException">
+      Thrown if the specified <paramref name="key"/> is not found in the slot map.
+    </exception>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+
+        // Remove the value associated with the key
+        string removedValue = slotMap.Remove(key);
+      </code>
+    </example>
+    <seealso cref="TryRemove"/>
   </Remove>
 
   <Reserve>
     <summary>
-      Increases the capacity of the <see cref="SlotMap{TValue}"/> by a specified amount.
+      Ensures that the slot map has enough additional capacity to accommodate the specified number of elements.
     </summary>
     <param name="additionalSize">The additional capacity to reserve. Must be a positive integer.</param>
     <remarks>
-      Use this method to increase the capacity of the <see cref="SlotMap{TValue}"/> by the specified <paramref name="additionalSize"/>.
-      It ensures that the <see cref="SlotMap{TValue}"/> can hold at least the current count of elements plus the additional capacity without resizing frequently.
+      The <see cref="Reserve"/> method ensures that the slot map has enough additional capacity to accommodate
+      the specified number of elements. If the remaining available capacity is less than <paramref name="additionalSize"/>,
+      it resizes the internal slots array to increase the capacity.
     </remarks>
     <exception cref="ArgumentOutOfRangeException">
-      Thrown if <paramref name="additionalSize"/> is non-positive.
+      Thrown if <paramref name="additionalSize"/> is negative or zero.
     </exception>
+    <example>
+      <code>
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Reserve additional capacity for 10 elements.
+        slotMap.Reserve(10);
+      </code>
+    </example>
+    <seealso cref="Capacity"/>
+    <seealso cref="EnsureCapacity"/>
+    <seealso cref="Resize"/>
   </Reserve>
 
   <Resize>
     <summary>
-      Resizes the internal storage of the <see cref="SlotMap{TValue}"/> to the specified new size.
+      Resizes the slot map to the specified new size.
     </summary>
-    <param name="newSize">The new size to which the internal storage should be resized. Must be greater than or equal to the current capacity.</param>
+    <param name="newSize">The new size for the slot map. Must be greater than or equal to the current capacity.</param>
     <remarks>
-      Use this method to adjust the size of the internal storage of the <see cref="SlotMap{TValue}"/> if needed.
-      The <paramref name="newSize"/> parameter should be greater than or equal to the current capacity of the <see cref="SlotMap{TValue}"/>.
-      If the <paramref name="newSize"/> is equal to the current capacity, no resizing occurs, and the method returns immediately.
+      The <see cref="Resize"/> method resizes the slot map to the specified new size while preserving existing elements.
+      If <paramref name="newSize"/> is equal to the current capacity, the method has no effect. If <paramref name="newSize"/>
+      is greater than the current capacity, it increases the capacity. If <paramref name="newSize"/> is less than the current capacity,
+      the method throws an <see cref="ArgumentOutOfRangeException"/>.
     </remarks>
     <exception cref="ArgumentOutOfRangeException">
       Thrown if <paramref name="newSize"/> is less than the current capacity.
     </exception>
+    <example>
+      <code>
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Resize the slot map to a new size.
+        slotMap.Resize(100);
+      </code>
+    </example>
+    <seealso cref="EnsureCapacity"/>
+    <seealso cref="Reserve"/>
   </Resize>
 
   <Retain>
     <summary>
-      Retains elements in the <see cref="SlotMap{TValue}"/> based on a specified condition defined by a predicate function.
+      Retains elements in the slot map based on a specified predicate.
     </summary>
-    <param name="predicate">A delegate that defines the condition for retaining elements. The delegate is called for each entry with its <see cref="SlotKey"/> and associated value as arguments.</param>
+    <param name="predicate">A function that defines whether to retain or remove an element based on its key and value.</param>
     <remarks>
-      The <c>Retain</c> method iterates through all elements in the <see cref="SlotMap{TValue}"/> and retains those elements for which the provided predicate function returns <see langword="true"/>.
-      Elements that do not satisfy the condition defined by the predicate are removed from the <see cref="SlotMap{TValue}"/>.
+      The <see cref="Retain"/> method iterates through the elements in the slot map and retains those for which the
+      specified <paramref name="predicate"/> function returns <see langword="true"/>. It removes elements for which the predicate
+      returns <see langword="false"/>. This method is useful for filtering elements based on custom criteria.
     </remarks>
+    <seealso cref="Drain"/>
     <seealso cref="Remove"/>
+    <seealso cref="TryRemove"/>
   </Retain>
 
   <TryInsert>
     <summary>
-      Tries to insert or update an element in the <see cref="SlotMap{TValue}"/> with the specified key and value.
+      Tries to insert or update a value associated with the specified key in the slot map.
     </summary>
-    <param name="key">The key to associate with the value.</param>
-    <param name="value">
-      The value to insert or update in the <see cref="SlotMap{TValue}"/>.
-    </param>
-    <param name="newKey">When the method succeeds, this parameter receives the new or updated key associated with the value.</param>
+    <param name="key">The key to insert or update the value for.</param>
+    <param name="value">The value to insert or update.</param>
+    <param name="newKey">When this method returns, contains the updated key if insertion or update was successful.</param>
     <remarks>
-      Use this method to insert a new element to the <see cref="SlotMap{TValue}"/> with the specified <paramref name="key"/> and <paramref name="value"/>.
-      If the element with the same key already exists, it updates the value associated with that key.
+      The <see cref="TryInsert"/> method tries to insert or update a value associated with the specified <paramref name="key"/>
+      in the slot map. If the key is not found in the slot map, the method returns <see langword="false"/>, and <paramref name="newKey"/>
+      is set to <see cref="ISlotKey{TSelf}.Null()"/>. If the insertion or update was successful, <see langword="true"/> is returned, and
+      <paramref name="newKey"/> containsthe updated key.
     </remarks>
+    <returns>
+      <see langword="true"/> if insertion or update was successful; otherwise, <see langword="false"/>.
+    </returns>
     <exception cref="ArgumentNullException">
       Thrown if <paramref name="value"/> is <c>null</c>.
     </exception>
-    <returns>
-      <see langword="true"/> if the element was inserted or updated successfully; otherwise, <see langword="false"/>.
-    </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string="">();
+
+        // Try to insert or update a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+        bool success = slotMap.TryInsert(key, "Updated Value 1", out var newKey);
+      </code>
+    </example>
+    <seealso cref="Insert"/>
   </TryInsert>
 
   <TryGet>
     <summary>
-      Tries to retrieve the value associated with the specified <paramref name="key"/> from the <see cref="SlotMap{TValue}"/>.
+      Tries to retrieve the value associated with the specified key from the slot map.
     </summary>
-    <param name="key">The key whose associated value is to be retrieved.</param>
+    <param name="key">The key to retrieve the value for.</param>
     <param name="value">
-      When this method returns, contains the value associated with the specified <paramref name="key"/>,
-      if the key is found; otherwise, the default value for <typeparamref name="TValue"/>.
+      When this method returns, contains the value associated with the specified key if found; otherwise, the default value.
     </param>
     <remarks>
-      Use this method to check if the <paramref name="key"/> exists in the <see cref="SlotMap{TValue}"/>.
-      If the <paramref name="key"/> is found, the associated value is stored in the <paramref name="value"/> parameter,
-      and the method returns <see langword="true"/> to indicate success. If the <paramref name="key"/> is not found,
-      the <paramref name="value"/> parameter is set to the default value for <typeparamref name="TValue"/>,
-      and the method returns <see langword="false"/> to indicate that the key does not exist in the <see cref="SlotMap{TValue}"/>.
+      The <see cref="TryGet"/> method tries to retrieve the value associated with the specified <paramref name="key"/>
+      from the slot map. If the key is not found in the slot map, the method returns <see langword="false"/>, and <paramref name="value"/>
+      is set to the default value for the value type. If the value is found, <see langword="true"/> is returned, and <paramref name="value"/>
+      contains the retrieved value.
     </remarks>
     <returns>
-      <see langword="true"/> if the <paramref name="key"/> is found in the <see cref="SlotMap{TValue}"/>; otherwise, <see langword="false"/>.
+      <see langword="true"/> if the value associated with the specified key was found; otherwise, <see langword="false"/>.
     </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string="">();
+
+        // Add a value with a key
+        MyKey key = slotMap.Add("Value 1");
+        string retrievedValue;
+        bool success = slotMap.TryGet(key, out retrievedValue);
+      </code>
+    </example>
+    <seealso cref="Get"/>
   </TryGet>
 
   <TryRemove>
     <summary>
-      Attempts to remove the value associated with the specified <see cref="SlotKey"/> from the <see cref="SlotMap{TValue}"/>.
+      Tries to remove the value associated with the specified key from the slot map.
     </summary>
-    <param name="key">
-      The <see cref="SlotKey"/> to remove from the <see cref="SlotMap{TValue}"/>.
-    </param>
+    <param name="key">The key to remove from the slot map.</param>
     <param name="value">
-      When this method returns, contains the value associated with the specified <paramref name="key"/>, if found; otherwise, the default value for <typeparamref name="TValue"/>.
+      When this method returns, contains the value associated with the removed key if found; otherwise, the default value.
     </param>
     <remarks>
-      The <c>TryRemove</c> method attempts to remove the value associated with the specified <paramref name="key"/> from the <see cref="SlotMap{TValue}"/>.
-      If the <paramref name="key"/> is not found in the map, this method sets the <paramref name="value"/> parameter to the default value of <typeparamref name="TValue"/> and returns <see langword="false"/>.
-      If the <paramref name="key"/> is found, it returns <see langword="true"/>, and the associated value is stored in the <paramref name="value"/> parameter.
+      The <see cref="TryRemove"/> method tries to remove the value associated with the specified <paramref name="key"/>
+      from the slot map. If the key is not found in the slot map, the method returns <see langword="false"/>, and
+      <paramref name="value"/> is set to the default value for the value type. If the value is found and removed,
+      <see langword="true"/> is returned, and <paramref name="value"/> contains the removed value.
     </remarks>
     <returns>
-      <see langword="true"/> if the <paramref name="key"/> was found and the associated value was successfully removed;
-      otherwise, <see langword="false"/>.
+      <see langword="true"/> if the value associated with the specified key was found and removed; otherwise, <see langword="false"/>.
     </returns>
+    <example>
+      <code>
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap{SlotKey, string}();
+
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+        bool success = slotMap.TryRemove(key, out var removedValue);
+      </code>
+    </example>
+    <seealso cref="Remove"/>
   </TryRemove>
 
   <Enumerator>

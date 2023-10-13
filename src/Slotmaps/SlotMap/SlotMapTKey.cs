@@ -2,7 +2,8 @@
 /// <include file='docs.xml' path="docs/SlotMap/*"/>
 [Serializable]
 [DebuggerDisplay("Count = {Count}")]
-public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>> where TKey : struct, ISlotKey<TKey>
+public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
+    where TKey : struct, ISlotKey<TKey>
 {
     private const int DefaultCapacity = 4;
 
@@ -258,6 +259,7 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return returnValue;
     }
 
+    // TODO: Take account of Count
     /// <include file='docs.xml' path="docs/Reserve/*"/>
     public void Reserve(int additionalSize)
     {
