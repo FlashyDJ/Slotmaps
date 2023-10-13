@@ -80,12 +80,15 @@ For instance, attempting to use a `PlayerKey` with a `EnemySlotMap` can lead to 
 > Such usage can lead to unpredictable behavior and should be avoided.
 > [!code-csharp[Avoid Reusing SlotKeys](../codesnippets/CustomKeys.cs#L21-L27)]
 
-## Using Default SlotKey
+## Using the Default SlotKey
 
-For cases where strong type safety is not a primary concern, you can use the default [SlotKey](xref:FlashyDJ.Slotmaps.SlotKey) included in this library.
+For regularly use or cases where strong type safety is not a primary concern, you can use the default [SlotKey](xref:FlashyDJ.Slotmaps.SlotKey) included in this library.
 
 [!code-csharp[Default SlotKey](../codesnippets/CustomKeys.cs#L3-L4)]
 
-Additionally, this library provides a shorthand for different map types, simplifying your interactions:
+Additionally, this library provides a shorthand for creating different slot map types with the default [SlotKey](xref:FlashyDJ.Slotmaps.SlotKey) as the key type.
+For example you can create a [SlotMap](xref:FlashyDJ.Slotmaps.SlotMap`1) without explicitly specifying the key type, as shown in the example below:
 
 [!code-csharp[Default SlotKey Shorthand](../codesnippets/CustomKeys.cs#L6-L7)]
+
+This has the same behavior as the code from earlier.
