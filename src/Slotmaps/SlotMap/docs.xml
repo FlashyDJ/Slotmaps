@@ -194,6 +194,7 @@
         SlotKey key = slotMap.Add("Hello, World!");
       </code>
     </example>
+    <seealso cref="TryAdd"/>
   </Add>
 
   <ContainsKey>
@@ -221,6 +222,7 @@
         bool containsKey = slotMap.ContainsKey(key);
       </code>
     </example>
+    <seealso cref="TryGet"/>
   </ContainsKey>
 
   <ContainsValue>
@@ -254,6 +256,7 @@
         bool containsValue = slotMap.ContainsValue("Hello, World!");
       </code>
     </example>
+    <seealso cref="TryGet"/>
   </ContainsValue>
 
   <Clear>
@@ -314,6 +317,7 @@
       </code>
     </example>
     <seealso cref="Clear"/>
+    <seealso cref="Retain"/>
   </Drain>
 
   <EnsureCapacity>
@@ -340,6 +344,9 @@
         int ensuredCapacity = slotMap.EnsureCapacity(10);
       </code>
     </example>
+    <seealso cref="Capacity"/>
+    <seealso cref="Reserve"/>
+    <seealso cref="Resize"/>
   </EnsureCapacity>
 
   <Get>
@@ -457,6 +464,8 @@
       </code>
     </example>
     <seealso cref="Capacity"/>
+    <seealso cref="EnsureCapacity"/>
+    <seealso cref="Resize"/>
   </Reserve>
 
   <Resize>
@@ -482,6 +491,8 @@
         slotMap.Resize(100);
       </code>
     </example>
+    <seealso cref="EnsureCapacity"/>
+    <seealso cref="Reserve"/>
   </Resize>
 
   <Retain>
@@ -494,7 +505,9 @@
       specified <paramref name="predicate"/> function returns <see langword="true"/>. It removes elements for which the predicate
       returns <see langword="false"/>. This method is useful for filtering elements based on custom criteria.
     </remarks>
+    <seealso cref="Drain"/>
     <seealso cref="Remove"/>
+    <seealso cref="TryRemove"/>
   </Retain>
 
   <TryInsert>
@@ -526,6 +539,7 @@
         bool success = slotMap.TryInsert(key, "Updated Value 1", out var newKey);
       </code>
     </example>
+    <seealso cref="Insert"/>
   </TryInsert>
 
   <TryGet>
@@ -556,6 +570,7 @@
         bool success = slotMap.TryGet(key, out retrievedValue);
       </code>
     </example>
+    <seealso cref="Get"/>
   </TryGet>
 
   <TryRemove>
@@ -585,6 +600,7 @@
         bool success = slotMap.TryRemove(key, out var removedValue);
       </code>
     </example>
+    <seealso cref="Remove"/>
   </TryRemove>
 
   <Enumerator>
