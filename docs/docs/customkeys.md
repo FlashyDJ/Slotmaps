@@ -70,13 +70,13 @@ With custom slot keys, you ensure that slot keys are only used with the intended
 
 For instance, attempting to use a `PlayerKey` with a `EnemySlotMap` can lead to compile-time errors, making your code more robust and less error-prone.
 
-[!code-csharp[Compile Time Error](../codesnippets/CustomKeys.cs#9-19)]
+[!code-csharp[Compile Time Error](../codesnippets/CustomKeys.cs#L9-L19)]
 
 > [!WARNING]
 > It's crucial to note that using keys, even of the same type, in different slot map instances is not recommended.
 > 
 > Such usage can lead to unpredictable behavior and should be avoided.
-> [!code-csharp[Avoid Reusing SlotKeys](../codesnippets/CustomKeys.cs#L21-27)]
+> [!code-csharp[Avoid Reusing SlotKeys](../codesnippets/CustomKeys.cs#L21-L27)]
 
 ## Using Default SlotKey
 
