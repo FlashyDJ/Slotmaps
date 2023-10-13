@@ -11,3 +11,5 @@
     href: basicslotmapusage.md
   - name: SlotMap vs Other Collections
     href: slotmapvsother.md
+- name: Custom Keys
+  href: customkeys.md

@@ -27,14 +27,22 @@
       },
       {
         "files": ["docs/**.md", "docs/**/toc.yml", "toc.yml", "*.md"]
+      },
+      {
+        "files": ["samples/**.md", "samples/**.yml"]
       }
     ],
     "resource": [
       {
-        "files": [ "images/**" ]
+        "files": ["images/**"]
       }
     ],
     "markdownEngineName": "markdig",
+    "markdownEngineProperties": {
+      "alerts": {
+        "INFO": "alert alert-info"
+      }
+    },
     "output": "_site",
     "globalMetadata": {
       "_appTitle": "Slotmaps",
