@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <docs>
-  <SlotMapSlotKey>
+  <SlotMapD>
     <summary>
       Represents a slot map data structure that associates keys of type <see cref="SlotKey"/>
       with values of type <typeparamref name="TValue"/>.
@@ -17,15 +17,15 @@
       </para>
     </remarks>
     <seealso cref="SlotMap{TKey, TValue}"/>
-  </SlotMapSlotKey>
+  </SlotMapD>
 
-  <SlotMapSlotKeyCtor1>
+  <SlotMapDCtor1>
     <summary>
       Initializes a new instance of the <see cref="SlotMap{TValue}"/> class that is empty with no initial capacity.
     </summary>
-  </SlotMapSlotKeyCtor1>
+  </SlotMapDCtor1>
 
-  <SlotMapSlotKeyCtor2>
+  <SlotMapDCtor2>
     <summary>
       Initializes a new instance of the <see cref="SlotMap{TValue}"/> class with
       the specified capacity.
@@ -34,7 +34,7 @@
     <exception cref="ArgumentOutOfRangeException">
       Thrown if <paramref name="capacity"/> is negative.
     </exception>
-  </SlotMapSlotKeyCtor2>
+  </SlotMapDCtor2>
 
   <SlotMap>
     <summary>

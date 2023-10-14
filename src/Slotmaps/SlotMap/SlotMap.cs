@@ -1,11 +1,11 @@
 ﻿namespace FlashyDJ.Slotmaps;
-/// <include file='docs.xml' path='docs/SlotMapSlotKey/*'/>
+/// <include file='docs.xml' path='docs/SlotMapD/*'/>
 public class SlotMap<TValue> : SlotMap<SlotKey, TValue>
 {
-    /// <include file='docs.xml' path='docs/SlotMapSlotKeyCtor1/*'/>
+    /// <include file='docs.xml' path='docs/SlotMapDCtor1/*'/>
     public SlotMap() : base() { }
 
-    /// <include file='docs.xml' path='docs/SlotMapSlotKeyCtor2/*'/>
+    /// <include file='docs.xml' path='docs/SlotMapDCtor2/*'/>
     public SlotMap(int capacity) : base(capacity) { }
 
     /// <inheritdoc cref="SlotMap{TKey, TValue}.Capacity"/>
