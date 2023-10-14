@@ -8,19 +8,19 @@ public class SlotMap<TValue> : SlotMap<SlotKey, TValue>
     /// <include file='docs.xml' path='docs/SlotMapDCtor2/*'/>
     public SlotMap(int capacity) : base(capacity) { }
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Capacity"/>
+    /// <include file='docs.xml' path='docs/Capacity/*'/>
     public new int Capacity => base.Capacity;
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Count"/>
+    /// <include file='docs.xml' path='docs/Count/*'/>
     public new int Count => base.Count;
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.IsEmpty"/>
+    /// <include file='docs.xml' path='docs/IsEmpty/*'/>
     public new bool IsEmpty => base.IsEmpty;
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Keys"/>
+    /// <include file='docs.xml' path='docs/Keys/*'/>
     public new SlotKeyCollection Keys => base.Keys;
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Values"/>
+    /// <include file='docs.xml' path='docs/Values/*'/>
     public new SlotValueCollection Values => base.Values;
 
     /// <include file='docs.xml' path='docs/Indexer/*'/>
@@ -30,48 +30,48 @@ public class SlotMap<TValue> : SlotMap<SlotKey, TValue>
         set => base[key] = value;
     }
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Add"/>
+    /// <include file='docs.xml' path='docs/Add/*'/>
     public new SlotKey Add(TValue value) => base.Add(value);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.ContainsKey"/>
+    /// <include file='docs.xml' path='docs/ContainsKey/*'/>
     public new bool ContainsKey(SlotKey key) => base.ContainsKey(key);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.ContainsValue"/>
+    /// <include file='docs.xml' path='docs/ContainsValue/*'/>
     public new bool ContainsValue(TValue value) => base.ContainsValue(value);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Clear"/>
+    /// <include file='docs.xml' path='docs/Clear/*'/>
     public new void Clear() => base.Clear();
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Drain"/>
+    /// <include file='docs.xml' path='docs/Drain/*'/>
     public new IEnumerable<KeyValuePair<SlotKey,TValue>> Drain() => base.Drain();
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.EnsureCapacity"/>
+    /// <include file='docs.xml' path='docs/EnsureCapacity/*'/>
     public new int EnsureCapacity(int capacity) => base.EnsureCapacity(capacity);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Get"/>
+    /// <include file='docs.xml' path='docs/Get/*'/>
     public new TValue Get(SlotKey key) => base.Get(key);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Insert"/>
+    /// <include file='docs.xml' path='docs/Insert/*'/>
     public new SlotKey Insert(SlotKey key, TValue value) => base.Insert(key, value);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Remove"/>
+    /// <include file='docs.xml' path='docs/Remove/*'/>
     public new TValue Remove(SlotKey key) => Remove(key);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Reserve"/>
+    /// <include file='docs.xml' path='docs/Reserve/*'/>
     public new void Reserve(int additionalSize) => Reserve(additionalSize);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Resize"/>
+    /// <include file='docs.xml' path='docs/Resize/*'/>
     public new void Resize(int newSize) => base.Resize(newSize);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Retain"/>
+    /// <include file='docs.xml' path='docs/Retain/*'/>
     public new void Retain(Func<SlotKey,TValue, bool> predicate) => base.Retain(predicate);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.TryInsert"/>
+    /// <include file='docs.xml' path='docs/TryInsert/*'/>
     public new bool TryInsert(SlotKey key, TValue value, out SlotKey newKey) => base.TryInsert(key, value, out newKey);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.TryGet"/>
+    /// <include file='docs.xml' path='docs/TryGet/*'/>
     public new bool TryGet(SlotKey key, [MaybeNullWhen(false)] out TValue value) => base.TryGet(key, out value);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.TryRemove"/>
+    /// <include file='docs.xml' path='docs/TryRemove/*'/>
     public new bool TryRemove(SlotKey key, [MaybeNullWhen(false)] out TValue value) => base.TryRemove(key, out value);
 }

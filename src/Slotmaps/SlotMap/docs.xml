@@ -518,7 +518,7 @@
     <param name="value">The value to insert or update.</param>
     <param name="newKey">When this method returns, contains the updated key if insertion or update was successful.</param>
     <remarks>
-      The <c>TryInsert"</c> method tries to insert or update a value associated with the specified <paramref name="key"/>
+      The <c>TryInsert</c> method tries to insert or update a value associated with the specified <paramref name="key"/>
       in the slot map. If the key is not found in the slot map, the method returns <see langword="false"/>, and <paramref name="newKey"/>
       is set to <see cref="ISlotKey{TSelf}.Null()"/>. If the insertion or update was successful, <see langword="true"/> is returned, and
       <paramref name="newKey"/> containsthe updated key.
