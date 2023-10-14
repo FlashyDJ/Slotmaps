@@ -114,8 +114,8 @@
     </summary>
     <remarks>
       The <see cref="Keys"/> property returns a <see cref="SlotKeyCollection"/> that provides a read-only
-      collection of keys associated with the values in the <see cref="SlotMap{TKey, TValue}"/>. Use this
-      collection to enumerate, search, or perform operations on the keys within the slot map.
+      collection of keys associated with the values in the slot map. Use this collection to enumerate, 
+      search, or perform operations on the keys within the slot map.
     </remarks>
     <seealso cref="SlotKeyCollection"/>
   </Keys>
@@ -126,8 +126,8 @@
     </summary>
     <remarks>
       The <see cref="Values"/> property returns a <see cref="SlotValueCollection"/> that provides a read-only
-      collection of values stored in the <see cref="SlotMap{TKey, TValue}"/>. Use this collection to enumerate,
-      search, or perform operations on the values within the slot map.
+      collection of values stored in the slot map. Use this collection to enumerate, search, or perform
+      operations on the values within the slot map.
     </remarks>
     <seealso cref="SlotValueCollection"/>
   </Values>
@@ -139,7 +139,7 @@
     <param name="key">The key to retrieve or set the value for.</param>
     <value>The value associated with the specified key.</value>
     <remarks>
-      The <see cref="this[TKey]"/> property provides a convenient way to access and set values in the
+      The Indexer provides a convenient way to access and set values in the
       slot map using their associated keys. To retrieve a value, provide the key as an indexer. To set a
       value, use an assignment operation.
     </remarks>
@@ -203,7 +203,7 @@
     </summary>
     <param name="key">The key to search for in the slot map.</param>
     <remarks>
-      The <see cref="ContainsKey"/> method checks whether the slot map contains a key that matches
+      The <c>ContainsKey</c> method checks whether the slot map contains a key that matches
       the provided <paramref name="key"/>. It verifies both the existence of the key and its associated
       version in the slot map to ensure consistency.
     </remarks>
@@ -232,7 +232,7 @@
     <param name="value">The value to search for in the slot map.</param>
     <remarks>
       <para>
-        The <see cref="ContainsValue"/> method checks whether the slot map contains a value that matches
+        The <c>ContainsValue</c>" method checks whether the slot map contains a value that matches
         the provided <paramref name="value"/>. It iterates through the slots, searching for an occupied
         slot with a value that equals the specified value using the default equality comparer.
       </para>
@@ -264,7 +264,7 @@
       Removes all values from the slot map, resetting it to an empty state.
     </summary>
     <remarks>
-      The <see cref="Clear"/> method removes all keys and values from the slot map, effectively resetting it
+      The <c>Clear</c> method removes all keys and values from the slot map, effectively resetting it
       to an empty state. If the slot map contains any items, this method clears the internal slots array and
       resets the count and free head to zero, but it does not deallocate memory.
     </remarks>
@@ -288,7 +288,7 @@
       Empties the slot map by returning key-value pairs one by one while leaving the remaining items in the map.
     </summary>
     <remarks>
-      The <see cref="Drain"/> method returns an enumerable sequence of key-value pairs stored in the slot map
+      The <c>Drain</c> method returns an enumerable sequence of key-value pairs stored in the slot map
       one by one, allowing you to process or stop processing at any point while the remaining items remain
       in the slot map.
     </remarks>
@@ -326,7 +326,7 @@
     </summary>
     <param name="capacity">The desired capacity. Must be a non-negative integer.</param>
     <remarks>
-      The <see cref="EnsureCapacity"/> method ensures that the slot map can hold at least the specified
+      The <c>EnsureCapacity</c> method ensures that the slot map can hold at least the specified
       <paramref name="capacity"/> without resizing its internal storage. If the current capacity is less
       than the specified <paramref name="capacity"/>, the method will resize the internal storage to meet
       or exceed the desired capacity.
@@ -355,7 +355,7 @@
     </summary>
     <param name="key">The key to retrieve the value for.</param>
     <remarks>
-      The <see cref="Get"/> method retrieves the value associated with the specified key in the slot map.
+      The <c>Get</c> method retrieves the value associated with the specified key in the slot map.
       If the key is not found in the slot map, it throws a <see cref="KeyNotFoundException"/>.
     </remarks>
     <returns>The value associated with the specified key.</returns>
@@ -384,7 +384,7 @@
     <param name="key">The key to insert or update the value for.</param>
     <param name="value">The value to insert or update.</param>
     <remarks>
-      The <see cref="Insert"/> method inserts or updates a value associated with the specified <paramref name="key"/>
+      The <c>Insert</c> method inserts or updates a value associated with the specified <paramref name="key"/>
       in the slot map. It verifies the existence of the key, updates the value, and increments the version of the slot.
     </remarks>
     <returns>
@@ -417,7 +417,7 @@
     </summary>
     <param name="key">The key to remove from the slot map.</param>
     <remarks>
-      The <see cref="Remove"/> method removes the value associated with the specified <paramref name="key"/>
+      The <c>Remove</c> method removes the value associated with the specified <paramref name="key"/>
       from the slot map. It verifies the existence of the key, clears the value, updates the slot's next free
       index, increments the version of the slot, and updates the count. After removal, the slot corresponding
       to the <paramref name="key"/> is marked as free for future use.
@@ -447,7 +447,7 @@
     </summary>
     <param name="additionalSize">The additional capacity to reserve. Must be a positive integer.</param>
     <remarks>
-      The <see cref="Reserve"/> method ensures that the slot map has enough additional capacity to accommodate
+      The <c>Reserve</c> method ensures that the slot map has enough additional capacity to accommodate
       the specified number of elements. If the remaining available capacity is less than <paramref name="additionalSize"/>,
       it resizes the internal slots array to increase the capacity.
     </remarks>
@@ -474,7 +474,7 @@
     </summary>
     <param name="newSize">The new size for the slot map. Must be greater than or equal to the current capacity.</param>
     <remarks>
-      The <see cref="Resize"/> method resizes the slot map to the specified new size while preserving existing elements.
+      The <c>Resize</c> method resizes the slot map to the specified new size while preserving existing elements.
       If <paramref name="newSize"/> is equal to the current capacity, the method has no effect. If <paramref name="newSize"/>
       is greater than the current capacity, it increases the capacity. If <paramref name="newSize"/> is less than the current capacity,
       the method throws an <see cref="ArgumentOutOfRangeException"/>.
@@ -501,7 +501,7 @@
     </summary>
     <param name="predicate">A function that defines whether to retain or remove an element based on its key and value.</param>
     <remarks>
-      The <see cref="Retain"/> method iterates through the elements in the slot map and retains those for which the
+      The <c>Retain</c> method iterates through the elements in the slot map and retains those for which the
       specified <paramref name="predicate"/> function returns <see langword="true"/>. It removes elements for which the predicate
       returns <see langword="false"/>. This method is useful for filtering elements based on custom criteria.
     </remarks>
@@ -518,7 +518,7 @@
     <param name="value">The value to insert or update.</param>
     <param name="newKey">When this method returns, contains the updated key if insertion or update was successful.</param>
     <remarks>
-      The <see cref="TryInsert"/> method tries to insert or update a value associated with the specified <paramref name="key"/>
+      The <c>TryInsert"</c> method tries to insert or update a value associated with the specified <paramref name="key"/>
       in the slot map. If the key is not found in the slot map, the method returns <see langword="false"/>, and <paramref name="newKey"/>
       is set to <see cref="ISlotKey{TSelf}.Null()"/>. If the insertion or update was successful, <see langword="true"/> is returned, and
       <paramref name="newKey"/> containsthe updated key.
@@ -532,7 +532,7 @@
     <example>
       <code>
         // Create a SlotMap with the default key type and values.
-        var slotMap = new SlotMap{SlotKey, string="">();
+        var slotMap = new SlotMap{SlotKey, string}();
 
         // Try to insert or update a value with a key
         SlotKey key = slotMap.Add("Value 1");
@@ -551,7 +551,7 @@
       When this method returns, contains the value associated with the specified key if found; otherwise, the default value.
     </param>
     <remarks>
-      The <see cref="TryGet"/> method tries to retrieve the value associated with the specified <paramref name="key"/>
+      The <c>TryGet</c> method tries to retrieve the value associated with the specified <paramref name="key"/>
       from the slot map. If the key is not found in the slot map, the method returns <see langword="false"/>, and <paramref name="value"/>
       is set to the default value for the value type. If the value is found, <see langword="true"/> is returned, and <paramref name="value"/>
       contains the retrieved value.
@@ -562,12 +562,11 @@
     <example>
       <code>
         // Create a SlotMap with the default key type and values.
-        var slotMap = new SlotMap{SlotKey, string="">();
+        var slotMap = new SlotMap{SlotKey, string}();
 
         // Add a value with a key
         MyKey key = slotMap.Add("Value 1");
-        string retrievedValue;
-        bool success = slotMap.TryGet(key, out retrievedValue);
+        bool success = slotMap.TryGet(key, out var retrievedValue);
       </code>
     </example>
     <seealso cref="Get"/>
@@ -582,7 +581,7 @@
       When this method returns, contains the value associated with the removed key if found; otherwise, the default value.
     </param>
     <remarks>
-      The <see cref="TryRemove"/> method tries to remove the value associated with the specified <paramref name="key"/>
+      The <c>TryRemove</c> method tries to remove the value associated with the specified <paramref name="key"/>
       from the slot map. If the key is not found in the slot map, the method returns <see langword="false"/>, and
       <paramref name="value"/> is set to the default value for the value type. If the value is found and removed,
       <see langword="true"/> is returned, and <paramref name="value"/> contains the removed value.
@@ -623,7 +622,7 @@
       Represents a collection of <see cref="SlotKey"/> instances associated with a <see cref="SlotMap{TValue}"/>.
     </summary>
     <remarks>
-      The <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> class provides a collection of <see cref="SlotKey"/> instances that are associated with a <see cref="SlotMap{TValue}"/>.
+      The <see cref="SlotMap{TValue}.SlotKeyCollection"/> class provides a collection of <see cref="SlotKey"/> instances that are associated with a <see cref="SlotMap{TValue}"/>.
       This collection allows you to enumerate and work with the keys present in the <see cref="SlotMap{TValue}"/>.
     </remarks>
   </SlotKeyCollection>
