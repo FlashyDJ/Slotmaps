@@ -3,27 +3,27 @@
   <Add>
     <example>
       <code>
-// Create a SlotMap with the default key type.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Add a value
-SlotKey key = slotMap.Add("Hello, World!");
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
       </code>
     </example>
-    <seealso cref="TryInsert"/>
+    <seealso cref="TryInsert" />
   </Add>
-  
+
   <ContainsKey>
     <example>
       <code>
-// Create a SlotMap with the default key type and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Add a value
-SlotKey key = slotMap.Add("Hello, World!");
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
 
-// Check if the key exists in the slot map
-bool containsKey = slotMap.ContainsKey(key);
+        // Check if the key exists in the slot map
+        bool containsKey = slotMap.ContainsKey(key);
       </code>
     </example>
   </ContainsKey>
@@ -31,14 +31,14 @@ bool containsKey = slotMap.ContainsKey(key);
   <ContainsValue>
     <example>
       <code>
-// Create a SlotMap with the default key type and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Add a value
-SlotKey key = slotMap.Add("Hello, World!");
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
 
-// Check if the value exists in the slot map
-bool containsValue = slotMap.ContainsValue("Hello, World!");
+        // Check if the value exists in the slot map
+        bool containsValue = slotMap.ContainsValue("Hello, World!");
       </code>
     </example>
   </ContainsValue>
@@ -46,15 +46,15 @@ bool containsValue = slotMap.ContainsValue("Hello, World!");
   <Clear>
     <example>
       <code>
-// Create a SlotMap with the default key type and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Add some values to the slot map.
-SlotKey key1 = slotMap.Add("Value 1");
-SlotKey key2 = slotMap.Add("Value 2");
+        // Add some values to the slot map.
+        SlotKey key1 = slotMap.Add("Value 1");
+        SlotKey key2 = slotMap.Add("Value 2");
 
-// Clear the slot map.
-slotMap.Clear();
+        // Clear the slot map.
+        slotMap.Clear();
       </code>
     </example>
   </Clear>
@@ -62,23 +62,23 @@ slotMap.Clear();
   <Drain>
     <example>
       <code>
-// Create a SlotMap with the default key type and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Add some values to the slot map.
-SlotKey key1 = slotMap.Add("Value 1");
-SlotKey key2 = slotMap.Add("Value 2");
+        // Add some values to the slot map.
+        SlotKey key1 = slotMap.Add("Value 1");
+        SlotKey key2 = slotMap.Add("Value 2");
 
-// Drain the slot map, processing key-value pairs one by one.
-foreach (var pair in slotMap.Drain())
-{
-  // Process the pair
-  Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
+        // Drain the slot map, processing key-value pairs one by one.
+        foreach (var pair in slotMap.Drain())
+        &#60;
+        // Process the pair
+        Console.WriteLine($"Key: &#60;pair.Key&#62;, Value: &#60;pair.Value&#62;");
 
-  // Optionally stop processing
-  if (conditionMet)
-      break;
-}
+        // Optionally stop processing
+        if (conditionMet)
+        break;
+        &#62;
       </code>
     </example>
   </Drain>
@@ -86,11 +86,11 @@ foreach (var pair in slotMap.Drain())
   <EnsureCapacity>
     <example>
       <code>
-// Create a SlotMap with the default key type and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Ensure a minimum capacity of 10.
-int ensuredCapacity = slotMap.EnsureCapacity(10);
+        // Ensure a minimum capacity of 10.
+        int ensuredCapacity = slotMap.EnsureCapacity(10);
       </code>
     </example>
   </EnsureCapacity>
@@ -98,14 +98,14 @@ int ensuredCapacity = slotMap.EnsureCapacity(10);
   <Get>
     <example>
       <code>
-// Create a SlotMap with custom keys and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Add a value
-SlotKey key = slotMap.Add("Hello, World!");
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
 
-// Retrieve the value using the key
-string value = slotMap.Get(key);
+        // Retrieve the value using the key
+        string value = slotMap.Get(key);
       </code>
     </example>
   </Get>
@@ -113,14 +113,14 @@ string value = slotMap.Get(key);
   <Insert>
     <example>
       <code>
-// Create a SlotMap with the default key type and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Add a value with a key
-SlotKey key = slotMap.Add("Value 1");
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
 
-// Update the value associated with the key
-SlotKey updatedKey = slotMap.Insert(key, "Updated Value 1");
+        // Update the value associated with the key
+        SlotKey updatedKey = slotMap.Insert(key, "Updated Value 1");
       </code>
     </example>
   </Insert>
@@ -128,14 +128,14 @@ SlotKey updatedKey = slotMap.Insert(key, "Updated Value 1");
   <Remove>
     <example>
       <code>
-// Create a SlotMap with the default key type and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Add a value with a key
-SlotKey key = slotMap.Add("Value 1");
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
 
-// Remove the value associated with the key
-string removedValue = slotMap.Remove(key);
+        // Remove the value associated with the key
+        string removedValue = slotMap.Remove(key);
       </code>
     </example>
   </Remove>
@@ -143,11 +143,11 @@ string removedValue = slotMap.Remove(key);
   <Reserve>
     <example>
       <code>
-// Create a SlotMap with custom keys and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Reserve additional capacity for 10 elements.
-slotMap.Reserve(10);
+        // Reserve additional capacity for 10 elements.
+        slotMap.Reserve(10);
       </code>
     </example>
   </Reserve>
@@ -155,11 +155,11 @@ slotMap.Reserve(10);
   <Resize>
     <example>
       <code>
-// Create a SlotMap with custom keys and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Resize the slot map to a new size.
-slotMap.Resize(100);
+        // Resize the slot map to a new size.
+        slotMap.Resize(100);
       </code>
     </example>
   </Resize>
@@ -167,12 +167,12 @@ slotMap.Resize(100);
   <TryInsert>
     <example>
       <code>
-// Create a SlotMap with the default key type and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Try to insert or update a value with a key
-SlotKey key = slotMap.Add("Value 1");
-bool success = slotMap.TryInsert(key, "Updated Value 1", out var newKey);
+        // Try to insert or update a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+        bool success = slotMap.TryInsert(key, "Updated Value 1", out var newKey);
       </code>
     </example>
   </TryInsert>
@@ -180,12 +180,12 @@ bool success = slotMap.TryInsert(key, "Updated Value 1", out var newKey);
   <TryGet>
     <example>
       <code>
-// Create a SlotMap with the default key type and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Add a value with a key
-MyKey key = slotMap.Add("Value 1");
-bool success = slotMap.TryGet(key, out var retrievedValue);
+        // Add a value with a key
+        MyKey key = slotMap.Add("Value 1");
+        bool success = slotMap.TryGet(key, out var retrievedValue);
       </code>
     </example>
   </TryGet>
@@ -193,12 +193,12 @@ bool success = slotMap.TryGet(key, out var retrievedValue);
   <TryRemove>
     <example>
       <code>
-// Create a SlotMap with the default key type and values.
-var slotMap = new SlotMap{SlotKey, string}();
+        // Create a SlotMap with the default key type and values.
+        var slotMap = new SlotMap&#60;SlotKey, string&#62;();
 
-// Add a value with a key
-SlotKey key = slotMap.Add("Value 1");
-bool success = slotMap.TryRemove(key, out var removedValue);
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+        bool success = slotMap.TryRemove(key, out var removedValue);
       </code>
     </example>
   </TryRemove>
@@ -206,27 +206,27 @@ bool success = slotMap.TryRemove(key, out var removedValue);
   <AddD>
     <example>
       <code>
-// Create a SlotMap with the default key type.
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap with the default key type.
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Add a value
-SlotKey key = slotMap.Add("Hello, World!");
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
       </code>
     </example>
-    <seealso cref="TryInsert"/>
+    <seealso cref="TryInsert" />
   </AddD>
-  
+
   <ContainsKeyD>
     <example>
       <code>
-// Create a SlotMap
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Add a value
-SlotKey key = slotMap.Add("Hello, World!");
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
 
-// Check if the key exists in the slot map
-bool containsKey = slotMap.ContainsKey(key);
+        // Check if the key exists in the slot map
+        bool containsKey = slotMap.ContainsKey(key);
       </code>
     </example>
   </ContainsKeyD>
@@ -234,14 +234,14 @@ bool containsKey = slotMap.ContainsKey(key);
   <ContainsValueD>
     <example>
       <code>
-// Create a SlotMap
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Add a value
-SlotKey key = slotMap.Add("Hello, World!");
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
 
-// Check if the value exists in the slot map
-bool containsValue = slotMap.ContainsValue("Hello, World!");
+        // Check if the value exists in the slot map
+        bool containsValue = slotMap.ContainsValue("Hello, World!");
       </code>
     </example>
   </ContainsValueD>
@@ -249,15 +249,15 @@ bool containsValue = slotMap.ContainsValue("Hello, World!");
   <ClearD>
     <example>
       <code>
-// Create a SlotMap
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Add some values to the slot map.
-SlotKey key1 = slotMap.Add("Value 1");
-SlotKey key2 = slotMap.Add("Value 2");
+        // Add some values to the slot map.
+        SlotKey key1 = slotMap.Add("Value 1");
+        SlotKey key2 = slotMap.Add("Value 2");
 
-// Clear the slot map.
-slotMap.Clear();
+        // Clear the slot map.
+        slotMap.Clear();
       </code>
     </example>
   </ClearD>
@@ -265,23 +265,23 @@ slotMap.Clear();
   <DrainD>
     <example>
       <code>
-// Create a SlotMap
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Add some values to the slot map.
-SlotKey key1 = slotMap.Add("Value 1");
-SlotKey key2 = slotMap.Add("Value 2");
+        // Add some values to the slot map.
+        SlotKey key1 = slotMap.Add("Value 1");
+        SlotKey key2 = slotMap.Add("Value 2");
 
-// Drain the slot map, processing key-value pairs one by one.
-foreach (var pair in slotMap.Drain())
-{
-  // Process the pair
-  Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
+        // Drain the slot map, processing key-value pairs one by one.
+        foreach (var pair in slotMap.Drain())
+        &#60;
+        // Process the pair
+        Console.WriteLine($"Key: &#60;pair.Key&#62;, Value: &#60;pair.Value&#62;");
 
-  // Optionally stop processing
-  if (conditionMet)
-      break;
-}
+        // Optionally stop processing
+        if (conditionMet)
+        break;
+        &#62;
       </code>
     </example>
   </DrainD>
@@ -289,11 +289,11 @@ foreach (var pair in slotMap.Drain())
   <EnsureCapacityD>
     <example>
       <code>
-// Create a SlotMap
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Ensure a minimum capacity of 10.
-int ensuredCapacity = slotMap.EnsureCapacity(10);
+        // Ensure a minimum capacity of 10.
+        int ensuredCapacity = slotMap.EnsureCapacity(10);
       </code>
     </example>
   </EnsureCapacityD>
@@ -301,14 +301,14 @@ int ensuredCapacity = slotMap.EnsureCapacity(10);
   <GetD>
     <example>
       <code>
-// Create a SlotMap with custom keys and values.
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Add a value
-SlotKey key = slotMap.Add("Hello, World!");
+        // Add a value
+        SlotKey key = slotMap.Add("Hello, World!");
 
-// Retrieve the value using the key
-string value = slotMap.Get(key);
+        // Retrieve the value using the key
+        string value = slotMap.Get(key);
       </code>
     </example>
   </GetD>
@@ -316,14 +316,14 @@ string value = slotMap.Get(key);
   <InsertD>
     <example>
       <code>
-// Create a SlotMap
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Add a value with a key
-SlotKey key = slotMap.Add("Value 1");
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
 
-// Update the value associated with the key
-SlotKey updatedKey = slotMap.Insert(key, "Updated Value 1");
+        // Update the value associated with the key
+        SlotKey updatedKey = slotMap.Insert(key, "Updated Value 1");
       </code>
     </example>
   </InsertD>
@@ -331,14 +331,14 @@ SlotKey updatedKey = slotMap.Insert(key, "Updated Value 1");
   <RemoveD>
     <example>
       <code>
-// Create a SlotMap
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Add a value with a key
-SlotKey key = slotMap.Add("Value 1");
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
 
-// Remove the value associated with the key
-string removedValue = slotMap.Remove(key);
+        // Remove the value associated with the key
+        string removedValue = slotMap.Remove(key);
       </code>
     </example>
   </RemoveD>
@@ -346,11 +346,11 @@ string removedValue = slotMap.Remove(key);
   <ReserveD>
     <example>
       <code>
-// Create a SlotMap with custom keys and values.
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Reserve additional capacity for 10 elements.
-slotMap.Reserve(10);
+        // Reserve additional capacity for 10 elements.
+        slotMap.Reserve(10);
       </code>
     </example>
   </ReserveD>
@@ -358,11 +358,11 @@ slotMap.Reserve(10);
   <ResizeD>
     <example>
       <code>
-// Create a SlotMap with custom keys and values.
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap with custom keys and values.
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Resize the slot map to a new size.
-slotMap.Resize(100);
+        // Resize the slot map to a new size.
+        slotMap.Resize(100);
       </code>
     </example>
   </ResizeD>
@@ -370,12 +370,12 @@ slotMap.Resize(100);
   <TryInsertD>
     <example>
       <code>
-// Create a SlotMap
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Try to insert or update a value with a key
-SlotKey key = slotMap.Add("Value 1");
-bool success = slotMap.TryInsert(key, "Updated Value 1", out var newKey);
+        // Try to insert or update a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+        bool success = slotMap.TryInsert(key, "Updated Value 1", out var newKey);
       </code>
     </example>
   </TryInsertD>
@@ -383,12 +383,12 @@ bool success = slotMap.TryInsert(key, "Updated Value 1", out var newKey);
   <TryGetD>
     <example>
       <code>
-// Create a SlotMap
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Add a value with a key
-MyKey key = slotMap.Add("Value 1");
-bool success = slotMap.TryGet(key, out var retrievedValue);
+        // Add a value with a key
+        MyKey key = slotMap.Add("Value 1");
+        bool success = slotMap.TryGet(key, out var retrievedValue);
       </code>
     </example>
   </TryGetD>
@@ -396,12 +396,12 @@ bool success = slotMap.TryGet(key, out var retrievedValue);
   <TryRemoveD>
     <example>
       <code>
-// Create a SlotMap
-var slotMap = new SlotMap{string}();
+        // Create a SlotMap
+        var slotMap = new SlotMap&#60;string&#62;();
 
-// Add a value with a key
-SlotKey key = slotMap.Add("Value 1");
-bool success = slotMap.TryRemove(key, out var removedValue);
+        // Add a value with a key
+        SlotKey key = slotMap.Add("Value 1");
+        bool success = slotMap.TryRemove(key, out var removedValue);
       </code>
     </example>
   </TryRemoveD>
