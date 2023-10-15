@@ -64,11 +64,11 @@ public class SlotMap<TValue> : SlotMap<SlotKey, TValue>
 
     /// <include file='docs.xml' path='docs/Remove/*'/>
     /// <include file='codesnippets.xml' path='docs/RemoveD/*'/>
-    public new TValue Remove(SlotKey key) => Remove(key);
+    public new TValue Remove(SlotKey key) => base.Remove(key);
 
     /// <include file='docs.xml' path='docs/Reserve/*'/>
     /// <include file='codesnippets.xml' path='docs/ReserveD/*'/>
-    public new void Reserve(int additionalSize) => Reserve(additionalSize);
+    public new void Reserve(int additionalSize) => base.Reserve(additionalSize);
 
     /// <include file='docs.xml' path='docs/Resize/*'/>
     /// <include file='codesnippets.xml' path='docs/ResizeD/*'/>
