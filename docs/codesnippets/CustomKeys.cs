@@ -26,18 +26,12 @@ var team2 = new SlotMap<PlayerKey, Player>();
 PlayerKey playerKey = team1.Add(new Player());
 Player anotherPlayer = team2[playerKey]; // Not recommended
 
-public readonly struct CustomSlotKey : ISlotKey<CustomSlotKey>
+public readonly struct CustomSlotKey(int index, uint version) : ISlotKey<CustomSlotKey>
 {
-    public int Index { get; }
-    public uint Version { get; }
+    public int Index { get; } = index;
+    public uint Version { get; } = version;
 
-    public CustomSlotKey(int index, uint version)
-    {
-        Index = index;
-        Version = version;
-    }
-
-    public static CustomSlotKey New(int index, uint version) => new(index, version);
+    public static CustomSlotKey New(int index, uint version) => this(index, version);
 }
 
 public readonly record struct PlayerKey(int Index, uint Version) : ISlotKey<PlayerKey>
