@@ -1,5 +1,5 @@
 ﻿namespace FlashyDJ.Slotmaps;
-public partial class SecondaryMap<TValue>
+public partial class SecondaryMap<TKey, TValue>
 {
     internal struct Slot(TValue value, uint version)
     {

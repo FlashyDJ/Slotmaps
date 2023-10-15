@@ -1,34 +1,34 @@
 ﻿namespace FlashyDJ.Slotmaps;
-public partial class SecondaryMap<TValue>
+public partial class SecondaryMap<TKey, TValue>
 {
     /// <include file='docs.xml' path='docs/SlotKeyCollection/*'/>
     [DebuggerDisplay("Count = {Count}")]
-    public sealed class SlotKeyCollection : ICollection<SlotKey>, IReadOnlyCollection<SlotKey>
+    public sealed class SlotKeyCollection : ICollection<TKey>, IReadOnlyCollection<TKey>
     {
-        private readonly SecondaryMap<TValue> _secondaryMap;
+        private readonly SecondaryMap<TKey, TValue> _secondaryMap;
 
         /// <include file='docs.xml' path='docs/SKCCtor/*'/>
-        public SlotKeyCollection(SecondaryMap<TValue> secondaryMap)
+        public SlotKeyCollection(SecondaryMap<TKey, TValue> secondaryMap)
         {
             ArgumentNullException.ThrowIfNull(secondaryMap);
             _secondaryMap = secondaryMap;
         }
 
-        bool ICollection<SlotKey>.IsReadOnly => true;
-        void ICollection<SlotKey>.Add(SlotKey item) => throw new NotSupportedException();
-        void ICollection<SlotKey>.Clear() => throw new NotSupportedException();
-        bool ICollection<SlotKey>.Remove(SlotKey item) => throw new NotSupportedException();
-        IEnumerator<SlotKey> IEnumerable<SlotKey>.GetEnumerator() => new Enumerator(_secondaryMap);
+        bool ICollection<TKey>.IsReadOnly => true;
+        void ICollection<TKey>.Add(TKey item) => throw new NotSupportedException();
+        void ICollection<TKey>.Clear() => throw new NotSupportedException();
+        bool ICollection<TKey>.Remove(TKey item) => throw new NotSupportedException();
+        IEnumerator<TKey> IEnumerable<TKey>.GetEnumerator() => new Enumerator(_secondaryMap);
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_secondaryMap);
 
         /// <include file='docs.xml' path='docs/SKCCount/*'/>
         public int Count => _secondaryMap.Count;
 
         /// <include file='docs.xml' path='docs/SKCContains/*'/>
-        public bool Contains(SlotKey key) => _secondaryMap.ContainsKey(key);
+        public bool Contains(TKey key) => _secondaryMap.ContainsKey(key);
 
         /// <include file='docs.xml' path='docs/SKCCopyTo/*'/>
-        public void CopyTo(SlotKey[] array, int index)
+        public void CopyTo(TKey[] array, int index)
         {
             ArgumentNullException.ThrowIfNull(array);
             ArgumentOutOfRangeException.ThrowIfNegative(index);
@@ -40,18 +40,18 @@ public partial class SecondaryMap<TValue>
                 var slot = _secondaryMap._slots[i];
 
                 if (slot.Occupied)
-                    array[index++] = new(i, slot.Version);
+                    array[index++] = TKey.New(i, slot.Version);
             }
         }
 
         /// <include file='docs.xml' path='docs/SKCEnumerator/*'/>
-        public struct Enumerator : IEnumerator<SlotKey>, IEnumerator
+        public struct Enumerator : IEnumerator<TKey>, IEnumerator
         {
-            private readonly SecondaryMap<TValue> _secondaryMap;
+            private readonly SecondaryMap<TKey, TValue> _secondaryMap;
             private int _index;
-            private SlotKey _current;
+            private TKey _current;
 
-            internal Enumerator(SecondaryMap<TValue> secondaryMap)
+            internal Enumerator(SecondaryMap<TKey, TValue> secondaryMap)
             {
                 _secondaryMap = secondaryMap;
                 _index = -1;
@@ -61,7 +61,7 @@ public partial class SecondaryMap<TValue>
             object IEnumerator.Current => Current;
 
             /// <inheritdoc/>
-            public SlotKey Current => _current;
+            public TKey Current => _current;
 
             /// <inheritdoc/>
             public readonly void Dispose() { }
@@ -78,7 +78,7 @@ public partial class SecondaryMap<TValue>
                         if (!slot.Occupied)
                             break;
 
-                        _current = new(_index, slot.Version);
+                        _current = TKey.New(_index, slot.Version);
                         return true;
                     }
                 }
