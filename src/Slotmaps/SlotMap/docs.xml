@@ -458,25 +458,23 @@
 
   <SlotKeyCollection>
     <summary>
-      Represents a collection of <see cref="SlotKey"/> instances associated with a <see cref="SlotMap{TValue}"/>.
+      Represents a collection of keys associated with a value in the slot map.
     </summary>
     <remarks>
-      The <see cref="SlotMap{TValue}.SlotKeyCollection"/> class provides a collection of <see cref="SlotKey"/> instances that are associated with a <see cref="SlotMap{TValue}"/>.
-      This collection allows you to enumerate and work with the keys present in the <see cref="SlotMap{TValue}"/>.
+      The <see cref="SlotKeyCollection"/> class provides a collection of key instances that are associated with 
+      a value from the slot map. This collection allows you to iterate and work with the keys contained 
+      within the slot map.
     </remarks>
   </SlotKeyCollection>
 
   <SKCCtor>
     <summary>
-      Initializes a new instance of the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> class with a reference to the parent <see cref="SlotMap{TValue}"/>.
+      Initializes a new instance of the <see cref="SlotKeyCollection"/> class with a 
+      reference to the parent slot map.
     </summary>
     <param name="slotMap">
-      The <see cref="SlotMap{TValue}"/> to which this collection is associated.
+      The slot map to which this collection is associated.
     </param>
-    <remarks>
-      Use this constructor to create a new <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> that is associated with a specific <see cref="SlotMap{TValue}"/>.
-      The <paramref name="slotMap"/> parameter represents the parent <see cref="SlotMap{TValue}"/> to which this collection is linked.
-    </remarks>
     <exception cref="ArgumentNullException">
       Thrown if <paramref name="slotMap"/> is null.
     </exception>
@@ -484,40 +482,34 @@
 
   <SKCCount>
     <summary>
-      Gets the number of elements in the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c>.
+      Gets the number of keys in the collection.
     </summary>
-    <remarks>
-      This count corresponds to the number of keys associated with the <see cref="SlotMap{TValue}"/> that this collection belongs to.
-    </remarks>
   </SKCCount>
 
   <SKCContains>
     <summary>
-      Determines whether the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> contains a specific <see cref="SlotKey"/>.
+      Determines whether the collection contains a specific key.
     </summary>
-    <param name="key">
-      The <see cref="SlotKey"/> to locate in the collection.
-    </param>
+    <param name="key">The key to search for in the collection.</param>
     <remarks>
-      Use this method to check whether the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> contains a specific <see cref="SlotKey"/> instance.
+      The <c>ContainsKey</c> method checks whether the collection contains a key that matches
+      the provided <paramref name="key"/>. It verifies both the existence of the key and its associated
+      version in the collection to ensure consistency.
     </remarks>
     <returns>
-      <see langword="true"/> if the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> contains the specified <paramref name="key"/>; otherwise, <see langword="false"/>.
+      <see langword="true"/> if the slot map contains the specified key; otherwise, <see langword="false"/>.
     </returns>
   </SKCContains>
 
   <SKCCopyTo>
     <summary>
-      Copies the elements of the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> to an array, starting at the specified index.
+      Copies the elements of the key collection to an array, starting at the specified index.
     </summary>
-    <param name="array">
-      The one-dimensional array that is the destination of the elements copied from the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c>. Must not be null.
-    </param>
-    <param name="index">
-      The zero-based index in <paramref name="array"/> at which copying begins.
-    </param>
+    <param name="array">The destination array where keys will be copied.</param>
+    <param name="index">The zero-based index in the array at which copying begins.</param>
     <remarks>
-      The <c>CopyTo</c> method copies the elements of the <see cref="SlotMap{TValue}.SlotKeyCollection"/>/c> to a one-dimensional array, starting at the specified index in the destination array.
+      The <c>CopyTo</c> method copies the keys from the key collection to the specified <paramref name="array"/>.
+      The copying starts at the specified <paramref name="index"/> in the destination array.
       The destination array must have enough space to accommodate the elements to be copied.
     </remarks>
     <exception cref="ArgumentNullException">
@@ -530,11 +522,11 @@
 
   <SKCEnumerator>
     <summary>
-      Represents an enumerator for the <see cref="SlotKeyCollection"/>.
+      Represents an enumerator for the keys in the <see cref="SlotKeyCollection"/>.
     </summary>
     <remarks>
-      The <c>Enumerator</c> struct allows you to enumerate the <see cref="SlotKey"/> instances in the <see cref="SlotKeyCollection"/>.
-      Use this enumerator to iterate over the keys in the collection.
+      The <see cref="Enumerator"/> struct represents an enumerator for keys in the <see cref="SlotKeyCollection"/>.
+      It allows you to iterate through the keys in the collection.
     </remarks>
   </SKCEnumerator>
 
