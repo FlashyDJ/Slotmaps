@@ -71,14 +71,14 @@
 
         // Drain the slot map, processing key-value pairs one by one.
         foreach (var pair in slotMap.Drain())
-        &lt;
-        // Process the pair
-        Console.WriteLine($"Key: &lt;pair.Key&gt;, Value: &lt;pair.Value&gt;");
+        {
+            // Process the pair
+            Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
 
-        // Optionally stop processing
-        if (conditionMet)
-        break;
-        &gt;
+            // Optionally stop processing
+            if (conditionMet)
+                break;
+        }
       </code>
     </example>
   </Drain>
@@ -274,14 +274,14 @@
 
         // Drain the slot map, processing key-value pairs one by one.
         foreach (var pair in slotMap.Drain())
-        &lt;
-        // Process the pair
-        Console.WriteLine($"Key: &lt;pair.Key&gt;, Value: &lt;pair.Value&gt;");
+        {
+            // Process the pair
+            Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
 
-        // Optionally stop processing
-        if (conditionMet)
-        break;
-        &gt;
+            // Optionally stop processing
+            if (conditionMet)
+                break;
+        }
       </code>
     </example>
   </DrainD>
