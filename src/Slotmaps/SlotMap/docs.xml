@@ -104,7 +104,8 @@
   <IsEmpty>
     <summary>Indicates whether the slot map is empty.</summary>
     <remarks>
-      The <c>IsEmpty</c> property returns <see langword="true"/> if the slot map contains no elements, and <see langword="false"/> otherwise.
+      The <c>IsEmpty</c> property returns <see langword="true"/> if the slot map contains no elements,
+      and <see langword="false"/> otherwise.
     </remarks>
   </IsEmpty>
 
@@ -113,11 +114,11 @@
       Gets a collection of keys associated with the values in the slot map.
     </summary>
     <remarks>
-      The <see cref="Keys"/> property returns a <see cref="SlotKeyCollection"/> that provides a read-only
-      collection of keys associated with the values in the slot map. Use this collection to enumerate, 
-      search, or perform operations on the keys within the slot map.
+      The <see cref="Keys"/> property returns a <see cref="SlotMap{TKey,TValue}.SlotKeyCollection"/> that
+      provides a read-only collection of keys associated with the values in the slot map. Use this
+      collection to enumerate, search, or perform operations on the keys within the slot map.
     </remarks>
-    <seealso cref="SlotKeyCollection"/>
+    <seealso cref="SlotMap{TKey,TValue}.SlotKeyCollection"/>
   </Keys>
 
   <Values>
@@ -125,11 +126,11 @@
       Gets a collection of values stored in the slot map.
     </summary>
     <remarks>
-      The <see cref="Values"/> property returns a <see cref="SlotValueCollection"/> that provides a read-only
-      collection of values stored in the slot map. Use this collection to enumerate, search, or perform
-      operations on the values within the slot map.
+      The <see cref="Values"/> property returns a <see cref="SlotMap{TKey,TValue}.SlotValueCollection"/> that
+      provides a read-only collection of values stored in the slot map. Use this collection to enumerate,
+      search, or perform operations on the values within the slot map.
     </remarks>
-    <seealso cref="SlotValueCollection"/>
+    <seealso cref="SlotMap{TKey,TValue}.SlotValueCollection"/>
   </Values>
 
   <Indexer>
