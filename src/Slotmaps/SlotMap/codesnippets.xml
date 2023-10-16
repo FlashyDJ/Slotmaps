@@ -16,7 +16,7 @@
   <ContainsKey>
     <example>
       <code>
-        // Create a SlotMap with the default key type and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Add a value
@@ -31,7 +31,7 @@
   <ContainsValue>
     <example>
       <code>
-        // Create a SlotMap with the default key type and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Add a value
@@ -46,7 +46,7 @@
   <Clear>
     <example>
       <code>
-        // Create a SlotMap with the default key type and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Add some values to the slot map.
@@ -62,7 +62,7 @@
   <Drain>
     <example>
       <code>
-        // Create a SlotMap with the default key type and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Add some values to the slot map.
@@ -86,7 +86,7 @@
   <EnsureCapacity>
     <example>
       <code>
-        // Create a SlotMap with the default key type and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Ensure a minimum capacity of 10.
@@ -98,7 +98,7 @@
   <Get>
     <example>
       <code>
-        // Create a SlotMap with custom keys and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Add a value
@@ -113,7 +113,7 @@
   <Insert>
     <example>
       <code>
-        // Create a SlotMap with the default key type and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Add a value with a key
@@ -128,7 +128,7 @@
   <Remove>
     <example>
       <code>
-        // Create a SlotMap with the default key type and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Add a value with a key
@@ -143,7 +143,7 @@
   <Reserve>
     <example>
       <code>
-        // Create a SlotMap with custom keys and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Reserve additional capacity for 10 elements.
@@ -155,7 +155,7 @@
   <Resize>
     <example>
       <code>
-        // Create a SlotMap with custom keys and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Resize the slot map to a new size.
@@ -167,7 +167,7 @@
   <TryInsert>
     <example>
       <code>
-        // Create a SlotMap with the default key type and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Try to insert or update a value with a key
@@ -180,7 +180,7 @@
   <TryGet>
     <example>
       <code>
-        // Create a SlotMap with the default key type and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Add a value with a key
@@ -193,7 +193,7 @@
   <TryRemove>
     <example>
       <code>
-        // Create a SlotMap with the default key type and values.
+        // Create a SlotMap with the default key type.
         var slotMap = new SlotMap&lt;SlotKey, string&gt;();
 
         // Add a value with a key
@@ -301,7 +301,7 @@
   <GetD>
     <example>
       <code>
-        // Create a SlotMap with custom keys and values.
+        // Create a SlotMap
         var slotMap = new SlotMap&lt;string&gt;();
 
         // Add a value
@@ -346,7 +346,7 @@
   <ReserveD>
     <example>
       <code>
-        // Create a SlotMap with custom keys and values.
+        // Create a SlotMap
         var slotMap = new SlotMap&lt;string&gt;();
 
         // Reserve additional capacity for 10 elements.
@@ -358,7 +358,7 @@
   <ResizeD>
     <example>
       <code>
-        // Create a SlotMap with custom keys and values.
+        // Create a SlotMap
         var slotMap = new SlotMap&lt;string&gt;();
 
         // Resize the slot map to a new size.
