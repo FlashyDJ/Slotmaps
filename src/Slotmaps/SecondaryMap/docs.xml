@@ -375,15 +375,15 @@
     </summary>
     <param name="key">The key to insert or update the value for.</param>
     <param name="value">The value to insert or update.</param>
-    <param name="newKey">
-      When this method returns, contains the updated key if insertion or update was successful.
+    <param name="oldValue">
+      When this method returns, contains the old value if insertion or update was successful.
     </param>
     <remarks>
       The <c>TryInsert</c> method tries to insert or update a value associated with the specified 
       <paramref name="key"/> in the secondary map. If the key is not found in the secondary map, the method returns
-      <see langword="false"/>, and <paramref name="newKey"/> is set to <see cref="ISlotKey{TSelf}.Null()"/>.
-      If the insertion or update was successful, <see langword="true"/> is returned, and <paramref name="newKey"/>
-      contains the updated key.
+      <see langword="false"/>, and <paramref name="oldValue"/> is set to <see langword="default"/>.
+      If the insertion or update was successful, <see langword="true"/> is returned, and <paramref name="oldValue"/>
+      contains the old value.
     </remarks>
     <returns>
       <see langword="true"/> if insertion or update was successful; otherwise, <see langword="false"/>.
