@@ -444,12 +444,12 @@
 
   <Enumerator>
     <summary>
-      Represents an enumerator for the <see cref="SlotMap{TValue}"/> collection.
+      Represents an enumerator for key-value pairs in a slot map.
     </summary>
     <remarks>
       <para>
-        The <c>Enumerator</c> struct provides an enumerator for iterating through the elements of the <see cref="SlotMap{TValue}"/> collection.
-        It allows sequential access to the key-value pairs within the map.
+        The <c>Enumerator</c> struct represents an enumerator for key-value pairs in a slot map.
+        It allows you to iterate through the key-value pairs in the slot map.
       </para>
       <para>
         You can use this enumerator to iterate through the elements in the <see cref="SlotMap{TValue}"/> using a <c>foreach</c> loop.
