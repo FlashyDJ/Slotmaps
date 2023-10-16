@@ -1,14 +1,14 @@
 ﻿namespace FlashyDJ.Slotmaps;
-public partial class SecondaryMap<TValue>
+public partial class SecondaryMap<TKey, TValue>
 {
     /// <include file='docs.xml' path='docs/SlotValueCollection/*'/>
     [DebuggerDisplay("Count = {Count}")]
     public sealed class SlotValueCollection : ICollection<TValue>, IReadOnlyCollection<TValue>
     {
-        private readonly SecondaryMap<TValue> _secondaryMap;
+        private readonly SecondaryMap<TKey, TValue> _secondaryMap;
 
         /// <include file='docs.xml' path='docs/SVCCtor/*'/>
-        public SlotValueCollection(SecondaryMap<TValue> secondaryMap)
+        public SlotValueCollection(SecondaryMap<TKey, TValue> secondaryMap)
         {
             ArgumentNullException.ThrowIfNull(secondaryMap);
             _secondaryMap = secondaryMap;
@@ -47,11 +47,11 @@ public partial class SecondaryMap<TValue>
         /// <include file='docs.xml' path='docs/SVCEnumerator/*'/>
         public struct Enumerator : IEnumerator<TValue>, IEnumerator
         {
-            private readonly SecondaryMap<TValue> _secondaryMap;
+            private readonly SecondaryMap<TKey, TValue> _secondaryMap;
             private int _index;
             private TValue _current;
 
-            internal Enumerator(SecondaryMap<TValue> secondaryMap)
+            internal Enumerator(SecondaryMap<TKey, TValue> secondaryMap)
             {
                 _secondaryMap = secondaryMap;
                 _index = -1;
