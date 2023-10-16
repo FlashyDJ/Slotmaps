@@ -25,7 +25,7 @@ public partial class SlotMap<TKey, TValue>
         public int Count => _slotMap.Count;
 
         /// <include file='docs.xml' path='docs/SVCContains/*'/>
-        public bool Contains(TValue value) => _slotMap.ContainsValue(value!);
+        public bool Contains(TValue value) => _slotMap.ContainsValue(value);
 
         /// <include file='docs.xml' path='docs/SVCCopyTo/*'/>
         public void CopyTo(TValue[] array, int index)
