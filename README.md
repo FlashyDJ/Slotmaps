@@ -23,7 +23,7 @@
             <img src="https://img.shields.io/nuget/v/FlashyDJ.Slotmaps?style=for-the-badge&logo=nuget&logoColor=white&label=NuGet&labelColor=004880&color=004880" hspace="5" height="30"/>
         </a>
         <a href="https://github.com/FlashyDJ/Slotmaps/releases">
-            <img src="https://img.shields.io/github/v/release/FlashyDJ/Slotmaps?sort=date&style=for-the-badge&logo=github&label=Release" hspace="5" height="28"/>
+            <img src="https://img.shields.io/github/v/release/FlashyDJ/Slotmaps?sort=date&filter=*alpha&style=for-the-badge&logo=github&label=Release Preview" hspace="5" height="30"/>
         </a>
     </p>
     <a href="https://flashydj.github.io/Slotmaps/">
