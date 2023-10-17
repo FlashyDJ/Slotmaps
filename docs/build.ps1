@@ -21,20 +21,4 @@ foreach ($class in $classes) {
     Add-TocEntry "$class<TKey, TValue>" "codesnippets\$classSmall-generic.md"
 }
 
-# Convert-XmlToMarkdown "..\src\Slotmaps\SlotMap\codesnippets.xml" `
-#     "csharp" "samples\codesnippets" "SlotMap<TValue>" "(?-i)^.*D$" "slotmap.md" $removeTrailingD
-# Add-TocEntry "SlotMap<TValue>" "codesnippets\slotmap.md"
-
-# Convert-XmlToMarkdown "..\src\Slotmaps\SlotMap\codesnippets.xml" "csharp" `
-#     "samples\codesnippets" "SlotMap<TKey, TValue>" ".*(?<!D)$" "slotmap-generic.md"
-# Add-TocEntry "SlotMap<TKey, TValue>" "codesnippets\slotmap-generic.md"
-
-# Convert-XmlToMarkdown "..\src\Slotmaps\SecondaryMap\codesnippets.xml" `
-#     "csharp" "samples\codesnippets" "SecondaryMap<TValue>" "(?-i)^.*D$" "secondarymap.md" $removeTrailingD
-# Add-TocEntry "SecondaryMap<TValue>" "codesnippets\secondarymap.md"
-
-# Convert-XmlToMarkdown "..\src\Slotmaps\SecondaryMap\codesnippets.xml" "csharp" `
-#     "samples\codesnippets" "SecondaryMap<TKey, TValue>" ".*(?<!D)$" "secondarymap-generic.md"
-# Add-TocEntry "SecondaryMap<TKey, TValue>" "codesnippets\secondarymap-generic.md"
-
-docfx -s
+docfx .\docfx.json
