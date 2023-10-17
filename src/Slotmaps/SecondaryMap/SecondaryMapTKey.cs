@@ -15,9 +15,11 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     private SlotValueCollection? _values;
 
     /// <include file='docs.xml' path='docs/Ctor1/*'/>
+    /// <include file='codesnippets.xml' path='code/Ctor1/*'/>
     public SecondaryMap() => _slots = s_emptyArray;
 
     /// <include file='docs.xml' path='docs/Ctor2/*'/>
+    /// <include file='codesnippets.xml' path='code/Ctor2/*'/>
     public SecondaryMap(int capacity)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);

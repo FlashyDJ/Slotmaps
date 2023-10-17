@@ -20,6 +20,38 @@
     </example>
   </SecondaryMap>
 
+  <Ctor1>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;(); // Empty Capacity
+      </code>
+    </example>
+  </Ctor1>
+
+  <Ctor2>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;(2); / 2 Slot Capacity
+      </code>
+    </example>
+  </Ctor2>
+
   <Capacity>
     <example>
       <code>
@@ -428,6 +460,38 @@
       </code>
     </example>
   </SecondaryMapD>
+
+  <Ctor1D>
+    <example>
+      <code>
+        // Create a Primary SlotMap.
+        var primaryMap = new SlotMap&lt;string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;int&gt;(); // Empty Capacity
+      </code>
+    </example>
+  </Ctor1D>
+
+  <Ctor2D>
+    <example>
+      <code>
+        // Create a Primary SlotMap.
+        var primaryMap = new SlotMap&lt;string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;int&gt;(2); / 2 Slot Capacity
+      </code>
+    </example>
+  </Ctor2D>
 
   <CapacityD>
     <example>

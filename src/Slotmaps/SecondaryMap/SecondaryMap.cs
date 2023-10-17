@@ -5,9 +5,11 @@ namespace FlashyDJ.Slotmaps;
 public class SecondaryMap<TValue> : SecondaryMap<SlotKey, TValue>
 {
     /// <include file='docs.xml' path='docs/Ctor1D/*'/>
+    /// <include file='codesnippets.xml' path='code/Ctor1D/*'/>
     public SecondaryMap() : base() {}
 
     /// <include file='docs.xml' path='docs/Ctor2D/*'/>
+    /// <include file='codesnippets.xml' path='code/Ctor2D/*'/>
     public SecondaryMap(int capacity) : base(capacity) {}
 
     /// <include file='docs.xml' path='docs/Capacity/*'/>
