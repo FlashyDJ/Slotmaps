@@ -73,14 +73,14 @@
         // Add some values to the primary map.
         SlotKey key1 = primaryMap.Add("Value 1");
         SlotKey key2 = primaryMap.Add("Value 2");
-
+        
         // Create a SecondaryMap for storing additional information associated with the primary map.
         var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
-
+        
         // Add additional values associated with the primary keys
         secondaryMap.Insert(key1, 42);
         secondaryMap.Insert(key2, 420);
-      
+        
         // Get the current count of elements in the secondary map.
         int count = secondaryMap.Count;
       </code>
@@ -152,13 +152,13 @@
         // Add some values to the primary map.
         SlotKey key1 = primaryMap.Add("Value 1");
         SlotKey key2 = primaryMap.Add("Value 2");
-
+        
         // Create a SecondaryMap for storing additional information associated with the primary map.
         var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
-
+        
         // Add additional value associated with the primary key
         secondaryMap.Insert(key1, 42);
-      
+        
         // Get the value associated with a specific key.
         var specificValue = secondaryMap[key1];
         
@@ -514,14 +514,14 @@
         // Add some values to the primary map.
         SlotKey key1 = primaryMap.Add("Value 1");
         SlotKey key2 = primaryMap.Add("Value 2");
-
+        
         // Create a SecondaryMap for storing additional information associated with the primary map.
         var secondaryMap = new SecondaryMap&lt;int&gt;();
-
+        
         // Add additional values associated with the primary keys
         secondaryMap.Insert(key1, 42);
         secondaryMap.Insert(key2, 420);
-      
+        
         // Get the current count of elements in the secondary map.
         int count = secondaryMap.Count;
       </code>
@@ -593,13 +593,13 @@
         // Add some values to the primary map.
         SlotKey key1 = primaryMap.Add("Value 1");
         SlotKey key2 = primaryMap.Add("Value 2");
-
+        
         // Create a SecondaryMap for storing additional information associated with the primary map.
         var secondaryMap = new SecondaryMap&lt;int&gt;();
-
+        
         // Add additional value associated with the primary key
         secondaryMap.Insert(key1, 42);
-      
+        
         // Get the value associated with a specific key.
         var specificValue = secondaryMap[key1];
         
