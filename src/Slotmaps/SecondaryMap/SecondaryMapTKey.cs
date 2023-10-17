@@ -1,5 +1,6 @@
 ﻿namespace FlashyDJ.Slotmaps;
 /// <include file='docs.xml' path='docs/SecondaryMap/*'/>
+/// <include file='codesnippets.xml' path="code/SecondaryMap/*"/>
 [Serializable]
 [DebuggerDisplay("Count = {Count}")]
 public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
@@ -68,21 +69,27 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     IEnumerator IEnumerable.GetEnumerator() => new Enumerator(this);
 
     /// <include file='docs.xml' path='docs/Capacity/*'/>
+    /// <include file='codesnippets.xml' path="code/Capacity/*"/>
     public int Capacity => _slots.Length;
 
     /// <include file='docs.xml' path='docs/Count/*'/>
+    /// <include file='codesnippets.xml' path="code/Count/*"/>
     public int Count { get; private set; }
 
     /// <include file='docs.xml' path='docs/IsEmpty/*'/>
+    /// <include file='codesnippets.xml' path="code/IsEmpty/*"/>
     public bool IsEmpty => Count == 0;
 
     /// <include file='docs.xml' path='docs/Keys/*'/>
+    /// <include file='codesnippets.xml' path="code/Keys/*"/>
     public SlotKeyCollection Keys => _keys ??= new SlotKeyCollection(this);
 
     /// <include file='docs.xml' path='docs/Values/*'/>
+    /// <include file='codesnippets.xml' path="code/Values/*"/>
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
     /// <include file='docs.xml' path='docs/Indexer/*'/>
+    /// <include file='codesnippets.xml' path="code/Indexer/*"/>
     public TValue this[TKey key]
     {
         get
@@ -96,6 +103,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/ContainsKey/*'/>
+    /// <include file='codesnippets.xml' path="code/ContainsKey/*"/>
     public bool ContainsKey(TKey key)
     {
         if (key.IsNull)
@@ -105,6 +113,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/ContainsValues/*'/>
+    /// <include file='codesnippets.xml' path="code/ContainsValues/*"/>
     public bool ContainsValue(TValue value)
     {
         if (value is null)
@@ -121,6 +130,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/Clear/*'/>
+    /// <include file='codesnippets.xml' path="code/Clear/*"/>
     public void Clear()
     {
         if (Count > 0)
@@ -131,6 +141,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/Drain/*'/>
+    /// <include file='codesnippets.xml' path="code/Drain/*"/>
     public IEnumerable<KeyValuePair<TKey, TValue>> Drain()
     {
         for (int i = 0; i < Capacity; i++)
@@ -148,6 +159,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/EnsureCapacity/*'/>
+    /// <include file='codesnippets.xml' path="code/EnsureCapacity/*"/>
     public int EnsureCapacity(int capacity)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
@@ -161,6 +173,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/Get/*'/>
+    /// <include file='codesnippets.xml' path="code/Get/*"/>
     public TValue Get(TKey key)
     {
         if (!ContainsKey(key))
@@ -170,6 +183,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/Insert/*'/>
+    /// <include file='codesnippets.xml' path="code/Insert/*"/>
     public TValue Insert(TKey key, TValue value)
     {
         ArgumentNullException.ThrowIfNull(value);
@@ -205,6 +219,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/Remove/*'/>
+    /// <include file='codesnippets.xml' path="code/Remove/*"/>
     public TValue Remove(TKey key)
     {
         if (key.IsNull)
@@ -227,6 +242,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/Reserve/*'/>
+    /// <include file='codesnippets.xml' path="code/Reserve/*"/>
     public void Reserve(int additionalSize)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(additionalSize);
@@ -234,6 +250,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/Resize/*'/>
+    /// <include file='codesnippets.xml' path="code/Resize/*"/>
     public void Resize(int newSize)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(newSize, Capacity);
@@ -245,6 +262,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/Retain/*'/>
+    /// <include file='codesnippets.xml' path="code/Retain/*"/>
     public void Retain(Func<TKey, TValue, bool> predicate)
     {
         for (int i = 0; i < _slots.Length; i++)
@@ -263,6 +281,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/TryGet/*'/>
+    /// <include file='codesnippets.xml' path="code/TryGet/*"/>
     public bool TryGet(TKey key, [MaybeNullWhen(false)] out TValue value)
     {
         if (!ContainsKey(key))
@@ -276,6 +295,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/TryInsert/*'/>
+    /// <include file='codesnippets.xml' path="code/TryInsert/*"/>
     public bool TryInsert(TKey key, TValue value, out TValue? oldValue)
     {
         ArgumentNullException.ThrowIfNull(value);
@@ -312,6 +332,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <include file='docs.xml' path='docs/TryRemove/*'/>
+    /// <include file='codesnippets.xml' path="code/TryRemove/*"/>
     public bool TryRemove(TKey key, [MaybeNullWhen(false)] out TValue value)
     {
         value = default;

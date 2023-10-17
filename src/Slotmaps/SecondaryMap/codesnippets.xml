@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<code>
+  <SecondaryMap>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional values associated with the primary keys
+        secondaryMap.Insert(key1, 42);
+        secondaryMap.Insert(key2, 420);
+      </code>
+    </example>
+  </SecondaryMap>
+
+  <Capacity>
+    <example>
+      <code>
+        // Create a SecondaryMap with the default key type.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+        
+        // Get the current capacity of the secondary map.
+        int capacity = secondaryMap.Capacity;
+      </code>
+    </example>
+  </Capacity>
+
+  <Count>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional values associated with the primary keys
+        secondaryMap.Insert(key1, 42);
+        secondaryMap.Insert(key2, 420);
+      
+        // Get the current count of elements in the secondary map.
+        int count = secondaryMap.Count;
+      </code>
+    </example>
+  </Count>
+
+  <IsEmpty>
+    <example>
+      <code>
+        // Create a SecondaryMap with the default key type.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, string&gt;();
+        
+        // Check if the secondary map is empty.
+        bool isEmpty = secondaryMap.IsEmpty;
+      </code>
+    </example>
+  </IsEmpty>
+
+  <Keys>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional value associated with the primary key
+        secondaryMap.Insert(key1, 42);
+        
+        // Access the keys added to the secondary map that is associated with the primary slot map.
+        var keys = secondaryMap.Keys;
+      </code>
+    </example>
+  </Keys>
+
+  <Values>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional value associated with the primary key
+        secondaryMap.Insert(key1, 42);
+        
+        // Access the values added to the secondary map that is associated with the primary slot map.
+        var values = secondaryMap.Values;
+      </code>
+    </example>
+  </Values>
+
+  <Indexer>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional value associated with the primary key
+        secondaryMap.Insert(key1, 42);
+      
+        // Get the value associated with a specific key.
+        var specificValue = secondaryMap[key1];
+        
+        // Set the value associated with a specific key.
+        secondaryMap[key2] = 42;
+      </code>
+    </example>
+  </Indexer>
+
+  <ContainsKey>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some value to the primary map.
+        SlotKey key = primaryMap.Add("Value 1");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional value associated with the primary key
+        secondaryMap.Insert(key, 42);
+
+        // Check if a key is present in the secondary map.
+        bool containsKey = secondaryMap.ContainsKey(key);
+      </code>
+    </example>
+  </ContainsKey>
+
+  <ContainsValue>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some value to the primary map.
+        SlotKey key = primaryMap.Add("Value 1");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional value associated with the primary key
+        secondaryMap.Insert(key, 42);
+
+        // Check if a value is present in the secondary map.
+        bool containsValue = secondaryMap.ContainsValue(key);
+      </code>
+    </example>
+  </ContainsValue>
+
+  <Clear>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional values associated with the primary keys
+        secondaryMap.Insert(key1, 42);
+        secondaryMap.Insert(key2, 420);
+
+        // Clear the secondary map.
+        secondaryMap.Clear();
+      </code>
+    </example>
+  </Clear>
+
+  <Drain>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional values associated with the primary keys
+        secondaryMap.Insert(key1, 42);
+        secondaryMap.Insert(key2, 420);
+
+        // Drain the secondary map, processing key-value pairs one by one.
+        foreach (var pair in secondaryMap.Drain())
+        {
+            // Process the pair
+            Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
+
+            // Optionally stop processing
+            if (conditionMet)
+                break;
+        }
+      </code>
+    </example>
+  </Drain>
+
+  <EnsureCapacity>
+    <example>
+      <code>
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Ensure a minimum capacity of 10.
+        int ensuredCapacity = secondaryMap.EnsureCapacity(10);
+      </code>
+    </example>
+  </EnsureCapacity>
+
+  <Get>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key = primaryMap.Add("Value 1");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional value associated with the primary key
+        secondaryMap.Insert(key, 42);
+
+        // Retrieve the value using the key
+        string value = slotMap.Get(key);
+      </code>
+    </example>
+  </Get>
+
+  <Insert>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key = primaryMap.Add("Value 1");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional value associated with the primary key
+        secondaryMap.Insert(key, 42);
+      </code>
+    </example>
+  </Insert>
+
+  <Remove>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key = primaryMap.Add("Value 1");
+        
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+        
+        // Add additional value associated with the primary key
+        secondaryMap.Insert(key, 42);
+
+        // Remove the value associated with the key
+        string removedValue = secondaryMap.Remove(key);
+      </code>
+    </example>
+  </Remove>
+
+  <Reserve>
+    <example>
+      <code>
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Reserve additional capacity for 10 elements.
+        secondaryMap.Reserve(10);
+      </code>
+    </example>
+  </Reserve>
+
+  <Resize>
+    <example>
+      <code>
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Resize the secondary map to a new size.
+        slotMap.Resize(100);
+      </code>
+    </example>
+  </Resize>
+
+  <Retain>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some values to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+        SlotKey key2 = primaryMap.Add("Value 2");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional values associated with the primary keys
+        secondaryMap.Insert(key1, 42);
+        secondaryMap.Insert(key2, 420);
+
+        // Retain elements that satisfy the specified condition.
+        secondaryMap.Retain((key, value) =&gt; value &gt; 10);
+      </code>
+    </example>
+  </Retain>
+
+  <TryInsert>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some value to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Try to insert or update a value with a key
+        bool success = slotMap.secondaryMap(key, 42, out var oldValue);
+      </code>
+    </example>
+  </TryInsert>
+
+  <TryGet>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some value to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional value associated with the primary key
+        secondaryMap.Insert(key, 42);
+
+        bool success = secondaryMap.TryGet(key, out var retrievedValue);
+      </code>
+    </example>
+  </TryGet>
+
+  <TryRemove>
+    <example>
+      <code>
+        // Create a Primary SlotMap with the default key type.
+        var primaryMap = new SlotMap&lt;SlotKey, string&gt;();
+        
+        // Add some value to the primary map.
+        SlotKey key1 = primaryMap.Add("Value 1");
+
+        // Create a SecondaryMap for storing additional information associated with the primary map.
+        var secondaryMap = new SecondaryMap&lt;SlotKey, int&gt;();
+
+        // Add additional value associated with the primary key
+        secondaryMap.Insert(key, 42);
+
+        bool success = secondaryMap.TryRemove(key, out var removedValue);
+      </code>
+    </example>
+  </TryRemove>
+</code>
