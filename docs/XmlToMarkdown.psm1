@@ -24,7 +24,7 @@ function Convert-XmlToMarkdown {
 
     $markdownContent = "# $ClassName Code Snippets `n `n"
 
-    # Function to calculate and remove leading whitespace while preserving relative indentation
+    # Helper function to remove common indentation
     function Remove-CommonIndent([string]$text) {
         $lines = $text.Trim() -split '\r?\n'
         $commonIndent = [int]($lines 
@@ -32,7 +32,6 @@ function Convert-XmlToMarkdown {
             | ForEach-Object { $matches[0].Length } 
             | Measure-Object -Minimum).Minimum
 
-        # Remove the common indent and join the lines back together
         $result = $lines | ForEach-Object {
             $_ -replace ('^\s{' + $commonIndent + '}'), ''
         } | Out-String
@@ -40,6 +39,7 @@ function Convert-XmlToMarkdown {
         return $result
     }
 
+    # Helper function to remove common indentation
     function TransformMethodName($name) {
         if ($null -ne $MethodNameTransformation) {
             return & $MethodNameTransformation $name
@@ -47,14 +47,17 @@ function Convert-XmlToMarkdown {
         return $name
     }
 
+    # Helper function to check if a method node should be selected
     function IsMethodNodeSelected($nodeName) {
         if ([string]::IsNullOrEmpty($MethodNameRegex)) {
             return $true
-        } else {
+        }
+        else {
             return $nodeName -match $MethodNameRegex
         }
     }
 
+    # Iterate through method nodes
     foreach ($methodNode in $xmlDoc.SelectNodes("/*/*")) {
         $methodName = $methodNode.Name
 
