@@ -87,22 +87,34 @@ function Convert-XmlToMarkdown {
 function Add-TocEntry {
     param(
         [string]$Name,
-        [string]$FileName
+        [string]$Href
     )
 
-    if ([string]::IsNullOrEmpty($FileName)) {
-        $FileName = "$ClassName.md"
+    if ([string]::IsNullOrEmpty($Href)) {
+        $Href = "$Name.md"
     }
 
     $sampleTocPath = ".\samples\toc.yml"
+    $tocEntry = "- name: $Name`n  href: $Href"
 
-    $tocEntry = @"
-- name: $Name
-  href: $FileName
-"@
+    $existingEntries = Get-Content -Path $sampleTocPath
 
-    $existingEntries = Get-Content -Path $sampleTocPath -Raw
-    if ($existingEntries -notlike "*name: $Name*") {
+    $entryExists = $false
+    for ($i = 0; $i -lt $existingEntries.Length - 1; $i++) {
+        $entryName = $existingEntries[$i]
+        $entryHref = $existingEntries[$i + 1]
+    
+        if ($entryName -like "*name: $Name*") {
+            $entryExists = $true
+
+            if ($entryHref -notlike "*href: $Href*") {
+                Write-Host "Error: Entry '$Name' already exists with a different href."
+            }
+            break
+        }
+    }
+
+    if (!$entryExists) {
         Add-Content -Path $sampleTocPath -Value $tocEntry
     }
 }
