@@ -34,12 +34,7 @@ function Convert-XmlToMarkdown {
 
         # Remove the common indent and join the lines back together
         $result = $lines | ForEach-Object {
-            if ($_ -match '^\s{' + $commonIndent + '}') {
-                $_ -replace ('^\s{' + $commonIndent + '}'), ''
-            }
-            else {
-                $_
-            }
+            $_ -replace ('^\s{' + $commonIndent + '}'), ''
         } | Out-String
 
         return $result
