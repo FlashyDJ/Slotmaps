@@ -1,14 +1,14 @@
 ﻿namespace FlashyDJ.Slotmaps;
-public partial class SparseSecondaryMap<TValue>
+public partial class SparseSecondaryMap<TKey, TValue>
 {
     /// <include file='docs.xml' path='docs/SlotValueCollection/*'/>
     [DebuggerDisplay("Count = {Count}")]
     public sealed class SlotValueCollection : ICollection<TValue>, IReadOnlyCollection<TValue>
     {
-        private readonly SparseSecondaryMap<TValue> _sparseMap;
+        private readonly SparseSecondaryMap<TKey, TValue> _sparseMap;
 
         /// <include file='docs.xml' path='docs/SVCCtor/*'/>
-        public SlotValueCollection(SparseSecondaryMap<TValue> sparseSecondaryMap)
+        public SlotValueCollection(SparseSecondaryMap<TKey, TValue> sparseSecondaryMap)
         {
             ArgumentNullException.ThrowIfNull(sparseSecondaryMap);
             _sparseMap = sparseSecondaryMap;
@@ -47,11 +47,11 @@ public partial class SparseSecondaryMap<TValue>
         /// <include file='docs.xml' path='docs/SVCEnumerator/*'/>
         public struct Enumerator : IEnumerator<TValue>, IEnumerator
         {
-            private readonly SparseSecondaryMap<TValue> _sparseMap;
+            private readonly SparseSecondaryMap<TKey, TValue> _sparseMap;
             private int _index;
             private TValue _current;
 
-            internal Enumerator(SparseSecondaryMap<TValue> sparseSecondaryMap)
+            internal Enumerator(SparseSecondaryMap<TKey, TValue> sparseSecondaryMap)
             {
                 _sparseMap = sparseSecondaryMap;
                 _index = -1;
