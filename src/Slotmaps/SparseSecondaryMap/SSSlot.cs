@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 
 namespace FlashyDJ.Slotmaps;
-public partial class SparseSecondaryMap<TValue>
+public partial class SparseSecondaryMap<TKey, TValue>
 {
     [DebuggerDisplay("{ToString()}")]
     internal struct Slot(TValue value, uint version)

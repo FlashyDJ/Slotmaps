@@ -1,34 +1,34 @@
 ﻿namespace FlashyDJ.Slotmaps;
-public partial class SparseSecondaryMap<TValue>
+public partial class SparseSecondaryMap<TKey, TValue>
 {
     /// <include file='docs.xml' path='docs/SlotKeyCollection/*'/>
     [DebuggerDisplay("Count = {Count}")]
-    public sealed class SlotKeyCollection : ICollection<SlotKey>, IReadOnlyCollection<SlotKey>
+    public sealed class SlotKeyCollection : ICollection<TKey>, IReadOnlyCollection<TKey>
     {
-        private readonly SparseSecondaryMap<TValue> _sparseMap;
+        private readonly SparseSecondaryMap<TKey, TValue> _sparseMap;
 
         /// <include file='docs.xml' path='docs/SKCCtor/*'/>
-        public SlotKeyCollection(SparseSecondaryMap<TValue> sparseSecondaryMap)
+        public SlotKeyCollection(SparseSecondaryMap<TKey, TValue> sparseSecondaryMap)
         {
             ArgumentNullException.ThrowIfNull(sparseSecondaryMap);
             _sparseMap = sparseSecondaryMap;
         }
 
-        bool ICollection<SlotKey>.IsReadOnly => true;
-        void ICollection<SlotKey>.Add(SlotKey item) => throw new NotSupportedException();
-        void ICollection<SlotKey>.Clear() => throw new NotSupportedException();
-        bool ICollection<SlotKey>.Remove(SlotKey item) => throw new NotSupportedException();
-        IEnumerator<SlotKey> IEnumerable<SlotKey>.GetEnumerator() => new Enumerator(_sparseMap);
+        bool ICollection<TKey>.IsReadOnly => true;
+        void ICollection<TKey>.Add(TKey item) => throw new NotSupportedException();
+        void ICollection<TKey>.Clear() => throw new NotSupportedException();
+        bool ICollection<TKey>.Remove(TKey item) => throw new NotSupportedException();
+        IEnumerator<TKey> IEnumerable<TKey>.GetEnumerator() => new Enumerator(_sparseMap);
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_sparseMap);
 
         /// <include file='docs.xml' path='docs/SKCCount/*'/>
         public int Count => _sparseMap.Count;
 
         /// <include file='docs.xml' path='docs/SKCContains/*'/>
-        public bool Contains(SlotKey key) => _sparseMap.ContainsKey(key);
+        public bool Contains(TKey key) => _sparseMap.ContainsKey(key);
 
         /// <include file='docs.xml' path='docs/SKCCopyTo/*'/>
-        public void CopyTo(SlotKey[] array, int index)
+        public void CopyTo(TKey[] array, int index)
         {
             ArgumentNullException.ThrowIfNull(array);
             ArgumentOutOfRangeException.ThrowIfNegative(index);
@@ -40,18 +40,18 @@ public partial class SparseSecondaryMap<TValue>
                 var slot = _sparseMap._slots[i];
 
                 if (slot.Occupied)
-                    array[index++] = new(i, slot.Version);
+                    array[index++] = TKey.New(i, slot.Version);
             }
         }
 
         /// <include file='docs.xml' path='docs/SKCEnumerator/*'/>
-        public struct Enumerator : IEnumerator<SlotKey>, IEnumerator
+        public struct Enumerator : IEnumerator<TKey>, IEnumerator
         {
-            private readonly SparseSecondaryMap<TValue> _sparseMap;
+            private readonly SparseSecondaryMap<TKey, TValue> _sparseMap;
             private int _index;
-            private SlotKey _current;
+            private TKey _current;
 
-            internal Enumerator(SparseSecondaryMap<TValue> sparseSecondaryMap)
+            internal Enumerator(SparseSecondaryMap<TKey, TValue> sparseSecondaryMap)
             {
                 _sparseMap = sparseSecondaryMap;
                 _index = -1;
@@ -61,7 +61,7 @@ public partial class SparseSecondaryMap<TValue>
             object IEnumerator.Current => Current;
 
             /// <inheritdoc/>
-            public SlotKey Current => _current;
+            public TKey Current => _current;
 
             /// <inheritdoc/>
             public readonly void Dispose() { }
@@ -78,7 +78,7 @@ public partial class SparseSecondaryMap<TValue>
                         if (!slot.Occupied)
                             break;
 
-                        _current = new(_index, slot.Version);
+                        _current = TKey.New(_index, slot.Version);
                         return true;
                     }
                 }
