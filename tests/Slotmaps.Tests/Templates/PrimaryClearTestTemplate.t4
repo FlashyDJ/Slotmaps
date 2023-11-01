@@ -1,0 +1,34 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Clear
+{
+    [Fact]
+    public void WithItems_ClearsMapAndSetsCountToZero()
+    {
+        var <#= varName #> = new <#= slotMapType #><int>();
+        <#= varName #>.Add(42);
+        <#= varName #>.Add(24);
+        var capacity = <#= varName #>.Capacity;
+
+        <#= varName #>.Clear();
+
+        Assert.Equal(capacity, <#= varName #>.Capacity);
+        Assert.Empty(<#= varName #>);
+    }
+
+    [Fact]
+    public void EmptyMap_DoesNothing()
+    {
+        var <#= varName #> = new <#= slotMapType #><int>();
+
+        <#= varName #>.Clear();
+
+        Assert.Empty(<#= varName #>);
+    }
+}
