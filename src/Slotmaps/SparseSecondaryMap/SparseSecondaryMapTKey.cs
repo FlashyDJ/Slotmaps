@@ -40,7 +40,6 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
         foreach (var key in _slots.Keys)
         {
             ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key, out var _);
-
             if (slot.Occupied)
                 array[index++] = new(TKey.New(key, slot.Version), slot.Value);
         }
@@ -76,11 +75,9 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
     {
         get
         {
-            if (key.IsNull && key.Version == 0)
-                throw new KeyNotFoundException("Invalid SlotKey");
+            if (key.IsNull) throw new KeyNotFoundException("Invalid SlotKey");
 
             var exists = _slots.TryGetValue(key.Index, out var slot);
-
             if (!exists || slot.Version != key.Version)
                 throw new KeyNotFoundException("Invalid SlotKey");
 
@@ -96,7 +93,6 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
             return false;
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
-
         return exists && slot.Occupied && slot.Version == key.Version;
     }
 
@@ -126,7 +122,6 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
                 var value = slot.Value.Value;
 
                 Remove(key);
-
                 yield return new(key, value);
             }
         }
@@ -169,9 +164,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
             return replacedValue;
         }
         else
-        {
             Count++;
-        }
 
         slot.Value = value;
         slot.Version = key.Version;
@@ -191,7 +184,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
             if (slot.Version == key.Version)
             {
                 var value = slot.Value;
-                slot.SetVacant();
+                slot.Vacant = true;
                 Count--;
                 return value;
             }
@@ -227,7 +220,6 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
             return false;
 
         var exists = _slots.TryGetValue(key.Index, out var slot);
-
         if (!exists || slot.Version != key.Version || !slot.Occupied)
             return false;
 
@@ -257,9 +249,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
             return true;
         }
         else
-        {
             Count++;
-        }
 
         slot.Value = value;
         slot.Version = key.Version;
@@ -282,7 +272,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
             if (slot.Version == key.Version)
             {
                 value = slot.Value;
-                slot.SetVacant();
+                slot.Vacant = true;
                 Count--;
                 return true;
             }

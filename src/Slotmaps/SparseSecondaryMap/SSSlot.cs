@@ -7,22 +7,30 @@ public partial class SparseSecondaryMap<TKey, TValue>
     internal struct Slot(TValue value, uint version)
     {
         private TValue _value = value;
+        private bool vacant;
 
         public TValue Value
         {
-            get => Occupied ? _value : throw new InvalidOperationException("Slot is empty");
-            internal set => _value = value!;
+            get => Occupied ? _value : throw new InvalidOperationException("Slot is vacant");
+            internal set => _value = value;
+        }
+
+        public bool Vacant
+        {
+            get => vacant;
+            set
+            {
+                if (value)
+                {
+                    Value = default!;
+                    vacant = true;
+                }
+            }
         }
 
         public uint Version { get; internal set; } = version;
 
-        public bool Occupied => Version != 0;
-
-        public void SetVacant()
-        {
-            _value = default!;
-            Version = 0;
-        }
+        public bool Occupied => !Vacant;
 
         public override string ToString() => $"{Value}v{Version}";
     }
