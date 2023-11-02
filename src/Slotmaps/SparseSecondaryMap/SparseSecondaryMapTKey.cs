@@ -152,8 +152,6 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
     /// <include file='docs.xml' path='docs/Insert/*'/>
     public TValue Insert(TKey key, TValue value)
     {
-        ArgumentNullException.ThrowIfNull(value);
-
         if (key.IsNull && key.Version == 0)
             throw new KeyNotFoundException("Invalid SlotKey");
 
@@ -240,7 +238,6 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
     /// <include file='docs.xml' path='docs/TryInsert/*'/>
     public bool TryInsert(TKey key, TValue value, [MaybeNullWhen(false)] out TValue previousValue)
     {
-        ArgumentNullException.ThrowIfNull(value);
         previousValue = default;
 
         if (key.IsNull && key.Version == 0)
