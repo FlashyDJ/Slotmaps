@@ -102,7 +102,6 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
     /// <include file='codesnippets.xml' path="code/Add/*"/>
     public TKey Add(TValue value)
     {
-        ArgumentNullException.ThrowIfNull(value);
         var newCount = Count + 1;
 
         if (_freeHead <= Capacity - 1)
@@ -227,8 +226,6 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
     /// <include file='codesnippets.xml' path="code/Insert/*"/>
     public TKey Insert(TKey key, TValue value)
     {
-        ArgumentNullException.ThrowIfNull(value);
-
         if (!ContainsKey(key))
             throw new KeyNotFoundException("Invalid SlotKey");
 
@@ -258,7 +255,7 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         ref var slot = ref _slots[key.Index];
 
         var returnValue = slot.Value;
-        slot.Value = default;
+        slot.Value = default!;
         slot.NextFree = _freeHead;
         slot.Version++;
 
@@ -313,8 +310,6 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
     /// <include file='codesnippets.xml' path="code/TryInsert/*"/>
     public bool TryInsert(TKey key, TValue value, out TKey newKey)
     {
-        ArgumentNullException.ThrowIfNull(value);
-
         if (!ContainsKey(key))
         {
             newKey = TKey.Null<TKey>();
@@ -363,9 +358,9 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         }
 
         ref var slot = ref _slots[key.Index];
-        value = slot.Value!;
+        value = slot.Value;
 
-        slot.Value = default;
+        slot.Value = default!;
         slot.NextFree = _freeHead;
         slot.Version++;
 
