@@ -48,13 +48,3 @@ foreach (var data in dataTypes)
 }
 #>
 }
-<#
-static string CenteredString(string s)
-{
-    const int width = 86;
-    var leftPadding = (width - s.Length) / 2;
-    var rightPadding = width - s.Length - leftPadding;
-
-    return new string(' ', leftPadding) + s + new string(' ', rightPadding);
-}
-#>
