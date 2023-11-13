@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace FlashyDJ.Slotmaps;
+﻿namespace FlashyDJ.Slotmaps;
 public partial class SparseSecondaryMap<TKey, TValue>
 {
     [DebuggerDisplay("{ToString()}")]
@@ -21,10 +19,9 @@ public partial class SparseSecondaryMap<TKey, TValue>
             set
             {
                 if (value)
-                {
                     Value = default!;
-                    vacant = true;
-                }
+
+                vacant = value;
             }
         }
 
