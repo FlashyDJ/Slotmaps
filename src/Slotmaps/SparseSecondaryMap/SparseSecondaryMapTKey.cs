@@ -98,8 +98,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
 
     /// <include file='docs.xml' path='docs/ContainsValue/*'/>
     public bool ContainsValue(TValue value) =>
-        value is not null
-        && _slots.Where(x => EqualityComparer<TValue>.Default.Equals(x.Value.Value, value)).Any();
+        _slots.Where(x => EqualityComparer<TValue>.Default.Equals(x.Value.Value, value)).Any();
 
     /// <include file='docs.xml' path='docs/Clear/*'/>
     public void Clear()
