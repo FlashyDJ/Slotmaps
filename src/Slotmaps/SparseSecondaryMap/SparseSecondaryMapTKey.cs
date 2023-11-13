@@ -282,9 +282,6 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
         return false;
     }
 
-    private Dictionary<int, Slot>.Enumerator BackingEnumerator() =>
-        _slots.GetEnumerator();
-
     /// <include file='docs.xml' path='docs/Enumerator/*'/>
     public struct Enumerator : IEnumerator<KeyValuePair<TKey, TValue>>, IEnumerator
     {
