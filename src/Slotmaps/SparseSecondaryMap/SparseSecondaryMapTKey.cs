@@ -198,9 +198,8 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
         foreach(var key in _slots.Keys)
         {
             ref var slot = ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key);
-            Debug.Assert(Unsafe.IsNullRef(ref slot));
 
-            if (slot.Occupied)
+            if (!Unsafe.IsNullRef(ref slot) && slot.Occupied)
             {
                 var slotKey = TKey.New(key, slot.Version);
                 var value = slot.Value;
