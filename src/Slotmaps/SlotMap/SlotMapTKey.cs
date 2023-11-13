@@ -1,6 +1,5 @@
 ﻿namespace FlashyDJ.Slotmaps;
 /// <include file='docs.xml' path="docs/SlotMap/*"/>
-[Serializable]
 [DebuggerDisplay("Count = {Count}")]
 public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
     where TKey : struct, ISlotKey<TKey>

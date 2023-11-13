@@ -1,7 +1,6 @@
 ﻿namespace FlashyDJ.Slotmaps;
 /// <include file='docs.xml' path='docs/SecondaryMap/*'/>
 /// <include file='codesnippets.xml' path="code/SecondaryMap/*"/>
-[Serializable]
 [DebuggerDisplay("Count = {Count}")]
 public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
     where TKey : struct, ISlotKey<TKey>
