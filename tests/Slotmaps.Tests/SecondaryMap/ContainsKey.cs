@@ -56,6 +56,22 @@ public class ContainsKey
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
+    //                                         int?                                         //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithIntNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<int?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, 10);
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
     //                                        string                                        //
     //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +81,22 @@ public class ContainsKey
         var secondaryMap = new SecondaryMap<string>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, "Value 2");
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //                                       string?                                        //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithStringNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<string?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, "Value 1");
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -88,6 +120,22 @@ public class ContainsKey
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
+    //                                       double?                                        //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithDoubleNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<double?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, 1.11D);
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
     //                                         bool                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -97,6 +145,22 @@ public class ContainsKey
         var secondaryMap = new SecondaryMap<bool>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, false);
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //                                        bool?                                         //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithBoolNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<bool?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, true);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -120,6 +184,22 @@ public class ContainsKey
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
+    //                                        char?                                         //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithCharNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<char?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, 'A');
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
     //                                         long                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -129,6 +209,22 @@ public class ContainsKey
         var secondaryMap = new SecondaryMap<long>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, 2000_000_000_000L);
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //                                        long?                                         //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithLongNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<long?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, 1000_000_000_000L);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -152,6 +248,22 @@ public class ContainsKey
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
+    //                                        float?                                        //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithFloatNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<float?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, 1.1F);
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
     //                                       decimal                                        //
     //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -161,6 +273,22 @@ public class ContainsKey
         var secondaryMap = new SecondaryMap<decimal>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, 2.222_222_222M);
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //                                       decimal?                                       //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithDecimalNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<decimal?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, 1.111_111_111M);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -184,6 +312,22 @@ public class ContainsKey
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
+    //                                      DateTime?                                       //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithDateTimeNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<DateTime?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, DateTime.Parse("2023-01-01"));
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
     //                                       TimeSpan                                       //
     //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -200,6 +344,22 @@ public class ContainsKey
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
+    //                                      TimeSpan?                                       //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithTimeSpanNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<TimeSpan?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, new(00,00,00));
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
     //                                         Guid                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -209,6 +369,22 @@ public class ContainsKey
         var secondaryMap = new SecondaryMap<Guid>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+
+        var result = secondaryMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //                                        Guid?                                         //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWithGuidNullableExists_ReturnsTrue()
+    {
+        var secondaryMap = new SecondaryMap<Guid?>();
+        var key = new SlotKey(1, 1);
+        secondaryMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         var result = secondaryMap.ContainsKey(key);
 

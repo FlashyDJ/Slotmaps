@@ -45,7 +45,7 @@ public class ContainsKey
 <#
 foreach (var data in dataTypes)
 {
-    var typeTitle = char.ToUpper(data.Key[0]) + data.Key.Substring(1);
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
 #>
     //////////////////////////////////////////////////////////////////////////////////////////
     //<#= CenteredString(data.Key) #>//
