@@ -1,0 +1,26 @@
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    var dataTypes = new Dictionary<string, string[]>()
+    {
+        { "int", new string[] { "10", "20", "30", "40", "50" } },
+        { "string", new string[] { "\"Value 1\"", "\"Value 2\"", "\"Value 3\"", "\"Value 4\"", "\"Value 5\"" } },
+        { "double", new string[] { "1.11D", "2.22D", "3.33D", "4.44D", "5.55D" } },
+        { "bool", new string[] { "true", "false" } },
+        { "char", new string[] { "'A'", "'B'", "'C'", "'D'", "'E'" } },
+        { "long", new string[] { "1000_000_000_000L", "2000_000_000_000L", "3000_000_000_000L", "4000_000_000_000L", "5000_000_000_000L" } },
+        { "float", new string[] { "1.1F", "2.2F", "3.3F", "4.4F", "5.5F" } },
+        { "decimal", new string[] { "1.111_111_111M", "2.222_222_222M", "3.333_333_333M", "4.444_444_444M", "5.555_555_555M" } },
+        { "DateTime", new string[] { @"DateTime.Parse(""2023-01-01"")", @"DateTime.Parse(""2023-02-01"")", @"DateTime.Parse(""2023-03-01"")", @"DateTime.Parse(""2023-04-01"")", @"DateTime.Parse(""2023-05-01"")" } },
+        { "TimeSpan", new string[] { "new(00,00,00)", "new(01,00,00)", "new(02,00,00)", "new(03,00,00)", "new(04,00,00)" } },
+        { "Guid", new string[] { @"Guid.Parse(""A7CDEB8A-62A7-4AC6-90F6-8344309736DE"")", @"Guid.Parse(""B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"")", @"Guid.Parse(""C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"")", @"Guid.Parse(""D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"")", @"Guid.Parse(""E2E85D84-FAFE-44E9-A14C-78D50C207F45"")" } }
+    };
+
+    static string CenteredString(string s)
+    {
+        const int width = 86;
+        var leftPadding = (width - s.Length) / 2;
+        var rightPadding = width - s.Length - leftPadding;
+    
+        return new string(' ', leftPadding) + s + new string(' ', rightPadding);
+    }
+#>
