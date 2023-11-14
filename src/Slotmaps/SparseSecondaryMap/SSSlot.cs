@@ -13,6 +13,8 @@ public partial class SparseSecondaryMap<TKey, TValue>
             internal set => _value = value;
         }
 
+        public uint Version { get; internal set; } = version;
+
         public bool Vacant
         {
             get => vacant;
@@ -25,9 +27,7 @@ public partial class SparseSecondaryMap<TKey, TValue>
             }
         }
 
-        public uint Version { get; internal set; } = version;
-
-        public bool Occupied => !Vacant;
+        public bool Occupied => !vacant;
 
         public override string ToString() => $"{Value}v{Version}";
     }

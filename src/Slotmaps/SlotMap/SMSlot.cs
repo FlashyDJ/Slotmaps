@@ -11,9 +11,9 @@ public partial class SlotMap<TKey, TValue>
             internal set => _value = value!;
         }
 
-        public int NextFree { get; internal set; }
-
         public uint Version { get; internal set; } = version;
+
+        public int NextFree { get; internal set; }
 
         public bool Occupied => Version % 2 > 0;
 
