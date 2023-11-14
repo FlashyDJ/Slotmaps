@@ -38,6 +38,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ContainsKey.cs</LastGenOutput>
     </None>
+    <None Update="SecondaryMap\ContainsValue.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ContainsValue.cs</LastGenOutput>
+    </None>
     <None Update="SparseSecondaryMap\Clear.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Clear.cs</LastGenOutput>
@@ -45,6 +49,10 @@
     <None Update="SparseSecondaryMap\ContainsKey.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ContainsKey.cs</LastGenOutput>
+    </None>
+    <None Update="SparseSecondaryMap\ContainsValue.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ContainsValue.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -63,6 +71,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ContainsKey.tt</DependentUpon>
     </Compile>
+    <Compile Update="SecondaryMap\ContainsValue.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContainsValue.tt</DependentUpon>
+    </Compile>
     <Compile Update="SparseSecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -72,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ContainsKey.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SparseSecondaryMap\ContainsValue.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContainsValue.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
