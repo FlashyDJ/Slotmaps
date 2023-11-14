@@ -30,9 +30,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="SecondaryMap\Clear.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Clear.cs</LastGenOutput>
+    </None>
     <None Update="SecondaryMap\ContainsKey.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ContainsKey.cs</LastGenOutput>
+    </None>
+    <None Update="SparseSecondaryMap\Clear.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Clear.cs</LastGenOutput>
     </None>
     <None Update="SparseSecondaryMap\ContainsKey.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -45,10 +53,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="SecondaryMap\Clear.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Clear.tt</DependentUpon>
+    </Compile>
     <Compile Update="SecondaryMap\ContainsKey.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ContainsKey.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SparseSecondaryMap\Clear.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Clear.tt</DependentUpon>
     </Compile>
     <Compile Update="SparseSecondaryMap\ContainsKey.cs">
       <DesignTime>True</DesignTime>
