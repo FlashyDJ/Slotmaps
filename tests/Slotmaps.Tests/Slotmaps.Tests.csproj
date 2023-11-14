@@ -46,6 +46,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Drain.cs</LastGenOutput>
     </None>
+    <None Update="SecondaryMap\EnsureCapacity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnsureCapacity.cs</LastGenOutput>
+    </None>
     <None Update="SparseSecondaryMap\Clear.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Clear.cs</LastGenOutput>
@@ -61,6 +65,10 @@
     <None Update="SparseSecondaryMap\Drain.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Drain.cs</LastGenOutput>
+    </None>
+    <None Update="SparseSecondaryMap\EnsureCapacity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnsureCapacity.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -89,6 +97,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Drain.tt</DependentUpon>
     </Compile>
+    <Compile Update="SecondaryMap\EnsureCapacity.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnsureCapacity.tt</DependentUpon>
+    </Compile>
     <Compile Update="SparseSecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -108,6 +121,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Drain.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SparseSecondaryMap\EnsureCapacity.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnsureCapacity.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
