@@ -226,7 +226,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
             if (slot.Version == key.Version)
             {
                 var value = slot.Value;
-                slot.Vacant = true;
+                slot.SetVacant();
                 Count--;
 
                 return value;
@@ -339,7 +339,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
             if (slot.Version == key.Version)
             {
                 value = slot.Value;
-                slot.Vacant = true;
+                slot.SetVacant();
                 Count--;
 
                 return true;

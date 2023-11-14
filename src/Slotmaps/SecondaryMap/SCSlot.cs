@@ -4,7 +4,6 @@ public partial class SecondaryMap<TKey, TValue>
     internal struct Slot(TValue value, uint version)
     {
         private TValue _value = value;
-        private bool vacant;
 
         public TValue Value
         {
@@ -14,19 +13,13 @@ public partial class SecondaryMap<TKey, TValue>
 
         public uint Version { get; internal set; } = version;
 
-        public bool Vacant
+        public bool Occupied => Version != 0;
+
+        public void SetVacant()
         {
-            get => vacant;
-            set
-            {
-                if (value)
-                    Value = default!;
-
-                vacant = value;
-            }
+            Value = default!;
+            Version = 0;
         }
-
-        public bool Occupied => !vacant;
 
         public override string ToString() => $"{Value}v{Version}";
     }
