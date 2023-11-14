@@ -118,9 +118,6 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     /// <include file='codesnippets.xml' path="code/ContainsValues/*"/>
     public bool ContainsValue(TValue value)
     {
-        if (value is null)
-            return false;
-
         for (int i = 0; i < _slots.Length; i++)
         {
             ref var slot = ref _slots[i];
@@ -188,8 +185,6 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     /// <include file='codesnippets.xml' path="code/Insert/*"/>
     public TValue Insert(TKey key, TValue value)
     {
-        ArgumentNullException.ThrowIfNull(value);
-
         if (key.IsNull)
             throw new KeyNotFoundException("Invalid TKey");
 
@@ -298,9 +293,8 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
 
     /// <include file='docs.xml' path='docs/TryInsert/*'/>
     /// <include file='codesnippets.xml' path="code/TryInsert/*"/>
-    public bool TryInsert(TKey key, TValue value, out TValue? oldValue)
+    public bool TryInsert(TKey key, TValue value, [MaybeNullWhen(false)] out TValue oldValue)
     {
-        ArgumentNullException.ThrowIfNull(value);
         oldValue = default;
 
         if (key.IsNull)
