@@ -56,7 +56,7 @@ foreach (var data in dataTypes)
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
         var key = new SlotKey(1, 1);
-        <#= varName #>.Insert(key, <#= data.Value[1] #>);
+        <#= varName #>.Insert(key, <#= data.Value[0] #>);
 
         var result = <#= varName #>.ContainsKey(key);
 
