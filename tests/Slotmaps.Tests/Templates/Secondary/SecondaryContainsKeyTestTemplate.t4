@@ -3,8 +3,8 @@
 <#
     var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
 #>
-<#@ include file="TestData.t4" #>
-<#@ include file="Header.t4" #>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
 public class ContainsKey

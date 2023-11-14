@@ -3,4 +3,4 @@
 <#
     var slotMapType = "SparseSecondaryMap";
 #>
-<#@ include file="..\Templates\SecondaryContainsKeyTestTemplate.t4" #>
+<#@ include file="..\Templates\Secondary\SecondaryContainsKeyTestTemplate.t4" #>
