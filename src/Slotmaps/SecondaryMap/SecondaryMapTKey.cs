@@ -192,7 +192,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
             Array.Resize(ref _slots, key.Index + 1);
 
         ref var slot = ref _slots[key.Index];
-        var returnValue = slot.Value ?? value;
+        var returnValue = slot.Occupied ? slot.Value : value;
 
         if (slot.Version == key.Version)
         {
@@ -206,9 +206,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
                 throw new KeyNotFoundException("Invalid TKey");
         }
         else
-        {
             Count++;
-        }
 
         slot.Value = value;
         slot.Version = key.Version;
@@ -318,10 +316,9 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
                 return false;
         }
         else
-        {
             Count++;
-        }
 
+        oldValue = value;
         slot.Value = value;
         slot.Version = key.Version;
         return true;
