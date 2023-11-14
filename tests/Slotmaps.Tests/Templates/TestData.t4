@@ -19,7 +19,7 @@
         { "decimal", new string[] { "1.111_111_111M", "2.222_222_222M", "3.333_333_333M", "4.444_444_444M", "5.555_555_555M", "6.666_666_666M" } },
         { "decimal?", new string[] { "null", "1.111_111_111M", "2.222_222_222M", "3.333_333_333M", "4.444_444_444M", "5.555_555_555M", "6.666_666_666M" } },
         { "DateTime", new string[] { @"DateTime.Parse(""2023-01-01"")", @"DateTime.Parse(""2023-02-01"")", @"DateTime.Parse(""2023-03-01"")", @"DateTime.Parse(""2023-04-01"")", @"DateTime.Parse(""2023-05-01"")", @"DateTime.Parse(""2023-06-01"")" } },
-        { "DateTime?", new string[] { "null", @"DateTime.Parse(""2023-01-01"")", @"DateTime.Parse(""2023-02-01"")", @"DateTime.Parse(""2023-03-01"")", @"DateTime.Parse(""2023-04-01"")", @"DateTime.Parse(""2023-05-01"")", , @"DateTime.Parse(""2023-06-01"")" } },
+        { "DateTime?", new string[] { "null", @"DateTime.Parse(""2023-01-01"")", @"DateTime.Parse(""2023-02-01"")", @"DateTime.Parse(""2023-03-01"")", @"DateTime.Parse(""2023-04-01"")", @"DateTime.Parse(""2023-05-01"")", @"DateTime.Parse(""2023-06-01"")" } },
         { "TimeSpan", new string[] { "new(00,00,00)", "new(01,00,00)", "new(02,00,00)", "new(03,00,00)", "new(04,00,00)", "new(05,00,00)" } },
         { "TimeSpan?", new string[] { "null", "new(00,00,00)", "new(01,00,00)", "new(02,00,00)", "new(03,00,00)", "new(04,00,00)", "new(05,00,00)" } },
         { "Guid", new string[] { @"Guid.Parse(""A7CDEB8A-62A7-4AC6-90F6-8344309736DE"")", @"Guid.Parse(""B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"")", @"Guid.Parse(""C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"")", @"Guid.Parse(""D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"")", @"Guid.Parse(""E2E85D84-FAFE-44E9-A14C-78D50C207F45"")", @"Guid.Parse(""E2E85D84-FAFE-44E9-A14C-78D50C207F46"")" } },

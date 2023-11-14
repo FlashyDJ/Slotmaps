@@ -1,0 +1,151 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Drain
+{
+    [Fact]
+    public void EmptyMap_ReturnsEmptySequence()
+    {
+        var sparseMap = new SparseSecondaryMap<int>();
+
+        var result = sparseMap.Drain().ToArray();
+
+        Assert.Empty(result);
+        Assert.Empty(sparseMap);
+    }
+
+<#  
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void <#= typeTitle #>FilledMap_ReturnsAllItemsAndEmptiesMap()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(2, 1);
+        <#= varName #>.Insert(key1, <#= data.Value[0] #>);
+        <#= varName #>.Insert(key2, <#= data.Value[1] #>);
+
+        var result = <#= varName #>.Drain().ToArray();
+
+        Assert.Equal(2, result.Length);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key1, <#= data.Value[0] #>), result);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key2, <#= data.Value[1] #>), result);
+        Assert.Empty(<#= varName #>);
+    }
+
+    [Fact]
+    public void RemovedKeysWith<#= typeTitle #>_NotReturnRemovedKeys()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(2, 1);
+        var key3 = new SlotKey(3, 1);
+        var key4 = new SlotKey(4, 1);
+        <#= varName #>.Insert(key1, <#= data.Value[0] #>);
+        <#= varName #>.Insert(key2, <#= data.Value[1] #>);
+        <#= varName #>.Insert(key3, <#= data.Value[2] #>);
+        <#= varName #>.Insert(key4, <#= data.Value[3] #>);
+
+        <#= varName #>.Remove(key1);
+        <#= varName #>.Remove(key4);
+
+        List<KeyValuePair<SlotKey, <#= data.Key #>>> drainedItems = new(3);
+
+        foreach (var kvp in <#= varName #>.Drain())
+        {
+            drainedItems.Add(kvp);
+        }
+
+        Assert.Equal(2, drainedItems.Count);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key2, <#= data.Value[1] #>), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key3, <#= data.Value[2] #>), drainedItems);
+        Assert.Empty(<#= varName #>);
+    }
+
+    [Fact]
+    public void DrainingUpToMiddleWith<#= typeTitle #>_ReturnsItemsAndEmptiesMap()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(2, 1);
+        var key3 = new SlotKey(3, 1);
+        var key4 = new SlotKey(4, 1);
+        var key5 = new SlotKey(5, 1);
+        var key6 = new SlotKey(6, 1);
+        <#= varName #>.Insert(key1, <#= data.Value[0] #>);
+        <#= varName #>.Insert(key2, <#= data.Value[1] #>);
+        <#= varName #>.Insert(key3, <#= data.Value[2] #>);
+        <#= varName #>.Insert(key4, <#= data.Value[3] #>);
+        <#= varName #>.Insert(key5, <#= data.Value[4] #>);
+        <#= varName #>.Insert(key6, <#= data.Value[5] #>);
+
+        List<KeyValuePair<SlotKey, <#= data.Key #>>> drainedItems = new(3);
+
+        foreach (var kvp in <#= varName #>.Drain())
+        {
+            drainedItems.Add(kvp);
+            if (kvp.Key.Equals(key3))
+                break;
+        }
+
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key1, <#= data.Value[0] #>), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key2, <#= data.Value[1] #>), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key3, <#= data.Value[2] #>), drainedItems);
+        Assert.Equal(3, drainedItems.Count);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key4, <#= data.Value[3] #>), <#= varName #>);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key5, <#= data.Value[4] #>), <#= varName #>);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key6, <#= data.Value[5] #>), <#= varName #>);
+        Assert.Equal(3, <#= varName #>.Count);
+    }
+
+    [Fact]
+    public void DrainingEverythingWith<#= typeTitle #>_ReturnsAllItemsAndEmptiesMap()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(2, 1);
+        var key3 = new SlotKey(3, 1);
+        var key4 = new SlotKey(4, 1);
+        var key5 = new SlotKey(5, 1);
+        var key6 = new SlotKey(6, 1);
+        <#= varName #>.Insert(key1, <#= data.Value[0] #>);
+        <#= varName #>.Insert(key2, <#= data.Value[1] #>);
+        <#= varName #>.Insert(key3, <#= data.Value[2] #>);
+        <#= varName #>.Insert(key4, <#= data.Value[3] #>);
+        <#= varName #>.Insert(key5, <#= data.Value[4] #>);
+        <#= varName #>.Insert(key6, <#= data.Value[5] #>);
+
+        List<KeyValuePair<SlotKey, <#= data.Key #>>> drainedItems = new(3);
+
+        foreach (var kvp in <#= varName #>.Drain())
+        {
+            drainedItems.Add(kvp);
+        }
+
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key1, <#= data.Value[0] #>), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key2, <#= data.Value[1] #>), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key3, <#= data.Value[2] #>), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key4, <#= data.Value[3] #>), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key5, <#= data.Value[4] #>), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, <#= data.Key #>>(key6, <#= data.Value[5] #>), drainedItems);
+        Assert.Equal(6, drainedItems.Count);
+        Assert.Empty(<#= varName #>);
+    }
+
+<#
+}
+#>
+}
