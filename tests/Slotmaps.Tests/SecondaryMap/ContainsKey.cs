@@ -48,7 +48,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<int>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 20);
+        secondaryMap.Insert(key, 10);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -64,7 +64,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<int?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 10);
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -80,7 +80,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<string>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, "Value 2");
+        secondaryMap.Insert(key, "Value 1");
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -96,7 +96,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<string?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, "Value 1");
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -112,7 +112,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<double>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 2.22D);
+        secondaryMap.Insert(key, 1.11D);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -128,7 +128,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<double?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 1.11D);
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -144,7 +144,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<bool>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, false);
+        secondaryMap.Insert(key, true);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -160,7 +160,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<bool?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, true);
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -176,7 +176,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<char>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 'B');
+        secondaryMap.Insert(key, 'A');
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -192,7 +192,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<char?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 'A');
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -208,7 +208,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<long>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 2000_000_000_000L);
+        secondaryMap.Insert(key, 1000_000_000_000L);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -224,7 +224,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<long?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 1000_000_000_000L);
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -240,7 +240,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<float>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 2.2F);
+        secondaryMap.Insert(key, 1.1F);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -256,7 +256,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<float?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 1.1F);
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -272,7 +272,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<decimal>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 2.222_222_222M);
+        secondaryMap.Insert(key, 1.111_111_111M);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -288,7 +288,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<decimal?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, 1.111_111_111M);
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -304,7 +304,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<DateTime>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, DateTime.Parse("2023-02-01"));
+        secondaryMap.Insert(key, DateTime.Parse("2023-01-01"));
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -320,7 +320,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<DateTime?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, DateTime.Parse("2023-01-01"));
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -336,7 +336,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, new(01,00,00));
+        secondaryMap.Insert(key, new(00,00,00));
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -352,7 +352,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<TimeSpan?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, new(00,00,00));
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -368,7 +368,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<Guid>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        secondaryMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         var result = secondaryMap.ContainsKey(key);
 
@@ -384,7 +384,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<Guid?>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        secondaryMap.Insert(key, null);
 
         var result = secondaryMap.ContainsKey(key);
 

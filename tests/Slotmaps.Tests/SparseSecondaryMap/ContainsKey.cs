@@ -48,7 +48,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<int>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 20);
+        sparseSecondaryMap.Insert(key, 10);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -64,7 +64,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<int?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 10);
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -80,7 +80,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<string>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, "Value 2");
+        sparseSecondaryMap.Insert(key, "Value 1");
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -96,7 +96,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<string?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, "Value 1");
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -112,7 +112,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<double>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 2.22D);
+        sparseSecondaryMap.Insert(key, 1.11D);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -128,7 +128,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<double?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 1.11D);
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -144,7 +144,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<bool>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, false);
+        sparseSecondaryMap.Insert(key, true);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -160,7 +160,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<bool?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, true);
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -176,7 +176,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<char>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 'B');
+        sparseSecondaryMap.Insert(key, 'A');
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -192,7 +192,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<char?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 'A');
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -208,7 +208,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<long>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 2000_000_000_000L);
+        sparseSecondaryMap.Insert(key, 1000_000_000_000L);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -224,7 +224,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<long?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 1000_000_000_000L);
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -240,7 +240,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<float>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 2.2F);
+        sparseSecondaryMap.Insert(key, 1.1F);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -256,7 +256,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<float?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 1.1F);
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -272,7 +272,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<decimal>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 2.222_222_222M);
+        sparseSecondaryMap.Insert(key, 1.111_111_111M);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -288,7 +288,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<decimal?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 1.111_111_111M);
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -304,7 +304,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<DateTime>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, DateTime.Parse("2023-02-01"));
+        sparseSecondaryMap.Insert(key, DateTime.Parse("2023-01-01"));
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -320,7 +320,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<DateTime?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, DateTime.Parse("2023-01-01"));
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -336,7 +336,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, new(01,00,00));
+        sparseSecondaryMap.Insert(key, new(00,00,00));
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -352,7 +352,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, new(00,00,00));
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -368,7 +368,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<Guid>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        sparseSecondaryMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
@@ -384,7 +384,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<Guid?>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        sparseSecondaryMap.Insert(key, null);
 
         var result = sparseSecondaryMap.ContainsKey(key);
 
