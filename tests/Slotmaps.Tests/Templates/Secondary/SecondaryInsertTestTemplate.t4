@@ -1,0 +1,100 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Insert
+{
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void <#= typeTitle #>WithValidKey_ReturnsInsertedValue()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = new SlotKey(1, 1);
+
+        var result = <#= varName #>.Insert(key, <#= data.Value[0] #>);
+
+        Assert.Equal(<#= data.Value[0] #>, result);
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithInvalidKey_ThrowsKeyNotFoundException()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var invalidKey = new SlotKey(-1, 0);
+
+        var ex = Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Insert(invalidKey, <#= data.Value[0] #>));
+        Assert.Equal("Invalid TKey", ex.Message);
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithNewerVersionKey_ReturnsOldValueAndUpdatesValue()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+
+        var result1 = <#= varName #>.Insert(key1, <#= data.Value[0] #>);
+        var result2 = <#= varName #>.Insert(key2, <#= data.Value[1] #>);
+
+        Assert.Equal(<#= data.Value[0] #>, result1);
+        Assert.Equal(<#= data.Value[0] #>, result2);
+        Assert.Equal(<#= data.Value[1] #>, <#= varName #>[key2]);
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithOlderVersionKey_ThrowsKeyNotFoundException()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = new SlotKey(1, 2);
+        var key2 = new SlotKey(1, 1);
+
+        <#= varName #>.Insert(key1, <#= data.Value[0] #>);
+
+        var ex = Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Insert(key2, <#= data.Value[1] #>));
+        Assert.Equal("Invalid TKey", ex.Message);
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithSameKey_ReplacesAndReturnsPreviousValue()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = new SlotKey(1, 1);
+
+        var firstInsert = <#= varName #>.Insert(key, <#= data.Value[0] #>);
+        var secondInsert = <#= varName #>.Insert(key, <#= data.Value[1] #>);
+
+        Assert.Equal(<#= data.Value[0] #>, firstInsert);
+        Assert.Equal(<#= data.Value[0] #>, secondInsert);
+        Assert.Equal(<#= data.Value[1] #>, <#= varName #>.Get(key));
+    }
+
+    [Fact]
+    public void Valid<#= typeTitle #>Values_CountIncrementsOnInsertion()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(2, 1);
+
+        <#= varName #>.Insert(key1, <#= data.Value[0] #>);
+        Assert.Single(<#= varName #>);
+
+        <#= varName #>.Insert(key2, <#= data.Value[1] #>);
+        Assert.Equal(2, <#= varName #>.Count);
+    }
+<#
+}
+#>
+}
