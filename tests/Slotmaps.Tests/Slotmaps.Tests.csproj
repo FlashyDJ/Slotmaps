@@ -70,6 +70,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Retain.cs</LastGenOutput>
     </None>
+    <None Update="SecondaryMap\TryGet.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TryGet.cs</LastGenOutput>
+    </None>
     <None Update="SparseSecondaryMap\Clear.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Clear.cs</LastGenOutput>
@@ -109,6 +113,10 @@
     <None Update="SparseSecondaryMap\Retain.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Retain.cs</LastGenOutput>
+    </None>
+    <None Update="SparseSecondaryMap\TryGet.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TryGet.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -167,6 +175,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Retain.tt</DependentUpon>
     </Compile>
+    <Compile Update="SecondaryMap\TryGet.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TryGet.tt</DependentUpon>
+    </Compile>
     <Compile Update="SparseSecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -216,6 +229,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Retain.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SparseSecondaryMap\TryGet.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TryGet.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
