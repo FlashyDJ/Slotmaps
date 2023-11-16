@@ -54,6 +54,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Get.cs</LastGenOutput>
     </None>
+    <None Update="SecondaryMap\Indexer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Indexer.cs</LastGenOutput>
+    </None>
     <None Update="SparseSecondaryMap\Clear.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Clear.cs</LastGenOutput>
@@ -77,6 +81,10 @@
     <None Update="SparseSecondaryMap\Get.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Get.cs</LastGenOutput>
+    </None>
+    <None Update="SparseSecondaryMap\Indexer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Indexer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -115,6 +123,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Get.tt</DependentUpon>
     </Compile>
+    <Compile Update="SecondaryMap\Indexer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Indexer.tt</DependentUpon>
+    </Compile>
     <Compile Update="SparseSecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -144,6 +157,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Get.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SparseSecondaryMap\Indexer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Indexer.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
