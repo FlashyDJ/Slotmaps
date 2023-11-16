@@ -147,7 +147,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
     public TValue Insert(TKey key, TValue value)
     {
         if (key.IsNull && key.Version == 0)
-            throw new KeyNotFoundException("Invalid  TKey");
+            throw new KeyNotFoundException("Invalid TKey");
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
 
