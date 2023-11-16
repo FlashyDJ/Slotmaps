@@ -9,19 +9,19 @@ public class Get
     [Fact]
     public void InvalidKey_ThrowsKeyNotFoundException()
     {
-        var sparseMap = new SparseSecondaryMap<int>();
+        var sparseSecondaryMap = new SparseSecondaryMap<int>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => sparseMap.Get(invalidKey));
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(invalidKey));
     }
 
     [Fact]
     public void KeyNotFound_ThrowsKeyNotFoundException()
     {
-        var sparseMap = new SparseSecondaryMap<int>();
+        var sparseSecondaryMap = new SparseSecondaryMap<int>();
         var key = new SlotKey(1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => sparseMap.Get(key));
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key));
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
