@@ -717,11 +717,11 @@ public class Get
     {
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, new(00,00,00));
+        secondaryMap.Insert(key, new TimeSpan(00,00,00));
 
         var result = secondaryMap.Get(key);
 
-        Assert.Equal(new(00,00,00), result);
+        Assert.Equal(new TimeSpan(00,00,00), result);
     }
 
     [Fact]
@@ -730,7 +730,7 @@ public class Get
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 0);
-        secondaryMap.Insert(key1, new(00,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
 
         Assert.Throws<KeyNotFoundException>(() => secondaryMap.Get(key2));
     }
@@ -741,7 +741,7 @@ public class Get
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 0);
         var key2 = new SlotKey(1, 1);
-        secondaryMap.Insert(key1, new(00,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
         
         Assert.Throws<KeyNotFoundException>(() => secondaryMap.Get(key2));
     }

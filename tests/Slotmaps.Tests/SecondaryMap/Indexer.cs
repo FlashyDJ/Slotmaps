@@ -915,11 +915,11 @@ public class Indexer
     {
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, new(00,00,00));
+        secondaryMap.Insert(key, new TimeSpan(00,00,00));
 
         var result = secondaryMap[key];
 
-        Assert.Equal(new(00,00,00), result);
+        Assert.Equal(new TimeSpan(00,00,00), result);
     }
 
     [Fact]
@@ -928,7 +928,7 @@ public class Indexer
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
-        secondaryMap.Insert(key1, new(00,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
 
         Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
@@ -939,7 +939,7 @@ public class Indexer
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 0);
         var key2 = new SlotKey(1, 1);
-        secondaryMap.Insert(key1, new(00,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
         
         Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
@@ -950,9 +950,9 @@ public class Indexer
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
 
-        secondaryMap[key] = new(00,00,00);
+        secondaryMap[key] = new TimeSpan(00,00,00);
 
-        Assert.Equal(new(00,00,00), secondaryMap[key]);
+        Assert.Equal(new TimeSpan(00,00,00), secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////

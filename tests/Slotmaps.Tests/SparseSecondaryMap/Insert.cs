@@ -1456,9 +1456,9 @@ public class Insert
         var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
 
-        var result = sparseSecondaryMap.Insert(key, new(00,00,00));
+        var result = sparseSecondaryMap.Insert(key, new TimeSpan(00,00,00));
 
-        Assert.Equal(new(00,00,00), result);
+        Assert.Equal(new TimeSpan(00,00,00), result);
     }
 
     [Fact]
@@ -1467,7 +1467,7 @@ public class Insert
         var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
         var invalidKey = new SlotKey(-1, 0);
 
-        var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(invalidKey, new(00,00,00)));
+        var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(invalidKey, new TimeSpan(00,00,00)));
         Assert.Equal("Invalid TKey", ex.Message);
     }
 
@@ -1478,12 +1478,12 @@ public class Insert
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
 
-        var result1 = sparseSecondaryMap.Insert(key1, new(00,00,00));
-        var result2 = sparseSecondaryMap.Insert(key2, new(01,00,00));
+        var result1 = sparseSecondaryMap.Insert(key1, new TimeSpan(00,00,00));
+        var result2 = sparseSecondaryMap.Insert(key2, new TimeSpan(01,00,00));
 
-        Assert.Equal(new(00,00,00), result1);
-        Assert.Equal(new(00,00,00), result2);
-        Assert.Equal(new(01,00,00), sparseSecondaryMap[key2]);
+        Assert.Equal(new TimeSpan(00,00,00), result1);
+        Assert.Equal(new TimeSpan(00,00,00), result2);
+        Assert.Equal(new TimeSpan(01,00,00), sparseSecondaryMap[key2]);
     }
 
     [Fact]
@@ -1493,9 +1493,9 @@ public class Insert
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
 
-        sparseSecondaryMap.Insert(key1, new(00,00,00));
+        sparseSecondaryMap.Insert(key1, new TimeSpan(00,00,00));
 
-        var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, new(01,00,00)));
+        var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, new TimeSpan(01,00,00)));
         Assert.Equal("TKey is an older version", ex.Message);
     }
 
@@ -1505,12 +1505,12 @@ public class Insert
         var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
 
-        var firstInsert = sparseSecondaryMap.Insert(key, new(00,00,00));
-        var secondInsert = sparseSecondaryMap.Insert(key, new(01,00,00));
+        var firstInsert = sparseSecondaryMap.Insert(key, new TimeSpan(00,00,00));
+        var secondInsert = sparseSecondaryMap.Insert(key, new TimeSpan(01,00,00));
 
-        Assert.Equal(new(00,00,00), firstInsert);
-        Assert.Equal(new(00,00,00), secondInsert);
-        Assert.Equal(new(01,00,00), sparseSecondaryMap.Get(key));
+        Assert.Equal(new TimeSpan(00,00,00), firstInsert);
+        Assert.Equal(new TimeSpan(00,00,00), secondInsert);
+        Assert.Equal(new TimeSpan(01,00,00), sparseSecondaryMap.Get(key));
     }
 
     [Fact]
@@ -1520,10 +1520,10 @@ public class Insert
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(2, 1);
 
-        sparseSecondaryMap.Insert(key1, new(00,00,00));
+        sparseSecondaryMap.Insert(key1, new TimeSpan(00,00,00));
         Assert.Single(sparseSecondaryMap);
 
-        sparseSecondaryMap.Insert(key2, new(01,00,00));
+        sparseSecondaryMap.Insert(key2, new TimeSpan(01,00,00));
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1559,11 +1559,11 @@ public class Insert
         var key2 = new SlotKey(1, 2);
 
         var result1 = sparseSecondaryMap.Insert(key1, null);
-        var result2 = sparseSecondaryMap.Insert(key2, new(00,00,00));
+        var result2 = sparseSecondaryMap.Insert(key2, new TimeSpan(00,00,00));
 
         Assert.Equal(null, result1);
         Assert.Equal(null, result2);
-        Assert.Equal(new(00,00,00), sparseSecondaryMap[key2]);
+        Assert.Equal(new TimeSpan(00,00,00), sparseSecondaryMap[key2]);
     }
 
     [Fact]
@@ -1575,7 +1575,7 @@ public class Insert
 
         sparseSecondaryMap.Insert(key1, null);
 
-        var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, new(00,00,00)));
+        var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, new TimeSpan(00,00,00)));
         Assert.Equal("TKey is an older version", ex.Message);
     }
 
@@ -1586,11 +1586,11 @@ public class Insert
         var key = new SlotKey(1, 1);
 
         var firstInsert = sparseSecondaryMap.Insert(key, null);
-        var secondInsert = sparseSecondaryMap.Insert(key, new(00,00,00));
+        var secondInsert = sparseSecondaryMap.Insert(key, new TimeSpan(00,00,00));
 
         Assert.Equal(null, firstInsert);
         Assert.Equal(null, secondInsert);
-        Assert.Equal(new(00,00,00), sparseSecondaryMap.Get(key));
+        Assert.Equal(new TimeSpan(00,00,00), sparseSecondaryMap.Get(key));
     }
 
     [Fact]
@@ -1603,7 +1603,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
         Assert.Single(sparseSecondaryMap);
 
-        sparseSecondaryMap.Insert(key2, new(00,00,00));
+        sparseSecondaryMap.Insert(key2, new TimeSpan(00,00,00));
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
     //////////////////////////////////////////////////////////////////////////////////////////

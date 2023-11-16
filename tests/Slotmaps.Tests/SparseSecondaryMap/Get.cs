@@ -717,11 +717,11 @@ public class Get
     {
         var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, new(00,00,00));
+        sparseSecondaryMap.Insert(key, new TimeSpan(00,00,00));
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(new(00,00,00), result);
+        Assert.Equal(new TimeSpan(00,00,00), result);
     }
 
     [Fact]
@@ -730,7 +730,7 @@ public class Get
         var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 0);
-        sparseSecondaryMap.Insert(key1, new(00,00,00));
+        sparseSecondaryMap.Insert(key1, new TimeSpan(00,00,00));
 
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
     }
@@ -741,7 +741,7 @@ public class Get
         var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 0);
         var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, new(00,00,00));
+        sparseSecondaryMap.Insert(key1, new TimeSpan(00,00,00));
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
     }

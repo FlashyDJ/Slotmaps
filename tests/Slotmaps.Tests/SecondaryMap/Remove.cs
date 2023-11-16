@@ -1041,11 +1041,11 @@ public class Remove
     {
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, new(00,00,00));
+        secondaryMap.Insert(key, new TimeSpan(00,00,00));
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(new(00,00,00), result);
+        Assert.Equal(new TimeSpan(00,00,00), result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -1073,7 +1073,7 @@ public class Remove
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
-        secondaryMap.Insert(key1, new(00,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
 
         Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
     }
@@ -1084,7 +1084,7 @@ public class Remove
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
-        secondaryMap.Insert(key1, new(00,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
 
         Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
     }

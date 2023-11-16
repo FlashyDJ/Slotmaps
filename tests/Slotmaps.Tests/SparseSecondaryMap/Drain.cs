@@ -2187,14 +2187,14 @@ public class Drain
         var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(2, 1);
-        sparseSecondaryMap.Insert(key1, new(00,00,00));
-        sparseSecondaryMap.Insert(key2, new(01,00,00));
+        sparseSecondaryMap.Insert(key1, new TimeSpan(00,00,00));
+        sparseSecondaryMap.Insert(key2, new TimeSpan(01,00,00));
 
         var result = sparseSecondaryMap.Drain().ToArray();
 
         Assert.Equal(2, result.Length);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key1, new(00,00,00)), result);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key2, new(01,00,00)), result);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key1, new TimeSpan(00,00,00)), result);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key2, new TimeSpan(01,00,00)), result);
         Assert.Empty(sparseSecondaryMap);
     }
 
@@ -2206,10 +2206,10 @@ public class Drain
         var key2 = new SlotKey(2, 1);
         var key3 = new SlotKey(3, 1);
         var key4 = new SlotKey(4, 1);
-        sparseSecondaryMap.Insert(key1, new(00,00,00));
-        sparseSecondaryMap.Insert(key2, new(01,00,00));
-        sparseSecondaryMap.Insert(key3, new(02,00,00));
-        sparseSecondaryMap.Insert(key4, new(03,00,00));
+        sparseSecondaryMap.Insert(key1, new TimeSpan(00,00,00));
+        sparseSecondaryMap.Insert(key2, new TimeSpan(01,00,00));
+        sparseSecondaryMap.Insert(key3, new TimeSpan(02,00,00));
+        sparseSecondaryMap.Insert(key4, new TimeSpan(03,00,00));
 
         sparseSecondaryMap.Remove(key1);
         sparseSecondaryMap.Remove(key4);
@@ -2222,8 +2222,8 @@ public class Drain
         }
 
         Assert.Equal(2, drainedItems.Count);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key2, new(01,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key3, new(02,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key2, new TimeSpan(01,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key3, new TimeSpan(02,00,00)), drainedItems);
         Assert.Empty(sparseSecondaryMap);
     }
 
@@ -2237,12 +2237,12 @@ public class Drain
         var key4 = new SlotKey(4, 1);
         var key5 = new SlotKey(5, 1);
         var key6 = new SlotKey(6, 1);
-        sparseSecondaryMap.Insert(key1, new(00,00,00));
-        sparseSecondaryMap.Insert(key2, new(01,00,00));
-        sparseSecondaryMap.Insert(key3, new(02,00,00));
-        sparseSecondaryMap.Insert(key4, new(03,00,00));
-        sparseSecondaryMap.Insert(key5, new(04,00,00));
-        sparseSecondaryMap.Insert(key6, new(05,00,00));
+        sparseSecondaryMap.Insert(key1, new TimeSpan(00,00,00));
+        sparseSecondaryMap.Insert(key2, new TimeSpan(01,00,00));
+        sparseSecondaryMap.Insert(key3, new TimeSpan(02,00,00));
+        sparseSecondaryMap.Insert(key4, new TimeSpan(03,00,00));
+        sparseSecondaryMap.Insert(key5, new TimeSpan(04,00,00));
+        sparseSecondaryMap.Insert(key6, new TimeSpan(05,00,00));
 
         List<KeyValuePair<SlotKey, TimeSpan>> drainedItems = new(3);
 
@@ -2253,13 +2253,13 @@ public class Drain
                 break;
         }
 
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key1, new(00,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key2, new(01,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key3, new(02,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key1, new TimeSpan(00,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key2, new TimeSpan(01,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key3, new TimeSpan(02,00,00)), drainedItems);
         Assert.Equal(3, drainedItems.Count);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key4, new(03,00,00)), sparseSecondaryMap);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key5, new(04,00,00)), sparseSecondaryMap);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key6, new(05,00,00)), sparseSecondaryMap);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key4, new TimeSpan(03,00,00)), sparseSecondaryMap);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key5, new TimeSpan(04,00,00)), sparseSecondaryMap);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key6, new TimeSpan(05,00,00)), sparseSecondaryMap);
         Assert.Equal(3, sparseSecondaryMap.Count);
     }
 
@@ -2273,12 +2273,12 @@ public class Drain
         var key4 = new SlotKey(4, 1);
         var key5 = new SlotKey(5, 1);
         var key6 = new SlotKey(6, 1);
-        sparseSecondaryMap.Insert(key1, new(00,00,00));
-        sparseSecondaryMap.Insert(key2, new(01,00,00));
-        sparseSecondaryMap.Insert(key3, new(02,00,00));
-        sparseSecondaryMap.Insert(key4, new(03,00,00));
-        sparseSecondaryMap.Insert(key5, new(04,00,00));
-        sparseSecondaryMap.Insert(key6, new(05,00,00));
+        sparseSecondaryMap.Insert(key1, new TimeSpan(00,00,00));
+        sparseSecondaryMap.Insert(key2, new TimeSpan(01,00,00));
+        sparseSecondaryMap.Insert(key3, new TimeSpan(02,00,00));
+        sparseSecondaryMap.Insert(key4, new TimeSpan(03,00,00));
+        sparseSecondaryMap.Insert(key5, new TimeSpan(04,00,00));
+        sparseSecondaryMap.Insert(key6, new TimeSpan(05,00,00));
 
         List<KeyValuePair<SlotKey, TimeSpan>> drainedItems = new(3);
 
@@ -2287,12 +2287,12 @@ public class Drain
             drainedItems.Add(kvp);
         }
 
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key1, new(00,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key2, new(01,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key3, new(02,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key4, new(03,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key5, new(04,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key6, new(05,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key1, new TimeSpan(00,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key2, new TimeSpan(01,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key3, new TimeSpan(02,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key4, new TimeSpan(03,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key5, new TimeSpan(04,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan>(key6, new TimeSpan(05,00,00)), drainedItems);
         Assert.Equal(6, drainedItems.Count);
         Assert.Empty(sparseSecondaryMap);
     }
@@ -2308,13 +2308,13 @@ public class Drain
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(2, 1);
         sparseSecondaryMap.Insert(key1, null);
-        sparseSecondaryMap.Insert(key2, new(00,00,00));
+        sparseSecondaryMap.Insert(key2, new TimeSpan(00,00,00));
 
         var result = sparseSecondaryMap.Drain().ToArray();
 
         Assert.Equal(2, result.Length);
         Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key1, null), result);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key2, new(00,00,00)), result);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key2, new TimeSpan(00,00,00)), result);
         Assert.Empty(sparseSecondaryMap);
     }
 
@@ -2327,9 +2327,9 @@ public class Drain
         var key3 = new SlotKey(3, 1);
         var key4 = new SlotKey(4, 1);
         sparseSecondaryMap.Insert(key1, null);
-        sparseSecondaryMap.Insert(key2, new(00,00,00));
-        sparseSecondaryMap.Insert(key3, new(01,00,00));
-        sparseSecondaryMap.Insert(key4, new(02,00,00));
+        sparseSecondaryMap.Insert(key2, new TimeSpan(00,00,00));
+        sparseSecondaryMap.Insert(key3, new TimeSpan(01,00,00));
+        sparseSecondaryMap.Insert(key4, new TimeSpan(02,00,00));
 
         sparseSecondaryMap.Remove(key1);
         sparseSecondaryMap.Remove(key4);
@@ -2342,8 +2342,8 @@ public class Drain
         }
 
         Assert.Equal(2, drainedItems.Count);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key2, new(00,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key3, new(01,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key2, new TimeSpan(00,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key3, new TimeSpan(01,00,00)), drainedItems);
         Assert.Empty(sparseSecondaryMap);
     }
 
@@ -2358,11 +2358,11 @@ public class Drain
         var key5 = new SlotKey(5, 1);
         var key6 = new SlotKey(6, 1);
         sparseSecondaryMap.Insert(key1, null);
-        sparseSecondaryMap.Insert(key2, new(00,00,00));
-        sparseSecondaryMap.Insert(key3, new(01,00,00));
-        sparseSecondaryMap.Insert(key4, new(02,00,00));
-        sparseSecondaryMap.Insert(key5, new(03,00,00));
-        sparseSecondaryMap.Insert(key6, new(04,00,00));
+        sparseSecondaryMap.Insert(key2, new TimeSpan(00,00,00));
+        sparseSecondaryMap.Insert(key3, new TimeSpan(01,00,00));
+        sparseSecondaryMap.Insert(key4, new TimeSpan(02,00,00));
+        sparseSecondaryMap.Insert(key5, new TimeSpan(03,00,00));
+        sparseSecondaryMap.Insert(key6, new TimeSpan(04,00,00));
 
         List<KeyValuePair<SlotKey, TimeSpan?>> drainedItems = new(3);
 
@@ -2374,12 +2374,12 @@ public class Drain
         }
 
         Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key1, null), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key2, new(00,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key3, new(01,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key2, new TimeSpan(00,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key3, new TimeSpan(01,00,00)), drainedItems);
         Assert.Equal(3, drainedItems.Count);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key4, new(02,00,00)), sparseSecondaryMap);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key5, new(03,00,00)), sparseSecondaryMap);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key6, new(04,00,00)), sparseSecondaryMap);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key4, new TimeSpan(02,00,00)), sparseSecondaryMap);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key5, new TimeSpan(03,00,00)), sparseSecondaryMap);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key6, new TimeSpan(04,00,00)), sparseSecondaryMap);
         Assert.Equal(3, sparseSecondaryMap.Count);
     }
 
@@ -2394,11 +2394,11 @@ public class Drain
         var key5 = new SlotKey(5, 1);
         var key6 = new SlotKey(6, 1);
         sparseSecondaryMap.Insert(key1, null);
-        sparseSecondaryMap.Insert(key2, new(00,00,00));
-        sparseSecondaryMap.Insert(key3, new(01,00,00));
-        sparseSecondaryMap.Insert(key4, new(02,00,00));
-        sparseSecondaryMap.Insert(key5, new(03,00,00));
-        sparseSecondaryMap.Insert(key6, new(04,00,00));
+        sparseSecondaryMap.Insert(key2, new TimeSpan(00,00,00));
+        sparseSecondaryMap.Insert(key3, new TimeSpan(01,00,00));
+        sparseSecondaryMap.Insert(key4, new TimeSpan(02,00,00));
+        sparseSecondaryMap.Insert(key5, new TimeSpan(03,00,00));
+        sparseSecondaryMap.Insert(key6, new TimeSpan(04,00,00));
 
         List<KeyValuePair<SlotKey, TimeSpan?>> drainedItems = new(3);
 
@@ -2408,11 +2408,11 @@ public class Drain
         }
 
         Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key1, null), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key2, new(00,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key3, new(01,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key4, new(02,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key5, new(03,00,00)), drainedItems);
-        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key6, new(04,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key2, new TimeSpan(00,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key3, new TimeSpan(01,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key4, new TimeSpan(02,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key5, new TimeSpan(03,00,00)), drainedItems);
+        Assert.Contains(new KeyValuePair<SlotKey, TimeSpan?>(key6, new TimeSpan(04,00,00)), drainedItems);
         Assert.Equal(6, drainedItems.Count);
         Assert.Empty(sparseSecondaryMap);
     }

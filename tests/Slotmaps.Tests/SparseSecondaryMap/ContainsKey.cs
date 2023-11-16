@@ -336,7 +336,7 @@ public class ContainsKey
     {
         var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, new(00,00,00));
+        sparseSecondaryMap.Insert(key, new TimeSpan(00,00,00));
 
         var result = sparseSecondaryMap.ContainsKey(key);
 

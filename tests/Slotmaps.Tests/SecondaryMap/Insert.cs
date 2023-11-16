@@ -1456,9 +1456,9 @@ public class Insert
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
 
-        var result = secondaryMap.Insert(key, new(00,00,00));
+        var result = secondaryMap.Insert(key, new TimeSpan(00,00,00));
 
-        Assert.Equal(new(00,00,00), result);
+        Assert.Equal(new TimeSpan(00,00,00), result);
     }
 
     [Fact]
@@ -1467,7 +1467,7 @@ public class Insert
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var invalidKey = new SlotKey(-1, 0);
 
-        var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, new(00,00,00)));
+        var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, new TimeSpan(00,00,00)));
         Assert.Equal("Invalid TKey", ex.Message);
     }
 
@@ -1478,12 +1478,12 @@ public class Insert
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
 
-        var result1 = secondaryMap.Insert(key1, new(00,00,00));
-        var result2 = secondaryMap.Insert(key2, new(01,00,00));
+        var result1 = secondaryMap.Insert(key1, new TimeSpan(00,00,00));
+        var result2 = secondaryMap.Insert(key2, new TimeSpan(01,00,00));
 
-        Assert.Equal(new(00,00,00), result1);
-        Assert.Equal(new(00,00,00), result2);
-        Assert.Equal(new(01,00,00), secondaryMap[key2]);
+        Assert.Equal(new TimeSpan(00,00,00), result1);
+        Assert.Equal(new TimeSpan(00,00,00), result2);
+        Assert.Equal(new TimeSpan(01,00,00), secondaryMap[key2]);
     }
 
     [Fact]
@@ -1493,9 +1493,9 @@ public class Insert
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
 
-        secondaryMap.Insert(key1, new(00,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
 
-        var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, new(01,00,00)));
+        var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, new TimeSpan(01,00,00)));
         Assert.Equal("TKey is an older version", ex.Message);
     }
 
@@ -1505,12 +1505,12 @@ public class Insert
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
 
-        var firstInsert = secondaryMap.Insert(key, new(00,00,00));
-        var secondInsert = secondaryMap.Insert(key, new(01,00,00));
+        var firstInsert = secondaryMap.Insert(key, new TimeSpan(00,00,00));
+        var secondInsert = secondaryMap.Insert(key, new TimeSpan(01,00,00));
 
-        Assert.Equal(new(00,00,00), firstInsert);
-        Assert.Equal(new(00,00,00), secondInsert);
-        Assert.Equal(new(01,00,00), secondaryMap.Get(key));
+        Assert.Equal(new TimeSpan(00,00,00), firstInsert);
+        Assert.Equal(new TimeSpan(00,00,00), secondInsert);
+        Assert.Equal(new TimeSpan(01,00,00), secondaryMap.Get(key));
     }
 
     [Fact]
@@ -1520,10 +1520,10 @@ public class Insert
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(2, 1);
 
-        secondaryMap.Insert(key1, new(00,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
         Assert.Single(secondaryMap);
 
-        secondaryMap.Insert(key2, new(01,00,00));
+        secondaryMap.Insert(key2, new TimeSpan(01,00,00));
         Assert.Equal(2, secondaryMap.Count);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1559,11 +1559,11 @@ public class Insert
         var key2 = new SlotKey(1, 2);
 
         var result1 = secondaryMap.Insert(key1, null);
-        var result2 = secondaryMap.Insert(key2, new(00,00,00));
+        var result2 = secondaryMap.Insert(key2, new TimeSpan(00,00,00));
 
         Assert.Equal(null, result1);
         Assert.Equal(null, result2);
-        Assert.Equal(new(00,00,00), secondaryMap[key2]);
+        Assert.Equal(new TimeSpan(00,00,00), secondaryMap[key2]);
     }
 
     [Fact]
@@ -1575,7 +1575,7 @@ public class Insert
 
         secondaryMap.Insert(key1, null);
 
-        var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, new(00,00,00)));
+        var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, new TimeSpan(00,00,00)));
         Assert.Equal("TKey is an older version", ex.Message);
     }
 
@@ -1586,11 +1586,11 @@ public class Insert
         var key = new SlotKey(1, 1);
 
         var firstInsert = secondaryMap.Insert(key, null);
-        var secondInsert = secondaryMap.Insert(key, new(00,00,00));
+        var secondInsert = secondaryMap.Insert(key, new TimeSpan(00,00,00));
 
         Assert.Equal(null, firstInsert);
         Assert.Equal(null, secondInsert);
-        Assert.Equal(new(00,00,00), secondaryMap.Get(key));
+        Assert.Equal(new TimeSpan(00,00,00), secondaryMap.Get(key));
     }
 
     [Fact]
@@ -1603,7 +1603,7 @@ public class Insert
         secondaryMap.Insert(key1, null);
         Assert.Single(secondaryMap);
 
-        secondaryMap.Insert(key2, new(00,00,00));
+        secondaryMap.Insert(key2, new TimeSpan(00,00,00));
         Assert.Equal(2, secondaryMap.Count);
     }
     //////////////////////////////////////////////////////////////////////////////////////////

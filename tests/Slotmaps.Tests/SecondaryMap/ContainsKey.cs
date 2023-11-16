@@ -336,7 +336,7 @@ public class ContainsKey
     {
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
-        secondaryMap.Insert(key, new(00,00,00));
+        secondaryMap.Insert(key, new TimeSpan(00,00,00));
 
         var result = secondaryMap.ContainsKey(key);
 

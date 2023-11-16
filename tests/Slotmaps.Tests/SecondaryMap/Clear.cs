@@ -555,8 +555,8 @@ public class Clear
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(2, 1);
-        secondaryMap.Insert(key1, new(00,00,00));
-        secondaryMap.Insert(key2, new(01,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
+        secondaryMap.Insert(key2, new TimeSpan(01,00,00));
         var capacity = secondaryMap.Capacity;
 
         secondaryMap.Clear();
@@ -586,7 +586,7 @@ public class Clear
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(2, 1);
         secondaryMap.Insert(key1, null);
-        secondaryMap.Insert(key2, new(00,00,00));
+        secondaryMap.Insert(key2, new TimeSpan(00,00,00));
         var capacity = secondaryMap.Capacity;
 
         secondaryMap.Clear();

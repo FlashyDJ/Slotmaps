@@ -659,11 +659,11 @@ public class ContainsValue
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(2, 1);
         var key3 = new SlotKey(3, 1);
-        secondaryMap.Insert(key1, new(00,00,00));
-        secondaryMap.Insert(key2, new(01,00,00));
-        secondaryMap.Insert(key3, new(02,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
+        secondaryMap.Insert(key2, new TimeSpan(01,00,00));
+        secondaryMap.Insert(key3, new TimeSpan(02,00,00));
 
-        var result = secondaryMap.ContainsValue(new(00,00,00));
+        var result = secondaryMap.ContainsValue(new TimeSpan(00,00,00));
 
         Assert.True(result);
     }
@@ -675,11 +675,11 @@ public class ContainsValue
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(2, 1);
         var key3 = new SlotKey(3, 1);
-        secondaryMap.Insert(key1, new(00,00,00));
-        secondaryMap.Insert(key2, new(01,00,00));
-        secondaryMap.Insert(key3, new(02,00,00));
+        secondaryMap.Insert(key1, new TimeSpan(00,00,00));
+        secondaryMap.Insert(key2, new TimeSpan(01,00,00));
+        secondaryMap.Insert(key3, new TimeSpan(02,00,00));
 
-        var result = secondaryMap.ContainsValue(new(03,00,00));
+        var result = secondaryMap.ContainsValue(new TimeSpan(03,00,00));
 
         Assert.False(result);
     }
@@ -696,8 +696,8 @@ public class ContainsValue
         var key2 = new SlotKey(2, 1);
         var key3 = new SlotKey(3, 1);
         secondaryMap.Insert(key1, null);
-        secondaryMap.Insert(key2, new(00,00,00));
-        secondaryMap.Insert(key3, new(01,00,00));
+        secondaryMap.Insert(key2, new TimeSpan(00,00,00));
+        secondaryMap.Insert(key3, new TimeSpan(01,00,00));
 
         var result = secondaryMap.ContainsValue(null);
 
@@ -712,10 +712,10 @@ public class ContainsValue
         var key2 = new SlotKey(2, 1);
         var key3 = new SlotKey(3, 1);
         secondaryMap.Insert(key1, null);
-        secondaryMap.Insert(key2, new(00,00,00));
-        secondaryMap.Insert(key3, new(01,00,00));
+        secondaryMap.Insert(key2, new TimeSpan(00,00,00));
+        secondaryMap.Insert(key3, new TimeSpan(01,00,00));
 
-        var result = secondaryMap.ContainsValue(new(02,00,00));
+        var result = secondaryMap.ContainsValue(new TimeSpan(02,00,00));
 
         Assert.False(result);
     }
