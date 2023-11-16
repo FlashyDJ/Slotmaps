@@ -75,11 +75,11 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
     {
         get
         {
-            if (key.IsNull) throw new KeyNotFoundException("Invalid SlotKey");
+            if (key.IsNull) throw new KeyNotFoundException("Invalid TKey");
 
             var exists = _slots.TryGetValue(key.Index, out var slot);
             if (!exists || slot.Version != key.Version)
-                throw new KeyNotFoundException("Invalid SlotKey");
+                throw new KeyNotFoundException("Invalid TKey");
 
             return slot.Value;
         }
@@ -133,12 +133,12 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
     public TValue Get(TKey key)
     {
         if (key.IsNull && key.Version == 0)
-            throw new KeyNotFoundException("Invalid SlotKey");
+            throw new KeyNotFoundException("Invalid TKey");
 
         var exists = _slots.TryGetValue(key.Index, out var slot);
 
         if (!exists || slot.Version != key.Version || !slot.Occupied)
-            throw new KeyNotFoundException("Invalid SlotKey");
+            throw new KeyNotFoundException("Invalid TKey");
 
         return slot.Value;
     }
@@ -147,14 +147,14 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
     public TValue Insert(TKey key, TValue value)
     {
         if (key.IsNull && key.Version == 0)
-            throw new KeyNotFoundException("Invalid SlotKey");
+            throw new KeyNotFoundException("Invalid  TKey");
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
 
         if (exists && slot.Occupied)
         {
             if (key.Version < slot.Version)
-                throw new KeyNotFoundException("SlotKey is an older version");
+                throw new KeyNotFoundException("TKey is an older version");
 
             var replacedValue = slot.Value;
 
