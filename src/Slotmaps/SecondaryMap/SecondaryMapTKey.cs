@@ -203,7 +203,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
         if (slot.Occupied)
         {
             if (key.Version < slot.Version)
-                throw new KeyNotFoundException("Invalid TKey");
+                throw new KeyNotFoundException("TKey is an older version");
         }
         else
             Count++;
