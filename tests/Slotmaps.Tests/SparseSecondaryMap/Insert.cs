@@ -56,7 +56,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, 10);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 20));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -136,7 +136,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 10));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -216,7 +216,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, "Value 1");
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, "Value 2"));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -296,7 +296,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, "Value 1"));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -376,7 +376,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, 1.11D);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 2.22D));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -456,7 +456,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 1.11D));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -536,7 +536,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, true);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, false));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -616,7 +616,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, true));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -696,7 +696,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, 'A');
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 'B'));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -776,7 +776,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 'A'));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -856,7 +856,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, 1000_000_000_000L);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 2000_000_000_000L));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -936,7 +936,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 1000_000_000_000L));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -1016,7 +1016,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, 1.1F);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 2.2F));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -1096,7 +1096,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 1.1F));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -1176,7 +1176,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, 1.111_111_111M);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 2.222_222_222M));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -1256,7 +1256,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, 1.111_111_111M));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -1336,7 +1336,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, DateTime.Parse("2023-01-01"));
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, DateTime.Parse("2023-02-01")));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -1416,7 +1416,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, DateTime.Parse("2023-01-01")));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -1496,7 +1496,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, new(00,00,00));
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, new(01,00,00)));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -1576,7 +1576,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, new(00,00,00)));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -1656,7 +1656,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407")));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -1736,7 +1736,7 @@ public class Insert
         sparseSecondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key2, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE")));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]

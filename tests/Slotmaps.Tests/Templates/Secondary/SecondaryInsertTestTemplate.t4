@@ -64,7 +64,7 @@ foreach (var data in dataTypes)
         <#= varName #>.Insert(key1, <#= data.Value[0] #>);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Insert(key2, <#= data.Value[1] #>));
-        Assert.Equal("Invalid TKey", ex.Message);
+        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
