@@ -74,6 +74,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TryGet.cs</LastGenOutput>
     </None>
+    <None Update="SecondaryMap\TryInsert.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TryInsert.cs</LastGenOutput>
+    </None>
     <None Update="SecondaryMap\TryRemove.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TryRemove.cs</LastGenOutput>
@@ -121,6 +125,10 @@
     <None Update="SparseSecondaryMap\TryGet.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TryGet.cs</LastGenOutput>
+    </None>
+    <None Update="SparseSecondaryMap\TryInsert.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TryInsert.cs</LastGenOutput>
     </None>
     <None Update="SparseSecondaryMap\TryRemove.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -188,6 +196,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>TryGet.tt</DependentUpon>
     </Compile>
+    <Compile Update="SecondaryMap\TryInsert.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TryInsert.tt</DependentUpon>
+    </Compile>
     <Compile Update="SecondaryMap\TryRemove.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -247,6 +260,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TryGet.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SparseSecondaryMap\TryInsert.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TryInsert.tt</DependentUpon>
     </Compile>
     <Compile Update="SparseSecondaryMap\TryRemove.cs">
       <DesignTime>True</DesignTime>
