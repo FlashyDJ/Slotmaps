@@ -94,6 +94,25 @@ foreach (var data in dataTypes)
         <#= varName #>.Insert(key2, <#= data.Value[1] #>);
         Assert.Equal(2, <#= varName #>.Count);
     }
+
+    [Fact]
+    public void ReInsert<#= typeTitle #>_ReturnsDefaultValue()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = new SlotKey(1,1);
+        <#= varName #>.Insert(key, <#= data.Value[0] #>);
+
+        var capacity = <#= varName #>.Capacity;
+
+        <#= varName #>.Remove(key);
+        Assert.Empty(<#= varName #>);
+
+        <#= varName #>.Insert(key, <#= data.Value[1] #>);
+        Assert.Equal(<#= data.Value[1] #>, <#= varName #>[key]);
+
+        Assert.Equal(capacity, <#= varName #>.Capacity);
+        Assert.Single(<#= varName #>);
+    }
 <#
 }
 #>
