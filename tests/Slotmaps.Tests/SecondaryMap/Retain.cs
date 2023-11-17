@@ -308,7 +308,9 @@ public class Retain
         secondaryMap.Insert(key4, false);
         secondaryMap.Insert(key5, true);
 
+#pragma warning disable CS0184 // 'is' expression's given expression is never of the provided type
         secondaryMap.Retain((key, value) => value is int);
+#pragma warning restore CS0184 // 'is' expression's given expression is never of the provided type
 
         Assert.Empty(secondaryMap);
     }
@@ -328,7 +330,9 @@ public class Retain
         secondaryMap.Insert(key4, false);
         secondaryMap.Insert(key5, true);
 
+#pragma warning disable CS0183 // 'is' expression's given expression is always of the provided type
         secondaryMap.Retain((key, value) => value is bool);
+#pragma warning restore CS0183 // 'is' expression's given expression is always of the provided type
 
         Assert.Equal(5, secondaryMap.Count);
     }
@@ -351,7 +355,9 @@ public class Retain
         secondaryMap.Insert(key4, null);
         secondaryMap.Insert(key5, true);
 
+#pragma warning disable CS0184 // 'is' expression's given expression is never of the provided type
         secondaryMap.Retain((key, value) => value is int);
+#pragma warning restore CS0184 // 'is' expression's given expression is never of the provided type
 
         Assert.Empty(secondaryMap);
     }
@@ -371,7 +377,9 @@ public class Retain
         secondaryMap.Insert(key4, null);
         secondaryMap.Insert(key5, true);
 
+#pragma warning disable CS8794 // The input always matches the provided pattern.
         secondaryMap.Retain((key, value) => value is bool or null);
+#pragma warning restore CS8794 // The input always matches the provided pattern.
 
         Assert.Equal(5, secondaryMap.Count);
     }

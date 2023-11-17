@@ -308,7 +308,9 @@ public class Retain
         sparseSecondaryMap.Insert(key4, false);
         sparseSecondaryMap.Insert(key5, true);
 
+#pragma warning disable CS0184 // 'is' expression's given expression is never of the provided type
         sparseSecondaryMap.Retain((key, value) => value is int);
+#pragma warning restore CS0184 // 'is' expression's given expression is never of the provided type
 
         Assert.Empty(sparseSecondaryMap);
     }
@@ -328,7 +330,9 @@ public class Retain
         sparseSecondaryMap.Insert(key4, false);
         sparseSecondaryMap.Insert(key5, true);
 
+#pragma warning disable CS0183 // 'is' expression's given expression is always of the provided type
         sparseSecondaryMap.Retain((key, value) => value is bool);
+#pragma warning restore CS0183 // 'is' expression's given expression is always of the provided type
 
         Assert.Equal(5, sparseSecondaryMap.Count);
     }
@@ -351,7 +355,9 @@ public class Retain
         sparseSecondaryMap.Insert(key4, null);
         sparseSecondaryMap.Insert(key5, true);
 
+#pragma warning disable CS0184 // 'is' expression's given expression is never of the provided type
         sparseSecondaryMap.Retain((key, value) => value is int);
+#pragma warning restore CS0184 // 'is' expression's given expression is never of the provided type
 
         Assert.Empty(sparseSecondaryMap);
     }
@@ -371,7 +377,9 @@ public class Retain
         sparseSecondaryMap.Insert(key4, null);
         sparseSecondaryMap.Insert(key5, true);
 
+#pragma warning disable CS8794 // The input always matches the provided pattern.
         sparseSecondaryMap.Retain((key, value) => value is bool or null);
+#pragma warning restore CS8794 // The input always matches the provided pattern.
 
         Assert.Equal(5, sparseSecondaryMap.Count);
     }
