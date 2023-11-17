@@ -26,7 +26,7 @@ foreach (var data in dataTypes)
 
         var result = <#= varName #>.Insert(key, <#= data.Value[0] #>);
 
-        Assert.Equal(<#= data.Value[0] #>, result);
+        <#= data.Key.EndsWith("?") ? "Assert.Null(result);" : $"Assert.Equal({data.Value[0]}, result);" #>
     }
 
     [Fact]
@@ -49,8 +49,8 @@ foreach (var data in dataTypes)
         var result1 = <#= varName #>.Insert(key1, <#= data.Value[0] #>);
         var result2 = <#= varName #>.Insert(key2, <#= data.Value[1] #>);
 
-        Assert.Equal(<#= data.Value[0] #>, result1);
-        Assert.Equal(<#= data.Value[0] #>, result2);
+        <#= data.Key.EndsWith("?") ? "Assert.Null(result1);" : $"Assert.Equal({data.Value[0]}, result1);" #>
+        <#= data.Key.EndsWith("?") ? "Assert.Null(result2);" : $"Assert.Equal({data.Value[0]}, result2);" #>
         Assert.Equal(<#= data.Value[1] #>, <#= varName #>[key2]);
     }
 
@@ -76,8 +76,8 @@ foreach (var data in dataTypes)
         var firstInsert = <#= varName #>.Insert(key, <#= data.Value[0] #>);
         var secondInsert = <#= varName #>.Insert(key, <#= data.Value[1] #>);
 
-        Assert.Equal(<#= data.Value[0] #>, firstInsert);
-        Assert.Equal(<#= data.Value[0] #>, secondInsert);
+        <#= data.Key.EndsWith("?") ? "Assert.Null(firstInsert);" : $"Assert.Equal({data.Value[0]}, firstInsert);" #>
+        <#= data.Key.EndsWith("?") ? "Assert.Null(secondInsert);" : $"Assert.Equal({data.Value[0]}, secondInsert);" #>
         Assert.Equal(<#= data.Value[1] #>, <#= varName #>.Get(key));
     }
 

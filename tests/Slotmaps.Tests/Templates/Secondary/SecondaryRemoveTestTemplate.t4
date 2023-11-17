@@ -27,7 +27,7 @@ foreach (var data in dataTypes)
 
         var result = <#= varName #>.Remove(key);
 
-        Assert.Equal(<#= data.Value[0] #>, result);
+        <#= data.Key.EndsWith("?") ? "Assert.Null(result);" : $"Assert.Equal({data.Value[0]}, result);" #>
         Assert.False(<#= varName #>.TryGet(key, out _));
     }
 

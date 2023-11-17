@@ -27,7 +27,7 @@ foreach (var data in dataTypes)
         bool result = <#= varName #>.TryInsert(key, <#= data.Value[0] #>, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(<#= data.Value[0] #>, previousValue);
+        <#= data.Key.EndsWith("?") ? "Assert.Null(previousValue);" : $"Assert.Equal({data.Value[0]}, previousValue);" #>
     }
 
     [Fact]
@@ -66,8 +66,8 @@ foreach (var data in dataTypes)
         bool result = <#= varName #>.TryInsert(key, <#= data.Value[1] #>, out var previousValue2);
 
         Assert.True(result);
-        Assert.Equal(<#= data.Value[0] #>, previousValue1);
-        Assert.Equal(<#= data.Value[0] #>, previousValue2);
+        <#= data.Key.EndsWith("?") ? "Assert.Null(previousValue1);" : $"Assert.Equal({data.Value[0]}, previousValue1);" #>
+        <#= data.Key.EndsWith("?") ? "Assert.Null(previousValue2);" : $"Assert.Equal({data.Value[0]}, previousValue2);" #>
     }
 
     [Fact]
@@ -84,7 +84,7 @@ foreach (var data in dataTypes)
         <#= varName #>.TryInsert(key2, <#= data.Value[1] #>, out _);
 
         Assert.Equal(2, <#= varName #>.Count);
-        Assert.Equal(<#= data.Value[0] #>, <#= varName #>[key1]);
+        <#= data.Key.EndsWith("?") ? "Assert.Null(" : $"Assert.Equal({data.Value[0]}, " #><#= varName #>[key1]);
         Assert.Equal(<#= data.Value[1] #>, <#= varName #>[key2]);
     }
 

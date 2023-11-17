@@ -86,7 +86,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -119,7 +119,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -184,7 +184,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -217,7 +217,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -282,7 +282,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -315,7 +315,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -380,7 +380,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -413,7 +413,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -478,7 +478,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -511,7 +511,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -576,7 +576,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -609,7 +609,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -674,7 +674,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -707,7 +707,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -772,7 +772,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -805,7 +805,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -870,7 +870,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -903,7 +903,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -968,7 +968,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -1001,7 +1001,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1066,7 +1066,7 @@ public class Indexer
 
         var result = secondaryMap[key];
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -1099,7 +1099,7 @@ public class Indexer
 
         secondaryMap[key] = null;
 
-        Assert.Equal(null, secondaryMap[key]);
+        Assert.Null(secondaryMap[key]);
     }
 
 }

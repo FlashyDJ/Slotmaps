@@ -28,7 +28,7 @@ foreach (var data in dataTypes)
         bool result = <#= varName #>.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(<#= data.Value[0] #>, previousValue);
+        <#= data.Key.EndsWith("?") ? "Assert.Null(previousValue);" : $"Assert.Equal({data.Value[0]}, previousValue);" #>
         Assert.False(<#= varName #>.TryGet(key, out _));
     }
 

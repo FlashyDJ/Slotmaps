@@ -90,7 +90,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 
@@ -230,7 +230,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 
@@ -370,7 +370,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 
@@ -510,7 +510,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 
@@ -650,7 +650,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 
@@ -790,7 +790,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 
@@ -930,7 +930,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 
@@ -1070,7 +1070,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 
@@ -1210,7 +1210,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 
@@ -1350,7 +1350,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 
@@ -1490,7 +1490,7 @@ public class TryRemove
         bool result = sparseSecondaryMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
+        Assert.Null(previousValue);
         Assert.False(sparseSecondaryMap.TryGet(key, out _));
     }
 

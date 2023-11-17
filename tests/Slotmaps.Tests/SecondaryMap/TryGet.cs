@@ -89,7 +89,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]
@@ -227,7 +227,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]
@@ -365,7 +365,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]
@@ -503,7 +503,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]
@@ -641,7 +641,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]
@@ -779,7 +779,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]
@@ -917,7 +917,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]
@@ -1055,7 +1055,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]
@@ -1193,7 +1193,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]
@@ -1331,7 +1331,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]
@@ -1469,7 +1469,7 @@ public class TryGet
         bool result = secondaryMap.TryGet(key, out var value);
 
         Assert.True(result);
-        Assert.Equal(null, value);
+        Assert.Null(value);
     }
 
     [Fact]

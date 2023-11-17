@@ -76,7 +76,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -190,7 +190,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -304,7 +304,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -418,7 +418,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -532,7 +532,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -646,7 +646,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -760,7 +760,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -874,7 +874,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -988,7 +988,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -1102,7 +1102,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
@@ -1216,7 +1216,7 @@ public class Remove
 
         var result = secondaryMap.Remove(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
         Assert.False(secondaryMap.TryGet(key, out _));
     }
 
