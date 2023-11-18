@@ -74,6 +74,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Constructor.cs</LastGenOutput>
     </None>
+    <None Update="SlotMap\ContainsKey.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ContainsKey.cs</LastGenOutput>
+    </None>
     <None Update="SparseSecondaryMap\Clear.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Clear.cs</LastGenOutput>
@@ -171,6 +175,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Constructor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SlotMap\ContainsKey.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContainsKey.tt</DependentUpon>
     </Compile>
     <Compile Update="SparseSecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>

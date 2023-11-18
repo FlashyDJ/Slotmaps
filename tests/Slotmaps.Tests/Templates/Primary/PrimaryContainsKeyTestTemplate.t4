@@ -1,0 +1,93 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class ContainsKey
+{
+    [Fact]
+    public void ValidKeyDoesNotExist_ReturnsFalse()
+    {
+        var <#= varName #> = new <#= slotMapType #><string>();
+        var key = new SlotKey(1, 1);
+
+        var result = <#= varName #>.ContainsKey(key);
+
+        Assert.False(result);
+    }
+
+    [Fact]
+    public void InvalidKeyWithVersionLessThan1_ReturnsFalse()
+    {
+        var <#= varName #> = new <#= slotMapType #><string>();
+        var invalidKey = new SlotKey(1, 0);
+
+        var result = <#= varName #>.ContainsKey(invalidKey);
+
+        Assert.False(result);
+    }
+
+    [Fact]
+    public void InvalidKeyWithVersionGreaterOrEqualTo1_ReturnsFalse()
+    {
+        var <#= varName #> = new <#= slotMapType #><string>();
+        var invalidKey = new SlotKey(-1, 1);
+
+        var result = <#= varName #>.ContainsKey(invalidKey);
+
+        Assert.False(result);
+    }
+
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void <#= typeTitle #>WithValidKeyExists_ReturnsTrue()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = slotMap.Add(<#= data.Value[0] #>);
+
+        var result = slotMap.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void <#= typeTitle #>ItemAddedToSlotMap_EmptysSlotMapAndNotContainKey()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+
+        <#= varName #>.Remove(key);
+
+        Assert.Empty(<#= varName #>);
+        Assert.False(<#= varName #>.ContainsKey(key));
+    }
+
+    [Fact]
+    public void <#= typeTitle #>ItemRemovedFromSlotMap_NotContainRemovedKeyAndContainsOtherKey()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
+
+        <#= varName #>.Remove(key1);
+
+        Assert.False(<#= varName #>.ContainsKey(key1));
+        Assert.True(<#= varName #>.ContainsKey(key2));
+    }
+
+<#
+}
+#>
+}
