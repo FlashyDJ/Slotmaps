@@ -1,0 +1,108 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class ContainsValue
+{
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void <#= typeTitle #>ValueExists_ReturnsTrue()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        <#= varName #>.Add(<#= data.Value[0] #>);
+        <#= varName #>.Add(<#= data.Value[1] #>);
+<# 
+if (!data.Key.Contains("bool") || data.Key.Contains("bool?"))
+{
+#>
+        <#= varName #>.Add(<#= data.Value[2] #>);
+<#
+}
+#>
+
+        var result1 = <#= varName #>.ContainsValue(<#= data.Value[0] #>);
+        var result2 = <#= varName #>.ContainsValue(<#= data.Value[1] #>);
+<# 
+if (!data.Key.Contains("bool") || data.Key.Contains("bool?"))
+{
+#>
+        var result3 = <#= varName #>.ContainsValue(<#= data.Value[2] #>);
+<#
+}
+#>
+
+        Assert.True(result1);
+        Assert.True(result2);
+<# 
+if (!data.Key.Contains("bool") || data.Key.Contains("bool?"))
+{
+#>
+        Assert.True(result3);
+<#
+}
+#>
+    }
+
+    [Fact]
+    public void <#= typeTitle #>ValueRemoved_ReturnsFalse()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
+        var key3 = <#= varName #>.Add(<#= data.Value[2] #>);
+
+        <#= varName #>.Remove(key1);
+        <#= varName #>.Remove(key2);
+        <#= varName #>.Remove(key3);
+
+        var result1 = <#= varName #>.ContainsValue(<#= data.Value[0] #>);
+        var result2 = <#= varName #>.ContainsValue(<#= data.Value[1] #>);
+        var result3 = <#= varName #>.ContainsValue(<#= data.Value[2] #>);
+
+        Assert.False(result1);
+        Assert.False(result2);
+        Assert.False(result3);
+    }
+
+    [Fact]
+    public void <#= typeTitle #>ValueDoesNotExist_ReturnsFalse()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        <#= varName #>.Add(<#= data.Value[0] #>);
+<#
+if (!data.Key.Contains("bool") || data.Key.Contains("bool?"))
+{
+#>
+        <#= varName #>.Add(<#= data.Value[1] #>);
+<#
+}
+if (!data.Key.Contains("bool?"))
+{
+#>
+        <#= varName #>.Add(<#= data.Value[2] #>);
+<#
+}
+#>
+
+        var result = <#= varName #>.ContainsValue(<#= !data.Key.Contains("bool?") ? $"{data.Value[3]}" : $"{data.Value[2]}" #>);
+
+        Assert.False(result);
+    }
+
+<#
+}
+#>
+}
