@@ -1,0 +1,77 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Add
+{
+    [Fact]
+    public void InvalidSlotKey_ThrowsArgumentException()
+    {
+        var slotMap = new SlotMap<string>();
+        var key = SlotKey.Null();
+
+        Assert.Throws<KeyNotFoundException>(() => slotMap.Insert(key, "Value"));
+    }
+
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void NewValid<#= typeTitle #>Value_ReturnsKeyIncreasesCountAndContainKeys()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+
+        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+
+        Assert.Single(<#= varName #>);
+        Assert.True(<#= varName #>.ContainsKey(key));
+        <#= data.Key.EndsWith("?") ? "Assert.Null(" : $"Assert.Equal({data.Value[0]}, " #><#= varName #>.Get(key));
+    }
+
+    [Fact]
+    public void Add<#= typeTitle #>ElementsBeyondCapacity_ResizesCorrectly()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>(2);
+
+        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
+        var key3 = <#= varName #>.Add(<#= data.Value[2] #>);
+
+        Assert.True(<#= varName #>.ContainsKey(key1));
+        Assert.True(<#= varName #>.ContainsKey(key2));
+        Assert.True(<#= varName #>.ContainsKey(key3));
+        <#= data.Key.EndsWith("?") ? "Assert.Null(" : $"Assert.Equal({data.Value[0]}, " #><#= varName #>.Get(key1));
+        Assert.Equal(<#= data.Value[1] #>, <#= varName #>.Get(key2));
+        Assert.Equal(<#= data.Value[2] #>, <#= varName #>.Get(key3));
+        Assert.Equal(4, <#= varName #>.Capacity);
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithValidSlotKey_UpdatesSlotValue()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+
+        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var newKey = <#= varName #>.Insert(key, <#= data.Value[1] #>);
+        var value = <#= varName #>.Get(newKey);
+
+        Assert.Equal(key.Index, newKey.Index);
+        Assert.NotEqual(key, newKey);
+        Assert.Equal(<#= data.Value[1] #>, value);
+    }
+
+<#
+}
+#>
+}
