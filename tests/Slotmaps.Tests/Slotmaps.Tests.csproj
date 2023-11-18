@@ -70,6 +70,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Add.cs</LastGenOutput>
     </None>
+    <None Update="SlotMap\Clear.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Clear.cs</LastGenOutput>
+    </None>
     <None Update="SlotMap\Constructor.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Constructor.cs</LastGenOutput>
@@ -174,6 +178,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Add.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SlotMap\Clear.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Clear.tt</DependentUpon>
     </Compile>
     <Compile Update="SlotMap\Constructor.cs">
       <DesignTime>True</DesignTime>

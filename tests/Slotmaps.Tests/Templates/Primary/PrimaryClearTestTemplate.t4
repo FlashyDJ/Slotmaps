@@ -1,0 +1,48 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Clear
+{
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void With<#= typeTitle #>Items_ClearsMapAndSetsCountToZero()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        <#= varName #>.Add(<#= data.Value[0] #>);
+        <#= varName #>.Add(<#= data.Value[1] #>);
+        var capacity = <#= varName #>.Capacity;
+    
+        <#= varName #>.Clear();
+    
+        Assert.Equal(capacity, <#= varName #>.Capacity);
+        Assert.Empty(<#= varName #>);
+    }
+
+    [Fact]
+    public void Empty<#= typeTitle #>Map_DoesNothing()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+    
+        <#= varName #>.Clear();
+    
+        Assert.Empty(<#= varName #>);
+    }
+
+<#
+}
+#>
+}
