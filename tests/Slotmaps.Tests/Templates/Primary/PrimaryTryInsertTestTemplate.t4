@@ -1,0 +1,76 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class TryInsert
+{
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void <#= typeTitle #>WithValidKey_ReturnsTrueAndNewKey()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+
+        bool result = <#= varName #>.TryInsert(key, <#= data.Value[1] #>, out var newKey);
+
+        Assert.True(result);
+        Assert.Equal(<#= data.Value[1] #>, <#= varName #>[newKey]);
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithInvalidKey_ReturnsFalseAndNullKey()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var invalidKey = new SlotKey(-1, 0);
+
+        bool result = <#= varName #>.TryInsert(invalidKey, <#= data.Value[0] #>, out var newKey);
+
+        Assert.False(result);
+        Assert.True(newKey.IsNull);
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithOlderVersionKey_ReturnsFalseAndNullKey()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = key1 with { Version = 0 };
+
+        bool result = <#= varName #>.TryInsert(key2, <#= data.Value[1] #>, out var newKey);
+
+        Assert.False(result);
+        Assert.True(newKey.IsNull);
+        <#= !data.Key.EndsWith("?") ? $"Assert.Equal({data.Value[0]}, {varName}[key1]);" : $"Assert.Null({varName}[key1]);" #>
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithNewerVersionKey_ReturnsFalseAndNullKey()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = key1 with { Version = 2 };
+
+        bool result = <#= varName #>.TryInsert(key2, <#= data.Value[1] #>, out var newKey);
+
+        Assert.False(result);
+        Assert.True(newKey.IsNull);
+        <#= !data.Key.EndsWith("?") ? $"Assert.Equal({data.Value[0]}, {varName}[key1]);" : $"Assert.Null({varName}[key1]);" #>
+    }
+
+<#
+}
+#>
+}
