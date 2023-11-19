@@ -1,0 +1,76 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Retain
+{
+    [Fact]
+    public void PredicateRemovesSomeItems_ItemsThatSatisfyPredicateAreRetained()
+    {
+        var <#= varName #> = new <#= slotMapType #><int>();
+        var key1 = <#= varName #>.Add(42);
+        var key2 = <#= varName #>.Add(24);
+        var key3 = <#= varName #>.Add(36);
+        var key4 = <#= varName #>.Add(50);
+        var key5 = <#= varName #>.Add(18);
+
+        <#= varName #>.Retain((key, value) => value > 30);
+
+        Assert.Equal(3, <#= varName #>.Count);
+        Assert.Equal(42, <#= varName #>[key1]);
+        Assert.Equal(36, <#= varName #>[key3]);
+        Assert.Equal(50, <#= varName #>[key4]);
+        Assert.False(<#= varName #>.ContainsKey(key2));
+        Assert.False(<#= varName #>.ContainsKey(key5));
+    }
+
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+    var isBool = data.Key.Contains("bool");
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void PredicateRemovesAll<#= typeTitle #>Items_NoItemsRetained()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
+        var key3 = <#= varName #>.Add(<#= data.Value[2] #>);
+        var key4 = <#= varName #>.Add(<#= data.Value[3] #>);
+        var key5 = <#= varName #>.Add(<#= data.Value[4] #>);
+        
+<#= !isBool ? "" : $"{Environment.NewLine}#pragma warning disable CS0184 // 'is' expression's given expression is never of the provided type" #>
+        <#= varName #>.Retain((key, value) => value <#= !isBool ? $"== {data.Value[5]}" : "is int" #>);
+<#= !isBool ? "" : $"#pragma warning restore CS0184 // 'is' expression's given expression is never of the provided type{Environment.NewLine}" #>
+        Assert.Empty(<#= varName #>);
+    }
+
+    [Fact]
+    public void PredicateKeepsAll<#= typeTitle #>Items_ItemsRetained()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
+        var key3 = <#= varName #>.Add(<#= data.Value[2] #>);
+        var key4 = <#= varName #>.Add(<#= data.Value[3] #>);
+        var key5 = <#= varName #>.Add(<#= data.Value[4] #>);
+<#= !isBool ? "" : !data.Key.EndsWith("?") ? $"{Environment.NewLine}#pragma warning disable CS0183 // 'is' expression's given expression is always of the provided type" : $"{Environment.NewLine}#pragma warning disable CS8794 // The input always matches the provided pattern." #>
+        <#= varName #>.Retain((key, value) => value <#= !isBool ? $"!= {data.Value[5]}" : !data.Key.EndsWith("?") ? "is bool" : "is bool or null" #>);
+<#= !isBool ? "" : !data.Key.EndsWith("?") ? $"#pragma warning restore CS0183 // 'is' expression's given expression is always of the provided type{Environment.NewLine}" : $"#pragma warning restore CS8794 // The input always matches the provided pattern.{Environment.NewLine}" #>
+        Assert.Equal(5, <#= varName #>.Count);
+    }
+
+<#
+}
+#>
+}
