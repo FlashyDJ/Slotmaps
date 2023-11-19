@@ -122,6 +122,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Retain.cs</LastGenOutput>
     </None>
+    <None Update="SlotMap\TryGet.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TryGet.cs</LastGenOutput>
+    </None>
     <None Update="SlotMap\TryInsert.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TryInsert.cs</LastGenOutput>
@@ -283,6 +287,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Retain.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SlotMap\TryGet.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TryGet.tt</DependentUpon>
     </Compile>
     <Compile Update="SlotMap\TryInsert.cs">
       <DesignTime>True</DesignTime>
