@@ -90,6 +90,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Drain.cs</LastGenOutput>
     </None>
+    <None Update="SlotMap\EnsureCapacity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnsureCapacity.cs</LastGenOutput>
+    </None>
     <None Update="SparseSecondaryMap\Clear.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Clear.cs</LastGenOutput>
@@ -207,6 +211,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Drain.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SlotMap\EnsureCapacity.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnsureCapacity.tt</DependentUpon>
     </Compile>
     <Compile Update="SparseSecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>
