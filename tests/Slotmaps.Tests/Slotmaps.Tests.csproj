@@ -86,6 +86,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ContainsValue.cs</LastGenOutput>
     </None>
+    <None Update="SlotMap\Drain.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Drain.cs</LastGenOutput>
+    </None>
     <None Update="SparseSecondaryMap\Clear.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Clear.cs</LastGenOutput>
@@ -198,6 +202,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ContainsValue.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SlotMap\Drain.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Drain.tt</DependentUpon>
     </Compile>
     <Compile Update="SparseSecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>

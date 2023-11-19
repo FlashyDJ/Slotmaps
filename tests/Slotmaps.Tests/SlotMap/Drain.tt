@@ -1,0 +1,6 @@
+<#@ assembly name="System.Core" #>
+<#@ output extension=".cs" #>
+<#
+    var slotMapType = "SlotMap";
+#>
+<#@ include file="..\Templates\Primary\PrimaryDrainTestTemplate.t4" #>
