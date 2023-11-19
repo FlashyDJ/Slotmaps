@@ -98,6 +98,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Get.cs</LastGenOutput>
     </None>
+    <None Update="SlotMap\Indexer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Indexer.cs</LastGenOutput>
+    </None>
     <None Update="SparseSecondaryMap\Clear.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Clear.cs</LastGenOutput>
@@ -225,6 +229,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Get.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SlotMap\Indexer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Indexer.tt</DependentUpon>
     </Compile>
     <Compile Update="SparseSecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>
