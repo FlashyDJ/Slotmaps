@@ -106,6 +106,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Insert.cs</LastGenOutput>
     </None>
+    <None Update="SlotMap\Remove.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Remove.cs</LastGenOutput>
+    </None>
     <None Update="SparseSecondaryMap\Clear.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Clear.cs</LastGenOutput>
@@ -243,6 +247,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Insert.tt</DependentUpon>
+    </Compile>
+    <Compile Update="SlotMap\Remove.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Remove.tt</DependentUpon>
     </Compile>
     <Compile Update="SparseSecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>
