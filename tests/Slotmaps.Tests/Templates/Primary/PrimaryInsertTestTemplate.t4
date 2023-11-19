@@ -1,0 +1,58 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Insert
+{
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void <#= typeTitle #>WithNonexistentKey_ThrowsKeyNotFoundException()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = new SlotKey(1, 0);
+
+        var ex = Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Insert(key, <#= data.Value[0] #>));
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithExistingKey_UpdatesValueAndReturnsNewKey()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+
+        var newKey = <#= varName #>.Insert(key, <#= data.Value[1] #>);
+
+        Assert.Equal(<#= data.Value[1] #>, <#= varName #>[newKey]);
+    }
+
+    [Fact]
+    public void Replace<#= typeTitle #>Value_SameCount()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+
+        Assert.Single(<#= varName #>);
+        <#= !data.Key.EndsWith("?") ? $"Assert.Equal({data.Value[0]}, {varName}.Get(key));" : $"Assert.Null({varName}.Get(key));" #>
+
+        var key2 = <#= varName #>.Insert(key, <#= data.Value[1] #>);
+        Assert.Single(<#= varName #>);
+        Assert.Equal(<#= data.Value[1] #>, <#= varName #>.Get(key2));
+    }
+
+<#
+}
+#>
+}
