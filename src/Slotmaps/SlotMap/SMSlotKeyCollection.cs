@@ -1,13 +1,22 @@
 ﻿namespace FlashyDJ.Slotmaps;
 public partial class SlotMap<TKey, TValue>
 {
-    /// <include file='docs.xml' path='docs/SlotKeyCollection/*'/>
+    /// <summary>
+    /// Represents a read only collection of keys associated with a value in the slot map.
+    /// </summary>
     [DebuggerDisplay("Count = {Count}")]
     public sealed class SlotKeyCollection : ICollection<TKey>, IReadOnlyCollection<TKey>
     {
         private readonly SlotMap<TKey, TValue> _slotMap;
 
-        /// <include file='docs.xml' path='docs/SKCCtor/*'/>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SlotKeyCollection"/> class with a reference
+        /// to the parent slot map.
+        /// </summary>
+        /// <param name="slotMap">The slot map to associate with this key collection. Must not be null.</param>
+        /// <exception cref="ArgumentNullException">
+        ///   Thrown if <paramref name="slotMap"/> is null.
+        /// </exception>
         public SlotKeyCollection(SlotMap<TKey, TValue> slotMap)
         {
             ArgumentNullException.ThrowIfNull(slotMap);
@@ -21,13 +30,30 @@ public partial class SlotMap<TKey, TValue>
         IEnumerator<TKey> IEnumerable<TKey>.GetEnumerator() => new Enumerator(_slotMap);
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_slotMap);
 
-        /// <include file='docs.xml' path='docs/SKCCount/*'/>
+        /// <summary>Gets the number of keys in the collection.</summary>
         public int Count => _slotMap.Count;
 
-        /// <include file='docs.xml' path='docs/SKCContains/*'/>
+        /// <summary>
+        ///   Determines whether the collection contains a specific key.
+        /// </summary>
+        /// <param name="key">The key to search for in the collection.</param>
+        /// <returns>
+        ///   <see langword="true"/> if the slot map contains the specified key; otherwise, <see langword="false"/>.
+        /// </returns>
         public bool Contains(TKey key) => _slotMap.ContainsKey(key);
 
-        /// <include file='docs.xml' path='docs/SKCCopyTo/*'/>
+        /// <summary>
+        ///   Copies the elements of the key collection to an array, starting at the specified index.
+        /// </summary>
+        /// <param name="array">The destination array where keys will be copied.</param>
+        /// <param name="index">The zero-based index in the array at which copying begins.</param>
+        /// <exception cref="ArgumentNullException">
+        ///   Thrown if <paramref name="array"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>,
+        ///   or if there are not enough elements in the slot map to fill the destination array starting at the specified index.
+        /// </exception>
         public void CopyTo(TKey[] array, int index)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -44,7 +70,9 @@ public partial class SlotMap<TKey, TValue>
             }
         }
 
-        /// <include file='docs.xml' path='docs/SKCEnumerator/*'/>
+        /// <summary>
+        ///   Represents an enumerator for the keys in the <see cref="SlotKeyCollection"/>.
+        /// </summary>
         public struct Enumerator : IEnumerator<TKey>, IEnumerator
         {
             private readonly SlotMap<TKey, TValue> _slotMap;

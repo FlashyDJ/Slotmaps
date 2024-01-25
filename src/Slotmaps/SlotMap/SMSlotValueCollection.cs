@@ -1,13 +1,22 @@
 ﻿namespace FlashyDJ.Slotmaps;
 public partial class SlotMap<TKey, TValue>
 {
-    /// <include file='docs.xml' path='docs/SlotValueCollection/*'/>
+    /// <summary>
+    ///   Represents a readonly collection of values in a slot map.
+    /// </summary>
     [DebuggerDisplay("Count = {Count}")]
     public sealed class SlotValueCollection : ICollection<TValue>, IReadOnlyCollection<TValue>
     {
         private readonly SlotMap<TKey, TValue> _slotMap;
 
-        /// <include file='docs.xml' path='docs/SVCCtor/*'/>
+        /// <summary>
+        ///   Initializes a new instance of the <see cref="SlotValueCollection"/> class with a reference to the
+        ///   parent slot map.
+        /// </summary>
+        /// <param name="slotMap">The slot map to associate with this value collection. Must not be null.</param>
+        /// <exception cref="ArgumentNullException">
+        ///   Thrown if <paramref name="slotMap"/> is null.
+        /// </exception>
         public SlotValueCollection(SlotMap<TKey, TValue> slotMap)
         {
             ArgumentNullException.ThrowIfNull(slotMap);
@@ -21,13 +30,30 @@ public partial class SlotMap<TKey, TValue>
         IEnumerator<TValue> IEnumerable<TValue>.GetEnumerator() => new Enumerator(_slotMap);
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_slotMap);
 
-        /// <include file='docs.xml' path='docs/SVCCount/*'/>
+        /// <summary>Gets the number of values in the collection.</summary>
         public int Count => _slotMap.Count;
 
-        /// <include file='docs.xml' path='docs/SVCContains/*'/>
+        /// <summary>
+        ///   Determines whether the collection contains a specific value.
+        /// </summary>
+        /// <param name="value">The value to search for in the collection.</param>
+        /// <returns>
+        ///  <see langword="true"/> if the slot map contains the specified value; otherwise, <see langword="false"/>.
+        /// </returns>
         public bool Contains(TValue value) => _slotMap.ContainsValue(value);
 
-        /// <include file='docs.xml' path='docs/SVCCopyTo/*'/>
+        /// <summary>
+        ///   Copies the elements of the value collection to an array, starting at the specified index.
+        /// </summary>
+        /// <param name="array">The destination array where values will be copied.</param>
+        /// <param name="index">The zero-based index in the array at which copying begins.</param>
+        /// <exception cref="ArgumentNullException">
+        ///   Thrown if <paramref name="array"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>,
+        ///   or if there are not enough elements in the slot map to fill the destination array starting at the specified index.
+        /// </exception>
         public void CopyTo(TValue[] array, int index)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -44,7 +70,9 @@ public partial class SlotMap<TKey, TValue>
             }
         }
 
-        /// <include file='docs.xml' path='docs/SVCEnumerator/*'/>
+        /// <summary>
+        ///   Represents an enumerator for the values in the <see cref="SlotValueCollection"/>
+        /// </summary>
         public struct Enumerator : IEnumerator<TValue>, IEnumerator
         {
             private readonly SlotMap<TKey, TValue> _slotMap;
