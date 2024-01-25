@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace FlashyDJ.Slotmaps;
 
 /// <summary>
-///   Represents a secondary map that associates keys of type <see cref="SlotKey"/> with values of type <typeparamref name="TValue"/>.
+///   Represents a secondary map that associates keys of type <see cref="ISlotKey{TKey}"/> with values of type <typeparamref name="TValue"/>.
 /// </summary>
 /// <typeparam name="TKey">The struct type of keys that implement. <see cref="ISlotKey{TKey}"/>.</typeparam>
 /// <typeparam name="TValue">The type of values stored in the secondary map.</typeparam>
