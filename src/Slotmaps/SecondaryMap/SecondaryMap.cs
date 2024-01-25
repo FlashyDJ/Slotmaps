@@ -1,98 +1,92 @@
 namespace FlashyDJ.Slotmaps;
-/// <include file='docs.xml' path='docs/SecondaryMapD/*'/>
-/// <include file='codesnippets.xml' path='code/SecondaryMapD/*'/>
+/// <summary>
+///   Represents a secondary slot map that associates keys of type <see cref="SlotKey"/> for efficiently
+///   storing additional information for primary slot map elements.
+/// </summary>
+/// <typeparam name="TValue">The type of values stored in the secondary map.</typeparam>
+/// <seealso cref="SlotKey"/>
+/// <seealso cref="SecondaryMap{TKey,TValue}"/>
+/// <seealso cref="SparseSecondaryMap{TValue}"/>
 [DebuggerDisplay("Count = {Count}")]
 public class SecondaryMap<TValue> : SecondaryMap<SlotKey, TValue>
 {
-    /// <include file='docs.xml' path='docs/Ctor1D/*'/>
-    /// <include file='codesnippets.xml' path='code/Ctor1D/*'/>
+    /// <summary>
+    ///   Initializes a new instance of the <see cref="SecondaryMap{TValue}"/> class that is empty with no
+    ///   initial capacity.
+    /// </summary>
     public SecondaryMap() : base() {}
 
-    /// <include file='docs.xml' path='docs/Ctor2D/*'/>
-    /// <include file='codesnippets.xml' path='code/Ctor2D/*'/>
+    /// <summary>
+    ///   Initializes a new instance of the <see cref="SecondaryMap{TValue}"/> class with the specified capacity.
+    /// </summary>
+    /// <param name="capacity">The initial capacity of the secondary map. Must be a non-negative integer.</param>
+    /// <exception cref="ArgumentOutOfRangeException">
+    ///   Thrown if <paramref name="capacity"/> is negative.
+    /// </exception>
+    /// <seealso cref="Capacity"/>
     public SecondaryMap(int capacity) : base(capacity) {}
 
-    /// <include file='docs.xml' path='docs/Capacity/*'/>
-    /// <include file='codesnippets.xml' path='code/CapacityD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Capacity"/>
     public new int Capacity => base.Capacity;
 
-    /// <include file='docs.xml' path='docs/Count/*'/>
-    /// <include file='codesnippets.xml' path='code/CountD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Count"/>
     public new int Count => base.Count;
 
-    /// <include file='docs.xml' path='docs/IsEmpty/*'/>
-    /// <include file='codesnippets.xml' path='code/IsEmptyD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.IsEmpty"/>
     public new bool IsEmpty => base.IsEmpty;
 
-    /// <include file='docs.xml' path='docs/Keys/*'/>
-    /// <include file='codesnippets.xml' path='code/KeysD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Keys"/>
     public new SlotKeyCollection Keys => base.Keys;
 
-    /// <include file='docs.xml' path='docs/Values/*'/>
-    /// <include file='codesnippets.xml' path='code/ValuesD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Values"/>
     public new SlotValueCollection Values => base.Values;
 
-    /// <include file='docs.xml' path='docs/Indexer/*'/>
-    /// <include file='codesnippets.xml' path='code/IndexerD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.this"/>
     public new TValue this[SlotKey key]
     {
         get => base[key];
         set => base[key] = value;
     }
 
-    /// <include file='docs.xml' path='docs/ContainsKey/*'/>
-    /// <include file='codesnippets.xml' path='code/ContainsKeyD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.ContainsKey"/>
     public new bool ContainsKey(SlotKey key) => base.ContainsKey(key);
 
-    /// <include file='docs.xml' path='docs/ContainsValue/*'/>
-    /// <include file='codesnippets.xml' path='code/ContainsValueD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.ContainsValue"/>
     public new bool ContainsValue(TValue value) => base.ContainsValue(value);
 
-    /// <include file='docs.xml' path='docs/Clear/*'/>
-    /// <include file='codesnippets.xml' path='code/ClearD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Clear"/>
     public new void Clear() => base.Clear();
 
-    /// <include file='docs.xml' path='docs/Drain/*'/>
-    /// <include file='codesnippets.xml' path='code/DrainD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Drain"/>
     public new IEnumerable<KeyValuePair<SlotKey,TValue>> Drain() => base.Drain();
 
-    /// <include file='docs.xml' path='docs/EnsureCapacity/*'/>
-    /// <include file='codesnippets.xml' path='code/EnsureCapacityD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.EnsureCapacity"/>
     public new int EnsureCapacity(int capacity) => base.EnsureCapacity(capacity);
 
-    /// <include file='docs.xml' path='docs/Get/*'/>
-    /// <include file='codesnippets.xml' path='code/GetD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Get"/>
     public new TValue Get(SlotKey key) => base.Get(key);
 
-    /// <include file='docs.xml' path='docs/Insert/*'/>
-    /// <include file='codesnippets.xml' path='code/InsertD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Insert"/>
     public new TValue Insert(SlotKey key, TValue value) => base.Insert(key, value);
 
-    /// <include file='docs.xml' path='docs/Remove/*'/>
-    /// <include file='codesnippets.xml' path='code/RemoveD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Remove"/>
     public new TValue Remove(SlotKey key) => base.Remove(key);
 
-    /// <include file='docs.xml' path='docs/Reserve/*'/>
-    /// <include file='codesnippets.xml' path='code/ReserveD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Reserve"/>
     public new void Reserve(int additionalSize) => base.Reserve(additionalSize);
 
-    /// <include file='docs.xml' path='docs/Resize/*'/>
-    /// <include file='codesnippets.xml' path='code/ResizeD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Resize"/>
     public new void Resize(int newSize) => base.Resize(newSize);
 
-    /// <include file='docs.xml' path='docs/Retain/*'/>
-    /// <include file='codesnippets.xml' path='code/RetainD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.Retain"/>
     public new void Retain(Func<SlotKey,TValue, bool> predicate) => base.Retain(predicate);
 
-    /// <include file='docs.xml' path='docs/TryInsert/*'/>
-    /// <include file='codesnippets.xml' path='code/TryInsertD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.TryInsert"/>
     public new bool TryInsert(SlotKey key, TValue value, out TValue? oldValue) => base.TryInsert(key, value, out oldValue);
 
-    /// <include file='docs.xml' path='docs/TryGet/*'/>
-    /// <include file='codesnippets.xml' path='code/TryGetD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.TryGet"/>
     public new bool TryGet(SlotKey key, [MaybeNullWhen(false)] out TValue value) => base.TryGet(key, out value);
 
-    /// <include file='docs.xml' path='docs/TryRemove/*'/>
-    /// <include file='codesnippets.xml' path='code/TryRemoveD/*'/>
+    /// <inheritdoc cref="SecondaryMap{TKey, TValue}.TryRemove"/>
     public new bool TryRemove(SlotKey key, [MaybeNullWhen(false)] out TValue value) => base.TryRemove(key, out value);
 }
