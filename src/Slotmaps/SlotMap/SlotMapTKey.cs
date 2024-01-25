@@ -94,10 +94,10 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
     /// <summary> Indicates whether the slot map is empty. </summary>
     public bool IsEmpty => Count == 0;
 
-    /// <summary> Gets a collection of latest keys associated with the values in the slot map. </summary>
+    /// <summary> Gets a read only collection of latest keys associated with the values in the slot map. </summary>
     public SlotKeyCollection Keys => _keys ??= new SlotKeyCollection(this);
 
-    /// <summary> Gets a collection of values stored in the slot map. </summary>
+    /// <summary> Gets a read only collection of values stored in the slot map. </summary>
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
     /// <summary> Gets or sets the value associated with the specified key. </summary>
