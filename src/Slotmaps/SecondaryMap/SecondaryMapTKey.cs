@@ -7,8 +7,7 @@
 /// <typeparam name="TKey">The type of keys that implement <see cref="ISlotKey{TKey}"/>.</typeparam>
 /// <typeparam name="TValue">The type of values stored in the secondary map.</typeparam>
 /// <seealso cref="ISlotKey{TKey}"/>
-/// <seealso cref="SecondaryMap{TValue}"/>
-/// <seealso cref="SparseSecondaryMap{TKey,TValue}"/>
+/// <seealso cref="SparseSecondaryMap{TKey, TValue}"/>
 [DebuggerDisplay("Count = {Count}")]
 public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
     where TKey : struct, ISlotKey<TKey>
@@ -22,13 +21,13 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     private SlotValueCollection? _values;
 
     /// <summary>
-    ///   Initializes a new instance of the <see cref="SecondaryMap{TKey,TValue}"/> class that is empty with no
+    ///   Initializes a new instance of the <see cref="SecondaryMap{TKey, TValue}"/> class that is empty with no
     ///   initial capacity.
     /// </summary>
     public SecondaryMap() => _slots = s_emptyArray;
 
     /// <summary>
-    ///   Initializes a new instance of the <see cref="SecondaryMap{TKey,TValue}"/> class with the specified capacity.
+    ///   Initializes a new instance of the <see cref="SecondaryMap{TKey, TValue}"/> class with the specified capacity.
     /// </summary>
     /// <param name="capacity">The initial capacity of the secondary map. Must be a non-negative integer.</param>
     /// <exception cref="ArgumentOutOfRangeException">
@@ -488,7 +487,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     }
 
     /// <summary>
-    ///   Represents an enumerator for the <see cref="SecondaryMap{TValue}"/> collection.
+    ///   Represents an enumerator for the <see cref="SecondaryMap{TKey, TValue}"/> collection.
     /// </summary>
     public struct Enumerator : IEnumerator<KeyValuePair<TKey, TValue>>, IEnumerator
     {

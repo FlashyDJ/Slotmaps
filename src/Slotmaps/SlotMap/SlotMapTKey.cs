@@ -6,7 +6,6 @@
 /// </summary>
 /// <typeparam name="TKey">The struct type of keys that implement. <see cref="ISlotKey{TKey}"/>.</typeparam>
 /// <typeparam name="TValue">The type of values stored in the slot map.</typeparam>
-/// <seealso cref="SlotMap{TValue}"/>
 [DebuggerDisplay("Count = {Count}")]
 public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
     where TKey : struct, ISlotKey<TKey>
