@@ -118,9 +118,6 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     /// <include file='codesnippets.xml' path="code/ContainsValues/*"/>
     public bool ContainsValue(TValue value)
     {
-        if (value is null)
-            return false;
-
         for (int i = 0; i < _slots.Length; i++)
         {
             ref var slot = ref _slots[i];
@@ -188,8 +185,6 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
     /// <include file='codesnippets.xml' path="code/Insert/*"/>
     public TValue Insert(TKey key, TValue value)
     {
-        ArgumentNullException.ThrowIfNull(value);
-
         if (key.IsNull)
             throw new KeyNotFoundException("Invalid TKey");
 
@@ -197,7 +192,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
             Array.Resize(ref _slots, key.Index + 1);
 
         ref var slot = ref _slots[key.Index];
-        var returnValue = slot.Value ?? value;
+        var returnValue = slot.Occupied ? slot.Value : value;
 
         if (slot.Version == key.Version)
         {
@@ -208,12 +203,10 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
         if (slot.Occupied)
         {
             if (key.Version < slot.Version)
-                throw new KeyNotFoundException("Invalid TKey");
+                throw new KeyNotFoundException("TKey is an older version");
         }
         else
-        {
             Count++;
-        }
 
         slot.Value = value;
         slot.Version = key.Version;
@@ -298,9 +291,8 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
 
     /// <include file='docs.xml' path='docs/TryInsert/*'/>
     /// <include file='codesnippets.xml' path="code/TryInsert/*"/>
-    public bool TryInsert(TKey key, TValue value, out TValue? oldValue)
+    public bool TryInsert(TKey key, TValue value, [MaybeNullWhen(false)] out TValue oldValue)
     {
-        ArgumentNullException.ThrowIfNull(value);
         oldValue = default;
 
         if (key.IsNull)
@@ -324,10 +316,9 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
                 return false;
         }
         else
-        {
             Count++;
-        }
 
+        oldValue = value;
         slot.Value = value;
         slot.Version = key.Version;
         return true;
@@ -348,7 +339,7 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
             if (slot.Version == key.Version)
             {
                 value = slot.Value;
-                slot = Slot.NewVacant();
+                slot.SetVacant();
                 Count--;
 
                 return true;

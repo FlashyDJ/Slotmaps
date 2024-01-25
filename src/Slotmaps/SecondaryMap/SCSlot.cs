@@ -3,23 +3,21 @@ public partial class SecondaryMap<TKey, TValue>
 {
     internal struct Slot(TValue value, uint version)
     {
-        public static Slot NewVacant() => new(default!, 0);
-
-        private TValue? _value = value;
-
-        public bool Occupied => Version != 0;
+        private TValue _value = value;
 
         public TValue Value
         {
-            get => _value ?? throw new NullReferenceException();
+            get => Occupied ? _value : throw new InvalidOperationException("Slot is vacant");
             internal set => _value = value;
         }
 
         public uint Version { get; internal set; } = version;
 
+        public bool Occupied => Version != 0;
+
         public void SetVacant()
         {
-            _value = default;
+            Value = default!;
             Version = 0;
         }
 

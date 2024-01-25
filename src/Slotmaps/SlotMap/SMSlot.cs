@@ -3,18 +3,17 @@ public partial class SlotMap<TKey, TValue>
 {
     internal struct Slot(TValue value, uint version)
     {
-        private TValue? _value = value;
+        private TValue _value = value;
 
-        [AllowNull]
         public TValue Value
         {
-            get => Occupied ? _value! : throw new InvalidOperationException();
+            get => Occupied ? _value : throw new InvalidOperationException();
             internal set => _value = value!;
         }
 
-        public int NextFree { get; internal set; }
-
         public uint Version { get; internal set; } = version;
+
+        public int NextFree { get; internal set; }
 
         public bool Occupied => Version % 2 > 0;
 
