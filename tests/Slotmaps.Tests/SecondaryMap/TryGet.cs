@@ -4,63 +4,75 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace Slotmaps.Tests.SecondaryMap;
-public class Remove
+public class TryGet
 {
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                         int                                          //
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void IntWithValidKey_RemovesAndReturnsPreviousValue()
+    public void IntWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<int>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, 10);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal(10, result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal(10, value);
     }
 
     [Fact]
-    public void IntWithInvalidKey_ThrowsKeyNotFoundException()
+    public void IntWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<int>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void IntWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void IntWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<int>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void IntWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void IntWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<int>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, 10);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void IntWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void IntWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<int>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, 10);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -68,56 +80,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void IntNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void IntNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<int?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void IntNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void IntNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<int?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void IntNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void IntNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<int?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void IntNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void IntNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<int?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void IntNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void IntNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<int?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -125,56 +149,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void StringWithValidKey_RemovesAndReturnsPreviousValue()
+    public void StringWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<string>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, "Value 1");
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal("Value 1", result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal("Value 1", value);
     }
 
     [Fact]
-    public void StringWithInvalidKey_ThrowsKeyNotFoundException()
+    public void StringWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<string>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void StringWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void StringWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<string>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void StringWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void StringWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<string>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, "Value 1");
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void StringWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void StringWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<string>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, "Value 1");
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -182,56 +218,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void StringNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void StringNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<string?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void StringNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void StringNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<string?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void StringNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void StringNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<string?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void StringNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void StringNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<string?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void StringNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void StringNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<string?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -239,56 +287,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void DoubleWithValidKey_RemovesAndReturnsPreviousValue()
+    public void DoubleWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<double>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, 1.11D);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal(1.11D, result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal(1.11D, value);
     }
 
     [Fact]
-    public void DoubleWithInvalidKey_ThrowsKeyNotFoundException()
+    public void DoubleWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<double>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DoubleWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void DoubleWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<double>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DoubleWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void DoubleWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<double>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, 1.11D);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DoubleWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void DoubleWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<double>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, 1.11D);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -296,56 +356,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void DoubleNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void DoubleNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<double?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void DoubleNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void DoubleNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<double?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DoubleNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void DoubleNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<double?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DoubleNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void DoubleNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<double?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DoubleNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void DoubleNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<double?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -353,56 +425,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void BoolWithValidKey_RemovesAndReturnsPreviousValue()
+    public void BoolWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<bool>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, true);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal(true, result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal(true, value);
     }
 
     [Fact]
-    public void BoolWithInvalidKey_ThrowsKeyNotFoundException()
+    public void BoolWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<bool>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void BoolWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void BoolWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<bool>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void BoolWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void BoolWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<bool>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, true);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void BoolWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void BoolWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<bool>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, true);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -410,56 +494,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void BoolNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void BoolNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<bool?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void BoolNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void BoolNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<bool?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void BoolNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void BoolNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<bool?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void BoolNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void BoolNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<bool?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void BoolNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void BoolNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<bool?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -467,56 +563,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void CharWithValidKey_RemovesAndReturnsPreviousValue()
+    public void CharWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<char>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, 'A');
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal('A', result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal('A', value);
     }
 
     [Fact]
-    public void CharWithInvalidKey_ThrowsKeyNotFoundException()
+    public void CharWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<char>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void CharWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void CharWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<char>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void CharWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void CharWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<char>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, 'A');
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void CharWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void CharWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<char>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, 'A');
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -524,56 +632,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void CharNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void CharNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<char?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void CharNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void CharNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<char?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void CharNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void CharNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<char?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void CharNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void CharNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<char?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void CharNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void CharNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<char?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -581,56 +701,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void LongWithValidKey_RemovesAndReturnsPreviousValue()
+    public void LongWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<long>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, 1000_000_000_000L);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal(1000_000_000_000L, result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal(1000_000_000_000L, value);
     }
 
     [Fact]
-    public void LongWithInvalidKey_ThrowsKeyNotFoundException()
+    public void LongWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<long>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void LongWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void LongWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<long>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void LongWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void LongWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<long>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, 1000_000_000_000L);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void LongWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void LongWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<long>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, 1000_000_000_000L);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -638,56 +770,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void LongNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void LongNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<long?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void LongNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void LongNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<long?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void LongNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void LongNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<long?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void LongNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void LongNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<long?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void LongNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void LongNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<long?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -695,56 +839,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void FloatWithValidKey_RemovesAndReturnsPreviousValue()
+    public void FloatWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<float>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, 1.1F);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal(1.1F, result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal(1.1F, value);
     }
 
     [Fact]
-    public void FloatWithInvalidKey_ThrowsKeyNotFoundException()
+    public void FloatWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<float>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void FloatWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void FloatWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<float>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void FloatWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void FloatWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<float>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, 1.1F);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void FloatWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void FloatWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<float>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, 1.1F);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -752,56 +908,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void FloatNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void FloatNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<float?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void FloatNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void FloatNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<float?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void FloatNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void FloatNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<float?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void FloatNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void FloatNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<float?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void FloatNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void FloatNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<float?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -809,56 +977,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void DecimalWithValidKey_RemovesAndReturnsPreviousValue()
+    public void DecimalWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<decimal>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, 1.111_111_111M);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal(1.111_111_111M, result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal(1.111_111_111M, value);
     }
 
     [Fact]
-    public void DecimalWithInvalidKey_ThrowsKeyNotFoundException()
+    public void DecimalWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<decimal>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DecimalWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void DecimalWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<decimal>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DecimalWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void DecimalWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<decimal>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, 1.111_111_111M);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DecimalWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void DecimalWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<decimal>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, 1.111_111_111M);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -866,56 +1046,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void DecimalNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void DecimalNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<decimal?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void DecimalNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void DecimalNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<decimal?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DecimalNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void DecimalNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<decimal?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DecimalNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void DecimalNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<decimal?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DecimalNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void DecimalNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<decimal?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -923,56 +1115,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void DateTimeWithValidKey_RemovesAndReturnsPreviousValue()
+    public void DateTimeWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<DateTime>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, DateTime.Parse("2023-01-01"));
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal(DateTime.Parse("2023-01-01"), result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal(DateTime.Parse("2023-01-01"), value);
     }
 
     [Fact]
-    public void DateTimeWithInvalidKey_ThrowsKeyNotFoundException()
+    public void DateTimeWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<DateTime>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DateTimeWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void DateTimeWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<DateTime>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DateTimeWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void DateTimeWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<DateTime>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, DateTime.Parse("2023-01-01"));
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DateTimeWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void DateTimeWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<DateTime>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, DateTime.Parse("2023-01-01"));
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -980,56 +1184,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void DateTimeNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void DateTimeNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<DateTime?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void DateTimeNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void DateTimeNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<DateTime?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DateTimeNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void DateTimeNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<DateTime?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DateTimeNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void DateTimeNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<DateTime?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void DateTimeNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void DateTimeNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<DateTime?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1037,56 +1253,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void TimeSpanWithValidKey_RemovesAndReturnsPreviousValue()
+    public void TimeSpanWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, new TimeSpan(00,00,00));
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal(new TimeSpan(00,00,00), result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal(new TimeSpan(00,00,00), value);
     }
 
     [Fact]
-    public void TimeSpanWithInvalidKey_ThrowsKeyNotFoundException()
+    public void TimeSpanWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void TimeSpanWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void TimeSpanWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void TimeSpanWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void TimeSpanWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, new TimeSpan(00,00,00));
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void TimeSpanWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void TimeSpanWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<TimeSpan>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, new TimeSpan(00,00,00));
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1094,56 +1322,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void TimeSpanNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void TimeSpanNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<TimeSpan?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void TimeSpanNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void TimeSpanNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<TimeSpan?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void TimeSpanNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void TimeSpanNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<TimeSpan?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void TimeSpanNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void TimeSpanNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<TimeSpan?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void TimeSpanNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void TimeSpanNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<TimeSpan?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1151,56 +1391,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void GuidWithValidKey_RemovesAndReturnsPreviousValue()
+    public void GuidWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<Guid>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Equal(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Equal(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), value);
     }
 
     [Fact]
-    public void GuidWithInvalidKey_ThrowsKeyNotFoundException()
+    public void GuidWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<Guid>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void GuidWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void GuidWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<Guid>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void GuidWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void GuidWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<Guid>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void GuidWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void GuidWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<Guid>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1208,56 +1460,68 @@ public class Remove
     //////////////////////////////////////////////////////////////////////////////////////////
 
     [Fact]
-    public void GuidNullableWithValidKey_RemovesAndReturnsPreviousValue()
+    public void GuidNullableWithValidKey_ReturnsTrueAndValue()
     {
         var secondaryMap = new SecondaryMap<Guid?>();
         var key = new SlotKey(1, 1);
         secondaryMap.Insert(key, null);
 
-        var result = secondaryMap.Remove(key);
+        bool result = secondaryMap.TryGet(key, out var value);
 
-        Assert.Null(result);
-        Assert.False(secondaryMap.TryGet(key, out _));
+        Assert.True(result);
+        Assert.Null(value);
     }
 
     [Fact]
-    public void GuidNullableWithInvalidKey_ThrowsKeyNotFoundException()
+    public void GuidNullableWithInvalidKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<Guid?>();
         var invalidKey = new SlotKey(-1, 0);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(invalidKey));
+        bool result = secondaryMap.TryGet(invalidKey, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void GuidNullableWithKeyNotFound_ThrowsKeyNotFoundException()
+    public void GuidNullableWithKeyNotFound_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<Guid?>();
         var key = new SlotKey(1, 1);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key));
+        bool result = secondaryMap.TryGet(key, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void GuidNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
+    public void GuidNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<Guid?>();
         var key1 = new SlotKey(1, 2);
         var key2 = new SlotKey(1, 1);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
     [Fact]
-    public void GuidNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void GuidNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var secondaryMap = new SecondaryMap<Guid?>();
         var key1 = new SlotKey(1, 1);
         var key2 = new SlotKey(1, 2);
         secondaryMap.Insert(key1, null);
 
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Remove(key2));
+        bool result = secondaryMap.TryGet(key2, out var value);
+
+        Assert.False(result);
+        Assert.Equal(default, value);
     }
 
 }

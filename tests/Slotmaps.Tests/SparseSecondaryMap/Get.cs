@@ -75,7 +75,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -151,7 +151,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -227,7 +227,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -303,7 +303,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -379,7 +379,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -455,7 +455,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -531,7 +531,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -607,7 +607,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -683,7 +683,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -759,7 +759,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -835,7 +835,7 @@ public class Get
 
         var result = sparseSecondaryMap.Get(key);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]

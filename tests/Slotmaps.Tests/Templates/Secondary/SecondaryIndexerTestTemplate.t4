@@ -45,7 +45,7 @@ foreach (var data in dataTypes)
 
         var result = <#= varName #>[key];
 
-        Assert.Equal(<#= data.Value[0] #>, result);
+        <#= data.Key.EndsWith("?") ? "Assert.Null(result);" : $"Assert.Equal({data.Value[0]}, result);" #>
     }
 
     [Fact]
@@ -78,7 +78,7 @@ foreach (var data in dataTypes)
 
         <#= varName #>[key] = <#= data.Value[0] #>;
 
-        Assert.Equal(<#= data.Value[0] #>, <#= varName #>[key]);
+        <#= data.Key.EndsWith("?") ? "Assert.Null(" : $"Assert.Equal({data.Value[0]}, " #><#= varName #>[key]);
     }
 
 <#

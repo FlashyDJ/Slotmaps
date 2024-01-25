@@ -86,6 +86,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, 20);
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertInt_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<int>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, 10);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 20);
+        Assert.Equal(20, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                         int?                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -98,7 +117,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -121,8 +140,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, 10);
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal(10, sparseSecondaryMap[key2]);
     }
 
@@ -148,8 +167,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, 10);
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal(10, sparseSecondaryMap.Get(key));
     }
 
@@ -165,6 +184,25 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, 10);
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertIntNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<int?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 10);
+        Assert.Equal(10, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                        string                                        //
@@ -246,6 +284,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, "Value 2");
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertString_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<string>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, "Value 1");
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, "Value 2");
+        Assert.Equal("Value 2", sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                       string?                                        //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -258,7 +315,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -281,8 +338,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, "Value 1");
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal("Value 1", sparseSecondaryMap[key2]);
     }
 
@@ -308,8 +365,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, "Value 1");
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal("Value 1", sparseSecondaryMap.Get(key));
     }
 
@@ -325,6 +382,25 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, "Value 1");
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertStringNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<string?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, "Value 1");
+        Assert.Equal("Value 1", sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                        double                                        //
@@ -406,6 +482,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, 2.22D);
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertDouble_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<double>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, 1.11D);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 2.22D);
+        Assert.Equal(2.22D, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                       double?                                        //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -418,7 +513,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -441,8 +536,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, 1.11D);
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal(1.11D, sparseSecondaryMap[key2]);
     }
 
@@ -468,8 +563,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, 1.11D);
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal(1.11D, sparseSecondaryMap.Get(key));
     }
 
@@ -485,6 +580,25 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, 1.11D);
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertDoubleNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<double?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 1.11D);
+        Assert.Equal(1.11D, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                         bool                                         //
@@ -566,6 +680,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, false);
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertBool_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<bool>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, true);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, false);
+        Assert.Equal(false, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                        bool?                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -578,7 +711,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -601,8 +734,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, true);
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal(true, sparseSecondaryMap[key2]);
     }
 
@@ -628,8 +761,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, true);
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal(true, sparseSecondaryMap.Get(key));
     }
 
@@ -645,6 +778,25 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, true);
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertBoolNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<bool?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, true);
+        Assert.Equal(true, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                         char                                         //
@@ -726,6 +878,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, 'B');
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertChar_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<char>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, 'A');
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 'B');
+        Assert.Equal('B', sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                        char?                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -738,7 +909,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -761,8 +932,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, 'A');
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal('A', sparseSecondaryMap[key2]);
     }
 
@@ -788,8 +959,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, 'A');
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal('A', sparseSecondaryMap.Get(key));
     }
 
@@ -805,6 +976,25 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, 'A');
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertCharNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<char?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 'A');
+        Assert.Equal('A', sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                         long                                         //
@@ -886,6 +1076,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, 2000_000_000_000L);
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertLong_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<long>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, 1000_000_000_000L);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 2000_000_000_000L);
+        Assert.Equal(2000_000_000_000L, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                        long?                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -898,7 +1107,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -921,8 +1130,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, 1000_000_000_000L);
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal(1000_000_000_000L, sparseSecondaryMap[key2]);
     }
 
@@ -948,8 +1157,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, 1000_000_000_000L);
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal(1000_000_000_000L, sparseSecondaryMap.Get(key));
     }
 
@@ -965,6 +1174,25 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, 1000_000_000_000L);
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertLongNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<long?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 1000_000_000_000L);
+        Assert.Equal(1000_000_000_000L, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                        float                                         //
@@ -1046,6 +1274,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, 2.2F);
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertFloat_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<float>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, 1.1F);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 2.2F);
+        Assert.Equal(2.2F, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                        float?                                        //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1058,7 +1305,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -1081,8 +1328,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, 1.1F);
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal(1.1F, sparseSecondaryMap[key2]);
     }
 
@@ -1108,8 +1355,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, 1.1F);
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal(1.1F, sparseSecondaryMap.Get(key));
     }
 
@@ -1125,6 +1372,25 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, 1.1F);
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertFloatNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<float?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 1.1F);
+        Assert.Equal(1.1F, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                       decimal                                        //
@@ -1206,6 +1472,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, 2.222_222_222M);
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertDecimal_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<decimal>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, 1.111_111_111M);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 2.222_222_222M);
+        Assert.Equal(2.222_222_222M, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                       decimal?                                       //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1218,7 +1503,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -1241,8 +1526,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, 1.111_111_111M);
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal(1.111_111_111M, sparseSecondaryMap[key2]);
     }
 
@@ -1268,8 +1553,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, 1.111_111_111M);
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal(1.111_111_111M, sparseSecondaryMap.Get(key));
     }
 
@@ -1285,6 +1570,25 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, 1.111_111_111M);
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertDecimalNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<decimal?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, 1.111_111_111M);
+        Assert.Equal(1.111_111_111M, sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                       DateTime                                       //
@@ -1366,6 +1670,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, DateTime.Parse("2023-02-01"));
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertDateTime_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<DateTime>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, DateTime.Parse("2023-01-01"));
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, DateTime.Parse("2023-02-01"));
+        Assert.Equal(DateTime.Parse("2023-02-01"), sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                      DateTime?                                       //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1378,7 +1701,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -1401,8 +1724,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, DateTime.Parse("2023-01-01"));
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal(DateTime.Parse("2023-01-01"), sparseSecondaryMap[key2]);
     }
 
@@ -1428,8 +1751,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, DateTime.Parse("2023-01-01"));
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal(DateTime.Parse("2023-01-01"), sparseSecondaryMap.Get(key));
     }
 
@@ -1445,6 +1768,25 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, DateTime.Parse("2023-01-01"));
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertDateTimeNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<DateTime?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, DateTime.Parse("2023-01-01"));
+        Assert.Equal(DateTime.Parse("2023-01-01"), sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                       TimeSpan                                       //
@@ -1526,6 +1868,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, new TimeSpan(01,00,00));
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertTimeSpan_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, new TimeSpan(00,00,00));
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, new TimeSpan(01,00,00));
+        Assert.Equal(new TimeSpan(01,00,00), sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                      TimeSpan?                                       //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1538,7 +1899,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -1561,8 +1922,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, new TimeSpan(00,00,00));
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal(new TimeSpan(00,00,00), sparseSecondaryMap[key2]);
     }
 
@@ -1588,8 +1949,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, new TimeSpan(00,00,00));
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal(new TimeSpan(00,00,00), sparseSecondaryMap.Get(key));
     }
 
@@ -1605,6 +1966,25 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, new TimeSpan(00,00,00));
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertTimeSpanNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, new TimeSpan(00,00,00));
+        Assert.Equal(new TimeSpan(00,00,00), sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                         Guid                                         //
@@ -1686,6 +2066,25 @@ public class Insert
         sparseSecondaryMap.Insert(key2, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
         Assert.Equal(2, sparseSecondaryMap.Count);
     }
+
+    [Fact]
+    public void ReInsertGuid_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<Guid>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        Assert.Equal(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"), sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
+    }
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                        Guid?                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -1698,7 +2097,7 @@ public class Insert
 
         var result = sparseSecondaryMap.Insert(key, null);
 
-        Assert.Equal(null, result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -1721,8 +2120,8 @@ public class Insert
         var result1 = sparseSecondaryMap.Insert(key1, null);
         var result2 = sparseSecondaryMap.Insert(key2, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
-        Assert.Equal(null, result1);
-        Assert.Equal(null, result2);
+        Assert.Null(result1);
+        Assert.Null(result2);
         Assert.Equal(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), sparseSecondaryMap[key2]);
     }
 
@@ -1748,8 +2147,8 @@ public class Insert
         var firstInsert = sparseSecondaryMap.Insert(key, null);
         var secondInsert = sparseSecondaryMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
-        Assert.Equal(null, firstInsert);
-        Assert.Equal(null, secondInsert);
+        Assert.Null(firstInsert);
+        Assert.Null(secondInsert);
         Assert.Equal(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), sparseSecondaryMap.Get(key));
     }
 
@@ -1765,5 +2164,24 @@ public class Insert
 
         sparseSecondaryMap.Insert(key2, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         Assert.Equal(2, sparseSecondaryMap.Count);
+    }
+
+    [Fact]
+    public void ReInsertGuidNullable_ReturnsDefaultValue()
+    {
+        var sparseSecondaryMap = new SparseSecondaryMap<Guid?>();
+        var key = new SlotKey(1,1);
+        sparseSecondaryMap.Insert(key, null);
+
+        var capacity = sparseSecondaryMap.Capacity;
+
+        sparseSecondaryMap.Remove(key);
+        Assert.Empty(sparseSecondaryMap);
+
+        sparseSecondaryMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        Assert.Equal(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), sparseSecondaryMap[key]);
+
+        Assert.Equal(capacity, sparseSecondaryMap.Capacity);
+        Assert.Single(sparseSecondaryMap);
     }
 }

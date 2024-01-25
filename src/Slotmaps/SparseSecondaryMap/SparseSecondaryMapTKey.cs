@@ -3,7 +3,6 @@ using System.Runtime.InteropServices;
 
 namespace FlashyDJ.Slotmaps;
 /// <include file='docs.xml' path='docs/SparseSecondaryMap/*'/>
-[Serializable]
 [DebuggerDisplay("Count = {Count}")]
 public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
     where TKey : struct, ISlotKey<TKey>
