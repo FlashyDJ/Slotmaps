@@ -1,5 +1,12 @@
 ﻿namespace FlashyDJ.Slotmaps;
-/// <include file='docs.xml' path="docs/SlotMap/*"/>
+
+/// <summary>
+///   Represents a slot map data structure that associates keys of type <typeparamref name="TKey"/>
+///   with values of type <typeparamref name="TValue"/>.
+/// </summary>
+/// <typeparam name="TKey">The struct type of keys that implement. <see cref="ISlotKey{TKey}"/>.</typeparam>
+/// <typeparam name="TValue">The type of values stored in the slot map.</typeparam>
+/// <seealso cref="SlotMap{TValue}"/>
 [DebuggerDisplay("Count = {Count}")]
 public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
     where TKey : struct, ISlotKey<TKey>
@@ -15,10 +22,19 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
     private SlotKeyCollection? _keys;
     private SlotValueCollection? _values;
 
-    /// <include file='docs.xml' path="docs/Ctor1/*"/>
+    /// <summary>
+    ///   Initializes a new instance of the <see cref="SlotMap{TKey, TValue}"/> class that is empty with no
+    ///   initial capacity.
+    /// </summary>
     public SlotMap() => _slots = s_emptyArray;
 
-    /// <include file='docs.xml' path="docs/Ctor2/*"/>
+    /// <summary>
+    ///   Initializes a new instance of the <see cref="SlotMap{TKey, TValue}"/> class with the specified capacity.
+    /// </summary>
+    /// <param name="capacity">The initial capacity of the slot map. Must be a non-negative integer.</param>
+    /// <exception cref="ArgumentOutOfRangeException">
+    ///   Thrown if <paramref name="capacity"/> is negative.
+    /// </exception>
     public SlotMap(int capacity)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
@@ -69,22 +85,27 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
 
     bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly => false;
 
-    /// <include file='docs.xml' path="docs/Capacity/*"/>
+    /// <summary> Gets the capacity of the slot map. </summary>
     public int Capacity => _slots.Length;
 
-    /// <include file='docs.xml' path="docs/Count/*"/>
+    /// <summary> Gets the number of elements currently stored in the slot map. </summary>
     public int Count { get; private set; }
 
-    /// <include file='docs.xml' path="docs/IsEmpty/*"/>
+    /// <summary> Indicates whether the slot map is empty. </summary>
     public bool IsEmpty => Count == 0;
 
-    /// <include file='docs.xml' path="docs/Keys/*"/>
+    /// <summary> Gets a collection of latest keys associated with the values in the slot map. </summary>
     public SlotKeyCollection Keys => _keys ??= new SlotKeyCollection(this);
 
-    /// <include file='docs.xml' path="docs/Values/*"/>
+    /// <summary> Gets a collection of values stored in the slot map. </summary>
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
-    /// <include file='docs.xml' path="docs/Indexer/*"/>
+    /// <summary> Gets or sets the value associated with the specified key. </summary>
+    /// <param name="key">The key to retrieve or set the value for.</param>
+    /// <returns>The value associated with the specified key.</returns>
+    /// <exception cref="KeyNotFoundException">
+    ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
+    /// </exception>
     public TValue this[TKey key]
     {
         get
@@ -97,8 +118,16 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         set => Insert(key, value);
     }
 
-    /// <include file='docs.xml' path="docs/Add/*"/>
-    /// <include file='codesnippets.xml' path="code/Add/*"/>
+    /// <summary>
+    ///   Adds a value to the slot map and returns a key associated with the added value. It assigns the value
+    ///   to an available slot if one is available; otherwise, it expands the internal storage to accommodate
+    ///   the new value.
+    /// </summary>
+    /// <param name="value">The value to be added to the slot map.</param>
+    /// <returns>The key associated with the added value.</returns>
+    /// <exception cref="ArgumentNullException">
+    ///   Thrown if <paramref name="value"/> is null.
+    /// </exception>
     public TKey Add(TValue value)
     {
         var newCount = Count + 1;
@@ -136,8 +165,14 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return TKey.New(newIndex, newSlot.Version);
     }
 
-    /// <include file='docs.xml' path="docs/ContainsKey/*"/>
-    /// <include file='codesnippets.xml' path="code/ContainsKey/*"/>
+    /// <summary>
+    ///   Determines whether the slot map contains a key that matches the specified <paramref name="key"/>.
+    /// </summary>
+    /// <param name="key">The key to search for in the slot map.</param>
+    /// <returns>
+    ///   <see langword="true"/> if the slot map contains the specified key; otherwise, <see langword="false"/>.
+    /// </returns>
+    /// <seealso cref="TryGet"/>
     public bool ContainsKey(TKey key)
     {
         if (key.Index >= 0 && key.Index < _slots.Length)
@@ -149,8 +184,14 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return false;
     }
 
-    /// <include file='docs.xml' path="docs/ContainsValue/*"/>
-    /// <include file='codesnippets.xml' path="code/ContainsValue/*"/>
+    /// <summary>
+    ///   Determines whether the slot map contains a value that matches the specified <paramref name="value"/>.
+    /// </summary>
+    /// <param name="value">The value to search for in the slot map.</param>
+    /// <returns>
+    ///   <see langword="true"/> if the slot map contains the specified value; otherwise, <see langword="false"/>.
+    /// </returns>
+    /// <seealso cref="TryGet"/>
     public bool ContainsValue(TValue value)
     {
         for (int i = 0; i < _slots.Length; i++)
@@ -163,8 +204,7 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return false;
     }
 
-    /// <include file='docs.xml' path="docs/Clear/*"/>
-    /// <include file='codesnippets.xml' path="code/Clear/*"/>
+    /// <summary> Removes all values from the slot map, resetting it to an empty state. </summary>
     public void Clear()
     {
         if (Count > 0)
@@ -176,8 +216,12 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         }
     }
 
-    /// <include file='docs.xml' path="docs/Drain/*"/>
-    /// <include file='codesnippets.xml' path="code/Drain/*"/>
+    /// <summary>
+    ///   Empties the slot map by returning key-value pairs one by one while leaving the remaining items in the map.
+    /// </summary>
+    /// <returns>An enumerable sequence of key-value pairs drained from the slot map.</returns>
+    /// <seealso cref="Clear"/>
+    /// <seealso cref="Retain"/>
     public IEnumerable<KeyValuePair<TKey,TValue>> Drain()
     {
         for (int i = 0; i < Capacity; i++)
@@ -194,8 +238,17 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         }
     }
 
-    /// <include file='docs.xml' path="docs/EnsureCapacity/*"/>
-    /// <include file='codesnippets.xml' path="code/EnsureCapacity/*"/>
+    /// <summary>
+    ///   Ensures that the slot map can hold at least the specified capacity without resizing.
+    /// </summary>
+    /// <param name="capacity">The desired capacity. Must be a non-negative integer.</param>
+    /// <returns>The actual capacity of the slot map after ensuring it meets the specified capacity.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">
+    ///   Thrown if <paramref name="capacity"/> is negative.
+    /// </exception>
+    /// <seealso cref="Capacity"/>
+    /// <seealso cref="Reserve"/>
+    /// <seealso cref="Resize"/>
     public int EnsureCapacity(int capacity)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
@@ -208,8 +261,14 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return capacity;
     }
 
-    /// <include file='docs.xml' path="docs/Get/*"/>
-    /// <include file='codesnippets.xml' path="code/Get/*"/>
+    /// <summary>
+    ///   Gets the value associated with the specified key in the slot map.
+    /// </summary>
+    /// <param name="key">The key to retrieve the value for.</param>
+    /// <returns>The value associated with the specified key.</returns>
+    /// <exception cref="KeyNotFoundException">
+    ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
+    /// </exception>
     public TValue Get(TKey key)
     {
         if (!ContainsKey(key))
@@ -218,8 +277,16 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return _slots[key.Index].Value;
     }
 
-    /// <include file='docs.xml' path="docs/Insert/*"/>
-    /// <include file='codesnippets.xml' path="code/Insert/*"/>
+    /// <summary>
+    ///   Inserts or updates a value associated with the specified key in the slot map.
+    /// </summary>
+    /// <param name="key">The key to insert or update the value for.</param>
+    /// <param name="value">The value to insert or update.</param>
+    /// <returns>The updated key after the insertion or update with an incremented version number.</returns>
+    /// <exception cref="KeyNotFoundException">
+    ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
+    /// </exception>
+    /// <seealso cref="TryInsert"/>
     public TKey Insert(TKey key, TValue value)
     {
         if (!ContainsKey(key))
@@ -241,8 +308,15 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return TKey.New(key.Index, slot.Version);
     }
 
-    /// <include file='docs.xml' path="docs/Remove/*"/>
-    /// <include file='codesnippets.xml' path="code/Remove/*"/>
+    /// <summary>
+    ///   Removes the value associated with the specified key from the slot map.
+    /// </summary>
+    /// <param name="key">The key to remove from the slot map.</param>
+    /// <returns>The removed value.</returns>
+    /// <exception cref="KeyNotFoundException">
+    ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
+    /// </exception>
+    /// <seealso cref="TryRemove"/>
     public TValue Remove(TKey key)
     {
         if (!ContainsKey(key))
@@ -262,8 +336,16 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
     }
 
     // TODO: Take account of Count
-    /// <include file='docs.xml' path="docs/Reserve/*"/>
-    /// <include file='codesnippets.xml' path="code/Reserve/*"/>
+    /// <summary>
+    /// Ensures that the slot map has enough additional capacity to accommodate the specified number of elements.
+    /// </summary>
+    /// <param name="additionalSize">The additional capacity to reserve. Must be a positive integer.</param>
+    /// <exception cref="ArgumentOutOfRangeException">
+    ///   Thrown if <paramref name="additionalSize"/> is negative or zero.
+    /// </exception>
+    /// <seealso cref="Capacity"/>
+    /// <seealso cref="EnsureCapacity"/>
+    /// <seealso cref="Resize"/>
     public void Reserve(int additionalSize)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(additionalSize);
@@ -271,8 +353,15 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         Array.Resize(ref _slots, Capacity + additionalSize);
     }
 
-    /// <include file='docs.xml' path="docs/Resize/*"/>
-    /// <include file='codesnippets.xml' path="code/Resize/*"/>
+    /// <summary>
+    ///   Resizes the slot map to the specified new size.
+    /// </summary>
+    /// <param name="newSize">The new size for the slot map. Must be greater than or equal to the current capacity.</param>
+    /// <exception cref="ArgumentOutOfRangeException">
+    ///   Thrown if <paramref name="newSize"/> is less than the current capacity.
+    /// </exception>
+    /// <seealso cref="EnsureCapacity"/>
+    /// <seealso cref="Reserve"/>
     public void Resize(int newSize)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(newSize, Capacity);
@@ -283,8 +372,13 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         Array.Resize(ref _slots, newSize);
     }
 
-    /// <include file='docs.xml' path="docs/Retain/*"/>
-    /// <include file='codesnippets.xml' path="code/Retain/*"/>
+    /// <summary>
+    ///   Retains elements in the slot map based on a specified predicate.
+    /// </summary>
+    /// <param name="predicate">A function that defines whether to retain or remove an element based on its key and value.</param>
+    /// <seealso cref="Drain"/>
+    /// <seealso cref="Remove"/>
+    /// <seealso cref="TryRemove"/>
     public void Retain(Func<TKey,TValue, bool> predicate)
     {
         for (int i = 0; i < _slots.Length; i++)
@@ -302,8 +396,21 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         }
     }
 
-    /// <include file='docs.xml' path="docs/TryInsert/*"/>
-    /// <include file='codesnippets.xml' path="code/TryInsert/*"/>
+    /// <summary>
+    ///   Tries to insert or update a value associated with the specified key in the slot map.
+    /// </summary>
+    /// <param name="key">The key to insert or update the value for.</param>
+    /// <param name="value">The value to insert or update.</param>
+    /// <param name="newKey">
+    ///   When this method returns, contains the updated key if insertion or update was successful.
+    /// </param>
+    /// <returns>
+    ///   <see langword="true"/> if insertion or update was successful; otherwise, <see langword="false"/>.
+    /// </returns>
+    /// <exception cref="ArgumentNullException">
+    ///   Thrown if <paramref name="value"/> is <c>null</c>.
+    /// </exception>
+    /// <seealso cref="Insert"/>
     public bool TryInsert(TKey key, TValue value, out TKey newKey)
     {
         if (!ContainsKey(key))
@@ -329,8 +436,18 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return true;
     }
 
-    /// <include file='docs.xml' path="docs/TryGet/*"/>
-    /// <include file='codesnippets.xml' path="code/TryGet/*"/>
+    /// <summary>
+    ///   Tries to retrieve the value associated with the specified key from the slot map.
+    /// </summary>
+    /// <param name="key">The key to retrieve the value for.</param>
+    /// <param name="value">
+    ///   When this method returns, contains the value associated with the specified key if found; otherwise,
+    ///   the default value.
+    /// </param>
+    /// <returns>
+    ///   <see langword="true"/> if the value associated with the specified key was found; otherwise, <see langword="false"/>.
+    /// </returns>
+    /// <seealso cref="Get"/>
     public bool TryGet(TKey key, [MaybeNullWhen(false)] out TValue value)
     {
         if (!ContainsKey(key))
@@ -343,8 +460,18 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return true;
     }
 
-    /// <include file='docs.xml' path="docs/TryRemove/*"/>
-    /// <include file='codesnippets.xml' path="code/TryRemove/*"/>
+    /// <summary>
+    ///   Tries to remove the value associated with the specified key from the slot map.
+    /// </summary>
+    /// <param name="key">The key to remove from the slot map.</param>
+    /// <param name="value">
+    ///   When this method returns, contains the value associated with the removed key if found; otherwise,
+    ///   the default value.
+    /// </param>
+    /// <returns>
+    ///   <see langword="true"/> if the value associated with the specified key was found and removed; otherwise, <see langword="false"/>.
+    /// </returns>
+    /// <seealso cref="Remove"/>
     public bool TryRemove(TKey key, [MaybeNullWhen(false)] out TValue value)
     {
         if (!ContainsKey(key))
@@ -366,7 +493,7 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return true;
     }
 
-    /// <include file='docs.xml' path="docs/Enumerator/*"/>
+    /// <summary>Represents an enumerator for key-value pairs in a slot map.</summary>
     public struct Enumerator : IEnumerator<KeyValuePair<TKey, TValue>>, IEnumerator
     {
         private readonly SlotMap<TKey, TValue> _slotMap;
