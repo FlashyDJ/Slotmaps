@@ -25,7 +25,7 @@ public class SparseSecondaryMapICollectionTests
             var kvp = new KeyValuePair<SlotKey, int>(invalidKey, 42);
 
             var ex = Assert.Throws<KeyNotFoundException>(() => (sparseMap as ISlotCollection).Add(kvp));
-            Assert.Equal("Invalid SlotKey", ex.Message);
+            Assert.Equal("Invalid TKey", ex.Message);
         }
 
         [Fact]
@@ -38,7 +38,7 @@ public class SparseSecondaryMapICollectionTests
             var kvp = new KeyValuePair<SlotKey, int>(key2, 24);
 
             var ex = Assert.Throws<KeyNotFoundException>(() => (sparseMap as ISlotCollection).Add(kvp));
-            Assert.Equal("SlotKey is an older version", ex.Message);
+            Assert.Equal("TKey is an older version", ex.Message);
         }
     }
 
