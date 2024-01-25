@@ -84,19 +84,29 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
 
     bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly => false;
 
-    /// <summary> Gets the capacity of the slot map. </summary>
+    /// <summary>
+    ///   Gets the capacity of the slot map.
+    /// </summary>
     public int Capacity => _slots.Length;
 
-    /// <summary> Gets the number of elements currently stored in the slot map. </summary>
+    /// <summary>
+    ///    Gets the number of elements currently stored in the slot map.
+    ///  </summary>
     public int Count { get; private set; }
 
-    /// <summary> Indicates whether the slot map is empty. </summary>
+    /// <summary>
+    ///    Indicates whether the slot map is empty.
+    ///  </summary>
     public bool IsEmpty => Count == 0;
 
-    /// <summary> Gets a read only collection of latest keys associated with the values in the slot map. </summary>
+    /// <summary>
+    ///    Gets a read only collection of latest keys associated with the values in the slot map.
+    ///  </summary>
     public SlotKeyCollection Keys => _keys ??= new SlotKeyCollection(this);
 
-    /// <summary> Gets a read only collection of values stored in the slot map. </summary>
+    /// <summary>
+    ///    Gets a read only collection of values stored in the slot map.
+    /// </summary>
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
     /// <summary> Gets or sets the value associated with the specified key. </summary>
@@ -203,7 +213,9 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return false;
     }
 
-    /// <summary> Removes all values from the slot map, resetting it to an empty state. </summary>
+    /// <summary>
+    ///  Removes all values from the slot map, resetting it to an empty state.
+    /// </summary>
     public void Clear()
     {
         if (Count > 0)
@@ -492,7 +504,9 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         return true;
     }
 
-    /// <summary>Represents an enumerator for key-value pairs in a slot map.</summary>
+    /// <summary>
+    ///   Represents an enumerator for the <see cref="SlotMap{TKey, TValue}"/> collection.
+    /// </summary>
     public struct Enumerator : IEnumerator<KeyValuePair<TKey, TValue>>, IEnumerator
     {
         private readonly SlotMap<TKey, TValue> _slotMap;
