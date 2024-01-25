@@ -109,7 +109,9 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
     /// </summary>
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
-    /// <summary> Gets or sets the value associated with the specified key. </summary>
+    /// <summary>
+    ///   Gets or sets the value associated with the specified key.
+    /// </summary>
     /// <param name="key">The key to retrieve or set the value for.</param>
     /// <returns>The value associated with the specified key.</returns>
     /// <exception cref="KeyNotFoundException">
@@ -348,7 +350,7 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
 
     // TODO: Take account of Count
     /// <summary>
-    /// Ensures that the slot map has enough additional capacity to accommodate the specified number of elements.
+    ///   Ensures that the slot map has enough additional capacity to accommodate the specified number of elements.
     /// </summary>
     /// <param name="additionalSize">The additional capacity to reserve. Must be a positive integer.</param>
     /// <exception cref="ArgumentOutOfRangeException">
