@@ -1,0 +1,69 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class ContainsKey
+{
+    [Fact]
+    public void ValidKeyDoesNotExist_ReturnsFalse()
+    {
+        var <#= varName #> = new <#= slotMapType #><int>();
+        var key = new SlotKey(1, 1);
+    
+        var result = <#= varName #>.ContainsKey(key);
+    
+        Assert.False(result);
+    }
+    
+    [Fact]
+    public void InvalidKeyWithVersionLessThan1_ReturnsFalse()
+    {
+        var <#= varName #> = new <#= slotMapType #><int>();
+        var invalidKey = new SlotKey(1, 0);
+    
+        var result = <#= varName #>.ContainsKey(invalidKey);
+    
+        Assert.False(result);
+    }
+    
+    [Fact]
+    public void InvalidKeyWithVersionGreaterOrEqualTo1_ReturnsFalse()
+    {
+        var <#= varName #> = new <#= slotMapType #><int>();
+        var invalidKey = new SlotKey(-1, 1);
+    
+        var result = <#= varName #>.ContainsKey(invalidKey);
+    
+        Assert.False(result);
+    }
+
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void ValidKeyWith<#= typeTitle #>Exists_ReturnsTrue()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = new SlotKey(1, 1);
+        <#= varName #>.Insert(key, <#= data.Value[0] #>);
+
+        var result = <#= varName #>.ContainsKey(key);
+
+        Assert.True(result);
+    }
+
+<#
+}
+#>
+}

@@ -1,0 +1,44 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="TestData.t4" #>
+<#@ include file="Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class EnsureCapacity
+{
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void <#= typeTitle #>WithPositiveValue_ReturnsCapacity()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var capacity = 100;
+
+        int result = <#= varName #>.EnsureCapacity(capacity);
+
+        Assert.True(result >= capacity);
+        Assert.Empty(<#= varName #>);
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithNegativeValue_ThrowsArgumentOutOfRangeException()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+
+        Assert.Throws<ArgumentOutOfRangeException>(() => <#= varName #>.EnsureCapacity(-10));
+    }
+
+<#
+}
+#>
+}

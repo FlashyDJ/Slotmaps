@@ -1,0 +1,6 @@
+<#@ assembly name="System.Core" #>
+<#@ output extension=".cs" #>
+<#
+    var slotMapType = "SecondaryMap";
+#>
+<#@ include file="..\Templates\Secondary\SecondaryGetTestTemplate.t4" #>
