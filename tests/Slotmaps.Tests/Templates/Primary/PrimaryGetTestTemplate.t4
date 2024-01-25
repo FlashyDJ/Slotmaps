@@ -1,0 +1,73 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Get
+{
+    [Fact]
+    public void InvalidKey_ThrowsKeyNotFoundException()
+    {
+        var slotMap = new SlotMap<int>();
+        var invalidKey = new SlotKey(-1, 0);
+
+        Assert.Throws<KeyNotFoundException>(() => slotMap.Get(invalidKey));
+    }
+
+    [Fact]
+    public void KeyNotFound_ThrowsKeyNotFoundException()
+    {
+        var slotMap = new SlotMap<int>();
+        var key = new SlotKey(1, 0);
+
+        Assert.Throws<KeyNotFoundException>(() => slotMap.Get(key));
+    }
+
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void <#= typeTitle #>WithValidKey_ReturnsValue()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+
+        var value = <#= varName #>.Get(key);
+
+        <#= !data.Key.EndsWith("?") ? $"Assert.Equal({data.Value[0]}, value);" : "Assert.Null(value);" #>
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithOlderVersionKey_ThrowsKeyNotFoundException()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = new SlotKey(0, 0);
+
+        Assert.Throws<KeyNotFoundException>(() => slotMap.Get(key2));
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithNewerVersionKey_ThrowsKeyNotFoundException()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = new SlotKey(1, 2);
+
+        Assert.Throws<KeyNotFoundException>(() => slotMap.Get(key2));
+    }
+
+<#
+}
+#>
+}

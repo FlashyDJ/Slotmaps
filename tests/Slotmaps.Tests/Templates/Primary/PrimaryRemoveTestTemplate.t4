@@ -1,0 +1,74 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\TestData.t4" #>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Remove
+{
+<#
+foreach (var data in dataTypes)
+{
+    var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
+#>
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //<#= CenteredString(data.Key) #>//
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    [Fact]
+    public void <#= typeTitle #>WithValidKey_RemovesAndReturnsPreviousValue()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+
+        var result = <#= varName #>.Remove(key);
+
+        <#= !data.Key.EndsWith("?") ? $"Assert.Equal({data.Value[0]}, result);" : $"Assert.Null(result);" #>
+        Assert.False(<#= varName #>.ContainsKey(key));
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithInvalidKey_ThrowsKeyNotFoundException()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var invalidKey = new SlotKey(-1, 0);
+
+        Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Remove(invalidKey));
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithKeyNotFound_ThrowsKeyNotFoundException()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = new SlotKey(1, 1);
+
+        Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Remove(key));
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithOlderVersionKey_ThrowsKeyNotFoundException()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = key with { Version = 0 };
+
+        Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Remove(key2));
+    }
+
+    [Fact]
+    public void <#= typeTitle #>WithNewerVersionKey_ThrowsKeyNotFoundException()
+    {
+        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
+        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key2 = key with { Version = 2 };
+
+        Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Remove(key2));
+    }
+
+<#
+}
+#>
+}

@@ -1,0 +1,22 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Constructor
+{
+    [Fact]
+    public void WithCapacityParameter_SetsCapacityAndBeEmpty()
+    {
+        int capacity = 10;
+
+        var <#= varName #> = new <#= slotMapType #><int>(capacity);
+
+        Assert.Equal(capacity, <#= varName #>.Capacity);
+        Assert.Empty(<#= varName #>);
+        Assert.True(<#= varName #>.IsEmpty);
+    }
+}

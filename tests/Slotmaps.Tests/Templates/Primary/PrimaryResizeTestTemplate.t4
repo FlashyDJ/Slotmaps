@@ -1,0 +1,46 @@
+<#@ template hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#
+    var varName = char.ToLower(slotMapType[0]) + slotMapType.Substring(1);
+#>
+<#@ include file="..\Header.t4" #>
+
+namespace Slotmaps.Tests.<#= slotMapType #>;
+public class Resize
+{
+    [Fact]
+    public void NewSizeLessThanCapacity_ThrowsArgumentOutOfRangeException()
+    {
+        var slotMap = new SlotMap<int>();
+        slotMap.Add(42);
+        var newSize = slotMap.Capacity - 1;
+
+        Assert.Throws<ArgumentOutOfRangeException>(() => slotMap.Resize(newSize));
+    }
+
+    [Fact]
+    public void NewSizeEqualToCapacity_DoesNotChangeCapacity()
+    {
+        var slotMap = new SlotMap<int>();
+        slotMap.Add(42);
+        var initialCapacity = slotMap.Capacity;
+        var newSize = initialCapacity;
+
+        slotMap.Resize(newSize);
+
+        Assert.Equal(initialCapacity, slotMap.Capacity);
+    }
+
+    [Fact]
+    public void Resize_NewSizeGreaterThanCapacity_ResizesArrayToNewSize()
+    {
+        var slotMap = new SlotMap<int>();
+        slotMap.Add(42);
+        var initialCapacity = slotMap.Capacity;
+        var newSize = initialCapacity * 2;
+
+        slotMap.Resize(newSize);
+
+        Assert.Equal(newSize, slotMap.Capacity);
+    }
+}

@@ -153,9 +153,6 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
     /// <include file='codesnippets.xml' path="code/ContainsValue/*"/>
     public bool ContainsValue(TValue value)
     {
-        if (value is null)
-            return false;
-
         for (int i = 0; i < _slots.Length; i++)
         {
             ref var slot = ref _slots[i];
