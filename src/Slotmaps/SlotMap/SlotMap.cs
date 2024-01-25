@@ -50,7 +50,7 @@ public class SlotMap<TValue> : SlotMap<SlotKey, TValue>
     /// <inheritdoc cref="SlotMap{TKey, TValue}.ContainsKey"/>
     public new bool ContainsKey(SlotKey key) => base.ContainsKey(key);
 
-    /// <inheritdoc cref="SlotMap{TKey, TValue}.Capacity"/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.ContainsValue"/>
     public new bool ContainsValue(TValue value) => base.ContainsValue(value);
 
     /// <inheritdoc cref="SlotMap{TKey, TValue}.Clear"/>
