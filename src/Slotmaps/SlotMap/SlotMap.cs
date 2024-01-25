@@ -1,92 +1,91 @@
 ﻿namespace FlashyDJ.Slotmaps;
-/// <include file='docs.xml' path='docs/SlotMapD/*'/>
+/// <summary>
+///   Represents a slot map data structure that associates keys of type <see cref="SlotKey"/>
+///   with values of type <typeparamref name="TValue"/>.
+/// </summary>
+/// <typeparam name="TValue">The type of values stored in the slot map.</typeparam>
+/// <seealso cref="SlotMap{TKey, TValue}"/>
 public class SlotMap<TValue> : SlotMap<SlotKey, TValue>
 {
-    /// <include file='docs.xml' path='docs/SlotMapDCtor1/*'/>
+    /// <summary>
+    ///   Initializes a new instance of the <see cref="SlotMap{TValue}"/> class that is empty with no initial
+    ///   capacity.
+    /// </summary>
     public SlotMap() : base() { }
 
-    /// <include file='docs.xml' path='docs/SlotMapDCtor2/*'/>
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SlotMap{TValue}"/> class with the specified capacity.
+    /// </summary>
+    /// <param name="capacity">The initial capacity of the slot map. Must be a non-negative integer.</param>
+    /// <exception cref="ArgumentOutOfRangeException">
+    ///   Thrown if <paramref name="capacity"/> is negative.
+    /// </exception>
     public SlotMap(int capacity) : base(capacity) { }
 
-    /// <include file='docs.xml' path='docs/Capacity/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Capacity"/>
     public new int Capacity => base.Capacity;
 
-    /// <include file='docs.xml' path='docs/Count/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Count"/>
     public new int Count => base.Count;
 
-    /// <include file='docs.xml' path='docs/IsEmpty/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.IsEmpty"/>
     public new bool IsEmpty => base.IsEmpty;
 
-    /// <include file='docs.xml' path='docs/Keys/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Keys"/>
     public new SlotKeyCollection Keys => base.Keys;
 
-    /// <include file='docs.xml' path='docs/Values/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Values"/>
     public new SlotValueCollection Values => base.Values;
 
-    /// <include file='docs.xml' path='docs/Indexer/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.this"/>
     public new TValue this[SlotKey key]
     {
         get => base[key];
         set => base[key] = value;
     }
 
-    /// <include file='docs.xml' path='docs/Add/*'/>
-    /// <include file='codesnippets.xml' path='code/AddD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Add"/>
     public new SlotKey Add(TValue value) => base.Add(value);
 
-    /// <include file='docs.xml' path='docs/ContainsKey/*'/>
-    /// <include file='codesnippets.xml' path='code/ContainsKeyD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.ContainsKey"/>
     public new bool ContainsKey(SlotKey key) => base.ContainsKey(key);
 
-    /// <include file='docs.xml' path='docs/ContainsValue/*'/>
-    /// <include file='codesnippets.xml' path='code/ContainsValueD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Capacity"/>
     public new bool ContainsValue(TValue value) => base.ContainsValue(value);
 
-    /// <include file='docs.xml' path='docs/Clear/*'/>
-    /// <include file='codesnippets.xml' path='code/ClearD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Clear"/>
     public new void Clear() => base.Clear();
 
-    /// <include file='docs.xml' path='docs/Drain/*'/>
-    /// <include file='codesnippets.xml' path='docs/DrainD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Drain"/>
     public new IEnumerable<KeyValuePair<SlotKey,TValue>> Drain() => base.Drain();
 
-    /// <include file='docs.xml' path='docs/EnsureCapacity/*'/>
-    /// <include file='codesnippets.xml' path='docs/EnsureCapacityD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.EnsureCapacity"/>
     public new int EnsureCapacity(int capacity) => base.EnsureCapacity(capacity);
 
-    /// <include file='docs.xml' path='docs/Get/*'/>
-    /// <include file='codesnippets.xml' path='docs/GetD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Get"/>
     public new TValue Get(SlotKey key) => base.Get(key);
 
-    /// <include file='docs.xml' path='docs/Insert/*'/>
-    /// <include file='codesnippets.xml' path='docs/InsertD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Insert"/>
     public new SlotKey Insert(SlotKey key, TValue value) => base.Insert(key, value);
 
-    /// <include file='docs.xml' path='docs/Remove/*'/>
-    /// <include file='codesnippets.xml' path='docs/RemoveD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Remove"/>
     public new TValue Remove(SlotKey key) => base.Remove(key);
 
-    /// <include file='docs.xml' path='docs/Reserve/*'/>
-    /// <include file='codesnippets.xml' path='docs/ReserveD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Reserve"/>
     public new void Reserve(int additionalSize) => base.Reserve(additionalSize);
 
-    /// <include file='docs.xml' path='docs/Resize/*'/>
-    /// <include file='codesnippets.xml' path='docs/ResizeD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Resize"/>
     public new void Resize(int newSize) => base.Resize(newSize);
 
-    /// <include file='docs.xml' path='docs/Retain/*'/>
-    /// <include file='codesnippets.xml' path='docs/RetainD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.Retain"/>
     public new void Retain(Func<SlotKey,TValue, bool> predicate) => base.Retain(predicate);
 
-    /// <include file='docs.xml' path='docs/TryInsert/*'/>
-    /// <include file='codesnippets.xml' path='docs/TryInsertD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.TryInsert"/>
     public new bool TryInsert(SlotKey key, TValue value, out SlotKey newKey) => base.TryInsert(key, value, out newKey);
 
-    /// <include file='docs.xml' path='docs/TryGet/*'/>
-    /// <include file='codesnippets.xml' path='docs/TryGetD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.TryGet"/>
     public new bool TryGet(SlotKey key, [MaybeNullWhen(false)] out TValue value) => base.TryGet(key, out value);
 
-    /// <include file='docs.xml' path='docs/TryRemove/*'/>
-    /// <include file='codesnippets.xml' path='docs/TryRemoveD/*'/>
+    /// <inheritdoc cref="SlotMap{TKey, TValue}.TryRemove"/>
     public new bool TryRemove(SlotKey key, [MaybeNullWhen(false)] out TValue value) => base.TryRemove(key, out value);
 }
