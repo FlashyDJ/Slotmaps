@@ -161,8 +161,8 @@ jobs:
         run: |
           $CONCLUSION = (Get-Culture).TextInfo.ToTitleCase("${{fromJSON(steps.test-results.outputs.json).conclusion}}")
           $BADGE_COLOR = "9f9f9f"
-          $PASS_TESTS = "${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests_succ}}"
-          $TOTAL_TESTS = ${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests}}
+          $PASS_TESTS = "${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests_succ}}".Replace(' ', '')
+          $TOTAL_TESTS = "${{fromJSON(steps.test-results.outputs.json).formatted.stats.tests}}".Replace(' ', '')
 
           switch ($CONCLUSION) {
             "Success" {
