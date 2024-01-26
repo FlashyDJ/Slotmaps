@@ -94,53 +94,6 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     }
 
     /// <summary>
-    ///   Adds a value to the slot map and returns a key associated with the added value. It assigns the value
-    ///   to an available slot if one is available; otherwise, it expands the internal storage to accommodate
-    ///   the new value.
-    /// </summary>
-    /// <param name="value">The value to be added to the slot map.</param>
-    /// <returns>The key associated with the added value.</returns>
-    /// <exception cref="ArgumentNullException">
-    ///   Thrown if <paramref name="value"/> is null.
-    /// </exception>
-    public TKey Add(TValue value)
-    {
-        var newCount = Count + 1;
-
-        if (_freeHead <= Capacity - 1)
-        {
-            ref var slot = ref _slots[_freeHead];
-
-            if (!slot.Occupied)
-            {
-                var occupiedVersion = slot.Version + 1;
-                var updatedkey = TKey.New(_freeHead, occupiedVersion);
-
-                _freeHead = slot.NextFree;
-                slot.Value = value;
-                slot.Version = occupiedVersion;
-
-                Count = newCount;
-                return updatedkey;
-            }
-        }
-
-        if (newCount > Capacity)
-            Reserve(Capacity == 0 ? DefaultCapacity : Capacity);
-
-        int newIndex = newCount - 1;
-
-        ref var newSlot = ref _slots[newIndex];
-        newSlot.Value = value;
-        newSlot.Version++;
-
-        _freeHead = newCount;
-        Count++;
-
-        return TKey.New(newIndex, newSlot.Version);
-    }
-
-    /// <summary>
     ///   Determines whether the slot map contains a key that matches the specified <paramref name="key"/>.
     /// </summary>
     /// <param name="key">The key to search for in the slot map.</param>
@@ -255,6 +208,46 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     }
 
     /// <summary>
+    ///   Inserts a value to the slot map and returns a key associated with the added value. It assigns the value
+    ///   to an available slot if one is available; otherwise, it expands the internal storage to accommodate
+    ///   the new value.
+    /// </summary>
+    /// <param name="value">The value to be added to the slot map.</param>
+    /// <returns>The key associated with the added value.</returns>
+    /// <exception cref="ArgumentNullException">
+    ///   Thrown if <paramref name="value"/> is null.
+    /// </exception>
+    /// <seealso cref="TryInsert"/>
+    /// <seealso cref="Insert(TKey, TValue)"/>
+    public TKey Insert(TValue value)
+    {
+        if (_freeHead <= Capacity - 1)
+        {
+            ref var slot = ref _slots[_freeHead];
+
+            if (!slot.Occupied)
+            {
+                var updatedVersion = UpdateSlot(ref slot, value);
+
+                _freeHead = slot.NextFree;
+
+                return TKey.New(_freeHead, updatedVersion);
+            }
+        }
+
+        if (Count > Capacity)
+            Reserve(Math.Max(DefaultCapacity, Capacity));
+
+        int newIndex = Count;
+        ref var newSlot = ref _slots[newIndex];
+        var newVersion = UpdateSlot(ref newSlot, value);
+
+        _freeHead = Count;
+
+        return TKey.New(newIndex, newVersion);
+    }
+
+    /// <summary>
     ///   Inserts or updates a value associated with the specified key in the slot map.
     /// </summary>
     /// <param name="key">The key to insert or update the value for.</param>
@@ -264,25 +257,16 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
     /// </exception>
     /// <seealso cref="TryInsert"/>
+    /// <seealso cref="Insert(TValue)"/>
     public TKey Insert(TKey key, TValue value)
     {
         if (!ContainsKey(key))
             throw new KeyNotFoundException("Invalid SlotKey");
 
         ref var slot = ref _slots[key.Index];
-        slot.Value = value;
+        var updatedVersion = UpdateSlot(ref slot, value);
 
-        if (!slot.Occupied)
-        {
-            Count++;
-            slot.Version++;
-        }
-        else
-        {
-            slot.Version += 2;
-        }
-
-        return TKey.New(key.Index, slot.Version);
+        return TKey.New(key.Index, updatedVersion);
     }
 
     /// <summary>
@@ -387,7 +371,8 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <exception cref="ArgumentNullException">
     ///   Thrown if <paramref name="value"/> is <c>null</c>.
     /// </exception>
-    /// <seealso cref="Insert"/>
+    /// <seealso cref="Insert(TKey, TValue)"/>
+    /// <seealso cref="Insert(TValue)"/>
     public bool TryInsert(TKey key, TValue value, out TKey newKey)
     {
         if (!ContainsKey(key))
@@ -397,19 +382,9 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
         }
 
         ref var slot = ref _slots[key.Index];
-        slot.Value = value;
+        var updatedVersion = UpdateSlot(ref slot, value);
 
-        if (!slot.Occupied)
-        {
-            slot.Version++;
-            Count++;
-        }
-        else
-        {
-            slot.Version += 2;
-        }
-
-        newKey = TKey.New(key.Index, slot.Version);
+        newKey = TKey.New(key.Index, updatedVersion);
         return true;
     }
 
@@ -433,7 +408,7 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
             return false;
         }
 
-        value = _slots[key.Index].Value!;
+        value = _slots[key.Index].Value;
         return true;
     }
 
@@ -468,6 +443,21 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
         Count--;
 
         return true;
+    }
+
+    private uint UpdateSlot(ref Slot slot, TValue value)
+    {
+        uint versionIncrement;
+        if (slot.Occupied)
+            versionIncrement = 2u;
+        else
+        {
+            versionIncrement = 1u;
+            Count++;
+        }
+
+        slot.Value = value;
+        return slot.Version += versionIncrement;
     }
 
     /// <summary>
