@@ -9,7 +9,7 @@ namespace FlashyDJ.Slotmaps;
 /// <typeparam name="TKey">The struct type of keys that implement. <see cref="ISlotKey{TKey}"/>.</typeparam>
 /// <typeparam name="TValue">The type of values stored in the secondary map.</typeparam>
 [DebuggerDisplay("Count = {Count}")]
-public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
+public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable
     where TKey : struct, ISlotKey<TKey>
 {
     private readonly Dictionary<int, Slot> _slots;
@@ -35,35 +35,6 @@ public partial class SparseSecondaryMap<TKey, TValue> : ICollection<KeyValuePair
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
         _slots = new(capacity);
     }
-
-    bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly => false;
-
-    void ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue> item) =>
-        Insert(item.Key, item.Value);
-
-    bool ICollection<KeyValuePair<TKey, TValue>>.Contains(KeyValuePair<TKey, TValue> item) =>
-        ContainsKey(item.Key) && (EqualityComparer<TValue>.Default.Equals(Get(item.Key), item.Value));
-
-    void ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[] array, int index)
-    {
-        ArgumentNullException.ThrowIfNull(array);
-        ArgumentOutOfRangeException.ThrowIfNegative(index);
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(index, array.Length);
-        ArgumentOutOfRangeException.ThrowIfLessThan(Count, array.Length - index);
-
-        foreach (var key in _slots.Keys)
-        {
-            ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key, out var _);
-            if (slot.Occupied)
-                array[index++] = new(TKey.New(key, slot.Version), slot.Value);
-        }
-    }
-
-    bool ICollection<KeyValuePair<TKey, TValue>>.Remove(KeyValuePair<TKey, TValue> item) =>
-        ContainsKey(item.Key)
-        && (EqualityComparer<TValue>.Default.Equals(Get(item.Key), item.Value)
-        && TryRemove(item.Key, out var _));
-
     IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() =>
         new Enumerator(this);
 

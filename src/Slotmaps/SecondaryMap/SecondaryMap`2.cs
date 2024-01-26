@@ -9,7 +9,7 @@
 /// <seealso cref="ISlotKey{TKey}"/>
 /// <seealso cref="SparseSecondaryMap{TKey, TValue}"/>
 [DebuggerDisplay("Count = {Count}")]
-public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
+public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable
     where TKey : struct, ISlotKey<TKey>
 {
 #pragma warning disable CA1825 // avoid the extra generic instantiation for Array.Empty<T>()
@@ -43,42 +43,6 @@ public partial class SecondaryMap<TKey, TValue> : ICollection<KeyValuePair<TKey,
         else
             _slots = new Slot[capacity];
     }
-
-    bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly => false;
-
-    void ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue> item) =>
-        Insert(item.Key, item.Value);
-
-    bool ICollection<KeyValuePair<TKey, TValue>>.Contains(KeyValuePair<TKey, TValue> item) =>
-        ContainsKey(item.Key) && ContainsValue(item.Value);
-
-    void ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[] array, int index)
-    {
-        ArgumentNullException.ThrowIfNull(array);
-        ArgumentOutOfRangeException.ThrowIfNegative(index);
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(index, array.Length);
-        ArgumentOutOfRangeException.ThrowIfLessThan(Count, array.Length - index);
-
-        for (int i = 0; i < Capacity; i++)
-        {
-            var slot = _slots[i];
-
-            if (slot.Occupied)
-                array[index++] = new(TKey.New(i, slot.Version), slot.Value);
-        }
-    }
-
-    bool ICollection<KeyValuePair<TKey, TValue>>.Remove(KeyValuePair<TKey, TValue> item)
-    {
-        if (ContainsKey(item.Key) && ContainsValue(item.Value))
-        {
-            Remove(item.Key);
-            return true;
-        }
-
-        return false;
-    }
-
     IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() =>
         new Enumerator(this);
 

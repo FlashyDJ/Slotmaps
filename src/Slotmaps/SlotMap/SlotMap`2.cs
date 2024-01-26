@@ -7,7 +7,7 @@
 /// <typeparam name="TKey">The struct type of keys that implement. <see cref="ISlotKey{TKey}"/>.</typeparam>
 /// <typeparam name="TValue">The type of values stored in the slot map.</typeparam>
 [DebuggerDisplay("Count = {Count}")]
-public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
+public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable
     where TKey : struct, ISlotKey<TKey>
 {
     private const int DefaultCapacity = 4;
@@ -43,46 +43,10 @@ public partial class SlotMap<TKey, TValue> : ICollection<KeyValuePair<TKey, TVal
         else
             _slots = new Slot[capacity];
     }
-
-    void ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue> item) =>
-        Insert(item.Key, item.Value);
-
-    bool ICollection<KeyValuePair<TKey, TValue>>.Contains(KeyValuePair<TKey, TValue> item) =>
-        ContainsKey(item.Key) && ContainsValue(item.Value);
-
-    void ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[] array, int index)
-    {
-        ArgumentNullException.ThrowIfNull(array);
-        ArgumentOutOfRangeException.ThrowIfNegative(index);
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(index, array.Length);
-        ArgumentOutOfRangeException.ThrowIfLessThan(Count, array.Length - index);
-
-        for (int i = 0; i < Capacity; i++)
-        {
-            var slot = _slots[i];
-
-            if (slot.Occupied)
-                array[index++] = new(TKey.New(i, slot.Version), slot.Value);
-        }
-    }
-
-    bool ICollection<KeyValuePair<TKey, TValue>>.Remove(KeyValuePair<TKey, TValue> item)
-    {
-        if (ContainsKey(item.Key) && ContainsValue(item.Value))
-        {
-            Remove(item.Key);
-            return true;
-        }
-            
-        return false;
-    }
-
     IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() =>
         new Enumerator(this);
 
     IEnumerator IEnumerable.GetEnumerator() => new Enumerator(this);
-
-    bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly => false;
 
     /// <summary>
     ///   Gets the capacity of the slot map.
