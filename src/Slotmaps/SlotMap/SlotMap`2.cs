@@ -12,10 +12,6 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
 {
     private const int DefaultCapacity = 4;
 
-#pragma warning disable CA1825 // avoid the extra generic instantiation for Array.Empty<T>()
-    private static readonly Slot[] s_emptyArray = new Slot[0];
-#pragma warning restore CA1825
-
     private Slot[] _slots;
     private int _freeHead;
     private SlotKeyCollection? _keys;
@@ -25,7 +21,7 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     ///   Initializes a new instance of the <see cref="SlotMap{TKey, TValue}"/> class that is empty with no
     ///   initial capacity.
     /// </summary>
-    public SlotMap() => _slots = s_emptyArray;
+    public SlotMap() => _slots = [];
 
     /// <summary>
     ///   Initializes a new instance of the <see cref="SlotMap{TKey, TValue}"/> class with the specified capacity.
@@ -37,12 +33,9 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     public SlotMap(int capacity)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
-
-        if (capacity == 0)
-            _slots = s_emptyArray;
-        else
-            _slots = new Slot[capacity];
+        _slots = capacity == 0 ? [] : (new Slot[capacity]);
     }
+
     IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() =>
         new Enumerator(this);
 
@@ -54,22 +47,22 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     public int Capacity => _slots.Length;
 
     /// <summary>
-    ///    Gets the number of elements currently stored in the slot map.
-    ///  </summary>
+    ///   Gets the number of elements currently stored in the slot map.
+    /// </summary>
     public int Count { get; private set; }
 
     /// <summary>
-    ///    Indicates whether the slot map is empty.
-    ///  </summary>
+    ///   Indicates whether the slot map is empty.
+    /// </summary>
     public bool IsEmpty => Count == 0;
 
     /// <summary>
-    ///    Gets a read only collection of latest keys associated with the values in the slot map.
-    ///  </summary>
+    ///   Gets a read only collection of latest keys associated with the values in the slot map.
+    /// </summary>
     public SlotKeyCollection Keys => _keys ??= new SlotKeyCollection(this);
 
     /// <summary>
-    ///    Gets a read only collection of values stored in the slot map.
+    ///   Gets a read only collection of values stored in the slot map.
     /// </summary>
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
@@ -83,13 +76,7 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// </exception>
     public TValue this[TKey key]
     {
-        get
-        {
-            if (!ContainsKey(key))
-                throw new KeyNotFoundException("Invalid SlotKey");
-
-            return _slots[key.Index].Value;
-        }
+        get => Get(key);
         set => Insert(key, value);
     }
 
@@ -140,7 +127,6 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
         if (Count > 0)
         {
             Array.Clear(_slots);
-
             Count = 0;
             _freeHead = 0;
         }
@@ -159,9 +145,7 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
             if (_slots[i].Occupied)
             {
                 var key = TKey.New(i, _slots[i].Version);
-                var value = _slots[i].Value;
-
-                Remove(key);
+                var value = Remove(key);    
 
                 yield return new(key, value);
             }
@@ -187,7 +171,6 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
             return Capacity;
 
         Resize(capacity);
-
         return capacity;
     }
 
@@ -199,13 +182,9 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
     /// </exception>
-    public TValue Get(TKey key)
-    {
-        if (!ContainsKey(key))
-            throw new KeyNotFoundException("Invalid SlotKey");
-
-        return _slots[key.Index].Value;
-    }
+    public TValue Get(TKey key) => 
+        ContainsKey(key) ? _slots[key.Index].Value
+                         : throw new KeyNotFoundException("Invalid SlotKey");
 
     /// <summary>
     ///   Inserts a value to the slot map and returns a key associated with the added value. It assigns the value
@@ -226,7 +205,6 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
         if (_freeHead <= Capacity - 1)
         {
             ref var slot = ref _slots[_freeHead];
-
             if (!slot.Occupied)
             {
                 var updatedVersion = UpdateSlot(ref slot, value);
@@ -239,7 +217,7 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
         }
 
         if (index + 1 > Capacity)
-            Reserve(Capacity == 0 ? DefaultCapacity : Capacity);
+            Array.Resize(ref _slots, Capacity + (Capacity == 0 ? DefaultCapacity : Capacity));
 
         ref var newSlot = ref _slots[index];
         var newVersion = UpdateSlot(ref newSlot, value);
@@ -312,7 +290,6 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     public void Reserve(int additionalSize)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(additionalSize);
-
         Array.Resize(ref _slots, Capacity + additionalSize);
     }
 
