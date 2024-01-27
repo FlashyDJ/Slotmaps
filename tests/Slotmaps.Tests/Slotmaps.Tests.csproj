@@ -68,6 +68,7 @@
     <T4Transform Include="SlotMap\Resize.tt" />
     <T4Transform Include="SlotMap\Retain.tt" />
     <T4Transform Include="SlotMap\TryGet.tt" />
+    <T4Transform Include="SlotMap\TryInsert.tt" />
     <T4Transform Include="SlotMap\TryRemove.tt" />
   </ItemGroup>
 
