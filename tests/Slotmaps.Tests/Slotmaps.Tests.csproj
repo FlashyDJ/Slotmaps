@@ -36,6 +36,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <T4Transform Include="SecondaryMap\Clear.tt" />
+    <T4Transform Include="SecondaryMap\Constructor.tt" />
+    <T4Transform Include="SecondaryMap\ContainsKey.tt" />
+    <T4Transform Include="SecondaryMap\ContainsValue.tt" />
+    <T4Transform Include="SecondaryMap\Drain.tt" />
+    <T4Transform Include="SecondaryMap\EnsureCapacity.tt" />
+    <T4Transform Include="SecondaryMap\Get.tt" />
+    <T4Transform Include="SecondaryMap\Indexer.tt" />
+    <T4Transform Include="SecondaryMap\Insert.tt" />
+    <T4Transform Include="SecondaryMap\Remove.tt" />
+    <T4Transform Include="SecondaryMap\Retain.tt" />
+    <T4Transform Include="SecondaryMap\TryGet.tt" />
+    <T4Transform Include="SecondaryMap\TryInsert.tt" />
+    <T4Transform Include="SecondaryMap\TryRemove.tt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <T4Transform Include="SlotMap\Clear.tt" />
     <T4Transform Include="SlotMap\Constructor.tt" />
     <T4Transform Include="SlotMap\ContainsKey.tt" />
