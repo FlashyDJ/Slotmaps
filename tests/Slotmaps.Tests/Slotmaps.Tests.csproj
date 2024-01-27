@@ -88,67 +88,67 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="SecondaryMap\Clear.cs">
+    <Compile Update="SecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Clear.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\ContainsKey.cs">
+    <Compile Update="SecondaryMap\ContainsKey.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ContainsKey.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\ContainsValue.cs">
+    <Compile Update="SecondaryMap\ContainsValue.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ContainsValue.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\Drain.cs">
+    <Compile Update="SecondaryMap\Drain.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Drain.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\EnsureCapacity.cs">
+    <Compile Update="SecondaryMap\EnsureCapacity.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EnsureCapacity.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\Get.cs">
+    <Compile Update="SecondaryMap\Get.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Get.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\Indexer.cs">
+    <Compile Update="SecondaryMap\Indexer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Indexer.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\Insert.cs">
+    <Compile Update="SecondaryMap\Insert.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Insert.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\Remove.cs">
+    <Compile Update="SecondaryMap\Remove.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Remove.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\Retain.cs">
+    <Compile Update="SecondaryMap\Retain.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Retain.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\TryGet.cs">
+    <Compile Update="SecondaryMap\TryGet.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TryGet.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\TryInsert.cs">
+    <Compile Update="SecondaryMap\TryInsert.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TryInsert.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryMap\TryRemove.cs">
+    <Compile Update="SecondaryMap\TryRemove.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TryRemove.tt</DependentUpon>
@@ -156,87 +156,87 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="SlotMap\Clear.cs">
+    <Compile Update="SlotMap\Clear.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Clear.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\Constructor.cs">
+    <Compile Update="SlotMap\Constructor.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Constructor.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\ContainsKey.cs">
+    <Compile Update="SlotMap\ContainsKey.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ContainsKey.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\ContainsValue.cs">
+    <Compile Update="SlotMap\ContainsValue.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ContainsValue.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\Drain.cs">
+    <Compile Update="SlotMap\Drain.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Drain.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\EnsureCapacity.cs">
+    <Compile Update="SlotMap\EnsureCapacity.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EnsureCapacity.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\Get.cs">
+    <Compile Update="SlotMap\Get.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Get.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\Indexer.cs">
+    <Compile Update="SlotMap\Indexer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Indexer.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\Insert1.cs">
+    <Compile Update="SlotMap\Insert1.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Insert1.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\Insert2.cs">
+    <Compile Update="SlotMap\Insert2.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Insert2.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\Remove.cs">
+    <Compile Update="SlotMap\Remove.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Remove.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\Reserve.cs">
+    <Compile Update="SlotMap\Reserve.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Reserve.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\Resize.cs">
+    <Compile Update="SlotMap\Resize.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resize.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\Retain.cs">
+    <Compile Update="SlotMap\Retain.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Retain.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\TryGet.cs">
+    <Compile Update="SlotMap\TryGet.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TryGet.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\TryInsert.cs">
+    <Compile Update="SlotMap\TryInsert.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TryInsert.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlotMap\TryRemove.cs">
+    <Compile Update="SlotMap\TryRemove.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TryRemove.tt</DependentUpon>
@@ -244,67 +244,67 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="SparseSecondaryMap\Clear.cs">
+    <Compile Update="SparseSecondaryMap\Clear.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Clear.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\ContainsKey.cs">
+    <Compile Update="SparseSecondaryMap\ContainsKey.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ContainsKey.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\ContainsValue.cs">
+    <Compile Update="SparseSecondaryMap\ContainsValue.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ContainsValue.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\Drain.cs">
+    <Compile Update="SparseSecondaryMap\Drain.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Drain.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\EnsureCapacity.cs">
+    <Compile Update="SparseSecondaryMap\EnsureCapacity.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EnsureCapacity.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\Get.cs">
+    <Compile Update="SparseSecondaryMap\Get.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Get.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\Indexer.cs">
+    <Compile Update="SparseSecondaryMap\Indexer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Indexer.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\Insert.cs">
+    <Compile Update="SparseSecondaryMap\Insert.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Insert.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\Remove.cs">
+    <Compile Update="SparseSecondaryMap\Remove.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Remove.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\Retain.cs">
+    <Compile Update="SparseSecondaryMap\Retain.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Retain.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\TryGet.cs">
+    <Compile Update="SparseSecondaryMap\TryGet.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TryGet.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\TryInsert.cs">
+    <Compile Update="SparseSecondaryMap\TryInsert.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TryInsert.tt</DependentUpon>
     </Compile>
-    <Compile Include="SparseSecondaryMap\TryRemove.cs">
+    <Compile Update="SparseSecondaryMap\TryRemove.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TryRemove.tt</DependentUpon>
