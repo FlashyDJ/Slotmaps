@@ -7,6 +7,7 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
+
 public class TryInsert
 {
 <#
@@ -22,7 +23,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithValidKey_ReturnsTrueAndNewKey()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
 
         bool result = <#= varName #>.TryInsert(key, <#= data.Value[1] #>, out var newKey);
 
@@ -46,7 +47,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
         var key2 = key1 with { Version = 0 };
 
         bool result = <#= varName #>.TryInsert(key2, <#= data.Value[1] #>, out var newKey);
@@ -60,7 +61,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
         var key2 = key1 with { Version = 2 };
 
         bool result = <#= varName #>.TryInsert(key2, <#= data.Value[1] #>, out var newKey);

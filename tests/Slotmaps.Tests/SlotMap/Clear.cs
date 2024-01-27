@@ -2,8 +2,8 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SlotMap;
+
 public class Clear
 {
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -14,8 +14,8 @@ public class Clear
     public void WithIntItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<int>();
-        slotMap.Add(10);
-        slotMap.Add(20);
+        slotMap.Insert(10);
+        slotMap.Insert(20);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -42,8 +42,8 @@ public class Clear
     public void WithIntNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<int?>();
-        slotMap.Add(null);
-        slotMap.Add(10);
+        slotMap.Insert(null);
+        slotMap.Insert(10);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -70,8 +70,8 @@ public class Clear
     public void WithStringItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<string>();
-        slotMap.Add("Value 1");
-        slotMap.Add("Value 2");
+        slotMap.Insert("Value 1");
+        slotMap.Insert("Value 2");
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -98,8 +98,8 @@ public class Clear
     public void WithStringNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<string?>();
-        slotMap.Add(null);
-        slotMap.Add("Value 1");
+        slotMap.Insert(null);
+        slotMap.Insert("Value 1");
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -126,8 +126,8 @@ public class Clear
     public void WithDoubleItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<double>();
-        slotMap.Add(1.11D);
-        slotMap.Add(2.22D);
+        slotMap.Insert(1.11D);
+        slotMap.Insert(2.22D);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -154,8 +154,8 @@ public class Clear
     public void WithDoubleNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<double?>();
-        slotMap.Add(null);
-        slotMap.Add(1.11D);
+        slotMap.Insert(null);
+        slotMap.Insert(1.11D);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -182,8 +182,8 @@ public class Clear
     public void WithBoolItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<bool>();
-        slotMap.Add(true);
-        slotMap.Add(false);
+        slotMap.Insert(true);
+        slotMap.Insert(false);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -210,8 +210,8 @@ public class Clear
     public void WithBoolNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<bool?>();
-        slotMap.Add(null);
-        slotMap.Add(true);
+        slotMap.Insert(null);
+        slotMap.Insert(true);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -238,8 +238,8 @@ public class Clear
     public void WithCharItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<char>();
-        slotMap.Add('A');
-        slotMap.Add('B');
+        slotMap.Insert('A');
+        slotMap.Insert('B');
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -266,8 +266,8 @@ public class Clear
     public void WithCharNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<char?>();
-        slotMap.Add(null);
-        slotMap.Add('A');
+        slotMap.Insert(null);
+        slotMap.Insert('A');
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -294,8 +294,8 @@ public class Clear
     public void WithLongItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<long>();
-        slotMap.Add(1000_000_000_000L);
-        slotMap.Add(2000_000_000_000L);
+        slotMap.Insert(1000_000_000_000L);
+        slotMap.Insert(2000_000_000_000L);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -322,8 +322,8 @@ public class Clear
     public void WithLongNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<long?>();
-        slotMap.Add(null);
-        slotMap.Add(1000_000_000_000L);
+        slotMap.Insert(null);
+        slotMap.Insert(1000_000_000_000L);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -350,8 +350,8 @@ public class Clear
     public void WithFloatItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<float>();
-        slotMap.Add(1.1F);
-        slotMap.Add(2.2F);
+        slotMap.Insert(1.1F);
+        slotMap.Insert(2.2F);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -378,8 +378,8 @@ public class Clear
     public void WithFloatNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<float?>();
-        slotMap.Add(null);
-        slotMap.Add(1.1F);
+        slotMap.Insert(null);
+        slotMap.Insert(1.1F);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -406,8 +406,8 @@ public class Clear
     public void WithDecimalItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<decimal>();
-        slotMap.Add(1.111_111_111M);
-        slotMap.Add(2.222_222_222M);
+        slotMap.Insert(1.111_111_111M);
+        slotMap.Insert(2.222_222_222M);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -434,8 +434,8 @@ public class Clear
     public void WithDecimalNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<decimal?>();
-        slotMap.Add(null);
-        slotMap.Add(1.111_111_111M);
+        slotMap.Insert(null);
+        slotMap.Insert(1.111_111_111M);
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -462,8 +462,8 @@ public class Clear
     public void WithDateTimeItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<DateTime>();
-        slotMap.Add(DateTime.Parse("2023-01-01"));
-        slotMap.Add(DateTime.Parse("2023-02-01"));
+        slotMap.Insert(DateTime.Parse("2023-01-01"));
+        slotMap.Insert(DateTime.Parse("2023-02-01"));
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -490,8 +490,8 @@ public class Clear
     public void WithDateTimeNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<DateTime?>();
-        slotMap.Add(null);
-        slotMap.Add(DateTime.Parse("2023-01-01"));
+        slotMap.Insert(null);
+        slotMap.Insert(DateTime.Parse("2023-01-01"));
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -518,8 +518,8 @@ public class Clear
     public void WithTimeSpanItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        slotMap.Add(new TimeSpan(00,00,00));
-        slotMap.Add(new TimeSpan(01,00,00));
+        slotMap.Insert(new TimeSpan(00,00,00));
+        slotMap.Insert(new TimeSpan(01,00,00));
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -546,8 +546,8 @@ public class Clear
     public void WithTimeSpanNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        slotMap.Add(null);
-        slotMap.Add(new TimeSpan(00,00,00));
+        slotMap.Insert(null);
+        slotMap.Insert(new TimeSpan(00,00,00));
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -574,8 +574,8 @@ public class Clear
     public void WithGuidItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<Guid>();
-        slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();
@@ -602,8 +602,8 @@ public class Clear
     public void WithGuidNullableItems_ClearsMapAndSetsCountToZero()
     {
         var slotMap = new SlotMap<Guid?>();
-        slotMap.Add(null);
-        slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        slotMap.Insert(null);
+        slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var capacity = slotMap.Capacity;
     
         slotMap.Clear();

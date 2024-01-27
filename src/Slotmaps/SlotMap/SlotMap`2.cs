@@ -221,6 +221,8 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <seealso cref="Insert(TKey, TValue)"/>
     public TKey Insert(TValue value)
     {
+        int index = Count;
+
         if (_freeHead <= Capacity - 1)
         {
             ref var slot = ref _slots[_freeHead];
@@ -229,22 +231,22 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
             {
                 var updatedVersion = UpdateSlot(ref slot, value);
 
+                index = _freeHead;
                 _freeHead = slot.NextFree;
-
-                return TKey.New(_freeHead, updatedVersion);
+                
+                return TKey.New(index, updatedVersion);
             }
         }
 
-        if (Count > Capacity)
-            Reserve(Math.Max(DefaultCapacity, Capacity));
+        if (index + 1 > Capacity)
+            Reserve(Capacity == 0 ? DefaultCapacity : Capacity);
 
-        int newIndex = Count;
-        ref var newSlot = ref _slots[newIndex];
+        ref var newSlot = ref _slots[index];
         var newVersion = UpdateSlot(ref newSlot, value);
 
         _freeHead = Count;
 
-        return TKey.New(newIndex, newVersion);
+        return TKey.New(index, newVersion);
     }
 
     /// <summary>

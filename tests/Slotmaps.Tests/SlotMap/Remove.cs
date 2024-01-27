@@ -2,8 +2,8 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SlotMap;
+
 public class Remove
 {
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -14,7 +14,7 @@ public class Remove
     public void IntWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<int>();
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
 
         var result = slotMap.Remove(key);
 
@@ -44,7 +44,7 @@ public class Remove
     public void IntWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<int>();
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -54,7 +54,7 @@ public class Remove
     public void IntWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<int>();
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -68,7 +68,7 @@ public class Remove
     public void IntNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<int?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -98,7 +98,7 @@ public class Remove
     public void IntNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<int?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -108,7 +108,7 @@ public class Remove
     public void IntNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<int?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -122,7 +122,7 @@ public class Remove
     public void StringWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
 
         var result = slotMap.Remove(key);
 
@@ -152,7 +152,7 @@ public class Remove
     public void StringWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -162,7 +162,7 @@ public class Remove
     public void StringWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -176,7 +176,7 @@ public class Remove
     public void StringNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<string?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -206,7 +206,7 @@ public class Remove
     public void StringNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<string?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -216,7 +216,7 @@ public class Remove
     public void StringNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<string?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -230,7 +230,7 @@ public class Remove
     public void DoubleWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<double>();
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
 
         var result = slotMap.Remove(key);
 
@@ -260,7 +260,7 @@ public class Remove
     public void DoubleWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<double>();
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -270,7 +270,7 @@ public class Remove
     public void DoubleWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<double>();
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -284,7 +284,7 @@ public class Remove
     public void DoubleNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<double?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -314,7 +314,7 @@ public class Remove
     public void DoubleNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<double?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -324,7 +324,7 @@ public class Remove
     public void DoubleNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<double?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -338,7 +338,7 @@ public class Remove
     public void BoolWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<bool>();
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
 
         var result = slotMap.Remove(key);
 
@@ -368,7 +368,7 @@ public class Remove
     public void BoolWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<bool>();
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -378,7 +378,7 @@ public class Remove
     public void BoolWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<bool>();
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -392,7 +392,7 @@ public class Remove
     public void BoolNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<bool?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -422,7 +422,7 @@ public class Remove
     public void BoolNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<bool?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -432,7 +432,7 @@ public class Remove
     public void BoolNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<bool?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -446,7 +446,7 @@ public class Remove
     public void CharWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<char>();
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
 
         var result = slotMap.Remove(key);
 
@@ -476,7 +476,7 @@ public class Remove
     public void CharWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<char>();
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -486,7 +486,7 @@ public class Remove
     public void CharWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<char>();
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -500,7 +500,7 @@ public class Remove
     public void CharNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<char?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -530,7 +530,7 @@ public class Remove
     public void CharNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<char?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -540,7 +540,7 @@ public class Remove
     public void CharNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<char?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -554,7 +554,7 @@ public class Remove
     public void LongWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<long>();
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
 
         var result = slotMap.Remove(key);
 
@@ -584,7 +584,7 @@ public class Remove
     public void LongWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<long>();
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -594,7 +594,7 @@ public class Remove
     public void LongWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<long>();
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -608,7 +608,7 @@ public class Remove
     public void LongNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<long?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -638,7 +638,7 @@ public class Remove
     public void LongNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<long?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -648,7 +648,7 @@ public class Remove
     public void LongNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<long?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -662,7 +662,7 @@ public class Remove
     public void FloatWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<float>();
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
 
         var result = slotMap.Remove(key);
 
@@ -692,7 +692,7 @@ public class Remove
     public void FloatWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<float>();
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -702,7 +702,7 @@ public class Remove
     public void FloatWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<float>();
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -716,7 +716,7 @@ public class Remove
     public void FloatNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<float?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -746,7 +746,7 @@ public class Remove
     public void FloatNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<float?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -756,7 +756,7 @@ public class Remove
     public void FloatNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<float?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -770,7 +770,7 @@ public class Remove
     public void DecimalWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<decimal>();
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
 
         var result = slotMap.Remove(key);
 
@@ -800,7 +800,7 @@ public class Remove
     public void DecimalWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<decimal>();
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -810,7 +810,7 @@ public class Remove
     public void DecimalWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<decimal>();
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -824,7 +824,7 @@ public class Remove
     public void DecimalNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -854,7 +854,7 @@ public class Remove
     public void DecimalNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -864,7 +864,7 @@ public class Remove
     public void DecimalNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -878,7 +878,7 @@ public class Remove
     public void DateTimeWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
 
         var result = slotMap.Remove(key);
 
@@ -908,7 +908,7 @@ public class Remove
     public void DateTimeWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -918,7 +918,7 @@ public class Remove
     public void DateTimeWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -932,7 +932,7 @@ public class Remove
     public void DateTimeNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -962,7 +962,7 @@ public class Remove
     public void DateTimeNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -972,7 +972,7 @@ public class Remove
     public void DateTimeNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -986,7 +986,7 @@ public class Remove
     public void TimeSpanWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
 
         var result = slotMap.Remove(key);
 
@@ -1016,7 +1016,7 @@ public class Remove
     public void TimeSpanWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -1026,7 +1026,7 @@ public class Remove
     public void TimeSpanWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -1040,7 +1040,7 @@ public class Remove
     public void TimeSpanNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -1070,7 +1070,7 @@ public class Remove
     public void TimeSpanNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -1080,7 +1080,7 @@ public class Remove
     public void TimeSpanNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -1094,7 +1094,7 @@ public class Remove
     public void GuidWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<Guid>();
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         var result = slotMap.Remove(key);
 
@@ -1124,7 +1124,7 @@ public class Remove
     public void GuidWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<Guid>();
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -1134,7 +1134,7 @@ public class Remove
     public void GuidWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<Guid>();
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -1148,7 +1148,7 @@ public class Remove
     public void GuidNullableWithValidKey_RemovesAndReturnsPreviousValue()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap.Remove(key);
 
@@ -1178,7 +1178,7 @@ public class Remove
     public void GuidNullableWithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));
@@ -1188,7 +1188,7 @@ public class Remove
     public void GuidNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => slotMap.Remove(key2));

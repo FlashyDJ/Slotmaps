@@ -2,8 +2,8 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SlotMap;
+
 public class TryGet
 {
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -14,7 +14,7 @@ public class TryGet
     public void IntWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<int>();
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -50,7 +50,7 @@ public class TryGet
     public void IntWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
+        var key1 = slotMap.Insert(10);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -63,7 +63,7 @@ public class TryGet
     public void IntWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
+        var key1 = slotMap.Insert(10);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -80,7 +80,7 @@ public class TryGet
     public void IntNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<int?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -116,7 +116,7 @@ public class TryGet
     public void IntNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -129,7 +129,7 @@ public class TryGet
     public void IntNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -146,7 +146,7 @@ public class TryGet
     public void StringWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -182,7 +182,7 @@ public class TryGet
     public void StringWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
+        var key1 = slotMap.Insert("Value 1");
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -195,7 +195,7 @@ public class TryGet
     public void StringWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
+        var key1 = slotMap.Insert("Value 1");
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -212,7 +212,7 @@ public class TryGet
     public void StringNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<string?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -248,7 +248,7 @@ public class TryGet
     public void StringNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -261,7 +261,7 @@ public class TryGet
     public void StringNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -278,7 +278,7 @@ public class TryGet
     public void DoubleWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<double>();
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -314,7 +314,7 @@ public class TryGet
     public void DoubleWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
+        var key1 = slotMap.Insert(1.11D);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -327,7 +327,7 @@ public class TryGet
     public void DoubleWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
+        var key1 = slotMap.Insert(1.11D);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -344,7 +344,7 @@ public class TryGet
     public void DoubleNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<double?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -380,7 +380,7 @@ public class TryGet
     public void DoubleNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -393,7 +393,7 @@ public class TryGet
     public void DoubleNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -410,7 +410,7 @@ public class TryGet
     public void BoolWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<bool>();
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -446,7 +446,7 @@ public class TryGet
     public void BoolWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
+        var key1 = slotMap.Insert(true);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -459,7 +459,7 @@ public class TryGet
     public void BoolWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
+        var key1 = slotMap.Insert(true);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -476,7 +476,7 @@ public class TryGet
     public void BoolNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<bool?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -512,7 +512,7 @@ public class TryGet
     public void BoolNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -525,7 +525,7 @@ public class TryGet
     public void BoolNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -542,7 +542,7 @@ public class TryGet
     public void CharWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<char>();
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -578,7 +578,7 @@ public class TryGet
     public void CharWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
+        var key1 = slotMap.Insert('A');
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -591,7 +591,7 @@ public class TryGet
     public void CharWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
+        var key1 = slotMap.Insert('A');
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -608,7 +608,7 @@ public class TryGet
     public void CharNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<char?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -644,7 +644,7 @@ public class TryGet
     public void CharNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -657,7 +657,7 @@ public class TryGet
     public void CharNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -674,7 +674,7 @@ public class TryGet
     public void LongWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<long>();
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -710,7 +710,7 @@ public class TryGet
     public void LongWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -723,7 +723,7 @@ public class TryGet
     public void LongWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -740,7 +740,7 @@ public class TryGet
     public void LongNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<long?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -776,7 +776,7 @@ public class TryGet
     public void LongNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -789,7 +789,7 @@ public class TryGet
     public void LongNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -806,7 +806,7 @@ public class TryGet
     public void FloatWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<float>();
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -842,7 +842,7 @@ public class TryGet
     public void FloatWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
+        var key1 = slotMap.Insert(1.1F);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -855,7 +855,7 @@ public class TryGet
     public void FloatWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
+        var key1 = slotMap.Insert(1.1F);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -872,7 +872,7 @@ public class TryGet
     public void FloatNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<float?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -908,7 +908,7 @@ public class TryGet
     public void FloatNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -921,7 +921,7 @@ public class TryGet
     public void FloatNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -938,7 +938,7 @@ public class TryGet
     public void DecimalWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<decimal>();
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -974,7 +974,7 @@ public class TryGet
     public void DecimalWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
+        var key1 = slotMap.Insert(1.111_111_111M);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -987,7 +987,7 @@ public class TryGet
     public void DecimalWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
+        var key1 = slotMap.Insert(1.111_111_111M);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1004,7 +1004,7 @@ public class TryGet
     public void DecimalNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -1040,7 +1040,7 @@ public class TryGet
     public void DecimalNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1053,7 +1053,7 @@ public class TryGet
     public void DecimalNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1070,7 +1070,7 @@ public class TryGet
     public void DateTimeWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -1106,7 +1106,7 @@ public class TryGet
     public void DateTimeWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1119,7 +1119,7 @@ public class TryGet
     public void DateTimeWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1136,7 +1136,7 @@ public class TryGet
     public void DateTimeNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -1172,7 +1172,7 @@ public class TryGet
     public void DateTimeNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1185,7 +1185,7 @@ public class TryGet
     public void DateTimeNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1202,7 +1202,7 @@ public class TryGet
     public void TimeSpanWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -1238,7 +1238,7 @@ public class TryGet
     public void TimeSpanWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1251,7 +1251,7 @@ public class TryGet
     public void TimeSpanWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1268,7 +1268,7 @@ public class TryGet
     public void TimeSpanNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -1304,7 +1304,7 @@ public class TryGet
     public void TimeSpanNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1317,7 +1317,7 @@ public class TryGet
     public void TimeSpanNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1334,7 +1334,7 @@ public class TryGet
     public void GuidWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<Guid>();
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -1370,7 +1370,7 @@ public class TryGet
     public void GuidWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1383,7 +1383,7 @@ public class TryGet
     public void GuidWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1400,7 +1400,7 @@ public class TryGet
     public void GuidNullableWithValidKey_ReturnsTrueAndValue()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryGet(key, out var value);
 
@@ -1436,7 +1436,7 @@ public class TryGet
     public void GuidNullableWithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryGet(key2, out var value);
@@ -1449,7 +1449,7 @@ public class TryGet
     public void GuidNullableWithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryGet(key2, out var value);

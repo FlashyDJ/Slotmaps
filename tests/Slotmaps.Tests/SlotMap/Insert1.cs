@@ -2,19 +2,10 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SlotMap;
-public class Add
+
+public class Insert1
 {
-    [Fact]
-    public void InvalidSlotKey_ThrowsArgumentException()
-    {
-        var slotMap = new SlotMap<string>();
-        var key = SlotKey.Null();
-
-        Assert.Throws<KeyNotFoundException>(() => slotMap.Insert(key, "Value"));
-    }
-
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                         int                                          //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -24,7 +15,7 @@ public class Add
     {
         var slotMap = new SlotMap<int>();
 
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -32,13 +23,13 @@ public class Add
     }
 
     [Fact]
-    public void AddIntElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertIntElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<int>(2);
 
-        var key1 = slotMap.Add(10);
-        var key2 = slotMap.Add(20);
-        var key3 = slotMap.Add(30);
+        var key1 = slotMap.Insert(10);
+        var key2 = slotMap.Insert(20);
+        var key3 = slotMap.Insert(30);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -54,7 +45,7 @@ public class Add
     {
         var slotMap = new SlotMap<int>();
 
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
         var newKey = slotMap.Insert(key, 20);
         var value = slotMap.Get(newKey);
 
@@ -72,7 +63,7 @@ public class Add
     {
         var slotMap = new SlotMap<int?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -80,13 +71,13 @@ public class Add
     }
 
     [Fact]
-    public void AddIntNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertIntNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<int?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(10);
-        var key3 = slotMap.Add(20);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(10);
+        var key3 = slotMap.Insert(20);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -102,7 +93,7 @@ public class Add
     {
         var slotMap = new SlotMap<int?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, 10);
         var value = slotMap.Get(newKey);
 
@@ -120,7 +111,7 @@ public class Add
     {
         var slotMap = new SlotMap<string>();
 
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -128,13 +119,13 @@ public class Add
     }
 
     [Fact]
-    public void AddStringElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertStringElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<string>(2);
 
-        var key1 = slotMap.Add("Value 1");
-        var key2 = slotMap.Add("Value 2");
-        var key3 = slotMap.Add("Value 3");
+        var key1 = slotMap.Insert("Value 1");
+        var key2 = slotMap.Insert("Value 2");
+        var key3 = slotMap.Insert("Value 3");
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -150,7 +141,7 @@ public class Add
     {
         var slotMap = new SlotMap<string>();
 
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
         var newKey = slotMap.Insert(key, "Value 2");
         var value = slotMap.Get(newKey);
 
@@ -168,7 +159,7 @@ public class Add
     {
         var slotMap = new SlotMap<string?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -176,13 +167,13 @@ public class Add
     }
 
     [Fact]
-    public void AddStringNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertStringNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<string?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add("Value 1");
-        var key3 = slotMap.Add("Value 2");
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert("Value 1");
+        var key3 = slotMap.Insert("Value 2");
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -198,7 +189,7 @@ public class Add
     {
         var slotMap = new SlotMap<string?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, "Value 1");
         var value = slotMap.Get(newKey);
 
@@ -216,7 +207,7 @@ public class Add
     {
         var slotMap = new SlotMap<double>();
 
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -224,13 +215,13 @@ public class Add
     }
 
     [Fact]
-    public void AddDoubleElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertDoubleElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<double>(2);
 
-        var key1 = slotMap.Add(1.11D);
-        var key2 = slotMap.Add(2.22D);
-        var key3 = slotMap.Add(3.33D);
+        var key1 = slotMap.Insert(1.11D);
+        var key2 = slotMap.Insert(2.22D);
+        var key3 = slotMap.Insert(3.33D);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -246,7 +237,7 @@ public class Add
     {
         var slotMap = new SlotMap<double>();
 
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
         var newKey = slotMap.Insert(key, 2.22D);
         var value = slotMap.Get(newKey);
 
@@ -264,7 +255,7 @@ public class Add
     {
         var slotMap = new SlotMap<double?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -272,13 +263,13 @@ public class Add
     }
 
     [Fact]
-    public void AddDoubleNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertDoubleNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<double?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.11D);
-        var key3 = slotMap.Add(2.22D);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.11D);
+        var key3 = slotMap.Insert(2.22D);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -294,7 +285,7 @@ public class Add
     {
         var slotMap = new SlotMap<double?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, 1.11D);
         var value = slotMap.Get(newKey);
 
@@ -312,7 +303,7 @@ public class Add
     {
         var slotMap = new SlotMap<bool>();
 
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -320,13 +311,13 @@ public class Add
     }
 
     [Fact]
-    public void AddBoolElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertBoolElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<bool>(2);
 
-        var key1 = slotMap.Add(true);
-        var key2 = slotMap.Add(false);
-        var key3 = slotMap.Add(true);
+        var key1 = slotMap.Insert(true);
+        var key2 = slotMap.Insert(false);
+        var key3 = slotMap.Insert(true);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -342,7 +333,7 @@ public class Add
     {
         var slotMap = new SlotMap<bool>();
 
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
         var newKey = slotMap.Insert(key, false);
         var value = slotMap.Get(newKey);
 
@@ -360,7 +351,7 @@ public class Add
     {
         var slotMap = new SlotMap<bool?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -368,13 +359,13 @@ public class Add
     }
 
     [Fact]
-    public void AddBoolNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertBoolNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<bool?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(true);
-        var key3 = slotMap.Add(false);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(true);
+        var key3 = slotMap.Insert(false);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -390,7 +381,7 @@ public class Add
     {
         var slotMap = new SlotMap<bool?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, true);
         var value = slotMap.Get(newKey);
 
@@ -408,7 +399,7 @@ public class Add
     {
         var slotMap = new SlotMap<char>();
 
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -416,13 +407,13 @@ public class Add
     }
 
     [Fact]
-    public void AddCharElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertCharElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<char>(2);
 
-        var key1 = slotMap.Add('A');
-        var key2 = slotMap.Add('B');
-        var key3 = slotMap.Add('C');
+        var key1 = slotMap.Insert('A');
+        var key2 = slotMap.Insert('B');
+        var key3 = slotMap.Insert('C');
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -438,7 +429,7 @@ public class Add
     {
         var slotMap = new SlotMap<char>();
 
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
         var newKey = slotMap.Insert(key, 'B');
         var value = slotMap.Get(newKey);
 
@@ -456,7 +447,7 @@ public class Add
     {
         var slotMap = new SlotMap<char?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -464,13 +455,13 @@ public class Add
     }
 
     [Fact]
-    public void AddCharNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertCharNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<char?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add('A');
-        var key3 = slotMap.Add('B');
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert('A');
+        var key3 = slotMap.Insert('B');
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -486,7 +477,7 @@ public class Add
     {
         var slotMap = new SlotMap<char?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, 'A');
         var value = slotMap.Get(newKey);
 
@@ -504,7 +495,7 @@ public class Add
     {
         var slotMap = new SlotMap<long>();
 
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -512,13 +503,13 @@ public class Add
     }
 
     [Fact]
-    public void AddLongElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertLongElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<long>(2);
 
-        var key1 = slotMap.Add(1000_000_000_000L);
-        var key2 = slotMap.Add(2000_000_000_000L);
-        var key3 = slotMap.Add(3000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
+        var key2 = slotMap.Insert(2000_000_000_000L);
+        var key3 = slotMap.Insert(3000_000_000_000L);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -534,7 +525,7 @@ public class Add
     {
         var slotMap = new SlotMap<long>();
 
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
         var newKey = slotMap.Insert(key, 2000_000_000_000L);
         var value = slotMap.Get(newKey);
 
@@ -552,7 +543,7 @@ public class Add
     {
         var slotMap = new SlotMap<long?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -560,13 +551,13 @@ public class Add
     }
 
     [Fact]
-    public void AddLongNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertLongNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<long?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1000_000_000_000L);
-        var key3 = slotMap.Add(2000_000_000_000L);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1000_000_000_000L);
+        var key3 = slotMap.Insert(2000_000_000_000L);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -582,7 +573,7 @@ public class Add
     {
         var slotMap = new SlotMap<long?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, 1000_000_000_000L);
         var value = slotMap.Get(newKey);
 
@@ -600,7 +591,7 @@ public class Add
     {
         var slotMap = new SlotMap<float>();
 
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -608,13 +599,13 @@ public class Add
     }
 
     [Fact]
-    public void AddFloatElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertFloatElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<float>(2);
 
-        var key1 = slotMap.Add(1.1F);
-        var key2 = slotMap.Add(2.2F);
-        var key3 = slotMap.Add(3.3F);
+        var key1 = slotMap.Insert(1.1F);
+        var key2 = slotMap.Insert(2.2F);
+        var key3 = slotMap.Insert(3.3F);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -630,7 +621,7 @@ public class Add
     {
         var slotMap = new SlotMap<float>();
 
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
         var newKey = slotMap.Insert(key, 2.2F);
         var value = slotMap.Get(newKey);
 
@@ -648,7 +639,7 @@ public class Add
     {
         var slotMap = new SlotMap<float?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -656,13 +647,13 @@ public class Add
     }
 
     [Fact]
-    public void AddFloatNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertFloatNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<float?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.1F);
-        var key3 = slotMap.Add(2.2F);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.1F);
+        var key3 = slotMap.Insert(2.2F);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -678,7 +669,7 @@ public class Add
     {
         var slotMap = new SlotMap<float?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, 1.1F);
         var value = slotMap.Get(newKey);
 
@@ -696,7 +687,7 @@ public class Add
     {
         var slotMap = new SlotMap<decimal>();
 
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -704,13 +695,13 @@ public class Add
     }
 
     [Fact]
-    public void AddDecimalElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertDecimalElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<decimal>(2);
 
-        var key1 = slotMap.Add(1.111_111_111M);
-        var key2 = slotMap.Add(2.222_222_222M);
-        var key3 = slotMap.Add(3.333_333_333M);
+        var key1 = slotMap.Insert(1.111_111_111M);
+        var key2 = slotMap.Insert(2.222_222_222M);
+        var key3 = slotMap.Insert(3.333_333_333M);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -726,7 +717,7 @@ public class Add
     {
         var slotMap = new SlotMap<decimal>();
 
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
         var newKey = slotMap.Insert(key, 2.222_222_222M);
         var value = slotMap.Get(newKey);
 
@@ -744,7 +735,7 @@ public class Add
     {
         var slotMap = new SlotMap<decimal?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -752,13 +743,13 @@ public class Add
     }
 
     [Fact]
-    public void AddDecimalNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertDecimalNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<decimal?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.111_111_111M);
-        var key3 = slotMap.Add(2.222_222_222M);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.111_111_111M);
+        var key3 = slotMap.Insert(2.222_222_222M);
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -774,7 +765,7 @@ public class Add
     {
         var slotMap = new SlotMap<decimal?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, 1.111_111_111M);
         var value = slotMap.Get(newKey);
 
@@ -792,7 +783,7 @@ public class Add
     {
         var slotMap = new SlotMap<DateTime>();
 
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -800,13 +791,13 @@ public class Add
     }
 
     [Fact]
-    public void AddDateTimeElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertDateTimeElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<DateTime>(2);
 
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key2 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-03-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key2 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-03-01"));
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -822,7 +813,7 @@ public class Add
     {
         var slotMap = new SlotMap<DateTime>();
 
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
         var newKey = slotMap.Insert(key, DateTime.Parse("2023-02-01"));
         var value = slotMap.Get(newKey);
 
@@ -840,7 +831,7 @@ public class Add
     {
         var slotMap = new SlotMap<DateTime?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -848,13 +839,13 @@ public class Add
     }
 
     [Fact]
-    public void AddDateTimeNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertDateTimeNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<DateTime?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-02-01"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-02-01"));
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -870,7 +861,7 @@ public class Add
     {
         var slotMap = new SlotMap<DateTime?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, DateTime.Parse("2023-01-01"));
         var value = slotMap.Get(newKey);
 
@@ -888,7 +879,7 @@ public class Add
     {
         var slotMap = new SlotMap<TimeSpan>();
 
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -896,13 +887,13 @@ public class Add
     }
 
     [Fact]
-    public void AddTimeSpanElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertTimeSpanElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<TimeSpan>(2);
 
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
-        var key2 = slotMap.Add(new TimeSpan(01,00,00));
-        var key3 = slotMap.Add(new TimeSpan(02,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key2 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(02,00,00));
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -918,7 +909,7 @@ public class Add
     {
         var slotMap = new SlotMap<TimeSpan>();
 
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
         var newKey = slotMap.Insert(key, new TimeSpan(01,00,00));
         var value = slotMap.Get(newKey);
 
@@ -936,7 +927,7 @@ public class Add
     {
         var slotMap = new SlotMap<TimeSpan?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -944,13 +935,13 @@ public class Add
     }
 
     [Fact]
-    public void AddTimeSpanNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertTimeSpanNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<TimeSpan?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(new TimeSpan(00,00,00));
-        var key3 = slotMap.Add(new TimeSpan(01,00,00));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(01,00,00));
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -966,7 +957,7 @@ public class Add
     {
         var slotMap = new SlotMap<TimeSpan?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, new TimeSpan(00,00,00));
         var value = slotMap.Get(newKey);
 
@@ -984,7 +975,7 @@ public class Add
     {
         var slotMap = new SlotMap<Guid>();
 
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -992,13 +983,13 @@ public class Add
     }
 
     [Fact]
-    public void AddGuidElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertGuidElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<Guid>(2);
 
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key2 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key3 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key2 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key3 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -1014,7 +1005,7 @@ public class Add
     {
         var slotMap = new SlotMap<Guid>();
 
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var newKey = slotMap.Insert(key, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
         var value = slotMap.Get(newKey);
 
@@ -1032,7 +1023,7 @@ public class Add
     {
         var slotMap = new SlotMap<Guid?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.True(slotMap.ContainsKey(key));
@@ -1040,13 +1031,13 @@ public class Add
     }
 
     [Fact]
-    public void AddGuidNullableElementsBeyondCapacity_ResizesCorrectly()
+    public void InsertGuidNullableElementsBeyondCapacity_ResizesCorrectly()
     {
         var slotMap = new SlotMap<Guid?>(2);
 
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key3 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key3 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
 
         Assert.True(slotMap.ContainsKey(key1));
         Assert.True(slotMap.ContainsKey(key2));
@@ -1062,7 +1053,7 @@ public class Add
     {
         var slotMap = new SlotMap<Guid?>();
 
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
         var newKey = slotMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var value = slotMap.Get(newKey);
 

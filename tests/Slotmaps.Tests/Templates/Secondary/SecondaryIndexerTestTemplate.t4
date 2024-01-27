@@ -7,6 +7,7 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
+
 public class Indexer
 {
     [Fact]

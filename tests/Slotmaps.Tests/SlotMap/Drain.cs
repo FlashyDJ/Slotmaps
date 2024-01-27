@@ -2,8 +2,8 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SlotMap;
+
 public class Drain
 {
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -25,8 +25,8 @@ public class Drain
     public void FilledIntMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
-        var key2 = slotMap.Add(20);
+        var key1 = slotMap.Insert(10);
+        var key2 = slotMap.Insert(20);
 
         var result = slotMap.Drain().ToArray();
 
@@ -40,10 +40,10 @@ public class Drain
     public void IntWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
-        var key2 = slotMap.Add(20);
-        var key3 = slotMap.Add(30);
-        var key4 = slotMap.Add(40);
+        var key1 = slotMap.Insert(10);
+        var key2 = slotMap.Insert(20);
+        var key3 = slotMap.Insert(30);
+        var key4 = slotMap.Insert(40);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -65,12 +65,12 @@ public class Drain
     public void IntDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
-        var key2 = slotMap.Add(20);
-        var key3 = slotMap.Add(30);
-        var key4 = slotMap.Add(40);
-        var key5 = slotMap.Add(50);
-        var key6 = slotMap.Add(60);
+        var key1 = slotMap.Insert(10);
+        var key2 = slotMap.Insert(20);
+        var key3 = slotMap.Insert(30);
+        var key4 = slotMap.Insert(40);
+        var key5 = slotMap.Insert(50);
+        var key6 = slotMap.Insert(60);
 
         List<KeyValuePair<SlotKey, int>> drainedItems = new(3);
 
@@ -95,12 +95,12 @@ public class Drain
     public void IntDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
-        var key2 = slotMap.Add(20);
-        var key3 = slotMap.Add(30);
-        var key4 = slotMap.Add(40);
-        var key5 = slotMap.Add(50);
-        var key6 = slotMap.Add(60);
+        var key1 = slotMap.Insert(10);
+        var key2 = slotMap.Insert(20);
+        var key3 = slotMap.Insert(30);
+        var key4 = slotMap.Insert(40);
+        var key5 = slotMap.Insert(50);
+        var key6 = slotMap.Insert(60);
 
         List<KeyValuePair<SlotKey, int>> drainedItems = new(3);
 
@@ -138,8 +138,8 @@ public class Drain
     public void FilledIntNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(10);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(10);
 
         var result = slotMap.Drain().ToArray();
 
@@ -153,10 +153,10 @@ public class Drain
     public void IntNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(10);
-        var key3 = slotMap.Add(20);
-        var key4 = slotMap.Add(30);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(10);
+        var key3 = slotMap.Insert(20);
+        var key4 = slotMap.Insert(30);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -178,12 +178,12 @@ public class Drain
     public void IntNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(10);
-        var key3 = slotMap.Add(20);
-        var key4 = slotMap.Add(30);
-        var key5 = slotMap.Add(40);
-        var key6 = slotMap.Add(50);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(10);
+        var key3 = slotMap.Insert(20);
+        var key4 = slotMap.Insert(30);
+        var key5 = slotMap.Insert(40);
+        var key6 = slotMap.Insert(50);
 
         List<KeyValuePair<SlotKey, int?>> drainedItems = new(3);
 
@@ -208,12 +208,12 @@ public class Drain
     public void IntNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(10);
-        var key3 = slotMap.Add(20);
-        var key4 = slotMap.Add(30);
-        var key5 = slotMap.Add(40);
-        var key6 = slotMap.Add(50);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(10);
+        var key3 = slotMap.Insert(20);
+        var key4 = slotMap.Insert(30);
+        var key5 = slotMap.Insert(40);
+        var key6 = slotMap.Insert(50);
 
         List<KeyValuePair<SlotKey, int?>> drainedItems = new(3);
 
@@ -251,8 +251,8 @@ public class Drain
     public void FilledStringMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
-        var key2 = slotMap.Add("Value 2");
+        var key1 = slotMap.Insert("Value 1");
+        var key2 = slotMap.Insert("Value 2");
 
         var result = slotMap.Drain().ToArray();
 
@@ -266,10 +266,10 @@ public class Drain
     public void StringWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
-        var key2 = slotMap.Add("Value 2");
-        var key3 = slotMap.Add("Value 3");
-        var key4 = slotMap.Add("Value 4");
+        var key1 = slotMap.Insert("Value 1");
+        var key2 = slotMap.Insert("Value 2");
+        var key3 = slotMap.Insert("Value 3");
+        var key4 = slotMap.Insert("Value 4");
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -291,12 +291,12 @@ public class Drain
     public void StringDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
-        var key2 = slotMap.Add("Value 2");
-        var key3 = slotMap.Add("Value 3");
-        var key4 = slotMap.Add("Value 4");
-        var key5 = slotMap.Add("Value 5");
-        var key6 = slotMap.Add("Value 6");
+        var key1 = slotMap.Insert("Value 1");
+        var key2 = slotMap.Insert("Value 2");
+        var key3 = slotMap.Insert("Value 3");
+        var key4 = slotMap.Insert("Value 4");
+        var key5 = slotMap.Insert("Value 5");
+        var key6 = slotMap.Insert("Value 6");
 
         List<KeyValuePair<SlotKey, string>> drainedItems = new(3);
 
@@ -321,12 +321,12 @@ public class Drain
     public void StringDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
-        var key2 = slotMap.Add("Value 2");
-        var key3 = slotMap.Add("Value 3");
-        var key4 = slotMap.Add("Value 4");
-        var key5 = slotMap.Add("Value 5");
-        var key6 = slotMap.Add("Value 6");
+        var key1 = slotMap.Insert("Value 1");
+        var key2 = slotMap.Insert("Value 2");
+        var key3 = slotMap.Insert("Value 3");
+        var key4 = slotMap.Insert("Value 4");
+        var key5 = slotMap.Insert("Value 5");
+        var key6 = slotMap.Insert("Value 6");
 
         List<KeyValuePair<SlotKey, string>> drainedItems = new(3);
 
@@ -364,8 +364,8 @@ public class Drain
     public void FilledStringNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add("Value 1");
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert("Value 1");
 
         var result = slotMap.Drain().ToArray();
 
@@ -379,10 +379,10 @@ public class Drain
     public void StringNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add("Value 1");
-        var key3 = slotMap.Add("Value 2");
-        var key4 = slotMap.Add("Value 3");
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert("Value 1");
+        var key3 = slotMap.Insert("Value 2");
+        var key4 = slotMap.Insert("Value 3");
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -404,12 +404,12 @@ public class Drain
     public void StringNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add("Value 1");
-        var key3 = slotMap.Add("Value 2");
-        var key4 = slotMap.Add("Value 3");
-        var key5 = slotMap.Add("Value 4");
-        var key6 = slotMap.Add("Value 5");
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert("Value 1");
+        var key3 = slotMap.Insert("Value 2");
+        var key4 = slotMap.Insert("Value 3");
+        var key5 = slotMap.Insert("Value 4");
+        var key6 = slotMap.Insert("Value 5");
 
         List<KeyValuePair<SlotKey, string?>> drainedItems = new(3);
 
@@ -434,12 +434,12 @@ public class Drain
     public void StringNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add("Value 1");
-        var key3 = slotMap.Add("Value 2");
-        var key4 = slotMap.Add("Value 3");
-        var key5 = slotMap.Add("Value 4");
-        var key6 = slotMap.Add("Value 5");
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert("Value 1");
+        var key3 = slotMap.Insert("Value 2");
+        var key4 = slotMap.Insert("Value 3");
+        var key5 = slotMap.Insert("Value 4");
+        var key6 = slotMap.Insert("Value 5");
 
         List<KeyValuePair<SlotKey, string?>> drainedItems = new(3);
 
@@ -477,8 +477,8 @@ public class Drain
     public void FilledDoubleMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
-        var key2 = slotMap.Add(2.22D);
+        var key1 = slotMap.Insert(1.11D);
+        var key2 = slotMap.Insert(2.22D);
 
         var result = slotMap.Drain().ToArray();
 
@@ -492,10 +492,10 @@ public class Drain
     public void DoubleWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
-        var key2 = slotMap.Add(2.22D);
-        var key3 = slotMap.Add(3.33D);
-        var key4 = slotMap.Add(4.44D);
+        var key1 = slotMap.Insert(1.11D);
+        var key2 = slotMap.Insert(2.22D);
+        var key3 = slotMap.Insert(3.33D);
+        var key4 = slotMap.Insert(4.44D);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -517,12 +517,12 @@ public class Drain
     public void DoubleDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
-        var key2 = slotMap.Add(2.22D);
-        var key3 = slotMap.Add(3.33D);
-        var key4 = slotMap.Add(4.44D);
-        var key5 = slotMap.Add(5.55D);
-        var key6 = slotMap.Add(6.66D);
+        var key1 = slotMap.Insert(1.11D);
+        var key2 = slotMap.Insert(2.22D);
+        var key3 = slotMap.Insert(3.33D);
+        var key4 = slotMap.Insert(4.44D);
+        var key5 = slotMap.Insert(5.55D);
+        var key6 = slotMap.Insert(6.66D);
 
         List<KeyValuePair<SlotKey, double>> drainedItems = new(3);
 
@@ -547,12 +547,12 @@ public class Drain
     public void DoubleDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
-        var key2 = slotMap.Add(2.22D);
-        var key3 = slotMap.Add(3.33D);
-        var key4 = slotMap.Add(4.44D);
-        var key5 = slotMap.Add(5.55D);
-        var key6 = slotMap.Add(6.66D);
+        var key1 = slotMap.Insert(1.11D);
+        var key2 = slotMap.Insert(2.22D);
+        var key3 = slotMap.Insert(3.33D);
+        var key4 = slotMap.Insert(4.44D);
+        var key5 = slotMap.Insert(5.55D);
+        var key6 = slotMap.Insert(6.66D);
 
         List<KeyValuePair<SlotKey, double>> drainedItems = new(3);
 
@@ -590,8 +590,8 @@ public class Drain
     public void FilledDoubleNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.11D);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.11D);
 
         var result = slotMap.Drain().ToArray();
 
@@ -605,10 +605,10 @@ public class Drain
     public void DoubleNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.11D);
-        var key3 = slotMap.Add(2.22D);
-        var key4 = slotMap.Add(3.33D);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.11D);
+        var key3 = slotMap.Insert(2.22D);
+        var key4 = slotMap.Insert(3.33D);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -630,12 +630,12 @@ public class Drain
     public void DoubleNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.11D);
-        var key3 = slotMap.Add(2.22D);
-        var key4 = slotMap.Add(3.33D);
-        var key5 = slotMap.Add(4.44D);
-        var key6 = slotMap.Add(5.55D);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.11D);
+        var key3 = slotMap.Insert(2.22D);
+        var key4 = slotMap.Insert(3.33D);
+        var key5 = slotMap.Insert(4.44D);
+        var key6 = slotMap.Insert(5.55D);
 
         List<KeyValuePair<SlotKey, double?>> drainedItems = new(3);
 
@@ -660,12 +660,12 @@ public class Drain
     public void DoubleNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.11D);
-        var key3 = slotMap.Add(2.22D);
-        var key4 = slotMap.Add(3.33D);
-        var key5 = slotMap.Add(4.44D);
-        var key6 = slotMap.Add(5.55D);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.11D);
+        var key3 = slotMap.Insert(2.22D);
+        var key4 = slotMap.Insert(3.33D);
+        var key5 = slotMap.Insert(4.44D);
+        var key6 = slotMap.Insert(5.55D);
 
         List<KeyValuePair<SlotKey, double?>> drainedItems = new(3);
 
@@ -703,8 +703,8 @@ public class Drain
     public void FilledBoolMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
-        var key2 = slotMap.Add(false);
+        var key1 = slotMap.Insert(true);
+        var key2 = slotMap.Insert(false);
 
         var result = slotMap.Drain().ToArray();
 
@@ -718,10 +718,10 @@ public class Drain
     public void BoolWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
-        var key2 = slotMap.Add(false);
-        var key3 = slotMap.Add(true);
-        var key4 = slotMap.Add(false);
+        var key1 = slotMap.Insert(true);
+        var key2 = slotMap.Insert(false);
+        var key3 = slotMap.Insert(true);
+        var key4 = slotMap.Insert(false);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -743,12 +743,12 @@ public class Drain
     public void BoolDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
-        var key2 = slotMap.Add(false);
-        var key3 = slotMap.Add(true);
-        var key4 = slotMap.Add(false);
-        var key5 = slotMap.Add(true);
-        var key6 = slotMap.Add(false);
+        var key1 = slotMap.Insert(true);
+        var key2 = slotMap.Insert(false);
+        var key3 = slotMap.Insert(true);
+        var key4 = slotMap.Insert(false);
+        var key5 = slotMap.Insert(true);
+        var key6 = slotMap.Insert(false);
 
         List<KeyValuePair<SlotKey, bool>> drainedItems = new(3);
 
@@ -773,12 +773,12 @@ public class Drain
     public void BoolDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
-        var key2 = slotMap.Add(false);
-        var key3 = slotMap.Add(true);
-        var key4 = slotMap.Add(false);
-        var key5 = slotMap.Add(true);
-        var key6 = slotMap.Add(false);
+        var key1 = slotMap.Insert(true);
+        var key2 = slotMap.Insert(false);
+        var key3 = slotMap.Insert(true);
+        var key4 = slotMap.Insert(false);
+        var key5 = slotMap.Insert(true);
+        var key6 = slotMap.Insert(false);
 
         List<KeyValuePair<SlotKey, bool>> drainedItems = new(3);
 
@@ -816,8 +816,8 @@ public class Drain
     public void FilledBoolNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(true);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(true);
 
         var result = slotMap.Drain().ToArray();
 
@@ -831,10 +831,10 @@ public class Drain
     public void BoolNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(true);
-        var key3 = slotMap.Add(false);
-        var key4 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(true);
+        var key3 = slotMap.Insert(false);
+        var key4 = slotMap.Insert(null);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -856,12 +856,12 @@ public class Drain
     public void BoolNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(true);
-        var key3 = slotMap.Add(false);
-        var key4 = slotMap.Add(null);
-        var key5 = slotMap.Add(true);
-        var key6 = slotMap.Add(false);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(true);
+        var key3 = slotMap.Insert(false);
+        var key4 = slotMap.Insert(null);
+        var key5 = slotMap.Insert(true);
+        var key6 = slotMap.Insert(false);
 
         List<KeyValuePair<SlotKey, bool?>> drainedItems = new(3);
 
@@ -886,12 +886,12 @@ public class Drain
     public void BoolNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(true);
-        var key3 = slotMap.Add(false);
-        var key4 = slotMap.Add(null);
-        var key5 = slotMap.Add(true);
-        var key6 = slotMap.Add(false);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(true);
+        var key3 = slotMap.Insert(false);
+        var key4 = slotMap.Insert(null);
+        var key5 = slotMap.Insert(true);
+        var key6 = slotMap.Insert(false);
 
         List<KeyValuePair<SlotKey, bool?>> drainedItems = new(3);
 
@@ -929,8 +929,8 @@ public class Drain
     public void FilledCharMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
-        var key2 = slotMap.Add('B');
+        var key1 = slotMap.Insert('A');
+        var key2 = slotMap.Insert('B');
 
         var result = slotMap.Drain().ToArray();
 
@@ -944,10 +944,10 @@ public class Drain
     public void CharWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
-        var key2 = slotMap.Add('B');
-        var key3 = slotMap.Add('C');
-        var key4 = slotMap.Add('D');
+        var key1 = slotMap.Insert('A');
+        var key2 = slotMap.Insert('B');
+        var key3 = slotMap.Insert('C');
+        var key4 = slotMap.Insert('D');
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -969,12 +969,12 @@ public class Drain
     public void CharDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
-        var key2 = slotMap.Add('B');
-        var key3 = slotMap.Add('C');
-        var key4 = slotMap.Add('D');
-        var key5 = slotMap.Add('E');
-        var key6 = slotMap.Add('F');
+        var key1 = slotMap.Insert('A');
+        var key2 = slotMap.Insert('B');
+        var key3 = slotMap.Insert('C');
+        var key4 = slotMap.Insert('D');
+        var key5 = slotMap.Insert('E');
+        var key6 = slotMap.Insert('F');
 
         List<KeyValuePair<SlotKey, char>> drainedItems = new(3);
 
@@ -999,12 +999,12 @@ public class Drain
     public void CharDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
-        var key2 = slotMap.Add('B');
-        var key3 = slotMap.Add('C');
-        var key4 = slotMap.Add('D');
-        var key5 = slotMap.Add('E');
-        var key6 = slotMap.Add('F');
+        var key1 = slotMap.Insert('A');
+        var key2 = slotMap.Insert('B');
+        var key3 = slotMap.Insert('C');
+        var key4 = slotMap.Insert('D');
+        var key5 = slotMap.Insert('E');
+        var key6 = slotMap.Insert('F');
 
         List<KeyValuePair<SlotKey, char>> drainedItems = new(3);
 
@@ -1042,8 +1042,8 @@ public class Drain
     public void FilledCharNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add('A');
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert('A');
 
         var result = slotMap.Drain().ToArray();
 
@@ -1057,10 +1057,10 @@ public class Drain
     public void CharNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add('A');
-        var key3 = slotMap.Add('B');
-        var key4 = slotMap.Add('C');
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert('A');
+        var key3 = slotMap.Insert('B');
+        var key4 = slotMap.Insert('C');
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -1082,12 +1082,12 @@ public class Drain
     public void CharNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add('A');
-        var key3 = slotMap.Add('B');
-        var key4 = slotMap.Add('C');
-        var key5 = slotMap.Add('D');
-        var key6 = slotMap.Add('E');
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert('A');
+        var key3 = slotMap.Insert('B');
+        var key4 = slotMap.Insert('C');
+        var key5 = slotMap.Insert('D');
+        var key6 = slotMap.Insert('E');
 
         List<KeyValuePair<SlotKey, char?>> drainedItems = new(3);
 
@@ -1112,12 +1112,12 @@ public class Drain
     public void CharNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add('A');
-        var key3 = slotMap.Add('B');
-        var key4 = slotMap.Add('C');
-        var key5 = slotMap.Add('D');
-        var key6 = slotMap.Add('E');
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert('A');
+        var key3 = slotMap.Insert('B');
+        var key4 = slotMap.Insert('C');
+        var key5 = slotMap.Insert('D');
+        var key6 = slotMap.Insert('E');
 
         List<KeyValuePair<SlotKey, char?>> drainedItems = new(3);
 
@@ -1155,8 +1155,8 @@ public class Drain
     public void FilledLongMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
-        var key2 = slotMap.Add(2000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
+        var key2 = slotMap.Insert(2000_000_000_000L);
 
         var result = slotMap.Drain().ToArray();
 
@@ -1170,10 +1170,10 @@ public class Drain
     public void LongWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
-        var key2 = slotMap.Add(2000_000_000_000L);
-        var key3 = slotMap.Add(3000_000_000_000L);
-        var key4 = slotMap.Add(4000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
+        var key2 = slotMap.Insert(2000_000_000_000L);
+        var key3 = slotMap.Insert(3000_000_000_000L);
+        var key4 = slotMap.Insert(4000_000_000_000L);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -1195,12 +1195,12 @@ public class Drain
     public void LongDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
-        var key2 = slotMap.Add(2000_000_000_000L);
-        var key3 = slotMap.Add(3000_000_000_000L);
-        var key4 = slotMap.Add(4000_000_000_000L);
-        var key5 = slotMap.Add(5000_000_000_000L);
-        var key6 = slotMap.Add(6000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
+        var key2 = slotMap.Insert(2000_000_000_000L);
+        var key3 = slotMap.Insert(3000_000_000_000L);
+        var key4 = slotMap.Insert(4000_000_000_000L);
+        var key5 = slotMap.Insert(5000_000_000_000L);
+        var key6 = slotMap.Insert(6000_000_000_000L);
 
         List<KeyValuePair<SlotKey, long>> drainedItems = new(3);
 
@@ -1225,12 +1225,12 @@ public class Drain
     public void LongDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
-        var key2 = slotMap.Add(2000_000_000_000L);
-        var key3 = slotMap.Add(3000_000_000_000L);
-        var key4 = slotMap.Add(4000_000_000_000L);
-        var key5 = slotMap.Add(5000_000_000_000L);
-        var key6 = slotMap.Add(6000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
+        var key2 = slotMap.Insert(2000_000_000_000L);
+        var key3 = slotMap.Insert(3000_000_000_000L);
+        var key4 = slotMap.Insert(4000_000_000_000L);
+        var key5 = slotMap.Insert(5000_000_000_000L);
+        var key6 = slotMap.Insert(6000_000_000_000L);
 
         List<KeyValuePair<SlotKey, long>> drainedItems = new(3);
 
@@ -1268,8 +1268,8 @@ public class Drain
     public void FilledLongNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1000_000_000_000L);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1000_000_000_000L);
 
         var result = slotMap.Drain().ToArray();
 
@@ -1283,10 +1283,10 @@ public class Drain
     public void LongNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1000_000_000_000L);
-        var key3 = slotMap.Add(2000_000_000_000L);
-        var key4 = slotMap.Add(3000_000_000_000L);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1000_000_000_000L);
+        var key3 = slotMap.Insert(2000_000_000_000L);
+        var key4 = slotMap.Insert(3000_000_000_000L);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -1308,12 +1308,12 @@ public class Drain
     public void LongNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1000_000_000_000L);
-        var key3 = slotMap.Add(2000_000_000_000L);
-        var key4 = slotMap.Add(3000_000_000_000L);
-        var key5 = slotMap.Add(4000_000_000_000L);
-        var key6 = slotMap.Add(5000_000_000_000L);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1000_000_000_000L);
+        var key3 = slotMap.Insert(2000_000_000_000L);
+        var key4 = slotMap.Insert(3000_000_000_000L);
+        var key5 = slotMap.Insert(4000_000_000_000L);
+        var key6 = slotMap.Insert(5000_000_000_000L);
 
         List<KeyValuePair<SlotKey, long?>> drainedItems = new(3);
 
@@ -1338,12 +1338,12 @@ public class Drain
     public void LongNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1000_000_000_000L);
-        var key3 = slotMap.Add(2000_000_000_000L);
-        var key4 = slotMap.Add(3000_000_000_000L);
-        var key5 = slotMap.Add(4000_000_000_000L);
-        var key6 = slotMap.Add(5000_000_000_000L);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1000_000_000_000L);
+        var key3 = slotMap.Insert(2000_000_000_000L);
+        var key4 = slotMap.Insert(3000_000_000_000L);
+        var key5 = slotMap.Insert(4000_000_000_000L);
+        var key6 = slotMap.Insert(5000_000_000_000L);
 
         List<KeyValuePair<SlotKey, long?>> drainedItems = new(3);
 
@@ -1381,8 +1381,8 @@ public class Drain
     public void FilledFloatMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
-        var key2 = slotMap.Add(2.2F);
+        var key1 = slotMap.Insert(1.1F);
+        var key2 = slotMap.Insert(2.2F);
 
         var result = slotMap.Drain().ToArray();
 
@@ -1396,10 +1396,10 @@ public class Drain
     public void FloatWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
-        var key2 = slotMap.Add(2.2F);
-        var key3 = slotMap.Add(3.3F);
-        var key4 = slotMap.Add(4.4F);
+        var key1 = slotMap.Insert(1.1F);
+        var key2 = slotMap.Insert(2.2F);
+        var key3 = slotMap.Insert(3.3F);
+        var key4 = slotMap.Insert(4.4F);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -1421,12 +1421,12 @@ public class Drain
     public void FloatDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
-        var key2 = slotMap.Add(2.2F);
-        var key3 = slotMap.Add(3.3F);
-        var key4 = slotMap.Add(4.4F);
-        var key5 = slotMap.Add(5.5F);
-        var key6 = slotMap.Add(6.6F);
+        var key1 = slotMap.Insert(1.1F);
+        var key2 = slotMap.Insert(2.2F);
+        var key3 = slotMap.Insert(3.3F);
+        var key4 = slotMap.Insert(4.4F);
+        var key5 = slotMap.Insert(5.5F);
+        var key6 = slotMap.Insert(6.6F);
 
         List<KeyValuePair<SlotKey, float>> drainedItems = new(3);
 
@@ -1451,12 +1451,12 @@ public class Drain
     public void FloatDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
-        var key2 = slotMap.Add(2.2F);
-        var key3 = slotMap.Add(3.3F);
-        var key4 = slotMap.Add(4.4F);
-        var key5 = slotMap.Add(5.5F);
-        var key6 = slotMap.Add(6.6F);
+        var key1 = slotMap.Insert(1.1F);
+        var key2 = slotMap.Insert(2.2F);
+        var key3 = slotMap.Insert(3.3F);
+        var key4 = slotMap.Insert(4.4F);
+        var key5 = slotMap.Insert(5.5F);
+        var key6 = slotMap.Insert(6.6F);
 
         List<KeyValuePair<SlotKey, float>> drainedItems = new(3);
 
@@ -1494,8 +1494,8 @@ public class Drain
     public void FilledFloatNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.1F);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.1F);
 
         var result = slotMap.Drain().ToArray();
 
@@ -1509,10 +1509,10 @@ public class Drain
     public void FloatNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.1F);
-        var key3 = slotMap.Add(2.2F);
-        var key4 = slotMap.Add(3.3F);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.1F);
+        var key3 = slotMap.Insert(2.2F);
+        var key4 = slotMap.Insert(3.3F);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -1534,12 +1534,12 @@ public class Drain
     public void FloatNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.1F);
-        var key3 = slotMap.Add(2.2F);
-        var key4 = slotMap.Add(3.3F);
-        var key5 = slotMap.Add(4.4F);
-        var key6 = slotMap.Add(5.5F);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.1F);
+        var key3 = slotMap.Insert(2.2F);
+        var key4 = slotMap.Insert(3.3F);
+        var key5 = slotMap.Insert(4.4F);
+        var key6 = slotMap.Insert(5.5F);
 
         List<KeyValuePair<SlotKey, float?>> drainedItems = new(3);
 
@@ -1564,12 +1564,12 @@ public class Drain
     public void FloatNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.1F);
-        var key3 = slotMap.Add(2.2F);
-        var key4 = slotMap.Add(3.3F);
-        var key5 = slotMap.Add(4.4F);
-        var key6 = slotMap.Add(5.5F);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.1F);
+        var key3 = slotMap.Insert(2.2F);
+        var key4 = slotMap.Insert(3.3F);
+        var key5 = slotMap.Insert(4.4F);
+        var key6 = slotMap.Insert(5.5F);
 
         List<KeyValuePair<SlotKey, float?>> drainedItems = new(3);
 
@@ -1607,8 +1607,8 @@ public class Drain
     public void FilledDecimalMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
-        var key2 = slotMap.Add(2.222_222_222M);
+        var key1 = slotMap.Insert(1.111_111_111M);
+        var key2 = slotMap.Insert(2.222_222_222M);
 
         var result = slotMap.Drain().ToArray();
 
@@ -1622,10 +1622,10 @@ public class Drain
     public void DecimalWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
-        var key2 = slotMap.Add(2.222_222_222M);
-        var key3 = slotMap.Add(3.333_333_333M);
-        var key4 = slotMap.Add(4.444_444_444M);
+        var key1 = slotMap.Insert(1.111_111_111M);
+        var key2 = slotMap.Insert(2.222_222_222M);
+        var key3 = slotMap.Insert(3.333_333_333M);
+        var key4 = slotMap.Insert(4.444_444_444M);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -1647,12 +1647,12 @@ public class Drain
     public void DecimalDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
-        var key2 = slotMap.Add(2.222_222_222M);
-        var key3 = slotMap.Add(3.333_333_333M);
-        var key4 = slotMap.Add(4.444_444_444M);
-        var key5 = slotMap.Add(5.555_555_555M);
-        var key6 = slotMap.Add(6.666_666_666M);
+        var key1 = slotMap.Insert(1.111_111_111M);
+        var key2 = slotMap.Insert(2.222_222_222M);
+        var key3 = slotMap.Insert(3.333_333_333M);
+        var key4 = slotMap.Insert(4.444_444_444M);
+        var key5 = slotMap.Insert(5.555_555_555M);
+        var key6 = slotMap.Insert(6.666_666_666M);
 
         List<KeyValuePair<SlotKey, decimal>> drainedItems = new(3);
 
@@ -1677,12 +1677,12 @@ public class Drain
     public void DecimalDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
-        var key2 = slotMap.Add(2.222_222_222M);
-        var key3 = slotMap.Add(3.333_333_333M);
-        var key4 = slotMap.Add(4.444_444_444M);
-        var key5 = slotMap.Add(5.555_555_555M);
-        var key6 = slotMap.Add(6.666_666_666M);
+        var key1 = slotMap.Insert(1.111_111_111M);
+        var key2 = slotMap.Insert(2.222_222_222M);
+        var key3 = slotMap.Insert(3.333_333_333M);
+        var key4 = slotMap.Insert(4.444_444_444M);
+        var key5 = slotMap.Insert(5.555_555_555M);
+        var key6 = slotMap.Insert(6.666_666_666M);
 
         List<KeyValuePair<SlotKey, decimal>> drainedItems = new(3);
 
@@ -1720,8 +1720,8 @@ public class Drain
     public void FilledDecimalNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.111_111_111M);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.111_111_111M);
 
         var result = slotMap.Drain().ToArray();
 
@@ -1735,10 +1735,10 @@ public class Drain
     public void DecimalNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.111_111_111M);
-        var key3 = slotMap.Add(2.222_222_222M);
-        var key4 = slotMap.Add(3.333_333_333M);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.111_111_111M);
+        var key3 = slotMap.Insert(2.222_222_222M);
+        var key4 = slotMap.Insert(3.333_333_333M);
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -1760,12 +1760,12 @@ public class Drain
     public void DecimalNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.111_111_111M);
-        var key3 = slotMap.Add(2.222_222_222M);
-        var key4 = slotMap.Add(3.333_333_333M);
-        var key5 = slotMap.Add(4.444_444_444M);
-        var key6 = slotMap.Add(5.555_555_555M);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.111_111_111M);
+        var key3 = slotMap.Insert(2.222_222_222M);
+        var key4 = slotMap.Insert(3.333_333_333M);
+        var key5 = slotMap.Insert(4.444_444_444M);
+        var key6 = slotMap.Insert(5.555_555_555M);
 
         List<KeyValuePair<SlotKey, decimal?>> drainedItems = new(3);
 
@@ -1790,12 +1790,12 @@ public class Drain
     public void DecimalNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.111_111_111M);
-        var key3 = slotMap.Add(2.222_222_222M);
-        var key4 = slotMap.Add(3.333_333_333M);
-        var key5 = slotMap.Add(4.444_444_444M);
-        var key6 = slotMap.Add(5.555_555_555M);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.111_111_111M);
+        var key3 = slotMap.Insert(2.222_222_222M);
+        var key4 = slotMap.Insert(3.333_333_333M);
+        var key5 = slotMap.Insert(4.444_444_444M);
+        var key6 = slotMap.Insert(5.555_555_555M);
 
         List<KeyValuePair<SlotKey, decimal?>> drainedItems = new(3);
 
@@ -1833,8 +1833,8 @@ public class Drain
     public void FilledDateTimeMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key2 = slotMap.Add(DateTime.Parse("2023-02-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key2 = slotMap.Insert(DateTime.Parse("2023-02-01"));
 
         var result = slotMap.Drain().ToArray();
 
@@ -1848,10 +1848,10 @@ public class Drain
     public void DateTimeWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key2 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-03-01"));
-        var key4 = slotMap.Add(DateTime.Parse("2023-04-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key2 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-03-01"));
+        var key4 = slotMap.Insert(DateTime.Parse("2023-04-01"));
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -1873,12 +1873,12 @@ public class Drain
     public void DateTimeDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key2 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-03-01"));
-        var key4 = slotMap.Add(DateTime.Parse("2023-04-01"));
-        var key5 = slotMap.Add(DateTime.Parse("2023-05-01"));
-        var key6 = slotMap.Add(DateTime.Parse("2023-06-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key2 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-03-01"));
+        var key4 = slotMap.Insert(DateTime.Parse("2023-04-01"));
+        var key5 = slotMap.Insert(DateTime.Parse("2023-05-01"));
+        var key6 = slotMap.Insert(DateTime.Parse("2023-06-01"));
 
         List<KeyValuePair<SlotKey, DateTime>> drainedItems = new(3);
 
@@ -1903,12 +1903,12 @@ public class Drain
     public void DateTimeDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key2 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-03-01"));
-        var key4 = slotMap.Add(DateTime.Parse("2023-04-01"));
-        var key5 = slotMap.Add(DateTime.Parse("2023-05-01"));
-        var key6 = slotMap.Add(DateTime.Parse("2023-06-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key2 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-03-01"));
+        var key4 = slotMap.Insert(DateTime.Parse("2023-04-01"));
+        var key5 = slotMap.Insert(DateTime.Parse("2023-05-01"));
+        var key6 = slotMap.Insert(DateTime.Parse("2023-06-01"));
 
         List<KeyValuePair<SlotKey, DateTime>> drainedItems = new(3);
 
@@ -1946,8 +1946,8 @@ public class Drain
     public void FilledDateTimeNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(DateTime.Parse("2023-01-01"));
 
         var result = slotMap.Drain().ToArray();
 
@@ -1961,10 +1961,10 @@ public class Drain
     public void DateTimeNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key4 = slotMap.Add(DateTime.Parse("2023-03-01"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key4 = slotMap.Insert(DateTime.Parse("2023-03-01"));
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -1986,12 +1986,12 @@ public class Drain
     public void DateTimeNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key4 = slotMap.Add(DateTime.Parse("2023-03-01"));
-        var key5 = slotMap.Add(DateTime.Parse("2023-04-01"));
-        var key6 = slotMap.Add(DateTime.Parse("2023-05-01"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key4 = slotMap.Insert(DateTime.Parse("2023-03-01"));
+        var key5 = slotMap.Insert(DateTime.Parse("2023-04-01"));
+        var key6 = slotMap.Insert(DateTime.Parse("2023-05-01"));
 
         List<KeyValuePair<SlotKey, DateTime?>> drainedItems = new(3);
 
@@ -2016,12 +2016,12 @@ public class Drain
     public void DateTimeNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key4 = slotMap.Add(DateTime.Parse("2023-03-01"));
-        var key5 = slotMap.Add(DateTime.Parse("2023-04-01"));
-        var key6 = slotMap.Add(DateTime.Parse("2023-05-01"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key4 = slotMap.Insert(DateTime.Parse("2023-03-01"));
+        var key5 = slotMap.Insert(DateTime.Parse("2023-04-01"));
+        var key6 = slotMap.Insert(DateTime.Parse("2023-05-01"));
 
         List<KeyValuePair<SlotKey, DateTime?>> drainedItems = new(3);
 
@@ -2059,8 +2059,8 @@ public class Drain
     public void FilledTimeSpanMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
-        var key2 = slotMap.Add(new TimeSpan(01,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key2 = slotMap.Insert(new TimeSpan(01,00,00));
 
         var result = slotMap.Drain().ToArray();
 
@@ -2074,10 +2074,10 @@ public class Drain
     public void TimeSpanWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
-        var key2 = slotMap.Add(new TimeSpan(01,00,00));
-        var key3 = slotMap.Add(new TimeSpan(02,00,00));
-        var key4 = slotMap.Add(new TimeSpan(03,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key2 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(02,00,00));
+        var key4 = slotMap.Insert(new TimeSpan(03,00,00));
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -2099,12 +2099,12 @@ public class Drain
     public void TimeSpanDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
-        var key2 = slotMap.Add(new TimeSpan(01,00,00));
-        var key3 = slotMap.Add(new TimeSpan(02,00,00));
-        var key4 = slotMap.Add(new TimeSpan(03,00,00));
-        var key5 = slotMap.Add(new TimeSpan(04,00,00));
-        var key6 = slotMap.Add(new TimeSpan(05,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key2 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(02,00,00));
+        var key4 = slotMap.Insert(new TimeSpan(03,00,00));
+        var key5 = slotMap.Insert(new TimeSpan(04,00,00));
+        var key6 = slotMap.Insert(new TimeSpan(05,00,00));
 
         List<KeyValuePair<SlotKey, TimeSpan>> drainedItems = new(3);
 
@@ -2129,12 +2129,12 @@ public class Drain
     public void TimeSpanDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
-        var key2 = slotMap.Add(new TimeSpan(01,00,00));
-        var key3 = slotMap.Add(new TimeSpan(02,00,00));
-        var key4 = slotMap.Add(new TimeSpan(03,00,00));
-        var key5 = slotMap.Add(new TimeSpan(04,00,00));
-        var key6 = slotMap.Add(new TimeSpan(05,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key2 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(02,00,00));
+        var key4 = slotMap.Insert(new TimeSpan(03,00,00));
+        var key5 = slotMap.Insert(new TimeSpan(04,00,00));
+        var key6 = slotMap.Insert(new TimeSpan(05,00,00));
 
         List<KeyValuePair<SlotKey, TimeSpan>> drainedItems = new(3);
 
@@ -2172,8 +2172,8 @@ public class Drain
     public void FilledTimeSpanNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(new TimeSpan(00,00,00));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(new TimeSpan(00,00,00));
 
         var result = slotMap.Drain().ToArray();
 
@@ -2187,10 +2187,10 @@ public class Drain
     public void TimeSpanNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(new TimeSpan(00,00,00));
-        var key3 = slotMap.Add(new TimeSpan(01,00,00));
-        var key4 = slotMap.Add(new TimeSpan(02,00,00));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key4 = slotMap.Insert(new TimeSpan(02,00,00));
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -2212,12 +2212,12 @@ public class Drain
     public void TimeSpanNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(new TimeSpan(00,00,00));
-        var key3 = slotMap.Add(new TimeSpan(01,00,00));
-        var key4 = slotMap.Add(new TimeSpan(02,00,00));
-        var key5 = slotMap.Add(new TimeSpan(03,00,00));
-        var key6 = slotMap.Add(new TimeSpan(04,00,00));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key4 = slotMap.Insert(new TimeSpan(02,00,00));
+        var key5 = slotMap.Insert(new TimeSpan(03,00,00));
+        var key6 = slotMap.Insert(new TimeSpan(04,00,00));
 
         List<KeyValuePair<SlotKey, TimeSpan?>> drainedItems = new(3);
 
@@ -2242,12 +2242,12 @@ public class Drain
     public void TimeSpanNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(new TimeSpan(00,00,00));
-        var key3 = slotMap.Add(new TimeSpan(01,00,00));
-        var key4 = slotMap.Add(new TimeSpan(02,00,00));
-        var key5 = slotMap.Add(new TimeSpan(03,00,00));
-        var key6 = slotMap.Add(new TimeSpan(04,00,00));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key4 = slotMap.Insert(new TimeSpan(02,00,00));
+        var key5 = slotMap.Insert(new TimeSpan(03,00,00));
+        var key6 = slotMap.Insert(new TimeSpan(04,00,00));
 
         List<KeyValuePair<SlotKey, TimeSpan?>> drainedItems = new(3);
 
@@ -2285,8 +2285,8 @@ public class Drain
     public void FilledGuidMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key2 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key2 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
 
         var result = slotMap.Drain().ToArray();
 
@@ -2300,10 +2300,10 @@ public class Drain
     public void GuidWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key2 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key3 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
-        var key4 = slotMap.Add(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key2 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key3 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key4 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -2325,12 +2325,12 @@ public class Drain
     public void GuidDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key2 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key3 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
-        var key4 = slotMap.Add(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
-        var key5 = slotMap.Add(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
-        var key6 = slotMap.Add(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F46"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key2 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key3 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key4 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
+        var key5 = slotMap.Insert(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
+        var key6 = slotMap.Insert(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F46"));
 
         List<KeyValuePair<SlotKey, Guid>> drainedItems = new(3);
 
@@ -2355,12 +2355,12 @@ public class Drain
     public void GuidDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key2 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key3 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
-        var key4 = slotMap.Add(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
-        var key5 = slotMap.Add(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
-        var key6 = slotMap.Add(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F46"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key2 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key3 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key4 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
+        var key5 = slotMap.Insert(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
+        var key6 = slotMap.Insert(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F46"));
 
         List<KeyValuePair<SlotKey, Guid>> drainedItems = new(3);
 
@@ -2398,8 +2398,8 @@ public class Drain
     public void FilledGuidNullableMap_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         var result = slotMap.Drain().ToArray();
 
@@ -2413,10 +2413,10 @@ public class Drain
     public void GuidNullableWithRemovedKeys_NotReturnRemovedKeys()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key3 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key4 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key3 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key4 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
 
         slotMap.Remove(key1);
         slotMap.Remove(key4);
@@ -2438,12 +2438,12 @@ public class Drain
     public void GuidNullableDrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key3 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key4 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
-        var key5 = slotMap.Add(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
-        var key6 = slotMap.Add(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key3 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key4 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key5 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
+        var key6 = slotMap.Insert(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
 
         List<KeyValuePair<SlotKey, Guid?>> drainedItems = new(3);
 
@@ -2468,12 +2468,12 @@ public class Drain
     public void GuidNullableDrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key3 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key4 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
-        var key5 = slotMap.Add(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
-        var key6 = slotMap.Add(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key3 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key4 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key5 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
+        var key6 = slotMap.Insert(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
 
         List<KeyValuePair<SlotKey, Guid?>> drainedItems = new(3);
 

@@ -7,6 +7,7 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
+
 public class TryRemove
 {
 <#
@@ -22,7 +23,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithValidKey_RemovesAndReturnsTrueAndPreviousValue()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
 
         bool result = <#= varName #>.TryRemove(key, out var previousValue);
 
@@ -60,7 +61,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithOlderVersionKey_ReturnsFalseAndDefault()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
         var key2 = key1 with { Version = 0 };
 
         bool result = <#= varName #>.TryRemove(key2, out var previousValue);
@@ -73,7 +74,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithNewerVersionKey_ReturnsFalseAndDefault()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
         var key2 = key1 with { Version = 2 };
         
         bool result = <#= varName #>.TryRemove(key2, out var previousValue);

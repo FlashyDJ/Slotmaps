@@ -2,8 +2,8 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SlotMap;
+
 public class Indexer
 {
     [Fact]
@@ -32,7 +32,7 @@ public class Indexer
     public void GetInt_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<int>();
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
 
         var result = slotMap[key];
 
@@ -43,7 +43,7 @@ public class Indexer
     public void GetInt_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
+        var key1 = slotMap.Insert(10);
         var key2 = slotMap.Insert(key1, 10);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -53,7 +53,7 @@ public class Indexer
     public void IntWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
+        var key1 = slotMap.Insert(10);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -71,7 +71,7 @@ public class Indexer
     public void SetAndGetInt_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<int>();
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
 
         slotMap[key] = 20;
         var value = slotMap[key with { Version = 3 }];
@@ -87,7 +87,7 @@ public class Indexer
     public void GetIntNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<int?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -98,7 +98,7 @@ public class Indexer
     public void GetIntNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -108,7 +108,7 @@ public class Indexer
     public void IntNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -126,7 +126,7 @@ public class Indexer
     public void SetAndGetIntNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<int?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = 10;
         var value = slotMap[key with { Version = 3 }];
@@ -142,7 +142,7 @@ public class Indexer
     public void GetString_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
 
         var result = slotMap[key];
 
@@ -153,7 +153,7 @@ public class Indexer
     public void GetString_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
+        var key1 = slotMap.Insert("Value 1");
         var key2 = slotMap.Insert(key1, "Value 1");
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -163,7 +163,7 @@ public class Indexer
     public void StringWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
+        var key1 = slotMap.Insert("Value 1");
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -181,7 +181,7 @@ public class Indexer
     public void SetAndGetString_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
 
         slotMap[key] = "Value 2";
         var value = slotMap[key with { Version = 3 }];
@@ -197,7 +197,7 @@ public class Indexer
     public void GetStringNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<string?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -208,7 +208,7 @@ public class Indexer
     public void GetStringNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -218,7 +218,7 @@ public class Indexer
     public void StringNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -236,7 +236,7 @@ public class Indexer
     public void SetAndGetStringNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<string?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = "Value 1";
         var value = slotMap[key with { Version = 3 }];
@@ -252,7 +252,7 @@ public class Indexer
     public void GetDouble_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<double>();
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
 
         var result = slotMap[key];
 
@@ -263,7 +263,7 @@ public class Indexer
     public void GetDouble_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
+        var key1 = slotMap.Insert(1.11D);
         var key2 = slotMap.Insert(key1, 1.11D);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -273,7 +273,7 @@ public class Indexer
     public void DoubleWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
+        var key1 = slotMap.Insert(1.11D);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -291,7 +291,7 @@ public class Indexer
     public void SetAndGetDouble_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<double>();
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
 
         slotMap[key] = 2.22D;
         var value = slotMap[key with { Version = 3 }];
@@ -307,7 +307,7 @@ public class Indexer
     public void GetDoubleNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<double?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -318,7 +318,7 @@ public class Indexer
     public void GetDoubleNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -328,7 +328,7 @@ public class Indexer
     public void DoubleNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -346,7 +346,7 @@ public class Indexer
     public void SetAndGetDoubleNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<double?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = 1.11D;
         var value = slotMap[key with { Version = 3 }];
@@ -362,7 +362,7 @@ public class Indexer
     public void GetBool_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<bool>();
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
 
         var result = slotMap[key];
 
@@ -373,7 +373,7 @@ public class Indexer
     public void GetBool_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
+        var key1 = slotMap.Insert(true);
         var key2 = slotMap.Insert(key1, true);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -383,7 +383,7 @@ public class Indexer
     public void BoolWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
+        var key1 = slotMap.Insert(true);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -401,7 +401,7 @@ public class Indexer
     public void SetAndGetBool_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<bool>();
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
 
         slotMap[key] = false;
         var value = slotMap[key with { Version = 3 }];
@@ -417,7 +417,7 @@ public class Indexer
     public void GetBoolNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<bool?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -428,7 +428,7 @@ public class Indexer
     public void GetBoolNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -438,7 +438,7 @@ public class Indexer
     public void BoolNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -456,7 +456,7 @@ public class Indexer
     public void SetAndGetBoolNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<bool?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = true;
         var value = slotMap[key with { Version = 3 }];
@@ -472,7 +472,7 @@ public class Indexer
     public void GetChar_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<char>();
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
 
         var result = slotMap[key];
 
@@ -483,7 +483,7 @@ public class Indexer
     public void GetChar_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
+        var key1 = slotMap.Insert('A');
         var key2 = slotMap.Insert(key1, 'A');
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -493,7 +493,7 @@ public class Indexer
     public void CharWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
+        var key1 = slotMap.Insert('A');
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -511,7 +511,7 @@ public class Indexer
     public void SetAndGetChar_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<char>();
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
 
         slotMap[key] = 'B';
         var value = slotMap[key with { Version = 3 }];
@@ -527,7 +527,7 @@ public class Indexer
     public void GetCharNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<char?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -538,7 +538,7 @@ public class Indexer
     public void GetCharNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -548,7 +548,7 @@ public class Indexer
     public void CharNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -566,7 +566,7 @@ public class Indexer
     public void SetAndGetCharNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<char?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = 'A';
         var value = slotMap[key with { Version = 3 }];
@@ -582,7 +582,7 @@ public class Indexer
     public void GetLong_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<long>();
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
 
         var result = slotMap[key];
 
@@ -593,7 +593,7 @@ public class Indexer
     public void GetLong_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
         var key2 = slotMap.Insert(key1, 1000_000_000_000L);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -603,7 +603,7 @@ public class Indexer
     public void LongWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -621,7 +621,7 @@ public class Indexer
     public void SetAndGetLong_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<long>();
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
 
         slotMap[key] = 2000_000_000_000L;
         var value = slotMap[key with { Version = 3 }];
@@ -637,7 +637,7 @@ public class Indexer
     public void GetLongNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<long?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -648,7 +648,7 @@ public class Indexer
     public void GetLongNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -658,7 +658,7 @@ public class Indexer
     public void LongNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -676,7 +676,7 @@ public class Indexer
     public void SetAndGetLongNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<long?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = 1000_000_000_000L;
         var value = slotMap[key with { Version = 3 }];
@@ -692,7 +692,7 @@ public class Indexer
     public void GetFloat_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<float>();
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
 
         var result = slotMap[key];
 
@@ -703,7 +703,7 @@ public class Indexer
     public void GetFloat_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
+        var key1 = slotMap.Insert(1.1F);
         var key2 = slotMap.Insert(key1, 1.1F);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -713,7 +713,7 @@ public class Indexer
     public void FloatWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
+        var key1 = slotMap.Insert(1.1F);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -731,7 +731,7 @@ public class Indexer
     public void SetAndGetFloat_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<float>();
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
 
         slotMap[key] = 2.2F;
         var value = slotMap[key with { Version = 3 }];
@@ -747,7 +747,7 @@ public class Indexer
     public void GetFloatNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<float?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -758,7 +758,7 @@ public class Indexer
     public void GetFloatNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -768,7 +768,7 @@ public class Indexer
     public void FloatNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -786,7 +786,7 @@ public class Indexer
     public void SetAndGetFloatNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<float?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = 1.1F;
         var value = slotMap[key with { Version = 3 }];
@@ -802,7 +802,7 @@ public class Indexer
     public void GetDecimal_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<decimal>();
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
 
         var result = slotMap[key];
 
@@ -813,7 +813,7 @@ public class Indexer
     public void GetDecimal_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
+        var key1 = slotMap.Insert(1.111_111_111M);
         var key2 = slotMap.Insert(key1, 1.111_111_111M);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -823,7 +823,7 @@ public class Indexer
     public void DecimalWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
+        var key1 = slotMap.Insert(1.111_111_111M);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -841,7 +841,7 @@ public class Indexer
     public void SetAndGetDecimal_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<decimal>();
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
 
         slotMap[key] = 2.222_222_222M;
         var value = slotMap[key with { Version = 3 }];
@@ -857,7 +857,7 @@ public class Indexer
     public void GetDecimalNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -868,7 +868,7 @@ public class Indexer
     public void GetDecimalNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -878,7 +878,7 @@ public class Indexer
     public void DecimalNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -896,7 +896,7 @@ public class Indexer
     public void SetAndGetDecimalNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = 1.111_111_111M;
         var value = slotMap[key with { Version = 3 }];
@@ -912,7 +912,7 @@ public class Indexer
     public void GetDateTime_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
 
         var result = slotMap[key];
 
@@ -923,7 +923,7 @@ public class Indexer
     public void GetDateTime_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
         var key2 = slotMap.Insert(key1, DateTime.Parse("2023-01-01"));
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -933,7 +933,7 @@ public class Indexer
     public void DateTimeWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -951,7 +951,7 @@ public class Indexer
     public void SetAndGetDateTime_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
 
         slotMap[key] = DateTime.Parse("2023-02-01");
         var value = slotMap[key with { Version = 3 }];
@@ -967,7 +967,7 @@ public class Indexer
     public void GetDateTimeNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -978,7 +978,7 @@ public class Indexer
     public void GetDateTimeNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -988,7 +988,7 @@ public class Indexer
     public void DateTimeNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -1006,7 +1006,7 @@ public class Indexer
     public void SetAndGetDateTimeNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = DateTime.Parse("2023-01-01");
         var value = slotMap[key with { Version = 3 }];
@@ -1022,7 +1022,7 @@ public class Indexer
     public void GetTimeSpan_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
 
         var result = slotMap[key];
 
@@ -1033,7 +1033,7 @@ public class Indexer
     public void GetTimeSpan_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
         var key2 = slotMap.Insert(key1, new TimeSpan(00,00,00));
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -1043,7 +1043,7 @@ public class Indexer
     public void TimeSpanWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -1061,7 +1061,7 @@ public class Indexer
     public void SetAndGetTimeSpan_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
 
         slotMap[key] = new TimeSpan(01,00,00);
         var value = slotMap[key with { Version = 3 }];
@@ -1077,7 +1077,7 @@ public class Indexer
     public void GetTimeSpanNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -1088,7 +1088,7 @@ public class Indexer
     public void GetTimeSpanNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -1098,7 +1098,7 @@ public class Indexer
     public void TimeSpanNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -1116,7 +1116,7 @@ public class Indexer
     public void SetAndGetTimeSpanNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = new TimeSpan(00,00,00);
         var value = slotMap[key with { Version = 3 }];
@@ -1132,7 +1132,7 @@ public class Indexer
     public void GetGuid_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<Guid>();
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         var result = slotMap[key];
 
@@ -1143,7 +1143,7 @@ public class Indexer
     public void GetGuid_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var key2 = slotMap.Insert(key1, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -1153,7 +1153,7 @@ public class Indexer
     public void GuidWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -1171,7 +1171,7 @@ public class Indexer
     public void SetAndGetGuid_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<Guid>();
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         slotMap[key] = Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407");
         var value = slotMap[key with { Version = 3 }];
@@ -1187,7 +1187,7 @@ public class Indexer
     public void GetGuidNullable_ValidKey_ReturnsValue()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var result = slotMap[key];
 
@@ -1198,7 +1198,7 @@ public class Indexer
     public void GetGuidNullable_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = slotMap.Insert(key1, null);
 
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1]);
@@ -1208,7 +1208,7 @@ public class Indexer
     public void GuidNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         
         Assert.Throws<KeyNotFoundException>(() => slotMap[key1 with { Version = 3 }]);
     }
@@ -1226,7 +1226,7 @@ public class Indexer
     public void SetAndGetGuidNullable_UpdateValue_ReturnsUpdatedValue()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         slotMap[key] = Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE");
         var value = slotMap[key with { Version = 3 }];

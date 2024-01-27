@@ -7,6 +7,7 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
+
 public class Indexer
 {
     [Fact]
@@ -40,7 +41,7 @@ foreach (var data in dataTypes)
     public void Get<#= typeTitle #>_ValidKey_ReturnsValue()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
 
         var result = <#= varName #>[key];
 
@@ -51,7 +52,7 @@ foreach (var data in dataTypes)
     public void Get<#= typeTitle #>_OlderVersionKey_ThrowsKeyNotFoundException()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
         var key2 = <#= varName #>.Insert(key1, <#= data.Value[0] #>);
 
         Assert.Throws<KeyNotFoundException>(() => <#= varName #>[key1]);
@@ -61,7 +62,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
         
         Assert.Throws<KeyNotFoundException>(() => <#= varName #>[key1 with { Version = 3 }]);
     }
@@ -79,7 +80,7 @@ foreach (var data in dataTypes)
     public void SetAndGet<#= typeTitle #>_UpdateValue_ReturnsUpdatedValue()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
 
         <#= varName #>[key] = <#= data.Value[1] #>;
         var value = <#= varName #>[key with { Version = 3 }];

@@ -4,4 +4,4 @@
 <#
     var slotMapType = "SlotMap";
 #>
-<#@ include file="..\Templates\Primary\PrimaryTryGetTestTemplate.t4" #>
+<#@ include file="..\Templates\Primary\PrimaryInsert2TestTemplate.t4" #>

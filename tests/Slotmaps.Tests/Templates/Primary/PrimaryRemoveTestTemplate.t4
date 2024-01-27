@@ -7,6 +7,7 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
+
 public class Remove
 {
 <#
@@ -22,7 +23,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithValidKey_RemovesAndReturnsPreviousValue()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
 
         var result = <#= varName #>.Remove(key);
 
@@ -52,7 +53,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithOlderVersionKey_ThrowsKeyNotFoundException()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
         var key2 = key with { Version = 0 };
 
         Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Remove(key2));
@@ -62,7 +63,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
         var key2 = key with { Version = 2 };
 
         Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Remove(key2));

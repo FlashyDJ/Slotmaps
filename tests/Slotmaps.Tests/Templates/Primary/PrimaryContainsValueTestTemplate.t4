@@ -7,6 +7,7 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
+
 public class ContainsValue
 {
 <#
@@ -22,13 +23,13 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>ValueExists_ReturnsTrue()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        <#= varName #>.Add(<#= data.Value[0] #>);
-        <#= varName #>.Add(<#= data.Value[1] #>);
+        <#= varName #>.Insert(<#= data.Value[0] #>);
+        <#= varName #>.Insert(<#= data.Value[1] #>);
 <# 
 if (!data.Key.Contains("bool") || data.Key.Contains("bool?"))
 {
 #>
-        <#= varName #>.Add(<#= data.Value[2] #>);
+        <#= varName #>.Insert(<#= data.Value[2] #>);
 <#
 }
 #>
@@ -60,9 +61,9 @@ if (!data.Key.Contains("bool") || data.Key.Contains("bool?"))
     public void <#= typeTitle #>ValueRemoved_ReturnsFalse()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
-        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
-        var key3 = <#= varName #>.Add(<#= data.Value[2] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Insert(<#= data.Value[1] #>);
+        var key3 = <#= varName #>.Insert(<#= data.Value[2] #>);
 
         <#= varName #>.Remove(key1);
         <#= varName #>.Remove(key2);
@@ -81,18 +82,18 @@ if (!data.Key.Contains("bool") || data.Key.Contains("bool?"))
     public void <#= typeTitle #>ValueDoesNotExist_ReturnsFalse()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        <#= varName #>.Add(<#= data.Value[0] #>);
+        <#= varName #>.Insert(<#= data.Value[0] #>);
 <#
 if (!data.Key.Contains("bool") || data.Key.Contains("bool?"))
 {
 #>
-        <#= varName #>.Add(<#= data.Value[1] #>);
+        <#= varName #>.Insert(<#= data.Value[1] #>);
 <#
 }
 if (!data.Key.Contains("bool?"))
 {
 #>
-        <#= varName #>.Add(<#= data.Value[2] #>);
+        <#= varName #>.Insert(<#= data.Value[2] #>);
 <#
 }
 #>

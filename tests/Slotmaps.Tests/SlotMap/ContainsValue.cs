@@ -2,8 +2,8 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SlotMap;
+
 public class ContainsValue
 {
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -14,9 +14,9 @@ public class ContainsValue
     public void IntValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<int>();
-        slotMap.Add(10);
-        slotMap.Add(20);
-        slotMap.Add(30);
+        slotMap.Insert(10);
+        slotMap.Insert(20);
+        slotMap.Insert(30);
 
         var result1 = slotMap.ContainsValue(10);
         var result2 = slotMap.ContainsValue(20);
@@ -31,9 +31,9 @@ public class ContainsValue
     public void IntValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
-        var key2 = slotMap.Add(20);
-        var key3 = slotMap.Add(30);
+        var key1 = slotMap.Insert(10);
+        var key2 = slotMap.Insert(20);
+        var key3 = slotMap.Insert(30);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -52,9 +52,9 @@ public class ContainsValue
     public void IntValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<int>();
-        slotMap.Add(10);
-        slotMap.Add(20);
-        slotMap.Add(30);
+        slotMap.Insert(10);
+        slotMap.Insert(20);
+        slotMap.Insert(30);
 
         var result = slotMap.ContainsValue(40);
 
@@ -69,9 +69,9 @@ public class ContainsValue
     public void IntNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<int?>();
-        slotMap.Add(null);
-        slotMap.Add(10);
-        slotMap.Add(20);
+        slotMap.Insert(null);
+        slotMap.Insert(10);
+        slotMap.Insert(20);
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue(10);
@@ -86,9 +86,9 @@ public class ContainsValue
     public void IntNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(10);
-        var key3 = slotMap.Add(20);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(10);
+        var key3 = slotMap.Insert(20);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -107,9 +107,9 @@ public class ContainsValue
     public void IntNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<int?>();
-        slotMap.Add(null);
-        slotMap.Add(10);
-        slotMap.Add(20);
+        slotMap.Insert(null);
+        slotMap.Insert(10);
+        slotMap.Insert(20);
 
         var result = slotMap.ContainsValue(30);
 
@@ -124,9 +124,9 @@ public class ContainsValue
     public void StringValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<string>();
-        slotMap.Add("Value 1");
-        slotMap.Add("Value 2");
-        slotMap.Add("Value 3");
+        slotMap.Insert("Value 1");
+        slotMap.Insert("Value 2");
+        slotMap.Insert("Value 3");
 
         var result1 = slotMap.ContainsValue("Value 1");
         var result2 = slotMap.ContainsValue("Value 2");
@@ -141,9 +141,9 @@ public class ContainsValue
     public void StringValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
-        var key2 = slotMap.Add("Value 2");
-        var key3 = slotMap.Add("Value 3");
+        var key1 = slotMap.Insert("Value 1");
+        var key2 = slotMap.Insert("Value 2");
+        var key3 = slotMap.Insert("Value 3");
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -162,9 +162,9 @@ public class ContainsValue
     public void StringValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<string>();
-        slotMap.Add("Value 1");
-        slotMap.Add("Value 2");
-        slotMap.Add("Value 3");
+        slotMap.Insert("Value 1");
+        slotMap.Insert("Value 2");
+        slotMap.Insert("Value 3");
 
         var result = slotMap.ContainsValue("Value 4");
 
@@ -179,9 +179,9 @@ public class ContainsValue
     public void StringNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<string?>();
-        slotMap.Add(null);
-        slotMap.Add("Value 1");
-        slotMap.Add("Value 2");
+        slotMap.Insert(null);
+        slotMap.Insert("Value 1");
+        slotMap.Insert("Value 2");
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue("Value 1");
@@ -196,9 +196,9 @@ public class ContainsValue
     public void StringNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add("Value 1");
-        var key3 = slotMap.Add("Value 2");
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert("Value 1");
+        var key3 = slotMap.Insert("Value 2");
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -217,9 +217,9 @@ public class ContainsValue
     public void StringNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<string?>();
-        slotMap.Add(null);
-        slotMap.Add("Value 1");
-        slotMap.Add("Value 2");
+        slotMap.Insert(null);
+        slotMap.Insert("Value 1");
+        slotMap.Insert("Value 2");
 
         var result = slotMap.ContainsValue("Value 3");
 
@@ -234,9 +234,9 @@ public class ContainsValue
     public void DoubleValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<double>();
-        slotMap.Add(1.11D);
-        slotMap.Add(2.22D);
-        slotMap.Add(3.33D);
+        slotMap.Insert(1.11D);
+        slotMap.Insert(2.22D);
+        slotMap.Insert(3.33D);
 
         var result1 = slotMap.ContainsValue(1.11D);
         var result2 = slotMap.ContainsValue(2.22D);
@@ -251,9 +251,9 @@ public class ContainsValue
     public void DoubleValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
-        var key2 = slotMap.Add(2.22D);
-        var key3 = slotMap.Add(3.33D);
+        var key1 = slotMap.Insert(1.11D);
+        var key2 = slotMap.Insert(2.22D);
+        var key3 = slotMap.Insert(3.33D);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -272,9 +272,9 @@ public class ContainsValue
     public void DoubleValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<double>();
-        slotMap.Add(1.11D);
-        slotMap.Add(2.22D);
-        slotMap.Add(3.33D);
+        slotMap.Insert(1.11D);
+        slotMap.Insert(2.22D);
+        slotMap.Insert(3.33D);
 
         var result = slotMap.ContainsValue(4.44D);
 
@@ -289,9 +289,9 @@ public class ContainsValue
     public void DoubleNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<double?>();
-        slotMap.Add(null);
-        slotMap.Add(1.11D);
-        slotMap.Add(2.22D);
+        slotMap.Insert(null);
+        slotMap.Insert(1.11D);
+        slotMap.Insert(2.22D);
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue(1.11D);
@@ -306,9 +306,9 @@ public class ContainsValue
     public void DoubleNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.11D);
-        var key3 = slotMap.Add(2.22D);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.11D);
+        var key3 = slotMap.Insert(2.22D);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -327,9 +327,9 @@ public class ContainsValue
     public void DoubleNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<double?>();
-        slotMap.Add(null);
-        slotMap.Add(1.11D);
-        slotMap.Add(2.22D);
+        slotMap.Insert(null);
+        slotMap.Insert(1.11D);
+        slotMap.Insert(2.22D);
 
         var result = slotMap.ContainsValue(3.33D);
 
@@ -344,8 +344,8 @@ public class ContainsValue
     public void BoolValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<bool>();
-        slotMap.Add(true);
-        slotMap.Add(false);
+        slotMap.Insert(true);
+        slotMap.Insert(false);
 
         var result1 = slotMap.ContainsValue(true);
         var result2 = slotMap.ContainsValue(false);
@@ -358,9 +358,9 @@ public class ContainsValue
     public void BoolValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
-        var key2 = slotMap.Add(false);
-        var key3 = slotMap.Add(true);
+        var key1 = slotMap.Insert(true);
+        var key2 = slotMap.Insert(false);
+        var key3 = slotMap.Insert(true);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -379,8 +379,8 @@ public class ContainsValue
     public void BoolValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<bool>();
-        slotMap.Add(true);
-        slotMap.Add(true);
+        slotMap.Insert(true);
+        slotMap.Insert(true);
 
         var result = slotMap.ContainsValue(false);
 
@@ -395,9 +395,9 @@ public class ContainsValue
     public void BoolNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<bool?>();
-        slotMap.Add(null);
-        slotMap.Add(true);
-        slotMap.Add(false);
+        slotMap.Insert(null);
+        slotMap.Insert(true);
+        slotMap.Insert(false);
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue(true);
@@ -412,9 +412,9 @@ public class ContainsValue
     public void BoolNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(true);
-        var key3 = slotMap.Add(false);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(true);
+        var key3 = slotMap.Insert(false);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -433,8 +433,8 @@ public class ContainsValue
     public void BoolNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<bool?>();
-        slotMap.Add(null);
-        slotMap.Add(true);
+        slotMap.Insert(null);
+        slotMap.Insert(true);
 
         var result = slotMap.ContainsValue(false);
 
@@ -449,9 +449,9 @@ public class ContainsValue
     public void CharValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<char>();
-        slotMap.Add('A');
-        slotMap.Add('B');
-        slotMap.Add('C');
+        slotMap.Insert('A');
+        slotMap.Insert('B');
+        slotMap.Insert('C');
 
         var result1 = slotMap.ContainsValue('A');
         var result2 = slotMap.ContainsValue('B');
@@ -466,9 +466,9 @@ public class ContainsValue
     public void CharValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
-        var key2 = slotMap.Add('B');
-        var key3 = slotMap.Add('C');
+        var key1 = slotMap.Insert('A');
+        var key2 = slotMap.Insert('B');
+        var key3 = slotMap.Insert('C');
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -487,9 +487,9 @@ public class ContainsValue
     public void CharValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<char>();
-        slotMap.Add('A');
-        slotMap.Add('B');
-        slotMap.Add('C');
+        slotMap.Insert('A');
+        slotMap.Insert('B');
+        slotMap.Insert('C');
 
         var result = slotMap.ContainsValue('D');
 
@@ -504,9 +504,9 @@ public class ContainsValue
     public void CharNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<char?>();
-        slotMap.Add(null);
-        slotMap.Add('A');
-        slotMap.Add('B');
+        slotMap.Insert(null);
+        slotMap.Insert('A');
+        slotMap.Insert('B');
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue('A');
@@ -521,9 +521,9 @@ public class ContainsValue
     public void CharNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add('A');
-        var key3 = slotMap.Add('B');
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert('A');
+        var key3 = slotMap.Insert('B');
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -542,9 +542,9 @@ public class ContainsValue
     public void CharNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<char?>();
-        slotMap.Add(null);
-        slotMap.Add('A');
-        slotMap.Add('B');
+        slotMap.Insert(null);
+        slotMap.Insert('A');
+        slotMap.Insert('B');
 
         var result = slotMap.ContainsValue('C');
 
@@ -559,9 +559,9 @@ public class ContainsValue
     public void LongValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<long>();
-        slotMap.Add(1000_000_000_000L);
-        slotMap.Add(2000_000_000_000L);
-        slotMap.Add(3000_000_000_000L);
+        slotMap.Insert(1000_000_000_000L);
+        slotMap.Insert(2000_000_000_000L);
+        slotMap.Insert(3000_000_000_000L);
 
         var result1 = slotMap.ContainsValue(1000_000_000_000L);
         var result2 = slotMap.ContainsValue(2000_000_000_000L);
@@ -576,9 +576,9 @@ public class ContainsValue
     public void LongValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
-        var key2 = slotMap.Add(2000_000_000_000L);
-        var key3 = slotMap.Add(3000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
+        var key2 = slotMap.Insert(2000_000_000_000L);
+        var key3 = slotMap.Insert(3000_000_000_000L);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -597,9 +597,9 @@ public class ContainsValue
     public void LongValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<long>();
-        slotMap.Add(1000_000_000_000L);
-        slotMap.Add(2000_000_000_000L);
-        slotMap.Add(3000_000_000_000L);
+        slotMap.Insert(1000_000_000_000L);
+        slotMap.Insert(2000_000_000_000L);
+        slotMap.Insert(3000_000_000_000L);
 
         var result = slotMap.ContainsValue(4000_000_000_000L);
 
@@ -614,9 +614,9 @@ public class ContainsValue
     public void LongNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<long?>();
-        slotMap.Add(null);
-        slotMap.Add(1000_000_000_000L);
-        slotMap.Add(2000_000_000_000L);
+        slotMap.Insert(null);
+        slotMap.Insert(1000_000_000_000L);
+        slotMap.Insert(2000_000_000_000L);
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue(1000_000_000_000L);
@@ -631,9 +631,9 @@ public class ContainsValue
     public void LongNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1000_000_000_000L);
-        var key3 = slotMap.Add(2000_000_000_000L);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1000_000_000_000L);
+        var key3 = slotMap.Insert(2000_000_000_000L);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -652,9 +652,9 @@ public class ContainsValue
     public void LongNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<long?>();
-        slotMap.Add(null);
-        slotMap.Add(1000_000_000_000L);
-        slotMap.Add(2000_000_000_000L);
+        slotMap.Insert(null);
+        slotMap.Insert(1000_000_000_000L);
+        slotMap.Insert(2000_000_000_000L);
 
         var result = slotMap.ContainsValue(3000_000_000_000L);
 
@@ -669,9 +669,9 @@ public class ContainsValue
     public void FloatValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<float>();
-        slotMap.Add(1.1F);
-        slotMap.Add(2.2F);
-        slotMap.Add(3.3F);
+        slotMap.Insert(1.1F);
+        slotMap.Insert(2.2F);
+        slotMap.Insert(3.3F);
 
         var result1 = slotMap.ContainsValue(1.1F);
         var result2 = slotMap.ContainsValue(2.2F);
@@ -686,9 +686,9 @@ public class ContainsValue
     public void FloatValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
-        var key2 = slotMap.Add(2.2F);
-        var key3 = slotMap.Add(3.3F);
+        var key1 = slotMap.Insert(1.1F);
+        var key2 = slotMap.Insert(2.2F);
+        var key3 = slotMap.Insert(3.3F);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -707,9 +707,9 @@ public class ContainsValue
     public void FloatValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<float>();
-        slotMap.Add(1.1F);
-        slotMap.Add(2.2F);
-        slotMap.Add(3.3F);
+        slotMap.Insert(1.1F);
+        slotMap.Insert(2.2F);
+        slotMap.Insert(3.3F);
 
         var result = slotMap.ContainsValue(4.4F);
 
@@ -724,9 +724,9 @@ public class ContainsValue
     public void FloatNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<float?>();
-        slotMap.Add(null);
-        slotMap.Add(1.1F);
-        slotMap.Add(2.2F);
+        slotMap.Insert(null);
+        slotMap.Insert(1.1F);
+        slotMap.Insert(2.2F);
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue(1.1F);
@@ -741,9 +741,9 @@ public class ContainsValue
     public void FloatNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.1F);
-        var key3 = slotMap.Add(2.2F);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.1F);
+        var key3 = slotMap.Insert(2.2F);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -762,9 +762,9 @@ public class ContainsValue
     public void FloatNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<float?>();
-        slotMap.Add(null);
-        slotMap.Add(1.1F);
-        slotMap.Add(2.2F);
+        slotMap.Insert(null);
+        slotMap.Insert(1.1F);
+        slotMap.Insert(2.2F);
 
         var result = slotMap.ContainsValue(3.3F);
 
@@ -779,9 +779,9 @@ public class ContainsValue
     public void DecimalValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<decimal>();
-        slotMap.Add(1.111_111_111M);
-        slotMap.Add(2.222_222_222M);
-        slotMap.Add(3.333_333_333M);
+        slotMap.Insert(1.111_111_111M);
+        slotMap.Insert(2.222_222_222M);
+        slotMap.Insert(3.333_333_333M);
 
         var result1 = slotMap.ContainsValue(1.111_111_111M);
         var result2 = slotMap.ContainsValue(2.222_222_222M);
@@ -796,9 +796,9 @@ public class ContainsValue
     public void DecimalValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
-        var key2 = slotMap.Add(2.222_222_222M);
-        var key3 = slotMap.Add(3.333_333_333M);
+        var key1 = slotMap.Insert(1.111_111_111M);
+        var key2 = slotMap.Insert(2.222_222_222M);
+        var key3 = slotMap.Insert(3.333_333_333M);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -817,9 +817,9 @@ public class ContainsValue
     public void DecimalValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<decimal>();
-        slotMap.Add(1.111_111_111M);
-        slotMap.Add(2.222_222_222M);
-        slotMap.Add(3.333_333_333M);
+        slotMap.Insert(1.111_111_111M);
+        slotMap.Insert(2.222_222_222M);
+        slotMap.Insert(3.333_333_333M);
 
         var result = slotMap.ContainsValue(4.444_444_444M);
 
@@ -834,9 +834,9 @@ public class ContainsValue
     public void DecimalNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<decimal?>();
-        slotMap.Add(null);
-        slotMap.Add(1.111_111_111M);
-        slotMap.Add(2.222_222_222M);
+        slotMap.Insert(null);
+        slotMap.Insert(1.111_111_111M);
+        slotMap.Insert(2.222_222_222M);
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue(1.111_111_111M);
@@ -851,9 +851,9 @@ public class ContainsValue
     public void DecimalNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.111_111_111M);
-        var key3 = slotMap.Add(2.222_222_222M);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.111_111_111M);
+        var key3 = slotMap.Insert(2.222_222_222M);
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -872,9 +872,9 @@ public class ContainsValue
     public void DecimalNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<decimal?>();
-        slotMap.Add(null);
-        slotMap.Add(1.111_111_111M);
-        slotMap.Add(2.222_222_222M);
+        slotMap.Insert(null);
+        slotMap.Insert(1.111_111_111M);
+        slotMap.Insert(2.222_222_222M);
 
         var result = slotMap.ContainsValue(3.333_333_333M);
 
@@ -889,9 +889,9 @@ public class ContainsValue
     public void DateTimeValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<DateTime>();
-        slotMap.Add(DateTime.Parse("2023-01-01"));
-        slotMap.Add(DateTime.Parse("2023-02-01"));
-        slotMap.Add(DateTime.Parse("2023-03-01"));
+        slotMap.Insert(DateTime.Parse("2023-01-01"));
+        slotMap.Insert(DateTime.Parse("2023-02-01"));
+        slotMap.Insert(DateTime.Parse("2023-03-01"));
 
         var result1 = slotMap.ContainsValue(DateTime.Parse("2023-01-01"));
         var result2 = slotMap.ContainsValue(DateTime.Parse("2023-02-01"));
@@ -906,9 +906,9 @@ public class ContainsValue
     public void DateTimeValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key2 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-03-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key2 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-03-01"));
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -927,9 +927,9 @@ public class ContainsValue
     public void DateTimeValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<DateTime>();
-        slotMap.Add(DateTime.Parse("2023-01-01"));
-        slotMap.Add(DateTime.Parse("2023-02-01"));
-        slotMap.Add(DateTime.Parse("2023-03-01"));
+        slotMap.Insert(DateTime.Parse("2023-01-01"));
+        slotMap.Insert(DateTime.Parse("2023-02-01"));
+        slotMap.Insert(DateTime.Parse("2023-03-01"));
 
         var result = slotMap.ContainsValue(DateTime.Parse("2023-04-01"));
 
@@ -944,9 +944,9 @@ public class ContainsValue
     public void DateTimeNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<DateTime?>();
-        slotMap.Add(null);
-        slotMap.Add(DateTime.Parse("2023-01-01"));
-        slotMap.Add(DateTime.Parse("2023-02-01"));
+        slotMap.Insert(null);
+        slotMap.Insert(DateTime.Parse("2023-01-01"));
+        slotMap.Insert(DateTime.Parse("2023-02-01"));
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue(DateTime.Parse("2023-01-01"));
@@ -961,9 +961,9 @@ public class ContainsValue
     public void DateTimeNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-02-01"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-02-01"));
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -982,9 +982,9 @@ public class ContainsValue
     public void DateTimeNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<DateTime?>();
-        slotMap.Add(null);
-        slotMap.Add(DateTime.Parse("2023-01-01"));
-        slotMap.Add(DateTime.Parse("2023-02-01"));
+        slotMap.Insert(null);
+        slotMap.Insert(DateTime.Parse("2023-01-01"));
+        slotMap.Insert(DateTime.Parse("2023-02-01"));
 
         var result = slotMap.ContainsValue(DateTime.Parse("2023-03-01"));
 
@@ -999,9 +999,9 @@ public class ContainsValue
     public void TimeSpanValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        slotMap.Add(new TimeSpan(00,00,00));
-        slotMap.Add(new TimeSpan(01,00,00));
-        slotMap.Add(new TimeSpan(02,00,00));
+        slotMap.Insert(new TimeSpan(00,00,00));
+        slotMap.Insert(new TimeSpan(01,00,00));
+        slotMap.Insert(new TimeSpan(02,00,00));
 
         var result1 = slotMap.ContainsValue(new TimeSpan(00,00,00));
         var result2 = slotMap.ContainsValue(new TimeSpan(01,00,00));
@@ -1016,9 +1016,9 @@ public class ContainsValue
     public void TimeSpanValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
-        var key2 = slotMap.Add(new TimeSpan(01,00,00));
-        var key3 = slotMap.Add(new TimeSpan(02,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key2 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(02,00,00));
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -1037,9 +1037,9 @@ public class ContainsValue
     public void TimeSpanValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        slotMap.Add(new TimeSpan(00,00,00));
-        slotMap.Add(new TimeSpan(01,00,00));
-        slotMap.Add(new TimeSpan(02,00,00));
+        slotMap.Insert(new TimeSpan(00,00,00));
+        slotMap.Insert(new TimeSpan(01,00,00));
+        slotMap.Insert(new TimeSpan(02,00,00));
 
         var result = slotMap.ContainsValue(new TimeSpan(03,00,00));
 
@@ -1054,9 +1054,9 @@ public class ContainsValue
     public void TimeSpanNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        slotMap.Add(null);
-        slotMap.Add(new TimeSpan(00,00,00));
-        slotMap.Add(new TimeSpan(01,00,00));
+        slotMap.Insert(null);
+        slotMap.Insert(new TimeSpan(00,00,00));
+        slotMap.Insert(new TimeSpan(01,00,00));
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue(new TimeSpan(00,00,00));
@@ -1071,9 +1071,9 @@ public class ContainsValue
     public void TimeSpanNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(new TimeSpan(00,00,00));
-        var key3 = slotMap.Add(new TimeSpan(01,00,00));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(01,00,00));
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -1092,9 +1092,9 @@ public class ContainsValue
     public void TimeSpanNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        slotMap.Add(null);
-        slotMap.Add(new TimeSpan(00,00,00));
-        slotMap.Add(new TimeSpan(01,00,00));
+        slotMap.Insert(null);
+        slotMap.Insert(new TimeSpan(00,00,00));
+        slotMap.Insert(new TimeSpan(01,00,00));
 
         var result = slotMap.ContainsValue(new TimeSpan(02,00,00));
 
@@ -1109,9 +1109,9 @@ public class ContainsValue
     public void GuidValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<Guid>();
-        slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
 
         var result1 = slotMap.ContainsValue(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var result2 = slotMap.ContainsValue(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
@@ -1126,9 +1126,9 @@ public class ContainsValue
     public void GuidValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key2 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key3 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key2 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key3 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -1147,9 +1147,9 @@ public class ContainsValue
     public void GuidValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<Guid>();
-        slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
 
         var result = slotMap.ContainsValue(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
 
@@ -1164,9 +1164,9 @@ public class ContainsValue
     public void GuidNullableValueExists_ReturnsTrue()
     {
         var slotMap = new SlotMap<Guid?>();
-        slotMap.Add(null);
-        slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        slotMap.Insert(null);
+        slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
 
         var result1 = slotMap.ContainsValue(null);
         var result2 = slotMap.ContainsValue(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
@@ -1181,9 +1181,9 @@ public class ContainsValue
     public void GuidNullableValueRemoved_ReturnsFalse()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key3 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key3 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
 
         slotMap.Remove(key1);
         slotMap.Remove(key2);
@@ -1202,9 +1202,9 @@ public class ContainsValue
     public void GuidNullableValueDoesNotExist_ReturnsFalse()
     {
         var slotMap = new SlotMap<Guid?>();
-        slotMap.Add(null);
-        slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        slotMap.Insert(null);
+        slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
 
         var result = slotMap.ContainsValue(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
 

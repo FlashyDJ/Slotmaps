@@ -2,8 +2,8 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SlotMap;
+
 public class TryInsert
 {
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -14,7 +14,7 @@ public class TryInsert
     public void IntWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<int>();
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
 
         bool result = slotMap.TryInsert(key, 20, out var newKey);
 
@@ -38,7 +38,7 @@ public class TryInsert
     public void IntWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
+        var key1 = slotMap.Insert(10);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 20, out var newKey);
@@ -52,7 +52,7 @@ public class TryInsert
     public void IntWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
+        var key1 = slotMap.Insert(10);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 20, out var newKey);
@@ -70,7 +70,7 @@ public class TryInsert
     public void IntNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<int?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, 10, out var newKey);
 
@@ -94,7 +94,7 @@ public class TryInsert
     public void IntNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 10, out var newKey);
@@ -108,7 +108,7 @@ public class TryInsert
     public void IntNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 10, out var newKey);
@@ -126,7 +126,7 @@ public class TryInsert
     public void StringWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
 
         bool result = slotMap.TryInsert(key, "Value 2", out var newKey);
 
@@ -150,7 +150,7 @@ public class TryInsert
     public void StringWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
+        var key1 = slotMap.Insert("Value 1");
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, "Value 2", out var newKey);
@@ -164,7 +164,7 @@ public class TryInsert
     public void StringWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
+        var key1 = slotMap.Insert("Value 1");
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, "Value 2", out var newKey);
@@ -182,7 +182,7 @@ public class TryInsert
     public void StringNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<string?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, "Value 1", out var newKey);
 
@@ -206,7 +206,7 @@ public class TryInsert
     public void StringNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, "Value 1", out var newKey);
@@ -220,7 +220,7 @@ public class TryInsert
     public void StringNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, "Value 1", out var newKey);
@@ -238,7 +238,7 @@ public class TryInsert
     public void DoubleWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<double>();
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
 
         bool result = slotMap.TryInsert(key, 2.22D, out var newKey);
 
@@ -262,7 +262,7 @@ public class TryInsert
     public void DoubleWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
+        var key1 = slotMap.Insert(1.11D);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 2.22D, out var newKey);
@@ -276,7 +276,7 @@ public class TryInsert
     public void DoubleWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
+        var key1 = slotMap.Insert(1.11D);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 2.22D, out var newKey);
@@ -294,7 +294,7 @@ public class TryInsert
     public void DoubleNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<double?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, 1.11D, out var newKey);
 
@@ -318,7 +318,7 @@ public class TryInsert
     public void DoubleNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 1.11D, out var newKey);
@@ -332,7 +332,7 @@ public class TryInsert
     public void DoubleNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 1.11D, out var newKey);
@@ -350,7 +350,7 @@ public class TryInsert
     public void BoolWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<bool>();
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
 
         bool result = slotMap.TryInsert(key, false, out var newKey);
 
@@ -374,7 +374,7 @@ public class TryInsert
     public void BoolWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
+        var key1 = slotMap.Insert(true);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, false, out var newKey);
@@ -388,7 +388,7 @@ public class TryInsert
     public void BoolWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
+        var key1 = slotMap.Insert(true);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, false, out var newKey);
@@ -406,7 +406,7 @@ public class TryInsert
     public void BoolNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<bool?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, true, out var newKey);
 
@@ -430,7 +430,7 @@ public class TryInsert
     public void BoolNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, true, out var newKey);
@@ -444,7 +444,7 @@ public class TryInsert
     public void BoolNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, true, out var newKey);
@@ -462,7 +462,7 @@ public class TryInsert
     public void CharWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<char>();
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
 
         bool result = slotMap.TryInsert(key, 'B', out var newKey);
 
@@ -486,7 +486,7 @@ public class TryInsert
     public void CharWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
+        var key1 = slotMap.Insert('A');
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 'B', out var newKey);
@@ -500,7 +500,7 @@ public class TryInsert
     public void CharWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
+        var key1 = slotMap.Insert('A');
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 'B', out var newKey);
@@ -518,7 +518,7 @@ public class TryInsert
     public void CharNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<char?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, 'A', out var newKey);
 
@@ -542,7 +542,7 @@ public class TryInsert
     public void CharNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 'A', out var newKey);
@@ -556,7 +556,7 @@ public class TryInsert
     public void CharNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 'A', out var newKey);
@@ -574,7 +574,7 @@ public class TryInsert
     public void LongWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<long>();
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
 
         bool result = slotMap.TryInsert(key, 2000_000_000_000L, out var newKey);
 
@@ -598,7 +598,7 @@ public class TryInsert
     public void LongWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 2000_000_000_000L, out var newKey);
@@ -612,7 +612,7 @@ public class TryInsert
     public void LongWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 2000_000_000_000L, out var newKey);
@@ -630,7 +630,7 @@ public class TryInsert
     public void LongNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<long?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, 1000_000_000_000L, out var newKey);
 
@@ -654,7 +654,7 @@ public class TryInsert
     public void LongNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 1000_000_000_000L, out var newKey);
@@ -668,7 +668,7 @@ public class TryInsert
     public void LongNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 1000_000_000_000L, out var newKey);
@@ -686,7 +686,7 @@ public class TryInsert
     public void FloatWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<float>();
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
 
         bool result = slotMap.TryInsert(key, 2.2F, out var newKey);
 
@@ -710,7 +710,7 @@ public class TryInsert
     public void FloatWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
+        var key1 = slotMap.Insert(1.1F);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 2.2F, out var newKey);
@@ -724,7 +724,7 @@ public class TryInsert
     public void FloatWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
+        var key1 = slotMap.Insert(1.1F);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 2.2F, out var newKey);
@@ -742,7 +742,7 @@ public class TryInsert
     public void FloatNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<float?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, 1.1F, out var newKey);
 
@@ -766,7 +766,7 @@ public class TryInsert
     public void FloatNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 1.1F, out var newKey);
@@ -780,7 +780,7 @@ public class TryInsert
     public void FloatNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 1.1F, out var newKey);
@@ -798,7 +798,7 @@ public class TryInsert
     public void DecimalWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<decimal>();
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
 
         bool result = slotMap.TryInsert(key, 2.222_222_222M, out var newKey);
 
@@ -822,7 +822,7 @@ public class TryInsert
     public void DecimalWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
+        var key1 = slotMap.Insert(1.111_111_111M);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 2.222_222_222M, out var newKey);
@@ -836,7 +836,7 @@ public class TryInsert
     public void DecimalWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
+        var key1 = slotMap.Insert(1.111_111_111M);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 2.222_222_222M, out var newKey);
@@ -854,7 +854,7 @@ public class TryInsert
     public void DecimalNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, 1.111_111_111M, out var newKey);
 
@@ -878,7 +878,7 @@ public class TryInsert
     public void DecimalNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, 1.111_111_111M, out var newKey);
@@ -892,7 +892,7 @@ public class TryInsert
     public void DecimalNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, 1.111_111_111M, out var newKey);
@@ -910,7 +910,7 @@ public class TryInsert
     public void DateTimeWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
 
         bool result = slotMap.TryInsert(key, DateTime.Parse("2023-02-01"), out var newKey);
 
@@ -934,7 +934,7 @@ public class TryInsert
     public void DateTimeWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, DateTime.Parse("2023-02-01"), out var newKey);
@@ -948,7 +948,7 @@ public class TryInsert
     public void DateTimeWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, DateTime.Parse("2023-02-01"), out var newKey);
@@ -966,7 +966,7 @@ public class TryInsert
     public void DateTimeNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, DateTime.Parse("2023-01-01"), out var newKey);
 
@@ -990,7 +990,7 @@ public class TryInsert
     public void DateTimeNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, DateTime.Parse("2023-01-01"), out var newKey);
@@ -1004,7 +1004,7 @@ public class TryInsert
     public void DateTimeNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, DateTime.Parse("2023-01-01"), out var newKey);
@@ -1022,7 +1022,7 @@ public class TryInsert
     public void TimeSpanWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
 
         bool result = slotMap.TryInsert(key, new TimeSpan(01,00,00), out var newKey);
 
@@ -1046,7 +1046,7 @@ public class TryInsert
     public void TimeSpanWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, new TimeSpan(01,00,00), out var newKey);
@@ -1060,7 +1060,7 @@ public class TryInsert
     public void TimeSpanWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, new TimeSpan(01,00,00), out var newKey);
@@ -1078,7 +1078,7 @@ public class TryInsert
     public void TimeSpanNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, new TimeSpan(00,00,00), out var newKey);
 
@@ -1102,7 +1102,7 @@ public class TryInsert
     public void TimeSpanNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, new TimeSpan(00,00,00), out var newKey);
@@ -1116,7 +1116,7 @@ public class TryInsert
     public void TimeSpanNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, new TimeSpan(00,00,00), out var newKey);
@@ -1134,7 +1134,7 @@ public class TryInsert
     public void GuidWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<Guid>();
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         bool result = slotMap.TryInsert(key, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"), out var newKey);
 
@@ -1158,7 +1158,7 @@ public class TryInsert
     public void GuidWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"), out var newKey);
@@ -1172,7 +1172,7 @@ public class TryInsert
     public void GuidWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"), out var newKey);
@@ -1190,7 +1190,7 @@ public class TryInsert
     public void GuidNullableWithValidKey_ReturnsTrueAndNewKey()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         bool result = slotMap.TryInsert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), out var newKey);
 
@@ -1214,7 +1214,7 @@ public class TryInsert
     public void GuidNullableWithOlderVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 0 };
 
         bool result = slotMap.TryInsert(key2, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), out var newKey);
@@ -1228,7 +1228,7 @@ public class TryInsert
     public void GuidNullableWithNewerVersionKey_ReturnsFalseAndNullKey()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
+        var key1 = slotMap.Insert(null);
         var key2 = key1 with { Version = 2 };
 
         bool result = slotMap.TryInsert(key2, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), out var newKey);

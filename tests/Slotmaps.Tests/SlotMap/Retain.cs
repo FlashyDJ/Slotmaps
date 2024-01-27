@@ -2,19 +2,19 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SlotMap;
+
 public class Retain
 {
     [Fact]
     public void PredicateRemovesSomeItems_ItemsThatSatisfyPredicateAreRetained()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(42);
-        var key2 = slotMap.Add(24);
-        var key3 = slotMap.Add(36);
-        var key4 = slotMap.Add(50);
-        var key5 = slotMap.Add(18);
+        var key1 = slotMap.Insert(42);
+        var key2 = slotMap.Insert(24);
+        var key3 = slotMap.Insert(36);
+        var key4 = slotMap.Insert(50);
+        var key5 = slotMap.Insert(18);
 
         slotMap.Retain((key, value) => value > 30);
 
@@ -34,11 +34,11 @@ public class Retain
     public void PredicateRemovesAllIntItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
-        var key2 = slotMap.Add(20);
-        var key3 = slotMap.Add(30);
-        var key4 = slotMap.Add(40);
-        var key5 = slotMap.Add(50);
+        var key1 = slotMap.Insert(10);
+        var key2 = slotMap.Insert(20);
+        var key3 = slotMap.Insert(30);
+        var key4 = slotMap.Insert(40);
+        var key5 = slotMap.Insert(50);
         
 
         slotMap.Retain((key, value) => value == 60);
@@ -50,11 +50,11 @@ public class Retain
     public void PredicateKeepsAllIntItems_ItemsRetained()
     {
         var slotMap = new SlotMap<int>();
-        var key1 = slotMap.Add(10);
-        var key2 = slotMap.Add(20);
-        var key3 = slotMap.Add(30);
-        var key4 = slotMap.Add(40);
-        var key5 = slotMap.Add(50);
+        var key1 = slotMap.Insert(10);
+        var key2 = slotMap.Insert(20);
+        var key3 = slotMap.Insert(30);
+        var key4 = slotMap.Insert(40);
+        var key5 = slotMap.Insert(50);
 
         slotMap.Retain((key, value) => value != 60);
 
@@ -69,11 +69,11 @@ public class Retain
     public void PredicateRemovesAllIntNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(10);
-        var key3 = slotMap.Add(20);
-        var key4 = slotMap.Add(30);
-        var key5 = slotMap.Add(40);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(10);
+        var key3 = slotMap.Insert(20);
+        var key4 = slotMap.Insert(30);
+        var key5 = slotMap.Insert(40);
         
 
         slotMap.Retain((key, value) => value == 50);
@@ -85,11 +85,11 @@ public class Retain
     public void PredicateKeepsAllIntNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<int?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(10);
-        var key3 = slotMap.Add(20);
-        var key4 = slotMap.Add(30);
-        var key5 = slotMap.Add(40);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(10);
+        var key3 = slotMap.Insert(20);
+        var key4 = slotMap.Insert(30);
+        var key5 = slotMap.Insert(40);
 
         slotMap.Retain((key, value) => value != 50);
 
@@ -104,11 +104,11 @@ public class Retain
     public void PredicateRemovesAllStringItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
-        var key2 = slotMap.Add("Value 2");
-        var key3 = slotMap.Add("Value 3");
-        var key4 = slotMap.Add("Value 4");
-        var key5 = slotMap.Add("Value 5");
+        var key1 = slotMap.Insert("Value 1");
+        var key2 = slotMap.Insert("Value 2");
+        var key3 = slotMap.Insert("Value 3");
+        var key4 = slotMap.Insert("Value 4");
+        var key5 = slotMap.Insert("Value 5");
         
 
         slotMap.Retain((key, value) => value == "Value 6");
@@ -120,11 +120,11 @@ public class Retain
     public void PredicateKeepsAllStringItems_ItemsRetained()
     {
         var slotMap = new SlotMap<string>();
-        var key1 = slotMap.Add("Value 1");
-        var key2 = slotMap.Add("Value 2");
-        var key3 = slotMap.Add("Value 3");
-        var key4 = slotMap.Add("Value 4");
-        var key5 = slotMap.Add("Value 5");
+        var key1 = slotMap.Insert("Value 1");
+        var key2 = slotMap.Insert("Value 2");
+        var key3 = slotMap.Insert("Value 3");
+        var key4 = slotMap.Insert("Value 4");
+        var key5 = slotMap.Insert("Value 5");
 
         slotMap.Retain((key, value) => value != "Value 6");
 
@@ -139,11 +139,11 @@ public class Retain
     public void PredicateRemovesAllStringNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add("Value 1");
-        var key3 = slotMap.Add("Value 2");
-        var key4 = slotMap.Add("Value 3");
-        var key5 = slotMap.Add("Value 4");
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert("Value 1");
+        var key3 = slotMap.Insert("Value 2");
+        var key4 = slotMap.Insert("Value 3");
+        var key5 = slotMap.Insert("Value 4");
         
 
         slotMap.Retain((key, value) => value == "Value 5");
@@ -155,11 +155,11 @@ public class Retain
     public void PredicateKeepsAllStringNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<string?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add("Value 1");
-        var key3 = slotMap.Add("Value 2");
-        var key4 = slotMap.Add("Value 3");
-        var key5 = slotMap.Add("Value 4");
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert("Value 1");
+        var key3 = slotMap.Insert("Value 2");
+        var key4 = slotMap.Insert("Value 3");
+        var key5 = slotMap.Insert("Value 4");
 
         slotMap.Retain((key, value) => value != "Value 5");
 
@@ -174,11 +174,11 @@ public class Retain
     public void PredicateRemovesAllDoubleItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
-        var key2 = slotMap.Add(2.22D);
-        var key3 = slotMap.Add(3.33D);
-        var key4 = slotMap.Add(4.44D);
-        var key5 = slotMap.Add(5.55D);
+        var key1 = slotMap.Insert(1.11D);
+        var key2 = slotMap.Insert(2.22D);
+        var key3 = slotMap.Insert(3.33D);
+        var key4 = slotMap.Insert(4.44D);
+        var key5 = slotMap.Insert(5.55D);
         
 
         slotMap.Retain((key, value) => value == 6.66D);
@@ -190,11 +190,11 @@ public class Retain
     public void PredicateKeepsAllDoubleItems_ItemsRetained()
     {
         var slotMap = new SlotMap<double>();
-        var key1 = slotMap.Add(1.11D);
-        var key2 = slotMap.Add(2.22D);
-        var key3 = slotMap.Add(3.33D);
-        var key4 = slotMap.Add(4.44D);
-        var key5 = slotMap.Add(5.55D);
+        var key1 = slotMap.Insert(1.11D);
+        var key2 = slotMap.Insert(2.22D);
+        var key3 = slotMap.Insert(3.33D);
+        var key4 = slotMap.Insert(4.44D);
+        var key5 = slotMap.Insert(5.55D);
 
         slotMap.Retain((key, value) => value != 6.66D);
 
@@ -209,11 +209,11 @@ public class Retain
     public void PredicateRemovesAllDoubleNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.11D);
-        var key3 = slotMap.Add(2.22D);
-        var key4 = slotMap.Add(3.33D);
-        var key5 = slotMap.Add(4.44D);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.11D);
+        var key3 = slotMap.Insert(2.22D);
+        var key4 = slotMap.Insert(3.33D);
+        var key5 = slotMap.Insert(4.44D);
         
 
         slotMap.Retain((key, value) => value == 5.55D);
@@ -225,11 +225,11 @@ public class Retain
     public void PredicateKeepsAllDoubleNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<double?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.11D);
-        var key3 = slotMap.Add(2.22D);
-        var key4 = slotMap.Add(3.33D);
-        var key5 = slotMap.Add(4.44D);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.11D);
+        var key3 = slotMap.Insert(2.22D);
+        var key4 = slotMap.Insert(3.33D);
+        var key5 = slotMap.Insert(4.44D);
 
         slotMap.Retain((key, value) => value != 5.55D);
 
@@ -244,11 +244,11 @@ public class Retain
     public void PredicateRemovesAllBoolItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
-        var key2 = slotMap.Add(false);
-        var key3 = slotMap.Add(true);
-        var key4 = slotMap.Add(false);
-        var key5 = slotMap.Add(true);
+        var key1 = slotMap.Insert(true);
+        var key2 = slotMap.Insert(false);
+        var key3 = slotMap.Insert(true);
+        var key4 = slotMap.Insert(false);
+        var key5 = slotMap.Insert(true);
         
 
 #pragma warning disable CS0184 // 'is' expression's given expression is never of the provided type
@@ -262,11 +262,11 @@ public class Retain
     public void PredicateKeepsAllBoolItems_ItemsRetained()
     {
         var slotMap = new SlotMap<bool>();
-        var key1 = slotMap.Add(true);
-        var key2 = slotMap.Add(false);
-        var key3 = slotMap.Add(true);
-        var key4 = slotMap.Add(false);
-        var key5 = slotMap.Add(true);
+        var key1 = slotMap.Insert(true);
+        var key2 = slotMap.Insert(false);
+        var key3 = slotMap.Insert(true);
+        var key4 = slotMap.Insert(false);
+        var key5 = slotMap.Insert(true);
 
 #pragma warning disable CS0183 // 'is' expression's given expression is always of the provided type
         slotMap.Retain((key, value) => value is bool);
@@ -283,11 +283,11 @@ public class Retain
     public void PredicateRemovesAllBoolNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(true);
-        var key3 = slotMap.Add(false);
-        var key4 = slotMap.Add(null);
-        var key5 = slotMap.Add(true);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(true);
+        var key3 = slotMap.Insert(false);
+        var key4 = slotMap.Insert(null);
+        var key5 = slotMap.Insert(true);
         
 
 #pragma warning disable CS0184 // 'is' expression's given expression is never of the provided type
@@ -301,11 +301,11 @@ public class Retain
     public void PredicateKeepsAllBoolNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<bool?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(true);
-        var key3 = slotMap.Add(false);
-        var key4 = slotMap.Add(null);
-        var key5 = slotMap.Add(true);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(true);
+        var key3 = slotMap.Insert(false);
+        var key4 = slotMap.Insert(null);
+        var key5 = slotMap.Insert(true);
 
 #pragma warning disable CS8794 // The input always matches the provided pattern.
         slotMap.Retain((key, value) => value is bool or null);
@@ -322,11 +322,11 @@ public class Retain
     public void PredicateRemovesAllCharItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
-        var key2 = slotMap.Add('B');
-        var key3 = slotMap.Add('C');
-        var key4 = slotMap.Add('D');
-        var key5 = slotMap.Add('E');
+        var key1 = slotMap.Insert('A');
+        var key2 = slotMap.Insert('B');
+        var key3 = slotMap.Insert('C');
+        var key4 = slotMap.Insert('D');
+        var key5 = slotMap.Insert('E');
         
 
         slotMap.Retain((key, value) => value == 'F');
@@ -338,11 +338,11 @@ public class Retain
     public void PredicateKeepsAllCharItems_ItemsRetained()
     {
         var slotMap = new SlotMap<char>();
-        var key1 = slotMap.Add('A');
-        var key2 = slotMap.Add('B');
-        var key3 = slotMap.Add('C');
-        var key4 = slotMap.Add('D');
-        var key5 = slotMap.Add('E');
+        var key1 = slotMap.Insert('A');
+        var key2 = slotMap.Insert('B');
+        var key3 = slotMap.Insert('C');
+        var key4 = slotMap.Insert('D');
+        var key5 = slotMap.Insert('E');
 
         slotMap.Retain((key, value) => value != 'F');
 
@@ -357,11 +357,11 @@ public class Retain
     public void PredicateRemovesAllCharNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add('A');
-        var key3 = slotMap.Add('B');
-        var key4 = slotMap.Add('C');
-        var key5 = slotMap.Add('D');
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert('A');
+        var key3 = slotMap.Insert('B');
+        var key4 = slotMap.Insert('C');
+        var key5 = slotMap.Insert('D');
         
 
         slotMap.Retain((key, value) => value == 'E');
@@ -373,11 +373,11 @@ public class Retain
     public void PredicateKeepsAllCharNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<char?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add('A');
-        var key3 = slotMap.Add('B');
-        var key4 = slotMap.Add('C');
-        var key5 = slotMap.Add('D');
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert('A');
+        var key3 = slotMap.Insert('B');
+        var key4 = slotMap.Insert('C');
+        var key5 = slotMap.Insert('D');
 
         slotMap.Retain((key, value) => value != 'E');
 
@@ -392,11 +392,11 @@ public class Retain
     public void PredicateRemovesAllLongItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
-        var key2 = slotMap.Add(2000_000_000_000L);
-        var key3 = slotMap.Add(3000_000_000_000L);
-        var key4 = slotMap.Add(4000_000_000_000L);
-        var key5 = slotMap.Add(5000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
+        var key2 = slotMap.Insert(2000_000_000_000L);
+        var key3 = slotMap.Insert(3000_000_000_000L);
+        var key4 = slotMap.Insert(4000_000_000_000L);
+        var key5 = slotMap.Insert(5000_000_000_000L);
         
 
         slotMap.Retain((key, value) => value == 6000_000_000_000L);
@@ -408,11 +408,11 @@ public class Retain
     public void PredicateKeepsAllLongItems_ItemsRetained()
     {
         var slotMap = new SlotMap<long>();
-        var key1 = slotMap.Add(1000_000_000_000L);
-        var key2 = slotMap.Add(2000_000_000_000L);
-        var key3 = slotMap.Add(3000_000_000_000L);
-        var key4 = slotMap.Add(4000_000_000_000L);
-        var key5 = slotMap.Add(5000_000_000_000L);
+        var key1 = slotMap.Insert(1000_000_000_000L);
+        var key2 = slotMap.Insert(2000_000_000_000L);
+        var key3 = slotMap.Insert(3000_000_000_000L);
+        var key4 = slotMap.Insert(4000_000_000_000L);
+        var key5 = slotMap.Insert(5000_000_000_000L);
 
         slotMap.Retain((key, value) => value != 6000_000_000_000L);
 
@@ -427,11 +427,11 @@ public class Retain
     public void PredicateRemovesAllLongNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1000_000_000_000L);
-        var key3 = slotMap.Add(2000_000_000_000L);
-        var key4 = slotMap.Add(3000_000_000_000L);
-        var key5 = slotMap.Add(4000_000_000_000L);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1000_000_000_000L);
+        var key3 = slotMap.Insert(2000_000_000_000L);
+        var key4 = slotMap.Insert(3000_000_000_000L);
+        var key5 = slotMap.Insert(4000_000_000_000L);
         
 
         slotMap.Retain((key, value) => value == 5000_000_000_000L);
@@ -443,11 +443,11 @@ public class Retain
     public void PredicateKeepsAllLongNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<long?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1000_000_000_000L);
-        var key3 = slotMap.Add(2000_000_000_000L);
-        var key4 = slotMap.Add(3000_000_000_000L);
-        var key5 = slotMap.Add(4000_000_000_000L);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1000_000_000_000L);
+        var key3 = slotMap.Insert(2000_000_000_000L);
+        var key4 = slotMap.Insert(3000_000_000_000L);
+        var key5 = slotMap.Insert(4000_000_000_000L);
 
         slotMap.Retain((key, value) => value != 5000_000_000_000L);
 
@@ -462,11 +462,11 @@ public class Retain
     public void PredicateRemovesAllFloatItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
-        var key2 = slotMap.Add(2.2F);
-        var key3 = slotMap.Add(3.3F);
-        var key4 = slotMap.Add(4.4F);
-        var key5 = slotMap.Add(5.5F);
+        var key1 = slotMap.Insert(1.1F);
+        var key2 = slotMap.Insert(2.2F);
+        var key3 = slotMap.Insert(3.3F);
+        var key4 = slotMap.Insert(4.4F);
+        var key5 = slotMap.Insert(5.5F);
         
 
         slotMap.Retain((key, value) => value == 6.6F);
@@ -478,11 +478,11 @@ public class Retain
     public void PredicateKeepsAllFloatItems_ItemsRetained()
     {
         var slotMap = new SlotMap<float>();
-        var key1 = slotMap.Add(1.1F);
-        var key2 = slotMap.Add(2.2F);
-        var key3 = slotMap.Add(3.3F);
-        var key4 = slotMap.Add(4.4F);
-        var key5 = slotMap.Add(5.5F);
+        var key1 = slotMap.Insert(1.1F);
+        var key2 = slotMap.Insert(2.2F);
+        var key3 = slotMap.Insert(3.3F);
+        var key4 = slotMap.Insert(4.4F);
+        var key5 = slotMap.Insert(5.5F);
 
         slotMap.Retain((key, value) => value != 6.6F);
 
@@ -497,11 +497,11 @@ public class Retain
     public void PredicateRemovesAllFloatNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.1F);
-        var key3 = slotMap.Add(2.2F);
-        var key4 = slotMap.Add(3.3F);
-        var key5 = slotMap.Add(4.4F);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.1F);
+        var key3 = slotMap.Insert(2.2F);
+        var key4 = slotMap.Insert(3.3F);
+        var key5 = slotMap.Insert(4.4F);
         
 
         slotMap.Retain((key, value) => value == 5.5F);
@@ -513,11 +513,11 @@ public class Retain
     public void PredicateKeepsAllFloatNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<float?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.1F);
-        var key3 = slotMap.Add(2.2F);
-        var key4 = slotMap.Add(3.3F);
-        var key5 = slotMap.Add(4.4F);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.1F);
+        var key3 = slotMap.Insert(2.2F);
+        var key4 = slotMap.Insert(3.3F);
+        var key5 = slotMap.Insert(4.4F);
 
         slotMap.Retain((key, value) => value != 5.5F);
 
@@ -532,11 +532,11 @@ public class Retain
     public void PredicateRemovesAllDecimalItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
-        var key2 = slotMap.Add(2.222_222_222M);
-        var key3 = slotMap.Add(3.333_333_333M);
-        var key4 = slotMap.Add(4.444_444_444M);
-        var key5 = slotMap.Add(5.555_555_555M);
+        var key1 = slotMap.Insert(1.111_111_111M);
+        var key2 = slotMap.Insert(2.222_222_222M);
+        var key3 = slotMap.Insert(3.333_333_333M);
+        var key4 = slotMap.Insert(4.444_444_444M);
+        var key5 = slotMap.Insert(5.555_555_555M);
         
 
         slotMap.Retain((key, value) => value == 6.666_666_666M);
@@ -548,11 +548,11 @@ public class Retain
     public void PredicateKeepsAllDecimalItems_ItemsRetained()
     {
         var slotMap = new SlotMap<decimal>();
-        var key1 = slotMap.Add(1.111_111_111M);
-        var key2 = slotMap.Add(2.222_222_222M);
-        var key3 = slotMap.Add(3.333_333_333M);
-        var key4 = slotMap.Add(4.444_444_444M);
-        var key5 = slotMap.Add(5.555_555_555M);
+        var key1 = slotMap.Insert(1.111_111_111M);
+        var key2 = slotMap.Insert(2.222_222_222M);
+        var key3 = slotMap.Insert(3.333_333_333M);
+        var key4 = slotMap.Insert(4.444_444_444M);
+        var key5 = slotMap.Insert(5.555_555_555M);
 
         slotMap.Retain((key, value) => value != 6.666_666_666M);
 
@@ -567,11 +567,11 @@ public class Retain
     public void PredicateRemovesAllDecimalNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.111_111_111M);
-        var key3 = slotMap.Add(2.222_222_222M);
-        var key4 = slotMap.Add(3.333_333_333M);
-        var key5 = slotMap.Add(4.444_444_444M);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.111_111_111M);
+        var key3 = slotMap.Insert(2.222_222_222M);
+        var key4 = slotMap.Insert(3.333_333_333M);
+        var key5 = slotMap.Insert(4.444_444_444M);
         
 
         slotMap.Retain((key, value) => value == 5.555_555_555M);
@@ -583,11 +583,11 @@ public class Retain
     public void PredicateKeepsAllDecimalNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(1.111_111_111M);
-        var key3 = slotMap.Add(2.222_222_222M);
-        var key4 = slotMap.Add(3.333_333_333M);
-        var key5 = slotMap.Add(4.444_444_444M);
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(1.111_111_111M);
+        var key3 = slotMap.Insert(2.222_222_222M);
+        var key4 = slotMap.Insert(3.333_333_333M);
+        var key5 = slotMap.Insert(4.444_444_444M);
 
         slotMap.Retain((key, value) => value != 5.555_555_555M);
 
@@ -602,11 +602,11 @@ public class Retain
     public void PredicateRemovesAllDateTimeItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key2 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-03-01"));
-        var key4 = slotMap.Add(DateTime.Parse("2023-04-01"));
-        var key5 = slotMap.Add(DateTime.Parse("2023-05-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key2 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-03-01"));
+        var key4 = slotMap.Insert(DateTime.Parse("2023-04-01"));
+        var key5 = slotMap.Insert(DateTime.Parse("2023-05-01"));
         
 
         slotMap.Retain((key, value) => value == DateTime.Parse("2023-06-01"));
@@ -618,11 +618,11 @@ public class Retain
     public void PredicateKeepsAllDateTimeItems_ItemsRetained()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key1 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key2 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-03-01"));
-        var key4 = slotMap.Add(DateTime.Parse("2023-04-01"));
-        var key5 = slotMap.Add(DateTime.Parse("2023-05-01"));
+        var key1 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key2 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-03-01"));
+        var key4 = slotMap.Insert(DateTime.Parse("2023-04-01"));
+        var key5 = slotMap.Insert(DateTime.Parse("2023-05-01"));
 
         slotMap.Retain((key, value) => value != DateTime.Parse("2023-06-01"));
 
@@ -637,11 +637,11 @@ public class Retain
     public void PredicateRemovesAllDateTimeNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key4 = slotMap.Add(DateTime.Parse("2023-03-01"));
-        var key5 = slotMap.Add(DateTime.Parse("2023-04-01"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key4 = slotMap.Insert(DateTime.Parse("2023-03-01"));
+        var key5 = slotMap.Insert(DateTime.Parse("2023-04-01"));
         
 
         slotMap.Retain((key, value) => value == DateTime.Parse("2023-05-01"));
@@ -653,11 +653,11 @@ public class Retain
     public void PredicateKeepsAllDateTimeNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(DateTime.Parse("2023-01-01"));
-        var key3 = slotMap.Add(DateTime.Parse("2023-02-01"));
-        var key4 = slotMap.Add(DateTime.Parse("2023-03-01"));
-        var key5 = slotMap.Add(DateTime.Parse("2023-04-01"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(DateTime.Parse("2023-01-01"));
+        var key3 = slotMap.Insert(DateTime.Parse("2023-02-01"));
+        var key4 = slotMap.Insert(DateTime.Parse("2023-03-01"));
+        var key5 = slotMap.Insert(DateTime.Parse("2023-04-01"));
 
         slotMap.Retain((key, value) => value != DateTime.Parse("2023-05-01"));
 
@@ -672,11 +672,11 @@ public class Retain
     public void PredicateRemovesAllTimeSpanItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
-        var key2 = slotMap.Add(new TimeSpan(01,00,00));
-        var key3 = slotMap.Add(new TimeSpan(02,00,00));
-        var key4 = slotMap.Add(new TimeSpan(03,00,00));
-        var key5 = slotMap.Add(new TimeSpan(04,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key2 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(02,00,00));
+        var key4 = slotMap.Insert(new TimeSpan(03,00,00));
+        var key5 = slotMap.Insert(new TimeSpan(04,00,00));
         
 
         slotMap.Retain((key, value) => value == new TimeSpan(05,00,00));
@@ -688,11 +688,11 @@ public class Retain
     public void PredicateKeepsAllTimeSpanItems_ItemsRetained()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key1 = slotMap.Add(new TimeSpan(00,00,00));
-        var key2 = slotMap.Add(new TimeSpan(01,00,00));
-        var key3 = slotMap.Add(new TimeSpan(02,00,00));
-        var key4 = slotMap.Add(new TimeSpan(03,00,00));
-        var key5 = slotMap.Add(new TimeSpan(04,00,00));
+        var key1 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key2 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(02,00,00));
+        var key4 = slotMap.Insert(new TimeSpan(03,00,00));
+        var key5 = slotMap.Insert(new TimeSpan(04,00,00));
 
         slotMap.Retain((key, value) => value != new TimeSpan(05,00,00));
 
@@ -707,11 +707,11 @@ public class Retain
     public void PredicateRemovesAllTimeSpanNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(new TimeSpan(00,00,00));
-        var key3 = slotMap.Add(new TimeSpan(01,00,00));
-        var key4 = slotMap.Add(new TimeSpan(02,00,00));
-        var key5 = slotMap.Add(new TimeSpan(03,00,00));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key4 = slotMap.Insert(new TimeSpan(02,00,00));
+        var key5 = slotMap.Insert(new TimeSpan(03,00,00));
         
 
         slotMap.Retain((key, value) => value == new TimeSpan(04,00,00));
@@ -723,11 +723,11 @@ public class Retain
     public void PredicateKeepsAllTimeSpanNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(new TimeSpan(00,00,00));
-        var key3 = slotMap.Add(new TimeSpan(01,00,00));
-        var key4 = slotMap.Add(new TimeSpan(02,00,00));
-        var key5 = slotMap.Add(new TimeSpan(03,00,00));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(new TimeSpan(00,00,00));
+        var key3 = slotMap.Insert(new TimeSpan(01,00,00));
+        var key4 = slotMap.Insert(new TimeSpan(02,00,00));
+        var key5 = slotMap.Insert(new TimeSpan(03,00,00));
 
         slotMap.Retain((key, value) => value != new TimeSpan(04,00,00));
 
@@ -742,11 +742,11 @@ public class Retain
     public void PredicateRemovesAllGuidItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key2 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key3 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
-        var key4 = slotMap.Add(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
-        var key5 = slotMap.Add(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key2 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key3 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key4 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
+        var key5 = slotMap.Insert(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
         
 
         slotMap.Retain((key, value) => value == Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F46"));
@@ -758,11 +758,11 @@ public class Retain
     public void PredicateKeepsAllGuidItems_ItemsRetained()
     {
         var slotMap = new SlotMap<Guid>();
-        var key1 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key2 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key3 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
-        var key4 = slotMap.Add(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
-        var key5 = slotMap.Add(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
+        var key1 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key2 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key3 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key4 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
+        var key5 = slotMap.Insert(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
 
         slotMap.Retain((key, value) => value != Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F46"));
 
@@ -777,11 +777,11 @@ public class Retain
     public void PredicateRemovesAllGuidNullableItems_NoItemsRetained()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key3 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key4 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
-        var key5 = slotMap.Add(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key3 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key4 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key5 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
         
 
         slotMap.Retain((key, value) => value == Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
@@ -793,11 +793,11 @@ public class Retain
     public void PredicateKeepsAllGuidNullableItems_ItemsRetained()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key1 = slotMap.Add(null);
-        var key2 = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
-        var key3 = slotMap.Add(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
-        var key4 = slotMap.Add(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
-        var key5 = slotMap.Add(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
+        var key1 = slotMap.Insert(null);
+        var key2 = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key3 = slotMap.Insert(Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
+        var key4 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
+        var key5 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
 
         slotMap.Retain((key, value) => value != Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
 

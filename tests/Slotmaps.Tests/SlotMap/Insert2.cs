@@ -2,9 +2,8 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SlotMap;
-public class Insert
+public class Insert2
 {
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                         int                                          //
@@ -23,7 +22,7 @@ public class Insert
     public void IntWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<int>();
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
 
         var newKey = slotMap.Insert(key, 20);
 
@@ -34,7 +33,7 @@ public class Insert
     public void ReplaceIntValue_SameCount()
     {
         var slotMap = new SlotMap<int>();
-        var key = slotMap.Add(10);
+        var key = slotMap.Insert(10);
 
         Assert.Single(slotMap);
         Assert.Equal(10, slotMap.Get(key));
@@ -61,7 +60,7 @@ public class Insert
     public void IntNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<int?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, 10);
 
@@ -72,7 +71,7 @@ public class Insert
     public void ReplaceIntNullableValue_SameCount()
     {
         var slotMap = new SlotMap<int?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));
@@ -99,7 +98,7 @@ public class Insert
     public void StringWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
 
         var newKey = slotMap.Insert(key, "Value 2");
 
@@ -110,7 +109,7 @@ public class Insert
     public void ReplaceStringValue_SameCount()
     {
         var slotMap = new SlotMap<string>();
-        var key = slotMap.Add("Value 1");
+        var key = slotMap.Insert("Value 1");
 
         Assert.Single(slotMap);
         Assert.Equal("Value 1", slotMap.Get(key));
@@ -137,7 +136,7 @@ public class Insert
     public void StringNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<string?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, "Value 1");
 
@@ -148,7 +147,7 @@ public class Insert
     public void ReplaceStringNullableValue_SameCount()
     {
         var slotMap = new SlotMap<string?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));
@@ -175,7 +174,7 @@ public class Insert
     public void DoubleWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<double>();
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
 
         var newKey = slotMap.Insert(key, 2.22D);
 
@@ -186,7 +185,7 @@ public class Insert
     public void ReplaceDoubleValue_SameCount()
     {
         var slotMap = new SlotMap<double>();
-        var key = slotMap.Add(1.11D);
+        var key = slotMap.Insert(1.11D);
 
         Assert.Single(slotMap);
         Assert.Equal(1.11D, slotMap.Get(key));
@@ -213,7 +212,7 @@ public class Insert
     public void DoubleNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<double?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, 1.11D);
 
@@ -224,7 +223,7 @@ public class Insert
     public void ReplaceDoubleNullableValue_SameCount()
     {
         var slotMap = new SlotMap<double?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));
@@ -251,7 +250,7 @@ public class Insert
     public void BoolWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<bool>();
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
 
         var newKey = slotMap.Insert(key, false);
 
@@ -262,7 +261,7 @@ public class Insert
     public void ReplaceBoolValue_SameCount()
     {
         var slotMap = new SlotMap<bool>();
-        var key = slotMap.Add(true);
+        var key = slotMap.Insert(true);
 
         Assert.Single(slotMap);
         Assert.Equal(true, slotMap.Get(key));
@@ -289,7 +288,7 @@ public class Insert
     public void BoolNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<bool?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, true);
 
@@ -300,7 +299,7 @@ public class Insert
     public void ReplaceBoolNullableValue_SameCount()
     {
         var slotMap = new SlotMap<bool?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));
@@ -327,7 +326,7 @@ public class Insert
     public void CharWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<char>();
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
 
         var newKey = slotMap.Insert(key, 'B');
 
@@ -338,7 +337,7 @@ public class Insert
     public void ReplaceCharValue_SameCount()
     {
         var slotMap = new SlotMap<char>();
-        var key = slotMap.Add('A');
+        var key = slotMap.Insert('A');
 
         Assert.Single(slotMap);
         Assert.Equal('A', slotMap.Get(key));
@@ -365,7 +364,7 @@ public class Insert
     public void CharNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<char?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, 'A');
 
@@ -376,7 +375,7 @@ public class Insert
     public void ReplaceCharNullableValue_SameCount()
     {
         var slotMap = new SlotMap<char?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));
@@ -403,7 +402,7 @@ public class Insert
     public void LongWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<long>();
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
 
         var newKey = slotMap.Insert(key, 2000_000_000_000L);
 
@@ -414,7 +413,7 @@ public class Insert
     public void ReplaceLongValue_SameCount()
     {
         var slotMap = new SlotMap<long>();
-        var key = slotMap.Add(1000_000_000_000L);
+        var key = slotMap.Insert(1000_000_000_000L);
 
         Assert.Single(slotMap);
         Assert.Equal(1000_000_000_000L, slotMap.Get(key));
@@ -441,7 +440,7 @@ public class Insert
     public void LongNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<long?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, 1000_000_000_000L);
 
@@ -452,7 +451,7 @@ public class Insert
     public void ReplaceLongNullableValue_SameCount()
     {
         var slotMap = new SlotMap<long?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));
@@ -479,7 +478,7 @@ public class Insert
     public void FloatWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<float>();
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
 
         var newKey = slotMap.Insert(key, 2.2F);
 
@@ -490,7 +489,7 @@ public class Insert
     public void ReplaceFloatValue_SameCount()
     {
         var slotMap = new SlotMap<float>();
-        var key = slotMap.Add(1.1F);
+        var key = slotMap.Insert(1.1F);
 
         Assert.Single(slotMap);
         Assert.Equal(1.1F, slotMap.Get(key));
@@ -517,7 +516,7 @@ public class Insert
     public void FloatNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<float?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, 1.1F);
 
@@ -528,7 +527,7 @@ public class Insert
     public void ReplaceFloatNullableValue_SameCount()
     {
         var slotMap = new SlotMap<float?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));
@@ -555,7 +554,7 @@ public class Insert
     public void DecimalWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<decimal>();
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
 
         var newKey = slotMap.Insert(key, 2.222_222_222M);
 
@@ -566,7 +565,7 @@ public class Insert
     public void ReplaceDecimalValue_SameCount()
     {
         var slotMap = new SlotMap<decimal>();
-        var key = slotMap.Add(1.111_111_111M);
+        var key = slotMap.Insert(1.111_111_111M);
 
         Assert.Single(slotMap);
         Assert.Equal(1.111_111_111M, slotMap.Get(key));
@@ -593,7 +592,7 @@ public class Insert
     public void DecimalNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, 1.111_111_111M);
 
@@ -604,7 +603,7 @@ public class Insert
     public void ReplaceDecimalNullableValue_SameCount()
     {
         var slotMap = new SlotMap<decimal?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));
@@ -631,7 +630,7 @@ public class Insert
     public void DateTimeWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
 
         var newKey = slotMap.Insert(key, DateTime.Parse("2023-02-01"));
 
@@ -642,7 +641,7 @@ public class Insert
     public void ReplaceDateTimeValue_SameCount()
     {
         var slotMap = new SlotMap<DateTime>();
-        var key = slotMap.Add(DateTime.Parse("2023-01-01"));
+        var key = slotMap.Insert(DateTime.Parse("2023-01-01"));
 
         Assert.Single(slotMap);
         Assert.Equal(DateTime.Parse("2023-01-01"), slotMap.Get(key));
@@ -669,7 +668,7 @@ public class Insert
     public void DateTimeNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, DateTime.Parse("2023-01-01"));
 
@@ -680,7 +679,7 @@ public class Insert
     public void ReplaceDateTimeNullableValue_SameCount()
     {
         var slotMap = new SlotMap<DateTime?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));
@@ -707,7 +706,7 @@ public class Insert
     public void TimeSpanWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
 
         var newKey = slotMap.Insert(key, new TimeSpan(01,00,00));
 
@@ -718,7 +717,7 @@ public class Insert
     public void ReplaceTimeSpanValue_SameCount()
     {
         var slotMap = new SlotMap<TimeSpan>();
-        var key = slotMap.Add(new TimeSpan(00,00,00));
+        var key = slotMap.Insert(new TimeSpan(00,00,00));
 
         Assert.Single(slotMap);
         Assert.Equal(new TimeSpan(00,00,00), slotMap.Get(key));
@@ -745,7 +744,7 @@ public class Insert
     public void TimeSpanNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, new TimeSpan(00,00,00));
 
@@ -756,7 +755,7 @@ public class Insert
     public void ReplaceTimeSpanNullableValue_SameCount()
     {
         var slotMap = new SlotMap<TimeSpan?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));
@@ -783,7 +782,7 @@ public class Insert
     public void GuidWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<Guid>();
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         var newKey = slotMap.Insert(key, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407"));
 
@@ -794,7 +793,7 @@ public class Insert
     public void ReplaceGuidValue_SameCount()
     {
         var slotMap = new SlotMap<Guid>();
-        var key = slotMap.Add(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
+        var key = slotMap.Insert(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         Assert.Single(slotMap);
         Assert.Equal(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), slotMap.Get(key));
@@ -821,7 +820,7 @@ public class Insert
     public void GuidNullableWithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         var newKey = slotMap.Insert(key, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
@@ -832,7 +831,7 @@ public class Insert
     public void ReplaceGuidNullableValue_SameCount()
     {
         var slotMap = new SlotMap<Guid?>();
-        var key = slotMap.Add(null);
+        var key = slotMap.Insert(null);
 
         Assert.Single(slotMap);
         Assert.Null(slotMap.Get(key));

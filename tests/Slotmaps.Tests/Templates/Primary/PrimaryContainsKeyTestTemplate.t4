@@ -7,6 +7,7 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
+
 public class ContainsKey
 {
     [Fact]
@@ -55,7 +56,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithValidKeyExists_ReturnsTrue()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = slotMap.Add(<#= data.Value[0] #>);
+        var key = slotMap.Insert(<#= data.Value[0] #>);
 
         var result = slotMap.ContainsKey(key);
 
@@ -66,7 +67,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>ItemAddedToSlotMap_EmptysSlotMapAndNotContainKey()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
 
         <#= varName #>.Remove(key);
 
@@ -78,8 +79,8 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>ItemRemovedFromSlotMap_NotContainRemovedKeyAndContainsOtherKey()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
-        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Insert(<#= data.Value[1] #>);
 
         <#= varName #>.Remove(key1);
 
