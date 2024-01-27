@@ -37,7 +37,6 @@
 
   <ItemGroup>
     <T4Transform Include="SecondaryMap\Clear.tt" />
-    <T4Transform Include="SecondaryMap\Constructor.tt" />
     <T4Transform Include="SecondaryMap\ContainsKey.tt" />
     <T4Transform Include="SecondaryMap\ContainsValue.tt" />
     <T4Transform Include="SecondaryMap\Drain.tt" />
@@ -70,6 +69,22 @@
     <T4Transform Include="SlotMap\TryGet.tt" />
     <T4Transform Include="SlotMap\TryInsert.tt" />
     <T4Transform Include="SlotMap\TryRemove.tt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <T4Transform Include="SparseSecondaryMap\Clear.tt" />
+    <T4Transform Include="SparseSecondaryMap\ContainsKey.tt" />
+    <T4Transform Include="SparseSecondaryMap\ContainsValue.tt" />
+    <T4Transform Include="SparseSecondaryMap\Drain.tt" />
+    <T4Transform Include="SparseSecondaryMap\EnsureCapacity.tt" />
+    <T4Transform Include="SparseSecondaryMap\Get.tt" />
+    <T4Transform Include="SparseSecondaryMap\Indexer.tt" />
+    <T4Transform Include="SparseSecondaryMap\Insert.tt" />
+    <T4Transform Include="SparseSecondaryMap\Remove.tt" />
+    <T4Transform Include="SparseSecondaryMap\Retain.tt" />
+    <T4Transform Include="SparseSecondaryMap\TryGet.tt" />
+    <T4Transform Include="SparseSecondaryMap\TryInsert.tt" />
+    <T4Transform Include="SparseSecondaryMap\TryRemove.tt" />
   </ItemGroup>
 
 </Project>
