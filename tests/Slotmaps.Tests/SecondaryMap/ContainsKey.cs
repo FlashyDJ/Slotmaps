@@ -2,8 +2,8 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SecondaryMap;
+
 public class ContainsKey
 {
     [Fact]
