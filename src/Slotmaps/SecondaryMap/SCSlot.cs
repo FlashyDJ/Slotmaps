@@ -1,6 +1,7 @@
 ﻿namespace FlashyDJ.Slotmaps;
 public partial class SecondaryMap<TKey, TValue>
 {
+    [DebuggerDisplay("{ToString()}")]
     internal struct Slot(TValue value, uint version)
     {
         private TValue _value = value;
