@@ -409,17 +409,8 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
 
     private uint UpdateSlot(ref Slot slot, TValue value)
     {
-        uint versionIncrement;
-        if (slot.Occupied)
-            versionIncrement = 2u;
-        else
-        {
-            versionIncrement = 1u;
-            Count++;
-        }
-
-        slot.Value = value;
-        return slot.Version += versionIncrement;
+        if (!slot.Occupied) Count++;
+        return slot.Update(value);
     }
 
     /// <summary>

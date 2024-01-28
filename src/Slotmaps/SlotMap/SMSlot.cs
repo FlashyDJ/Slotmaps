@@ -7,11 +7,11 @@ public partial class SlotMap<TKey, TValue>
 
         public TValue Value
         {
-            get => Occupied ? _value : throw new InvalidOperationException();
-            internal set => _value = value!;
+            get => Occupied ? _value : throw new InvalidOperationException("Slot is empty");
+            set => _value = value;
         }
 
-        public uint Version { get; internal set; } = version;
+        public uint Version { get; private set; } = version;
 
         public int NextFree { get; private set; }
 
@@ -24,6 +24,12 @@ public partial class SlotMap<TKey, TValue>
             NextFree = nextFree;
             Version++;
             return value;
+        }
+
+        public uint Update(TValue value)
+        {
+            Value = value;
+            return Version += Occupied ? 2u : 1u;
         }
 
         public override string ToString() => $"{Value}v{Version}";
