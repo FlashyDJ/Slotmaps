@@ -200,22 +200,20 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <seealso cref="Insert(TKey, TValue)"/>
     public TKey Insert(TValue value)
     {
-        int index = Count;
-
-        if (_freeHead <= Capacity - 1)
+        int index = _freeHead;
+        if (index <= Capacity - 1)
         {
-            ref var slot = ref _slots[_freeHead];
+            ref var slot = ref _slots[index];
             if (!slot.Occupied)
             {
                 var updatedVersion = UpdateSlot(ref slot, value);
-
-                index = _freeHead;
                 _freeHead = slot.NextFree;
                 
                 return TKey.New(index, updatedVersion);
             }
         }
 
+        index = Count;
         if (index + 1 > Capacity)
             Array.Resize(ref _slots, Capacity + (Capacity == 0 ? DefaultCapacity : Capacity));
 
