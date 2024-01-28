@@ -254,17 +254,7 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
         if (!ContainsKey(key))
             throw new KeyNotFoundException("Invalid SlotKey");
 
-        ref var slot = ref _slots[key.Index];
-
-        var returnValue = slot.Value;
-        slot.Value = default!;
-        slot.NextFree = _freeHead;
-        slot.Version++;
-
-        _freeHead = key.Index;
-        Count--;
-
-        return returnValue;
+        return ClearSlot(key);
     }
 
     // TODO: Take account of Count
@@ -402,17 +392,19 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
             return false;
         }
 
-        ref var slot = ref _slots[key.Index];
-        value = slot.Value;
+        value = ClearSlot(key);
+        return true;
+    }
 
-        slot.Value = default!;
-        slot.NextFree = _freeHead;
-        slot.Version++;
+    private TValue ClearSlot(TKey key)
+    {
+        ref var slot = ref _slots[key.Index];
+        var value = slot.Clear(_freeHead);
 
         _freeHead = key.Index;
         Count--;
 
-        return true;
+        return value;
     }
 
     private uint UpdateSlot(ref Slot slot, TValue value)

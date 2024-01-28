@@ -13,9 +13,18 @@ public partial class SlotMap<TKey, TValue>
 
         public uint Version { get; internal set; } = version;
 
-        public int NextFree { get; internal set; }
+        public int NextFree { get; private set; }
 
-        public bool Occupied => Version % 2 > 0;
+        public readonly bool Occupied => Version % 2 > 0;
+
+        public TValue Clear(int nextFree)
+        {
+            var value = Value;
+            Value = default!;
+            NextFree = nextFree;
+            Version++;
+            return value;
+        }
 
         public override string ToString() => $"{Value}v{Version}";
     }
