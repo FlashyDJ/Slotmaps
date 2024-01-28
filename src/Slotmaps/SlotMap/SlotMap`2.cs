@@ -88,16 +88,9 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     ///   <see langword="true"/> if the slot map contains the specified key; otherwise, <see langword="false"/>.
     /// </returns>
     /// <seealso cref="TryGet"/>
-    public bool ContainsKey(TKey key)
-    {
-        if (key.Index >= 0 && key.Index < _slots.Length)
-        {
-            ref var slot = ref _slots[key.Index];
-            return slot.Version == key.Version;
-        }
-
-        return false;
-    }
+    public bool ContainsKey(TKey key) =>
+        key.Index >= 0 && key.Index < _slots.Length
+        && _slots[key.Index].Version == key.Version;
 
     /// <summary>
     ///   Determines whether the slot map contains a value that matches the specified <paramref name="value"/>.
