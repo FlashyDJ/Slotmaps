@@ -231,13 +231,15 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <seealso cref="Insert(TValue)"/>
     public TKey Insert(TKey key, TValue value)
     {
-        if (!ContainsKey(key))
-            throw new KeyNotFoundException("Invalid SlotKey");
+        if (ContainsKey(key))
+        {
+            ref var slot = ref _slots[key.Index];
+            var updatedVersion = UpdateSlot(ref slot, value);
 
-        ref var slot = ref _slots[key.Index];
-        var updatedVersion = UpdateSlot(ref slot, value);
-
-        return TKey.New(key.Index, updatedVersion);
+            return TKey.New(key.Index, updatedVersion);
+        }
+            
+        throw new KeyNotFoundException("Invalid SlotKey");
     }
 
     /// <summary>
@@ -249,13 +251,9 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
     /// </exception>
     /// <seealso cref="TryRemove"/>
-    public TValue Remove(TKey key)
-    {
-        if (!ContainsKey(key))
-            throw new KeyNotFoundException("Invalid SlotKey");
-
-        return ClearSlot(key);
-    }
+    public TValue Remove(TKey key) =>
+        ContainsKey(key) ? ClearSlot(key)
+                         : throw new KeyNotFoundException("Invalid SlotKey");
 
     // TODO: Take account of Count
     /// <summary>
@@ -335,17 +333,17 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <seealso cref="Insert(TValue)"/>
     public bool TryInsert(TKey key, TValue value, out TKey newKey)
     {
-        if (!ContainsKey(key))
+        if (ContainsKey(key))
         {
-            newKey = TKey.Null<TKey>();
-            return false;
+            ref var slot = ref _slots[key.Index];
+            var updatedVersion = UpdateSlot(ref slot, value);
+
+            newKey = TKey.New(key.Index, updatedVersion);
+            return true;
         }
-
-        ref var slot = ref _slots[key.Index];
-        var updatedVersion = UpdateSlot(ref slot, value);
-
-        newKey = TKey.New(key.Index, updatedVersion);
-        return true;
+    
+        newKey = TKey.Null<TKey>();
+        return false;
     }
 
     /// <summary>
@@ -362,14 +360,14 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <seealso cref="Get"/>
     public bool TryGet(TKey key, [MaybeNullWhen(false)] out TValue value)
     {
-        if (!ContainsKey(key))
+        if (ContainsKey(key))
         {
-            value = default;
-            return false;
+            value = _slots[key.Index].Value;
+            return true;
         }
 
-        value = _slots[key.Index].Value;
-        return true;
+        value = default;
+        return false;
     }
 
     /// <summary>
@@ -386,14 +384,14 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <seealso cref="Remove"/>
     public bool TryRemove(TKey key, [MaybeNullWhen(false)] out TValue value)
     {
-        if (!ContainsKey(key))
+        if (ContainsKey(key))
         {
-            value = default;
-            return false;
+            value = ClearSlot(key);
+            return true;
         }
 
-        value = ClearSlot(key);
-        return true;
+        value = default;
+        return false;
     }
 
     private TValue ClearSlot(TKey key)
