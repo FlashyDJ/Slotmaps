@@ -8,18 +8,28 @@ public partial class SecondaryMap<TKey, TValue>
 
         public TValue Value
         {
-            get => Occupied ? _value : throw new InvalidOperationException("Slot is vacant");
-            internal set => _value = value;
+            get => Occupied ? _value : throw new InvalidOperationException("Slot is empty");
+            private set => _value = value;
         }
 
-        public uint Version { get; internal set; } = version;
+        public uint Version { get; private set; } = version;
 
-        public bool Occupied => Version != 0;
+        public readonly bool Occupied => Version != 0;
 
-        public void SetVacant()
+        public TValue Clear()
         {
+            var returnValue = Value;
             Value = default!;
             Version = 0;
+            return returnValue;
+        }
+
+        public TValue Update(TValue value, uint version)
+        {
+            var returnValue = Occupied ? Value : value;
+            Value = value;
+            Version = version;
+            return returnValue;
         }
 
         public override string ToString() => $"{Value}v{Version}";

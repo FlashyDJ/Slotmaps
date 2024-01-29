@@ -12,10 +12,6 @@
 public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable
     where TKey : struct, ISlotKey<TKey>
 {
-#pragma warning disable CA1825 // avoid the extra generic instantiation for Array.Empty<T>()
-    private static readonly Slot[] s_emptyArray = new Slot[0];
-#pragma warning restore CA1825
-
     private Slot[] _slots;
     private SlotKeyCollection? _keys;
     private SlotValueCollection? _values;
@@ -24,7 +20,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     ///   Initializes a new instance of the <see cref="SecondaryMap{TKey, TValue}"/> class that is empty with no
     ///   initial capacity.
     /// </summary>
-    public SecondaryMap() => _slots = s_emptyArray;
+    public SecondaryMap() => _slots = [];
 
     /// <summary>
     ///   Initializes a new instance of the <see cref="SecondaryMap{TKey, TValue}"/> class with the specified capacity.
@@ -37,11 +33,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     public SecondaryMap(int capacity)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
-
-        if (capacity == 0)
-            _slots = s_emptyArray;
-        else
-            _slots = new Slot[capacity];
+        _slots = capacity == 0 ? [] : new Slot[capacity];
     }
     IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() =>
         new Enumerator(this);
@@ -212,29 +204,17 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
         if (key.IsNull)
             throw new KeyNotFoundException("Invalid TKey");
 
-        if (Capacity <= key.Index)
+        if (key.Index >= Capacity)
             Array.Resize(ref _slots, key.Index + 1);
 
         ref var slot = ref _slots[key.Index];
-        var returnValue = slot.Occupied ? slot.Value : value;
 
-        if (slot.Version == key.Version)
-        {
-            slot.Value = value;
-            return returnValue;
-        }
-
-        if (slot.Occupied)
-        {
-            if (key.Version < slot.Version)
-                throw new KeyNotFoundException("TKey is an older version");
-        }
-        else
+        if (!slot.Occupied)
             Count++;
+        else if (key.Version < slot.Version)
+            throw new KeyNotFoundException("TKey is an older version");
 
-        slot.Value = value;
-        slot.Version = key.Version;
-        return returnValue;
+        return slot.Update(value, key.Version);
     }
 
     /// <summary>
@@ -256,11 +236,8 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
             ref var slot = ref _slots[key.Index];
             if (slot.Version == key.Version)
             {
-                var value = slot.Value;
-                slot.SetVacant();
                 Count--;
-
-                return value;
+                return slot.Clear();
             }
         }
 
@@ -373,29 +350,17 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
         if (key.IsNull)
             return false;
 
-        if (Capacity <= key.Index)
+        if (key.Index >= Capacity)
             Array.Resize(ref _slots, key.Index + 1);
 
         ref var slot = ref _slots[key.Index];
 
-        if (slot.Version == key.Version)
-        {
-            oldValue = slot.Value;
-            slot.Value = value;
-            return true;
-        }
-
-        if (slot.Occupied)
-        {
-            if (key.Version < slot.Version)
-                return false;
-        }
-        else
+        if (!slot.Occupied)
             Count++;
+        else if (key.Version < slot.Version)
+            return false;
 
-        oldValue = value;
-        slot.Value = value;
-        slot.Version = key.Version;
+        oldValue = slot.Update(value, key.Version);
         return true;
     }
 
@@ -424,10 +389,8 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
             ref var slot = ref _slots[key.Index];
             if (slot.Version == key.Version)
             {
-                value = slot.Value;
-                slot.SetVacant();
                 Count--;
-
+                value = slot.Clear();
                 return true;
             }
         }
