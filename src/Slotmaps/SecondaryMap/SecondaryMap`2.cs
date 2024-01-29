@@ -257,7 +257,10 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     public void Reserve(int additionalSize)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(additionalSize);
-        Array.Resize(ref _slots, Capacity + additionalSize);
+        int requiredCapacity = Count + additionalSize;
+
+        if (requiredCapacity > Capacity)
+            Array.Resize(ref _slots, requiredCapacity);
     }
 
     /// <summary>
