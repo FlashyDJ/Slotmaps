@@ -40,7 +40,6 @@ public class Retain
         var key4 = slotMap.Insert(40);
         var key5 = slotMap.Insert(50);
         
-
         slotMap.Retain((key, value) => value == 60);
 
         Assert.Empty(slotMap);
@@ -75,7 +74,6 @@ public class Retain
         var key4 = slotMap.Insert(30);
         var key5 = slotMap.Insert(40);
         
-
         slotMap.Retain((key, value) => value == 50);
 
         Assert.Empty(slotMap);
@@ -110,7 +108,6 @@ public class Retain
         var key4 = slotMap.Insert("Value 4");
         var key5 = slotMap.Insert("Value 5");
         
-
         slotMap.Retain((key, value) => value == "Value 6");
 
         Assert.Empty(slotMap);
@@ -145,7 +142,6 @@ public class Retain
         var key4 = slotMap.Insert("Value 3");
         var key5 = slotMap.Insert("Value 4");
         
-
         slotMap.Retain((key, value) => value == "Value 5");
 
         Assert.Empty(slotMap);
@@ -180,7 +176,6 @@ public class Retain
         var key4 = slotMap.Insert(4.4F);
         var key5 = slotMap.Insert(5.5F);
         
-
         slotMap.Retain((key, value) => value == 6.6F);
 
         Assert.Empty(slotMap);
@@ -215,7 +210,6 @@ public class Retain
         var key4 = slotMap.Insert(3.3F);
         var key5 = slotMap.Insert(4.4F);
         
-
         slotMap.Retain((key, value) => value == 5.5F);
 
         Assert.Empty(slotMap);
@@ -250,7 +244,6 @@ public class Retain
         var key4 = slotMap.Insert(DateTime.Parse("2023-04-01"));
         var key5 = slotMap.Insert(DateTime.Parse("2023-05-01"));
         
-
         slotMap.Retain((key, value) => value == DateTime.Parse("2023-06-01"));
 
         Assert.Empty(slotMap);
@@ -285,7 +278,6 @@ public class Retain
         var key4 = slotMap.Insert(DateTime.Parse("2023-03-01"));
         var key5 = slotMap.Insert(DateTime.Parse("2023-04-01"));
         
-
         slotMap.Retain((key, value) => value == DateTime.Parse("2023-05-01"));
 
         Assert.Empty(slotMap);
@@ -320,7 +312,6 @@ public class Retain
         var key4 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
         var key5 = slotMap.Insert(Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
         
-
         slotMap.Retain((key, value) => value == Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F46"));
 
         Assert.Empty(slotMap);
@@ -355,7 +346,6 @@ public class Retain
         var key4 = slotMap.Insert(Guid.Parse("C5E20F5C-BB26-4F71-AD26-5A7B6E785FFE"));
         var key5 = slotMap.Insert(Guid.Parse("D31CCB20-ECBE-4349-BEAA-BC56A0E0B731"));
         
-
         slotMap.Retain((key, value) => value == Guid.Parse("E2E85D84-FAFE-44E9-A14C-78D50C207F45"));
 
         Assert.Empty(slotMap);

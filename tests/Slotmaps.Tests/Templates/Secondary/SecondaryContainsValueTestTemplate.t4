@@ -28,14 +28,7 @@ foreach (var data in dataTypes)
         var key3 = new SlotKey(3, 1);
         <#= varName #>.Insert(key1, <#= data.Value[0] #>);
         <#= varName #>.Insert(key2, <#= data.Value[1] #>);
-<# 
-if (!data.Key.Contains("bool"))
-{
-#>
         <#= varName #>.Insert(key3, <#= data.Value[2] #>);
-<#
-}
-#>
 
         var result = <#= varName #>.ContainsValue(<#= data.Value[0] #>);
 
@@ -50,17 +43,10 @@ if (!data.Key.Contains("bool"))
         var key2 = new SlotKey(2, 1);
         var key3 = new SlotKey(3, 1);
         <#= varName #>.Insert(key1, <#= data.Value[0] #>);
-<# 
-if (!data.Key.Contains("bool"))
-{
-#>
         <#= varName #>.Insert(key2, <#= data.Value[1] #>);
         <#= varName #>.Insert(key3, <#= data.Value[2] #>);
-<#
-}
-#>
 
-        var result = <#= varName #>.ContainsValue(<#= data.Key.Contains("bool") ? data.Value[1] : data.Value[3] #>);
+        var result = <#= varName #>.ContainsValue(<#= data.Value[3] #>);
 
         Assert.False(result);
     }

@@ -34,7 +34,6 @@ public class Retain
 foreach (var data in dataTypes)
 {
     var typeTitle = NullableString(char.ToUpper(data.Key[0]) + data.Key.Substring(1));
-    var isBool = data.Key.Contains("bool");
 #>
     //////////////////////////////////////////////////////////////////////////////////////////
     //<#= CenteredString(data.Key) #>//
@@ -50,9 +49,8 @@ foreach (var data in dataTypes)
         var key4 = <#= varName #>.Insert(<#= data.Value[3] #>);
         var key5 = <#= varName #>.Insert(<#= data.Value[4] #>);
         
-<#= !isBool ? "" : $"{Environment.NewLine}#pragma warning disable CS0184 // 'is' expression's given expression is never of the provided type" #>
-        <#= varName #>.Retain((key, value) => value <#= !isBool ? $"== {data.Value[5]}" : "is int" #>);
-<#= !isBool ? "" : $"#pragma warning restore CS0184 // 'is' expression's given expression is never of the provided type{Environment.NewLine}" #>
+        <#= varName #>.Retain((key, value) => value == <#= data.Value[5] #>);
+
         Assert.Empty(<#= varName #>);
     }
 
@@ -65,9 +63,9 @@ foreach (var data in dataTypes)
         var key3 = <#= varName #>.Insert(<#= data.Value[2] #>);
         var key4 = <#= varName #>.Insert(<#= data.Value[3] #>);
         var key5 = <#= varName #>.Insert(<#= data.Value[4] #>);
-<#= !isBool ? "" : !data.Key.EndsWith("?") ? $"{Environment.NewLine}#pragma warning disable CS0183 // 'is' expression's given expression is always of the provided type" : $"{Environment.NewLine}#pragma warning disable CS8794 // The input always matches the provided pattern." #>
-        <#= varName #>.Retain((key, value) => value <#= !isBool ? $"!= {data.Value[5]}" : !data.Key.EndsWith("?") ? "is bool" : "is bool or null" #>);
-<#= !isBool ? "" : !data.Key.EndsWith("?") ? $"#pragma warning restore CS0183 // 'is' expression's given expression is always of the provided type{Environment.NewLine}" : $"#pragma warning restore CS8794 // The input always matches the provided pattern.{Environment.NewLine}" #>
+
+        <#= varName #>.Retain((key, value) => value != <#= data.Value[5] #>);
+
         Assert.Equal(5, <#= varName #>.Count);
     }
 
