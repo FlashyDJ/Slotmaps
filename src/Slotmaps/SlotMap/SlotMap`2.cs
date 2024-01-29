@@ -186,9 +186,6 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// </summary>
     /// <param name="value">The value to be added to the slot map.</param>
     /// <returns>The key associated with the added value.</returns>
-    /// <exception cref="ArgumentNullException">
-    ///   Thrown if <paramref name="value"/> is null.
-    /// </exception>
     /// <seealso cref="TryInsert"/>
     /// <seealso cref="Insert(TKey, TValue)"/>
     public TKey Insert(TValue value)
@@ -328,9 +325,6 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <returns>
     ///   <see langword="true"/> if insertion or update was successful; otherwise, <see langword="false"/>.
     /// </returns>
-    /// <exception cref="ArgumentNullException">
-    ///   Thrown if <paramref name="value"/> is <c>null</c>.
-    /// </exception>
     /// <seealso cref="Insert(TKey, TValue)"/>
     /// <seealso cref="Insert(TValue)"/>
     public bool TryInsert(TKey key, TValue value, out TKey newKey)

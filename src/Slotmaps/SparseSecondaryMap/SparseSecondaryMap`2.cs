@@ -217,9 +217,6 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     /// <returns>
     ///   The previous value associated with the specified <see cref="SlotKey"/> if it existed; otherwise, the provided <paramref name="value"/>.
     /// </returns>
-    /// <exception cref="ArgumentNullException">
-    ///   Thrown if <paramref name="value"/> is null.
-    /// </exception>
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the provided <see cref="SlotKey"/> is invalid or has a version less than 1,
     ///   or if the provided <see cref="SlotKey"/> is an older version than an existing entry.

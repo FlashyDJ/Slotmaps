@@ -192,9 +192,6 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// <returns>
     ///   The updated key after the insertion or update with an incremented version number.
     /// </returns>
-    /// <exception cref="ArgumentNullException">
-    ///   Thrown if <paramref name="value"/> is <c>null</c>.
-    /// </exception>
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the specified <paramref name="key"/> is not found in the secondary map.
     /// </exception>
