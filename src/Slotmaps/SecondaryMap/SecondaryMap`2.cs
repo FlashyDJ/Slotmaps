@@ -182,7 +182,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// <seealso cref="TryGet"/>
     public TValue Get(TKey key) =>
         ContainsKey(key) ? _slots[key.Index].Value
-                         : throw new KeyNotFoundException("Invalid SlotKey");
+                         : throw ThrowHelper.GetKeyNotFoundException(key);
 
     /// <summary>
     ///   Inserts or updates a value associated with the specified key in the secondary map.
@@ -199,7 +199,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     public TValue Insert(TKey key, TValue value)
     {
         if (key.IsNull)
-            throw new KeyNotFoundException("Invalid TKey");
+            ThrowHelper.ThrowKeyNotFoundException_Null(key);
 
         if (key.Index >= Capacity)
             Array.Resize(ref _slots, key.Index + 1);
@@ -209,7 +209,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
         if (!slot.Occupied)
             Count++;
         else if (key.Version < slot.Version)
-            throw new KeyNotFoundException("TKey is an older version");
+            ThrowHelper.ThrowKeyNotFoundException_OlderVersion(key);
 
         return slot.Update(value, key.Version);
     }
@@ -226,7 +226,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     public TValue Remove(TKey key)
     {
         if (key.IsNull)
-            throw new KeyNotFoundException("Invalid TKey");
+            ThrowHelper.ThrowKeyNotFoundException_Null(key);
 
         if (Capacity > key.Index)
         {
@@ -238,7 +238,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
             }
         }
 
-        throw new KeyNotFoundException("Invalid TKey");
+        throw ThrowHelper.GetKeyNotFoundException(key);
     }
 
     /// <summary>

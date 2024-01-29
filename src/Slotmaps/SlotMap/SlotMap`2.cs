@@ -177,7 +177,7 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// </exception>
     public TValue Get(TKey key) => 
         ContainsKey(key) ? _slots[key.Index].Value
-                         : throw new KeyNotFoundException("Invalid SlotKey");
+                         : throw ThrowHelper.GetKeyNotFoundException(key);
 
     /// <summary>
     ///   Inserts a value to the slot map and returns a key associated with the added value. It assigns the value
@@ -228,15 +228,13 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <seealso cref="Insert(TValue)"/>
     public TKey Insert(TKey key, TValue value)
     {
-        if (ContainsKey(key))
-        {
-            ref var slot = ref _slots[key.Index];
-            var updatedVersion = UpdateSlot(ref slot, value);
+        if (!ContainsKey(key))
+            ThrowHelper.ThrowKeyNotFoundException(key);
+        
+        ref var slot = ref _slots[key.Index];
+        var updatedVersion = UpdateSlot(ref slot, value);
 
-            return TKey.New(key.Index, updatedVersion);
-        }
-            
-        throw new KeyNotFoundException("Invalid SlotKey");
+        return TKey.New(key.Index, updatedVersion);
     }
 
     /// <summary>
@@ -250,7 +248,7 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <seealso cref="TryRemove"/>
     public TValue Remove(TKey key) =>
         ContainsKey(key) ? ClearSlot(key)
-                         : throw new KeyNotFoundException("Invalid SlotKey");
+                         : throw ThrowHelper.GetKeyNotFoundException(key);
 
     /// <summary>
     ///   Ensures that the slot map has enough additional capacity to accommodate the specified number of elements.

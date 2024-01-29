@@ -28,7 +28,6 @@ public class Insert
         var invalidKey = new SlotKey(-1, 0);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, 10));
-        Assert.Equal("Invalid TKey", ex.Message);
     }
 
     [Fact]
@@ -56,7 +55,6 @@ public class Insert
         secondaryMap.Insert(key1, 10);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, 20));
-        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -127,7 +125,6 @@ public class Insert
         var invalidKey = new SlotKey(-1, 0);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, null));
-        Assert.Equal("Invalid TKey", ex.Message);
     }
 
     [Fact]
@@ -155,7 +152,6 @@ public class Insert
         secondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, 10));
-        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -226,7 +222,6 @@ public class Insert
         var invalidKey = new SlotKey(-1, 0);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, "Value 1"));
-        Assert.Equal("Invalid TKey", ex.Message);
     }
 
     [Fact]
@@ -254,7 +249,6 @@ public class Insert
         secondaryMap.Insert(key1, "Value 1");
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, "Value 2"));
-        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -325,7 +319,6 @@ public class Insert
         var invalidKey = new SlotKey(-1, 0);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, null));
-        Assert.Equal("Invalid TKey", ex.Message);
     }
 
     [Fact]
@@ -353,7 +346,6 @@ public class Insert
         secondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, "Value 1"));
-        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -424,7 +416,6 @@ public class Insert
         var invalidKey = new SlotKey(-1, 0);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, 1.1F));
-        Assert.Equal("Invalid TKey", ex.Message);
     }
 
     [Fact]
@@ -452,7 +443,6 @@ public class Insert
         secondaryMap.Insert(key1, 1.1F);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, 2.2F));
-        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -523,7 +513,6 @@ public class Insert
         var invalidKey = new SlotKey(-1, 0);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, null));
-        Assert.Equal("Invalid TKey", ex.Message);
     }
 
     [Fact]
@@ -551,7 +540,6 @@ public class Insert
         secondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, 1.1F));
-        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -622,7 +610,6 @@ public class Insert
         var invalidKey = new SlotKey(-1, 0);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, DateTime.Parse("2023-01-01")));
-        Assert.Equal("Invalid TKey", ex.Message);
     }
 
     [Fact]
@@ -650,7 +637,6 @@ public class Insert
         secondaryMap.Insert(key1, DateTime.Parse("2023-01-01"));
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, DateTime.Parse("2023-02-01")));
-        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -721,7 +707,6 @@ public class Insert
         var invalidKey = new SlotKey(-1, 0);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, null));
-        Assert.Equal("Invalid TKey", ex.Message);
     }
 
     [Fact]
@@ -749,7 +734,6 @@ public class Insert
         secondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, DateTime.Parse("2023-01-01")));
-        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -820,7 +804,6 @@ public class Insert
         var invalidKey = new SlotKey(-1, 0);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE")));
-        Assert.Equal("Invalid TKey", ex.Message);
     }
 
     [Fact]
@@ -848,7 +831,6 @@ public class Insert
         secondaryMap.Insert(key1, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, Guid.Parse("B9EAA78E-3CE3-4F19-85BF-C9F8F8D6C407")));
-        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
@@ -919,7 +901,6 @@ public class Insert
         var invalidKey = new SlotKey(-1, 0);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(invalidKey, null));
-        Assert.Equal("Invalid TKey", ex.Message);
     }
 
     [Fact]
@@ -947,7 +928,6 @@ public class Insert
         secondaryMap.Insert(key1, null);
 
         var ex = Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key2, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE")));
-        Assert.Equal("TKey is an older version", ex.Message);
     }
 
     [Fact]
