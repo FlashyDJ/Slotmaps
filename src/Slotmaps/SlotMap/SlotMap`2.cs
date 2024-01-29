@@ -255,7 +255,6 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
         ContainsKey(key) ? ClearSlot(key)
                          : throw new KeyNotFoundException("Invalid SlotKey");
 
-    // TODO: Take account of Count
     /// <summary>
     ///   Ensures that the slot map has enough additional capacity to accommodate the specified number of elements.
     /// </summary>
@@ -269,7 +268,10 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     public void Reserve(int additionalSize)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(additionalSize);
-        Array.Resize(ref _slots, Capacity + additionalSize);
+        int requiredCapacity = Count + additionalSize;
+
+        if (requiredCapacity > Capacity)
+            Array.Resize(ref _slots, requiredCapacity);
     }
 
     /// <summary>
