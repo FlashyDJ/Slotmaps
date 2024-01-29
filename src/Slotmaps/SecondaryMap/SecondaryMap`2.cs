@@ -324,14 +324,14 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// <seealso cref="Get"/>
     public bool TryGet(TKey key, [MaybeNullWhen(false)] out TValue value)
     {
-        if (!ContainsKey(key))
+        if (ContainsKey(key))
         {
-            value = default;
-            return false;
+            value = _slots[key.Index].Value;
+            return true;
         }
 
-        value = _slots[key.Index].Value!;
-        return true;
+        value = default;
+        return false;
     }
 
     /// <summary>
