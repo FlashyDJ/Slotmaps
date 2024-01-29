@@ -85,13 +85,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// </exception>
     public TValue this[TKey key]
     {
-        get
-        {
-            if (!ContainsKey(key))
-                throw new KeyNotFoundException("Invalid TKey");
-
-            return _slots[key.Index].Value;
-        }
+        get => Get(key);
         set => Insert(key, value);
     }
 
@@ -103,13 +97,9 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     ///   <see langword="true"/> if the secondary map contains the specified key; otherwise, <see langword="false"/>.
     /// </returns>
     /// <seealso cref="TryGet"/>
-    public bool ContainsKey(TKey key)
-    {
-        if (key.IsNull)
-            return false;
-
-        return _slots.Length > key.Index && _slots[key.Index].Version == key.Version;
-    }
+    public bool ContainsKey(TKey key) =>
+        key.Index >= 0 && key.Index < _slots.Length
+        && _slots[key.Index].Version == key.Version;
 
     /// <summary>
     ///   Determines whether the secondary map contains a value that matches the specified <paramref name="value"/>.
@@ -186,7 +176,6 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
             return Capacity;
 
         Resize(capacity);
-
         return capacity;
     }
 
@@ -199,13 +188,9 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     ///   Thrown if the specified <paramref name="key"/> is not found in the secondary map.
     /// </exception>
     /// <seealso cref="TryGet"/>
-    public TValue Get(TKey key)
-    {
-        if (!ContainsKey(key))
-            throw new KeyNotFoundException("Invalid TKey");
-
-        return _slots[key.Index].Value!;
-    }
+    public TValue Get(TKey key) =>
+        ContainsKey(key) ? _slots[key.Index].Value
+                         : throw new KeyNotFoundException("Invalid SlotKey");
 
     /// <summary>
     ///   Inserts or updates a value associated with the specified key in the secondary map.
