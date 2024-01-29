@@ -90,7 +90,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// </returns>
     /// <seealso cref="TryGet"/>
     public bool ContainsKey(TKey key) =>
-        key.Index >= 0 && key.Index < _slots.Length
+        key.Index >= 0 && key.Index < _slots.Length && key.Version != 0
         && _slots[key.Index].Version == key.Version;
 
     /// <summary>
