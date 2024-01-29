@@ -20,7 +20,6 @@ public class TryRemove
 
         Assert.True(result);
         Assert.Equal(10, previousValue);
-        Assert.Equal(10, previousValue);
         Assert.False(slotMap.TryGet(key, out _));
     }
 
@@ -87,7 +86,6 @@ public class TryRemove
         bool result = slotMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
         Assert.Null(previousValue);
         Assert.False(slotMap.TryGet(key, out _));
     }
@@ -156,7 +154,6 @@ public class TryRemove
 
         Assert.True(result);
         Assert.Equal("Value 1", previousValue);
-        Assert.Equal("Value 1", previousValue);
         Assert.False(slotMap.TryGet(key, out _));
     }
 
@@ -223,7 +220,6 @@ public class TryRemove
         bool result = slotMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
         Assert.Null(previousValue);
         Assert.False(slotMap.TryGet(key, out _));
     }
@@ -292,7 +288,6 @@ public class TryRemove
 
         Assert.True(result);
         Assert.Equal(1.1F, previousValue);
-        Assert.Equal(1.1F, previousValue);
         Assert.False(slotMap.TryGet(key, out _));
     }
 
@@ -359,7 +354,6 @@ public class TryRemove
         bool result = slotMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
         Assert.Null(previousValue);
         Assert.False(slotMap.TryGet(key, out _));
     }
@@ -428,7 +422,6 @@ public class TryRemove
 
         Assert.True(result);
         Assert.Equal(DateTime.Parse("2023-01-01"), previousValue);
-        Assert.Equal(DateTime.Parse("2023-01-01"), previousValue);
         Assert.False(slotMap.TryGet(key, out _));
     }
 
@@ -495,7 +488,6 @@ public class TryRemove
         bool result = slotMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
         Assert.Null(previousValue);
         Assert.False(slotMap.TryGet(key, out _));
     }
@@ -564,7 +556,6 @@ public class TryRemove
 
         Assert.True(result);
         Assert.Equal(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), previousValue);
-        Assert.Equal(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), previousValue);
         Assert.False(slotMap.TryGet(key, out _));
     }
 
@@ -631,7 +622,6 @@ public class TryRemove
         bool result = slotMap.TryRemove(key, out var previousValue);
 
         Assert.True(result);
-        Assert.Equal(null, previousValue);
         Assert.Null(previousValue);
         Assert.False(slotMap.TryGet(key, out _));
     }
