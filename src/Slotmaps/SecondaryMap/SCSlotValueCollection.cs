@@ -10,10 +10,12 @@ public partial class SecondaryMap<TKey, TValue>
         private readonly SecondaryMap<TKey, TValue> _secondaryMap;
 
         /// <summary>
-        ///   Initializes a new instance of the <see cref="SecondaryMap{TKey, TValue}.SlotValueCollection"/> class associated with a <see cref="SecondaryMap{TKey, TValue}"/>.
+        ///   Initializes a new instance of the <see cref="SlotValueCollection"/> class associated with a
+        ///   <see cref="SecondaryMap{TKey, TValue}"/>.
         /// </summary>
         /// <param name="secondaryMap">
-        ///   The <see cref="SecondaryMap{TKey, TValue}"/> with which this collection is associated. Must not be null.
+        ///   The <see cref="SecondaryMap{TKey, TValue}"/> with which this collection is associated.
+        ///   Must not be null.
         /// </param>
         /// <exception cref="ArgumentNullException">
         ///   Thrown if <paramref name="secondaryMap"/> is null.
@@ -31,24 +33,27 @@ public partial class SecondaryMap<TKey, TValue>
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_secondaryMap);
 
         /// <summary>
-        ///   Gets the number of values in the <see cref="SecondaryMap{TKey, TValue}.SlotValueCollection"/>.
+        ///   Gets the number of values in the <see cref="SlotValueCollection"/>.
         /// </summary>
         public int Count => _secondaryMap.Count;
 
         /// <summary>
-        ///   Determines whether the <see cref="SecondaryMap{TKey, TValue}.SlotValueCollection"/> contains a specific value.
+        ///   Determines whether the <see cref="SlotValueCollection"/> contains a specific value.
         /// </summary>
         /// <param name="value">The value to locate in the collection.</param>
         /// <returns>
-        ///   <see langword="true"/> if the <see cref="SecondaryMap{TKey, TValue}.SlotValueCollection"/> contains the specified value; otherwise, <see langword="false"/>.
+        ///   <see langword="true"/> if the <see cref="SlotValueCollection"/> contains the specified value;
+        ///   otherwise, <see langword="false"/>.
         /// </returns>
         public bool Contains(TValue value) => _secondaryMap.ContainsValue(value!);
 
         /// <summary>
-        ///   Copies the elements of the <see cref="SecondaryMap{TKey, TValue}.SlotValueCollection"/> to an array, starting at the specified index.
+        ///   Copies the elements of the <see cref="SlotValueCollection"/> to an array, starting at the
+        ///   specified index.
         /// </summary>
         /// <param name="array">
-        ///   The one-dimensional array that is the destination of the elements copied from the <see cref="SecondaryMap{TKey, TValue}.SlotValueCollection"/>. Must not be null.
+        ///   The one-dimensional array that is the destination of the elements copied from the
+        ///   <see cref="SlotValueCollection"/>. Must not be null.
         /// </param>
         /// <param name="index">
         ///   The zero-based index in <paramref name="array"/> at which copying begins.
@@ -57,7 +62,9 @@ public partial class SecondaryMap<TKey, TValue>
         ///   Thrown if <paramref name="array"/> is null.
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>, or if there are not enough elements in the <see cref="SecondaryMap{TKey, TValue}.SlotValueCollection"/> to fill the destination array starting at the specified index.
+        ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of
+        ///   <paramref name="array"/>, or if there are not enough elements in the <see cref="SlotValueCollection"/>
+        ///   to fill the destination array starting at the specified index.
         /// </exception>
         public void CopyTo(TValue[] array, int index)
         {
@@ -79,7 +86,7 @@ public partial class SecondaryMap<TKey, TValue>
         public IEnumerator<TValue> GetEnumerator() => new Enumerator(_secondaryMap);
 
         /// <summary>
-        ///   Represents an enumerator for the values in the <see cref="SecondaryMap{TKey, TValue}.SlotValueCollection"/>.
+        ///   Represents an enumerator for the values in the <see cref="SlotValueCollection"/>.
         /// </summary>
         public struct Enumerator : IEnumerator<TValue>, IEnumerator
         {

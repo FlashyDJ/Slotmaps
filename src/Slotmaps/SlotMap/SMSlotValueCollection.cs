@@ -50,8 +50,9 @@ public partial class SlotMap<TKey, TValue>
         ///   Thrown if <paramref name="array"/> is null.
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>,
-        ///   or if there are not enough elements in the slot map to fill the destination array starting at the specified index.
+        ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of
+        ///   <paramref name="array"/>, or if there are not enough elements in the slot map to fill the
+        ///   destination array starting at the specified index.
         /// </exception>
         public void CopyTo(TValue[] array, int index)
         {

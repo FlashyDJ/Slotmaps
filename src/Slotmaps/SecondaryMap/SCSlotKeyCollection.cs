@@ -10,7 +10,7 @@ public partial class SecondaryMap<TKey, TValue>
         private readonly SecondaryMap<TKey, TValue> _secondaryMap;
 
         /// <summary>
-        ///   Initializes a new instance of the <see cref="SecondaryMap{TKey, TValue}.SlotKeyCollection"/> class with a reference to the parent <see cref="SecondaryMap{TKey, TValue}"/>.
+        ///   Initializes a new instance of the <see cref="SlotKeyCollection"/> class with a reference to the parent <see cref="SecondaryMap{TKey, TValue}"/>.
         /// </summary>
         /// <param name="secondaryMap">
         ///   The <see cref="SecondaryMap{TKey, TValue}"/> to which this collection is associated.
@@ -31,26 +31,29 @@ public partial class SecondaryMap<TKey, TValue>
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_secondaryMap);
 
         /// <summary>
-        ///   Gets the number of elements in the <see cref="SecondaryMap{TKey, TValue}.SlotKeyCollection"/>.
+        ///   Gets the number of elements in the <see cref="SlotKeyCollection"/>.
         /// </summary>
         public int Count => _secondaryMap.Count;
 
         /// <summary>
-        ///   Determines whether the <see cref="SecondaryMap{TKey, TValue}.SlotKeyCollection"/> contains a specific <see cref="SlotKey"/>.
+        ///   Determines whether the <see cref="SlotKeyCollection"/> contains a specific <see cref="SlotKey"/>.
         /// </summary>
         /// <param name="key">
         ///   The <see cref="SlotKey"/> to locate in the collection.
         /// </param>
         /// <returns>
-        ///   <see langword="true"/> if the <see cref="SecondaryMap{TKey, TValue}.SlotKeyCollection"/> contains the specified <paramref name="key"/>; otherwise, <see langword="false"/>.
+        ///   <see langword="true"/> if the <see cref="SlotKeyCollection"/> contains the specified
+        ///   <paramref name="key"/>; otherwise, <see langword="false"/>.
         /// </returns>
         public bool Contains(TKey key) => _secondaryMap.ContainsKey(key);
 
         /// <summary>
-        ///   Copies the elements of the <see cref="SecondaryMap{TKey, TValue}.SlotKeyCollection"/> to an array, starting at the specified index.
+        ///   Copies the elements of the <see cref="SlotKeyCollection"/> to an array, starting at the
+        ///   specified index.
         /// </summary>
         /// <param name="array">
-        ///   The one-dimensional array that is the destination of the elements copied from the <see cref="SecondaryMap{TKey, TValue}.SlotKeyCollection"/>. Must not be null.
+        ///   The one-dimensional array that is the destination of the elements copied from the
+        ///   <see cref="SlotKeyCollection"/>. Must not be null.
         /// </param>
         /// <param name="index">
         ///   The zero-based index in <paramref name="array"/> at which copying begins.
@@ -59,7 +62,9 @@ public partial class SecondaryMap<TKey, TValue>
         ///   Thrown if <paramref name="array"/> is null.
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of <paramref name="array"/>, or if there are not enough elements in the <see cref="SecondaryMap{TKey, TValue}.SlotKeyCollection"/> to fill the destination array starting at the specified index.
+        ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of
+        ///   <paramref name="array"/>, or if there are not enough elements in the <see cref="SlotKeyCollection"/>
+        ///   to fill the destination array starting at the specified index.
         /// </exception>
         public void CopyTo(TKey[] array, int index)
         {
