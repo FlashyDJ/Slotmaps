@@ -103,7 +103,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     public bool ContainsKey(TKey key)
     {
         ref var slot = ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key.Index);
-        return !Unsafe.IsNullRef(ref slot) && slot.Occupied && slot.Version == key.Version;
+        return !Unsafe.IsNullRef(ref slot) && slot.Version == key.Version;
     }
 
     /// <summary>
@@ -140,14 +140,11 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     {
         foreach (var slot in _slots)
         {
-            if (slot.Value.Occupied)
-            {
-                var key = TKey.New(slot.Key, slot.Value.Version);
-                var value = slot.Value.Value;
+            var key = TKey.New(slot.Key, slot.Value.Version);
+            var value = slot.Value.Value;
 
-                Remove(key);
-                yield return new(key, value);
-            }
+            Remove(key);
+            yield return new(key, value);
         }
     }
 
@@ -201,29 +198,17 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     /// </exception>
     public TValue Insert(TKey key, TValue value)
     {
-        if (key.IsNull && key.Version == 0)
+        if (key.IsNull || key.Version == 0)
             ThrowHelper.ThrowKeyNotFoundException_Null(key);
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
 
-        if (exists && slot.Occupied)
-        {
-            if (IsOlderVersion(key.Version, slot.Version))
-                ThrowHelper.ThrowKeyNotFoundException_OlderVersion(key);
-
-            var replacedValue = slot.Value;
-
-            slot.Value = value;
-            slot.Version = key.Version;
-            return replacedValue;
-        }
-        else
+        if (!exists)
             Count++;
-
-        slot.Value = value;
-        slot.Version = key.Version;
-        slot.Vacant = false;
-        return value;
+        else if (IsOlderVersion(key.Version, slot.Version))
+            ThrowHelper.ThrowKeyNotFoundException_OlderVersion(key);
+        
+        return slot.Update(value, key.Version);
     }
 
     /// <summary>
@@ -255,7 +240,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
         {
             ref var slot = ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key);
 
-            if (!Unsafe.IsNullRef(ref slot) && slot.Occupied)
+            if (!Unsafe.IsNullRef(ref slot))
             {
                 var slotKey = TKey.New(key, slot.Version);
                 var value = slot.Value;
@@ -286,7 +271,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
             return false;
 
         var exists = _slots.TryGetValue(key.Index, out var slot);
-        if (!exists || slot.Version != key.Version || !slot.Occupied)
+        if (!exists || slot.Version != key.Version)
             return false;
 
         value = slot.Value;
@@ -312,30 +297,17 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     public bool TryInsert(TKey key, TValue value, [MaybeNullWhen(false)] out TValue previousValue)
     {
         previousValue = default;
-
         if (key.IsNull && key.Version == 0)
             return false;
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
-
-        if (exists && slot.Occupied)
-        {
-            if (IsOlderVersion(key.Version, slot.Version))
-                return false;
-
-            previousValue = slot.Value;
-
-            slot.Value = value;
-            slot.Version = key.Version;
-            return true;
-        }
-        else
+        
+        if (!exists)
             Count++;
+        else if (IsOlderVersion(key.Version, slot.Version))
+            return false;
 
-        slot.Value = value;
-        slot.Version = key.Version;
-        slot.Vacant = false;
-        previousValue = value;
+        previousValue = slot.Update(value, key.Version);
         return true;
     }
 
@@ -400,10 +372,6 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
             while (_dictEnumerator.MoveNext())
             {
                 var kvp = _dictEnumerator.Current;
-
-                if (!kvp.Value.Occupied)
-                    continue;
-
                 Current = new(TKey.New(kvp.Key, kvp.Value.Version), kvp.Value.Value);
                 return true;
             }

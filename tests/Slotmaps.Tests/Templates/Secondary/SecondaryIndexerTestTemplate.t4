@@ -61,14 +61,12 @@ foreach (var data in dataTypes)
     }
 
     [Fact]
-    public void <#= typeTitle #>WithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void <#= typeTitle #>WithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        <#= varName #>.Insert(key1, <#= data.Value[0] #>);
         
-        Assert.Throws<KeyNotFoundException>(() => <#= varName #>[key2]);
+        Assert.Throws<KeyNotFoundException>(() => <#= varName #>.Insert(key1, <#= data.Value[0] #>));
     }
 
     [Fact]

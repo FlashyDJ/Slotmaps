@@ -74,8 +74,7 @@ public partial class SparseSecondaryMap<TKey, TValue>
             {
                 var slot = _sparseMap._slots[i];
 
-                if (slot.Occupied)
-                    array[index++] = TKey.New(i, slot.Version);
+                array[index++] = TKey.New(i, slot.Version);
             }
         }
 
@@ -111,9 +110,6 @@ public partial class SparseSecondaryMap<TKey, TValue>
                     while (++_index < _sparseMap.Capacity)
                     {
                         var slot = _sparseMap._slots[_index];
-
-                        if (!slot.Occupied)
-                            break;
 
                         _current = TKey.New(_index, slot.Version);
                         return true;

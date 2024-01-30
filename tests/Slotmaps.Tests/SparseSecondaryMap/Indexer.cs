@@ -52,14 +52,12 @@ public class Indexer
     }
 
     [Fact]
-    public void IntWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void IntWithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<int>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, 10);
         
-        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key1, 10));
     }
 
     [Fact]
@@ -101,14 +99,12 @@ public class Indexer
     }
 
     [Fact]
-    public void IntNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void IntNullableWithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<int?>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, null);
         
-        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key1, null));
     }
 
     [Fact]
@@ -150,14 +146,12 @@ public class Indexer
     }
 
     [Fact]
-    public void StringWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void StringWithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<string>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, "Value 1");
         
-        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key1, "Value 1"));
     }
 
     [Fact]
@@ -199,14 +193,12 @@ public class Indexer
     }
 
     [Fact]
-    public void StringNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void StringNullableWithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<string?>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, null);
         
-        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key1, null));
     }
 
     [Fact]
@@ -248,14 +240,12 @@ public class Indexer
     }
 
     [Fact]
-    public void FloatWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void FloatWithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<float>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, 1.1F);
         
-        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key1, 1.1F));
     }
 
     [Fact]
@@ -297,14 +287,12 @@ public class Indexer
     }
 
     [Fact]
-    public void FloatNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void FloatNullableWithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<float?>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, null);
         
-        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key1, null));
     }
 
     [Fact]
@@ -346,14 +334,12 @@ public class Indexer
     }
 
     [Fact]
-    public void DateTimeWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void DateTimeWithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<DateTime>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, DateTime.Parse("2023-01-01"));
         
-        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key1, DateTime.Parse("2023-01-01")));
     }
 
     [Fact]
@@ -395,14 +381,12 @@ public class Indexer
     }
 
     [Fact]
-    public void DateTimeNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void DateTimeNullableWithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<DateTime?>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, null);
         
-        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key1, null));
     }
 
     [Fact]
@@ -444,14 +428,12 @@ public class Indexer
     }
 
     [Fact]
-    public void GuidWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void GuidWithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<Guid>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         
-        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key1, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE")));
     }
 
     [Fact]
@@ -493,14 +475,12 @@ public class Indexer
     }
 
     [Fact]
-    public void GuidNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void GuidNullableWithZeroVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<Guid?>();
         var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key1, null);
         
-        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
+        Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Insert(key1, null));
     }
 
     [Fact]
