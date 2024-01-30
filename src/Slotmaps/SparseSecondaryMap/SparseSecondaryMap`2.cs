@@ -239,26 +239,9 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     ///   Thrown if the provided <see cref="SlotKey"/> is invalid, has a version less than 1,
     ///   or does not exist in the sparse secondary map.
     /// </exception>
-    public TValue Remove(TKey key)
-    {
-        if (key.IsNull && key.Version == 0)
-            ThrowHelper.ThrowKeyNotFoundException_Null(key);
-
-        ref var slot = ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key.Index);
-        
-        if (!Unsafe.IsNullRef(ref slot))
-        {
-            if (slot.Version == key.Version)
-            {
-                var value = slot.Value;
-                slot.Vacant = true;
-                Count--;
-                return value;
-            }
-        }
-
-        throw ThrowHelper.GetKeyNotFoundException_OlderVersion(key);
-    }
+    public TValue Remove(TKey key) =>
+        ContainsKey(key) ? RemoveSlot(key)
+                         : throw ThrowHelper.GetKeyNotFoundException(key);
 
     /// <summary>
     ///   Retains entries in the sparse secondary map based on a specified condition defined by a predicate function.
@@ -371,25 +354,21 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     /// </returns>
     public bool TryRemove(TKey key, [MaybeNullWhen(false)] out TValue value)
     {
-        value = default;
-
-        if (key.IsNull && key.Version == 0)
-            return false;
-
-        ref var slot = ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key.Index);
-        
-        if (!Unsafe.IsNullRef(ref slot))
+        if (ContainsKey(key))
         {
-            if (slot.Version == key.Version)
-            {
-                value = slot.Value;
-                slot.Vacant = true;
-                Count--;
-                return true;
-            }
+            value = RemoveSlot(key);
+            return true;
         }
 
+        value = default;
         return false;
+    }
+
+    private TValue RemoveSlot(TKey key)
+    {
+        _slots.Remove(key.Index, out var slot);
+        Count--;
+        return slot.Value;
     }
 
     /// <summary>
