@@ -15,17 +15,23 @@ var slotMapWithCapacity = new SlotMap<TValue>(customCapacity);
 ```
 
 ## Inserting Items
-To insert items into the `SlotMap`, you can use the `Add` method. It returns a `SlotKey` that uniquely identifies the item:
+To insert items into the `SlotMap`, you can use the `Insert` method. It returns a `SlotKey` that uniquely identifies the item:
 
 ```csharp
-SlotKey slotKey = slotMap.Add(item);
+SlotKey slotKey = slotMap.Insert(item);
 ```
 
 ## Accessing Items
 You can access items using their corresponding `SlotKey`:
 
+### Indexer
 ```csharp
-var retrievedItem = slotMap[slotKey];
+var retrievedItem1 = slotMap[slotKey];
+```
+
+### Get
+```csharp
+var retrievedItem2 = slotMap.Get(slotKey);
 ```
 
 ## Updating Items
@@ -82,10 +88,10 @@ if (slotMap.ContainsKey(slotKey))
 You can iterate through all items in the `SlotMap` using a foreach loop:
 
 ```csharp
-foreach (var kvp in slotMap)
+foreach (var (key, value) in slotMap)
 {
-    var slotKey = kvp.Key;
-    var item = kvp.Value;
+    var slotKey = key;
+    var item = value;
 
     // Process item
 }
@@ -108,8 +114,8 @@ Here's an example demonstrating the usage of the SlotMap:
 var slotMap = new SlotMap<string>();
 
 // Insert items
-var slot1 = slotMap.Add("Item 1");
-var slot2 = slotMap.Add("Item 2");
+var slot1 = slotMap.Insert("Item 1");
+var slot2 = slotMap.Insert("Item 2");
 
 // Access items
 var item1 = slotMap[slot1]; // "Item 1"
@@ -128,10 +134,10 @@ if (slotMap.ContainsKey(slot1))
 }
 
 // Iterate through items
-foreach (var kvp in slotMap)
+foreach (var (key, value) in slotMap)
 {
-    var slotKey = kvp.Key;
-    var item = kvp.Value;
+    var slotKey = key;
+    var item = value;
 
     // Process item
 }
