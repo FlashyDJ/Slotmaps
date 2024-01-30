@@ -35,7 +35,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
         _slots = new(capacity);
     }
-    
+
     IEnumerator IEnumerable.GetEnumerator() => new Enumerator(this);
 
     /// <summary>
@@ -266,17 +266,14 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     /// </returns>
     public bool TryGet(TKey key, [MaybeNullWhen(false)] out TValue value)
     {
+        if (ContainsKey(key))
+        {   
+            value = _slots[key.Index].Value;
+            return true;
+        }
+
         value = default;
-
-        if (key.IsNull)
-            return false;
-
-        var exists = _slots.TryGetValue(key.Index, out var slot);
-        if (!exists || slot.Version != key.Version)
-            return false;
-
-        value = slot.Value;
-        return true;
+        return false;
     }
 
     /// <summary>
