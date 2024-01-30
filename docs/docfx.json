@@ -59,7 +59,7 @@
     "sitemap": {
       "baseUrl": "https://FlashyDJ.github.io/Slotmaps",
       "priority": 0.5,
-      "changeFreq": "daily"
+      "changeFreq": "monthly"
     },
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],

@@ -10,7 +10,7 @@
       <PackageVersion>$(SlotmapsVersion)</PackageVersion>
     </PropertyGroup>
 
-    <Message Importance="high" Text="Slotmaps Version: $(Version)"/>
+    <Message Importance="high" Text="Slotmaps -> $(Version)"/>
   </Target>
 
 </Project>
