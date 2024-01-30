@@ -230,7 +230,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
 
         if (exists && slot.Occupied)
         {
-            if (key.Version < slot.Version)
+            if (IsOlderVersion(key.Version, slot.Version))
                 ThrowHelper.ThrowKeyNotFoundException_OlderVersion(key);
 
             var replacedValue = slot.Value;
@@ -359,7 +359,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
 
         if (exists && slot.Occupied)
         {
-            if (key.Version < slot.Version)
+            if (IsOlderVersion(key.Version, slot.Version))
                 return false;
 
             previousValue = slot.Value;

@@ -208,7 +208,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
 
         if (!slot.Occupied)
             Count++;
-        else if (key.Version < slot.Version)
+        else if (IsOlderVersion(key.Version, slot.Version))
             ThrowHelper.ThrowKeyNotFoundException_OlderVersion(key);
 
         return slot.Update(value, key.Version);
@@ -357,7 +357,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
 
         if (!slot.Occupied)
             Count++;
-        else if (key.Version < slot.Version)
+        else if (IsOlderVersion(key.Version, slot.Version))
             return false;
 
         oldValue = slot.Update(value, key.Version);

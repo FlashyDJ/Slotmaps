@@ -4,3 +4,4 @@ global using global::System.Collections.Generic;
 global using global::System.Diagnostics;
 global using global::System.Diagnostics.CodeAnalysis;
 global using global::System.Linq;
+global using static global::FlashyDJ.Slotmaps.Helper;
