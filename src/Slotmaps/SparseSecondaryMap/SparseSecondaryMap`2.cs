@@ -19,7 +19,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     /// <summary>
     ///   Initializes a new instance of the <see cref="SparseSecondaryMap{TKey, TValue}"/> class with an empty collection.
     /// </summary>
-    public SparseSecondaryMap() => _slots = new(0);
+    public SparseSecondaryMap() => _slots = [];
 
     /// <summary>
     ///   Initializes a new instance of the <see cref="SparseSecondaryMap{TKey, TValue}"/> class with the specified capacity.
@@ -59,7 +59,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     ///   Gets a read only collection containing the keys in the sparse secondary map.
     /// </summary>
     /// <returns>
-    ///   A <see cref="SparseSecondaryMap{TKey, TValue}.SlotKeyCollection"/> containing the keys in the sparse secondary map.
+    ///   A <see cref="SlotKeyCollection"/> containing the keys in the sparse secondary map.
     /// </returns>
     public SlotKeyCollection Keys => _keys ??= new SlotKeyCollection(this);
 
@@ -67,7 +67,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     ///   Gets a read only collection containing the values in the sparse secondary map.
     /// </summary>
     /// <returns>
-    ///   A <see cref="SparseSecondaryMap{TKey, TValue}.SlotValueCollection"/> containing the values in the sparse secondary map.
+    ///   A <see cref="SlotValueCollection"/> containing the values in the sparse secondary map.
     /// </returns>
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 

@@ -1,4 +1,5 @@
 ﻿namespace FlashyDJ.Slotmaps;
+
 public partial class SparseSecondaryMap<TKey, TValue>
 {
     [DebuggerDisplay("{ToString()}")]
