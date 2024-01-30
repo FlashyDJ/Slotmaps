@@ -28,9 +28,8 @@ public partial class SparseSecondaryMap<TKey, TValue>
         bool ICollection<TValue>.IsReadOnly => true;
         void ICollection<TValue>.Add(TValue item) => throw new NotSupportedException();
         void ICollection<TValue>.Clear() => throw new NotSupportedException();
-        bool ICollection<TValue>.Remove(TValue item) => throw new NotSupportedException();
-        IEnumerator<TValue> IEnumerable<TValue>.GetEnumerator() => new Enumerator(_sparseMap);
-        IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_sparseMap);
+        bool ICollection<TValue>.Remove(TValue item) => throw new NotSupportedException(); 
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         /// <summary>
         ///   Gets the number of values in the <see cref="SparseSecondaryMap{TKey, TValue}.SlotValueCollection"/>.
@@ -76,52 +75,11 @@ public partial class SparseSecondaryMap<TKey, TValue>
             }
         }
 
-        /// <summary>
-        ///   Represents an enumerator for the values in the <see cref="SparseSecondaryMap{TKey, TValue}.SlotValueCollection"/>.
-        /// </summary>
-        public struct Enumerator : IEnumerator<TValue>, IEnumerator
+        /// <inheritdoc/>
+        public IEnumerator<TValue> GetEnumerator()
         {
-            private readonly SparseSecondaryMap<TKey, TValue> _sparseMap;
-            private int _index;
-            private TValue _current;
-
-            internal Enumerator(SparseSecondaryMap<TKey, TValue> sparseSecondaryMap)
-            {
-                _sparseMap = sparseSecondaryMap;
-                _index = -1;
-                _current = default!;
-            }
-
-            object? IEnumerator.Current => Current;
-
-            /// <inheritdoc/>
-            public TValue Current => _current;
-
-            /// <inheritdoc/>
-            public void Dispose() { }
-
-            /// <inheritdoc/>
-            public bool MoveNext()
-            {
-                while (_index < _sparseMap.Capacity)
-                {
-                    while (++_index < _sparseMap.Capacity)
-                    {
-                        var slot = _sparseMap._slots[_index];
-
-                        _current = slot.Value;
-                        return true;
-                    }
-                }
-                return false;
-            }
-
-            /// <inheritdoc/>
-            public void Reset()
-            {
-                _index = -1;
-                _current = default!;
-            }
+            foreach (var (_, value) in _sparseMap._slots)
+                yield return value.Value;
         }
     }
 }

@@ -28,7 +28,6 @@ public partial class SecondaryMap<TKey, TValue>
         void ICollection<TKey>.Add(TKey item) => throw new NotSupportedException();
         void ICollection<TKey>.Clear() => throw new NotSupportedException();
         bool ICollection<TKey>.Remove(TKey item) => throw new NotSupportedException();
-        IEnumerator<TKey> IEnumerable<TKey>.GetEnumerator() => new Enumerator(_secondaryMap);
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_secondaryMap);
 
         /// <summary>
@@ -77,6 +76,9 @@ public partial class SecondaryMap<TKey, TValue>
                     array[index++] = TKey.New(i, slot.Version);
             }
         }
+
+        /// <inheritdoc/>
+        public IEnumerator<TKey> GetEnumerator() => new Enumerator(_secondaryMap);
 
         /// <summary>
         ///   Represents an enumerator for the <see cref="SlotKeyCollection"/>.

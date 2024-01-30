@@ -35,8 +35,6 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
         _slots = capacity == 0 ? [] : new Slot[capacity];
     }
-    IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() =>
-        new Enumerator(this);
 
     IEnumerator IEnumerable.GetEnumerator() => new Enumerator(this);
 
@@ -183,6 +181,9 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     public TValue Get(TKey key) =>
         ContainsKey(key) ? _slots[key.Index].Value
                          : throw ThrowHelper.GetKeyNotFoundException_MaybeNull(key);
+
+    /// <inheritdoc/>
+    public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator() => new Enumerator(this);
 
     /// <summary>
     ///   Inserts or updates a value associated with the specified key in the secondary map.

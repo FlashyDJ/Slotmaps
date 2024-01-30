@@ -27,7 +27,6 @@ public partial class SlotMap<TKey, TValue>
         void ICollection<TValue>.Add(TValue item) => throw new NotSupportedException();
         void ICollection<TValue>.Clear() => throw new NotSupportedException();
         bool ICollection<TValue>.Remove(TValue item) => throw new NotSupportedException();
-        IEnumerator<TValue> IEnumerable<TValue>.GetEnumerator() => new Enumerator(_slotMap);
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_slotMap);
 
         /// <summary>Gets the number of values in the collection.</summary>
@@ -69,6 +68,9 @@ public partial class SlotMap<TKey, TValue>
                     array[index++] = slot.Value;
             }
         }
+
+        /// <inheritdoc/>
+        public IEnumerator<TValue> GetEnumerator() => new Enumerator(_slotMap);
 
         /// <summary>
         ///   Represents an enumerator for the values in the <see cref="SlotValueCollection"/>

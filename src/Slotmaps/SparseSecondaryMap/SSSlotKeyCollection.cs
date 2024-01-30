@@ -29,8 +29,7 @@ public partial class SparseSecondaryMap<TKey, TValue>
         void ICollection<TKey>.Add(TKey item) => throw new NotSupportedException();
         void ICollection<TKey>.Clear() => throw new NotSupportedException();
         bool ICollection<TKey>.Remove(TKey item) => throw new NotSupportedException();
-        IEnumerator<TKey> IEnumerable<TKey>.GetEnumerator() => new Enumerator(_sparseMap);
-        IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_sparseMap);
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         /// <summary>
         ///   Gets the number of elements in the <see cref="SparseSecondaryMap{TKey, TValue}.SlotKeyCollection"/>.
@@ -78,52 +77,11 @@ public partial class SparseSecondaryMap<TKey, TValue>
             }
         }
 
-        /// <summary>
-        ///   Represents an enumerator for the <see cref="SlotKeyCollection"/>.
-        /// </summary>
-        public struct Enumerator : IEnumerator<TKey>, IEnumerator
+        /// <inheritdoc/>
+        public IEnumerator<TKey> GetEnumerator()
         {
-            private readonly SparseSecondaryMap<TKey, TValue> _sparseMap;
-            private int _index;
-            private TKey _current;
-
-            internal Enumerator(SparseSecondaryMap<TKey, TValue> sparseSecondaryMap)
-            {
-                _sparseMap = sparseSecondaryMap;
-                _index = -1;
-                _current = default;
-            }
-
-            object IEnumerator.Current => Current;
-
-            /// <inheritdoc/>
-            public TKey Current => _current;
-
-            /// <inheritdoc/>
-            public readonly void Dispose() { }
-
-            /// <inheritdoc/>
-            public bool MoveNext()
-            {
-                while (_index < _sparseMap.Capacity)
-                {
-                    while (++_index < _sparseMap.Capacity)
-                    {
-                        var slot = _sparseMap._slots[_index];
-
-                        _current = TKey.New(_index, slot.Version);
-                        return true;
-                    }
-                }
-                return false;
-            }
-
-            /// <inheritdoc/>
-            public void Reset()
-            {
-                _index = -1;
-                _current = default;
-            }
+            foreach (var (key, value) in _sparseMap._slots)
+                yield return TKey.New(key, value.Version);
         }
     }
 }

@@ -35,10 +35,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
         _slots = new(capacity);
     }
-
-    IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() =>
-        new Enumerator(this);
-
+    
     IEnumerator IEnumerable.GetEnumerator() => new Enumerator(this);
 
     /// <summary>
@@ -179,6 +176,9 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     public TValue Get(TKey key) =>
         ContainsKey(key) ? _slots[key.Index].Value
                          : throw ThrowHelper.GetKeyNotFoundException_MaybeNull(key);
+
+    /// <inheritdoc/>
+    public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator() => new Enumerator(this);
 
     /// <summary>
     ///   Inserts a value into the sparse secondary map associated with the specified <see cref="SlotKey"/>.
