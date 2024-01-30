@@ -90,7 +90,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// </returns>
     /// <seealso cref="TryGet"/>
     public bool ContainsKey(TKey key) =>
-        key.Index >= 0 && key.Index < _slots.Length && key.Version != 0
+        !key.IsNull && key.Index < _slots.Length
         && _slots[key.Index].Version == key.Version;
 
     /// <summary>
@@ -182,7 +182,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// <seealso cref="TryGet"/>
     public TValue Get(TKey key) =>
         ContainsKey(key) ? _slots[key.Index].Value
-                         : throw ThrowHelper.GetKeyNotFoundException(key);
+                         : throw ThrowHelper.GetKeyNotFoundException_MaybeNull(key);
 
     /// <summary>
     ///   Inserts or updates a value associated with the specified key in the secondary map.

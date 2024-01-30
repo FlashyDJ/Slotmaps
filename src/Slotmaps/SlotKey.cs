@@ -9,7 +9,7 @@
 public readonly record struct SlotKey(int Index, uint Version) : ISlotKey<SlotKey>
 {
     /// <inheritdoc/>
-    public bool IsNull => Index < 0;
+    public bool IsNull => Index < 0 || Version == 0;
 
     /// <inheritdoc/>
     public bool Occupied => Version % 2 > 0;

@@ -21,7 +21,7 @@ public interface ISlotKey<TSelf> where TSelf : struct
     /// <summary>
     ///   Gets a value indicating whether the slot key is considered null.
     /// </summary>
-    bool IsNull => Index < 0;
+    bool IsNull => Index < 0 || Version == 0;
 
     /// <summary>
     ///   Gets a value indicating whether the slot key represents an occupied slot.

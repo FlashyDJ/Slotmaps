@@ -12,6 +12,13 @@ internal static class ThrowHelper
         throw GetKeyNotFoundException(key);
 
     [DoesNotReturn]
+    internal static void ThrowKeyNotFoundException_MaybeNull<T>(T key)
+        where T : struct, ISlotKey<T> =>
+        // Generic key to move the boxing to the right hand side of throw
+        throw GetKeyNotFoundException_MaybeNull(key);
+
+
+    [DoesNotReturn]
     internal static void ThrowKeyNotFoundException_Null<T>(T key) =>
     // Generic key to move the boxing to the right hand side of throw
         throw GetKeyNotFoundException_Null(key);
@@ -24,6 +31,11 @@ internal static class ThrowHelper
     internal static KeyNotFoundException GetKeyNotFoundException<T>(T key) =>
     // Generic key to move the boxing to the right hand side of throw
         GetKeyNotFoundException((object?)key);
+
+    internal static KeyNotFoundException GetKeyNotFoundException_MaybeNull<T>(T key)
+        where T : struct, ISlotKey<T> => 
+        key.IsNull ? GetKeyNotFoundException_Null((object?)key) 
+                   : GetKeyNotFoundException((object?)key);
 
     internal static KeyNotFoundException GetKeyNotFoundException_OlderVersion<T>(T key) =>
     // Generic key to move the boxing to the right hand side of throw

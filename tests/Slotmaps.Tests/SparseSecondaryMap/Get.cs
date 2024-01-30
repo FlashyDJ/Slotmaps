@@ -55,8 +55,8 @@ public class Get
     public void IntWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<int>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         sparseSecondaryMap.Insert(key1, 10);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
@@ -93,8 +93,8 @@ public class Get
     public void IntNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<int?>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         sparseSecondaryMap.Insert(key1, null);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
@@ -131,8 +131,8 @@ public class Get
     public void StringWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<string>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         sparseSecondaryMap.Insert(key1, "Value 1");
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
@@ -169,8 +169,8 @@ public class Get
     public void StringNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<string?>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         sparseSecondaryMap.Insert(key1, null);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
@@ -207,8 +207,8 @@ public class Get
     public void FloatWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<float>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         sparseSecondaryMap.Insert(key1, 1.1F);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
@@ -245,8 +245,8 @@ public class Get
     public void FloatNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<float?>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         sparseSecondaryMap.Insert(key1, null);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
@@ -283,8 +283,8 @@ public class Get
     public void DateTimeWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<DateTime>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         sparseSecondaryMap.Insert(key1, DateTime.Parse("2023-01-01"));
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
@@ -321,8 +321,8 @@ public class Get
     public void DateTimeNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<DateTime?>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         sparseSecondaryMap.Insert(key1, null);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
@@ -359,8 +359,8 @@ public class Get
     public void GuidWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<Guid>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         sparseSecondaryMap.Insert(key1, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));
@@ -397,8 +397,8 @@ public class Get
     public void GuidNullableWithNewerVersionKey_ThrowsKeyNotFoundException()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<Guid?>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         sparseSecondaryMap.Insert(key1, null);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap.Get(key2));

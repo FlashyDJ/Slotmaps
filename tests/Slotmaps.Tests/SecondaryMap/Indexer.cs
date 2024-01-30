@@ -52,12 +52,14 @@ public class Indexer
     }
 
     [Fact]
-    public void IntWithZeroVersionKey_ThrowsKeyNotFoundException()
+    public void GetInt_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var secondaryMap = new SecondaryMap<int>();
-        var key1 = new SlotKey(1, 0);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+        secondaryMap.Insert(key1, 10);
         
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key1, 10));
+        Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
 
     [Fact]
@@ -99,12 +101,14 @@ public class Indexer
     }
 
     [Fact]
-    public void IntNullableWithZeroVersionKey_ThrowsKeyNotFoundException()
+    public void GetIntNullable_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var secondaryMap = new SecondaryMap<int?>();
-        var key1 = new SlotKey(1, 0);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+        secondaryMap.Insert(key1, null);
         
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key1, null));
+        Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
 
     [Fact]
@@ -146,12 +150,14 @@ public class Indexer
     }
 
     [Fact]
-    public void StringWithZeroVersionKey_ThrowsKeyNotFoundException()
+    public void GetString_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var secondaryMap = new SecondaryMap<string>();
-        var key1 = new SlotKey(1, 0);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+        secondaryMap.Insert(key1, "Value 1");
         
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key1, "Value 1"));
+        Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
 
     [Fact]
@@ -193,12 +199,14 @@ public class Indexer
     }
 
     [Fact]
-    public void StringNullableWithZeroVersionKey_ThrowsKeyNotFoundException()
+    public void GetStringNullable_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var secondaryMap = new SecondaryMap<string?>();
-        var key1 = new SlotKey(1, 0);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+        secondaryMap.Insert(key1, null);
         
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key1, null));
+        Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
 
     [Fact]
@@ -240,12 +248,14 @@ public class Indexer
     }
 
     [Fact]
-    public void FloatWithZeroVersionKey_ThrowsKeyNotFoundException()
+    public void GetFloat_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var secondaryMap = new SecondaryMap<float>();
-        var key1 = new SlotKey(1, 0);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+        secondaryMap.Insert(key1, 1.1F);
         
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key1, 1.1F));
+        Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
 
     [Fact]
@@ -287,12 +297,14 @@ public class Indexer
     }
 
     [Fact]
-    public void FloatNullableWithZeroVersionKey_ThrowsKeyNotFoundException()
+    public void GetFloatNullable_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var secondaryMap = new SecondaryMap<float?>();
-        var key1 = new SlotKey(1, 0);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+        secondaryMap.Insert(key1, null);
         
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key1, null));
+        Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
 
     [Fact]
@@ -334,12 +346,14 @@ public class Indexer
     }
 
     [Fact]
-    public void DateTimeWithZeroVersionKey_ThrowsKeyNotFoundException()
+    public void GetDateTime_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var secondaryMap = new SecondaryMap<DateTime>();
-        var key1 = new SlotKey(1, 0);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+        secondaryMap.Insert(key1, DateTime.Parse("2023-01-01"));
         
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key1, DateTime.Parse("2023-01-01")));
+        Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
 
     [Fact]
@@ -381,12 +395,14 @@ public class Indexer
     }
 
     [Fact]
-    public void DateTimeNullableWithZeroVersionKey_ThrowsKeyNotFoundException()
+    public void GetDateTimeNullable_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var secondaryMap = new SecondaryMap<DateTime?>();
-        var key1 = new SlotKey(1, 0);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+        secondaryMap.Insert(key1, null);
         
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key1, null));
+        Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
 
     [Fact]
@@ -428,12 +444,14 @@ public class Indexer
     }
 
     [Fact]
-    public void GuidWithZeroVersionKey_ThrowsKeyNotFoundException()
+    public void GetGuid_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var secondaryMap = new SecondaryMap<Guid>();
-        var key1 = new SlotKey(1, 0);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+        secondaryMap.Insert(key1, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"));
         
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key1, Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE")));
+        Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
 
     [Fact]
@@ -475,12 +493,14 @@ public class Indexer
     }
 
     [Fact]
-    public void GuidNullableWithZeroVersionKey_ThrowsKeyNotFoundException()
+    public void GetGuidNullable_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var secondaryMap = new SecondaryMap<Guid?>();
-        var key1 = new SlotKey(1, 0);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
+        secondaryMap.Insert(key1, null);
         
-        Assert.Throws<KeyNotFoundException>(() => secondaryMap.Insert(key1, null));
+        Assert.Throws<KeyNotFoundException>(() => secondaryMap[key2]);
     }
 
     [Fact]

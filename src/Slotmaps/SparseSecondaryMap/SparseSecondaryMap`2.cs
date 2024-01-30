@@ -102,6 +102,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     /// </returns>
     public bool ContainsKey(TKey key)
     {
+        if (key.IsNull) return false;
         ref var slot = ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key.Index);
         return !Unsafe.IsNullRef(ref slot) && slot.Version == key.Version;
     }
@@ -177,7 +178,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     /// </exception>
     public TValue Get(TKey key) =>
         ContainsKey(key) ? _slots[key.Index].Value
-                         : throw ThrowHelper.GetKeyNotFoundException(key);
+                         : throw ThrowHelper.GetKeyNotFoundException_MaybeNull(key);
 
     /// <summary>
     ///   Inserts a value into the sparse secondary map associated with the specified <see cref="SlotKey"/>.
@@ -198,7 +199,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     /// </exception>
     public TValue Insert(TKey key, TValue value)
     {
-        if (key.IsNull || key.Version == 0)
+        if (key.IsNull)
             ThrowHelper.ThrowKeyNotFoundException_Null(key);
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
@@ -226,7 +227,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     /// </exception>
     public TValue Remove(TKey key) =>
         ContainsKey(key) ? RemoveSlot(key)
-                         : throw ThrowHelper.GetKeyNotFoundException(key);
+                         : throw ThrowHelper.GetKeyNotFoundException_MaybeNull(key);
 
     /// <summary>
     ///   Retains entries in the sparse secondary map based on a specified condition defined by a predicate function.
@@ -267,7 +268,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     {
         value = default;
 
-        if (key.IsNull && key.Version == 0)
+        if (key.IsNull)
             return false;
 
         var exists = _slots.TryGetValue(key.Index, out var slot);
@@ -297,7 +298,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     public bool TryInsert(TKey key, TValue value, [MaybeNullWhen(false)] out TValue previousValue)
     {
         previousValue = default;
-        if (key.IsNull && key.Version == 0)
+        if (key.IsNull)
             return false;
 
         ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
