@@ -35,6 +35,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
         ArgumentOutOfRangeException.ThrowIfNegative(capacity);
         _slots = new(capacity);
     }
+
     IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() =>
         new Enumerator(this);
 
@@ -81,20 +82,11 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     ///   The value associated with the specified <paramref name="key"/>.
     /// </value>
     /// <exception cref="KeyNotFoundException">
-    ///   Thrown if the specified <paramref name="key"/> is invalid, not found, or its version does not match.
+    ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
     /// </exception>
     public TValue this[TKey key]
     {
-        get
-        {
-            if (key.IsNull) ThrowHelper.ThrowKeyNotFoundException_Null(key);
-
-            var exists = _slots.TryGetValue(key.Index, out var slot);
-            if (!exists || slot.Version != key.Version)
-                ThrowHelper.ThrowKeyNotFoundException(key);
-
-            return slot.Value;
-        }
+        get => Get(key);
         set => Insert(key, value);
     }
 
@@ -108,16 +100,10 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     ///   <see langword="true"/> if the sparse secondary map contains an entry with the specified <see cref="SlotKey"/> that matches both the index and version;
     ///   otherwise, <see langword="false"/>.
     /// </returns>
-    /// <exception cref="KeyNotFoundException">
-    ///   Thrown if the provided <see cref="SlotKey"/> is invalid or has a version less than 1.
-    /// </exception>
     public bool ContainsKey(TKey key)
     {
-        if (key.IsNull && key.Version < 1)
-            return false;
-
-        ref var slot = ref CollectionsMarshal.GetValueRefOrAddDefault(_slots, key.Index, out var exists);
-        return exists && slot.Occupied && slot.Version == key.Version;
+        ref var slot = ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key.Index);
+        return !Unsafe.IsNullRef(ref slot) && slot.Occupied && slot.Version == key.Version;
     }
 
     /// <summary>
@@ -190,20 +176,11 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     ///   The value associated with the specified <see cref="SlotKey"/>.
     /// </returns>
     /// <exception cref="KeyNotFoundException">
-    ///   Thrown if the provided <see cref="SlotKey"/> is invalid, has a version less than 1, or does not exist in the sparse secondary map.
+    ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
     /// </exception>
-    public TValue Get(TKey key)
-    {
-        if (key.IsNull && key.Version == 0)
-            ThrowHelper.ThrowKeyNotFoundException_Null(key);
-
-        var exists = _slots.TryGetValue(key.Index, out var slot);
-
-        if (!exists || slot.Version != key.Version || !slot.Occupied)
-            ThrowHelper.ThrowKeyNotFoundException(key);
-
-        return slot.Value;
-    }
+    public TValue Get(TKey key) =>
+        ContainsKey(key) ? _slots[key.Index].Value
+                         : throw ThrowHelper.GetKeyNotFoundException(key);
 
     /// <summary>
     ///   Inserts a value into the sparse secondary map associated with the specified <see cref="SlotKey"/>.
@@ -215,11 +192,12 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     ///   The value to insert into the sparse secondary map.
     /// </param>
     /// <returns>
-    ///   The previous value associated with the specified <see cref="SlotKey"/> if it existed; otherwise, the provided <paramref name="value"/>.
+    ///   The previous value associated with the specified <see cref="SlotKey"/> if it existed; otherwise,
+    ///   the provided <paramref name="value"/>.
     /// </returns>
     /// <exception cref="KeyNotFoundException">
-    ///   Thrown if the provided <see cref="SlotKey"/> is invalid or has a version less than 1,
-    ///   or if the provided <see cref="SlotKey"/> is an older version than an existing entry.
+    ///   Thrown if the specified <paramref name="key"/> is not found or if the
+    ///   provided <see cref="SlotKey"/> is an older version than an existing entry.
     /// </exception>
     public TValue Insert(TKey key, TValue value)
     {
