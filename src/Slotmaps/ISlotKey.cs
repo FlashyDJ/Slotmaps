@@ -43,7 +43,7 @@ public interface ISlotKey<TSelf> where TSelf : struct
     /// <returns>A null instance of the slot key.</returns>
     virtual static TSlotKey Null<TSlotKey>()
         where TSlotKey : struct, ISlotKey<TSlotKey> =>
-        TSlotKey.New(int.MinValue, 1);
+        TSlotKey.New(int.MinValue, 0);
 
     /// <summary>
     ///   Converts a slot key to an unsigned 64-bit integer representation.

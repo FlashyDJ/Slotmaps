@@ -67,7 +67,7 @@ public partial class SparseSecondaryMap<TKey, TValue>
         /// <exception cref="ArgumentOutOfRangeException">
         ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of
         ///   <paramref name="array"/>, or if there are not enough elements in the
-        ///   <see cref="SparseSecondaryMap{TKey, TValue}.SlotKeyCollection"/> to fill the destination array
+        ///   <see cref="SlotKeyCollection"/> to fill the destination array
         ///   starting at the specified index.
         /// </exception>
         public void CopyTo(TKey[] array, int index)
@@ -77,19 +77,15 @@ public partial class SparseSecondaryMap<TKey, TValue>
             ArgumentOutOfRangeException.ThrowIfGreaterThan(index, array.Length);
             ArgumentOutOfRangeException.ThrowIfLessThan(_sparseMap.Count, array.Length - index);
 
-            for (int i = 0; i < _sparseMap.Capacity; i++)
-            {
-                var slot = _sparseMap._slots[i];
-
-                array[index++] = TKey.New(i, slot.Version);
-            }
+            foreach (var (key, slot) in _sparseMap._slots)
+                array[index++] = TKey.New(key, slot.Version);
         }
 
         /// <inheritdoc/>
         public IEnumerator<TKey> GetEnumerator()
         {
-            foreach (var (key, value) in _sparseMap._slots)
-                yield return TKey.New(key, value.Version);
+            foreach (var (key, slot) in _sparseMap._slots)
+                yield return TKey.New(key, slot.Version);
         }
     }
 }
