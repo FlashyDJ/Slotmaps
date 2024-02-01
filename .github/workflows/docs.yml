@@ -22,6 +22,9 @@ concurrency:
 
 jobs:
   generate-docs:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     env:
@@ -43,9 +46,11 @@ jobs:
       run: dotnet tool update -g docfx
 
     - name: Build documentation
-      id: pages
       run: docfx docs/docfx.json
       continue-on-error: false
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
       
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
@@ -53,6 +58,9 @@ jobs:
         path: docs/_site
 
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     needs: generate-docs
     runs-on: ubuntu-latest
     
