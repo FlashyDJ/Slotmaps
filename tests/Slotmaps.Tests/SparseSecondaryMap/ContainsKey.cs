@@ -2,8 +2,8 @@
 //		    			        GENERATED CODE - DO NOT MODIFY      		    	  		//
 //    Changes will not be permanent. Update the T4 template files instead. (*.t4) (*.tt)    //
 //////////////////////////////////////////////////////////////////////////////////////////////
-
 namespace Slotmaps.Tests.SparseSecondaryMap;
+
 public class ContainsKey
 {
     [Fact]
@@ -104,134 +104,6 @@ public class ContainsKey
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
-    //                                        double                                        //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithDoubleExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<double>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 1.11D);
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //                                       double?                                        //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithDoubleNullableExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<double?>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, null);
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //                                         bool                                         //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithBoolExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<bool>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, true);
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //                                        bool?                                         //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithBoolNullableExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<bool?>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, null);
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //                                         char                                         //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithCharExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<char>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 'A');
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //                                        char?                                         //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithCharNullableExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<char?>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, null);
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //                                         long                                         //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithLongExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<long>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 1000_000_000_000L);
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //                                        long?                                         //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithLongNullableExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<long?>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, null);
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
     //                                        float                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -264,38 +136,6 @@ public class ContainsKey
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
-    //                                       decimal                                        //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithDecimalExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<decimal>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, 1.111_111_111M);
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //                                       decimal?                                       //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithDecimalNullableExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<decimal?>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, null);
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
     //                                       DateTime                                       //
     //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -319,38 +159,6 @@ public class ContainsKey
     public void ValidKeyWithDateTimeNullableExists_ReturnsTrue()
     {
         var sparseSecondaryMap = new SparseSecondaryMap<DateTime?>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, null);
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //                                       TimeSpan                                       //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithTimeSpanExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan>();
-        var key = new SlotKey(1, 1);
-        sparseSecondaryMap.Insert(key, new TimeSpan(00,00,00));
-
-        var result = sparseSecondaryMap.ContainsKey(key);
-
-        Assert.True(result);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //                                      TimeSpan?                                       //
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-    [Fact]
-    public void ValidKeyWithTimeSpanNullableExists_ReturnsTrue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<TimeSpan?>();
         var key = new SlotKey(1, 1);
         sparseSecondaryMap.Insert(key, null);
 

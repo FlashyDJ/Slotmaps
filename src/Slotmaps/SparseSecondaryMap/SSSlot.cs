@@ -1,33 +1,21 @@
 ﻿namespace FlashyDJ.Slotmaps;
+
 public partial class SparseSecondaryMap<TKey, TValue>
 {
     [DebuggerDisplay("{ToString()}")]
     internal struct Slot(TValue value, uint version)
     {
-        private TValue _value = value;
-        private bool vacant;
+        public TValue Value { get; private set; } = value;
 
-        public TValue Value
+        public uint Version { get; private set; } = version;
+
+        public TValue Update(TValue value, uint version)
         {
-            get => Occupied ? _value : throw new InvalidOperationException("Slot is vacant");
-            internal set => _value = value;
+            var returnValue = Version != 0 ? Value : value;
+            Value = value;
+            Version = version;
+            return returnValue;
         }
-
-        public uint Version { get; internal set; } = version;
-
-        public bool Vacant
-        {
-            get => vacant;
-            set
-            {
-                if (value)
-                    Value = default!;
-
-                vacant = value;
-            }
-        }
-
-        public bool Occupied => !vacant;
 
         public override string ToString() => $"{Value}v{Version}";
     }

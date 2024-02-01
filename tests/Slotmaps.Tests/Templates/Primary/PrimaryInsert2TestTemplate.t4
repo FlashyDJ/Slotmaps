@@ -7,7 +7,7 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
-public class Insert
+public class Insert2
 {
 <#
 foreach (var data in dataTypes)
@@ -31,7 +31,7 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithExistingKey_UpdatesValueAndReturnsNewKey()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
 
         var newKey = <#= varName #>.Insert(key, <#= data.Value[1] #>);
 
@@ -42,7 +42,7 @@ foreach (var data in dataTypes)
     public void Replace<#= typeTitle #>Value_SameCount()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
 
         Assert.Single(<#= varName #>);
         <#= !data.Key.EndsWith("?") ? $"Assert.Equal({data.Value[0]}, {varName}.Get(key));" : $"Assert.Null({varName}.Get(key));" #>

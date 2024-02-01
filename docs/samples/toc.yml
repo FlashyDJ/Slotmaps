@@ -2,17 +2,3 @@
   href: index.md
 - name: Custom Keys
   href: customkeys.md
- 
-- name: Code Snippets
-- name: SlotMap<TValue>
-  href: codesnippets\slotmap.md
-- name: SlotMap<TKey, TValue>
-  href: codesnippets\slotmap-generic.md
-- name: SecondaryMap<TValue>
-  href: codesnippets\secondarymap.md
-- name: SecondaryMap<TKey, TValue>
-  href: codesnippets\secondarymap-generic.md
-- name: SecondyMap<TValue>
-  href: codesnippets\secondymap.md
-- name: SecondyMap<TKey, TValue>
-  href: codesnippets\secondymap-generic.md

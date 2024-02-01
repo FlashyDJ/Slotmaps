@@ -7,17 +7,9 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
-public class Add
+
+public class Insert1
 {
-    [Fact]
-    public void InvalidSlotKey_ThrowsArgumentException()
-    {
-        var slotMap = new SlotMap<string>();
-        var key = SlotKey.Null();
-
-        Assert.Throws<KeyNotFoundException>(() => slotMap.Insert(key, "Value"));
-    }
-
 <#
 foreach (var data in dataTypes)
 {
@@ -32,7 +24,7 @@ foreach (var data in dataTypes)
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
 
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
 
         Assert.Single(<#= varName #>);
         Assert.True(<#= varName #>.ContainsKey(key));
@@ -40,13 +32,13 @@ foreach (var data in dataTypes)
     }
 
     [Fact]
-    public void Add<#= typeTitle #>ElementsBeyondCapacity_ResizesCorrectly()
+    public void Insert<#= typeTitle #>ElementsBeyondCapacity_ResizesCorrectly()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>(2);
 
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
-        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
-        var key3 = <#= varName #>.Add(<#= data.Value[2] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Insert(<#= data.Value[1] #>);
+        var key3 = <#= varName #>.Insert(<#= data.Value[2] #>);
 
         Assert.True(<#= varName #>.ContainsKey(key1));
         Assert.True(<#= varName #>.ContainsKey(key2));
@@ -62,7 +54,7 @@ foreach (var data in dataTypes)
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
 
-        var key = <#= varName #>.Add(<#= data.Value[0] #>);
+        var key = <#= varName #>.Insert(<#= data.Value[0] #>);
         var newKey = <#= varName #>.Insert(key, <#= data.Value[1] #>);
         var value = <#= varName #>.Get(newKey);
 

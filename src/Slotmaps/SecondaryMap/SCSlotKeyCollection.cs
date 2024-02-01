@@ -1,13 +1,23 @@
 ﻿namespace FlashyDJ.Slotmaps;
 public partial class SecondaryMap<TKey, TValue>
 {
-    /// <include file='docs.xml' path='docs/SlotKeyCollection/*'/>
+    /// <summary>
+    ///   Represents a read only collection of <see cref="ISlotKey{TKey}"/> instances associated with a <see cref="SecondaryMap{TKey, TValue}"/>.
+    /// </summary>
     [DebuggerDisplay("Count = {Count}")]
     public sealed class SlotKeyCollection : ICollection<TKey>, IReadOnlyCollection<TKey>
     {
         private readonly SecondaryMap<TKey, TValue> _secondaryMap;
 
-        /// <include file='docs.xml' path='docs/SKCCtor/*'/>
+        /// <summary>
+        ///   Initializes a new instance of the <see cref="SlotKeyCollection"/> class with a reference to the parent <see cref="SecondaryMap{TKey, TValue}"/>.
+        /// </summary>
+        /// <param name="secondaryMap">
+        ///   The <see cref="SecondaryMap{TKey, TValue}"/> to which this collection is associated.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        ///   Thrown if <paramref name="secondaryMap"/> is null.
+        /// </exception>
         public SlotKeyCollection(SecondaryMap<TKey, TValue> secondaryMap)
         {
             ArgumentNullException.ThrowIfNull(secondaryMap);
@@ -18,16 +28,44 @@ public partial class SecondaryMap<TKey, TValue>
         void ICollection<TKey>.Add(TKey item) => throw new NotSupportedException();
         void ICollection<TKey>.Clear() => throw new NotSupportedException();
         bool ICollection<TKey>.Remove(TKey item) => throw new NotSupportedException();
-        IEnumerator<TKey> IEnumerable<TKey>.GetEnumerator() => new Enumerator(_secondaryMap);
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_secondaryMap);
 
-        /// <include file='docs.xml' path='docs/SKCCount/*'/>
+        /// <summary>
+        ///   Gets the number of elements in the <see cref="SlotKeyCollection"/>.
+        /// </summary>
         public int Count => _secondaryMap.Count;
 
-        /// <include file='docs.xml' path='docs/SKCContains/*'/>
+        /// <summary>
+        ///   Determines whether the <see cref="SlotKeyCollection"/> contains a specific <see cref="SlotKey"/>.
+        /// </summary>
+        /// <param name="key">
+        ///   The <see cref="SlotKey"/> to locate in the collection.
+        /// </param>
+        /// <returns>
+        ///   <see langword="true"/> if the <see cref="SlotKeyCollection"/> contains the specified
+        ///   <paramref name="key"/>; otherwise, <see langword="false"/>.
+        /// </returns>
         public bool Contains(TKey key) => _secondaryMap.ContainsKey(key);
 
-        /// <include file='docs.xml' path='docs/SKCCopyTo/*'/>
+        /// <summary>
+        ///   Copies the elements of the <see cref="SlotKeyCollection"/> to an array, starting at the
+        ///   specified index.
+        /// </summary>
+        /// <param name="array">
+        ///   The one-dimensional array that is the destination of the elements copied from the
+        ///   <see cref="SlotKeyCollection"/>. Must not be null.
+        /// </param>
+        /// <param name="index">
+        ///   The zero-based index in <paramref name="array"/> at which copying begins.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        ///   Thrown if <paramref name="array"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of
+        ///   <paramref name="array"/>, or if there are not enough elements in the <see cref="SlotKeyCollection"/>
+        ///   to fill the destination array starting at the specified index.
+        /// </exception>
         public void CopyTo(TKey[] array, int index)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -44,7 +82,12 @@ public partial class SecondaryMap<TKey, TValue>
             }
         }
 
-        /// <include file='docs.xml' path='docs/SKCEnumerator/*'/>
+        /// <inheritdoc/>
+        public IEnumerator<TKey> GetEnumerator() => new Enumerator(_secondaryMap);
+
+        /// <summary>
+        ///   Represents an enumerator for the <see cref="SlotKeyCollection"/>.
+        /// </summary>
         public struct Enumerator : IEnumerator<TKey>, IEnumerator
         {
             private readonly SecondaryMap<TKey, TValue> _secondaryMap;

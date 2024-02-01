@@ -1,16 +1,16 @@
 using FlashyDJ.Slotmaps;
 
 var defaultSlotMap = new SlotMap<SlotKey, int>();
-SlotKey key = defaultSlotMap.Add(42);
+SlotKey key = defaultSlotMap.Insert(42);
 
 var defaultSlotMap = new SlotMap<int>();
-SlotKey key = defaultSlotMap.Add(42);
+SlotKey key = defaultSlotMap.Insert(42);
 
 var playerSlotMap = new SlotMap<PlayerKey, Player>();
 var enemySlotMap = new SlotMap<EnemyKey, Enemy>();
 
-PlayerKey playerKey = playerSlotMap.Add(new Player("Bob"));
-EnemyKey enemyKey = enemySlotMap.Add(new Enemy("Skelly"));
+PlayerKey playerKey = playerSlotMap.Insert(new Player("Bob"));
+EnemyKey enemyKey = enemySlotMap.Insert(new Enemy("Skelly"));
 
 // Compile-time error: Cannot use PlayerKey with EnemySlotMap
 var enemy = enemySlotMap[playerKey];
@@ -23,7 +23,7 @@ var team2 = new SlotMap<PlayerKey, Player>();
 
 // Avoid using slot keys interchangeably between different SlotMap instances.
 // This can lead to unpredictable behavior.
-PlayerKey playerKey = team1.Add(new Player());
+PlayerKey playerKey = team1.Insert(new Player());
 Player anotherPlayer = team2[playerKey]; // Not recommended
 
 public readonly struct CustomSlotKey(int index, uint version) : ISlotKey<CustomSlotKey>

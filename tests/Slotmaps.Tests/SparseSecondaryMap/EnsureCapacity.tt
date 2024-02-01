@@ -1,3 +1,4 @@
+<#@ template language="C#" debug="false" hostspecific="false" #>
 <#@ assembly name="System.Core" #>
 <#@ output extension=".cs" #>
 <#

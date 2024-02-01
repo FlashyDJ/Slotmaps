@@ -1,13 +1,26 @@
 ﻿namespace FlashyDJ.Slotmaps;
+
 public partial class SparseSecondaryMap<TKey, TValue>
 {
-    /// <include file='docs.xml' path='docs/SlotValueCollection/*'/>
+    /// <summary>
+    ///   Represents a collection of values associated with a <see cref="SparseSecondaryMap{TKey, TValue}"/>.
+    /// </summary>
     [DebuggerDisplay("Count = {Count}")]
     public sealed class SlotValueCollection : ICollection<TValue>, IReadOnlyCollection<TValue>
     {
         private readonly SparseSecondaryMap<TKey, TValue> _sparseMap;
 
-        /// <include file='docs.xml' path='docs/SVCCtor/*'/>
+        /// <summary>
+        ///   Initializes a new instance of the <see cref="SlotValueCollection"/> class associated with a
+        ///   <see cref="SparseSecondaryMap{TValue}"/>.
+        /// </summary>
+        /// <param name="sparseSecondaryMap">
+        ///   The <see cref="SparseSecondaryMap{TValue}"/> with which this collection is associated.
+        ///   Must not be null.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        ///   Thrown if <paramref name="sparseSecondaryMap"/> is null.
+        /// </exception>
         public SlotValueCollection(SparseSecondaryMap<TKey, TValue> sparseSecondaryMap)
         {
             ArgumentNullException.ThrowIfNull(sparseSecondaryMap);
@@ -17,17 +30,44 @@ public partial class SparseSecondaryMap<TKey, TValue>
         bool ICollection<TValue>.IsReadOnly => true;
         void ICollection<TValue>.Add(TValue item) => throw new NotSupportedException();
         void ICollection<TValue>.Clear() => throw new NotSupportedException();
-        bool ICollection<TValue>.Remove(TValue item) => throw new NotSupportedException();
-        IEnumerator<TValue> IEnumerable<TValue>.GetEnumerator() => new Enumerator(_sparseMap);
-        IEnumerator IEnumerable.GetEnumerator() => new Enumerator(_sparseMap);
+        bool ICollection<TValue>.Remove(TValue item) => throw new NotSupportedException(); 
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
-        /// <include file='docs.xml' path='docs/SVCCount/*'/>
+        /// <summary>
+        ///   Gets the number of values in the <see cref="SlotValueCollection"/>.
+        /// </summary>
         public int Count => _sparseMap.Count;
 
-        /// <include file='docs.xml' path='docs/SVCContains/*'/>
+        /// <summary>
+        ///   Determines whether the <see cref="SlotValueCollection"/> contains a specific value.
+        /// </summary>
+        /// <param name="value">The value to locate in the collection.</param>
+        /// <returns>
+        ///   <see langword="true"/> if the <see cref="SlotValueCollection"/> contains the specified value;
+        ///   otherwise, <see langword="false"/>.
+        /// </returns>
         public bool Contains(TValue value) => _sparseMap.ContainsValue(value!);
 
-        /// <include file='docs.xml' path='docs/SVCCopyTo/*'/>
+        /// <summary>
+        ///   Copies the elements of the <see cref="SlotValueCollection"/> to an array, starting at
+        ///   the specified index.
+        /// </summary>
+        /// <param name="array">
+        ///   The one-dimensional array that is the destination of the elements copied from the
+        ///   <see cref="SlotValueCollection"/>. Must not be null.
+        /// </param>
+        /// <param name="index">
+        ///   The zero-based index in <paramref name="array"/> at which copying begins.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        ///   Thrown if <paramref name="array"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///   Thrown if <paramref name="index"/> is negative, greater than or equal to the length of
+        ///   <paramref name="array"/>, or if there are not enough elements in the
+        ///   <see cref="SlotValueCollection"/> to fill the destination
+        ///   array starting at the specified index.
+        /// </exception>
         public void CopyTo(TValue[] array, int index)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -35,62 +75,15 @@ public partial class SparseSecondaryMap<TKey, TValue>
             ArgumentOutOfRangeException.ThrowIfGreaterThan(index, array.Length);
             ArgumentOutOfRangeException.ThrowIfLessThan(Count, array.Length - index);
 
-            for (int i = 0; i < _sparseMap.Capacity; i++)
-            {
-                var slot = _sparseMap._slots[i];
-
-                if (slot.Occupied)
-                    array[index++] = slot.Value;
-            }
+            foreach (var (_, slot) in _sparseMap._slots)
+                array[index++] = slot.Value;
         }
 
-        /// <include file='docs.xml' path='docs/SVCEnumerator/*'/>
-        public struct Enumerator : IEnumerator<TValue>, IEnumerator
+        /// <inheritdoc/>
+        public IEnumerator<TValue> GetEnumerator()
         {
-            private readonly SparseSecondaryMap<TKey, TValue> _sparseMap;
-            private int _index;
-            private TValue _current;
-
-            internal Enumerator(SparseSecondaryMap<TKey, TValue> sparseSecondaryMap)
-            {
-                _sparseMap = sparseSecondaryMap;
-                _index = -1;
-                _current = default!;
-            }
-
-            object? IEnumerator.Current => Current;
-
-            /// <inheritdoc/>
-            public TValue Current => _current;
-
-            /// <inheritdoc/>
-            public void Dispose() { }
-
-            /// <inheritdoc/>
-            public bool MoveNext()
-            {
-                while (_index < _sparseMap.Capacity)
-                {
-                    while (++_index < _sparseMap.Capacity)
-                    {
-                        var slot = _sparseMap._slots[_index];
-
-                        if (!slot.Occupied)
-                            break;
-
-                        _current = slot.Value;
-                        return true;
-                    }
-                }
-                return false;
-            }
-
-            /// <inheritdoc/>
-            public void Reset()
-            {
-                _index = -1;
-                _current = default!;
-            }
+            foreach (var (_, slot) in _sparseMap._slots)
+                yield return slot.Value;
         }
     }
 }

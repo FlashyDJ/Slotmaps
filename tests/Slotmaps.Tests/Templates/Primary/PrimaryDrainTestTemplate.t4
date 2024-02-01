@@ -7,6 +7,7 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
+
 public class Drain
 {
 <#
@@ -33,8 +34,8 @@ foreach (var data in dataTypes)
     public void Filled<#= typeTitle #>Map_ReturnsAllItemsAndEmptiesMap()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
-        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Insert(<#= data.Value[1] #>);
 
         var result = <#= varName #>.Drain().ToArray();
 
@@ -48,10 +49,10 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>WithRemovedKeys_NotReturnRemovedKeys()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
-        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
-        var key3 = <#= varName #>.Add(<#= data.Value[2] #>);
-        var key4 = <#= varName #>.Add(<#= data.Value[3] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Insert(<#= data.Value[1] #>);
+        var key3 = <#= varName #>.Insert(<#= data.Value[2] #>);
+        var key4 = <#= varName #>.Insert(<#= data.Value[3] #>);
 
         <#= varName #>.Remove(key1);
         <#= varName #>.Remove(key4);
@@ -73,12 +74,12 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>DrainingUpToMiddle_ReturnsItemsAndEmptiesMap()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
-        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
-        var key3 = <#= varName #>.Add(<#= data.Value[2] #>);
-        var key4 = <#= varName #>.Add(<#= data.Value[3] #>);
-        var key5 = <#= varName #>.Add(<#= data.Value[4] #>);
-        var key6 = <#= varName #>.Add(<#= data.Value[5] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Insert(<#= data.Value[1] #>);
+        var key3 = <#= varName #>.Insert(<#= data.Value[2] #>);
+        var key4 = <#= varName #>.Insert(<#= data.Value[3] #>);
+        var key5 = <#= varName #>.Insert(<#= data.Value[4] #>);
+        var key6 = <#= varName #>.Insert(<#= data.Value[5] #>);
 
         List<KeyValuePair<SlotKey, <#= data.Key #>>> drainedItems = new(3);
 
@@ -103,12 +104,12 @@ foreach (var data in dataTypes)
     public void <#= typeTitle #>DrainingEverything_ReturnsAllItemsAndEmptiesMap()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = <#= varName #>.Add(<#= data.Value[0] #>);
-        var key2 = <#= varName #>.Add(<#= data.Value[1] #>);
-        var key3 = <#= varName #>.Add(<#= data.Value[2] #>);
-        var key4 = <#= varName #>.Add(<#= data.Value[3] #>);
-        var key5 = <#= varName #>.Add(<#= data.Value[4] #>);
-        var key6 = <#= varName #>.Add(<#= data.Value[5] #>);
+        var key1 = <#= varName #>.Insert(<#= data.Value[0] #>);
+        var key2 = <#= varName #>.Insert(<#= data.Value[1] #>);
+        var key3 = <#= varName #>.Insert(<#= data.Value[2] #>);
+        var key4 = <#= varName #>.Insert(<#= data.Value[3] #>);
+        var key5 = <#= varName #>.Insert(<#= data.Value[4] #>);
+        var key6 = <#= varName #>.Insert(<#= data.Value[5] #>);
 
         List<KeyValuePair<SlotKey, <#= data.Key #>>> drainedItems = new(3);
 

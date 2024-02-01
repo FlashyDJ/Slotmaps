@@ -68,25 +68,37 @@ You can create a collection of your desired type and store values in it:
 // Create a SlotMap
 SlotMap<string> slotMap = new SlotMap<string>();
 
-// Add some values and get their keys.
-SlotKey key1 = slotMap.Add("Item 1");
-SlotKey key2 = slotMap.Add("Item 2");
-SlotKey key3 = slotMap.Add("Item 3");
+// Insert some values and get their keys.
+SlotKey key1 = slotMap.Insert("Item 1");
+SlotKey key2 = slotMap.Insert("Item 2");
+SlotKey key3 = slotMap.Insert("Item 3");
 
 // Replacing value from slot
 SlotKey newKey2 = slotMap.Insert(key2, "Updated Item 2");
 
-// Access the value using the keys
-Console.WriteLine(slotMap[key1]);      // Prints "Item 1"
-Console.WriteLine(slotMap[newKey2]);   // Prints "Updated Item 2"
-Console.WriteLine(slotMap[key3]);      // Prints "Item 3"
-Console.WriteLine(slotMap[key2]);      // Throws KeyNotFoundException
+// Access the value using the indexer with the keys
+Console.WriteLine(slotMap[key1]);             // Prints "Item 1"
+Console.WriteLine(slotMap[newKey2]);          // Prints "Updated Item 2"
+
+// You can also use the Get() method
+Console.WriteLine(slotMap.Get(key3));         // Prints "Item 3"
+Console.WriteLine(slotMap.Get(key2));         // Throws KeyNotFoundException
 
 // Remove a value using its key
 slotMap.Remove(key1);
 
 // The removed key is no longer valid.
 Console.WriteLine(slotMap.ContainsKey(key1)); // Prints "False"
+
+// Its recommended to use the Try* Methods
+if (slotMap.TryGet(key1, out var value))
+{
+    Console.WriteLine($"Successfully retrieved item {value}");
+}
+else
+{
+    Console.WriteLine("Item doesn't exist");
+}
 ```
 
 ---
@@ -100,9 +112,9 @@ You can also create secondary collections that can map the keys returned by a co
 SlotMap<string> slotMap = a SlotMap<string>();
 SecondaryMap<int> secondaryMap = new SecondaryMap<int>();
 
-// Add values to the SlotMap
-SlotKey key1 = slotMap.Add("Item 1");
-SlotKey key2 = slotMap.Add("Item 2");
+// Insert values to the SlotMap
+SlotKey key1 = slotMap.Insert("Item 1");
+SlotKey key2 = slotMap.Insert("Item 2");
 
 // Insert some values using the keys from the primary map (SlotMap).
 secondaryMap.Insert(key1, 42);

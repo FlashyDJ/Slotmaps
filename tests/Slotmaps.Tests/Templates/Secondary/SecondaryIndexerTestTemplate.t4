@@ -7,6 +7,7 @@
 <#@ include file="..\Header.t4" #>
 
 namespace Slotmaps.Tests.<#= slotMapType #>;
+
 public class Indexer
 {
     [Fact]
@@ -60,11 +61,11 @@ foreach (var data in dataTypes)
     }
 
     [Fact]
-    public void <#= typeTitle #>WithNewerVersionKey_ThrowsKeyNotFoundException()
+    public void Get<#= typeTitle #>_NewerVersionKey_ThrowsKeyNotFoundException()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key1 = new SlotKey(1, 0);
-        var key2 = new SlotKey(1, 1);
+        var key1 = new SlotKey(1, 1);
+        var key2 = new SlotKey(1, 2);
         <#= varName #>.Insert(key1, <#= data.Value[0] #>);
         
         Assert.Throws<KeyNotFoundException>(() => <#= varName #>[key2]);
