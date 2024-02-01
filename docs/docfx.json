@@ -22,21 +22,16 @@
   ],
   "build": {
     "content": [
-      {
-        "files": ["api/**.yml"]
-      },
-      {
-        "files": ["docs/**.md", "docs/**/toc.yml", "toc.yml", "*.md"]
-      },
-      {
-        "files": ["samples/**.md", "samples/**.yml"]
-      }
+      { "files": ["api/**.yml"] },
+      { "files": ["docs/**.md", "docs/**/toc.yml", "toc.yml", "*.md"] },
+      { "files": ["samples/**.md", "samples/**.yml"] }
     ],
     "resource": [
       {
         "files": ["images/**"]
       }
     ],
+    "overwrite": "overwrite/**.md",
     "markdownEngineName": "markdig",
     "markdownEngineProperties": {
       "alerts": {
