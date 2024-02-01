@@ -130,7 +130,7 @@ You can also create secondary collections that can map the keys returned by a co
 
 ```csharp
 // Create a SlotMap and a SecondaryMap
-SlotMap<string> slotMap = a SlotMap<string>();
+SlotMap<string> slotMap = new SlotMap<string>();
 SecondaryMap<int> secondaryMap = new SecondaryMap<int>();
 
 // Insert values to the SlotMap
