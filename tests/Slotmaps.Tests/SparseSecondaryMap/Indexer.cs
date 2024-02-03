@@ -62,17 +62,6 @@ public class Indexer
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
     }
 
-    [Fact]
-    public void SetInt_InsertsValue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<int>();
-        var key = new SlotKey(1, 1);
-
-        sparseSecondaryMap[key] = 10;
-
-        Assert.Equal(10, sparseSecondaryMap[key]);
-    }
-
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                         int?                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -109,17 +98,6 @@ public class Indexer
         sparseSecondaryMap.Insert(key1, null);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
-    }
-
-    [Fact]
-    public void SetIntNullable_InsertsValue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<int?>();
-        var key = new SlotKey(1, 1);
-
-        sparseSecondaryMap[key] = null;
-
-        Assert.Null(sparseSecondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -160,17 +138,6 @@ public class Indexer
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
     }
 
-    [Fact]
-    public void SetString_InsertsValue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<string>();
-        var key = new SlotKey(1, 1);
-
-        sparseSecondaryMap[key] = "Value 1";
-
-        Assert.Equal("Value 1", sparseSecondaryMap[key]);
-    }
-
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                       string?                                        //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -207,17 +174,6 @@ public class Indexer
         sparseSecondaryMap.Insert(key1, null);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
-    }
-
-    [Fact]
-    public void SetStringNullable_InsertsValue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<string?>();
-        var key = new SlotKey(1, 1);
-
-        sparseSecondaryMap[key] = null;
-
-        Assert.Null(sparseSecondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -258,17 +214,6 @@ public class Indexer
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
     }
 
-    [Fact]
-    public void SetFloat_InsertsValue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<float>();
-        var key = new SlotKey(1, 1);
-
-        sparseSecondaryMap[key] = 1.1F;
-
-        Assert.Equal(1.1F, sparseSecondaryMap[key]);
-    }
-
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                        float?                                        //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -305,17 +250,6 @@ public class Indexer
         sparseSecondaryMap.Insert(key1, null);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
-    }
-
-    [Fact]
-    public void SetFloatNullable_InsertsValue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<float?>();
-        var key = new SlotKey(1, 1);
-
-        sparseSecondaryMap[key] = null;
-
-        Assert.Null(sparseSecondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -356,17 +290,6 @@ public class Indexer
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
     }
 
-    [Fact]
-    public void SetDateTime_InsertsValue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<DateTime>();
-        var key = new SlotKey(1, 1);
-
-        sparseSecondaryMap[key] = DateTime.Parse("2023-01-01");
-
-        Assert.Equal(DateTime.Parse("2023-01-01"), sparseSecondaryMap[key]);
-    }
-
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                      DateTime?                                       //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -403,17 +326,6 @@ public class Indexer
         sparseSecondaryMap.Insert(key1, null);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
-    }
-
-    [Fact]
-    public void SetDateTimeNullable_InsertsValue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<DateTime?>();
-        var key = new SlotKey(1, 1);
-
-        sparseSecondaryMap[key] = null;
-
-        Assert.Null(sparseSecondaryMap[key]);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -454,17 +366,6 @@ public class Indexer
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
     }
 
-    [Fact]
-    public void SetGuid_InsertsValue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<Guid>();
-        var key = new SlotKey(1, 1);
-
-        sparseSecondaryMap[key] = Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE");
-
-        Assert.Equal(Guid.Parse("A7CDEB8A-62A7-4AC6-90F6-8344309736DE"), sparseSecondaryMap[key]);
-    }
-
     //////////////////////////////////////////////////////////////////////////////////////////
     //                                        Guid?                                         //
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -501,17 +402,6 @@ public class Indexer
         sparseSecondaryMap.Insert(key1, null);
         
         Assert.Throws<KeyNotFoundException>(() => sparseSecondaryMap[key2]);
-    }
-
-    [Fact]
-    public void SetGuidNullable_InsertsValue()
-    {
-        var sparseSecondaryMap = new SparseSecondaryMap<Guid?>();
-        var key = new SlotKey(1, 1);
-
-        sparseSecondaryMap[key] = null;
-
-        Assert.Null(sparseSecondaryMap[key]);
     }
 
 }

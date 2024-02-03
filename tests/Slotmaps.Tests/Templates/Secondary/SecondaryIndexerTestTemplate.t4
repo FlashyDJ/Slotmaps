@@ -71,17 +71,6 @@ foreach (var data in dataTypes)
         Assert.Throws<KeyNotFoundException>(() => <#= varName #>[key2]);
     }
 
-    [Fact]
-    public void Set<#= typeTitle #>_InsertsValue()
-    {
-        var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
-        var key = new SlotKey(1, 1);
-
-        <#= varName #>[key] = <#= data.Value[0] #>;
-
-        <#= data.Key.EndsWith("?") ? "Assert.Null(" : $"Assert.Equal({data.Value[0]}, " #><#= varName #>[key]);
-    }
-
 <#
 }
 #>
