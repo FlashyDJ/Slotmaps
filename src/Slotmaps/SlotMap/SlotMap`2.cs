@@ -1,3 +1,6 @@
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 namespace FlashyDJ.Slotmaps;
 
 /// <summary>
@@ -64,17 +67,16 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
     /// <summary>
-    ///   Gets or sets the value associated with the specified key.
+    ///   Gets the value associated with the specified key in the slot map.
     /// </summary>
     /// <param name="key">The key to retrieve or set the value for.</param>
     /// <returns>The value associated with the specified key.</returns>
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
     /// </exception>
-    public TValue this[TKey key]
+    public ref TValue this[TKey key]
     {
-        get => Get(key);
-        set => Insert(key, value);
+        get => ref Get(key);
     }
 
     /// <summary>
@@ -172,9 +174,28 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
     /// </exception>
-    public TValue Get(TKey key) => 
-        ContainsKey(key) ? _slots[key.Index].Value
-                         : throw ThrowHelper.GetKeyNotFoundException_MaybeNull(key);
+    public ref TValue Get(TKey key)
+    {
+        if (!ContainsKey(key))
+            ThrowHelper.ThrowKeyNotFoundException_MaybeNull(key);
+
+        return ref _slots[key.Index].Value;
+    }
+
+    /// <summary>
+    ///   Gets a reference to the value associated with the specified key in the slot map.
+    ///   If the key is not found, returns a null reference of type <typeparamref name="TValue"/>.
+    /// </summary>
+    /// <param name="key">The key to retrieve the value for.</param>
+    /// <returns>A reference to the value associated with the specified key or a null reference.</returns>
+    /// <remarks>
+    ///   The returned reference may be null, and its nullness can be detected using
+    ///   <see cref="Unsafe.IsNullRef{T}(ref readonly T)"/>.
+    /// </remarks>
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public ref TValue GetRefOrNullRef(TKey key) =>
+        ref ContainsKey(key) ? ref _slots[key.Index].Value
+                             : ref Unsafe.NullRef<TValue>();
 
     /// <inheritdoc/>
     public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator() => new Enumerator(this);
