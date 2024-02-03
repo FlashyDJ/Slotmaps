@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FlashyDJ.Slotmaps;
@@ -173,9 +174,28 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
     /// </exception>
-    public TValue Get(TKey key) =>
-        ContainsKey(key) ? _slots[key.Index].Value
-                         : throw ThrowHelper.GetKeyNotFoundException_MaybeNull(key);
+    public ref TValue Get(TKey key)
+    {
+        if (!ContainsKey(key))
+            ThrowHelper.ThrowKeyNotFoundException_MaybeNull(key);
+
+        return ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key.Index).Value;
+    }
+
+    /// <summary>
+    ///   Gets a reference to the value associated with the specified key in the secondary map.
+    ///   If the key is not found, returns a null reference of type <typeparamref name="TValue"/>.
+    /// </summary>
+    /// <param name="key">The key to retrieve the value for.</param>
+    /// <returns>A reference to the value associated with the specified key or a null reference.</returns>
+    /// <remarks>
+    ///   The returned reference may be null, and its nullness can be detected using
+    ///   <see cref="Unsafe.IsNullRef{T}(ref readonly T)"/>.
+    /// </remarks>
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public ref TValue GetRefOrNullRef(TKey key) =>
+        ref ContainsKey(key) ? ref CollectionsMarshal.GetValueRefOrNullRef(_slots, key.Index).Value
+                             : ref Unsafe.NullRef<TValue>();
 
     /// <inheritdoc/>
     public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator() => new Enumerator(this);
