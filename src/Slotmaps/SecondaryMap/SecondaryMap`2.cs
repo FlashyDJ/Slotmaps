@@ -212,8 +212,8 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// <param name="key">The key to insert or update the value for.</param>
     /// <param name="value">The value to insert or update.</param>
     /// <returns>
-    ///   The previous value associated with the specified key if applicable, or the new
-    ///   value itself if the slot doesn't contain anything.
+    ///   The previous value associated with the specified slot key if it existed; otherwise,
+    ///   the provided <paramref name="value"/>.
     /// </returns>
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the specified <paramref name="key"/> is not found in the secondary map.

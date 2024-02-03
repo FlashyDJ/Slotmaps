@@ -71,10 +71,10 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
     /// <summary>
-    ///   Gets or sets the value associated with the specified <see cref="SlotKey"/>.
+    ///   Gets or sets the value associated with the specified slot key.
     /// </summary>
     /// <param name="key">
-    ///   The <see cref="SlotKey"/> whose associated value is to be retrieved or set.
+    ///   The slot key whose associated value is to be retrieved or set.
     /// </param>
     /// <value>
     ///   The value associated with the specified <paramref name="key"/>.
@@ -89,13 +89,13 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     }
 
     /// <summary>
-    ///   Determines whether the secondary map contains the specified <see cref="SlotKey"/>.
+    ///   Determines whether the secondary map contains the specified slot key.
     /// </summary>
     /// <param name="key">
-    ///   The <see cref="SlotKey"/> to locate in the sparse secondary map.
+    ///   The slot key to locate in the sparse secondary map.
     /// </param>
     /// <returns>
-    ///   <see langword="true"/> if the sparse secondary map contains an entry with the specified <see cref="SlotKey"/> that matches both the index and version;
+    ///   <see langword="true"/> if the sparse secondary map contains an entry with the specified slot key that matches both the index and version;
     ///   otherwise, <see langword="false"/>.
     /// </returns>
     public bool ContainsKey(TKey key)
@@ -163,13 +163,13 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     public int EnsureCapacity(int capacity) => _slots.EnsureCapacity(capacity);
 
     /// <summary>
-    ///   Gets the value associated with the specified <see cref="SlotKey"/>.
+    ///   Gets the value associated with the specified slot key.
     /// </summary>
     /// <param name="key">
-    ///   The <see cref="SlotKey"/> to look up in the sparse secondary map.
+    ///   The slot key to look up in the sparse secondary map.
     /// </param>
     /// <returns>
-    ///   The value associated with the specified <see cref="SlotKey"/>.
+    ///   The value associated with the specified slot key.
     /// </returns>
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the specified <paramref name="key"/> is not found in the slot map.
@@ -201,21 +201,21 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator() => new Enumerator(this);
 
     /// <summary>
-    ///   Inserts a value into the sparse secondary map associated with the specified <see cref="SlotKey"/>.
+    ///   Inserts a value into the sparse secondary map associated with the specified slot key.
     /// </summary>
     /// <param name="key">
-    ///   The <see cref="SlotKey"/> with which to associate the value.
+    ///   The slot key with which to associate the value.
     /// </param>
     /// <param name="value">
     ///   The value to insert into the sparse secondary map.
     /// </param>
     /// <returns>
-    ///   The previous value associated with the specified <see cref="SlotKey"/> if it existed; otherwise,
+    ///   The previous value associated with the specified slot key if it existed; otherwise,
     ///   the provided <paramref name="value"/>.
     /// </returns>
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the specified <paramref name="key"/> is not found or if the
-    ///   provided <see cref="SlotKey"/> is an older version than an existing entry.
+    ///   provided slot key is an older version than an existing entry.
     /// </exception>
     public TValue Insert(TKey key, TValue value)
     {
@@ -233,16 +233,16 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     }
 
     /// <summary>
-    ///   Removes the value with the specified <see cref="SlotKey"/> from the sparse secondary map.
+    ///   Removes the value with the specified slot key from the sparse secondary map.
     /// </summary>
     /// <param name="key">
-    ///   The <see cref="SlotKey"/> of the entry to remove.
+    ///   The slot key of the entry to remove.
     /// </param>
     /// <returns>
-    ///   The value associated with the removed <see cref="SlotKey"/> if the entry is found and removed successfully.
+    ///   The value associated with the removed slot key if the entry is found and removed successfully.
     /// </returns>
     /// <exception cref="KeyNotFoundException">
-    ///   Thrown if the provided <see cref="SlotKey"/> is invalid, has a version less than 1,
+    ///   Thrown if the provided slot key is invalid, has a version less than 1,
     ///   or does not exist in the sparse secondary map.
     /// </exception>
     public TValue Remove(TKey key) =>
@@ -253,7 +253,7 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     ///   Retains entries in the sparse secondary map based on a specified condition defined by a predicate function.
     /// </summary>
     /// <param name="predicate">
-    ///   A delegate that defines the condition for retaining elements. The delegate is called for each entry with its <see cref="SlotKey"/> and associated value as arguments.
+    ///   A delegate that defines the condition for retaining elements. The delegate is called for each entry with its slot key and associated value as arguments.
     /// </param>
     public void Retain(Func<TKey, TValue, bool> predicate)
     {
@@ -273,13 +273,13 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     }
 
     /// <summary>
-    ///   Tries to get the value associated with the specified <see cref="SlotKey"/> from the sparse secondary map.
+    ///   Tries to get the value associated with the specified slot key from the sparse secondary map.
     /// </summary>
     /// <param name="key">
-    ///   The <see cref="SlotKey"/> to locate in the <see cref="SparseSecondaryMap{TKey, TValue}"/>.
+    ///   The slot key to locate in the <see cref="SparseSecondaryMap{TKey, TValue}"/>.
     /// </param>
     /// <param name="value">
-    ///   When this method returns, contains the value associated with the specified <see cref="SlotKey"/>, if found; otherwise, the default value for <typeparamref name="TValue"/>.
+    ///   When this method returns, contains the value associated with the specified slot key, if found; otherwise, the default value for <typeparamref name="TValue"/>.
     /// </param>
     /// <returns>
     ///   <see langword="true"/> if the <paramref name="key"/> is found in the <see cref="SparseSecondaryMap{TKey, TValue}"/>; otherwise, <see langword="false"/>.
@@ -297,16 +297,16 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     }
 
     /// <summary>
-    ///   Tries to insert a value associated with the specified <see cref="SlotKey"/> into the sparse secondary map.
+    ///   Tries to insert a value associated with the specified slot key into the sparse secondary map.
     /// </summary>
     /// <param name="key">
-    ///   The <see cref="SlotKey"/> to associate with the value.
+    ///   The slot key to associate with the value.
     /// </param>
     /// <param name="value">
     ///   The value to insert into the sparse secondary map.
     /// </param>
     /// <param name="previousValue">
-    ///   When this method returns, contains the previous value associated with the specified <see cref="SlotKey"/>, if it exists;
+    ///   When this method returns, contains the previous value associated with the specified slot key, if it exists;
     ///   otherwise, the default value for <typeparamref name="TValue"/>.
     /// </param>
     /// <returns>
@@ -330,16 +330,16 @@ public partial class SparseSecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair
     }
 
     /// <summary>
-    ///   Attempts to remove the entry with the specified <see cref="SlotKey"/> from the sparse secondary map.
+    ///   Attempts to remove the entry with the specified slot key from the sparse secondary map.
     /// </summary>
     /// <param name="key">
-    ///   The <see cref="SlotKey"/> of the entry to remove.
+    ///   The slot key of the entry to remove.
     /// </param>
     /// <param name="value">
     ///   When this method returns, contains the value associated with the specified <paramref name="key"/>, if found; otherwise, the default value for <typeparamref name="TValue"/>.
     /// </param>
     /// <returns>
-    ///   <see langword="true"/> if an entry with the specified <see cref="SlotKey"/> was found and removed successfully;
+    ///   <see langword="true"/> if an entry with the specified slot key was found and removed successfully;
     ///   otherwise, <see langword="false"/>.
     /// </returns>
     public bool TryRemove(TKey key, [MaybeNullWhen(false)] out TValue value)
