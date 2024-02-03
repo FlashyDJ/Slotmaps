@@ -2,19 +2,13 @@
 public partial class SlotMap<TKey, TValue>
 {
     [DebuggerDisplay("{ToString()}")]
-    internal struct Slot(TValue value, uint version)
+    private struct Slot(TValue value, uint version)
     {
-        private TValue _value = value;
+        public TValue Value = value;
 
-        public TValue Value
-        {
-            get => Occupied ? _value : throw new InvalidOperationException("Slot is empty");
-            set => _value = value;
-        }
+        public uint Version = version;
 
-        public uint Version { get; private set; } = version;
-
-        public int NextFree { get; private set; }
+        public int NextFree;
 
         public readonly bool Occupied => Version % 2 > 0;
 

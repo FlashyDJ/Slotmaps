@@ -3,11 +3,11 @@
 public partial class SparseSecondaryMap<TKey, TValue>
 {
     [DebuggerDisplay("{ToString()}")]
-    internal struct Slot(TValue value, uint version)
+    private struct Slot(TValue value, uint version)
     {
-        public TValue Value { get; private set; } = value;
+        public TValue Value = value;
 
-        public uint Version { get; private set; } = version;
+        public uint Version = version;
 
         public TValue Update(TValue value, uint version)
         {

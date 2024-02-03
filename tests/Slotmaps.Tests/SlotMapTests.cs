@@ -451,15 +451,13 @@ public class SlotMapTests
         }
 
         [Fact]
-        public void SetAndGet_UpdateValue_ReturnsUpdatedValue()
+        public void Get_UpdateValueWithNewerKey_ThrowsKeyNotFoundException()
         {
             var slotMap = new SlotMap<int>();
             var key = slotMap.Insert(42);
 
             slotMap[key] = 24;
-            var value = slotMap[key with { Version = 3 }];
-
-            Assert.Equal(24, value);
+            Assert.Throws<KeyNotFoundException>(() => slotMap[key with { Version = 3 }]);
         }
     }
 

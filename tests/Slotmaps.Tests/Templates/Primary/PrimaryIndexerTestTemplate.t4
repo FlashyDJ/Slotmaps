@@ -77,15 +77,13 @@ foreach (var data in dataTypes)
     }
 
     [Fact]
-    public void SetAndGet<#= typeTitle #>_UpdateValue_ReturnsUpdatedValue()
+    public void Get<#= typeTitle #>_UpdateValueWithNewerKey_ThrowsKeyNotFoundException()
     {
         var <#= varName #> = new <#= slotMapType #><<#= data.Key #>>();
         var key = <#= varName #>.Insert(<#= data.Value[0] #>);
 
         <#= varName #>[key] = <#= data.Value[1] #>;
-        var value = <#= varName #>[key with { Version = 3 }];
-
-        Assert.Equal(<#= data.Value[1] #>, value);
+        Assert.Throws<KeyNotFoundException>(() => slotMap[key with { Version = 3 }]);
     }
 
 <#

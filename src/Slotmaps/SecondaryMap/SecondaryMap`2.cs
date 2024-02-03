@@ -1,4 +1,7 @@
-﻿namespace FlashyDJ.Slotmaps;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace FlashyDJ.Slotmaps;
 
 /// <summary>
 ///   Represents a secondary slot map that associates keys of type <typeparamref name="TKey"/> for efficiently
@@ -66,17 +69,16 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     public SlotValueCollection Values => _values ??= new SlotValueCollection(this);
 
     /// <summary>
-    ///   Gets or sets the value associated with the specified key.
+    ///   Gets the value associated with the specified key.
     /// </summary>
     /// <param name="key">The key to retrieve or set the value for.</param>
     /// <value>The value associated with the specified key.</value>
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the specified <paramref name="key"/> is not found in the secondary map.
     /// </exception>
-    public TValue this[TKey key]
+    public ref TValue this[TKey key]
     {
-        get => Get(key);
-        set => Insert(key, value);
+        get => ref Get(key);
     }
 
     /// <summary>
@@ -88,7 +90,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// </returns>
     /// <seealso cref="TryGet"/>
     public bool ContainsKey(TKey key) =>
-        !key.IsNull && key.Index < _slots.Length
+        !key.IsNull && key.Index <= _slots.Length - 1
         && _slots[key.Index].Version == key.Version;
 
     /// <summary>
@@ -178,9 +180,28 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     ///   Thrown if the specified <paramref name="key"/> is not found in the secondary map.
     /// </exception>
     /// <seealso cref="TryGet"/>
-    public TValue Get(TKey key) =>
-        ContainsKey(key) ? _slots[key.Index].Value
-                         : throw ThrowHelper.GetKeyNotFoundException_MaybeNull(key);
+    public ref TValue Get(TKey key)
+    {
+        if (!ContainsKey(key))
+            ThrowHelper.ThrowKeyNotFoundException_MaybeNull(key);
+
+        return ref _slots[key.Index].Value;
+    }
+
+    /// <summary>
+    ///   Gets a reference to the value associated with the specified key in the secondary map.
+    ///   If the key is not found, returns a null reference of type <typeparamref name="TValue"/>.
+    /// </summary>
+    /// <param name="key">The key to retrieve the value for.</param>
+    /// <returns>A reference to the value associated with the specified key or a null reference.</returns>
+    /// <remarks>
+    ///   The returned reference may be null, and its nullness can be detected using
+    ///   <see cref="Unsafe.IsNullRef{T}(ref readonly T)"/>.
+    /// </remarks>
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public ref TValue GetRefOrNullRef(TKey key) =>
+        ref ContainsKey(key) ? ref _slots[key.Index].Value
+                             : ref Unsafe.NullRef<TValue>();
 
     /// <inheritdoc/>
     public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator() => new Enumerator(this);
@@ -191,7 +212,8 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// <param name="key">The key to insert or update the value for.</param>
     /// <param name="value">The value to insert or update.</param>
     /// <returns>
-    ///   The updated key after the insertion or update with an incremented version number.
+    ///   The previous value associated with the specified slot key if it existed; otherwise,
+    ///   the provided <paramref name="value"/>.
     /// </returns>
     /// <exception cref="KeyNotFoundException">
     ///   Thrown if the specified <paramref name="key"/> is not found in the secondary map.
