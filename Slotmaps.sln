@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{23C73749
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slotmaps.Tests", "tests\Slotmaps.Tests\Slotmaps.Tests.csproj", "{AD3ABD90-7D9D-45F0-AF53-2A9581809F92}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{64573A02-7D70-4C0D-99AC-E08A24AD4F73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandMeldHeap", "samples\RandMeldHeap\RandMeldHeap.csproj", "{38087962-9301-4216-AC8D-BF2D77A92046}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{AD3ABD90-7D9D-45F0-AF53-2A9581809F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD3ABD90-7D9D-45F0-AF53-2A9581809F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD3ABD90-7D9D-45F0-AF53-2A9581809F92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38087962-9301-4216-AC8D-BF2D77A92046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38087962-9301-4216-AC8D-BF2D77A92046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38087962-9301-4216-AC8D-BF2D77A92046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38087962-9301-4216-AC8D-BF2D77A92046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7B0BE223-CCEA-464D-92DC-2EFB49147946} = {4F93C155-303F-47AF-AC5F-8E57D190C309}
 		{AD3ABD90-7D9D-45F0-AF53-2A9581809F92} = {23C73749-6DDE-409F-976B-1B23A606FA51}
+		{38087962-9301-4216-AC8D-BF2D77A92046} = {64573A02-7D70-4C0D-99AC-E08A24AD4F73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00A98E9E-DCE1-48B0-B91B-E69F3E1E220D}
