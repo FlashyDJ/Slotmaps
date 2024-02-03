@@ -1,4 +1,4 @@
-﻿namespace FlashyDJ.Slotmaps;
+namespace FlashyDJ.Slotmaps;
 
 /// <summary>
 ///   Represents a secondary slot map that associates keys of type <typeparamref name="TKey"/> for efficiently
@@ -88,7 +88,7 @@ public partial class SecondaryMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey,
     /// </returns>
     /// <seealso cref="TryGet"/>
     public bool ContainsKey(TKey key) =>
-        !key.IsNull && key.Index < _slots.Length
+        !key.IsNull && key.Index <= _slots.Length - 1
         && _slots[key.Index].Version == key.Version;
 
     /// <summary>

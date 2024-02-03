@@ -1,4 +1,4 @@
-﻿namespace FlashyDJ.Slotmaps;
+namespace FlashyDJ.Slotmaps;
 
 /// <summary>
 ///   Represents a slot map data structure that associates keys of type <typeparamref name="TKey"/>
@@ -86,7 +86,7 @@ public partial class SlotMap<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TVal
     /// </returns>
     /// <seealso cref="TryGet"/>
     public bool ContainsKey(TKey key) =>
-        !key.IsNull && key.Index < _slots.Length
+        !key.IsNull && key.Index <= _slots.Length - 1
         && _slots[key.Index].Version == key.Version;
 
     /// <summary>
