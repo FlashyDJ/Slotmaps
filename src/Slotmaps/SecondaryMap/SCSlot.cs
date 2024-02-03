@@ -2,17 +2,11 @@
 public partial class SecondaryMap<TKey, TValue>
 {
     [DebuggerDisplay("{ToString()}")]
-    internal struct Slot(TValue value, uint version)
+    private struct Slot(TValue value, uint version)
     {
-        private TValue _value = value;
+        public TValue Value = value;
 
-        public TValue Value
-        {
-            get => Occupied ? _value : throw new InvalidOperationException("Slot is empty");
-            private set => _value = value;
-        }
-
-        public uint Version { get; private set; } = version;
+        public uint Version = version;
 
         public readonly bool Occupied => Version != 0;
 
