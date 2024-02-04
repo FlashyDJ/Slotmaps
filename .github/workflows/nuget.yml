@@ -37,7 +37,7 @@ jobs:
         run: dotnet restore
   
       - name: Pack FlashyDJ.Slotmaps
-        run: dotnet pack -c Release --output ${{env.NuGetDirectory}} --no-restore
+        run: dotnet pack src/Slotmaps/Slotmaps.csproj -c Release --output ${{env.NuGetDirectory}} --no-restore
   
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
