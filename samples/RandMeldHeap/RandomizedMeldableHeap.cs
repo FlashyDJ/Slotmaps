@@ -3,6 +3,8 @@ using FlashyDJ.Slotmaps;
 
 namespace RandMeldHeap;
 
+// Implementation based on orlp's example rand_meld_heap
+// https://github.com/orlp/slotmap/blob/master/examples/rand_meld_heap.rs
 public class RandomizedMeldableHeap<T> where T : IComparable<T>
 {
     public readonly record struct HeapKey(int Index, uint Version) : ISlotKey<HeapKey>
